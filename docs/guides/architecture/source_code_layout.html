@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/architecture/source_code_layout">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/architecture/source_code_layout">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="source-code-layout">Source Code Layout</h1>
+
+<p>ManageIQ is a Rails application with the following standard layout</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">File/Folder</th>
+      <th style="text-align: left">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">app/</td>
+      <td style="text-align: left">Contains the controllers, models, views, helpers, mailers and assets.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bin/</td>
+      <td style="text-align: left">Contains the rails script that starts the app and can contain other scripts to setup, deploy or run the application.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">certs/</td>
+      <td style="text-align: left">Certificates needed by ManageIQ Appliance.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">config/</td>
+      <td style="text-align: left">Configuration of the ManageIQ application’s routes, database and more.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">config.ru</td>
+      <td style="text-align: left">Rack configuration for Rack based servers used to start the application.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">db/</td>
+      <td style="text-align: left">Contains the current database schema, as well as the database migrations.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Gemfile</td>
+      <td style="text-align: left">Specification of the ManageIQ application’s gem dependencies. These files are used by the Bundler gem. For more information about Bundler, see the <a href="http://bundler.io">Bundler website</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="#lib">lib/</a></td>
+      <td style="text-align: left">Extended modules for the ManageIQ application.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">log/</td>
+      <td style="text-align: left">ManageIQ application log files.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">public/</td>
+      <td style="text-align: left">The only folder seen by the world as-is. Contains static files and compiled assets.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Rakefile</td>
+      <td style="text-align: left">This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">README.md</td>
+      <td style="text-align: left">Overview of the ManageIQ project.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="#spec">spec/</a></td>
+      <td style="text-align: left">Tests using RSpec.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="#tools">tools/</a></td>
+      <td style="text-align: left">Special purpose Ruby scripts that should not be executed without full understanding of what they do.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">tmp/</td>
+      <td style="text-align: left">Temporary files (like cache, pid, and session files).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">vendor/</td>
+      <td style="text-align: left">A place for all third-party code.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="lib">lib</h2>
+
+<ul>
+  <li>lib/workers
+    <ul>
+      <li>Contains the “worker” scripts for the various types of workers as well as
+the base EVM server.  When we start a worker, these are the scripts that
+are invoked with various arguments.  Each worker has a corresponding model
+found in app/models.  Additionally, the workers have a class inheritance
+structure found in each script which directly matches the inheritance
+structure in the current configuration.  This way you can set a specific
+setting at the “worker_base” level and have it inherit for all
+subclasses, allowing overloading of configuration values when needed.
+See the documentation on the worker architecture for more details.</li>
+    </ul>
+  </li>
+  <li>lib/extensions
+    <ul>
+      <li>Extensions to Rails core classes.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="spec">spec</h2>
+
+<ul>
+  <li>spec
+    <ul>
+      <li>Specs in the spec directory typically match the class path of the
+model to make it easy to find the specs.  For example, the
+ExtManagementSystem model, which lives in models/ext_management_system.rb
+would have its specs in spec/models/ext_management_system_spec.rb</li>
+    </ul>
+  </li>
+  <li>spec/factories
+    <ul>
+      <li><a href="https://github.com/thoughtbot/factory_bot">FactoryBot</a> factories for
+the test suite.</li>
+    </ul>
+  </li>
+  <li>spec/migrations
+    <ul>
+      <li>Specs that can test migrations using an internal migration testing DSL
+located at vmdb/spec/support/migration_spec_helper.rb.</li>
+      <li>These should not be executed directly and should only be executed via the
+rake task.  This is because the rake task will execute the migrations in
+order and run the corresponding specs along the way.  The rake task also
+migrates down to 0 to verify all down migrations are executed.  Because of
+this, one should not raise IrreversibleMigration exceptions in down
+migrations.</li>
+    </ul>
+  </li>
+  <li>spec/replication
+    <ul>
+      <li>Specs that test replication between the test database and a second
+database named vmdb_production_master.</li>
+      <li>These should not be executed directly and should only be executed via the
+rake task.  This is because the rake task will setup and teardown the
+secondary database.</li>
+    </ul>
+  </li>
+  <li>spec/vcr_cassettes
+    <ul>
+      <li>Cassettes for recorded tests using <a href="https://github.com/vcr/vcr">VCR</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/proposals/rest_api_provisioning_automation">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/proposals/rest_api_provisioning_automation">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h2 id="proposal-for-provisioning--automation-rest-apis">Proposal for Provisioning &amp; Automation REST APIs</h2>
+
+<p>This document proposes 2 new REST API collections that complement the Automate Web Services
+calls for Provisioning and Automation. These are detailed in the <a href="https://access.redhat.com/documentation/en-US/CloudForms/3.0/html/Management_Engine_5.2_Integration_Services/chap-Automate_Web_Services.html">Integration Services Guide</a>.</p>
+
+<p><strong>Note:</strong> In this document, &lt;Rid&gt; and &lt;Tid&gt; represent the SOAP requestId and taskId parameters.</p>
+
+<h3 id="proposed-rest-api-for-provisioning">Proposed REST API for Provisioning</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Request</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST /api/provision_requests</td>
+      <td>Create a Provision Request</td>
+    </tr>
+    <tr>
+      <td>GET  /api/provision_requests</td>
+      <td>Get all Provision Requests</td>
+    </tr>
+    <tr>
+      <td>GET  /api/provision_requests/&lt;Rid&gt;</td>
+      <td>Get a Provision Request by Id</td>
+    </tr>
+    <tr>
+      <td>GET  /api/provision_requests/&lt;Rid&gt;/tasks</td>
+      <td>Get all Tasks for a Provision Request</td>
+    </tr>
+    <tr>
+      <td>GET  /api/provision_requests/&lt;Rid&gt;/tasks/&lt;Tid&gt;</td>
+      <td>Get a Task for a Provision Request by Id</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> The /api/provision_requests would be used for both EVMProvisionRequestEx and VmProvisionRequest
+SOAP calls.</p>
+
+<h3 id="proposed-rest-api-for-automation">Proposed REST API for Automation</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Request</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST /api/automation_requests</td>
+      <td>Create an Automation Request</td>
+    </tr>
+    <tr>
+      <td>GET  /api/automation_requests</td>
+      <td>Get all Automation Requests</td>
+    </tr>
+    <tr>
+      <td>GET  /api/automation_requests/&lt;Rid&gt;</td>
+      <td>Get an Automation Request by Id</td>
+    </tr>
+    <tr>
+      <td>GET  /api/automation_requests/&lt;Rid&gt;/tasks</td>
+      <td>Get all Tasks for an Automation Requet</td>
+    </tr>
+    <tr>
+      <td>GET  /api/automation_requests/&lt;Rid&gt;/tasks/&lt;Tid&gt;</td>
+      <td>Get a Task of an Automation Request by Id</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="soap-call--rest-api-mapping">SOAP Call =&gt; REST API Mapping</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>SOAP Call</th>
+      <th>REST API</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CreateAutomationRequest</td>
+      <td>POST /api/automation_requests</td>
+    </tr>
+    <tr>
+      <td>GetAutomationRequest</td>
+      <td>GET  /api/automation_requests/&lt;Rid&gt;</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>or GET  /api/requests/&lt;Rid&gt;</td>
+    </tr>
+    <tr>
+      <td>GetAutomationTask</td>
+      <td>GET  /api/automation_requests/&lt;Rid&gt;/tasks/&lt;Tid&gt;</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>or GET  /api/request_tasks/&lt;Tid&gt;</td>
+    </tr>
+    <tr>
+      <td>EVMProvisionRequestEx</td>
+      <td>POST /api/provision_requests</td>
+    </tr>
+    <tr>
+      <td>VmProvisionRequest</td>
+      <td>POST /api/provision_requests</td>
+    </tr>
+    <tr>
+      <td>GetVmProvisionRequest</td>
+      <td>GET  /api/provision_requests/&lt;Rid&gt;</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>or GET  /api/requests/&lt;Rid&gt;</td>
+    </tr>
+    <tr>
+      <td>GetVmProvisionTask</td>
+      <td>GET  /api/provision_requests/&lt;Rid&gt;/tasks/&lt;Tid&gt;</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>or GET  /api/request_tasks/&lt;Tid&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h3 id="sample-provisioning-request">Sample Provisioning Request:</h3>
+
+<div class="language-http highlighter-rouge"><pre class="highlight"><code><span class="err">POST /api/provision_requests
+</span></code></pre>
+</div>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"template_fields"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"guid"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"afe6e8a0-89fd-11e3-b6ac-b8e85646e742"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"vm_fields"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"number_of_cpus"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"vm_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"aab_test_vm1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"vm_memory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"vlan"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test_vlan1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"requester"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"user_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe"</span><span class="p">,</span><span class="w">       </span><span class="err">/*</span><span class="w"> </span><span class="err">Defaults</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">REST</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">credentials</span><span class="w"> </span><span class="err">*/</span><span class="w">
+    </span><span class="nt">"owner_first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"owner_last_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"owner_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@sample.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"auto_approve"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"network_location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cc"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">001</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"additional_values"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"request_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"ems_custom_attributes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"miq_custom_attributes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w"> 
+</span></code></pre>
+</div>
+
+<hr />
+<h3 id="sample-automation-request">Sample Automation Request:</h3>
+
+<div class="language-http highlighter-rouge"><pre class="highlight"><code><span class="err">POST /api/automation_requests
+</span></code></pre>
+</div>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uri_parts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"namespace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"instance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"super_method"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"parameters"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"var1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"var2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyyy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"var3"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"zzzzz"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"requester"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"user_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe"</span><span class="p">,</span><span class="w">       </span><span class="err">/*</span><span class="w"> </span><span class="err">Defaults</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">REST</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">credentials</span><span class="w"> </span><span class="err">*/</span><span class="w">
+    </span><span class="nt">"auto_approve"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

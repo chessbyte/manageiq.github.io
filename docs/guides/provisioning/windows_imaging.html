@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/provisioning/windows_imaging">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/provisioning/windows_imaging">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class=" active menu-open">
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="infrastructure-prerequisites-and-configuration">Infrastructure Prerequisites and Configuration</h1>
+<h2 id="infrastructure-setup">Infrastructure setup:</h2>
+<ul>
+  <li>Configure iPXE/sources/windows directory to be accessible via SAMBA (Create directories if they don’t already exist)
+    <div class="highlighter-rouge"><pre class="highlight"><code>    [sources]
+    path = /srv/httpboot/ipxe/sources
+    guest ok = yes
+    writable = yes
+    browsable = yes
+    printable = no
+</code></pre>
+    </div>
+  </li>
+  <li>Configure iPXE/sysprep directory to be accessible via SAMBA (Create directories if they don’t already exist)
+    <div class="highlighter-rouge"><pre class="highlight"><code>    [sysprep]
+    path = /srv/httpboot/ipxe/sysprep
+    guest ok = yes
+    writable = no
+    browsable = no
+    printable = no
+</code></pre>
+    </div>
+  </li>
+  <li>Configure iPXE menu item and get sources for WinPE
+    <ul>
+      <li>Get Memdisk
+        <ul>
+          <li>Obtain Syslinux package http://www.kernel.org/pub/linux/utils/boot/syslinux/</li>
+          <li>Extract package</li>
+          <li>get ‘memdisk’ from syslinux-v.vv/memdisk/</li>
+        </ul>
+      </li>
+      <li>Prepare iPXE structure TODO
+        <ul>
+          <li>Log into PXE server and cd to iPXE directory</li>
+          <li>Copy memdisk file into sources directory</li>
+        </ul>
+      </li>
+      <li>Create iPXE menu item for WinPE
+        <ul>
+          <li>Menu section:
+<code class="highlighter-rouge">item winpex64   WindowsPE_amd64</code></li>
+          <li>Label:
+            <div class="highlighter-rouge"><pre class="highlight"><code>    :winpex64
+    initrd http://server/ipxe/sources/windows/winpe_amd64.iso
+    kernel http://server/ipxe/sources/memdisk iso raw
+    boot
+</code></pre>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="admin-workstation-prep">Admin Workstation prep:</h2>
+<ol>
+  <li>Get Windows AIK and install on admin workstation http://www.microsoft.com/en-us/download/details.aspx?id=5753</li>
+  <li>Build Windows_PE environment and create ISO</li>
+  <li>Generate WinPE directory structure
+    * Open Start / Windows AIK / Deployment Tools Command Prompt
+    <code class="highlighter-rouge">
+    copycmd amd64 c:\winpe_amd64
+   </code></li>
+  <li>Copy additional tools and customize our working directory
+    * Always enter WinPE (don’t prompt for key press)
+    <code class="highlighter-rouge">
+    del c:\winpe_amd64\ISO\boot\bootfix.bin
+   </code></li>
+  <li>Edit the Boot Image
+    ```
+    # Mount the WIM file
+    dism /mount-wim /wimfile:c:\winpe_amd64\winpe.wim /index:1 /mountdir:c:\winpe_amd64\mount</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Modify startnet.cmd to mount shares and call scripts
+C:\winpe_amd64\mount\Windows\System32&gt;notepad startnet.cmd
+
+# Add Driver Files
+dism /image:c:\winpe_amd64\mount /add-driver /driver:”path to drivers directory” /recurse /forceunsigned
+
+# Add VBScripting
+dism /image:c:\winpe_amd64\mount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\winpe-scripting.cab"
+dism /image:c:\winpe_amd64\mount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-scripting_en-us.cab"
+
+# Verify Packages list
+dism /image:c:\winpe_amd64\mount /get-packages
+
+# Commit changes
+dism /unmount-wim /mountdir:c:\winpe_amd64\mount /commit
+C:\winpe_amd64&gt;copy winpe.wim ISO\sources\boot.wim
+```   1. Build the WinPE ISO
+
+ ```
+ oscdimg -n -b c:\winpe_amd64\etfsboot.com c:\winpe_amd64\ISO c:\winpe_amd64\winpe_amd64.iso
+ ``` 1. Build base WIM and capture it (using the WinPE with imagex PXE boot)   1. Install windows on a VM   1. Sysprep the install   1. Boot the VM into windows PE PXE   1. Capture the image into a wim file 1. Build sample sysprep unattend.xml file
+</code></pre>
+</div>
+
+<h2 id="some-additional-reference-notes">Some additional reference notes:</h2>
+<p>Install WAIK on a windows 7 or 2008 R2 Server</p>
+
+<ul>
+  <li>Enter WAIK Command Prompt
+On your technician computer: click Start, All Programs, Windows AIK,
+right-click Deployment Tools Command Prompt, and Run as administrator</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Cope WinPE files - This creates the winPE directory and copies necessary files to it
+copype.cmd x86 c:\winpe_amd64
+
+# Copy the out of the box winPE WIM to the ISO folder
+copy c:\winpe_amd64\winpe.wim c:\winpe_amd64\ISO\sources\boot.wim
+
+# Mount winpe WIM
+dism /mount-wim /wimfile:c:\winpe_amd64\iso\sources\boot.wim /index:1 /mountdir:c:\winpe_amd64\mount
+
+# Inject Drivers into WIM
+dism /image:c:\winpe_amd64\mount /add-driver /driver:"c:\drivers" /recurse /forceunsigned
+
+# Add the vb scripting to WinPE
+dism /image:c:\winpe_amd64\mount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\winpe-scripting.cab"
+dism /image:c:\winpe_amd64\mount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-scripting_en-us.cab"
+
+# Verify VB Scripting is installed
+dism /image:c:\winpe_amd64\mount /get-packages
+</code></pre>
+</div>
+
+<ul>
+  <li>notepad C:\winpe_amd64\mount\Windows\System32\startnet.cmd
+    <div class="highlighter-rouge"><pre class="highlight"><code>wpeinit
+net use s: \\10.10.1.7\ipxe
+s:\sources\microsoft\evm.bat
+</code></pre>
+    </div>
+  </li>
+  <li>To Commit Changes to the WIM
+    <div class="highlighter-rouge"><pre class="highlight"><code>dism /Unmount-Wim /MountDir:C:\winpe_amd64\mount /Commit
+</code></pre>
+    </div>
+  </li>
+  <li>To discard change made to the WIM
+    <div class="highlighter-rouge"><pre class="highlight"><code>dism /Unmount-Wim /MountDir:C:\winpe_amd64\mount /discard
+</code></pre>
+    </div>
+  </li>
+  <li>To Create the ISO image
+    <div class="highlighter-rouge"><pre class="highlight"><code>oscdimg -n -bc:\winpe_amd64\etfsboot.com c:\winpe_amd64\ISO c:\winpe_amd64\winpe_amd64.iso
+</code></pre>
+    </div>
+  </li>
+  <li>Copy iso image to
+    <div class="highlighter-rouge"><pre class="highlight"><code>copy c:\winpe_amd64\winpe_amd64.iso  &lt;PXE Server&gt;/srv/boot/ipxe/sources/microsoft
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Refresh PXE Server in EVM</p>
+  </li>
+  <li>To rename a WIM files information (Useful if you need to rename the image to match a template name)
+    <div class="highlighter-rouge"><pre class="highlight"><code>imagex /info win2k8.wim 1 "win2008r2" "Windows 2008 R2 x64"
+</code></pre>
+    </div>
+  </li>
+  <li>To cleanup stale mounts
+    <div class="highlighter-rouge"><pre class="highlight"><code>dism /cleanup-wim
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="automated-process-overview">Automated Process Overview</h2>
+<ol>
+  <li>Create VM based on a blank Windows template</li>
+  <li>Generate config files and drop on share (sysprep/directory-based-on-MAC-address/files)</li>
+  <li>image.bat (batch file to run the imaging process)</li>
+  <li>diskpart.txt (partitioning model)</li>
+  <li>unattend.xml (sysprep unattend file)</li>
+  <li>Boot VM via Network - just like linux install</li>
+  <li>Client PXE stack automatically chains up to ipxe (no EVM involvement here)</li>
+  <li>iPXE selects correct image based on mac address (same thing as used</li>
+  <li>WinPE Booted</li>
+  <li>startnet.cmd (on ISO) calls image.bat (on share) (shown in admin workstation prep above)
+    1. disk wiped
+    1. partitions created, formatted and mounted
+    1. system imaged
+    1. unattend file deployed
+    1. bootloader installed
+    1. Callback to EVM  ##### Still researching
+    1. WinPE Shutdown</li>
+  <li>EVM powers on VM normally (not network boot)</li>
+  <li>System runs through sysprep using unattend.xml file and reboots</li>
+  <li>System boots into a working Windows System</li>
+  <li>Done!</li>
+</ol>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

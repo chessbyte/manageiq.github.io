@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Sprint 60 review - May 10, 2017</title>
+  <meta name="description" content="Sprint 60 is mostly focused on the stabilization of upcoming Fine release, with close to half of the total 570 pull requests (a new high) going towards bug f...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/05/sprint-60-review-may-10-2017/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/05/sprint-60-review-may-10-2017/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Sprint 60 review - May 10, 2017</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-05-12T00:00:00+00:00" itemprop="datePublished">
+                May 12, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  cybette
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/sprints">sprints</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>Sprint 60 is mostly focused on the stabilization of upcoming Fine release, with close to half of the total 570 pull requests (a new high) going towards bug fixes. This sprint marks the first time that the <a href="https://github.com/manageiq/manageiq-ui-classic">Classic UI repo</a> has outpaced the <a href="https://github.com/ManageIQ/manageiq">core ManageIQ repo</a> in PRs, 158 to 148. From Sprint 52 to 60, the number of ManageIQ repositories went from 103 to 114 (11 new repos over 8 sprints), and more are being planned. We have a new “Repository Health Report” which includes number of files, <a href="https://codeclimate.com/">Code Climate</a> GPA scores and issues, as well as test coverages across different repos.</p>
+
+<p>A major refactoring effort in the Classic UI replaced all the GTL (Grid/Tile/List) Views to be managed by Angular, even nested ones. This brings us one step closer to changing all the views to use the REST API behind Angular support. It also results in improvements to the UI, such as the new pagination not requiring refresh of the whole screen.</p>
+
+<p>Service UI adds a new feature to handle batch notifications better. Previously, if there are multiple notifications coming in, the end-user will be spammed by them. With the change, it will now show a maximum of 6 notices, after which you’ll get a message to check the notification drawer. Upon expanding the drawer you’ll see all the notifications organized by categories. This uses the PatternFly notification drawer component to align closer with Classic UI.</p>
+
+<p>The Amazon provider made several enhancements for this sprint: CloudWatch Events are now visible in VM Timelines, deletion of S3 folders is supported, plus the refreshing of floating IP and port for a load balancer. Remaining work includes the refactoring and cleanup of the refresh parser.</p>
+
+<p>For more highlights from Sprint 60, we have the addition of quota checking for VM Reconfigure; Escalate privilege option to Catalog Item configuration in Ansible Integration; removal of the default certificate from appliance so that a unique one is auto-generated on first launch of the appliance; introduction of Custom Actions for VMs; and plenty of enhancements in documentation such as configuring ManageIQ to work with load balancers, and a procedure outlining how to refresh Ansible repositories.</p>
+
+<p>All these and more in the <a href="https://www.youtube.com/watch?v=8tpCu-bdq-U">Sprint 60 highlight reel</a>, with section markings as follows.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8tpCu-bdq-U" frameborder="0" allowfullscreen=""></iframe>
+
+<ul>
+  <li>Sprint Statistics (Oleg Barenboim) - <a href="https://youtu.be/8tpCu-bdq-U?t=56">0:56</a></li>
+  <li>Community Update (John Prause) - <a href="https://youtu.be/8tpCu-bdq-U?t=298">4:58</a></li>
+  <li>Classic UI (Dan Clarizio) - <a href="https://youtu.be/8tpCu-bdq-U?t=368">6:08</a></li>
+  <li>Service UI (Chris Kacerguis) - <a href="https://youtu.be/8tpCu-bdq-U?t=634">10:34</a></li>
+  <li>Providers (Adam Grare) - <a href="https://youtu.be/8tpCu-bdq-U?t=800">13:20</a></li>
+  <li>Automate (Greg McCullough) - <a href="https://youtu.be/8tpCu-bdq-U?t=1000">16:40</a></li>
+  <li>Platform (Gregg Tanzillo) - <a href="https://youtu.be/8tpCu-bdq-U?t=1200">20:00</a></li>
+  <li>API (Alberto Bellotti) - <a href="https://youtu.be/8tpCu-bdq-U?t=1380">23:00</a></li>
+  <li>Performance (Dennis Metzger) - <a href="https://youtu.be/8tpCu-bdq-U?t=1425">23:45</a></li>
+  <li>Documentation (Chris Budzilowicz) - <a href="https://youtu.be/8tpCu-bdq-U?t=1458">24:18</a></li>
+  <li>Discussion - <a href="https://youtu.be/8tpCu-bdq-U?t=1498">24:58</a></li>
+</ul>
+
+<p>Accompanying this sprint are the following “Last Week in ManageIQ” posts, for the Fine-hearted, but not the faint-hearted:</p>
+
+<ul>
+  <li><a href="/blog/2017/05/lovecraftian_last_week/">Lovecraftian Last Week in ManageIQ</a> - by <a href="https://github.com/d-m-u">Drew Uhlmann</a></li>
+  <li><a href="/blog/2017/05/doing-just-fine/">Doing just Fine</a> - by <a href="https://github.com/skateman">Dávid Halász</a></li>
+</ul>
+
+<p>Next, Sprint 61 review will be on May 24, 2017 @ <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=ManageIQ+Sprint+61+review&amp;iso=20170524T1430">7:30 PST/10:30 EST/14:30 GMT</a>. Join in the ManageIQ Sprint meeting via <a href="https://bluejeans.com/4409197730/">Bluejeans</a> (note the new link) and import the <a href="https://calendar.google.com/calendar/embed?src=contact%40manageiq.org">ManageIQ community calendar</a> to be notified about this and future Sprint reviews!</p>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/oEocFmlcBWU3JV" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+
+<h3 id="changelog"><a href="https://github.com/ManageIQ/manageiq/blob/master/CHANGELOG.md">Changelog</a></h3>
+
+<h4 id="added">Added</h4>
+
+<ul>
+  <li>Automate
+    <ul>
+      <li>Extract automation engine to separate repository <a href="https://github.com/ManageIQ/manageiq/pull/13783">(#13783)</a></li>
+    </ul>
+  </li>
+  <li>Platform
+    <ul>
+      <li>Allow reports to be generated based on GuestApplication <a href="https://github.com/ManageIQ/manageiq/pull/14939">(#14939)</a></li>
+    </ul>
+  </li>
+  <li>Providers
+    <ul>
+      <li>Provider native operations state machine <a href="https://github.com/ManageIQ/manageiq/pull/14405">(#14405)</a></li>
+      <li>Ansible Tower
+        <ul>
+          <li>Escalate privilege <a href="https://github.com/ManageIQ/manageiq/pull/14929">(#14929)</a></li>
+          <li>Add status column to Repositories list <a href="https://github.com/ManageIQ/manageiq/pull/14855">(#14855)</a></li>
+          <li>Use $log.log_hashes to filter out sensitive data. <a href="https://github.com/ManageIQ/manageiq/pull/14878">(#14878)</a></li>
+        </ul>
+      </li>
+      <li>Physical Infrastructure: Create asset details object <a href="https://github.com/ManageIQ/manageiq/pull/14749">(#14749)</a></li>
+    </ul>
+  </li>
+  <li>REST API
+    <ul>
+      <li>Add Alert Definition Profiles (MiqAlertSet) REST API support <a href="https://github.com/ManageIQ/manageiq/pull/14438">(#14438)</a></li>
+      <li>API support for adding/removing Policies to/from Policy Profiles <a href="https://github.com/ManageIQ/manageiq/pull/14575">(#14575)</a></li>
+      <li>Enable custom actions for Vms API <a href="https://github.com/ManageIQ/manageiq/pull/14817">(#14817)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="fixed">Fixed</h4>
+
+<ul>
+  <li>Automate
+    <ul>
+      <li>Retirement
+        <ul>
+          <li>Add orchestration_stack_retired notification type. <a href="https://github.com/ManageIQ/manageiq/pull/14957">(#14957)</a></li>
+          <li>Revert previous changes adding notification to finish retirement. <a href="https://github.com/ManageIQ/manageiq/pull/14955">(#14955)</a></li>
+        </ul>
+      </li>
+      <li>Provisioning
+        <ul>
+          <li>Add :sort_by: :none to GCE Boot Disk Size dialog field. <a href="https://github.com/ManageIQ/manageiq/pull/14981">(#14981)</a></li>
+          <li>Filter out the hosts with the selected network. <a href="https://github.com/ManageIQ/manageiq/pull/14946">(#14946)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Platform
+    <ul>
+      <li>RBAC for User model regard to allowed role <a href="https://github.com/ManageIQ/manageiq/pull/14898">(#14898)</a></li>
+      <li>Fallback to ActiveRecord config for DB host lookup <a href="https://github.com/ManageIQ/manageiq/pull/15018">(#15018)</a></li>
+      <li>Use ActiveRecord::Base for connection info <a href="https://github.com/ManageIQ/manageiq/pull/15019">(#15019)</a></li>
+      <li>Miq shortcut seeding <a href="https://github.com/ManageIQ/manageiq/pull/14915">(#14915)</a></li>
+      <li>Fix constant reference in ManagerRefresh::Inventory::AutomationManager <a href="https://github.com/ManageIQ/manageiq/pull/14984">(#14984)</a></li>
+      <li>Set the db application_name after the server row is created <a href="https://github.com/ManageIQ/manageiq/pull/14904">(#14904)</a></li>
+    </ul>
+  </li>
+  <li>Providers
+    <ul>
+      <li>Microsoft Infrastructure: [SCVMM] Always assume a string for run_powershell_script <a href="https://github.com/ManageIQ/manageiq/pull/14859">(#14859)</a></li>
+      <li>Ansible Tower
+        <ul>
+          <li>Sleep some more time in ansible targeted refresh <a href="https://github.com/ManageIQ/manageiq/pull/14899">(#14899)</a></li>
+          <li>Tower CUD to invoke targeted refresh <a href="https://github.com/ManageIQ/manageiq/pull/14954">(#14954)</a></li>
+          <li>Create or delete a catalog item on update <a href="https://github.com/ManageIQ/manageiq/pull/14830">(#14830)</a></li>
+          <li>Prefer :dialog_id to :new_dialog_name in config_info <a href="https://github.com/ManageIQ/manageiq/pull/14958">(#14958)</a></li>
+          <li>Service Playbook updates fqname and configuration_template <a href="https://github.com/ManageIQ/manageiq/pull/15007">(#15007)</a></li>
+          <li>Use human friendly names in task names and notifications for Tower CUD operations <a href="https://github.com/ManageIQ/manageiq/pull/14977">(#14977)</a></li>
+          <li>Tower CUD check and run refresh_in_provider followed by refreshing manager <a href="https://github.com/ManageIQ/manageiq/pull/15025">(#15025)</a></li>
+        </ul>
+      </li>
+      <li>Containers: Update miq-shortcuts <a href="https://github.com/ManageIQ/manageiq/pull/14951">(#14951)</a></li>
+      <li>Hawkular: Fix defaults for immutability of MiddlewareServers <a href="https://github.com/ManageIQ/manageiq/pull/14822">(#14822)</a></li>
+      <li>Network
+        <ul>
+          <li>Move public/external network method into base class <a href="https://github.com/ManageIQ/manageiq/pull/14920">(#14920)</a></li>
+          <li>Fix network_ports relation of a LB <a href="https://github.com/ManageIQ/manageiq/pull/14969">(#14969)</a></li>
+        </ul>
+      </li>
+      <li>Virtual Infrastructure: Add a method to InfraManager to retrieve Hosts without EmsCluster <a href="https://github.com/ManageIQ/manageiq/pull/14884">(#14884)</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>SmartState: Fixed bug: one call to Job#set_status from `VmScan#call_snapshot_delete’ has one extra parameter <a href="https://github.com/ManageIQ/manageiq/pull/14964">(#14964)</a></p>
+  </li>
+  <li>User Interface (Classic)
+    <ul>
+      <li>Sync up dropdown list in My Settings =&gt; Visual Tab =&gt; Start Up <a href="https://github.com/ManageIQ/manageiq/pull/14914">(#14914)</a></li>
+      <li>Show Network Port name in Floating IP list <a href="https://github.com/ManageIQ/manageiq/pull/14970">(#14970)</a></li>
+      <li>Add missing units on VMDB Utilization page for disk size <a href="https://github.com/ManageIQ/manageiq/pull/14921">(#14921)</a></li>
+      <li>Add Memory chart for Availability Zones <a href="https://github.com/ManageIQ/manageiq/pull/14938">(#14938)</a></li>
+      <li>Added jobs.target_class and jobs.target_id to returned dataset in MiqTask.yaml view <a href="https://github.com/ManageIQ/manageiq/pull/14932">(#14932)</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

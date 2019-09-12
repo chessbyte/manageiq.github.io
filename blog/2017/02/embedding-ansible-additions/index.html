@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Last Week in ManageIQ: Embedding Ansible Additions</title>
+  <meta name="description" content="Greetings everyone! Josh here with yet another weekly update! :tada:">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png">
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/02/embedding-ansible-additions/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li>
+    <a href="/download/">Download</a>
+  </li>
+  <li>
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li>
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/02/embedding-ansible-additions/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Last Week in ManageIQ: Embedding Ansible Additions</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-02-28T00:00:00+00:00" itemprop="datePublished">
+                Feb 28, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  jjlangholtz
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>Greetings everyone! <a href="https://github.com/jjlangholtz">Josh</a> here with yet another weekly update! <img class="emoji" title=":tada:" alt=":tada:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png" height="20" width="20" align="absmiddle"></p>
+
+<h2 id="featured">Featured</h2>
+
+<p>Another outstanding week with over 109 PRs merged. Here is the breakdown:</p>
+
+<ul>
+  <li><a href="https://github.com/ManageIQ/manageiq/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-20+..+2017-02-26%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">49 from ManageIQ core</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-ui-classic/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-20+..+2017-02-26%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">42 from the Classic UI</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-ui-service/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-20+..+2017-02-26%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">13 from the Service UI</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-providers-amazon/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-20+..+2017-02-26%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">5 from the Amazon Provider</a></li>
+</ul>
+
+<h2 id="improved">Improved</h2>
+
+<p>Although there were a number of great improvements this round, here are a few highlights. First, <a href="https://github.com/Ladas">Ladas</a> has laid the foundation for <a href="https://github.com/ManageIQ/manageiq/pull/14023">query optimizations</a> of inventory collections based on tracking graph dependencies. <a href="https://github.com/carbonin">Nick</a> implemented a <a href="https://github.com/ManageIQ/manageiq/pull/13978">worker lifecycle for embedded Ansible</a> to aid monitoring efforts. To simplify decorating models, <a href="https://github.com/himdel">Martin</a> has added an implementation for <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/237">class decorator support</a> which also removes the need to use the draper gem.</p>
+
+<h2 id="fixed">Fixed</h2>
+
+<p>On the UI front, <a href="https://github.com/himdel">Martin</a> also fixed a UI issue to <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/446">display all catalog items</a>. Cascading auto-refreshes received several updates from <a href="https://github.com/eclarizio">Erik</a> leading to a nice <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/433">fix</a>.</p>
+
+<h2 id="new">New</h2>
+
+<p>Perhaps the largest addition was <a href="https://github.com/ManageIQ/manageiq/pull/13879">numerous model additions for Embedded Ansible</a>, delivered by <a href="https://github.com/blomquisg">Greg</a>. <a href="https://github.com/enoodle">Erez</a> brought a welcome addition of <a href="https://github.com/ManageIQ/manageiq/pull/13319">external logging support</a> for containers, while <a href="https://github.com/chalettu">Chris</a> added the ability to <a href="https://github.com/ManageIQ/manageiq-ui-service/pull/529">create orchestration templates</a> from the SUI.</p>
+
+<h2 id="deleted">Deleted</h2>
+
+<p>Lots of deletions across the board over the last week. The classic UI received a pair of substantial removals: <a href="https://github.com/skateman">Dávid</a> dropped the <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/445">unused jQplot and associated plugins</a>, while  <a href="https://github.com/h-kataria">Harpreet</a> removed <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/426">arbitration profiles</a>.</p>
+
+<p>With as many jobs as we have running on TravisCI, it’s nice when we can cut down on what we are checking. <a href="https://github.com/jrafanie">Joe</a> dropped <a href="https://github.com/ManageIQ/manageiq/pull/14056">the Codeclimate eslint engine</a> now that the UI is separate from the core. Finally <a href="https://github.com/carbonin">Nick</a> took the opportunity to remove <a href="https://github.com/ManageIQ/manageiq/pull/13966">unnecessary authentication configuration</a> with all the recent Ansible changes.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>The end of <em>Sprint 55</em> brought plenty of Embedded Ansible additions with many more to come. It was a pleasure bringing you the latest! Until next time, <img class="emoji" title=":wave:" alt=":wave:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20" align="absmiddle">!</p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li>
+    <a href="/download/">Download</a>
+  </li>
+  <li>
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li>
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewbox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        © 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

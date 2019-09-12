@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/ui/provider_plugin">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/ui/provider_plugin">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h2 id="extending-the-ui-with-buttons-dialogs-and-executing-ansible-playbooks">Extending the UI with buttons, dialogs and executing Ansible Playbooks</h2>
+
+<h3 id="context">Context</h3>
+
+<p>We want to allow the provider authors to extend ManageIQ with Ansible playbooks
+and roles. ManageIQ core provides the capability to execute an Ansible playbook
+from the provider repository. The ManageIQ UI provides a way to call that
+playbook from a toolbar. Before calling the playbook, additional parameters can
+be collected using a custom form.</p>
+
+<h3 id="user-interaction-example">User interaction example</h3>
+
+<ul>
+  <li>User opens a list of Instances.</li>
+  <li>From the list, the user selects one Instance and displays its detail page.</li>
+  <li>On the detail page in the top toolbar extra button (button groups) are displayed with special actions relevant only for Instances coming from a specific provider.</li>
+  <li>User presses a button.</li>
+  <li>(optional step) a dialog comes up for the user to fill in whatever arguments are needed for the special action.</li>
+  <li>User clicks “Ok”.</li>
+  <li>Special operation is executed using the ManageIQ API. A simple message is displayed on the screen (flash message) informing that the operation was fired.</li>
+</ul>
+
+<h3 id="provider-workflow">Provider workflow</h3>
+
+<ul>
+  <li>Implement Ansible playbooks and place them in the provider repo <code class="highlighter-rouge">manageiq-provider-xxx</code>.</li>
+  <li>Implement custom forms as React components or a ManageIQ Dynamic (service) Dialog. Place them in the provider repo.</li>
+  <li>Create a toolbar extension class and place it in the provider repo under <code class="highlighter-rouge">app/helpers</code>.</li>
+</ul>
+
+<h3 id="extending-the-toolbars">Extending the toolbars</h3>
+
+<p>Providers can add new button groups to existing <a href="toolbars">toolbars</a>. Specifically, the “Center toolbars” can be extended this way. Currently, toolbar extensions can add new <code class="highlighter-rouge">button_group</code>s to the toolbar.</p>
+
+<p>In addition to what is documented on the <a href="toolbars">toolbars</a> page, providers can specify what Dialog has to be displayed then a toolbar button is pressed.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">ManageIQ</span>
+  <span class="k">module</span> <span class="nn">Providers</span>
+    <span class="k">module</span> <span class="nn">Amazon</span>
+      <span class="k">module</span> <span class="nn">ToolbarOverrides</span>
+        <span class="k">class</span> <span class="nc">EmsCloudCenter</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">Override</span>
+          <span class="n">button_group</span><span class="p">(</span><span class="s1">'magic'</span><span class="p">,</span> <span class="p">[</span>
+            <span class="n">button</span><span class="p">(</span>
+              <span class="ss">:magic</span><span class="p">,</span>
+              <span class="s1">'fa fa-magic fa-lg'</span><span class="p">,</span>
+              <span class="n">t</span> <span class="o">=</span> <span class="no">N_</span><span class="p">(</span><span class="s1">'Magic'</span><span class="p">),</span>
+              <span class="n">t</span><span class="p">,</span>
+              <span class="ss">:data</span>  <span class="o">=&gt;</span> <span class="p">{</span><span class="s1">'function'</span>      <span class="o">=&gt;</span> <span class="s1">'sendDataWithRx'</span><span class="p">,</span>
+                         <span class="s1">'function-data'</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:controller</span>     <span class="o">=&gt;</span> <span class="s1">'provider_dialogs'</span><span class="p">,</span> <span class="c1"># this one is required</span>
+                                             <span class="ss">:modal_title</span>    <span class="o">=&gt;</span> <span class="no">N_</span><span class="p">(</span><span class="s1">'Create a Security Group'</span><span class="p">),</span>   <span class="c1"># title of modal displaying the form</span>
+                                             <span class="ss">:component_name</span> <span class="o">=&gt;</span> <span class="s1">'CreateAmazonSecurityGroupForm'</span><span class="p">,</span> <span class="c1"># name of React component implementing the form</span>
+                                              <span class="p">}.</span><span class="nf">to_json</span><span class="p">},</span>
+              <span class="ss">:klass</span> <span class="o">=&gt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Button</span><span class="o">::</span><span class="no">ButtonWithoutRbacCheck</span><span class="p">),</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Above is an example where provider <code class="highlighter-rouge">ManageIQ::Providers::Amazon</code> is extending existing toolbar <code class="highlighter-rouge">EmsCloudCenter</code>with a new group containing a single button.</p>
+
+<p>When the button is pressed, a modal will be opened with a form implemented as a React class named <code class="highlighter-rouge">CreateAmazonSecurityGroupForm</code>. The title of the modal will be <code class="highlighter-rouge">Create a Security Group</code>.</p>
+
+<h3 id="creating-forms">Creating Forms</h3>
+
+<h4 id="react-based-forms">React based forms</h4>
+
+<p>The example above references a React class <code class="highlighter-rouge">CreateAmazonSecurityGroupForm</code>. In this scenario, the React class is also responsible for submitting a request with the collected data to the <a href="calling_api">API</a>.</p>
+
+<p>The React code can be part of the provider repository or it can be added as the dependency. Provider repositories can add dependencies in their <code class="highlighter-rouge">package.json</code>.</p>
+
+<p>It’s recommended that the React class be split into two parts:</p>
+<ul>
+  <li>UI only part implementing the form elements and</li>
+  <li>part adding the handling of “Ok” and “Cancel” buttons and implementing the <a href="calling_api">API call</a>.</li>
+</ul>
+
+<p>This is shown in the examples here:</p>
+
+<ul>
+  <li><a href="https://github.com/ManageIQ/react-ui-components/tree/master/src/amazon-security-form-group">Form Example</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/3509">Using Redux</a></li>
+</ul>
+
+<h4 id="dialog-player-forms">Dialog player forms</h4>
+
+<p>Simple forms can be implemented using the Dialog Player. Dialog Player comes with a WYSIWYG Dialog Editor. This approach is used in Service Dialogs in ManageIQ.</p>
+
+<ul>
+  <li><a href="https://github.com/ManageIQ/manageiq-providers-amazon/pull/468/files#diff-5de6773b08e78af7f4d0b3aff5355fa6">Form Definition Example</a></li>
+</ul>
+
+<p>Example definition of a button that opens a Dialog Player dialog follows.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">ManageIQ</span>
+  <span class="k">module</span> <span class="nn">Providers</span>
+    <span class="k">module</span> <span class="nn">Amazon</span>
+      <span class="k">module</span> <span class="nn">ToolbarOverrides</span>
+        <span class="k">class</span> <span class="nc">EmsCloudCenter</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">Override</span>
+          <span class="n">button_group</span><span class="p">(</span><span class="s1">'magic'</span><span class="p">,</span> <span class="p">[</span>
+            <span class="n">button</span><span class="p">(</span>
+              <span class="ss">:magic_player</span><span class="p">,</span>
+              <span class="s1">'fa fa-magic fa-lg'</span><span class="p">,</span>
+              <span class="n">t</span> <span class="o">=</span> <span class="no">N_</span><span class="p">(</span><span class="s1">'Magic player'</span><span class="p">),</span>
+              <span class="n">t</span><span class="p">,</span>
+              <span class="ss">:data</span>  <span class="o">=&gt;</span> <span class="p">{</span><span class="s1">'function'</span>      <span class="o">=&gt;</span> <span class="s1">'sendDataWithRx'</span><span class="p">,</span>
+                         <span class="s1">'function-data'</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:controller</span>  <span class="o">=&gt;</span> <span class="s1">'provider_dialogs'</span><span class="p">,</span> 	      <span class="c1"># this one is required</span>
+                                             <span class="ss">:dialog_name</span> <span class="o">=&gt;</span> <span class="s1">'test'</span><span class="p">,</span>		 	      <span class="c1"># name of dialog</span>
+                                             <span class="ss">:dialog_title</span> <span class="o">=&gt;</span> <span class="no">N_</span><span class="p">(</span><span class="s1">'Magic Provider Dialog'</span><span class="p">),</span>    <span class="c1"># title of modal displaying the form (dialog)</span>
+                                             <span class="ss">:class</span>       <span class="o">=&gt;</span> <span class="s1">'ManageIQ::Providers::Amazon'</span><span class="p">,</span>   <span class="c1"># namespace of this provider</span>
+                                             <span class="ss">:entity_name</span> <span class="o">=&gt;</span> <span class="s1">'ems_cloud'</span><span class="p">,</span>		      <span class="c1"># entity name for an API call</span>
+                                             <span class="ss">:action_name</span> <span class="o">=&gt;</span> <span class="s1">'more_foobar'</span><span class="p">,</span>		      <span class="c1"># action name for an API call</span>
+                                             <span class="ss">:success_message</span> <span class="o">=&gt;</span> <span class="no">N_</span><span class="p">(</span><span class="s1">'Magic just happened !'</span><span class="p">),</span> <span class="c1"># text of flash message</span>
+                        <span class="p">}.</span><span class="nf">to_json</span><span class="p">},</span>
+              <span class="ss">:klass</span> <span class="o">=&gt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Button</span><span class="o">::</span><span class="no">ButtonWithoutRbacCheck</span><span class="p">),</span>
+          <span class="p">])</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>When a user clicks this button, a series of actions take place.</p>
+<ol>
+  <li>Dialog definition is fetched from disk. The dialog definition has to be stored under the name matching the <code class="highlighter-rouge">:dialog_name</code> argument from path <code class="highlighter-rouge">&lt;provider_repo_root&gt;/dialogs/&lt;dialog_name&gt;.json</code>.</li>
+  <li>A modal is displayed with a form created from the dialog definition. The correct dialog data is located using <code class="highlighter-rouge">:class</code> and <code class="highlighter-rouge">dialog_name</code>. Title of the modal is taken from <code class="highlighter-rouge">:dialog_title</code>.</li>
+  <li>User interacts with the form.</li>
+  <li>If “Ok” was pressed by the user, an API call is made by POST to <code class="highlighter-rouge">/api/&lt;entity_name&gt;</code> and <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">action:</span><span class="w"> </span><span class="err">&lt;action_name&gt;</span><span class="w"> </span><span class="p">}</span></code>. Serialized data from the form are passed in <code class="highlighter-rouge">data</code> key.</li>
+  <li>If the call is successfull the <code class="highlighter-rouge">:success_message</code> is displayed as a flash message. Otherwise an error message is displayed.</li>
+</ol>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

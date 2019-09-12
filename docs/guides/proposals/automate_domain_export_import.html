@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/proposals/automate_domain_export_import">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/proposals/automate_domain_export_import">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="background">Background</h1>
+<p>A domain is a collection of namespaces, classes, instances and methods. The community based project will ship with single domain called ManageIQ, which will have the model for the basic functionality of the project. Other domains can be added by the customer. As part of this change the export/import of the automate model has changed from a single XML file to multiple YAML files for every level (domain, namespace, class, instance, methods) and method scripts. The model can be exported into a directory or it can be zipped up into a single file. This wiki explains the changes to the export import process.</p>
+
+<h1 id="export">Export</h1>
+<p>An automate domain can be exported into a directory or a single zip file or a single yaml file. To export a model from the Automate database the following options are supported</p>
+
+<ol>
+  <li>DOMAIN = Name of domain to export, names are case insensitive. Specify “*” to export all domains.</li>
+  <li>ZIP_FILE = Name of the zip file to create that would store the automate model.</li>
+</ol>
+
+<p><strong>OR</strong></p>
+
+<p>EXPORT_DIR = Name of the directory that will store the automate model. If the directory doesn’t exist it will get created during the export process</p>
+
+<p><strong>OR</strong></p>
+
+<p>YAML_FILE = Name of the YAML file that will store the entire automate model.</p>
+
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>OVERWRITE = true</td>
+          <td>false (Default: false) If the ZIP_FILE or EXPORT_DIR or YAML_FILE exists can it be overwritten. The default value is false, so if the ZIP_FILE or EXPORT_DIR or YAML_FILE exists the export process will fail.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>EXPORT_AS = <strong>(Optional)</strong> Name of the domain to export as</li>
+</ol>
+
+<p>e.g.
+To export a domain called SAMPLE into a directory use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=SAMPLE EXPORT_DIR=/tmp/export_data</em></li>
+</ul>
+
+<p>To export a domain called SAMPLE into a ZIP file use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=ManageIQ ZIP_FILE=/tmp/sample.zip</em></li>
+</ul>
+
+<p>To export a domain called SAMPLE into a YAML file use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=SAMPLE YAML_FILE=/tmp/sample.yaml</em></li>
+</ul>
+
+<p>To export a domain called SAMPLE as DEMO use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=SAMPLE EXPORT_DIR=/tmp/export_data EXPORT_AS=DEMO</em></li>
+</ul>
+
+<p>To export a domain called SAMPLE as DEMO in ZIP format use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=SAMPLE ZIP_FILE=/tmp/demo.zip EXPORT_AS=DEMO</em></li>
+</ul>
+
+<p>To export a domain called SAMPLE as DEMO in YAML file use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=SAMPLE YAML_FILE=/tmp/demo.yaml EXPORT_AS=DEMO</em></li>
+</ul>
+
+<p>To export all domains in ZIP format use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=* ZIP_FILE=/tmp/demo.zip</em></li>
+</ul>
+
+<p>To export all domains into a directory use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=* EXPORT_DIR=/tmp/export_all_domains</em></li>
+</ul>
+
+<p>To export all domains into a single YAML file use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:export DOMAIN=* YAML_FILE=/tmp/all_domains.yaml</em></li>
+</ul>
+
+<h1 id="import">Import</h1>
+<p>Import currently only works with importing into a new domain, it doesn’t do a differencing and only apply the changes to an existing domain. The model to be imported can be in a zip file or in a directory. The new imported domains are always marked as disabled. The command line options are</p>
+
+<ol>
+  <li>
+    <p>DOMAIN = Name of the exported domain (name of domain created will be the same). Specify “*” to import all exported domains.</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>PREVIEW = true</td>
+          <td>false (Default: true), in a preview mode we don’t update the database, we just print the stats for the import process.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>IMPORT_DIR = The directory where the model data is stored</p>
+
+    <p><strong>OR</strong></p>
+
+    <p>ZIP_FILE = The zip file that has the model</p>
+
+    <p><strong>OR</strong></p>
+
+    <p>YAML_FILE = The single YAML file that has the automate model</p>
+  </li>
+  <li>
+    <p>IMPORT_AS = (<strong>Optional</strong>) Name of the domain to create in the Automate database, the domain name can only be set when importing a single domain.</p>
+  </li>
+  <li>
+    <p>NAMESPACE = (<strong>Optional</strong>) Namespace to be imported. A single namespace can be imported from a domain export by specifying the NAMESPACE argument.</p>
+  </li>
+  <li>
+    <p>CLASS = (<strong>Optional</strong>) Class to be imported.  Must be accompanied by the NAMESPACE argument. A single class can be imported from a domain export by specifying the NAMESPACE and CLASS arguments.</p>
+  </li>
+  <li>
+    <p>PRIORITY = (<strong>Optional</strong>) Sets the priority of the imported domain. Default value of priority is read from the exported model. This property can only when be set when importing a single domain. Priority is a whole number greater than 0.</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>SYSTEM = (<strong>Optional</strong>) true</td>
+          <td>false Sets the system attribute for the imported domain. Default value of system is read from the exported model. This property can only when be set when importing a single domain.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>ENABLED = (<strong>Optional</strong>) true</td>
+          <td>false Sets the enabled attribute for the imported domain. Default value of enabled is read from the exported model. This property can only when be set when importing a single domain.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<p>Examples:
+To import a domain called SAMPLE from a directory use the following command</p>
+<ul>
+  <li><em>bin/rake evm:automate:import DOMAIN=SAMPLE IMPORT_DIR=/tmp/exported_data PREVIEW=false</em></li>
+</ul>
+
+<p>To import a domain called SAMPLE from a zip file use the following command</p>
+<ul>
+  <li><em>bin/rake evm:automate:import DOMAIN=SAMPLE ZIP_FILE=/tmp/sample.zip PREVIEW=false</em></li>
+</ul>
+
+<p>To import a domain called SAMPLE as DEMO from a directory use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:import DOMAIN=SAMPLE IMPORT_AS=DEMO IMPORT_DIR=/tmp/exported_data PREVIEW=false</em></li>
+</ul>
+
+<p>To import a domain called SAMPLE as DEMO from a zip file use the following</p>
+<ul>
+  <li><em>bin/rake evm:automate:import DOMAIN=SAMPLE IMPORT_AS=DEMO ZIP_FILE=/tmp/sample.zip PREVIEW=false</em></li>
+</ul>
+
+<p>To import a namespace called INFRASTRUCTURE from the domain called SAMPLE from a zip file use the following</p>
+<ul>
+  <li>_bin/rake evm:automate:import DOMAIN=SAMPLE NAMESPACE=INFRASTRUCTURE EXPORT_DIR=./monday_model_export PREVIEW=false</li>
+</ul>
+
+<p>To import a class named PROVISIONING from a namespace called INFRASTRUCTURE in the SAMPLE domain  from a zip file use the following</p>
+<ul>
+  <li>_bin/rake evm:automate:import DOMAIN=SAMPLE NAMESPACE=INFRASTRUCTURE CLASS=PROVISIONING EXPORT_DIR=./monday_model_export PREVIEW=false</li>
+</ul>
+
+<h1 id="migration">Migration</h1>
+
+<p>When a customer migrates from any of the previous versions of CFME 5.2 their existing namespaces are moved under a domain called CUSTOMER. The next time the CFME server is restarted it would seed the ManageIQ domain.</p>
+
+<h1 id="conversion">Conversion</h1>
+
+<p>The earlier format for exporting and importing the automate model was XML. So it’s possible that there might be old XML files to import into a 5.3 database. Since the old format didn’t have a domain, a domain name has to be provided when doing the conversion. The converted model can then be imported into the database using the import command from above.</p>
+
+<p>The command line options for convert are</p>
+
+<ol>
+  <li>FILE = The name of the legacy XML automate file</li>
+  <li>DOMAIN = The name of the domain to create</li>
+  <li>
+    <p>EXPORT_DIR = The name of the directory where the converted model would be stored</p>
+
+    <p><strong>OR</strong></p>
+
+    <p>ZIP_FILE = The name of the zip file where the converted model would be stored</p>
+
+    <p><strong>OR</strong></p>
+
+    <p>YAML_FILE = The name of the YAML file where the converted model would be stored.</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>OVERWRITE = true</td>
+          <td>false (Default: false). If a directory or the zip or yaml file exists and OVERWRITE value is false the conversion process will stop</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<p>e.g.</p>
+
+<p>To convert a XML model file called database.xml as a domain called SAMPLE into a directory use the following.</p>
+
+<ul>
+  <li><em>bin/rake evm:automate:convert FILE=database.xml DOMAIN=SAMPLE EXPORT_DIR=/tmp/converted_model</em></li>
+</ul>
+
+<p>To convert a XML model file called database.xml as a domain called SAMPLE into a single YAML file use the following.</p>
+
+<ul>
+  <li><em>bin/rake evm:automate:convert FILE=database.xml DOMAIN=SAMPLE YAML_FILE=/tmp/sample_model.yaml</em></li>
+</ul>
+
+<p>To convert a XML model file called database.xml as a domain called SAMPLE into a zip file use the following</p>
+
+<ul>
+  <li><em>bin/rake evm:automate:convert FILE=database.xml DOMAIN=SAMPLE ZIP_FILE=/tmp/sample_converted.zip</em></li>
+</ul>
+
+<p>To convert a XML model file called database.xml as a domain called SAMPLE into an existing directory and overwrite the files use the following command</p>
+
+<ul>
+  <li><em>bin/rake evm:automate:convert FILE=database.xml DOMAIN=SAMPLE EXPORT_DIR=/tmp/converted_model OVERWRITE=true</em></li>
+</ul>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/external_auth/configuration">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/external_auth/configuration">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="external-authentication-httpd-configuration">External Authentication (httpd) Configuration</h1>
+
+<h3 id="sample-domain-and-systems">Sample Domain and Systems</h3>
+
+<p>For the purpose of these instructions, the following
+fully qualified host names and IP addresses will be used:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Host Name</th>
+      <th>IP Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IPA Server</td>
+      <td>ipaserver.test.company.com</td>
+      <td>192.168.100.11</td>
+    </tr>
+    <tr>
+      <td>Appliance</td>
+      <td>appliance.test.company.com</td>
+      <td>192.168.100.12</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The IPA Server serves as the test.company.com domain
+controller, Kerberos server, and as the LDAP DIT, hosting
+the Root DSE dc=test,dc=company,dc=com.</p>
+
+<hr />
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="configuring-the-network">Configuring the Network</h3>
+
+<p>Ensure hosts are resolvable by name. If DNS is not configured,
+specify the appropriate entries in the /etc/hosts on both
+IPA Server and Appliance:</p>
+
+<p><strong>/etc/hosts</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com
+192.168.100.12   appliance.test.company.com
+</code></pre>
+</div>
+
+<p>On the non-DNS environment, the network configuration for
+the systems must reflect their FQDN.</p>
+
+<p>If specifying both FQDN and Hostname in the /etc/hosts file,
+make sure the FQDN comes first:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com   ipaserver
+192.168.100.12   appliance.test.company.com   appliance
+</code></pre>
+</div>
+
+<p><strong>/etc/sysconfig/network</strong> on Appliance.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nv">NETWORKING</span><span class="o">=</span>yes
+<span class="nv">HOSTNAME</span><span class="o">=</span>appliance.test.company.com
+</code></pre>
+</div>
+
+<p>Then run:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>hostname appliance.test.company.com
+</code></pre>
+</div>
+
+<hr />
+<h3 id="installing-and-configuring-the-ipa-client-software">Installing and Configuring the IPA Client Software</h3>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>/usr/sbin/ipa-client-install -N <span class="se">\</span>
+  --realm<span class="o">=</span>TEST.COMPANY.COM --domain<span class="o">=</span>test.company.com   <span class="se">\</span>
+  --server<span class="o">=</span>ipaserver.test.company.com   <span class="se">\</span>
+  --principal<span class="o">=</span>admin --password<span class="o">=</span>PASSWORD <span class="se">\</span>
+  --fixed-primary
+</code></pre>
+</div>
+
+<hr />
+<h3 id="configure-sssd">Configure SSSD</h3>
+
+<p>Update the SSSD configuration file /etc/sssd/sssd.conf to
+define the IPA Server LDAP Domain and enable
+the Apache modules for external authentication:</p>
+
+<p><strong>/etc/sssd/sssd.conf</strong></p>
+
+<ul>
+  <li>Add to the [domain/test.company.com] section:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[domain/test.company.com]
+  ldap_user_extra_attrs = mail, givenname, sn, displayname
+</code></pre>
+</div>
+
+<ul>
+  <li>In the [sssd] section, update the services section
+to include “, ifp”:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[sssd]
+   services = nss, pam, ssh, ifp
+</code></pre>
+</div>
+
+<ul>
+  <li>Add an [ifp] section at the end of the file:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[ifp]
+  allowed_uids = apache, root
+  user_attributes = +mail, +givenname, +sn, +displayname
+</code></pre>
+</div>
+
+<hr />
+<h3 id="configure-pam">Configure PAM</h3>
+
+<p>Create a PAM Config file for the Appliance Apache authentication.</p>
+
+<p><strong>/etc/pam.d/httpd-auth</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>auth    required pam_sss.so
+account required pam_sss.so
+</code></pre>
+</div>
+
+<hr />
+<h3 id="configure-apache">Configure Apache</h3>
+
+<h4 id="create-an-apache-authentication-file-for-the-appliance">Create an Apache Authentication file for the Appliance</h4>
+
+<p><strong>/etc/httpd/conf.d/manageiq-external-auth</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>LoadModule authnz_pam_module modules/mod_authnz_pam.so
+LoadModule intercept_form_submit_module modules/mod_intercept_form_submit.so
+LoadModule lookup_identity_module modules/mod_lookup_identity.so
+
+&lt;Location /dashboard/authenticate&gt;
+  InterceptFormPAMService httpd-auth
+  InterceptFormLogin      user_name
+  InterceptFormPassword   user_password
+  InterceptFormLoginSkip  admin
+  InterceptFormClearRemoteUserForSkipped on
+&lt;/Location&gt;
+
+&lt;Location /dashboard/authenticate&gt;
+  LookupUserAttr   mail        REMOTE_USER_EMAIL
+  LookupUserAttr   givenname   REMOTE_USER_FIRSTNAME
+  LookupUserAttr   sn          REMOTE_USER_LASTNAME
+  LookupUserAttr   displayname REMOTE_USER_FULLNAME
+  LookupUserGroups             REMOTE_USER_GROUPS ":"
+  LookupDbusTimeout            5000
+&lt;/Location&gt;
+
+&lt;LocationMatch ^/api|^/vmdbws/wsdl|^/vmdbws/api&gt;
+  SetEnvIf Authorization '^Basic +YWRtaW46' let_admin_in
+  SetEnvIf X-Auth-Token  '^.+$'             let_api_token_in
+
+  AuthType Basic
+  AuthName "External Authentication (httpd) for API"
+  AuthBasicProvider PAM
+
+  AuthPAMService httpd-auth
+  Require valid-user
+  Order Allow,Deny
+  Allow from env=let_admin_in
+  Allow from env=let_api_token_in
+  Satisfy Any
+
+  LookupUserAttr   mail        REMOTE_USER_EMAIL
+  LookupUserAttr   givenname   REMOTE_USER_FIRSTNAME
+  LookupUserAttr   sn          REMOTE_USER_LASTNAME
+  LookupUserAttr   displayname REMOTE_USER_FULLNAME
+
+  LookupUserGroups             REMOTE_USER_GROUPS ":"
+  LookupDbusTimeout            5000
+
+&lt;/LocationMatch&gt;
+</code></pre>
+</div>
+
+<h4 id="update-the-appliance-apache-configuration-to-enable-external-authentication">Update the Appliance Apache Configuration to enable External Authentication</h4>
+
+<p>Modify /etc/httpd/conf.d/manageiq-https-application.conf as follows:</p>
+
+<p><strong>/etc/httpd/conf.d/manageiq-https-application.conf</strong></p>
+
+<ul>
+  <li>add this line before the <em>VirtualHost</em> directive:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Include conf.d/manageiq-external-auth
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Within the VirtualHost section, after this line:</p>
+
+    <p><em>RequestHeader set X_FORWARDED_PROTO ‘https’</em></p>
+
+    <p>add the following lines:</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>RequestHeader unset X_REMOTE_USER
+RequestHeader set X_REMOTE_USER           %{REMOTE_USER}e            env=REMOTE_USER
+RequestHeader set X_EXTERNAL_AUTH_ERROR   %{EXTERNAL_AUTH_ERROR}e    env=EXTERNAL_AUTH_ERROR
+RequestHeader set X_REMOTE_USER_EMAIL     %{REMOTE_USER_EMAIL}e      env=REMOTE_USER_EMAIL
+RequestHeader set X_REMOTE_USER_FIRSTNAME %{REMOTE_USER_FIRSTNAME}e  env=REMOTE_USER_FIRSTNAME
+RequestHeader set X_REMOTE_USER_LASTNAME  %{REMOTE_USER_LASTNAME}e   env=REMOTE_USER_LASTNAME
+RequestHeader set X_REMOTE_USER_FULLNAME  %{REMOTE_USER_FULLNAME}e   env=REMOTE_USER_FULLNAME
+RequestHeader set X_REMOTE_USER_GROUPS    %{REMOTE_USER_GROUPS}e     env=REMOTE_USER_GROUPS
+</code></pre>
+</div>
+
+<hr />
+<h3 id="configure-selinux">Configure SELinux</h3>
+
+<p>For external authentication to work with Apache through
+SSSD on SELinux systems, run the following command:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>setsebool -P allow_httpd_mod_auth_pam on
+</code></pre>
+</div>
+
+<p>Also, on RHEL 6.5 and later as well as CentOS 6.6 and later based Appliances, run the following command:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>setsebool -P httpd_dbus_sssd on
+</code></pre>
+</div>
+
+<hr />
+<h3 id="restart-sssd-and-apache">Restart SSSD and Apache</h3>
+
+<p>Make sure SSSD starts upon reboot:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>chkconfig sssd on
+</code></pre>
+</div>
+
+<p>Restart both:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>service sssd  restart
+service httpd restart
+</code></pre>
+</div>
+
+<hr />
+<p>Back to <a href="../external_auth">External Authentication</a></p>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

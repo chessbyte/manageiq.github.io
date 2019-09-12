@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - H-release Rearchitecture</title>
+  <meta name="description" content="The ManageIQ team underwent a rearchitecture investigation during the summer of 2017.  In this blogpost I’m hoping to give a bit of an overview of why we did...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/10/h-release-rearchitecture/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/10/h-release-rearchitecture/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">H-release Rearchitecture</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-10-06T00:00:00+00:00" itemprop="datePublished">
+                Oct 6, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  fryguy
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/developers">developers</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>The ManageIQ team underwent a rearchitecture investigation during the summer of 2017.  In this blog
+post I’m hoping to give a bit of an overview of why we did this, and some of the preliminary
+results.  We did a lot of research, and there’s no way I can fit all of it in a single blog post, so
+this is just the first in a series on the rearchitecture efforts.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>The primary reason for us beginning this investigation was due to an increasing number of customer
+escalations.  In looking at these customer escalations we found that many of them were consistent in
+that they were problems of scalability and performance.  The problems were almost always in the form
+of “Inventory collections are delayed or hit timeout errors”; “Metrics collections can’t keep up”;
+“Too many queue messages bog down the system”.  Of greatest concern was that if these escalations
+keep increasing at the current pace, then it will only get worse as we become distributed with other
+platforms.</p>
+
+<p>The secondary reason for us doing the investigation was a need to embrace OpenShift/Kubernetes as a
+platform.  In particular, we can manage OpenShift/Kubernetes, but we can’t run on it, which is
+confusing to users as they have a PaaS, but still need to deploy a virtual appliance.</p>
+
+<p>In order to tackle these challenges, we set out to investigate what major changes would be required
+by our product to run on OpenShift/Kubernetes, and once there, what features of it could we leverage
+to tackle the scalability and performance problems.  Additionally, since Kubernetes gives us the
+ability to play with numerous technologies, we would take this opportunity to try out new
+technologies and see what those technologies can do for us, particularly in replacing the home-grown
+things we’ve built over the last 10 years.</p>
+
+<h2 id="openshift--kubernetes">OpenShift / Kubernetes</h2>
+
+<p>The team developed a proof of concept that ran various parts of our application as pods on
+OpenShift.  While the ultimate goal is to run on Kubernetes, some OpenShift specific features were
+leveraged in the PoC.  However upon deeper analysis, we believe we won’t need those OpenShift
+specific features and can run fully on Kubernetes.  Running on Kubernetes is preferable as it allows
+us the opportunity to promote ManageIQ to a much wider audience.</p>
+
+<p><img src="https://user-images.githubusercontent.com/52120/31258852-3b8796b2-aa10-11e7-900e-fd7e13d04d68.png" alt="image" /></p>
+
+<h3 id="orchestration">Orchestration</h3>
+
+<p>There will be a primary pod known as the ManageIQ Orchestrator.  The purpose of this pod is similar
+to our current evmserverd process, and initially will be the same code as the evmserverd process.
+The evmserverd process is aware of the state of workers, knows to spin up/down the number of
+workers, watches heartbeats for liveness killing them as appropriate, and can also watch for CPU and
+Memory thresholds.  These are all abilities of OpenShift, so marrying evmserverd with the OpenShift
+API, will allow us to leverage OpenShift and let them do what they do best.</p>
+
+<p>Our new ManageIQ Orchestrator communicates with the OpenShift API, dynamically deploying worker
+pods, and scaling them up or down based on user changes in the ManageIQ UI.  Eventually, it would be
+preferable to autoscale the workers based on some metrics such as number of requests or queue depth,
+thereby removing that burden from the administrator, but for now we will leverage the existing code
+to manually set worker counts.</p>
+
+<p>The Orchestrator will also be responsible for launching dependent services.  Dependent services are
+components of the architecture that are shared by all components, such as the PostgreSQL database
+pod, memcached pod, and others.  These dependent service pods will have an OpenShift Service in
+front on them so they can be internally routed to.</p>
+
+<h3 id="workers">Workers</h3>
+
+<p>There are 3 categories of workers: service workers, shared workers, and provider specific workers.
+These workers will run as separate OpenShift Deployments that are dynamically requested by the
+Orchestrator</p>
+
+<p>Service workers are workers that need to be routed to and thus need to be load balanced behind an
+OpenShift Service.  These include the UI worker, API worker, and Websocket worker.  Each one is a
+separate deployment that can be scaled independently.  The user’s path to these workers starts at
+the external OpenShift route, which will accept incoming connections on port 443, handling the SSL
+negotiation.  This traffic will then pass through the external auth container for external
+authentication.  Then, based on the incoming URL, the auth container will route to the appropriate
+Service for UI, API, or Websockets, and the Service will handle load balancing across the workers of
+that type.  Additionally, the Orchestrator will deal with role-enabled service workers, such as the
+EmbeddedAnsible worker.  This type of worker is only deployed if the corresponding role is also
+enabled.</p>
+
+<p>Shared workers are workers that do not need to be routed to and thus don’t need a load balancing
+Service.  They are the core workers of the ManageIQ platform.  There are 2 types of shared workers:
+regular and provider-enabled.  The regular workers include Generic, Priority, Reporting, and
+Schedule workers.  These will work nearly the same as they do now, and can be scaled up/down as
+needed.  Provider-enabled shared workers, known as “persisters”, will only be deployed if a provider
+has been configured.  These “persisters” will be described in more detail in the next part.</p>
+
+<p>Provider specific workers come into play when a provider has been configured, and when that happens
+the Orchestrator will start a number of “collector” workers, “helper” workers, and shared
+“persistor” workers.</p>
+
+<p>First, the Orchestrator will start a number of provider specific “collector” workers, handling
+inventory collection, metrics collection (if available), and event collection (if available).  These
+“collector” workers will speak to the provider directly, collecting their information and placing
+them in a well-defined format in the new messaging system.  Although the workers will start their
+lives as mostly the same Ruby code as they are now, they are actually decoupled from the ManageIQ
+application, and ultimately can be written in whatever language is best for that provider, and run
+in whatever image environment they need.  This is what we are calling “Bring Your Own Image”.</p>
+
+<p>Additionally, if needed, the Orchestrator will start a number of provider specific “helpers”.  These
+include things like the existing VimBrokerWorker for VMware, or perhaps a future native-operations
+microservice.</p>
+
+<p>Finally, the Orchestrator will start a number of shared workers called “persisters”.  These
+persisters are responsible for watching the queues/topics for incoming data and persisting that data
+to the database.   Since the data from the queue will be in a well-defined format, these persisters
+can be provider agnostic, and so they will be shared across all providers.  The inventory persistor
+can leverage a new stream-based, partial update refresh strategy that can update the database in a
+more real-time fashion.  The old refresh strategies will still be available for providers that can’t
+take advantage of this new strategy.</p>
+
+<h2 id="tell-me-more">Tell me more!</h2>
+
+<p>That’s the end for now, but I’ll be following up with some more blog posts detailing some of the
+many other rearchitecture decisions.  If you just can’t wait that long, you can read the GitHub
+issue that details all of the work we’ve done:
+<a href="https://github.com/ManageIQ/manageiq-design/issues/32">https://github.com/ManageIQ/manageiq-design/issues/32</a></p>
+
+<p>See you in the next post!</p>
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

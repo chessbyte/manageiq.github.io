@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Last Week in ManageIQ: Saying Goodbye to rubyrep</title>
+  <meta name="description" content="Hello! Drew here,">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2016/08/last-week-in-manageiq-saying-goodbye-to-rubyrep/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2016/08/last-week-in-manageiq-saying-goodbye-to-rubyrep/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Last Week in ManageIQ: Saying Goodbye to rubyrep</h1>
+
+            <div class="post-meta">
+              <time datetime="2016-08-01T16:19:55+00:00" itemprop="datePublished">
+                Aug 1, 2016
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  syncrou
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>Hello! <a href="http://github.com/syncrou">Drew</a> here,</p>
+
+<p>I’m taking a breather from <a href="https://gitter.im/ManageIQ#provisioning">provisioning</a> land to chat briefly with everyone about the
+<a href="https://github.com/ManageIQ/manageiq/graphs/contributors">community</a> accomplishments during an extremely active <a href="https://github.com/ManageIQ/manageiq/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-07-25+..+2016-07-31%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93"><em>Last Week in ManageIQ</em></a>.</p>
+
+<h2 id="featured">Featured</h2>
+
+<p>On July 27 2016 we bid adieu to the final vestiges of <a href="https://rubygems.org/gems/rubyrep">rubyrep</a> 
+and now rely solely on <a href="https://github.com/2ndQuadrant/pglogical">pglogical</a> to handle all of our replication needs.
+<a href="https://github.com/ManageIQ/manageiq/pull/9696">#9696</a> closed out a chapter and started a new book.
+In this story all the people are singing! <a href="http://giphy.com/gifs/silicon-valley-3o6EhWeei7wsp2jc1G/tile">Happiness and smiles abound</a>, balloons and confetti are …
+Well, at least a lot less people are losing sleep at night!
+Making the move from rubyrep to pglogical was a giant undertaking. A very huge thank-you to everyone involved!</p>
+
+<h2 id="improved">Improved</h2>
+
+<h3 id="allow-for-service-templates-to-have-multiple-vms"><a href="https://github.com/ManageIQ/manageiq/pull/8515">Allow for service templates to have multiple VM’s</a></h3>
+
+<p>When setting <code class="highlighter-rouge">option_1_number_of_vms</code> in a service dialog we would only provision 1 virtual machine
+regardless of the value passed in.
+This improvement reads the <code class="highlighter-rouge">number_of_vms</code> and exposes that change in the following 4 areas:</p>
+
+<p><em>Provision Request</em></p>
+
+<p><em>Single Service Item Dialog</em></p>
+
+<p><em>Service Bundle Dialog</em></p>
+
+<p><em>Default: Allowing a single vm under a service</em></p>
+
+<h3 id="applying-rbac-search-to-automate-simulation"><a href="https://github.com/ManageIQ/manageiq/pull/10060">Applying RBAC search to Automate Simulation</a></h3>
+
+<p>The Automate Simulation tool includes two dropdowns <code class="highlighter-rouge">Type</code> and <code class="highlighter-rouge">Selection</code> in the Object Attribute panel.
+The populated data used to allow a full object selection regardless of who was logged in.
+This change locks the list down via RBAC and only shows the user what they are allowed to see.</p>
+
+<h2 id="fixed">Fixed</h2>
+
+<h3 id="moved-trees-on-group-summary-and-editor-out-of-session-hash"><a href="https://github.com/ManageIQ/manageiq/pull/10099">Moved trees on group summary and editor out of session hash</a></h3>
+
+<p>The existence of trees in the session was causing errors when a user had a large number of tags in their environment.
+This fix pulls three trees from the Group Summary screen out of session and stores the data in instance variables.</p>
+
+<h3 id="only-migrate-rows-in-the-current-region"><a href="https://github.com/ManageIQ/manageiq/pull/10124">Only migrate rows in the current region</a></h3>
+
+<p>We found an issue with replication when rows which belonged to a region were migrated.
+The join table received an id in the global region when it should have had a remote region
+id assigned.</p>
+
+<p><code class="highlighter-rouge">cloud_subnets_network_ports</code> prior to the change:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
+       id       | cloud_subnet_id | network_port_id | address 
+----------------+-----------------+-----------------+---------
+ 99000000000001 |               2 |               1 |        |
+ 99000000000002 |               3 |               2 |        |
+ 99000000000003 |               3 |               3 |        |
+ 99000000000004 |               3 |               4 |        |
+ 99000000000005 |               3 |               5 |        |
+</code></pre>
+</div>
+
+<p>The same table after the change:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
+ id | cloud_subnet_id | network_port_id |    address     
+----+-----------------+-----------------+----------------
+  1 |               2 |               1 | 192.0.2.1     |
+  2 |               3 |               2 | 192.0.2.2     |
+  3 |               3 |               3 | 192.0.2.3     |
+  4 |               3 |               4 | 192.0.2.4     |
+  5 |               3 |               5 | 192.0.2.5     |
+</code></pre>
+</div>
+
+<h2 id="new">New</h2>
+
+<h3 id="expose-generic-object-and-definition-to-automate"><a href="https://github.com/ManageIQ/manageiq/pull/9861">Expose generic object and definition to automate</a></h3>
+
+<p>New automate models for <code class="highlighter-rouge">GenericObjectDefinition</code> and <code class="highlighter-rouge">GenericObject</code> have been added.</p>
+
+<h3 id="create-a-bundle-service-template-and-attach-to-blueprint"><a href="https://github.com/ManageIQ/manageiq/pull/9854">Create a bundle service template and attach to blueprint</a></h3>
+
+<p>Part of the Blueprint feature.  This PR builds a new method <code class="highlighter-rouge">create_bundle</code> in the <code class="highlighter-rouge">Blueprint</code> class.
+It creates a bundle service template and places all copied item templates underneath it. All of these items are part
+of a single Blueprint.</p>
+
+<h2 id="deleted">Deleted</h2>
+
+<h3 id="these-files-should-not-be-executable"><a href="https://github.com/ManageIQ/manageiq/pull/10068">These files should not be executable</a></h3>
+
+<p>Less about ‘deletions’ and more about security. This fix turned off the executable <code class="highlighter-rouge">0755</code> permission for 78 files!</p>
+
+<h3 id="miqpolicycontroller---remove-dead-policy_options-and-cat_pressed"><a href="https://github.com/ManageIQ/manageiq/pull/10112">MiqPolicyController - remove dead policy_options and cat_pressed</a></h3>
+
+<p>The method <code class="highlighter-rouge">policy_options</code> was only used on vms and not for policies as the name implied. It also called the 
+previously removed <code class="highlighter-rouge">build_policy_tree</code>.  Due to the above the method was removed.
+<code class="highlighter-rouge">cat_pressed</code> is no longer used anywhere in the codebase and was <a href="https://github.com/himdel">happily</a> removed!</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>Of the <a href="https://github.com/ManageIQ/manageiq/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-07-25+..+2016-07-31%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">103</a> PRs merged last week, I obviously only presented a small sampling. Look out for the next installment of <em>Last Week in ManageIQ!</em></p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

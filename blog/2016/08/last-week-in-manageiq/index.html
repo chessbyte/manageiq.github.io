@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Last Week in ManageIQ: VMware catalog parsing, MiqExpression refinement, and more!</title>
+  <meta name="description" content="Hi! This is Chris welcoming you to anotheredition of Last Week in ManageIQ! Let’s take a look back at all the lovelychanges made to ManageIQ as we turned the...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2016/08/last-week-in-manageiq/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2016/08/last-week-in-manageiq/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Last Week in ManageIQ: VMware catalog parsing, MiqExpression refinement, and more!</h1>
+
+            <div class="post-meta">
+              <time datetime="2016-08-09T15:00:00+00:00" itemprop="datePublished">
+                Aug 9, 2016
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  chrisarcand
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>Hi! This is <a href="https://twitter.com/chrisarcand">Chris</a> welcoming you to another
+edition of <em>Last Week in ManageIQ</em>! Let’s take a look back at all the lovely
+changes made to ManageIQ as we turned the calendars to August.</p>
+
+<h2 id="featured">Featured</h2>
+
+<p>46 wonderful people contributed to ManageIQ last week, with <a href="https://github.com/ManageIQ/manageiq/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-08-01+..+2016-08-07%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">121 pull
+requests</a> and <a href="https://github.com/manageiq/manageiq/compare/master@%7B2016-08-01%7D...@%7B2016-08-07%7D">222 commits</a>
+merged into master last week. Join the fun!  Check out the latest on the
+<a href="https://github.com/manageiq/manageiq/issues">issues tracker</a> if you want to
+get involved.</p>
+
+<h2 id="improved">Improved</h2>
+
+<h3 id="backend-support-for-service-types-that-are-generic-of-a-certain-type"><a href="https://github.com/ManageIQ/manageiq/pull/10203">Backend support for service types that are generic of a certain type.</a></h3>
+
+<p>Currently you can only create services with a limited number of specific
+service types (VMware, RHEV, OpenStack, etc). This improvement in the back end
+lays down the beginnings of creating new service types that are ‘generic’ (i.e.
+“Generic_VM, Generic_Container”, etc.). The idea is that a blueprint can be
+authored using only these generic types, laying out the architecture to an
+application, without the need to explicitly define the resources to make the
+application. There’s plenty left to do but this is a great start!</p>
+
+<h3 id="rbac-allow-limits-to-come-from-the-scope"><a href="https://github.com/ManageIQ/manageiq/pull/10209">Rbac allow limits to come from the scope</a></h3>
+
+<p>The RBAC interface no longer requires you to pass <code class="highlighter-rouge">limit</code>, <code class="highlighter-rouge">order</code>, and <code class="highlighter-rouge">offset</code>
+explicitly in the options hash, instead pulling from the passed scope itself.</p>
+
+<p>Before:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Rbac.filtered(Vm.all, :limit =&gt; 20, :offset =&gt; 40)
+</code></pre>
+</div>
+
+<p>After:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Rbac.filtered(Vm.limit(20).offset(40))
+</code></pre>
+</div>
+
+<p>The old hash signature is still valid for now while hashes are converted to scopes.</p>
+
+<h2 id="fixed">Fixed</h2>
+
+<h3 id="container-dashboard-graph-failures-with-non-utc-timezones"><a href="https://github.com/ManageIQ/manageiq/pull/10216">Container dashboard graph failures with non-UTC timezones</a></h3>
+
+<p>With the appliance timezone set to anything other than ‘UTC’, the container
+dashboard showed ‘No data available’ for some of the graphs. Fixed!</p>
+
+<h3 id="session-table-bloat-in-long-running-environments"><a href="https://github.com/ManageIQ/manageiq/pull/8272">Session table bloat in long running environments</a></h3>
+
+<p>It turns out the Sessions database table can grow to enormous sizes with very,
+very long running environments (greater than one year). This required some
+manual removal to allow Postgres to properly vacuum the table. A new API on
+Session has been added to purge session objects in batches and resolve this
+issue.</p>
+
+<h2 id="new">New</h2>
+
+<h3 id="added-blueprints-rest-api-endpoints"><a href="https://github.com/ManageIQ/manageiq/pull/9765">Added Blueprints REST API endpoints</a></h3>
+
+<p>This published the Create and Read parts of the Blueprints API. It provides the
+back end support for the new Service Designer UI (SDUI) to start fleshing out
+the canvas for dragging and dropping service items. Users will be able to create
+Blueprints, and then be able to drag other Catalog Items (or bundles) onto the
+canvas and save the blueprint. Neat!</p>
+
+<h3 id="added-vmware-catalog-parsing"><a href="https://github.com/ManageIQ/manageiq/pull/10136">Added VMware catalog parsing</a></h3>
+
+<p>The VMware catalog provides descriptors for vApp templates and corresponding VM
+images and now ManageIQ can collect all these available VM images! Public and
+private catalogs are available so a setting has been introduced to allow
+enablement of import of both types of catalogs (by default, only private
+catalogs are imported).</p>
+
+<h2 id="deleted">Deleted</h2>
+
+<h3 id="removed-relative-datetime-support-for-----in-miqexpression"><a href="https://github.com/ManageIQ/manageiq/pull/10246">Removed relative datetime support for &lt;, &gt;, &lt;=, &gt;= in MiqExpression</a></h3>
+
+<p><a href="https://github.com/imtayadeway">Tim</a> continued his sweeping improvements to
+MiqExpression last week, including the removal of some unused functionality
+concerning relative datetimes. This brings some clarity to the code and explicitness
+to what MiqExpression officially supports.</p>
+
+<h3 id="removed-rest-api-cruft-regarding-virtual-templates"><a href="https://github.com/ManageIQ/manageiq/pull/10269">Removed REST API cruft regarding Virtual Templates</a></h3>
+
+<p>With some of the forthcoming work regarding Service Brokers and Arbitration
+Rules, the purpose of Virtual Templates has changed. The REST API no longer needs
+full CRUD functionality, so hey! Let’s keep it simple and clean, removing some of that ability.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>As always, there were way too many PRs to cover here in detail. Feel free to
+check them all out <a href="https://github.com/ManageIQ/manageiq/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-08-01+..+2016-08-07%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">here</a>. Look out for the next
+installment of <em>Last Week in ManageIQ</em>!</p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/providers/persister/inventory_collections">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/providers/persister/inventory_collections">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="inventory-collection">Inventory Collection</h1>
+<p>2018/06/19</p>
+
+<p><a href="../dev-guide">back</a></p>
+
+<p><strong>Inventory Collection</strong> (<code class="highlighter-rouge">ManagerRefresh::InventoryCollection</code> - subsequently called <strong>“IC”</strong>) is an object used by Refresh process. 
+It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</strong>, <strong>Operating system</strong>, <strong>Host</strong> etc.</p>
+
+<p>Each IC is defined by persister (<code class="highlighter-rouge">ManagerRefresh::Inventory::Persister</code>), stored in a hash called <code class="highlighter-rouge">@collections</code> and accessible as persister’s method. It’s name is equal to the IC’s association property (will be described later). One persister usually contains many IC definitions.</p>
+
+<h2 id="defining-an-inventory-collection">Defining an Inventory Collection</h2>
+
+<p>We can split this process into following areas:</p>
+
+<ul>
+  <li>Persister’s helper
+    <ul>
+      <li>includes <em>add_collection()</em> interface common to all persisters derived from <code class="highlighter-rouge">ManagerRefresh::Inventory::Persister</code></li>
+    </ul>
+  </li>
+  <li>InventoryCollection Builder
+    <ul>
+      <li>set of classes used for definition of IC properties (through add_collection())</li>
+    </ul>
+  </li>
+  <li>Common definitions
+    <ul>
+      <li>Definitions of ICs shared accross providers divided by provider’s type (cloud/infra etc.)</li>
+    </ul>
+  </li>
+  <li>Provider specific definitions
+    <ul>
+      <li>Recommendations how to structure definitions specifical to provider and type of refresh</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="persisters-helper">Persister’s helper</h2>
+
+<h3 id="add_collection-method">add_collection() method</h3>
+
+<p><em>This interface is intended to replace older interfaces <code class="highlighter-rouge">add_inventory_collection()</code> and <code class="highlighter-rouge">has_inventory()</code></em></p>
+
+<p>Entry point for creating IC definition. It defines parameters:</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">builder_class</span><span class="p">,</span> <span class="n">collection_name</span><span class="p">,</span> <span class="n">extra_properties</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">settings</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</code></pre>
+</div>
+<p>which we’ll see more detailed in this chapter.</p>
+
+<p>It creates <code class="highlighter-rouge">ManagerRefresh::InventoryCollection</code>  and assigns it to <strong>persister’s @collections[:vms]</strong></p>
+
+<p>Method can throw exception <strong><code class="highlighter-rouge">ManagerRefresh::InventoryCollection::Builder::MissingModelClassError</code></strong> (described <a href="#automatic-model_class">later</a>)</p>
+
+<h4 id="--builder_class-mandatory">- builder_class [<em>mandatory</em>]</h4>
+
+<p>There is a builder class for every manager type. Because they’re used as parameter of <code class="highlighter-rouge">add_collection()</code> they are wrapped to methods with short name (persister’s methods):</p>
+<ul>
+  <li>cloud</li>
+  <li>infra</li>
+  <li>network</li>
+  <li>storage</li>
+  <li>automation</li>
+  <li><a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/manager_refresh/inventory_collection/builder/persister_helper.rb#L39-L62">see details</a></li>
+</ul>
+
+<p><em><strong>Note</strong>: Not all ICs defined in ..Builder::NetworkManager have to be called only from NetworkManager (e.g. in case of targeted refresh) etc.</em></p>
+
+<h5 id="example">Example</h5>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Instantiates <code class="highlighter-rouge">cloud</code> builder class, searches for <code class="highlighter-rouge">vms</code> method in it, searches for <code class="highlighter-rouge">...::CloudManager::Vm</code> as model_class property and discovers model_class attributes.</p>
+
+<h4 id="--collection_name-mandatory">- collection_name [<em>mandatory</em>]</h4>
+
+<p>Name (also <code class="highlighter-rouge">InventoryCollection.association</code>) is unique identifier of IC definition (in scope of one persister).</p>
+
+<p>It has several functions:</p>
+
+<ul>
+  <li>name of IC</li>
+  <li>key in persister’s @collections hash</li>
+  <li>name of persister’s public method</li>
+  <li>name of method in builder class with common properties (if exists)</li>
+</ul>
+
+<p>Collection name is also used for automated assignments, such as:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">:model_class</code> (where are collected data persisted)  [<em>below</em>]</li>
+  <li><code class="highlighter-rouge">:inventory_object_attributes</code> - “columns” of model_class [<em>below</em>]</li>
+</ul>
+
+<h4 id="--extra_properties-optional">- extra_properties [<em>optional</em>]</h4>
+
+<p>Properties added to IC at <strong>top level priority</strong>.<br />
+It overwrites both shared and IC specific properties. Added by <code class="highlighter-rouge">Builder#add_properties()</code>.</p>
+
+<h4 id="--settings-optional">- settings [<em>optional</em>]</h4>
+
+<p>Mix of builder settings and shared properties for from ICs.<br />
+<em>Shared properties</em> are low-level IC’s properties common for all ICs defined in persister. They consist of advanced settings and shared options.</p>
+
+<p><em>Builder settings</em> can turn on/off various builder features.</p>
+
+<h5 id="advanced-settings">Advanced settings</h5>
+
+<p>Contains shared properties from UI’s Configuration/Advanced settings, which <strong>can be set by user</strong> (typically <code class="highlighter-rouge">:saver_strategy</code> property).</p>
+
+<p>Applied at <strong>lowest level priority</strong> so these properties cannot overwrite properties written in code.</p>
+
+<p>Can be found in tab Advanced(yaml editor):</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>ems/ems_refresh/&lt;ExtManagementSystem.ems_type&gt;/inventory_collections/
+</code></pre>
+</div>
+
+<h5 id="shared-options">Shared options</h5>
+
+<p>Contains shared properties for all ICs defined in persister’s method <code class="highlighter-rouge">shared_options()</code>.
+Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strategy</strong></em> and <em><strong>parent</strong></em></p>
+
+<p>Applied at <strong>low level priority</strong> so these properties overwrites Advanced settings but doesn’t overwrite IC specific properties.</p>
+
+<h5 id="builder-settings">Builder settings</h5>
+
+<ul>
+  <li><strong>auto_inventory_attributes</strong> [Boolean] - Enables automatic settings of InventoryObject attributes (“columns” of model_class). Default: true</li>
+  <li><strong>without_model_class</strong> [Boolean] - When true, disables automatic derivation of <code class="highlighter-rouge">:model_class</code> and doesn’t throw exception when not set manually. Default: false</li>
+</ul>
+
+<h5 id="example-1">Example</h5>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vm_and_miq_template_ancestry</span><span class="p">,</span> <span class="p">{},</span> <span class="p">{</span><span class="ss">:auto_inventory_attributes</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span> <span class="ss">:without_model_class</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="--block">- block</h4>
+
+<p>Block will provide you instance of <code class="highlighter-rouge">builder_class</code>. It’s place where you can define specific properties. Described in next chapter.</p>
+
+<h5 id="example-2">Example</h5>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:custom_ic_definition</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">builder</span><span class="o">|</span>
+  <span class="n">builder</span><span class="p">.</span><span class="nf">add_properties</span><span class="p">(</span><span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="o">::</span><span class="no">MySpecialClass</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<h3 id="inventorycollection-builder">InventoryCollection Builder</h3>
+
+<p>Contains two basic things:</p>
+<ul>
+  <li>Methods for construction InventoryCollection with their properties</li>
+  <li>Common IC definitions usable accross providers</li>
+  <li>Subclasses with IC definitions usable for providers of certain type</li>
+</ul>
+
+<p>Features for defining IC:</p>
+<ul>
+  <li><em>add_properties</em>
+    <ul>
+      <li>basic function to add properties to IC</li>
+    </ul>
+  </li>
+  <li><em>add_default_values</em>
+    <ul>
+      <li>properties inside properties, usually containing lambdas with persister param.</li>
+      <li>fills IC object with predefined values</li>
+      <li>lambdas evaluated in persister’s add_collection()</li>
+    </ul>
+  </li>
+  <li><em>automatic model_class</em> derivation</li>
+  <li><em>automatic inventory object attributes</em> derivation</li>
+</ul>
+
+<p>You can see all functions described in spec <a href="https://github.com/ManageIQ/manageiq/blob/master/spec/models/manager_refresh/inventory_collection/builder_spec.rb#L24">link</a>.</p>
+
+<h4 id="automatic-model_class">Automatic model_class</h4>
+
+<p><strong><code class="highlighter-rouge">model_class</code></strong> property contains class where are stored data from inventory.<br />
+There are two attemps:</p>
+<ul>
+  <li>find provider specific class</li>
+  <li>find generic class</li>
+</ul>
+
+<p>Provider specific class is composed by:</p>
+<ul>
+  <li>provider module of persister
+    <ul>
+      <li>e.g. <code class="highlighter-rouge">ManageIQ::Providers::Amazon</code></li>
+    </ul>
+  </li>
+  <li>manager module of builder
+    <ul>
+      <li>e.g. <code class="highlighter-rouge">CloudManager</code></li>
+    </ul>
+  </li>
+  <li>collection_name (association property) of IC
+    <ul>
+      <li>e.g. <code class="highlighter-rouge">Vm</code></li>
+    </ul>
+  </li>
+  <li>=&gt; <strong><code class="highlighter-rouge">ManageIQ::Providers::Amazon::CloudManager::Vm</code></strong></li>
+</ul>
+
+<p>If this class doesn’t exist, generic class <strong>Vm</strong> is tested for presence.</p>
+
+<p><em><strong>Note</strong>: Automatic choice is <strong>always</strong> overwritten by manual setting, either in common definitions or in provider specific definition.</em></p>
+
+<p>If neither any class matches criteria nor model_class defined manually, <code class="highlighter-rouge">add_collection</code> throws <strong><code class="highlighter-rouge">ManagerRefresh::InventoryCollection::Builder::MissingModelClassError</code></strong> exception.<br />
+You can disable it by builder setting <em>without_model_class</em> =&gt; <strong>true</strong>.</p>
+
+<h4 id="automatic-inventoryobject-attributes">Automatic InventoryObject attributes</h4>
+
+<p><strong><code class="highlighter-rouge">inventory_object_attributes</code></strong> property contains possible columns of <em>model_class</em>. These attributes are constructed from setter methods of model_class (<code class="highlighter-rouge">model_class#some_method=</code>).<br />
+It fits 99% of IC definitions, for there rest you can use builder methods:</p>
+<ul>
+  <li><em>add_inventory_attributes</em></li>
+  <li><em>remove_inventory_attributes</em></li>
+  <li><em>clear_inventory_attributes</em></li>
+</ul>
+
+<p>Or you can disable this feature by builder setting <em>auto_inventory_attributes</em> =&gt; <strong>false</strong> and define your own by methods above.</p>
+
+<h3 id="common-definitions">Common definitions</h3>
+
+<p>Many of IC definitions are common to 2+ providers, for example <code class="highlighter-rouge">:vms</code>. That’s why their properties were extracted to builder so defining IC in provider is then very simple.</p>
+
+<h4 id="example-3">Example</h4>
+<p>Let’s look how it works:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:host_networks</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>This simple definition performs following steps:</p>
+
+<ul>
+  <li>Infra builder == <code class="highlighter-rouge">::ManagerRefresh::InventoryCollection::Builder::InfraManager</code></li>
+  <li>It searches for <code class="highlighter-rouge">::ManagerRefresh::InventoryCollection::Builder::InfraManager#host_networks</code> method</li>
+  <li>There is manually defined <em>model_class</em> <strong>::Network</strong></li>
+  <li><em>inventory_object_attributes</em> are derived from <strong>::Network</strong> class
+    <ul>
+      <li><em><strong>Important</strong>: If <code class="highlighter-rouge">model_class</code> is defined in common definitions, provider specific class <strong>is not derived automatically</strong> even if it exists!</em></li>
+    </ul>
+  </li>
+</ul>
+
+<p>So properties given to <code class="highlighter-rouge">InventoryCollection</code> object are following:</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:host_networks</span><span class="p">,</span>
+  <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">Network</span><span class="p">,</span>
+  <span class="ss">:manager_ref</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:hardware</span><span class="p">,</span> <span class="ss">:ipaddress</span><span class="p">],</span>
+  <span class="ss">:parent_inventory_collection</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:hosts</span><span class="p">],</span>
+  <span class="ss">:inventory_object_attributes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:id</span><span class="p">,</span> <span class="ss">:attributes</span><span class="p">,</span> <span class="ss">:device_id</span><span class="p">,</span> <span class="ss">:default_gateway</span><span class="p">,</span> 
+                                   <span class="ss">:description</span><span class="p">,</span> <span class="ss">:destroyed_by_association</span><span class="p">,</span> 
+                                   <span class="ss">:dhcp_enabled</span><span class="p">,</span> <span class="ss">:dhcp_server</span><span class="p">,</span> <span class="ss">:domain</span><span class="p">,</span> <span class="ss">:dns_server</span><span class="p">,</span> 
+                                   <span class="ss">:guest_device</span><span class="p">,</span> <span class="ss">:guid</span><span class="p">,</span> <span class="ss">:hardware_id</span><span class="p">,</span> <span class="ss">:hostname</span><span class="p">,</span> 
+                                   <span class="ss">:href_slug</span><span class="p">,</span> <span class="ss">:ipaddess</span><span class="p">,</span> <span class="ss">:ipv6address</span><span class="p">,</span> <span class="ss">:lease_expires</span><span class="p">,</span> 
+                                   <span class="ss">:lease_obtained</span><span class="p">,</span> <span class="ss">:region_description</span><span class="p">,</span> <span class="ss">:region_number</span><span class="p">,</span> 
+                                   <span class="ss">:subnet_mask</span><span class="p">],</span>
+  <span class="ss">:default_values</span> <span class="o">=&gt;</span> <span class="p">{},</span>
+  <span class="ss">:dependency_attributes</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="example-2">Example 2</h4>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:host_networks</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">builder</span><span class="o">|</span>
+  <span class="n">builder</span><span class="p">.</span><span class="nf">add_properties</span><span class="p">(</span>
+    <span class="ss">:strategy</span> <span class="o">=&gt;</span> <span class="ss">:local_db_find_references</span><span class="p">,</span>
+    <span class="ss">:targeted</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="p">)</span>
+  <span class="n">builder</span><span class="p">.</span><span class="nf">add_default_values</span><span class="p">(</span>
+    <span class="ss">:ems_id</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+  <span class="p">)</span>
+</code></pre>
+</div>
+
+<p>produces <code class="highlighter-rouge">InventoryCollection</code> attributes:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:host_networks</span><span class="p">,</span>
+  <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">Network</span><span class="p">,</span>
+  <span class="ss">:manager_ref</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:hardware</span><span class="p">,</span> <span class="ss">:ipaddress</span><span class="p">],</span>
+  <span class="ss">:parent_inventory_collection</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:hosts</span><span class="p">],</span>
+  <span class="ss">:inventory_object_attributes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">same</span> <span class="n">as</span> <span class="n">previous</span> <span class="n">example</span><span class="o">&gt;</span><span class="p">],</span>
+  <span class="ss">:default_values</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:ems_id</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="ss">:dependency_attributes</span> <span class="o">=&gt;</span> <span class="p">{},</span>
+  <span class="ss">:strategy</span> <span class="o">=&gt;</span> <span class="ss">:local_db_find_references</span><span class="p">,</span>
+  <span class="ss">:targeted</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="provider-specific-definitions">Provider specific definitions</h3>
+
+<p>Following conventions should be applied:</p>
+<ul>
+  <li>define collections belonging to CloudManager (using <code class="highlighter-rouge">cloud</code> Builder) in concern &lt;persister’s path&gt;/definitions/cloud_manager.rb</li>
+  <li>define collections belonging to NetworkManager (using <code class="highlighter-rouge">network</code> Builder) in concern &lt;persister’s path&gt;/definitions/network_manager.rb</li>
+  <li>define <code class="highlighter-rouge">shared_options</code> method with common properties, if possible</li>
+  <li>redefine <code class="highlighter-rouge">targeted?</code> method to true if it’s persister for targeted refresh</li>
+</ul>
+
+<h4 id="example-4">Example</h4>
+
+<p>Let’s consider persister for cloud_manager in Amazon:</p>
+<ul>
+  <li><code class="highlighter-rouge">ManageIQ::Providers::Amazon::Inventory::Persister::TargetCollection</code></li>
+</ul>
+
+<p>Simple definition of :vms is following:</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>It produces IC with attributes:</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:vms</span><span class="p">,</span>
+  <span class="ss">:strategy</span> <span class="o">=&gt;</span> <span class="ss">:local_db_find_missing_references</span><span class="p">,</span> 		<span class="c1"># defined in shared_options()</span>
+  <span class="ss">:targeted</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> 						<span class="c1"># defined in shared_options()</span>
+  <span class="ss">:parent</span>   <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">Amazon</span><span class="o">::</span><span class="no">CloudManager</span><span class="o">&gt;</span><span class="p">,</span> 	<span class="c1"># defined in shared_options()</span>
+  <span class="ss">:saver_strategy</span> <span class="o">=&gt;</span> <span class="ss">:default</span><span class="p">,</span> <span class="c1"># defined in ManagerRefresh::InventoryCollection::Builder::Shared#vms</span>
+  <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+  <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">Amazon</span><span class="o">::</span><span class="no">CloudManager</span><span class="o">::</span><span class="no">Vm</span><span class="p">,</span> <span class="c1"># derived automatically</span>
+  <span class="ss">:inventory_object_attributes</span> <span class="o">=&gt;</span> <span class="p">[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> 			 <span class="c1"># derived automatically</span>
+  <span class="ss">:default_values</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:ems_id</span>   <span class="o">=&gt;</span> <span class="mi">1234567</span><span class="p">,</span> <span class="c1"># defined as lambda block</span>
+    <span class="ss">:vendor</span>   <span class="o">=&gt;</span> <span class="s2">"amazon"</span><span class="p">,</span>
+    <span class="ss">:name</span>     <span class="o">=&gt;</span> <span class="s2">"unknown"</span><span class="p">,</span>
+    <span class="ss">:location</span> <span class="o">=&gt;</span> <span class="s2">"unknown"</span>
+  <span class="p">}</span> <span class="c1"># defined in ManagerRefresh::InventoryCollection::Builder::Shared#vms</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><code class="highlighter-rouge">add_collection()</code> method is the way how to define <code class="highlighter-rouge">InventoryCollection</code> objects and add them to Persister.
+It simplifies definitions using several IC Builders and its common definitions.<br />
+Basic properties, like model class and its attributes can be derived automatically by name of persister’s class and builder’s class.</p>
+
+<p>Persister’s methods <code class="highlighter-rouge">has_inventory()</code> and <code class="highlighter-rouge">add_inventory_collection()</code> are <em>deprecated</em> now.</p>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

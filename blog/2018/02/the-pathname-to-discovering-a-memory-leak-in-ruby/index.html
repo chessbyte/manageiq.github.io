@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - The Path[name] to discovering a memory leak in Ruby</title>
+  <meta name="description" content="tl;dr we found a memory leak inRuby… and it mostly wasn’t ourfault!">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2018/02/the-pathname-to-discovering-a-memory-leak-in-ruby/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2018/02/the-pathname-to-discovering-a-memory-leak-in-ruby/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">The Path[name] to discovering a memory leak in Ruby</h1>
+
+            <div class="post-meta">
+              <time datetime="2018-02-14T00:00:00+00:00" itemprop="datePublished">
+                Feb 14, 2018
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  NickLaMuro
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/ruby">ruby</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/developers">developers</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p><em><strong>tl;dr</strong> we found a <a href="https://bugs.ruby-lang.org/issues/14372">memory leak in
+Ruby</a>… and it mostly wasn’t our
+fault!</em></p>
+
+<p>This is a tale of that 0.00001% of the time where a problem is actually an
+issue in the language, and not with your own code base - though, it was a bit
+of that as well!  We went through <a href="http://www.be9.io/2015/09/21/memory-leak/">every</a> <a href="https://samsaffron.com/archive/2015/03/31/debugging-memory-leaks-in-ruby">possible</a> <a href="https://engineering.shopify.com/blogs/engineering/adventures-in-production-rails-debugging">blog</a> <a href="https://blog.nelhage.com/2013/03/tracking-an-eventmachine-leak/">post</a>
+on the subject (and <a href="https://jvns.ca/blog/2016/06/12/a-weird-system-call-process-vm-readv/">then</a> <a href="https://nativecoding.wordpress.com/2016/07/31/gdb-debugging-automation-with-python/">some</a>), none of which really covered our
+issue that took us roughly 4 months of pain, misery, and suffering to solve.
+Here is what we learned during that time, and the process we took to uncover
+this memory leak.</p>
+
+<h2 id="step-1--reproducing-the-issue">Step 1:  Reproducing the issue</h2>
+
+<p>The initial issue that was brought to our attention was that there was a leak
+in our <code class="highlighter-rouge">MetricsCollector</code> and <code class="highlighter-rouge">MetricsProcessor</code> workers*.  This was a trickle
+leak where we would leak roughly 5-10 MB per hour and over time this would
+cause the workers to exceed memory thresholds and restart.  This did require
+some extra setup to replicate as well, as we needed something to simulate
+adding jobs for these workers to collect/process metrics from so they had work
+to do.</p>
+
+<p>Since these are both “queue based” workers, this meant the work that they did
+was dependent on external factors, and wasn’t always a linear amount of work
+passed to the queue, making the growth variable and not consistent.  On top of
+that, the jobs that caused the leak seemed to be at random, and instrumenting
+the code to determine the leak was hard to do in a generic fashion. That is not
+to say we didn’t try wrap our workers with some common Ruby profiling tools (we
+did… many times…), but the result usually led us to wonder if were actually
+dealing with the <a href="https://en.wikipedia.org/wiki/Observer_effect_(physics)">“Observer effect”</a> and introducing new problems instead of
+“observing” existing ones.</p>
+
+<p>Although it took much more time for it to be truly observed (around a month’s
+time), we also found that the <code class="highlighter-rouge">MIQ Server</code> (our worker monitor process) was
+leaking as well.  Since it had a more predictable workflow, this was the better
+candidate to do some deeper process of elimination testing.  It took some time
+to get a scenario where this was leaking consistently, but once we did it was
+simpler to do A/B testing with it.</p>
+
+<h2 id="step-15--reproducing-the-issue-fasterer">Step 1.5:  Reproducing the issue… fasterer</h2>
+
+<p>One problem with using the <code class="highlighter-rouge">MiqServer</code> process as the target for observing the
+leak is it took <em><strong>days</strong></em>/<em><strong>weeks</strong></em> to determine if it was leaking or just
+the process taking it’s sweet time time to stabilize it’s memory usage.  This
+led to very long gaps between making a change and having observable results to
+view from it.</p>
+
+<p>One of the least invasive things that we eventually did was decrease the server
+<code class="highlighter-rouge">:monitor_poll</code> and <code class="highlighter-rouge">:worker_monitor_frequency</code> values from <code class="highlighter-rouge">"5.seconds"</code> and
+<code class="highlighter-rouge">"15.seconds"</code> respectively to <code class="highlighter-rouge">"1.second"</code> for both.  This decreased the wait
+time between each iteration of it’s normal work and thankfully increased the
+leak rate.</p>
+
+<p>We also increased the frequency of normal method calls by doing things like
+<code class="highlighter-rouge">40.times { do_some_work }</code> in places where we thought the leak might be, and
+if there was rapid growth, we knew where to probe deeper.</p>
+
+<p>The suggestions in this step happened for us throughout the process of
+discovering the cause of the leak, and didn’t necessarily happen in between
+this step and the next (hence the “Step 1.5”).  Steps to accelerate the
+feedback loop, such as this, should be done as early into the memory leak
+debugging process as possible.</p>
+
+<h2 id="step-2--narrowing-down-the-culprits">Step 2:  Narrowing down the culprits</h2>
+
+<p>As mentioned previously, the <code class="highlighter-rouge">MiqServer</code> process has a pretty regular work
+loop.  In case you aren’t familiar with the workflow of the <code class="highlighter-rouge">MiqServer</code> work
+loop, here is a gist of the important steps:</p>
+
+<ol>
+  <li>heartbeat (tell other servers that I am still alive)</li>
+  <li>process any messages sent to the server process over the message queue</li>
+  <li>check on the health status of other server processes (and log them)</li>
+  <li>check the status of all of the workers processes (stop/start them as needed)</li>
+  <li>fetch queue work to assign to worker processes</li>
+</ol>
+
+<p>Each of these steps happen in varying intervals and happen on a mostly
+consistent basis, barring any database latency fluctuations or worker changes.</p>
+
+<p>After trying to instrument the main loop with tools like <code class="highlighter-rouge">MemoryProfiler</code>,
+<code class="highlighter-rouge">stackprof</code>, and even just looking at regular Ruby memory dumps using
+<code class="highlighter-rouge">ObjectSpace.dump_all</code>.  In the end, we up taking a more low tech approach of
+just removing code by commenting out the steps above and seeing if the leak
+still happened after a server restart.</p>
+
+<p>To start off, we already had a baseline of what it looked like with the code
+uncommented, and it leaked pretty consistently, so we did the inverse and
+commented out all of the steps above to confirm the leak stopped (it did,
+thankfully).  We then worked our way back to the baseline by re-adding the
+methods one by one, and observing if the leak returned.  After doing that a few
+times, we eventually determined that uncommenting the
+<code class="highlighter-rouge">MiqServer#monitor_workers</code> code (step #4 from the list above) was the cause.
+Progress!</p>
+
+<p>Now, <code class="highlighter-rouge">MiqServer#monitor_workers</code> is <a href="https://github.com/ManageIQ/manageiq/blob/fde3d11/app/models/miq_server/worker_management/monitor.rb#L15-L38">pretty dense</a>, so this wasn’t the end
+of the line, but it allowed us to start drilling in further and try some other
+tests outside the context of the application.</p>
+
+<h2 id="step-3--first-observations">Step 3:  First Observations</h2>
+
+<p>The tricks from step #1.5 were applied at this point, and we started making
+some more nuanced observations about what affected the leak:</p>
+
+<ul>
+  <li>The server seemed to leak faster with more workers forked and monitored by
+the server process. This meant to us that it was probably calling a method
+that was dependent on the number workers.</li>
+  <li>While adding some instrumentation to do some regular <code class="highlighter-rouge">GC.start</code>s and logging
+of <code class="highlighter-rouge">GC.stat</code>, we noticed the number of Ruby objects didn’t really increase
+(some custom caching that we do caused us to question this for a bit).</li>
+  <li>The <code class="highlighter-rouge">[heap]</code> in <code class="highlighter-rouge">/proc/&lt;PID&gt;/smaps</code> was the only thing growing.  Combined
+with the info from the last bullet, this meant that the leak surely had to be
+in a c-extension, or Ruby itself.  (an important observation made by Joe
+Rafaniello)</li>
+  <li>None of the suspected code looked to be a possible cause of a leak so it was
+probably something specific to our environment.</li>
+</ul>
+
+<p>Those were all important observations, but the last one was a double-edged
+sword.  Throughout this process, we continued to hold the mindset that “this
+has to be something with our code”, and it led us to going down a lot of wrong
+rabbit holes searching for answers that re-enforced that bias.</p>
+
+<h2 id="step-4--lots-of-failure-torment-and-agony">Step 4:  Lots of failure, torment, and agony</h2>
+
+<p>At this point we started looking outside of the ManageIQ code base and started
+writing scripts to try to reproduce the leak in a more targeted fashion.  These
+scripts can be found <a href="https://github.com/NickLaMuro/miq_tools/tree/master/miq_server_leak_discovery">here</a> and mostly failed to reliably recreate the leak.</p>
+
+<p>Of note: one the places we got hung up on was thinking <code class="highlighter-rouge">DRb</code>, which we use for
+light message passing between workers, was the culprit.  This mostly came from
+the thought that most people aren’t using it in production for anything
+terribly complicated, but for us, it was how key features like heartbeating
+were implemented. Additionally, this would have explained why the leak was
+worse with more worker processes forked and monitored as was previously
+observed.</p>
+
+<p>We also found that <code class="highlighter-rouge">sync_workers</code> seemed to cause the server to leak quicker
+when wrapped with a <code class="highlighter-rouge">40.times {}</code> block.  This was eventually proven to not be
+the case as well, but did lead us down a path of trying some more obscure ways
+of testing our theories.</p>
+
+<h2 id="step-5--we-need-to-go-deeper">Step 5:  We need to go deeper…</h2>
+
+<p>At this point, we were about 4 months into digging into this.  The rest of this
+article happened in the last week prior to discovering the Ruby leak, but they
+are the good parts!</p>
+
+<p>I ended up running across <a href="https://blog.nelhage.com/2013/03/tracking-an-eventmachine-leak/">this blog post</a> by Nelson Elhage
+(<a href="https://github.com/nelhage">@nelhage</a>), which ended up giving us an idea
+how to use <code class="highlighter-rouge">gdb</code> to hook into an existing process and run some arbitrary Ruby
+code in the existing environment.</p>
+
+<p>The technique described in the blog post to find that memory leak was actually
+to take a look at the core dumps as hex and determine where patterns of leaked
+memory were.  We weren’t that smart to be able to understand that ourselves or
+make use of it properly in our case, but we did end up using the
+<code class="highlighter-rouge">rb_eval_string("")</code> portions to our advantage though, and that ended up being
+super useful.</p>
+
+<p>At the time, we were under the impression that <code class="highlighter-rouge">MiqServer#sync_workers</code> was the
+culprit, so we ended up attaching to an existing ‘warmed up’ server process
+that had been running for a bit so most of the code it would load would already
+be autoloaded.  With that, we tried running a high number of invocations of
+that method in a row, and watched the <code class="highlighter-rouge">/proc/&lt;PID&gt;/smaps</code> to see if the
+<code class="highlighter-rouge">[heap]</code> section grew.  It looked something like this**:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">gdb</span><span class="kv"> -p [PID_OF_THE_MIQ_SERVER_PROCESS]
+</span>(gdb) p rb_eval_string("GC.start")
+(gdb) p rb_eval_string("500.times { MiqServer.my_server.sync_workers; GC.start }")
+</code></pre>
+</div>
+
+<p>Nothing.  Not even a budge.  Well shoot… there goes that theory.</p>
+
+<p>At this point, we looked back to the servers we had running that were modified
+with the  known “non-leaking” portions commented out, and checked if there was
+anything else that we might have been missing.  We noticed that in addition to
+<code class="highlighter-rouge">MiqServer#sync_workers</code> still being uncommented, a call to
+<code class="highlighter-rouge">MiqWorker.status_update_all</code> that was directly preceding it was also still
+being executed.</p>
+
+<p>Now, on it’s own, this method looks seemed pretty tame. Effectively it:</p>
+
+<ol>
+  <li>Uses basic ActiveRecord to fetch all the workers under the current server</li>
+  <li>Makes a call to our own code to fetch usage data for the given worker pids</li>
+  <li>Saves the data to the DB records for internal reporting/monitoring</li>
+</ol>
+
+<p>The first and last bits were ruled out, and we were pretty sure we already
+tested the middle bit via some scripts outside of the context of ManageIQ, but
+for verbosity sake, using the same <code class="highlighter-rouge">gdb</code> process, we decided to update the
+<code class="highlighter-rouge">500.times {}</code> block to include that call:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">MiqServer</span><span class="p">.</span><span class="nf">my_server</span><span class="p">.</span><span class="nf">sync_workers</span><span class="p">;</span> <span class="no">MiqWorker</span><span class="p">.</span><span class="nf">status_update_all</span><span class="p">;</span> <span class="no">GC</span><span class="p">.</span><span class="nf">start</span> 
+</code></pre>
+</div>
+
+<p>And… it leaked… !?</p>
+
+<h2 id="step-6--wait-wut-aka--replicating-it-without-the-app">Step 6:  Wait… wut!? (aka:  Replicating it without the app)</h2>
+
+<p>At this point, we started to look at the call to
+<code class="highlighter-rouge">MiqProcess.processInfo(worker_pid)</code> in <code class="highlighter-rouge">MiqWorker.status_update_all</code> since the
+other areas are mostly ActiveRecord.  Besides:  it’s easier to blame our own
+libraries. ;)</p>
+
+<p>Now you might be thinking “that was your code… why didn’t try that in the
+first place”, let me explain.  We had tried something similar in a test script
+with no leak, but ended up trying it again.  The first draft of the script
+looked basically like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Code needed to get MiqProcess.processInfo loaded and working</span>
+<span class="nb">require</span> <span class="s1">'manageiq-gems-pending'</span>
+<span class="nb">require</span> <span class="s1">'util/miq-process'</span>
+<span class="nb">require</span> <span class="s1">'active_support/all'</span>
+
+<span class="n">pid</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="kp">loop</span> <span class="k">do</span>
+  <span class="no">MiqProcess</span><span class="p">.</span><span class="nf">processInfo</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+  <span class="no">GC</span><span class="p">.</span><span class="nf">start</span>
+  <span class="nb">sleep</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Unfortunately, it didn’t leak…</p>
+
+<p>┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻</p>
+
+<p>…</p>
+
+<p>┬──┬ ノ(ò_óノ)</p>
+
+<p>Well crap…</p>
+
+<p>That is when Keenan Brock (who I was pairing with at the time) had a brilliant
+idea, where he suggested that we include a call to <code class="highlighter-rouge">require
+'config/environment.rb'</code> to load and initialize our Rails app, and then run the
+script again.  What do you know, it leaked!  And on a regular basis as well!</p>
+
+<p>From there, we narrowed down what the core components of <code class="highlighter-rouge">.processInfo</code> were,
+and ran each bit overnight and logged the <code class="highlighter-rouge">[heap]</code> section of the
+<code class="highlighter-rouge">/proc/&lt;PID&gt;/smaps</code> overtime.  The leaky section ended up being a call to
+<code class="highlighter-rouge">MiqSystem.num_cpus</code>, and the code for that method can be seen below:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">num_cpus</span>
+  <span class="k">return</span> <span class="k">unless</span> <span class="no">Sys</span><span class="o">::</span><span class="no">Platform</span><span class="o">::</span><span class="no">IMPL</span> <span class="o">==</span> <span class="ss">:linux</span>
+  <span class="nb">require</span> <span class="s1">'linux_admin'</span>
+  <span class="vi">@num_cpus</span> <span class="o">||=</span> <span class="no">LinuxAdmin</span><span class="o">::</span><span class="no">Hardware</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">total_cores</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Looks completely harmless… what gives!</p>
+
+<p>Well, this method does a no-op if we weren’t testing on linux (we were), and we
+also tested calls to <code class="highlighter-rouge">Sys::Platform::IMPL</code> separately, and that was in the
+clear.  The only time any “work” is done in this method would be the first time
+this method was called, and that work is short circuited once the cached value
+is set.</p>
+
+<p>This left the <code class="highlighter-rouge">require</code> call.  We updated the script above to include <code class="highlighter-rouge">require
+'config/environment'</code> and replaced <code class="highlighter-rouge">MiqProcess.processInfo(pid)</code> with <code class="highlighter-rouge">require
+'linux_admin'</code> and ran it.</p>
+
+<p>It leaked…</p>
+
+<p>ಠ_ಠ</p>
+
+<h2 id="step-7--mind-blown">Step 7:  Mind blown</h2>
+
+<p>After piecing our heads back together, we noticed a few things:</p>
+
+<ul>
+  <li>Again, without <code class="highlighter-rouge">require 'config/environment'</code> at the top, no problems,
+meaning our environment was at play… at least a bit.</li>
+  <li>No matter what we called <code class="highlighter-rouge">require</code> with, it leaked just the same***.</li>
+  <li>We could also recreate this on non-linux operating systems</li>
+</ul>
+
+<p>The second bit should come as no surprise, because after calling require on the
+same file twice, the code isn’t reloaded if Ruby determines it has already been
+loaded (hence the difference in return values if you do that in IRB as well:
+<code class="highlighter-rouge">true</code> for the first time, and <code class="highlighter-rouge">false</code> every time thereafter).</p>
+
+<p>But still, that means we have a leak in Ruby… right?  But with <code class="highlighter-rouge">require</code>?
+How has no one run into this before?  Could a c-extension be messing with
+things here or is Ruby the culprit?</p>
+
+<p>At this point, we tried a few different profiling techniques:</p>
+
+<ul>
+  <li>I personally used <code class="highlighter-rouge">gdb</code> again using a <a href="https://github.com/NickLaMuro/miq_tools/blob/master/miq_server_leak_discovery/gdb_mem_debugging.py">crazy python gdb script</a> I cobbled
+together</li>
+  <li>some co-workers used the <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/index.html"><code class="highlighter-rouge">Instruments</code> application</a> to do basically the
+same thing (but with less upfront work of writing their own script/framework)</li>
+  <li>we even wrapped the require call using good-ole <code class="highlighter-rouge">ruby-prof</code></li>
+</ul>
+
+<p>After a couple of us were trying the above, we noticed that a common thread
+between them all when the leak was present: <code class="highlighter-rouge">Pathname</code>. This was observed in
+two main ways:</p>
+
+<ul>
+  <li>when using <code class="highlighter-rouge">ruby-prof</code>, <code class="highlighter-rouge">require</code> was spending a decent amount of time in
+<code class="highlighter-rouge">Pathname#to_path</code> for each <code class="highlighter-rouge">require</code> call</li>
+  <li>in “C land” where <code class="highlighter-rouge">rb_get_expanded_load_path</code> was showing up in the stack
+of the <code class="highlighter-rouge">malloc</code> calls of <code class="highlighter-rouge">require</code> when it was leaking.</li>
+</ul>
+
+<p>We still weren’t completely sure if this was a Ruby or gem issue.  Finally,
+with a final bit of trial and error (again, props to Joe Rafaniello for this
+find), we noticed that if we called <code class="highlighter-rouge">.to_s</code> on ALL of the places that we added
+a <code class="highlighter-rouge">Pathname</code> value to our <code class="highlighter-rouge">autoload_paths</code> in our Rails Application/Engine
+configs, the leak disappeared!  Hooray!</p>
+
+<p>With this, we quickly ruled out <code class="highlighter-rouge">Rails</code> being the issue here because we could
+replicate using a simple Ruby script:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'pathname'</span>
+
+<span class="nb">puts</span> <span class="no">Process</span><span class="p">.</span><span class="nf">pid</span>
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="no">Pathname</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">__dir__</span><span class="p">))</span>
+
+<span class="n">dot</span>      <span class="o">=</span> <span class="s2">"."</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">"ostruct"</span>
+<span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">require</span> <span class="n">filename</span> <span class="p">};</span> <span class="nb">print</span> <span class="n">dot</span><span class="p">;</span> <span class="no">GC</span><span class="p">.</span><span class="nf">start</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>And we confirmed that Rails even adds <code class="highlighter-rouge">autoload_paths</code> to the <code class="highlighter-rouge">$LOAD_PATH</code> <a href="https://github.com/rails/rails/blob/20c9111/railties/lib/rails/engine.rb#L555-L560">in
+an initializer</a>, so this was clearly a Ruby bug.  We tested across multiple
+versions of Ruby and determined that only rubies 2.3.x and 2.4.x were
+exhibiting the leak (apparently this was fixed in Ruby 2.5.0****).</p>
+
+<h2 id="other-observationsconclusions">Other Observations/Conclusions</h2>
+
+<p>MIQ is a pretty heavily QA tested application across versions, so we could
+definitely see from one version to the next that this leak started after our “E
+release” (we are now on “G”), which was the first release using Ruby 2.3.x.</p>
+
+<p>Also, as mentioned, this is a very rare situation where the programming
+language, Ruby, was actually at fault here (we can safely admit that the
+developers of Ruby are WAY smarter than us, so this is generally a safe
+assumption).  Now, there is an assumed asterisk that goes along with this
+statement for a few reasons:</p>
+
+<ul>
+  <li>Most developers tend to place <code class="highlighter-rouge">require</code> statements at the top of files, so
+they aren’t triggered constantly like it was in our case.  We did this for
+#Reasons™, but in short, this was mostly used to solve other deficiencies of
+our monolith application that could have been solved in other ways.</li>
+  <li>The Rails guides tend to show using <code class="highlighter-rouge">Strings</code> when setting <code class="highlighter-rouge">autoload_paths</code>,
+and so it is less likely developers will use “deferred requires” like this
+and also have <code class="highlighter-rouge">Pathname</code> entries in their <code class="highlighter-rouge">$LOAD_PATH</code>.</li>
+</ul>
+
+<p>There is even a bit of a note in the Ruby source of <a href="https://github.com/ruby/ruby/blob/429e2ab/load.c#L44-L48"><code class="highlighter-rouge">load.c</code></a> that even
+mentions that non-string values in the load path are expanded every time and
+not cached, so it seems that using <code class="highlighter-rouge">Pathname</code> values in the <code class="highlighter-rouge">$LOAD_PATH</code> is
+somewhat discouraged.</p>
+
+<p>Bottom line:  Still kinda our fault in the end…</p>
+
+<hr />
+
+<p>Well, at the very least, hopefully you found this blog post entertaining, and
+possibly you can learn from our successes, and TONS of failures, if you find
+yourself trying to unravel your own memory leaks or other weird performance
+bugs!  The key was to continually look at the issue from different
+perspectives, with various tools, and of course, sleep on it and come back at
+it with renewed vigor and a clear mind.</p>
+
+<p>A big thanks to Joe Rafaniello, Keenan Brock, Dennis Metzger, and Jason Frey
+for their contributions in helping to find this leak.  I happen to be the one
+documenting this experience (<em><strong>epic adventure</strong></em>*****), but it was
+definitely a team effort over many months.</p>
+
+<ul>
+  <li>* For those unfamiliar with ManageIQ/CFME, these are queue based workers,
+the first of which “Collects” metrics from an infrastructure provider (VMs,
+Containers, Instances, etc.) managed by ManageIQ, and sends it to the
+“Processor” in a generic fashion that it can be imported into our DB schema.</li>
+  <li>** The <code class="highlighter-rouge">GC.start</code> calls here are to avoid typical memory usage of Ruby
+objects being allocated normally from improperly skewing the results.</li>
+  <li>*** The reason for these “deferred requires” is for base memory savings.
+Since <code class="highlighter-rouge">linux_admin</code> is only needed by a small portion of our code base, but
+adds around 5 to 10 MB when loading it, we only load it when we need it.</li>
+  <li>**** Note, Ruby 2.5.0 might not leak but Pathnames are much slower in the
+<code class="highlighter-rouge">$LOAD_PATH</code> than strings, perhaps, because they’re not cached as mentioned
+<a href="https://github.com/ruby/ruby/blob/429e2ab/load.c#L44-L48">here</a>.</li>
+  <li>***** Over selling this quite a bit here… | (• ◡•)|/\(❍ᴥ❍ʋ)</li>
+</ul>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

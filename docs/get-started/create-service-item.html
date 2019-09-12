@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Create A Self-service Catalog Item</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/get-started/create-service-item">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/get-started/create-service-item">
+      <nav class="doc_tabs">
+  <ul>
+  <li class="active">
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    <ul class="menu menu-toplevel" id="start_menu">
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/">
+      Get started
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item menu-parent">
+    <a href="#">
+      Get ManageIQ
+    </a>
+    
+    <ul>
+      
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/vagrant">
+      Vagrant
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/docker">
+      Docker
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/cloud">
+      Public Cloud
+    </a>
+    
+  </li>
+
+
+    </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/basic-configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/add-a-provider">
+      Add A Provider
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/review-provider">
+      Review Provider Details
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/provision-machine">
+      Provision Your First Machine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item active">
+    <a href="/docs/get-started/create-service-item">
+      Create Your First Service Item
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/where-to-go-from-here">
+      Where to go from here
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/concepts">
+      Concepts Guide
+    </a>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc start_doc">
+      
+      <header class="doc-header">
+        <h1 class="doc-title">Create A Self-service Catalog Item</h1>
+      </header>
+      
+
+      <div class="doc-content">
+        
+        <h2 id="introduction">Introduction</h2>
+
+<p>Go to <strong><em>Services → Catalogs</em></strong>.</p>
+
+<p>Currently there are no catalogs, but we will be creating a new one
+now. We need a few things:</p>
+
+<ul>
+  <li>A service dialog to gather user input</li>
+  <li>An automation workflow that will be responsible of creating the VM</li>
+  <li>A catalog to show the user</li>
+  <li>A catalog item within that catalog to put all together</li>
+</ul>
+
+<h2 id="using-the-service-catalog-to-create-a-service">Using the service catalog to create a service</h2>
+
+<h3 id="creating-the-dialog">Creating the dialog</h3>
+
+<p>Let’s start creating the dialog. Dialogs are part of Automate, so go to
+<strong><em>Automate → Customization</em></strong> and select <strong><em>Service Dialogs</em></strong> in the
+accordion.</p>
+
+<p>Press <strong><em>Configuration → Add a New Dialog</em></strong></p>
+
+<p>Choose a name for it</p>
+
+<p>Dialogs require a Tab, a Box and a Element. The Dialog loads with a Tab and Box, so you will need to add an Element to your Dialog.</p>
+
+<p>We will be adding a checkbox that prints “Are you sure?” with a checkbox, but we won’t be doing anything with the answer…</p>
+
+<p><img src="/assets/images/docs/screenshot_0044.png" alt="screenshot0044" class="large_img" /></p>
+
+<h3 id="creating-a-catalog">Creating a catalog</h3>
+
+<p>You need a catalog for the user to choose from it. Let’s create a
+catalog with a basic name and description</p>
+
+<p>Go to <strong><em>Services → Catalogs</em></strong> and choose <strong><em>Catalogs</em></strong> in the accordion.</p>
+
+<p>Press <strong><em>Configuration → Add a New Catalog</em></strong> and fill the fields. As there
+are no catalog items yet, you won’t see any in the Assign Catalog Items
+tabs.</p>
+
+<p><img src="/assets/images/docs/screenshot_0045.png" alt="screenshot0045" class="large_img" /></p>
+
+<h3 id="creating-a-catalog-item">Creating a catalog item</h3>
+
+<p>Let’s add all together, so the user can order a service instead of doing
+a traditional provisioning.</p>
+
+<p>Navigate to <strong><em>Services → Catalogs</em></strong> and Select <strong><em>Catalog Items</em></strong> in the
+accordion, and within it the catalog you just created</p>
+
+<p><img src="/assets/images/docs/screenshot_0046.png" alt="screenshot0046" class="large_img" /></p>
+
+<p>Add a new <strong><em>Configuration → Add a New Catalog Item</em></strong></p>
+
+<p>Select <em>Google</em> as Catalog Item type and you will get a dialog to
+configure what will happen when the customer orders the item. Don’t
+forget to select Display in Catalog to be make it available.</p>
+
+<p><img src="/assets/images/docs/screenshot_0047.png" alt="screenshot0047" class="large_img" /></p>
+
+<p>Fill the description in details and fill <strong><em>Request Info</em></strong> with the same
+data you did in the traditional provisioning.</p>
+
+<p><img src="/assets/images/docs/screenshot_0048.png" alt="screenshot0048" class="large_img" /></p>
+
+<p>When finished, press <strong><em>Add</em></strong></p>
+
+<p>Now you will be able to see your service catalog and the item will be
+orderable within <strong><em>Service Catalogs</em></strong> in the accordion.</p>
+
+<p><img src="/assets/images/docs/screenshot_0049.png" alt="screenshot0049" class="large_img" /></p>
+
+<h3 id="ordering-a-service">Ordering a service</h3>
+
+<p>Go to the Service catalog again. Now you can see your catalog item as part of the catalog. You can order it pressing the <strong><em>Order</em></strong> below the icon.</p>
+
+<p><img src="/assets/images/docs/screenshot_0050.png" alt="screenshot0050" class="large_img" /></p>
+
+<p>A service item can be more complex than a single VM, including bundles and items that comprise different providers, and are provisioned through a series of automation workflows. 
+The dialog we created will be used to gather information from the customer, hiding all the complexity of the details needed to actually deploy any of the components.</p>
+
+<p>Services has their own life cycle on top of the lifecycle of its components. With the appropriate permissions you can see the resources associated to it in each moment</p>
+
+<p>Ordering consists of different phases that are outside of the scope of this guide.</p>
+
+<p><img src="/assets/images/docs/screenshot_0051.png" alt="screenshot0051" class="large_img" /></p>
+
+<p>Press <strong><em>Administrator|EVM</em></strong> in the upper right part of the screen, and
+then <strong><em>Logout.</em></strong></p>
+
+<p>Once you are logged out, enter <strong><em>https://[your IP ADDRESS]]/self_service</em></strong> in your web browser. This is the self service
+interface, that can be used to isolate you from the nuances of the
+underlying infrastructure.</p>
+
+<p><img src="/assets/images/docs/screenshot_0052.png" alt="screenshot0052" class="large_img" /></p>
+
+<p>The Service UI allows for a more simple design for end users compared to the Operational UI.
+<img src="/assets/images/docs/screenshot_0053.png" alt="screenshot0053" class="large_img" /></p>
+
+<p><img src="/assets/images/docs/screenshot_0054.png" alt="screenshot0054" class="large_img" /></p>
+
+<h2 id="next-where-to-go-from-here">Next: <a href="/docs/get-started/where-to-go-from-here">Where to go from here</a></h2>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

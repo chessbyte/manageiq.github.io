@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - API Contributor's Guide</title>
+  <meta name="description" content="The API has been growing quickly thanks to our many contributors. In an effort to help new contributors get up to speed quickly, it was about time for a blog...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png">
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/10/api-contributors-guide/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li>
+    <a href="/download/">Download</a>
+  </li>
+  <li>
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li>
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/10/api-contributors-guide/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">API Contributor's Guide</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-10-25T00:00:00+00:00" itemprop="datePublished">
+                Oct 25, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  jntullo
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/collaboration">collaboration</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/developers">developers</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/tutorials">tutorials</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>The API has been growing quickly thanks to our many contributors. In an effort to help new contributors get up to speed quickly, it was about time for a blog post to explain the process of adding in a new collection and subcollection, as well as provide some examples for commonly asked questions.</p>
+
+<p>The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/config/api.yml">api.yml</a> is where a lot of the magic <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png" height="20" width="20" align="absmiddle"> happens. The best way to explain it is through an example, so let’s walk through adding in a new collection and subcollection.</p>
+
+<p>We’ll keep the example generic through the creation of a <code class="highlighter-rouge">Coffee</code> API. Because who doesn’t need more <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20" align="absmiddle"> in their life?</p>
+
+<h2 id="defining-a-new-collection-with-basic-crud">Defining a new collection with basic CRUD</h2>
+<p>The new <code class="highlighter-rouge">Coffee</code> collection will need to be defined under <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/config/api.yml#L37">collections</a> in the <code class="highlighter-rouge">api.yml</code>. Note that all of the collections are in alphabetical order. 
+The collection will need to return details about the coffee, update them if they need some more sugar, create new ones (Pumpkin, anyone?), and delete any we’re not a fan of - basic CRUD.</p>
+
+<p>Here is a glimpse into what adding the new collection with basic CRUD will look like:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>:collections:
+    :coffees:
+        :description: Coffee
+        :options: 
+        - :collection
+        :verbs: *gpd
+        :klass: Coffee
+        :collection_actions:
+            :get: 
+            - :name: read
+              :identifier: coffee_show_list 
+            :post:
+            - :name: create
+              :identifier: coffee_new 
+            - :name: edit
+              :identifier: coffee_edit 
+            - :name: delete
+              :identifier: coffee_delete
+        :resource_actions:
+            :get:
+            - :name: read
+              :identifier: coffee_show 
+            :post:
+            - :name: edit
+              :identifier: coffee_edit 
+            - :name: delete
+              :identifier: coffee_delete
+            :delete:
+            - :name: delete
+              :identifier: coffee_delete
+</code></pre>
+</div>
+
+<p>Below is a breakdown of what some of the above elements mean:</p>
+<ul>
+  <li>
+<strong>:coffees:</strong>
+    <ul>
+      <li>Defines the collection or subcollection portion of the URI in conjunction with the name and supported verbs (in our case, <code class="highlighter-rouge">GET api/coffee</code>, <code class="highlighter-rouge">POST /api/coffee</code>, etc..)</li>
+      <li>Tells the API that the controller will be <code class="highlighter-rouge">CoffeesController</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>:options:</strong>
+    <ul>
+      <li>Gives more details about the collection and whether it will act as a collection, subcollection</li>
+    </ul>
+  </li>
+  <li>
+<strong>:verbs:</strong>
+    <ul>
+      <li>Specifies the <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/config/api.yml#L18-L36">verb set</a> that can be used on the collection</li>
+    </ul>
+  </li>
+  <li>
+<strong>:klass:</strong>
+    <ul>
+      <li>Specifies the base class name of the resources under this collection</li>
+    </ul>
+  </li>
+  <li>
+<strong>:name:</strong>
+    <ul>
+      <li>Name of the action to be performed</li>
+    </ul>
+  </li>
+  <li>
+<strong>:identifier:</strong>
+    <ul>
+      <li>Name of the corresponding <a href="https://github.com/ManageIQ/manageiq/blob/f77c75b4659f97be95f8976ef58abe521085c963/db/fixtures/miq_product_features.yml">product feature</a>, which is used to control permissions to resources</li>
+    </ul>
+  </li>
+  <li>
+<strong>:collection_actions:</strong> vs <strong>:resource_actions:</strong>
+    <ul>
+      <li>Collection actions correspond to those against the collection <code class="highlighter-rouge">/api/coffee</code> and resource actions are those corresponding to a single resource <code class="highlighter-rouge">/api/coffee/:c_id</code>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Through the above definition, the following endpoints and actions were created:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>GET /api/coffee
+GET /api/coffee/:c_id
+
+POST /api/coffee
+POST /api/coffee { "action": "edit" }
+POST /api/coffee { "action": "delete" }
+POST /api/coffee/:c_id { "action": "edit" } 
+POST /api/coffee/:c_id { "action": "delete" } 
+
+DELETE /api/coffee/:c_id
+</code></pre>
+</div>
+<h3 id="where-are-the-methods"><strong>Where are the methods?</strong></h3>
+<p>Now that the routes exist, let’s take care of the methods. Once the new collection has been added to the <code class="highlighter-rouge">api.yml</code>, the corresponding controller needs to be <a href="https://github.com/ManageIQ/manageiq-api/tree/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api">created here</a>. The controller will look something like:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>module Api
+  class CoffeesController &lt; BaseController 
+  end 
+end 
+</code></pre>
+</div>
+<p>Because the <code class="highlighter-rouge">CoffeesController</code> inherits from the <code class="highlighter-rouge">BaseController</code>, a lot of what has been defined in the <code class="highlighter-rouge">api.yml</code> will already work <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png" height="20" width="20" align="absmiddle">. The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api/base_controller.rb">Base Controller</a> holds the action methods (<code class="highlighter-rouge">#show</code>, <code class="highlighter-rouge">#index</code>, <code class="highlighter-rouge">#update</code>, <code class="highlighter-rouge">#destroy</code>) that will be called if they are not overridden in the <code class="highlighter-rouge">CoffeesController</code>.</p>
+<h2 id="custom-resource-actions">Custom Resource Actions</h2>
+<p>Once basic CRUD is established, what good is seeing a coffee if you can’t order one? A custom resource action is the solution for that. In traditional REST, this would be solved via <code class="highlighter-rouge">POST /api/coffee/:c_id/order</code>. We instead use actions, <code class="highlighter-rouge">POST /api/coffee/:c_id { "action": "order" }</code></p>
+
+<p>With the new order action, the <code class="highlighter-rouge">:resource_actions:</code> section will look as follows:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>        :resource_actions:
+            :get:
+            - :name: read
+              :identifier: coffee_show 
+            :post:
+            - :name: edit
+              :identifier: coffee_edit 
+            - :name: delete
+              :identifier: coffee_delete
+            - :name: order
+              :identifier: coffee_order 
+            :delete:
+            - :name: delete
+              :identifier: coffee_delete
+</code></pre>
+</div>
+
+<p>Since ordering a coffee isn’t a basic CRUD action handled by the generic methods, that will need to be defined in the <code class="highlighter-rouge">CoffeesController</code>:</p>
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="k">module</span> <span class="nn">Api</span>
+  <span class="k">class</span> <span class="nc">CoffeesController</span> <span class="o">&lt;</span> <span class="no">BaseController</span>
+    <span class="k">def</span> <span class="nf">order_resource</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+      <span class="n">coffee</span> <span class="o">=</span> <span class="n">resource_search</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">collection_class</span><span class="p">(</span><span class="n">type</span><span class="p">))</span>
+      <span class="n">coffee</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">err</span>
+      <span class="k">raise</span> <span class="no">BadRequestError</span><span class="p">,</span> <span class="s2">"Coffee not ordered - </span><span class="si">#{</span><span class="n">err</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span> 
+  <span class="k">end</span> 
+<span class="k">end</span> 
+</code></pre>
+</div>
+<p>The above example demonstrates a couple of the basic methods and formats that you’ll see used throughout the API.</p>
+<ul>
+  <li>
+<code class="highlighter-rouge">order_resource(type, id, data)</code>
+    <ul>
+      <li>This is the normal method signature for a resource action, <code class="highlighter-rouge">&lt;action&gt;_resource</code>. You can see the target method being generated <a href="https://github.com/ManageIQ/manageiq-api/blob/e9a142a2c4d55d8d0dc18d2e342cdfef251d37bf/app/controllers/api/base_controller/manager.rb#L80-L88">here</a> and being called <a href="https://github.com/ManageIQ/manageiq-api/blob/e9a142a2c4d55d8d0dc18d2e342cdfef251d37bf/app/controllers/api/base_controller/manager.rb#L10">here</a>.</li>
+    </ul>
+  </li>
+  <li>
+<code class="highlighter-rouge">collection_class(type)</code>
+    <ul>
+      <li>Based off of the <code class="highlighter-rouge">type</code> of request (in this case, <code class="highlighter-rouge">:coffee</code>), it will return the <code class="highlighter-rouge">klass</code> defined in the <code class="highlighter-rouge">api.yml</code> (<code class="highlighter-rouge">Coffee</code>).</li>
+    </ul>
+  </li>
+  <li>
+<code class="highlighter-rouge">resource_search(id, type, class)</code>
+    <ul>
+      <li>Resource search will return the resource corresponding to the ID that was requested, or return a <code class="highlighter-rouge">NotFoundError</code> if it was not found.</li>
+      <li>Resource search is used as opposed to a simple <code class="highlighter-rouge">Coffee.find(id)</code> because the results are filtered through access control, ensuring nobody is working with a resource they don’t have permissions for.</li>
+    </ul>
+  </li>
+  <li>data
+    <ul>
+      <li>The data input is the request body that was passed in with the order request. I like my coffee <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"cream"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">"sugar"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}</span></code>, so that is the request body that would be passed to my order.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="subcollections">Subcollections</h2>
+<p>Oftentimes, we need subcollections on a resource to return child resources. Coffee is great by itself, but it’s even better with donuts. And it’s your lucky day - every coffee has a set of donuts picked to pair perfectly with it. Sounds like the perfect job for a subcollection.</p>
+
+<p>Although the Donuts could also be a collection (they can still be enjoyed on their own), this example will only outline the subcollection actions for reading and deleting them.</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>    :donuts:
+        :description: Donuts
+        :options: 
+        - :subcollection
+        :verbs: *gp
+        :klass: Donut
+        :subcollection_actions:
+            :get: 
+            - :name: read
+              :identifier: donut_show_list 
+            :post:
+            - :name: delete
+              :identifier: donut_delete
+        :subresource_actions:
+            :get:
+            - :name: read
+              :identifier: coffee_show 
+            :post:
+            - :name: delete
+              :identifier: coffee_delete
+</code></pre>
+</div>
+<p>The above configuration is very similar to that of a collection, only it defines <code class="highlighter-rouge">:subcollection_actions:</code> and <code class="highlighter-rouge">:subresource_actions:</code>. The coffee options will also need to be updated to include the Donuts subcollection:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>    :coffees:
+        :description: Coffee
+        :options: 
+        - :collection
+        :verbs: *gpd
+        :klass: Coffee
+        :subcollections:
+        - :donuts
+</code></pre>
+</div>
+
+<p>Subcollection actions are defined in <a href="https://github.com/ManageIQ/manageiq-api/tree/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api/subcollections">modules</a> and included in the collection controller they are a subcollection of.</p>
+
+<p>Below is a simple example of what the <code class="highlighter-rouge">Donuts</code> module would look like:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>module Api
+  module Subcollections
+    module Donuts
+      def donuts_query_resource(object)
+        object.donuts
+      end
+      
+      def donuts_delete_resource(_object, type, id, data)
+        delete_resource(type, id, data)
+      end
+  end
+end
+</code></pre>
+</div>
+<p>In the above example, the <code class="highlighter-rouge">object</code> passed to the <code class="highlighter-rouge">donuts_query_resource</code> will be the <code class="highlighter-rouge">Coffee</code> object that the donuts are being queried on (the parent resource to the donuts).</p>
+
+<p>The two method signatures <code class="highlighter-rouge">donuts_query_resource(object)</code> and <code class="highlighter-rouge">donuts_delete_resource(object, type, id, data)</code> are the normal naming conventions for subcollection actions, <code class="highlighter-rouge">&lt;subcollection name&gt;_&lt;action&gt;_resource</code>. Like the collection, you can see the target method being generated <a href="https://github.com/ManageIQ/manageiq-api/blob/e9a142a2c4d55d8d0dc18d2e342cdfef251d37bf/app/controllers/api/base_controller/manager.rb#L80-L88">here</a>.</p>
+
+<p>The <code class="highlighter-rouge">CoffeesController</code> then includes the <code class="highlighter-rouge">Donut</code> module as follows:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>module Api
+  class CoffeesController &lt; BaseController
+    include Subcollections::Donuts 
+        
+    def order_resource(type, id, data)
+      coffee = resource_search(id, type, collection_class(type))
+      coffee.order(data)
+    rescue =&gt; err
+      raise BadRequestError, "Coffee not ordered - #{err}"
+    end 
+  end 
+end 
+</code></pre>
+</div>
+
+<p>This subcollection now gives us the endpoints</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>GET /api/coffee/:c_id/donuts
+GET /api/coffee/:c_id/donuts/:s_id
+
+POST /api/coffee/:c_id/donuts/:s_id { "action": "delete" }
+</code></pre>
+</div>
+
+<p>And just like that, our API now serves both <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20" align="absmiddle"> and donuts!</p>
+
+<h2 id="creating-a-pr">Creating a PR</h2>
+<p>Small PRs are always easier to review, and this example would be broken down into two PRs - the Coffee CRUD PR and a Donuts subcollection PR. Examples in the PR description help reviewers to understand what was added, and also helps the users to get up to speed quickly! 
+Here is a snippet of what we might include as an example for ordering a coffee:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>POST /api/coffee/:id
+{
+    "action": "order",
+    "cream": true,
+    "sugar": false
+}
+</code></pre>
+</div>
+
+<h2 id="questions-and-examples">Questions and Examples</h2>
+<p>Below you’ll find some common questions and example PRs to guide you through the development process.</p>
+<ul>
+  <li>Should this be a subcollection?
+    <ul>
+      <li>One question seen frequently is how to determine whether something should be added as a collection, subcollection, or both. Is your resource something that you would not look at outside of the context of its parent object? If so, then a subcollection is likely the way to go.</li>
+    </ul>
+  </li>
+  <li>How are asynchronous tasks handled?
+    <ul>
+      <li>Action results are used when an action creates an asynchronous task, and returns the task information back to the user. For example, the <a href="https://github.com/ManageIQ/manageiq-api/pull/14">creation and deletion of Flavors</a>
+</li>
+    </ul>
+  </li>
+  <li>Bulk actions
+    <ul>
+      <li>Action results are also used when performing bulk actions, such as <a href="https://github.com/ManageIQ/manageiq/pull/13581">bulk tagging</a>
+</li>
+    </ul>
+  </li>
+  <li>Adding subcollections
+    <ul>
+      <li>Here is an example of taking a collection and making it into a <a href="https://github.com/ManageIQ/manageiq/pull/14002">subcollection as well</a>
+</li>
+      <li>Adding a tag subcollection to a collection <a href="https://github.com/ManageIQ/manageiq-api/pull/64">is common</a>
+</li>
+    </ul>
+  </li>
+  <li>Additional attributes
+    <ul>
+      <li>Sometimes a resource may require additional attributes to be returned <a href="https://github.com/ManageIQ/manageiq-api/pull/126">by default</a>
+</li>
+    </ul>
+  </li>
+  <li>Overriding the generic methods
+    <ul>
+      <li>In the event that your CRUD methods need to do something different than what the generic methods do, you can <a href="https://github.com/ManageIQ/manageiq-api/pull/15">override them</a>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Hopefully this guide was helpful in getting you up to speed on how to contribute to the API. As always, feel free to reach out to us on <a href="https://gitter.im/ManageIQ/api">gitter</a>, and leave feedback so we can write more useful blogs in the future.</p>
+
+<p>We look forward to seeing your incoming PRs!</p>
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li>
+    <a href="/download/">Download</a>
+  </li>
+  <li>
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li>
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewbox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        © 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

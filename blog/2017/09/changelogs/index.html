@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Last Week in ManageIQ: Why Changelogs - Cause all the Cool Kids Do It</title>
+  <meta name="description" content="Hi all,…John Prause here. I’m usually the one behind-the-scenes, but I thought I’d take a shot at writing one of these, so here goes…">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/09/changelogs/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/09/changelogs/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Last Week in ManageIQ: Why Changelogs - Cause all the Cool Kids Do It</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-09-12T00:00:00+00:00" itemprop="datePublished">
+                Sep 12, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  jprause
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>Hi all,…<a href="https://github.com/jprause">John Prause</a> here. I’m usually the one behind-the-scenes, but I thought I’d take a shot at writing one of these, so here goes…</p>
+
+<p>First, some statistics about the blog entries for Last Week in ManageIQ:</p>
+<ul>
+  <li>The <a href="http://manageiq.org/blog/2016/07/last-week-in-manageiq-faster-reports-cloud-networks-and-more/">first blog entry</a> was on July 26, 2016</li>
+  <li>We’ve had 54 blog posts</li>
+  <li>25 distinct authors</li>
+  <li>Four authors have written 5 blog entries each</li>
+  <li>We’ve had 22 Sprint Reviews since the first blog entry</li>
+  <li>Each blog submission is peer-reviewed by 4-5 other prior bloggers</li>
+  <li>We’ve also had a <a href="http://manageiq.org/blog/2017/08/limericks-week-in-miq/">video blog</a> submission</li>
+  <li>Did you know that YOU can also submit a blog entry,..after all, we are open source</li>
+</ul>
+
+<p>Usually these blog entries review the PRs from last week. However, I’d like to talk about an important aspect of our <a href="https://github.com/ManageIQ/">ManageIQ repos</a>,..and that is, changelogs. According to <a href="http://keepachangelog.com/en/1.0.0/">keepachangelog.com</a>, “A changelog is a file which contains a curated, chronologically ordered list of notable changes for each version of a project.”</p>
+
+<p>Here at ManageIQ we follow the guiding principles and format as described at <a href="http://keepachangelog.com/en/1.0.0/">keepachangelog.com</a>. This is no easy task and takes a concerted effort,…but the end result is meant to help you, the community user of ManageIQ.</p>
+
+<p>Let’s take a look at the <a href="https://github.com/ManageIQ/manageiq">ManageIQ repo</a>’s <a href="https://github.com/ManageIQ/manageiq/blob/d0b9e45a1d3e9f132b301027ad6f343bd28af75d/CHANGELOG.md">changelog</a> and see what’s there. The first three lines come directly from the standards described at <a href="http://keepachangelog.com/en/1.0.0/">keepachangelog.com</a></p>
+
+<p>The next line says this: “Unreleased - as of Sprint 67 ending 2017-08-21”
+At the end of each <a href="https://youtu.be/yJRDT3m63z0">Sprint Review</a>, a PR is submitted that has updates for the end of sprint, in this case, work done in Sprint 67.</p>
+
+<p>Taking a look back at the <a href="https://github.com/ManageIQ/manageiq/blob/d0b9e45a1d3e9f132b301027ad6f343bd28af75d/CHANGELOG.md">changelog</a>, we see under the Sprint 67 header, a list of work that was Added, Changed, and Fixed. Under the Added sub-heading we see that the work is further broken down by team (or function). In this case; Platform, Providers, Reporting, REST API, and Services.</p>
+
+<p>In each breakdown, we find the actual PRs that comprise the work done over the past 2-week Sprint period. As an example, under Added/Platform, you’ll find <a href="https://github.com/ManageIQ/manageiq/pull/15819">PR15819</a></p>
+
+<p>An important (and highly stressed) component to the PR’s description is that it should be user-readable and not developer-speak. <a href="https://github.com/ManageIQ/manageiq/pull/15819">PR15819</a>’s description says: “Don’t use secure sessions in containers”. A clear description is needed because you, as the community user, shouldn’t have to drill down into the PR to try and understand what is actually going on.</p>
+
+<p>(<a href="https://youtu.be/SSUXXzN26zg">Squirrel Moment</a>) Let me take a minute to showcase the <a href="http://manageiq.org/blog/2016/11/announce_f_name/">fine</a> (no pun intended) work of our development team. If you take a look at <a href="https://github.com/ManageIQ/manageiq/pull/15819">PR15819</a>, you’ll see we use multiple labels, have multiple reviewers, and use Sprint markers to define which sprint this enhancement came into.</p>
+
+<p>Now back to our <a href="https://github.com/ManageIQ/manageiq/blob/d0b9e45a1d3e9f132b301027ad6f343bd28af75d/CHANGELOG.md">changelog</a>. Further work is done on the changelogs once we have a release of ManageIQ,…such as the recent <a href="http://manageiq.org/blog/2017/08/Announcing-Fine-3/">Fine-3 release</a>. Once a release is announced, we go back into the changelog and now add a header for the Fine-3 release, as well as define which fixes are Released.</p>
+
+<p>I do have a caveat. If you review our <a href="https://github.com/ManageIQ/">repos</a>, you’ll find that most do not have a CHANGELOG.md file as just described. “But John, you just said…“,…I know, I know,…bear with us, we’re on a journey to get our changelogs up to snuff.</p>
+
+<p>There’s really a lot more to say about this subject,..however, you can read all about it at,..you guessed it, <a href="http://keepachangelog.com/en/1.0.0/">keepachangelog.com</a></p>
+
+<p>I hope this helped and until next time!</p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="capacity-and-utilization">Capacity And Utilization</h1>
+
+<ol>
+  <li>A capture request is kicked off by the schedule worker every so often (configurable, 10 minutes with a 50 minute threshold).</li>
+  <li>The capture request finds all VMs and Hosts (and Storages, but those are different) enabled for capture (configurable).</li>
+  <li>For each target it then queues up a capture.</li>
+  <li>A collector worker will pick up one of these work items, collect the data since the last capture, and write new records in the metrics table.</li>
+  <li>Then the worker queues up a rollup (explained below).</li>
+  <li>A processor worker will pick up one of these rollup work items and queue up ANOTHER rollup for the next stage of the rollup chain.</li>
+  <li>This continues until we hit the end of the chain.</li>
+</ol>
+
+<p>After enabling the Capacity &amp; Utilization Collector Role, data collection begins immediately.  However, the first collection begins 5 minutes after the CFME Server is started, and every 10 minutes after that. Therefore, the longest the collection will take after enabling the Capacity &amp; Utilization Collector CFME Server Role is 10 minutes. The first collection from a particular management system may take a few minutes since CFME is gathering data points going one month back in time</p>
+
+<h2 id="rollups">Rollups</h2>
+<p>There are two types of rollups, <strong>time-based</strong> and <strong>infrastructure-based</strong>.</p>
+<ul>
+  <li><strong>Time-based</strong> rollups go from realtime → hourly → daily.</li>
+  <li><strong>Infrastructure-based</strong> rollups for hourly go from <code class="highlighter-rouge">Vm</code> → <code class="highlighter-rouge">Host</code> → <code class="highlighter-rouge">EmsCluster</code> → <code class="highlighter-rouge">ExtManagementSystem</code> → <code class="highlighter-rouge">MiqRegion</code> (and maybe to <code class="highlighter-rouge">MiqEnterprise</code>?).</li>
+</ul>
+
+<h3 id="example">Example</h3>
+
+<p>Say we do a capture on a VM and we get back data with timestamps between 4:05 and 4:15.  This would cause records to be written in the metrics for each interval.  Then, it would put a rollup on the queue for that VM for the 4:00 hour <em>(time-based)</em>.  A processor worker will pick up that queue item, gather all of the real-time records for that VM for the 4:00 hour, and write a rollup hourly record for that VM.  Then it will queue up 2 more rollups. One rollup is for the parent Host of that VM for the 4:00 hour <em>(infrastructure-based)</em>, and another is for that VM for the day <em>(time-based)</em>.</p>
+
+<p>Below is the full tree of rollups that will occur:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Vm (realtime collected)
+ Vm (hourly)
+   Vm (daily)
+   Host (hourly)
+     Host (daily)
+     EmsCluster (hourly)
+       EmsCluster (daily)
+       ExtManagementSystem (hourly)
+         ExtManagementSystem (daily)
+         MiqRegion (hourly)
+           MiqRegion (daily)
+</code></pre>
+</div>
+
+<p>That is the simplest description. In reality, there are some nuances that should be mentioned.</p>
+
+<ul>
+  <li>
+    <p><strong>We collect data that spans hours</strong> (e.g. we collect 3:50-4:15), so a separate rollup is put on the queue for each hour in question, and the chain begins separately for each.</p>
+  </li>
+  <li>
+    <p><strong>Rollups are queued up for a particular hour or day, but don’t actually execute until the end of that time period</strong>.  As captures queue up rollups for the same parameters (e.g. for Vm:1 for the 4:00 hour), they are merged on the queue, so you only end up with one rollup record.  If a rollup is being executed and new data comes in for that hour (e.g. from a gap collection, or collection falls behind), then a new queue item will be placed for those same parameters.  This is ok as the rollup code recognizes when it has to update existing records.</p>
+  </li>
+  <li>
+    <p><strong>The definition of a day is actually more complex</strong>.  A day is a different range of hours depending on your time zone.  We accomplish managing this with Time Profiles.  Time Profiles represent a time zone as well as a set of hours and days that are considered valid.  This way a customer can create a Time Profile that represents an entire time zone or just their business hours in a particular time zone (e.g. Eastern Time 9-5 M-F).  Part of setting up a time profile is to choose whether or not it will participate in daily rollups.  UTC is provided OOtB with daily rollups enabled.  Therefore, as far as daily rollups are concerned, the truth is that a daily rollup is queued for each Time Profile that has daily rollups enabled.</p>
+  </li>
+  <li>
+    <p><strong>Storages are slightly different.  Their information is collected from our storage scans</strong>, so if you’ve never scanned a Storage, you won’t get any data. Storages rollup directly to their EMS, I think.  Also, they are run on a different schedule.</p>
+  </li>
+  <li>
+    <p><strong>Cloud rollups</strong> <em>(coming soon)</em> will go from <code class="highlighter-rouge">Vm</code> → <code class="highlighter-rouge">Availability Zone</code> → <code class="highlighter-rouge">ExtManagementSystem</code> → <code class="highlighter-rouge">MiqRegion</code>.</p>
+  </li>
+</ul>
+
+<h2 id="notes-on-testing-rollups">Notes on Testing Rollups</h2>
+<ul>
+  <li>
+    <p><strong>Rollups are automatic behind the scenes and are triggered by a collection</strong>.  Therefore, if you try to manually inject data, you are not really running a collection and thus won’t get rollups.</p>
+  </li>
+  <li>
+    <p><strong>A capture of a Vm can be kicked off in a rails console with <code class="highlighter-rouge">vm.perf_capture("realtime")</code></strong>.  The rollups on the queue can be executed without a worker by just delivering them from the queue</p>
+
+    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">q</span> <span class="o">=</span> <span class="no">MiqQueue</span><span class="p">.</span><span class="nf">find</span>
+  <span class="n">q</span><span class="p">.</span><span class="nf">delivered</span><span class="p">(</span><span class="o">*</span><span class="n">q</span><span class="p">.</span><span class="nf">deliver</span><span class="p">)</span>
+</code></pre>
+    </div>
+
+    <p>If you want to fake creating rollups, you can just do <code class="highlighter-rouge">vm.perf_rollup_to_parent("realtime", start_time, end_time)</code>, which queues them up and starts the chain.</p>
+  </li>
+  <li>
+    <p><strong>Database tables are not ordered sets of data, so if you did a straight query they are not guaranteed to appear in any particular order.</strong>  In addition, due to the nature of multiple workers, data may get written in different orders, especially if records have to be updated.  It may be helpful to order by timestamp and filter against <code class="highlighter-rouge">resource_type</code>, <code class="highlighter-rouge">resource_id</code>, <code class="highlighter-rouge">capture_interval_name</code>.</p>
+  </li>
+</ul>
+
+<h2 id="todo-notes-on-why-we-use-postgres-inheritance-and-why-metrics-and-metrics_rollups-are-in-separate-tables">TODO: Notes on why we use Postgres inheritance, and why metrics and metrics_rollups are in separate tables.</h2>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/developer_setup/minimal_mode">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/developer_setup/minimal_mode">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <p>ManageIQ allows developers to start minimal services and/or the rails app via a “minimal” mode setting when starting the application.  Starting in minimal mode limits the number of workers that are started for a quicker application startup, or for targeted end-user testing of specific pieces of the application.</p>
+
+<h2 id="standard-startup">Standard Startup</h2>
+
+<p>In development, to start the application in standard mode, run:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; rake evm:start
+</code></pre>
+</div>
+
+<p>This command will start the following workers:</p>
+
+<ul>
+  <li>two generic workers</li>
+  <li>two priority workers</li>
+  <li>two reporting workers</li>
+  <li>one schedule worker</li>
+  <li>one UI worker</li>
+  <li>one web service worker</li>
+  <li>any additional event workers (based on configured External Management Systems)</li>
+  <li>any additional refresh workers (based on configured External Management Systems)</li>
+</ul>
+
+<h2 id="strict-minimal-startup">Strict Minimal Startup</h2>
+
+<p>In development, to start the application in minimal mode, run:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal rake evm:start
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">MIQ_SPARTAN</code> environment variable is inspected by the <code class="highlighter-rouge">MiqServer</code> class (specifically, the <code class="highlighter-rouge">EnvironmentManagement</code> mixin), which determines whether the application is starting in a minimal mode.  In this strict minimal mode, the following workers are started:</p>
+
+<ul>
+  <li>one generic worker</li>
+  <li>one UI worker</li>
+</ul>
+
+<h2 id="specific-minimal-startup">Specific Minimal Startup</h2>
+
+<p>ManageIQ allows developers to augment the minimal startup mode by specifying a colon-separated list of worker roles.  These worker roles are used to determine which workers should be started in addition to the strict minimal list above.</p>
+
+<p>To start the application with a specific set of workers in minimal mode, run</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal:&lt;role_name&gt;:&lt;role_name&gt; rake evm:start
+</code></pre>
+</div>
+
+<p>Following is a mapping of role names to worker types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Role name</th>
+      <th>Worker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ems_inventory</td>
+      <td><code class="highlighter-rouge">miq_vim_broker_worker</code>, <code class="highlighter-rouge">miq_ems_refresh_worker</code>, <code class="highlighter-rouge">miq_ems_refresh_core_worker</code></td>
+    </tr>
+    <tr>
+      <td>ems_metrics_collector</td>
+      <td><code class="highlighter-rouge">miq_vim_broker_worker</code>, <code class="highlighter-rouge">miq_ems_metrics_collector_worker</code></td>
+    </tr>
+    <tr>
+      <td>ems_metrics_processor</td>
+      <td><code class="highlighter-rouge">miq_ems_metrics_processor_worker</code></td>
+    </tr>
+    <tr>
+      <td>ems_operations</td>
+      <td><code class="highlighter-rouge">miq_vim_broker_worker</code></td>
+    </tr>
+    <tr>
+      <td>event</td>
+      <td><code class="highlighter-rouge">miq_event_catcher</code>, <code class="highlighter-rouge">miq_event_handler</code></td>
+    </tr>
+    <tr>
+      <td>reporting</td>
+      <td><code class="highlighter-rouge">miq_reporting_worker</code></td>
+    </tr>
+    <tr>
+      <td>schedule</td>
+      <td><code class="highlighter-rouge">miq_schedule_worker</code></td>
+    </tr>
+    <tr>
+      <td>smartproxy</td>
+      <td><code class="highlighter-rouge">miq_smart_proxy_worker</code>, <code class="highlighter-rouge">miq_vim_broker_worker</code></td>
+    </tr>
+    <tr>
+      <td>smartstate</td>
+      <td><code class="highlighter-rouge">miq_vim_broker_worker</code></td>
+    </tr>
+    <tr>
+      <td>user_interface</td>
+      <td><code class="highlighter-rouge">miq_ui_worker</code></td>
+    </tr>
+    <tr>
+      <td>web_services</td>
+      <td><code class="highlighter-rouge">miq_web_services_worker</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>no_ui</td>
+      <td>Prevent starting the UI worker normally provided by minimal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, to start in minimal mode with event catching and EMS refreshing enabled, run:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal:event:ems_inventory rake evm:start
+</code></pre>
+</div>
+
+<p>Note:</p>
+
+<ul>
+  <li>A value specified in MIQ_SPARTAN will not start the worker if the server is not configured with that role.  All MIQ_SPARTAN does is filter down the existing list of assigned server roles to a smaller set.</li>
+  <li>Some of the workers can be started with different roles
+    <ul>
+      <li>For example, <code class="highlighter-rouge">miq_vim_broker_worker</code> can be started with any of
+        <ul>
+          <li>smartstate</li>
+          <li>smartproxy</li>
+          <li>ems_operations</li>
+          <li>ems_metrics_collector</li>
+          <li>ems_inventory</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>All of these workers are subclasses of <a href="https://github.com/ManageIQ/manageiq/blob/81bd2df11c9bb60a839b97a0d140958f9a4bc132/app/models/miq_worker/runner.rb"><code class="highlighter-rouge">MiqWorker::Runner</code></a></li>
+  <li>Some workers will only start if there is a corresponding External Management System configured, such as the <code class="highlighter-rouge">miq_ems_refresh_worker</code>.</li>
+</ul>
+
+<h2 id="some-suggested-startups">Some Suggested Startups</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Values</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">minimal:ems_inventory:event</code></td>
+      <td>Testing EMS Refresh and Eventing from a provider</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">minimal:no_ui:reporting</code></td>
+      <td>Testing UI changes, when needed to run the UI through a debugger instead of a worker</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">minimal:schedule</code></td>
+      <td>Testing real world schedules</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

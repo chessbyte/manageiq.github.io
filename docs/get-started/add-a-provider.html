@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Add A Provider</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/get-started/add-a-provider">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/get-started/add-a-provider">
+      <nav class="doc_tabs">
+  <ul>
+  <li class="active">
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    <ul class="menu menu-toplevel" id="start_menu">
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/">
+      Get started
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item menu-parent">
+    <a href="#">
+      Get ManageIQ
+    </a>
+    
+    <ul>
+      
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/vagrant">
+      Vagrant
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/docker">
+      Docker
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/cloud">
+      Public Cloud
+    </a>
+    
+  </li>
+
+
+    </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/basic-configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item active">
+    <a href="/docs/get-started/add-a-provider">
+      Add A Provider
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/review-provider">
+      Review Provider Details
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/provision-machine">
+      Provision Your First Machine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/create-service-item">
+      Create Your First Service Item
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/where-to-go-from-here">
+      Where to go from here
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/concepts">
+      Concepts Guide
+    </a>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc start_doc">
+      
+      <header class="doc-header">
+        <h1 class="doc-title">Add A Provider</h1>
+      </header>
+      
+
+      <div class="doc-content">
+        
+        <p>In this chapter we will use ManageIQ with the <a href="https://console.cloud.google.com/">Google Cloud Platform</a>.</p>
+
+<p>Many other platforms are available including Amazon Web Services, VMware
+vSphere and OpenStack.</p>
+
+<p>Capabilities between providers can be different
+and evolve with time, so don’t forget to check the <a href="https://manageiq.org/docs/reference/latest/doc-Managing_Providers/miq/">support options
+document</a></p>
+
+<h3 id="create-a-google-cloud-platform-account-if-needed">Create a Google Cloud Platform account (if needed)</h3>
+
+<p>Create the Google Cloud Platform free trial account if you don’t have
+one already. You will need an existing Google account that you will use
+to create a new GCP project and billing account.</p>
+
+<p><a href="https://console.cloud.google.com/freetrial">Google Cloud Platform free trial</a></p>
+
+<p>Once you have your billing account created and you have started your
+trial, create a VM to make sure that everything is working.</p>
+
+<p>Press <strong><em>Get started</em></strong> in the Google Cloud Platform console to follow a
+tutorial on the platform.</p>
+
+<ol>
+  <li>Enable billing in the account</li>
+  <li>Create a project, Google Compute Engine will take some minutes to
+start</li>
+  <li>Create an instance or follow the tutorial. For instance, a CentOS 7
+VM with 10 GB hard drive</li>
+</ol>
+
+<p><img src="/assets/images/docs/screenshot_0007.png" alt="screenshot0007" class="large_img" /></p>
+
+<p>After you finish the tutorial, you should have at least 1 instance in your account</p>
+
+<h3 id="add-the-provider-to-manageiq">Add the provider to ManageIQ</h3>
+
+<h4 id="1--connect-to-manageiq-as-admin-adminpassword">1.  Connect to ManageIQ as admin (admin/password)</h4>
+
+<ol>
+  <li>Connect to the appliance via ssh and make sure that the appliance is configured in the same zone that
+    the GUI and that is synchronized 
+    (<code class="highlighter-rouge">sudo systemctl restart chronyd</code>)</li>
+  <li>Access the console to see available options
+   <code class="highlighter-rouge">appliance_console</code> or <code class="highlighter-rouge">sudo appliance_console</code></li>
+</ol>
+
+<h4 id="2--generate-a-private-json-key-for-your-project-in-google-cloud">2.  Generate a private JSON key for your project in Google Cloud</h4>
+<p>Platform (API → Credentials), don’t forget your key as you will
+    need it. And enable API for the
+    project (https://support.google.com/cloud/answer/6158841)</p>
+
+<p><img src="/assets/images/docs/screenshot_0008.png" alt="screenshot0008" class="large_img" /></p>
+
+<h4 id="3--add-a-new-cloud-provider">3.  Add a new Cloud provider</h4>
+<p>In ManageIQ, go to <strong><em>Compute→Cloud → Providers</em></strong> and select Add New
+    Cloud Provider.</p>
+
+<p><img src="/assets/images/docs/screenshot_0009.png" alt="screenshot0009" class="large_img" /></p>
+
+<h4 id="4-select-google-cloud-platform">4. Select Google Cloud Platform</h4>
+
+<p>Select Google Cloud Platform as type</p>
+
+<p><img src="/assets/images/docs/screenshot_0010.png" alt="screenshot0010" class="large_img" /></p>
+
+<h4 id="5-enter-credentials">5. Enter credentials</h4>
+<p>Enter your Google Compute Engine Project ID for <em>Project</em>.
+Copy your project’s <em>Service Account</em> JSON key contents to the
+    <em>Service Account JSON</em> field.</p>
+
+<p><img src="/assets/images/docs/screenshot_0011.png" alt="screenshot0011" class="large_img" /></p>
+
+<h4 id="6-store-the-provider-configuration">6. Store the provider configuration</h4>
+<p>Press <strong><em>Validate</em></strong> and then <strong><em>Add</em></strong></p>
+
+<h3 id="refresh-the-provider-in-manageiq">Refresh the provider in ManageIQ</h3>
+
+<ol>
+  <li>Providers are refreshed every few minutes and when events happen in
+the system. If you don’t see all the data the first time you will
+need to go to the Provider and then to <em>Configuration → Refresh
+Relationships and Power States</em></li>
+  <li>Sometimes the credentials for the Cloud need to be refreshed, go to
+the Provider and then press <em>Authentication → Re-check
+Authentication Status</em> to trigger a refreshment.</li>
+</ol>
+
+<p><img src="/assets/images/docs/screenshot_0012.png" alt="screenshot0012" class="large_img" /></p>
+
+<h2 id="next-review-provider">Next: <a href="/docs/get-started/review-provider">Review Provider</a></h2>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

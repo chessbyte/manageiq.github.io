@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/reviewers_guidelines">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/reviewers_guidelines">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="reviewers-guidelines">Reviewer’s guidelines</h1>
+
+<p>We have some technical debt that is continously being refactored.
+However, it’s possible that someone is getting inspired by wrong pattern that still lays in the codebase.
+In such case the reviewer might not be aware of <em>The Right Way</em> and approves the changes.</p>
+
+<p>This can cause a significant growth in technical dept. As it is complicated to track all the ongoing refactoring approaches,
+this document is intended to summarize common pitfalls and also good examples.</p>
+
+<p><strong>Please update this document with simple <code class="highlighter-rouge">wrong</code> and <code class="highlighter-rouge">right</code> examples that you are aware of.</strong></p>
+
+<p><strong>When doing reviews, please try to go through these examples to prevent introducing technical debt</strong></p>
+
+<p>Thank you, happy reviewers!</p>
+
+<h2 id="manageiqmanageiq-ui-classic">ManageIQ/manageiq-ui-classic</h2>
+
+<h3 id="testing-rbac-on-checked-items">Testing RBAC on checked items</h3>
+
+<p>Make sure, the introduced code is checking the permissions on items checked in UI.
+There is a list of classes, that support RBAC check in <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/rbac/filterer.rb#L8"><code class="highlighter-rouge">CLASSES_THAT_PARTICIPATE_IN_RBAC</code></a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<span class="c1"># wrong</span>
+<span class="c1"># =====</span>
+<span class="k">if</span> <span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show_list"</span> <span class="o">||</span> <span class="p">(</span><span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show"</span> <span class="o">&amp;&amp;</span> <span class="vi">@layout</span> <span class="o">!=</span> <span class="s2">"cloud_network"</span><span class="p">)</span> <span class="o">||</span> <span class="vi">@lastaction</span><span class="p">.</span><span class="nf">nil?</span>
+  <span class="n">find_checked_items</span>
+<span class="k">else</span>
+  <span class="p">[</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Also, we still have 5 different <em>(deprecated)</em> methods spread in the UI code for doing RBAC check, that basically do the same thing, just for different cases.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<span class="c1"># wrong</span>
+<span class="c1"># =====</span>
+<span class="k">if</span> <span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show_list"</span> <span class="o">||</span> <span class="p">(</span><span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show"</span> <span class="o">&amp;&amp;</span> <span class="vi">@layout</span> <span class="o">!=</span> <span class="s2">"cloud_subnet"</span><span class="p">)</span> <span class="o">||</span> <span class="vi">@lastaction</span><span class="p">.</span><span class="nf">nil?</span>
+  <span class="n">find_checked_records_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">)</span>
+<span class="k">else</span>
+  <span class="p">[</span><span class="n">find_record_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])]</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>For checking the permissions on the particular items, please use <code class="highlighter-rouge">find_records_with_rbac</code> method.
+<em>related issue: https://github.com/ManageIQ/manageiq-ui-classic/issues/1134</em></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<span class="c1"># right</span>
+<span class="c1"># =====</span>
+<span class="n">find_records_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">,</span> <span class="n">checked_or_params</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>In case you want to check a single item, please use <code class="highlighter-rouge">find_record_with_rbac</code>, added in (https://github.com/ManageIQ/manageiq-ui-classic/pull/1636):</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<span class="c1"># right</span>
+<span class="c1"># =====</span>
+<span class="n">find_record_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">,</span> <span class="n">checked_or_params</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>more info:
+http://manageiq.org/docs/guides/ui/rbac_features</p>
+
+<h4 id="double-checking-loaded-records">Double checking loaded records</h4>
+
+<p>In <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/3131">manageiq-ui-classic/pull/3131</a> the behavior of the fetching method was changed.</p>
+
+<p>In case that no records are found, the method raises an <code class="highlighter-rouge">ActiveRecord::RecordNotFound</code> exception.</p>
+
+<p>That means the double checking the variable with loaded records is not necessary, and therefore can be removed.</p>
+
+<div class="language-diff highlighter-rouge"><pre class="highlight"><code>     scheds = find_records_with_rbac(MiqSchedule, checked_or_params)
+<span class="gd">-    if scheds.empty?
+-      add_flash(msg1, :error)
+-      javascript_flash
+-    end
+</span></code></pre>
+</div>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

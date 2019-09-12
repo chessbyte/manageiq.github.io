@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - ManageIQ Euwe GA - Improved Container Management, Public Cloud Support, and more</title>
+  <meta name="description" content="We’re delighted to announce the release of ManageIQ Euwe! This fifth ManageIQ release is named after Dutch chess Grandmaster Max Euwe.">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2016/12/manageiq-euwe-ga-announcement/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2016/12/manageiq-euwe-ga-announcement/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">ManageIQ Euwe GA - Improved Container Management, Public Cloud Support, and more</h1>
+
+            <div class="post-meta">
+              <time datetime="2016-12-20T11:21:16+00:00" itemprop="datePublished">
+                Dec 20, 2016
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  cybette
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/releases">releases</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/announcements">announcements</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>We’re delighted to announce the release of ManageIQ Euwe! This fifth ManageIQ release is named after Dutch chess Grandmaster <a href="https://en.wikipedia.org/wiki/Max_Euwe">Max Euwe</a>.</p>
+
+<p>Since the <a href="/blog/2016/06/darga-ga-announcement/">ManageIQ Darga GA</a>, we’ve had 9 productive <a href="/blog/tags/sprints/">sprints</a> with a total of 3025 pull requests in the <a href="https://github.com/manageiq/manageiq">main ManageIQ repo</a> and 4518 PRs <a href="https://github.com/manageiq/">overall</a> (averaging 112/167 pull requests <a href="/blog/tags/LWIMIQ/">per week</a>). All these activities have translated to a slew of new features, bug fixes, and even some deletions to optimize things.</p>
+
+<p>With growing interest and demand for public cloud providers and containers management in IT service automation, the community has responded with plenty of enhancements in these areas. In addition, there are new provider types such as storage and middleware, gradually piecing together the full stack management view.</p>
+
+<h2 id="containers-management-improvements">Containers Management Improvements</h2>
+
+<p>Plenty of new reports and metrics enhancements have been included to let you manage containers with confidence. Pods for images per project and Pods per node are added to operations reporting. Additionally, you can get Chargeback rates for container images filtered by image tags, with support for custom attributes in the reports. Speaking of tags, container objects can be auto-tagged with the same labels in Kubernetes/OpenShift.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_container_labels_view.png"><img src="/assets/images/blog/Euwe_GA_container_labels_view_thumb.png" alt="Container Labels View" /></a></p>
+
+<p>The status of metrics collection is shown similarly to inventory collection: the success/failure of the last collection is displayed. Now there are metrics for disconnected container groups as well. Previously, we could only obtain the metrics for container groups that were active when metrics were collected (once per hour), so transient groups (that were created and destroyed between collection times) were not recorded. With the new rollout, metrics for such container groups are made available.</p>
+
+<h2 id="public-cloud-providers-improvements">Public Cloud Providers Improvements</h2>
+
+<p>The team has been continually enriching features for the public cloud platform Microsoft Azure and making it a first class provider. There is now support for Floating IPs during Azure instance provisioning, with metrics added for network, memory and disk utilization.</p>
+
+<p>Load balancer inventory collection has been added to Azure EMS refresh, as well as support for external proxy. The issue where inventory collection would bypass the proxy when collecting templates has been fixed. You can also make use of provider-specific logging with Azure to make debugging much easier.</p>
+
+<p>A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from &gt;7000 to &lt;1000. Scan times have also been reduced from &gt;20 min to &lt;5 min!</p>
+
+<p>Finally, we noticed that Azure was missing pre- and post-provision methods in automate modeling, so Azure method points have been added for cloud provisioning in Automate.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_azure_preposition.png"><img src="/assets/images/blog/Euwe_GA_azure_preposition.png" alt="Azure PrePosition" /></a></p>
+
+<p>Many corresponding enhancements were applied to Google Compute Engine, including metrics, external proxy support, load balancer refresh, and pre/post-provisioning methods and schema changes in the method class for Automate.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_google_postposition.png"><img src="/assets/images/blog/Euwe_GA_google_postposition_thumb.png" alt="Google PostPosition" /></a></p>
+
+<p>During provisioning, the deprecated images are now hidden. Support for parsing Google health checks is added for load balancer refresh.</p>
+
+<p>In GCE, there are <a href="https://cloud.google.com/compute/docs/instances/preemptible">preemptible instances</a>. With Google’s contributions, we have inventory collection and provisioning of these preemptible VMs. Support for instance retirement is improved too.</p>
+
+<h2 id="openstack-improvements">OpenStack Improvements</h2>
+
+<p>Working with the Red Hat OpenStack team, we bring you a long list of improvements for the OpenStack cloud provider. To start off, collection of Host Aggregate inventory allows the OpenStack scheduler to enable advanced scheduling. The mapping of external cloud tenants to ManageIQ tenants is achieved with a post-refresh hook on the OpenStack provider which synchronizes after refresh.</p>
+
+<p>Creating, updating and deleting cloud tenants and host aggregates can now be carried out through the user interface from the Clouds menu under Compute.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_add_cloud_tenant.png"><img src="/assets/images/blog/Euwe_GA_add_cloud_tenant_thumb.png" alt="Add New Cloud Tenant" /></a></p>
+
+<p>Block storage service is introduced with Cinder backup and restore actions. Snapshot functionality has been added for OpenStack cloud volumes and VMs, and you can create and remove snapshots from the UI. New topology view for OpenStack cloud provider shows the availability zones, tenants and instances.</p>
+
+<p>Flavors are mapped to cloud tenants during OpenStack cloud refresh so that they are grouped correctly. Previously, Floating IPs can be assigned only during provisioning; however, with this release associating/disassociating Floating IPs can be controlled from the configuration menu after provisioning.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_associate_floating_ip.png"><img src="/assets/images/blog/Euwe_GA_associate_floating_ip.png" alt="Associate Floating IP" /></a></p>
+
+<p>For the OpenStack infrastructure provider, there was a lot of work done around nodes. The infrastructure nodes can be powered on and off, added or removed. There are additional options for introspecting nodes and setting their provision states. Ironic Controls have been added to the UI, with which Ironic nodes can be registered through Mistral, the OpenStack workflow service. Destroying a node deletes it from Ironic.</p>
+
+<p>Cloud networks, subnets, as well as network routers can be created/updated/deleted with the OpenStack Network Manager. You also have the ability to see additional ports, which are obtained from SmartState analysis. Both infrastructure and network topology views are newly added. Check them out!</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_openstack_network_topology.png"><img src="/assets/images/blog/Euwe_GA_openstack_network_topology_thumb.png" alt="OpenStack Network Topology" /></a></p>
+
+<h2 id="new-provider-type-storage">New Provider Type: Storage</h2>
+
+<p>In this Euwe release, we are adding initial support for Cinder and Swift managers, to manage block storage and object storage respectively. For now, these first storage managers are OpenStack specific, and will be extended in future to support association with other providers or as standalone. The implementation supports managers of either physical or software defined storages.</p>
+
+<p>Swift inventory will cross-link with object stores and instances, while Cinder inventory has cross-linking to cloud volumes and instances. Depending on the environment a storage manager is associated with, it will make the appropriate crosslinks.</p>
+
+<p>As mentioned in the OpenStack updates section, Cinder backup and restore of cloud volumes is available (through UI).</p>
+
+<h2 id="new-provider-type-middleware">New Provider Type: Middleware</h2>
+
+<p>Middleware was initially introduced in the Darga release. Since then, an amazing amount of work has gone into building up this provider type with the Hawkular provider, which is consistently among the top providers in terms of PRs during a sprint.</p>
+
+<p>One of the first things you’ll notice is Middleware as a top level menu item in the ManageIQ interface. From here, one can deploy and operate the middleware infrastructure - provisioning, retiring, and re-configuring middleware application deployments. It supports micro-lifecycle for deployments, which enables both standalone and server group operations.</p>
+
+<p>Users are able to connect to the database by adding Middleware Datasources and JDBC Drivers. These are important pieces for the application servers to establish and manage the connections.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_add_middleware_datasource.jpg"><img src="/assets/images/blog/Euwe_GA_add_middleware_datasource_thumb.jpg" alt="Add Middleware Datasource" /></a></p>
+
+<p>Metrics are added for JMS topics and queues, to show info such as number of consumers and how many messages sent. In addition, there’s live metrics for datasources and transactions. On the reporting side, you can access performance reports for datasources and middleware servers.</p>
+
+<p>For a more visual representation of the middleware infrastructure and applications, take a look at the topology view. Cross-linking middleware servers to VMs indicate the relationships to the compute services running them. Further visualizations in topology graph include domains, datasources, and server groups.</p>
+
+<h2 id="improvements-to-service-ui">Improvements to Service UI</h2>
+
+<p>Formerly known as Self Service UI, this has been renamed to Service UI due to the expanding number of use cases.</p>
+
+<p>To allow for criteria-based VM selection for services, we use arbitration profiles, which are collections of pre-defined settings. In conjunction with the arbitration engine, these provide the ability to implement rules like enforcing a contractor to use AWS profile for development servers. The UI for Arbitration Rules will be in the Service Designer.</p>
+
+<p>One main highlight is the availability of Chargeback for services. The Service UI now supports showing Chargeback report data, which summarizes the cost of VMs grouped by service to the user at time of order. It will be able to display the service cost over past 30 days too.</p>
+
+<p>Other enhancements in API comprise of picture creation (jpg, png, svg formats), support for HTTP OPTIONS on collections, as well as the deletion of service dialogs. There’s also an “About” modal with the Cockpit integration.</p>
+
+<h2 id="centralized-administration">Centralized Administration</h2>
+
+<p>The role of Centralized Administration is to support the lifecycle management of a lower region from a master region. A ManageIQ operator in the global region is empowered to provision “on behalf” of a remote region.</p>
+
+<p>Server to server authentication enables the invocation of tasks in remote regions from the global region. VM power operations and VM retirement can be initiated from the master region, which are then processed and executed on the lower regions.</p>
+
+<h2 id="miscellaneous-improvements">Miscellaneous Improvements</h2>
+
+<p>Besides copious amounts of new eye-candy for all the added features and new providers, UI performance has seen a boost as well. By optimizing resources and filtering, operations such as page rendering are much faster. For example, Services -&gt; Workloads -&gt; All VMs page load time has reduced from 93,770ms to 524ms (99%) with a test of 20,000 VMs.</p>
+
+<p>Another addition, which resulted from discussions at the ManageIQ Design Summit this June, is Git Automate Support. With this, you can pull from a git repository using branch/tag to determine which automate domain model is loaded to ManageIQ. The contents are locked when imported, but can be copied to other domains for editing.</p>
+
+<p><a href="/assets/images/blog/Euwe_GA_git_automate_import.png"><img src="/assets/images/blog/Euwe_GA_git_automate_import_thumb.png" alt="Git Automate Import" /></a></p>
+
+<p>The above is by no means an exhaustive list of all the changes to ManageIQ since the last release. We’re so grateful to the remarkably productive contributors in ManageIQ community for making the Euwe release possible! You can find the <a href="https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md">full changelog here</a>.</p>
+
+<p>Release images for ManageIQ Euwe are available for <a href="/download/">download</a>. Visit the ManageIQ <a href="/community/">Community page</a> to find out how to get involved in the community, and where you can connect with us online and in person at events. <a href="/docs/">Documentation</a> and other resources can be found on the (recently renewed) <a href="/">ManageIQ site</a>. Thanks for your support!</p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Darga GA Release</title>
+  <meta name="description" content="ManageIQ is excited to announce the official release of Darga, named for Grandmaster Klaus Darga.Below are some of the many new features that are part of thi...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2016/06/darga-ga-announcement/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2016/06/darga-ga-announcement/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Darga GA Release</h1>
+
+            <div class="post-meta">
+              <time datetime="2016-06-07T20:02:24+00:00" itemprop="datePublished">
+                Jun 7, 2016
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  chessbyte
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/releases">releases</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/announcements">announcements</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>ManageIQ is excited to announce the official release of <strong>Darga</strong>, named for Grandmaster <a href="https://en.wikipedia.org/wiki/Klaus_Darga">Klaus Darga</a>.
+Below are some of the many new features that are part of this release.  For more detail see the <a href="https://github.com/ManageIQ/manageiq/blob/darga/CHANGELOG.md">changelog</a>.</p>
+
+<h3 id="providers">Providers</h3>
+
+<h4 id="microsoft-azure-cloud">Microsoft Azure Cloud</h4>
+
+<ul>
+  <li>Inventory – Deep forensic inspection of asset inventory</li>
+  <li>Smart State Analysis – Introducing SSA to the Cloud</li>
+  <li>Events – Full Azure events support, compute, storage and networking</li>
+  <li>Operations – Power Controls</li>
+  <li>Metrics – CPU utilization (more to come in errata)</li>
+  <li>Chargeback – Limited based on CPU utilization</li>
+  <li>Provisioning – Provisioning from a private image</li>
+  <li>Retirement – Lifecycle operations to support on-demand or schedule retirement</li>
+  <li>Appliance Image – As above we can run 100% in Azure</li>
+  <li>Proxy – Supports ManageIQ global proxy</li>
+</ul>
+
+<h4 id="google-compute-engine">Google Compute Engine</h4>
+
+<ul>
+  <li>Inventory – Asset inventory, virtual machines, regions, availability zones</li>
+  <li>Events – Event support for basic operations, start/stop/delete</li>
+  <li>Operations – Power Controls</li>
+  <li>Provisioning – Provision from a private image</li>
+</ul>
+
+<h4 id="vmware-vsphere">VMware vSphere</h4>
+
+<ul>
+  <li>Distributed Switches – Now part of inventory and available during provisioning (rather than real time look ups)</li>
+  <li>Storage Clusters – Visibility and provisioning similar to datastores</li>
+  <li>Guest Disk Reconfiguration – Add or Remove disks to an existing VM</li>
+  <li>ReadOnly Datastores – Now supported for inventory</li>
+</ul>
+
+<h4 id="red-hat-openshift-enterprise">Red Hat OpenShift Enterprise</h4>
+
+<ul>
+  <li>Chargeback – Project based chargeback roll ups. POD metrics collected from Hawkular and rolled up to Projects for Reporting. Support for CPU, Memory, Network I/O via rate tables.</li>
+  <li>SCAP Scanner – In addition to our smart state analysis we have plugged in the Red Hat Enterprise Linux SCAP scanner. This allows us to scan images for SCAP vulnerabilities. You get access to a simple Low/Med/High status to the vulnerability as well as the HTML SCAP report per image.</li>
+  <li>Cloud cross-linking – (leveraging OpenShift cloud providers)</li>
+  <li>Pods Creation/Deletion – Trends and New Images discovery trends added to the dashboard</li>
+  <li>Multi-endpoint – For metrics collection</li>
+  <li>Collection of Builds and Volumes</li>
+  <li>Compliance Management – Compliance policies can now be assigned to container images. Ability to perform OpenShift actions (e.g. automation &amp; policies) via ManageIQ by utilizing OpenShift tags on images.</li>
+</ul>
+
+<h4 id="red-hat-ansible-tower">Red Hat Ansible Tower</h4>
+
+<ul>
+  <li>Inventory – Ansible Tower Inventory for Job Templates and Nodes</li>
+  <li>Ansible in Automate – Introduction of a ManageIQ state machine accepting parameters to drive Ansible Tower Jobs. This provides an alternative choice to Ruby automation, allowing ManageIQ state machines to call Ansible Tower Jobs directly without having to write a line of code.</li>
+  <li>Ansible in Services – Ansible Tower Jobs are now available as ManageIQ Service Items. Service Dialog can be generated dynamically to provide parameters for the Ansible Tower Job. With this in place, ManageIQ can leverage Ansible Galaxy content and drive automation without a single line of code. For example, use Ansible playbooks to provision a virtual machine in vCloud Air from ManageIQ Service Catalog.</li>
+</ul>
+
+<h4 id="red-hat-openstack-platform---cloud">Red Hat OpenStack Platform - Cloud</h4>
+
+<ul>
+  <li>SSH Key Management – Upload a new SSH key at time of deployment without having to configure the key post-provisioning in Horizon</li>
+  <li>Instance Volume Management – Add/Remove OpenStack Cinder volumes to instances via reconfiguration</li>
+  <li>Volumes at Provisioning – Add volume(s) at provisioning e.g. provision a Glance Image on this network with an additional 2 disks of 20gb each</li>
+  <li>Right Size Recommendations – Right-sizing recommendation for CPU and Memory now implemented for Red Hat OpenStack</li>
+  <li>Instance Reconfiguration – Instance Flavor reconfiguration is now supported e.g. reconfigure a m1.tiny flavour to m2.xlarge.</li>
+  <li>Live Migration – Live migration from one host to the other for OpenStack instances</li>
+  <li>Multi-End-Point – Different end-point addresses can be specified for Metrics, Message-bus and Provider (Keystone)</li>
+  <li>Volume Inventory – Inventory of all volumes created in an OpenStack tenant</li>
+  <li>Events from Ceilometer – Ceilometer support added for events, in addition to RabbitMQ</li>
+</ul>
+
+<h4 id="red-hat-openstack-platform---virtual-infrastructure">Red Hat OpenStack Platform - Virtual Infrastructure</h4>
+
+<ul>
+  <li>SSL – Secure transport for the virtual infrastructure running your cloud</li>
+  <li>Scale Down – Auto-Scaling added for scale down, in addition to scale out</li>
+  <li>Host Evacuation – Ability to evacuate all or selected instances from a host</li>
+  <li>Capacity Planning – OpenStack added to the Capacity Planing tool, allowing to evaluate how many VMs of a particular profile (e.g. running on VMware) can fit on OpenStack.</li>
+  <li>Enable / Disable cloud services</li>
+  <li>Make Keystone V3 Domain ID Configurable</li>
+</ul>
+
+<h4 id="software-defined-networking--neutron">Software Defined Networking – Neutron</h4>
+
+<ul>
+  <li>Inventory – Visibility of routers, networks and subnets modeled in a tenant</li>
+  <li>Cross-linking – Navigate across the relationships e.g. from a router to the network, to the subnet, to the network port that are all in the networking world and onto the VM or Instance that is connected to the network port.</li>
+  <li>Topology – Cloud networking visualization, including relationships and cross-linking</li>
+</ul>
+
+<h4 id="red-hat-enterprise-virtualization--ovirt">Red Hat Enterprise Virtualization / oVirt</h4>
+
+<ul>
+  <li>Targeted Refresh – Allows refresh of single objects rather than the entire provider inventory.</li>
+  <li>Cluster Datastore Support – Cluster datastores visibility, inventory and provisioning</li>
+</ul>
+
+<h4 id="microsoft-system-center-virtual-machine-manager-scvmm">Microsoft System Center Virtual Machine Manager (SCVMM)</h4>
+
+<ul>
+  <li>Smart State Support – Added VHDX, snapshot and all current filesystems support. Support for network-mounted HyperV virtual disks and performance improvements.</li>
+  <li>Inventory Performance Improvements</li>
+  <li>Retirement – Implementation of VM retirement added to SCVMM, supporting on demand and scheduled retirement</li>
+</ul>
+
+<h4 id="amazon-ec2">Amazon EC2</h4>
+
+<ul>
+  <li>SDK v2 – Support for v2 AWS SDK, allowing for future AWS services enhancements</li>
+</ul>
+
+<h3 id="user-interfaces">User Interfaces</h3>
+
+<h4 id="self-service-user-interface">Self Service User Interface</h4>
+
+<ul>
+  <li>Languages Support
+    <ul>
+      <li>German</li>
+      <li>French</li>
+      <li>Spanish</li>
+      <li>Russian</li>
+      <li>Portuguese</li>
+    </ul>
+  </li>
+  <li>Shopping cart model for ordering services – Introduction of a shopping cart order of services, allowing users to order multiple services and submit the entire cart at once. Future enhancements will include the ability to see previous orders, share carts with other users, etc.</li>
+  <li>New consumption_administrator role – With chargeback/reporting duties</li>
+  <li>I18n support – Added to Self Service UI</li>
+  <li>Group Switcher – Added to Self Service UI</li>
+  <li>Containers
+    <ul>
+      <li>Dashboard network trends</li>
+      <li>Container environment variables table</li>
+      <li>Search functionality for Container topology</li>
+      <li>Dashboard no data cards (for when no data exists yet)</li>
+      <li>Refresh option in Configuration dropdown</li>
+      <li>Persistent volumes, topology context menus</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="operations-user-interface">Operations User Interface</h4>
+
+<ul>
+  <li>Vertical Menus – New PatternFly menus implemented in ManageIQ, allowing for future directions. Other Red Hat products will follow for consistent look and feel across the portfolio.</li>
+  <li>Orchestration Templates – Added the ability to copy a template</li>
+  <li>Datastore Clusters Explorer – Added for VMware vSphere 5+</li>
+  <li>Compliance Policy – Added support for Templates and Images (previously only allowed for VMs and Instances)</li>
+  <li>New UI for replication configuration</li>
+</ul>
+
+<h4 id="service-designer-user-interface">Service Designer User Interface</h4>
+
+<ul>
+  <li>Early development of a graphical designer tool for defining catalog services and items</li>
+</ul>
+
+<h3 id="chargeback">Chargeback</h3>
+<ul>
+  <li>Tenant Rate Assignment – Added ability to assign rates to tenants</li>
+  <li>Tenant Chargeback Report – Added ability to generate reports by tenant</li>
+  <li>Currency Support – Enhanced chargeback to add additional currencies (previously US dollars only)</li>
+</ul>
+
+<h3 id="automate">Automate</h3>
+
+<ul>
+  <li>SSUI: Support dialogs with dynamic fields</li>
+  <li>Simulation: Simulate UI support for state machine retries</li>
+</ul>
+
+<h3 id="automate-model">Automate Model</h3>
+
+<ul>
+  <li>Service Models: Support where method, find_by, and find_by!</li>
+  <li>New Syntax: METHOD::<method_name>– No longer do you need an instance infant of a method, by using this syntax in a state you can directly call the method from the same class.</method_name></li>
+  <li>Added Auto-Approval/Email to VM Reconfigure</li>
+  <li>New models for Generic Object, future capability!</li>
+  <li>Default Retirement state-machine behavior changed to retain record (historical data)</li>
+  <li>New wait_for_ip method added to state-machine, can be used in ANY statemachine.</li>
+</ul>
+
+<h3 id="rest-api">REST API</h3>
+<ul>
+  <li>Added primary collection for Instances</li>
+  <li>Added terminate action for instances</li>
+  <li>Ability to filter string equality/inequality on virtual attributes</li>
+  <li>For SSUI, ability to retrieve user’s default language and support for Dynamic Dialogs</li>
+  <li>Actions for instances: stop, start, pause, suspend, shelve, reset, reboot guest</li>
+  <li>Actions provided to approve or deny provision requests</li>
+  <li>Ability to delete one’s own authenticated token</li>
+  <li>Enhanced filtering to use MiqExpression</li>
+  <li>Enhanced API to include Role identifiers for collections and augmented the authorization hash in the entrypoint to include that correlation</li>
+  <li>CRUD for Tenant quotas</li>
+  <li>Version increased to 2.2.0</li>
+  <li>Support for /api/settings</li>
+  <li>Added GET role identifiers</li>
+  <li>Added support for Shopping Carts</li>
+</ul>
+
+<h3 id="core">Core</h3>
+
+<h4 id="appliance">Appliance</h4>
+<ul>
+  <li>New Appliance Distribution Formats
+    <ul>
+      <li>Azure Cloud Image</li>
+    </ul>
+  </li>
+  <li>Rails v5 – Upgraded from Rails v4.</li>
+</ul>
+
+<h4 id="tenancy">Tenancy</h4>
+<ul>
+  <li>Reports – Widgets and Reports to show quota assigned per tenant as well as consumption</li>
+  <li>Chargeback – Rate table assignment can be per tenant</li>
+  <li>Automate – Domains can be tenanted</li>
+</ul>
+
+<h4 id="replication-pglogical">Replication (pglogical)</h4>
+
+<ul>
+  <li>Redesign of replication to use pglogical</li>
+  <li>New MiqPglogical class: provides generic functionality for remote and global regions</li>
+  <li>New PglogicalSubscription model: Provides global region functionality as an ActiveRecord model</li>
+</ul>
+
+<h4 id="authentication">Authentication</h4>
+
+<ul>
+  <li>Appliance Console External Auth updated to also work with 6.x <a href="http://www.freeipa.org">FreeIPA</a> Servers</li>
+  <li>SAML Authentication (verified with KeyCloak 1.8) –  SINGLE SIGN ON, so you can now have your local OS token passed though the browser to log you in, hands free!</li>
+</ul>
+
+<h4 id="appliance-console">Appliance Console</h4>
+
+<ul>
+  <li>Added alias ap as shortcut for appliance_console – So trivial but nice!</li>
+  <li>Updates for external authentication settings</li>
+</ul>
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/ui/redux">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/ui/redux">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h3 id="redux">Redux</h3>
+<p>In UI-classic we enabled <a href="https://github.com/reactjs/redux">redux</a> to work with state of application so we can easilly
+ detect from where which action comes and to see the flow of data.</p>
+
+<h4 id="writing-reducers">Writing reducers</h4>
+<p>To change state of application you will need to write reducer which is basically simple function which takes current 
+state and action. Result of such reducer is somehow changed state based on action.</p>
+
+<p>Action consists of</p>
+<ul>
+  <li>Type of action - string which says what action has been triggered</li>
+  <li>Payload - usually JS object with some data, which will be applied to state</li>
+</ul>
+
+<h5 id="simple-reducer-example">Simple reducer example</h5>
+<p>We are using redux in slightly different way, so we can control which reducer is active at given time. To create new
+reducer first you have to create it and register it into redux.</p>
+
+<ol>
+  <li>Breaking reducers into simple functions, might be a bit confusing because it doesn’t use switches as any redux example
+however it’s easier to test and maintain.</li>
+</ol>
+
+<p>```javascript 1.8
+/*</p>
+<ul>
+  <li>These two functions are required for correct registering of reducer into our redux.</li>
+  <li>Please change path relative to your pack and from where you are registering reducers.
+ */
+import { addReducer, applyReducerHash } from ‘../miq-redux/reducer’;</li>
+</ul>
+
+<p>// Constants of action types
+const FIRST_ACTION = ‘first_action’;
+const SECOND_ACTION = ‘second_action’;</p>
+
+<p>/*</p>
+<ul>
+  <li>Simple reducer function</li>
+  <li>It takes state and action as parameters and changes state based on action.payload</li>
+  <li>Notice the rest operator which allows changing of state with action payload.
+ */
+function firstReducerFn(state, action) {
+  return {…state, someValue: action.payload};
+}</li>
+</ul>
+
+<p>/*</p>
+<ul>
+  <li>A bit more complex reducer, which takes two values off of action payload and applies them into state.</li>
+  <li>You can notice, that we used different approach and used Object.assign for changing state.
+ */
+function secondReducerFn(state, action) {
+  const someObject = {
+ differentValue: action.payload.oneValue,
+ anotherValue: action.payload.secondValue
+  };
+  return Object.assign({}, state, someObject);
+}</li>
+</ul>
+
+<p>// This is how we say that which action type maps to which function.
+const mappedReducers = {
+  [FIRST_ACTION]: firstReducerFn,
+  [SECOND_ACTION]: secondReducerFN
+};</p>
+
+<p>/*</p>
+<ul>
+  <li>This is probably the most important and also most confusing part of how to register reducer.</li>
+  <li>Function addReducer helps us to add newly created reducer into our bulk of reducers which were created before.</li>
+  <li>Function applyReducerHash helps us to bind state and action for each reducer which we mapped before.
+ */
+const unbind = addReducer(
+  (state, action) =&gt; applyReducerHash(mappedReducers, state, action)
+)</li>
+</ul>
+
+<p>/* Notice that we created unbind constant which is taking whatever is returned from addReducer.</p>
+<ul>
+  <li>This little guy is just callback to our Set. Calling it will remove our reducers from all reducers, this way you can</li>
+  <li>control when to remove such reducers. But don’t worry it’s not needed, just nice. 
+ */
+```</li>
+</ul>
+
+<ol>
+  <li>Using switch as described in many redux examples. It does the same thing as example before, but it doesn’t brake
+reducers into simple functions and it uses switches, which someone might like and someone not.
+```javascript 1.8
+/*
+    <ul>
+      <li>This function is required for correct registering of reducer into our redux.</li>
+      <li>Please change path relative to your pack and from where you are registering reducers.
+ */
+import { addReducer } from ‘../miq-redux/reducer’;</li>
+    </ul>
+  </li>
+</ol>
+
+<p>// Constants of action types
+const FIRST_ACTION = ‘first_action’;
+const SECOND_ACTION = ‘second_action’;</p>
+
+<p>/*</p>
+<ul>
+  <li>Simple redux reducer with two branches.
+ */
+function someApp(state, action) {
+  switch (action.type) {
+   case FIRST_ACTION:
+     return {…state, someValue: action.payload};
+   case SECOND_ACTION:
+     const someObject = {
+       differentValue: action.payload.oneValue,
+       anotherValue: action.payload.secondValue
+     };
+   return Object.assign({}, state, someObject);
+  }
+}</li>
+</ul>
+
+<p>/*</p>
+<ul>
+  <li>This is probably the most important and also most confusing part of how to register reducer.</li>
+  <li>Function addReducer helps us to add newly created reducer into our bulk of reducers which were created before.
+ */
+const unbind = addReducer(someApp);</li>
+</ul>
+
+<p>/* Notice that we created unbind constant which is taking whatever is returned from addReducer.</p>
+<ul>
+  <li>This little guy is just callback to our Set. Calling it will remove our reducers from all reducers, this way you can</li>
+  <li>control when to remove such reducers. But don’t worry it’s not needed, just nice. 
+ */
+```</li>
+</ul>
+
+<h3 id="folder-structure">Folder structure</h3>
+<p>Note in mind, that this is example on how to write global reducers. If you are writing reducer which is specific to your
+pack, please replace <code class="highlighter-rouge">app/javascipt/reducers/reducer-example</code> with <code class="highlighter-rouge">app/javascript/your-pack/reducers/</code> this way we can 
+abstract same logical things.</p>
+
+<p><strong><code class="highlighter-rouge">app/javascipt/reducers/reducer-example/actions.js</code></strong></p>
+
+<p>Here you will write functions which reacts to actions with payload and change state.
+```javascript 1.8
+export function firstReducerFn(state, action) {
+  // do something with state
+  return state;
+}
+export function secondReducerFn(state, action) {
+  // do something completely different with state
+  return state;
+}</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>**`app/javascipt/reducers/reducer-example/types.js`**
+
+Here you will write constants which will be used for dispatching and for mapping simple functions to action types
+```javascript 1.8
+export const FIRST_ACTION = 'firstExampleAction';
+export const SECOND_ACTION = 'secondExampleAction';
+//... more actions
+export const ANOTHER_ACTION = 'someOtherAction';
+export const ONE_MORE_ACTION = 'absolutelyDifferentAction';
+</code></pre>
+</div>
+<p><strong><code class="highlighter-rouge">app/javascipt/reducers/reducer-example/index.js</code></strong></p>
+
+<p>Here you will glue together actions and types, plus you will export all types so they can be dispatched later on.
+Please export any reducer’s type which can be used later on, so anybody can use your constant and we don’t have to look
+for some magic constant strings.
+```javascript 1.8
+import { firstReducerFn, secondReducerFn } from ‘./actions’;
+import { FIRST_ACTION, SECOND_ACTION, ANOTHER_ACTION, ONE_MORE_ACTION } from ‘./types’;
+import { addReducer, applyReducerHash } from ‘../miq-redux/reducer’;</p>
+
+<p>export { FIRST_ACTION, SECOND_ACTION, ANOTHER_ACTION, ONE_MORE_ACTION };</p>
+
+<p>const typesToActions = {
+  [FIRST_ACTION]: firstReducerFn,
+  [SECOND_ACTION]: secondReducerFn,
+  //..
+}</p>
+
+<p>addReducer(
+  (state, action) =&gt; applyReducerHash(typesToActions, state, action)
+)</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+#### Dispatching action
+Dispatching actions is basically how redux changes it's state. 
+
+To dispatch single action for any reducer you have to call publicly available redux store
+```javascript 1.8
+import { FIRST_ACTION } from './reducers';
+ManageIq.redux.store.dispatch({type: FIRST_ACTION, payload: {someValue: {}}});
+</code></pre>
+</div>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Last Week in ManageIQ: And Finally...Fine-tuning Fine</title>
+  <meta name="description" content="After a long and cold winter, we are thankful that spring is finally here! In some parts of the world, the cherry blossoms are spectacular. The birds are hap...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/04/Fine-tuning-Fine/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/04/Fine-tuning-Fine/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Last Week in ManageIQ: And Finally...Fine-tuning Fine</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-04-18T00:00:00+00:00" itemprop="datePublished">
+                Apr 18, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  AparnaKarve
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>After a long and cold winter, we are thankful that spring is finally here! In some parts of the world, the cherry blossoms are spectacular. The birds are happily chirping. A <strong><code class="highlighter-rouge">Fine</code></strong> season (get it?) indeed is one that brings with it a glimmer of sunshine and all around goodness.</p>
+
+<p>Did I just say a <strong><code class="highlighter-rouge">"Fine"</code></strong> season?? 
+Well, that surely does ring a bell and a good segue to talk about our upcoming <strong><code class="highlighter-rouge">Fine</code></strong> Release at ManageIQ.</p>
+
+<p>Intro-wise, my name is <a href="https://github.com/AparnaKarve">Aparna</a> from the ManageIQ UI team. I am delighted at the opportunity to talk about the <strong><code class="highlighter-rouge">Fine</code></strong> Release as a team.</p>
+
+<p>In case you did not know, we base our Release names after some of the really  well known Chess Grandmasters. Chess Grandmasters, by definition, are the Crème De La Crème, and the “IQ” in ManageIQ, well, is all about the IQ. If we are who we associate with, then we surely are in exalted company.</p>
+
+<p>The Chess Grandmaster name that we have chosen for our upcoming F-Release is <a href="https://en.wikipedia.org/wiki/Reuben_Fine">The American Chess Grandmaster, Reuben Fine</a>.</p>
+
+<p>Now let’s take a look at some of the <strong><code class="highlighter-rouge">Finer</code></strong> details.</p>
+
+<p>As <strong><code class="highlighter-rouge">Fine</code></strong> has been tailored mostly for the Ansible Provider, we had many Ansible related PRs. 
+So, what is all this <strong><code class="highlighter-rouge">Fine-tuning</code></strong> really about? Well, it’s the BUGS! …Bugs of course.</p>
+
+<p>Said bugs have been the focus nearly all of last week. In addition to the bug resolutions, there also are some refactorings and enhancements.</p>
+
+<p>With the growing number of repositories being split, it’s practically impossible to cover all repositories in this article, So…</p>
+
+<p>I’ll do my best to bring you some of the <strong><code class="highlighter-rouge">Fine</code></strong> highlights of the repositories that I monitor.</p>
+
+<h2 id="some-fine-finishing-touches">Some Fine ‘Finishing’ Touches</h2>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/lgalis">Laura Galis</a> fixed the PDF download issue for Ansible Tower Job Templates in <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/523">ManageIQ/manageiq-ui-classic#523</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/himdel">Martin Hradil</a> and <a href="https://github.com/AparnaKarve">I</a> fixed some synching issues in the Ansible Credential form in <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/860">ManageIQ/manageiq-ui-classic#860</a> and <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/1017">ManageIQ/manageiq-ui-classic#1017</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/jntullo">Jillian Tullo</a> worked on a new API endpoint for refreshing Configuration Script Sources in <a href="https://github.com/ManageIQ/manageiq/pull/14714">ManageIQ/manageiq#14714</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/durandom">Marcel Hild</a> worked on the targeted refresh for Ansible configuration_script_source in <a href="https://github.com/ManageIQ/manageiq/pull/14711">ManageIQ/manageiq#14711</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/jameswnl">James Wong</a> added the Notification for the Ansible Tower credential CUD operations in <a href="https://github.com/ManageIQ/manageiq/pull/14625">ManageIQ/manageiq#14625</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/mzazrivec">Milan Zázrivec</a> added Embedded Ansible refresh for Ansible Credentials and Repositories in <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/934">ManageIQ/manageiq-ui-classic#934</a></p>
+  </li>
+</ul>
+
+<h2 id="some-fine-spring-cleaning">Some Fine ‘Spring-Cleaning’</h2>
+
+<p>We DO love our Spring-cleaning PRs. What say you <a href="https://github.com/jrafanie">Joe Rafaniello</a>?</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq/pull/14633">ManageIQ/manageiq#14633</a> courtesy, <a href="https://github.com/simon3z">Federico Simoncelli</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq/pull/14598">ManageIQ/manageiq#14598</a> courtesy, <a href="https://github.com/jzigmund">Jozef Zigmund</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq/pull/14515">ManageIQ/manageiq#14515</a> courtesy, <a href="https://github.com/nimrodshn">Nimrod Shneor</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq/pull/14766">ManageIQ/manageiq#14766</a> courtesy, <a href="https://github.com/tzumainn">Tzu-Mainn Chen</a></p>
+  </li>
+</ul>
+
+<h2 id="some-fine-house-keeping">Some Fine ‘House-Keeping’</h2>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq-ui-service/pull/659">ManageIQ/manageiq-ui-service#659</a>, Updates Yarn – courtesy, <a href="https://github.com/chalettu">Chris Hale</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/1019">ManageIQ/manageiq-ui-classic#1019</a>, Updates Patternfly – courtesy, <a href="https://github.com/skateman">Dávid Halász</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/ManageIQ/manageiq/pull/14692">ManageIQ/manageiq#14692</a>, Updates some Request Factories – courtesy, <a href="https://github.com/imtayadeway">Tim Wade</a></p>
+  </li>
+</ul>
+
+<h2 id="other-noteworthy-prs">Other Noteworthy PRs</h2>
+
+<ul>
+  <li>
+    <p>Thanks <a href="https://github.com/AllenBW">Allen Wight</a> for showing all kinds of notifications! <a href="https://github.com/ManageIQ/manageiq-ui-service/pull/664">ManageIQ/manageiq-ui-service#664</a></p>
+  </li>
+  <li>
+    <p>Thanks, <a href="https://github.com/abellotti">Alberto Bellotti</a>! <a href="https://github.com/ManageIQ/manageiq/pull/14690">ManageIQ/manageiq#14690</a></p>
+  </li>
+  <li>
+    <p>Thanks, <a href="https://github.com/jjlangholtz">Joshua Langholtz</a>!  <a href="https://github.com/ManageIQ/manageiq-ui-service/pull/669">ManageIQ/manageiq-ui-service#669</a></p>
+  </li>
+</ul>
+
+<h2 id="the-fine-finesse">The Fine ‘Finesse’</h2>
+
+<p>Simplicity coupled with performance is what transforms the PR to the ‘Finesse’ level - With that in mind, thanks <a href="https://github.com/isimluk">Šimon Lukašík</a> for <a href="https://github.com/ManageIQ/manageiq/pull/14712">ManageIQ/manageiq#14712</a> &amp; <a href="https://github.com/ManageIQ/manageiq/pull/14721">ManageIQ/manageiq#14721</a>.</p>
+
+<h2 id="globalizing-fine">Globalizing Fine</h2>
+
+<p>Folks all around the world would appreciate <strong><code class="highlighter-rouge">Fine</code></strong> even more if it was localized in a language of their preference.  We currently support Simplified Chinese, Japanese, French, German, Spanish just to name a few.</p>
+
+<p>Thanks, <a href="https://github.com/mzazrivec">Milan</a> for taking the lead in this project and making the whole process so seamless to us.</p>
+<ul>
+  <li><a href="https://github.com/ManageIQ/manageiq/pull/14750">ManageIQ/manageiq#14750</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/1023">ManageIQ/manageiq-ui-classic#1023</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-ui-service/pull/670">ManageIQ/manageiq-ui-service#670</a></li>
+</ul>
+
+<h2 id="in-closing">In Closing…</h2>
+
+<p>This is an exciting time in the ManageIQ community as we rapidly approach the <strong><code class="highlighter-rouge">Fine Finish Line</code></strong>.</p>
+
+<p>To summarize: As spring transforms the landscape and lifts our spirits, so do all of the  <strong><code class="highlighter-rouge">Fine</code></strong> PRs that will make this the most memorable and impactful spring release! Thank you.</p>
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

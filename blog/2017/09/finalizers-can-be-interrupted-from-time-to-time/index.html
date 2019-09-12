@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Finalizers can be interrupted from time to time</title>
+  <meta name="description" content="A Tale As Old As TimeSo, this has been documentedmany times before.">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/09/finalizers-can-be-interrupted-from-time-to-time/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/09/finalizers-can-be-interrupted-from-time-to-time/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Finalizers can be interrupted from time to time</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-09-28T19:05:09+00:00" itemprop="datePublished">
+                Sep 28, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  jrafanie
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/developers">developers</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <h2 id="a-tale-as-old-as-time">A Tale As Old As Time</h2>
+<p>So, this has been <a href="http://blog.headius.com/2008/02/rubys-threadraise-threadkill-timeoutrb.html">documented</a>
+<a href="http://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/">many</a> <a href="https://jvns.ca/blog/2015/11/27/why-rubys-timeout-is-dangerous-and-thread-dot-raise-is-terrifying/">times</a> before.</p>
+
+<p>Even though we all know that ruby’s <code class="highlighter-rouge">Timeout.timeout</code> is not threadsafe and
+<code class="highlighter-rouge">Thread#raise</code> can and will interrupt your ensure/rescue code on a Friday at 5 pm,
+it’s still around in the libraries we use.</p>
+
+<p>Note, I even filtered out some of the results below:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r -E "\bTimeout.timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
+</span>ruby_parser-3.10.1/lib/ruby_parser_extras.rb:                                     Timeout.timeout time do
+capybara-2.5.0/lib/capybara/server.rb:                                            Timeout.timeout(60) { @server_thread.join(0.1) until responsive? }
+dalli-2.7.6/lib/dalli/socket.rb:                                                  Timeout.timeout(options[:socket_timeout]) do
+excon-0.59.0/lib/excon/socket.rb:                                                 Timeout.timeout(@data[:read_timeout]) do
+excon-0.59.0/lib/excon/unix_socket.rb:                                            Timeout.timeout(@data[:connect_timeout]) do
+fog-core-1.45.0/lib/fog/compute/models/server.rb:                                 result = ready? &amp;&amp; !ssh_ip_address.nil? &amp;&amp; !!Timeout.timeout(sshable_timeout) { ssh("pwd", options) }
+hawkular-client-4.1.0/lib/hawkular/operations/operations_api.rb:                  Timeout.timeout(@wait_time) { sleep 0.1 until @ws.open? }
+http-0.9.8/lib/http/timeout/global.rb:                                            ::Timeout.timeout(time_left, TimeoutError) do
+http-0.9.8/lib/http/timeout/per_operation.rb:                                     ::Timeout.timeout(connect_timeout, TimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@send_timeout, SendTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@connect_timeout, ConnectTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+manageiq-network_discovery-0.1.2/lib/manageiq/network_discovery/port_scanner.rb:  Timeout.timeout(ost.timeout) do
+manageiq-smartstate-0.1.4/lib/metadata/VmConfig/VmConfig.rb:                      Timeout.timeout(60) do
+multipart-post-2.0.0/test/test_composite_io.rb:                                   Timeout.timeout(1) do
+net-ping-1.7.8/lib/net/ping/icmp.rb:                                              Timeout.timeout(@timeout){
+net-ping-1.7.8/lib/net/ping/udp.rb:                                               Timeout.timeout(@timeout){
+nio4r-2.1.0/spec/nio/selector_spec.rb:                                            Timeout.timeout(2) do
+nio4r-2.1.0/spec/spec_helper.rb:                                                  sock = Timeout.timeout(1) { TCPSocket.new("localhost", $current_tcp_port) }
+open4-1.3.4/lib/open4.rb:                                                         Timeout.timeout(timeout){ yield }
+rack-2.0.3/test/spec_utils.rb:                                                    Timeout.timeout(1) do
+ruby-dbus-0.13.0/spec/spec_helper.rb:                                             Timeout.timeout(10) do
+snmp-1.2.0/lib/snmp/manager.rb:                                                   Timeout.timeout(@timeout) do
+vcr-3.0.3/lib/vcr/util/internet_connection.rb:                                    Timeout.timeout(timeout) do
+webmock-2.3.2/spec/support/network_connection.rb:                                 Timeout.timeout(timeout) do
+
+<span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r -E "\bTimeout::timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
+</span>open4-1.3.4/lib/open4.rb:                                                         Timeout::timeout(timeout) do
+</code></pre>
+</div>
+
+<p>Those are only gems used by ManageIQ.  I’m sure there are many other gems used by other
+projects that still use Timeout.</p>
+
+<p>Wait a second.  We didn’t actually look at the contents of the <code class="highlighter-rouge">Timeout.timeout</code> block.
+That’s the point, it doesn’t matter.  If you hit this code at all, there’s a small
+chance it can <code class="highlighter-rouge">Thread#raise</code> at a very inopportune time in code that will never
+expect it!</p>
+
+<p>You might be thinking, “that’s fine, this why I’m wrapping my code with a begin and a rescue or ensure
+to clean things up.”  It is a regular exception and we would expect it to be rescued while we are inside the begin
+code.  But don’t underestimate Murphy’s law.  What if the exception is raised while we’re in the cleanup code,
+preventing it from completing?  To top it off, it will find the weirdest possible place to raise and at the most
+unfortunate time, such as Friday at 5pm.  I’ll <a href="http://blog.headius.com/2008/02/rubys-threadraise-threadkill-timeoutrb.html">repeat</a>
+the <a href="http://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/">links</a> listed <a href="https://jvns.ca/blog/2015/11/27/why-rubys-timeout-is-dangerous-and-thread-dot-raise-is-terrifying/">above</a> for convenience
+because this is exactly what they show: <code class="highlighter-rouge">Thread#raise</code> can raise while in your ensure/rescue cleanup code.</p>
+
+<h2 id="fun-times">Fun times</h2>
+
+<p>A “fun” bug recently reminded <a href="https://github.com/cben">Beni</a> and I of a “new” and totally awful
+way <code class="highlighter-rouge">Timeout.timeout</code> can ruin your day.</p>
+
+<p>Ironically and hilariously, Beni stumbled upon this when writing a <a href="https://github.com/ManageIQ/manageiq-gems-pending/pull/263">test to workaround the “Timeout
+can raise during your ensure code”</a>. Ok, so
+I find it funny.  I’m sure Beni didn’t.</p>
+
+<p>Basically, he discovered that his test would sporadically hang when run in the full test suite but not when
+run in isolation.</p>
+
+<p>After some serious spelunking via rspec bisect and manually minimizing the reproducer by commenting out parts of
+the remaining tests, he found the hang would occur when another test created a <code class="highlighter-rouge">Tempfile</code>.  As soon as he put
+a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workaround test, the test would hang “sometimes”.</p>
+
+<h2 id="thats-it-im-done">That’s it, I’m done</h2>
+
+<p>We minimized his test case:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'tempfile'</span>
+<span class="nb">require</span> <span class="s1">'timeout'</span>
+<span class="no">Tempfile</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"x"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">stuff</span>
+  <span class="s2">""</span>
+<span class="k">end</span>
+
+<span class="mi">20</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="k">begin</span>
+    <span class="no">Timeout</span><span class="p">.</span><span class="nf">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span> <span class="k">do</span>
+      <span class="kp">loop</span> <span class="k">do</span>
+        <span class="k">begin</span>
+          <span class="s2">"result"</span>
+        <span class="k">ensure</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">rescue</span> <span class="no">Timeout</span><span class="o">::</span><span class="no">Error</span> <span class="o">=&gt;</span> <span class="n">e</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Note: Don’t ask about the <code class="highlighter-rouge">stuff</code> method.  Without it, I couldn’t get the test to hang sporadically.</p>
+
+<p>We ran it with ruby debug <code class="highlighter-rouge">RUBYOPT=-d</code>.</p>
+
+<p>When it worked, it looked like this:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57250-s683fs...
+done
+</code></pre>
+</div>
+
+<p>When it would hang, it looked like this:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57351-jfeu6l...
+</code></pre>
+</div>
+
+<p>If you’re still reading, you might have noticed that <code class="highlighter-rouge">done</code> is missing when the
+test hangs. The <code class="highlighter-rouge">done</code> happens after <code class="highlighter-rouge">Tempfile</code> wants to <a href="https://github.com/ruby/ruby/blob/820605ba3c10b9f4dafc4e5d6e09765b8b31cbea/lib/tempfile.rb#L255-L257">close and unlink the file here</a>.</p>
+
+<p>Therefore, when it hangs, the <code class="highlighter-rouge">Tempfile</code> <code class="highlighter-rouge">finalizer</code> never completes.</p>
+
+<p>tldr; <code class="highlighter-rouge">Timeout.timeout</code> can <code class="highlighter-rouge">Thread#raise</code> while in a <code class="highlighter-rouge">finalizer</code> for another object!  AWESOME.</p>
+
+<h2 id="the-final-straw">The final straw</h2>
+
+<p>Wait, what’s a finalizer?</p>
+
+<p>There is no guarantee when the ruby garbage collector will garbage collect an
+object. <code class="highlighter-rouge">ObjectSpace.define_finalizer</code> provides a place for you to tell ruby to “run
+this code when my object is to be garbage collected.” Finalizers are generally used
+to cleanup things so we don’t cause memory leaks.  Interrupting them is probably
+not something we want to troubleshoot at 5pm on a Friday.</p>
+
+<p>It’s ok, there aren’t many places that define finalizers:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
+</span>lib/ruby/2.4.0/cgi/session.rb:                                         ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
+lib/ruby/2.4.0/drb/timeridconv.rb:                                     ObjectSpace.define_finalizer(Object.new) {on_gc}
+lib/ruby/2.4.0/tempfile.rb:                                            ObjectSpace.define_finalizer(self, Remover.new(@tmpfile))
+
+<span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
+</span>actionview-5.0.6/lib/action_view/template.rb:                          ObjectSpace.define_finalizer(self, Finalizer[method_name, mod])
+concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(me, self.class.thread_finalizer(array))
+concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))
+ffi-1.9.18/lib/ffi/autopointer.rb:                                     ObjectSpace.define_finalizer(self, @releaser)
+http-cookie-1.0.3/lib/http/cookie_jar/mozilla_store.rb:                ObjectSpace.define_finalizer(self, Callable[@db, :close])
+logging-2.2.2/lib/logging.rb:                                          ObjectSpace.define_finalizer self, Logging.method(:shutdown)
+tins-1.15.0/lib/tins/thread_local.rb:                                  ObjectSpace.define_finalizer(self, @@cleanup)
+vcr-3.0.3/lib/vcr/library_hooks/webmock.rb:                            ObjectSpace.define_finalizer(Thread.current, lambda {
+winrm-2.2.3/lib/winrm/shells/base.rb:                                  ObjectSpace.define_finalizer(
+</code></pre>
+</div>
+
+<p>It’s a small list but libraries like tempfile, concurrent-ruby, ffi, actionview,
+etc. are pretty common.  Again, this is only in the gems that ManageIQ uses.  This
+list will certainly grow if you searched dependencies of other applications.</p>
+
+<p>The ugly part of this story is that the finalizer and the <code class="highlighter-rouge">Thread#raise</code> are both async operations so they can happen
+at nearly any time.  We caught this in a test, but this could happen in development or even production and is really difficult
+to reason about because the symptoms could be nearly anything.</p>
+
+<h2 id="all-in-good-time">All in good time</h2>
+
+<p>We opened a ruby bug that Tempfile’s finalizer can be interrupted by Timeout’s <code class="highlighter-rouge">Thread#raise</code>.
+<a href="https://bugs.ruby-lang.org/issues/13876#note-1">It was found that Timeout can raise in any finalizer, not just Tempfile</a>.</p>
+
+<p>This is a reminder to rid your codebase and dependencies of <code class="highlighter-rouge">Timeout</code> and perhaps <code class="highlighter-rouge">Timeout</code>, which still lives in Ruby’s
+standard library, will be fixed or replaced.</p>
+
+<p>Finally, there’s a <a href="https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts">guide on how to configure safe timeouts in various libraries</a>.  Please try it out and contribute
+to it.</p>
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

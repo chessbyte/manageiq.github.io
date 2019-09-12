@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - ManageIQ Fine GA - Automation with Ansible, Public Cloud Improvements, and more</title>
+  <meta name="description" content="After several months of Fine work by the fine ManageIQ team and community, we’re proud to present you the ManageIQ Fine release! This sixth ManageIQ release ...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/05/manageiq-fine-ga-announcement/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/05/manageiq-fine-ga-announcement/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">ManageIQ Fine GA - Automation with Ansible, Public Cloud Improvements, and more</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-05-15T00:00:00+00:00" itemprop="datePublished">
+                May 15, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  cybette
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/releases">releases</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/announcements">announcements</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>After several months of Fine work by the fine ManageIQ team and community, we’re proud to present you the <strong>ManageIQ Fine release</strong>! This sixth ManageIQ release is named after American chess Grandmaster <a href="https://en.wikipedia.org/wiki/Reuben_Fine">Reuben Fine</a>.</p>
+
+<p>Since the <a href="/blog/2016/12/manageiq-euwe-ga-announcement/">ManageIQ Euwe GA</a>, we’ve had 10 very productive <a href="/blog/tags/sprints/">sprints</a> with a total of 1511 pull requests in the <a href="https://github.com/manageiq/manageiq">main ManageIQ repository</a> and 4880 PRs <a href="https://github.com/manageiq/">overall</a> (averaging 76/244 pull requests <a href="/blog/tags/LWIMIQ/">per week</a>).</p>
+
+<p>Two main factors have contributed to the increased agility and velocity: a change from <a href="/blog/2017/01/schedule-change-3-week-sprints-to-2-week-sprints/">3-week Sprints to 2-week Sprints</a>, and splitting the core ManageIQ repo into modular sub-repos. These activities have resulted in numerous fine new features, bug fixes, and even some deletions to optimize things.</p>
+
+<p>This release introduces the inclusion of Ansible for automation, which provides a simple, powerful, human readable automation language that everyone can use. As more IT infrastructures adopt public clouds, we have beefed up support and features in that area. In addition, a new physical infrastructure provider brings ManageIQ one step closer to full stack management.</p>
+
+<h2 id="automation-with-ansible">Automation with Ansible</h2>
+
+<p>ManageIQ provides integration to various provisioning and service management processes. However, to develop these integrations, previously it required diving into writing and maintaining scripts with Ruby, which is not the most accessible method for many IT professionals. In the Fine release, you can now use Ansible Playbooks for automation and definition of services.</p>
+
+<p>To make this happen, a ton of changes went into the Platform, UI, API, Providers, and of course Automate parts of the ManageIQ project. Service Design work was done for running Playbooks, where you can create a Service Catalog item based on Ansible Playbook. The Embedded Ansible model is now being used when retrieving credentials or repositories for catalog items, as well as list pages.</p>
+
+<p><a href="/assets/images/blog/Fine_GA_ansible_credentials.png"><img src="/assets/images/blog/Fine_GA_ansible_credentials.png" alt="Ansible Credentials" /></a></p>
+
+<p>A provider mixin is created to share code and behaviour between the embedded Ansible and Tower providers. UI gets populated with new views of lists and summary screens for Ansible objects such as Credentials, Playbooks, and Repositories. For Embedded Ansible, we added a notification when the server starts (since it might take some minutes).</p>
+
+<p>Ansible Play data, including start time and finish time, is collected during a Job run. This is then viewable from the Ansible Service summary screen. Lastly (or actually one of the first things we did), Ansible UI was separated from Foreman under Configuration, and moved to the new Automation tab to better reflect its role in ManageIQ.</p>
+
+<h2 id="public-cloud-providers-improvements">Public Cloud Providers Improvements</h2>
+
+<p>For the <a href="/blog/2016/12/manageiq-euwe-ga-announcement/">Euwe release</a>, we highlighted the work done on Google Compute Engine and Microsoft Azure cloud platforms. This release we have a fine focus on the Amazon cloud provider, which took the lead for number of Provider PRs for quite a few sprints.</p>
+
+<p>First of all, the Amazon provider got <a href="https://github.com/manageiq/manageiq-providers-amazon">it’s own repository</a>, and the related settings are moved over from ManageIQ core. Microsoft Azure <a href="https://github.com/manageiq/manageiq-providers-azure">followed suit</a> shortly after. Further partition included separating AWS storage functionality into specific storage managers, S3 (object) and EBS (block), much like what we did to OpenStack Swift and Cinder previously.</p>
+
+<p>Now we have the foundations for managing EBS and S3 services from AWS. There are many updates to the Amazon Storage Managers, such as new service models in Automate, collecting inventory for S3 objects, cloud volume snapshot operations for EBS, and the support for deletion of S3 folders.</p>
+
+<p><a href="/assets/images/blog/Fine_GA_amazon_EBS_storage.png"><img src="/assets/images/blog/Fine_GA_amazon_EBS_storage.png" alt="Amazon EBS Storage" /></a></p>
+
+<p>More changes to the inventory refresh process in the Amazon provider to associate AWS tags to ManageIQ tags, which opens the door for using AWS tags in ManageIQ (e.g. mapping to categories). You can also take a sneak peek at another <a href="https://github.com/ManageIQ/amazon_ssa_support">new repo</a> that marks the beginning of code needed for doing SmartState in the Amazon cloud. Exciting possibilities ahead, and kudos to XLab for their great work here!</p>
+
+<p>The abovementioned Ansible integration is also extremely beneficial for Amazon AWS and other public clouds in services definition. For instance, there are over 100 Ansible modules just for AWS services, to aid you in complex, multi-tier service deployments.</p>
+
+<h2 id="new-physical-infrastructure-provider">New Physical Infrastructure Provider</h2>
+
+<p>Even with the growing demand for virtual deployments, there is a need for bare metal deployments, or perhaps more so. In this release ManageIQ added the Physical Infrastructure Provider to our list of supported providers. Currently, Lenovo XClarity is the only provider type available.</p>
+
+<p><a href="/assets/images/blog/Fine_GA_physical_infra_menu.png"><img src="/assets/images/blog/Fine_GA_physical_infra_menu.png" alt="Physical Infrastructure Menu" /></a></p>
+
+<p>Through the new item in the Compute menu, you can create a new physical infrastructure provider, validate the authentication, and view the summary page of the added provider. Upon refresh, the number of associated physical servers will be visible, containing lots of relevant data of each server such as number of sockets, cores, and firmware data.</p>
+
+<p>Speaking of our partner Lenovo, we appreciate how amazing it is to work with them in the community to bring this new feature into ManageIQ. They did the heavy lifting, yet gave our team plenty of credit!</p>
+
+<p><a href="https://twitter.com/jkfissel/status/860198002211815424/photo/1"><img src="/assets/images/blog/Fine_GA_lenovo_RH_summit.jpg" alt="Lenovo at Red Hat Summit" /></a></p>
+
+<h2 id="performance-improvements">Performance Improvements</h2>
+
+<p>Graph Refresh for providers is implemented to deal with slow inventory collection and memory hog during refreshes. The aim is to make it easy to implement for provider authors. An example run on 77k Amazon Public Images show a second refresh taking only 200s, down from 1537s with the old refresh methods! Ansible refresh is also backed by graph refresh, and OpenStack is trying out this strategy too.</p>
+
+<p>We have many more performance enhancements like speeding up widget generation, loading VMs in batches, optimizing number of refresh transactions, and adding a cache for full Feature objects all help to make ManageIQ speedy and responsive while feature-rich and powerful!</p>
+
+<p>The above is by no means an exhaustive list of all the changes to ManageIQ since the last release. The words are not enough to depict all the hard work, beautiful code, fineness and finesse that went into everything (last pun, I promise).  We’re so grateful to the remarkably productive contributors in ManageIQ community for making the Fine release possible! You can find the <a href="https://github.com/ManageIQ/manageiq/blob/fine/CHANGELOG.md/">full changelog here</a>.</p>
+
+<p>Release images for ManageIQ Fine are available for <a href="/download/">download</a>. Visit the ManageIQ <a href="/community/">Community page</a> to find out how to get involved in the community, and where you can connect with us online and in person at events. Join our <a href="http://talk.manageiq.org/">discussion forum</a> if you have questions. <a href="/docs/">Documentation</a> and other resources can be found on the <a href="/">ManageIQ site</a> as well. Thanks for your support!</p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

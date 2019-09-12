@@ -1,1 +1,577 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body class="home">
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/">
+      <div class="page" id="home">
+  <div class="banner" id="home_banner">
+    <div class="banner-content">
+      <h1>Discover, Optimize, and Control your Hybrid IT</h1>
+      <h2>
+        Manage containers, virtual machines, networks,
+        and storage from a single platform
+      </h2>
+    </div>
+    <div class="banner-logo"></div>
+  </div>
+
+  
+<section class="triad">
+  <h3 class="triad-heading section-title">
+    Take 30 minutes to get started with the Hammer Release
+  </h3>
+
+  <div class="triad-col">
+    <div class="triad-item">
+      <div class="triad-logo triad-vagrant">
+        <img src="/assets/images//try_vagrant.svg" alt="Try ManageIQ on Vagrant" />
+      </div>
+      <div class="triad-title">Vagrant</div>
+      <div class="triad-button">
+        <a href="/docs/get-started/vagrant" class="btn btn-primary" onClick="ga('send', 'event', { eventCategory: 'Getting Started', eventAction: 'triadclick', eventLabel: 'Vagrant', transport: 'beacon' });">
+          Try It!
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="triad-col">
+    <div class="triad-item">
+      <div class="triad-logo triad-docker">
+        <img src="/assets/images//try_docker.svg" alt="Try ManageIQ on Docker" />
+      </div>
+      <div class="triad-title">Docker</div>
+      <div class="triad-button">
+        <a href="/docs/get-started/docker" class="btn btn-primary" onClick="ga('send', 'event', { eventCategory: 'Getting Started', eventAction: 'triadclick', eventLabel: 'Docker', transport: 'beacon' });">
+          Try It!
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="triad-col">
+    <div class="triad-item">
+      <div class="triad-logo triad-cloud">
+        <img src="/assets/images//try_cloud.svg" alt="Try ManageIQ in the Cloud" />
+      </div>
+      <div class="triad-title">Public Cloud</div>
+      <div class="triad-button">
+        <a href="/docs/get-started/cloud" class="btn btn-primary" onClick="ga('send', 'event', { eventCategory: 'Getting Started', eventAction: 'triadclick', eventLabel: 'Cloud', transport: 'beacon' });">
+          Try It!
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="download">
+    <h4>
+      <a href="/download/">
+        <span>Or download one of our virtual appliances</span>
+        <i class="fa fa-arrow-right"></i>
+      </a>
+    </h4>
+  </section>
+
+  <div class="solutions">
+  <article class="solution solution-left">
+    <div class="solution-container">
+      <aside class="solution-img">
+        <img src="/assets/images//icons/discovery.png" alt="Discovery">
+      </aside>
+
+      <div class="solution-content">
+        <h3 class="solution-title">Continuous Discovery</h3>
+        <div class="solution-text">
+          Connect ManageIQ to your virtualization, container, network, and
+          storage management systems, where it will discover inventory, map
+          relationships, and listen for changes. The result is a rich,
+          up-to-date and cross-referenced dataset that forms the basis for our
+          advanced management capabilities.
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="solution solution-right">
+    <div class="solution-container">
+      <div class="solution-content">
+        <h3 class="solution-title">Self-service</h3>
+        <div class="solution-text">
+          Define bundles of resources and publish them in a service catalog,
+          from where they can be ordered by end users. Once provisioned, you
+          can manage the full life cycle of a service, including policy,
+          compliance, delegated operations, chargeback/showback, and
+          retirement.
+        </div>
+      </div>
+
+      <aside class="solution-img">
+        <img src="/assets/images//icons/self_service.png" alt="Self Service">
+      </aside>
+    </div>
+  </article>
+
+  <article class="solution solution-left">
+    <div class="solution-container">
+      <aside class="solution-img">
+        <img src="/assets/images//icons/compliance.png" alt="Compliance">
+      </aside>
+
+      <div class="solution-content">
+        <h3 class="solution-title">Compliance</h3>
+        <div class="solution-text">
+          Scan the contents of your VMs, hosts, and containers, and combine
+          with auto discovery data to create advanced security and compliance
+          policies. Content scanning works without the help of an agent and
+          therefore works for any VM including foreign and un-cooperative ones.
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="solution solution-right">
+    <div class="solution-container">
+      <div class="solution-content">
+        <h3 class="solution-title">Optimization</h3>
+        <div class="solution-text">
+          Capture metrics for your VMs, containers, and hosts to understand
+          current utilization and normal operating ranges. Then use this data
+          to find unused systems, get right-sizing recommendations, do capacity
+          planning, and run what-if scenarios.
+        </div>
+      </div>
+
+      <aside class="solution-img">
+        <img src="/assets/images//icons/optimization.png" alt="Optimization">
+      </aside>
+    </div>
+  </article>
+</div>
+
+
+  <section class="platforms">
+    <h3 class="section-title">
+      Supported Platforms
+    </h3>
+
+    <div class="platforms-container">
+      
+      <div id="platform_vmware" class="platform_brand">
+        <img src="/assets/images/providers/vmware.svg" alt="VMWare vSphere">
+      </div>
+      
+      <div id="platform_msscvmm" class="platform_brand">
+        <img src="/assets/images/platforms/msscvmm.svg" alt="Microsoft System Center Virtual Machine Manager">
+      </div>
+      
+      <div id="platform_ovirt" class="platform_brand">
+        <img src="/assets/images/platforms/ovirt.svg" alt="oVirt">
+      </div>
+      
+      <div id="platform_openstack" class="platform_brand">
+        <img src="/assets/images/platforms/openstack.svg" alt="OpenStack">
+      </div>
+      
+      <div id="platform_vmware_vcloud" class="platform_brand">
+        <img src="/assets/images/platforms/vmw_vcloud.png" alt="VMWare vCloud Network">
+      </div>
+      
+      <div id="platform_gcp" class="platform_brand">
+        <img src="/assets/images/platforms/gcp.svg" alt="Google Cloud Platform">
+      </div>
+      
+      <div id="platform_aws" class="platform_brand">
+        <img src="/assets/images/platforms/aws.svg" alt="Amazon Web Services">
+      </div>
+      
+      <div id="platform_azure" class="platform_brand">
+        <img src="/assets/images/platforms/azure.svg" alt="Microsoft Azure">
+      </div>
+      
+      <div id="platform_ansible_tower" class="platform_brand">
+        <img src="/assets/images/platforms/ansible_tower.svg" alt="Ansible Tower By Red Hat">
+      </div>
+      
+      <div id="platform_foreman" class="platform_brand">
+        <img src="/assets/images/platforms/foreman.svg" alt="Foreman">
+      </div>
+      
+      <div id="platform_kubernetes" class="platform_brand">
+        <img src="/assets/images/platforms/kubernetes.svg" alt="Kubernetes">
+      </div>
+      
+      <div id="platform_openshift_origin" class="platform_brand">
+        <img src="/assets/images/platforms/openshift_origin.svg" alt="OpenShift Origin">
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="container features">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center">Features</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <article class="feature">
+        <aside class="feature-img">
+          <img src="/assets/images//icons/agentless.png" alt="Agentless">
+        </aside>
+        <div class="feature-content">
+          <h5 class="feature-title">
+            Agentless
+          </h5>
+          <div class="feature-text">
+            ManageIQ does not depend on agents, and is therefore extremely easy
+            to install and operate.
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <article class="feature">
+        <aside class="feature-img">
+          <img src="/assets/images//icons/smart_state.png" alt="SmartState Analysis">
+        </aside>
+        <div class="feature-content">
+          <h5 class="feature-title">
+            SmartState Analysis
+          </h5>
+          <div class="feature-text">
+            SmartState analysis allows ManageIQ to peek inside virtual
+            machines, containers and hosts to discover their contents.
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <article class="feature">
+        <aside class="feature-img">
+          <img src="/assets/images//icons/virtual_appliance.png" alt="Virtual Appliance">
+        </aside>
+        <div class="feature-content">
+          <h5 class="feature-title">
+            Virtual Appliance
+          </h5>
+          <div class="feature-text">
+            ManageIQ is distributed as a single virtual appliance that is
+            available for a wide variety of a platforms.
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <article class="feature">
+        <aside class="feature-img">
+          <img src="/assets/images//icons/scalable_architecture.png" alt="Scalable Architecture">
+        </aside>
+        <div class="feature-content">
+          <h5 class="feature-title">
+            Scalable Architecture
+          </h5>
+          <div class="feature-text">
+            The ManageIQ virtual appliance can be deployed standalone, or as
+            part of a federated global deployment.
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <section class="partners">
+    <h3 class="section-title partners-title">
+      Brought to you by
+    </h3>
+
+    <div class="partners-container">
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Red_Hat.svg"
+          alt="Red Hat"
+          width="140" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Booz_Allen_Hamilton.svg"
+          alt="Booz Allen Hamilton"
+          width="260" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Produban.svg"
+          alt="Produban"
+          width="160" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Lenovo_XClarity.svg"
+          alt="Lenovo XClarity"
+          width="110" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Logicalis.svg"
+          alt="Logicalis"
+          width="180" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Google.svg"
+          alt="Google"
+          width="140" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/BBVA.svg"
+          alt="BBVA"
+          width="100" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Near_Technologies.svg"
+          alt="Near Technologies"
+          width="150" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Nuage.svg"
+          alt="Nuage"
+          width="210" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Cox_Automotive.svg"
+          alt="Cox Automotive"
+          width="233" >
+      </div>
+      
+      <div class="partner">
+        <img
+          src="/assets/images/partners/Xlab.svg"
+          alt="Xlab"
+          width="190" >
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

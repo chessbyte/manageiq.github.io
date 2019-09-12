@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Last Two Weeks in ManageIQ: A brand new Euwe</title>
+  <meta name="description" content="As the end of 2016 grew closer, and the Winter Solstice brought with it either the longest night or shortest night, depending on which hemisphere you frequen...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/01/last-week-in-manageiq-a-brand-new-euwe/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/01/last-week-in-manageiq-a-brand-new-euwe/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Last Two Weeks in ManageIQ: A brand new Euwe</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-01-03T00:00:00+00:00" itemprop="datePublished">
+                Jan 3, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  Julian Cheal
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>As the end of 2016 grew closer, and the Winter Solstice brought with it either the longest night or shortest night, depending on which hemisphere you frequent, ManageIQ cut its latest release Euwe. You can download it <a href="http://manageiq.org/download/">here</a> or clone it from Github <a href="https://github.com/ManageIQ/manageiq/tree/euwe">here</a> Happy New Year!</p>
+
+<h2 id="featured">Featured</h2>
+
+<p>Over the last two weeks amongst all the New Year’s celebrations there were <a href="https://github.com/ManageIQ/manageiq/pulls?page=1&amp;q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-12-19+..+2017-01-03%22+sort%3Acreated-desc&amp;utf8=%E2%9C%93">70 pull requests merged</a>! These pull requests (PRs) were comprised of <a href="https://github.com/manageiq/manageiq/compare/master@%7B2016-12-19%7D...@%7B2017-01-03%7D">229 commits</a>. Why not start your New Year by contributing to Open Source, just check out our <a href="https://github.com/manageiq/manageiq/issues">issue tracker</a> to see something that tickles your fancy, or join our chat on <a href="https://gitter.im/ManageIQ/manageiq">Gitter</a> to find out more.</p>
+
+<h2 id="improved">Improved</h2>
+
+<p>If removing technical debt is considered an improvement (answer: it should be), then these last two weeks won’t disappoint.
+First up is <a href="https://github.com/imtayadeway">Tim Wade</a> removing some <a href="https://github.com/ManageIQ/manageiq/pull/10959">dead paths</a> in <code class="highlighter-rouge">MiqExpression.operands2rubyvalue</code>. Next up is <a href="https://github.com/imtayadeway">Tim Wade</a> again! This time <a href="https://github.com/ManageIQ/manageiq/pull/13310">fixing invalid chargeback factories</a> in our test suite.</p>
+
+<p>And finally, a useful improvement from <a href="https://github.com/zeari">Ari Zellner</a> Changing <code class="highlighter-rouge">Images</code> to <code class="highlighter-rouge">ContainerImages</code> in our <a href="https://github.com/ManageIQ/manageiq/pull/13198">chargeback rate assignments</a>.</p>
+
+<h2 id="fixed">Fixed</h2>
+
+<p>After a normally expensive December, people are often frugal in January; which is good as that’s when the sales start! And who wants to overpay when you can get something for less. That’s why <a href="https://github.com/isimluk">Šimon Lukašík</a> fixed a bug in <a href="https://github.com/ManageIQ/manageiq/pull/12807">chargeback reporting</a>.</p>
+
+<p><a href="https://github.com/lgalis">Laura Galis</a> Fixed the case where an empty link was being created if an <a href="https://github.com/ManageIQ/manageiq/pull/12954">orchestration stack was empty</a>.</p>
+
+<p>I know, I know it’s January and we’re all still zoned out from the holidays. Don’t despair <a href="https://github.com/gtanzillo">Gregg Tanzillo</a> has a solution, he’s fixed <a href="https://github.com/ManageIQ/manageiq/pull/13100">zone scoping</a> for a server’s region!</p>
+
+<h2 id="new">New</h2>
+
+<p>New code usually creates new bugs. One of our new and ongoing projects is creating a new physical infrastructure provider. However that has led to a couple of bugs, but <a href="https://github.com/skateman">Dávid Halász</a> to the rescue he’s fixed our <a href="https://github.com/bbatsov/rubocop">Rubocop</a> <a href="https://github.com/ManageIQ/manageiq/blob/master/.rubocop.yml">style guide</a> to <a href="https://github.com/ManageIQ/manageiq/pull/13266">not complain</a> about the <code class="highlighter-rouge">$lenovo_log</code> global; the logging variable used by our first physical infrastructure provider, Lenovo.</p>
+
+<p><a href="https://github.com/AparnaKarve">Aparna Karve</a> has a new feature exposing <a href="https://github.com/ManageIQ/manageiq/pull/13254">workflows on api request resources</a> to show the Request Workflow details in the SUI.</p>
+
+<h2 id="deleted">Deleted</h2>
+
+<p>In this issue, I think <a href="https://github.com/martinpovolny">Martin Povolny</a> wins the deletion prize, with a massive <code class="highlighter-rouge">359,849</code> lines deleted! Admittedly <a href="https://github.com/ManageIQ/manageiq/pull/13303">this PR</a> was part of the UI split into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in its own <a href="https://github.com/ManageIQ/manageiq-ui-classic">repository</a>, more information on this can be found in this <a href="https://github.com/ManageIQ/guides/blob/master/developer_setup/classic_ui_split.md">guide</a>. This is all part of ManageIQ’s plan to “extract all the things”. Expect more code extractions over the coming months.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>Well that about wraps up this double issue of <a href="http://manageiq.org/blog/2017/01/last-week-in-manageiq-a-brand-new-euwe/">Last Two Weeks in ManageIQ</a>. Hopefully 2017 brings you joy and happiness, and lots more <a href="https://github.com/manageiq/manageiq/issues">Open Source contributions</a>. Happy coding!</p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

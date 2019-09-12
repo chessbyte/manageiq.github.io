@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/coding_style_and_standards">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/coding_style_and_standards">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li class=" active menu-open">
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="coding-style-and-standards">Coding Style and Standards</h1>
+
+<p>The following are the coding style and standards for the code written and
+maintained by the ManageIQ team.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#high-level-guidelines">High Level Guidelines</a></li>
+  <li><a href="#ruby-style-guide">Ruby Style Guide</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#logging">Logging</a></li>
+  <li><a href="#commits">Commits</a></li>
+  <li><a href="#pull-requests-and-branches">Pull Requests and Branches</a></li>
+  <li><a href="#gems">Gems</a></li>
+  <li><a href="#error-and-issue-reporting">Error and Issue Reporting</a></li>
+</ul>
+
+<h2 id="high-level-guidelines">High Level Guidelines</h2>
+
+<ul>
+  <li>Be consistent.</li>
+  <li>These guides describes general guidelines to follow for new code.
+For existing code, stay consistent with the conventions of the code you
+are changing.</li>
+  <li>Prefer readability over performance and conciseness when the performance
+difference is minimal.</li>
+  <li>If you can convince others why we should violate a guideline, then violate
+the guideline.</li>
+  <li>These guides are living documents and are subject to change.  Feel free
+to comment or submit pull requests for changes, additions, or removals.</li>
+</ul>
+
+<h2 id="ruby-style-guide">Ruby Style Guide</h2>
+
+<ul>
+  <li>We follow, with some exceptions, the <a href="https://github.com/bbatsov/ruby-style-guide">original Ruby style guide</a>.
+Any changes we have that deviate from the default style guide are enumerated
+in the <a href=".rubocop_base.yml">.rubocop_base.yml</a> file, which is inherited by most
+projects in the ManageIQ organization.</li>
+</ul>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>We use <a href="https://yardoc.org/">yardoc</a> to create inline code documentation. For now documentation is scarce but
+we encourage contributors to add it whenever possible. Until more of the codebase is documented, we limit the created 
+documentation to those files that are well documented. 
+Please try to document methods that are used by external teams, like providers.
+These are the integration API for them and should be documented best.</p>
+
+<p>To view the documentation online visit <a href="http://www.rubydoc.info/github/manageiq/manageiq">rubydoc.info</a>. For a local
+version you can run <code class="highlighter-rouge">bundle exec yard</code> and view the html docs in <code class="highlighter-rouge">/doc/index.html</code>. When writing documentation you
+should add your source files to <code class="highlighter-rouge">/.yardopts</code> and run <code class="highlighter-rouge">bundle exec yard server -r</code>. This will create a local 
+documentation server which regenerates the docs on each request.</p>
+
+<h2 id="logging">Logging</h2>
+
+<ul>
+  <li>
+    <p>Log messages should be prefixed consistently.</p>
+
+    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># in a class method (notice the . notation)</span>
+<span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">) The rest of the log message."</span><span class="p">)</span>
+
+<span class="c1"># in an instance method (notice the # notation)</span>
+<span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">) The rest of the log message."</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>If the same log prefix will be used many times within the same method,
+consider using a variable named log_prefix.</p>
+
+    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">log_prefix</span> <span class="o">=</span> <span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">)"</span>
+<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> The rest of the log message."</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>When wrapping a block of code in logging, consider using the same
+string with ellipses, to make it easier to search them in the logs.  As a
+corollary, avoid using words that would not make sense on both ends, such as
+“Starting”.  Attach any extra information after the latter message using
+<code class="highlighter-rouge">" - #{extra_info}"</code></p>
+
+    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">...Complete"</span><span class="p">)</span>
+
+<span class="c1"># with extra information, such as timings or counts</span>
+<span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">...Complete - Timings: </span><span class="si">#{</span><span class="n">timings</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="commits">Commits</h2>
+
+<ul>
+  <li>Write a good commit message.  The format for a commit message is as follows.
+Also <a href="http://goo.gl/w11us">read more</a> on writing good commit messages.
+    <ul>
+      <li>A short summary of the commit under 72 characters.  Do not use a ticket
+number as the subject alone.</li>
+      <li>A blank line.</li>
+      <li>An optional body of text, preferably wrapped at 72 characters.
+The line length is flexible, particularly in cases where data such as
+tables or URLs are being copied.  The body’s purpose is to convey more
+detailed information about the commit, especially to someone who may need
+to search the code history for changes.  Feel free to include URLs, Git
+SHA references to other commits, and even raw data to make the purpose
+of the commit clearer (e.g. “Was broken by commit 0f3a459b”).</li>
+      <li>A blank line if you’ve written a body.</li>
+      <li>References to any Bugzilla tickets or Github Issues, one per line if
+there are multiple.
+        <ul>
+          <li>Bugzilla tickets should be in the form of a full URL to the ticket.</li>
+          <li>Github issues should be of the form “Issue #n”, where n is the
+issue number.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Each commit should have it’s own unique subject.  Do not use the same
+subject for a series of commits in a branch of work.</li>
+  <li>Keep commits small by committing often and only include related changes
+and tests together.</li>
+  <li>You may be doing too much in a commit if…
+    <ul>
+      <li>You can’t get the subject of the commit message under 72 characters</li>
+      <li>You are using a lot of “ands” or “ors” in the commit message</li>
+      <li>You find yourself using lots of bullet points to enumerate all the work
+the commit does.</li>
+    </ul>
+  </li>
+  <li>Squash (combine) commits to keep logical units of changes grouped together
+in the same commit.  Don’t squash unrelated changes.</li>
+  <li>Avoid mixing logical changes with style changes of unrelated code.
+Keep them as separate commits.  If the style change makes it hard to see
+the logical change, do the style change in a different pull request.</li>
+  <li>Avoid mixing code changes with code relocation.  Keep them as separate
+commits.  If the moved method has high churn, perhaps move the method in
+a separate pull request.</li>
+</ul>
+
+<h2 id="pull-requests-and-branches">Pull Requests and Branches</h2>
+
+<ul>
+  <li>
+    <p>Use descriptive names for feature branches as they are included in the
+Git history.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code># bad
+faster_tests
+rework_amazon_code
+
+# good
+remove_test_duplication_for_performance
+change_ems_amazon_to_be_region_specific
+</code></pre>
+    </div>
+  </li>
+  <li>Write a good pull request message.  By default, Github will use your
+branch name as the title.  Adjust the title if this is not appropriate for
+the pull request.
+    <ul>
+      <li>See <a href="#commits">writing a good commit message</a> for information about
+writing a good pull request message, exchanging the word “subject” with
+“title”.</li>
+    </ul>
+  </li>
+  <li>All pull requests should have tests or mention that there are existing
+tests that cover the code changes.</li>
+  <li>Avoid large pull requests (e.g. 1000+ lines changed not counting any
+generated files such as test data).
+    <ul>
+      <li>Consider if the changes should be done in separate pull request.</li>
+      <li>Use the number of lines added/removed as an indicator of possible
+code smells.</li>
+    </ul>
+  </li>
+  <li>Try to avoid having a commit with, for example, a spelling mistake, that
+is fixed in a subsequent commit in the same pull request.  Use <code class="highlighter-rouge">git rebase -i</code>
+to clean up those commits to keep the history clean.</li>
+  <li>If a pull request involves UI changes, consider adding a before/after
+set of screenshots to show what has changed visually.</li>
+  <li>Use <a href="https://github.com/blog/821">@-mentions</a> to request reviews from
+specific people.</li>
+  <li>When you add new commits to a pull request, be sure to @-mention others
+so they know you are ready for a new review.</li>
+</ul>
+
+<h2 id="error-and-issue-reporting">Error and Issue Reporting</h2>
+
+<ul>
+  <li>Under no circumstances should customer names or customer related information
+be referenced in Github issues, error reports, commits, or pull requests.</li>
+  <li>
+    <p>For UI errors, the error message and stack trace are usually in
+production.log.  A snippet from there with the entire UI transaction is
+needed, including the error message and the stack trace.  A UI transaction
+starts with something that looks like</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:11.910803 #24340:3fd36e0349dc]  INFO -- : Started GET "/ems_infra/show/7" for 127.0.0.1 at 2013-08-22 00:39:11 -0400
+[----] I, [2013-08-22T04:39:11.929926 #24340:3fd36e0349dc]  INFO -- : Processing by EmsInfraController#show as HTML
+</code></pre>
+    </div>
+
+    <p>and ends with something that looks like</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:12.127578 #24340:3fd36e0349dc]  INFO -- : Rendered layouts/_global_footer.html.erb (0.1ms)
+[----] I, [2013-08-22T04:39:12.127794 #24340:3fd36e0349dc]  INFO -- : Completed 200 OK in 198ms (Views: 110.1ms | ActiveRecord: 15.4ms)
+</code></pre>
+    </div>
+
+    <p>Everything in between with the same PID (the number between the # and :
+symbols in the log line header) is important.</p>
+  </li>
+  <li>
+    <p>For non-UI errors (or errors that appear in the UI but are really
+backend errors), the error message is usually in the evm.log.  Typically,
+we need more information than just the error message and stack trace, so
+it is helpful to have some extra context lines above and below the error.
+The amount is hard to quantify, so we will have to build up a list of things
+as time moves forward.</p>
+
+    <p>Most items are handled by a queue worker of some type, so for those it
+is most useful to have:</p>
+
+    <ul>
+      <li>The MiqQueue.put or MiqQueue.merge line from the worker that placed
+the item on the queue.</li>
+      <li>Context around why the item was placed on the queue.  For example, if
+some operation caused a policy item to be placed on the queue, is useful
+to have the log lines around what that operation was that triggered a
+policy check.  This trail going backwards usually continues until you
+get a UI action or a scheduler action.</li>
+      <li>The MiqQueue.get line from the worker that picked up the queue item.</li>
+      <li>All work from the PID of the worker that picked up the item, up to and
+including the error message and stack trace.</li>
+      <li>On occasion, incidental work done by other workers in the same time
+frame.  Since all logs are UTC based, it makes it easier to coordinate
+log times from multiple appliances, regardless of where the logs live.
+This type of information is usually needed when there are environmental
+or coincidental errors occurring across all or part of the system.</li>
+    </ul>
+  </li>
+  <li>Screenshots of the “UI error screen” are not useful at all, as all it
+shows is the exact error that is in the logs, but without all of the rest
+of the required information listed above.</li>
+  <li>For bugs on an old version of the product, it is helpful to know if the
+behavior is repeatable on the latest version on that z-stream.  In addition,
+it is helpful to know if the behavior is repeatable on the latest of the
+next release, or even upstream.</li>
+</ul>
+
+<h2 id="gems">Gems</h2>
+
+<p>When extracting code into a new gem or creating a new gem:</p>
+
+<ul>
+  <li>Follow <a href="http://semver.org/">SemVer</a>.</li>
+  <li>Follow the internal guide for a creating a new gem.
+    <ul>
+      <li>Create a CONTRIBUTING.md that references these guides.  Project-specific
+changes or additions to the guides can be put here.</li>
+      <li>Create a LICENSE.txt with an appropriate license.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="git-how-to">Git how-to</h2>
+
+<p>Note after the changes in this section, you will need <code class="highlighter-rouge">git push -f </code>if you have 
+already pushed them before.</p>
+
+<ul>
+  <li>
+    <p>Reword/squashing/reordering a commit</p>
+
+    <p>To modify with recent commit in current branch, first do 
+<code class="highlighter-rouge">git rebase -i origin branch-name</code>.
+To modify a specific commit, use <code class="highlighter-rouge">git rebase -i SOME_COMMIT_ID^</code> instead.
+git will popup a vi window to let you do modification on commits, press 
+<code class="highlighter-rouge">:wq</code> after done.</p>
+
+    <ul>
+      <li>
+        <p>Reword a commit</p>
+
+        <p>Change the <code class="highlighter-rouge">pick</code> before the commit you want to reword to <code class="highlighter-rouge">edit</code> and edit 
+its message in popup vi window.</p>
+      </li>
+      <li>
+        <p>Squashing commits</p>
+
+        <p>Change the <code class="highlighter-rouge">pick</code> before the commit you want to squach to <code class="highlighter-rouge">squash</code> and edit 
+the commit message after squash in a following popup vi window. A commit 
+will be squashed with its previous commit.</p>
+      </li>
+      <li>
+        <p>Reordering commits</p>
+
+        <p>Reordering them in this vi window will reorder the commits.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Amend a commit</p>
+
+    <p>You can commit first and rebase it in the previous section. Or if you want to
+amend most recent commit, you can: <code class="highlighter-rouge">git commit some_file --amend</code>.</p>
+  </li>
+  <li>
+    <p>Deleting a commit</p>
+
+    <p>You can delete commits by delete corresponding lines in <code class="highlighter-rouge">git rebase</code>. Or if
+you want to delete most recent commit, you can <code class="highlighter-rouge">git reset --hard HEAD^</code>. If you
+want to go back to a specific commit and delete commits after that, use
+<code class="highlighter-rouge">git reset --hard commit-hash</code>.</p>
+  </li>
+  <li>
+    <p>Uncommit a file from an existing commit</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>git reset HEAD^ path/to/file/to/revert
+git commit --amend
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="todo">TODO</h2>
+
+<ul>
+  <li>Rails style guide see https://github.com/bbatsov/rails-style-guide</li>
+  <li>Bugzilla how-to
+    <ul>
+      <li>how to copy commit details / clone a ticket</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="license">License</h1>
+
+<p><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License" />
+This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported
+License</a></p>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

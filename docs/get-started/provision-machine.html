@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Provision Your First Instance</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/get-started/provision-machine">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/get-started/provision-machine">
+      <nav class="doc_tabs">
+  <ul>
+  <li class="active">
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    <ul class="menu menu-toplevel" id="start_menu">
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/">
+      Get started
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item menu-parent">
+    <a href="#">
+      Get ManageIQ
+    </a>
+    
+    <ul>
+      
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/vagrant">
+      Vagrant
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/docker">
+      Docker
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/cloud">
+      Public Cloud
+    </a>
+    
+  </li>
+
+
+    </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/basic-configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/add-a-provider">
+      Add A Provider
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/review-provider">
+      Review Provider Details
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item active">
+    <a href="/docs/get-started/provision-machine">
+      Provision Your First Machine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/create-service-item">
+      Create Your First Service Item
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/where-to-go-from-here">
+      Where to go from here
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/concepts">
+      Concepts Guide
+    </a>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc start_doc">
+      
+      <header class="doc-header">
+        <h1 class="doc-title">Provision Your First Instance</h1>
+      </header>
+      
+
+      <div class="doc-content">
+        
+        <p>Let’s generate a new instance through ManageIQ, the hard way. Don’t worry, And afterwards
+we will rehearse a method that is easier for customers.</p>
+
+<h3 id="generate-a-new-instance">Generate a new instance</h3>
+
+<p>Go to <strong><em>Compute → Cloud → Instances</em></strong>, and select your Google provider in
+the tree.</p>
+
+<p>You will see all the instances in the provider independently of the
+availability zone they belong to.</p>
+
+<p>If you have more than a cloud provider <strong><em>all your instances from all your providers</em></strong>
+will be available at the same time and you will be able to interact with them.</p>
+
+<p>Select <strong><em>Lifecycle → Provision Instances</em></strong> from the bar on the top.</p>
+
+<p><img src="/assets/images/docs/screenshot_0027.png" alt="screenshot0027" class="large_img" /></p>
+
+<p>After a few seconds you will have a list of all images available, select
+<em>the latest version of centos-7</em>. Press <strong><em>Continue</em></strong></p>
+
+<p>There are different elements that you need to fulfill:</p>
+
+<p><img src="/assets/images/docs/screenshot_0028.png" alt="screenshot0028" class="large_img" /></p>
+
+<h4 id="request">Request</h4>
+
+<p>The information about the request itself, it will be used for reporting,
+notifications, and to help decide whether approve it or not.</p>
+
+<p><img src="/assets/images/docs/screenshot_0029.png" alt="screenshot0029" class="large_img" /></p>
+
+<h4 id="purpose">Purpose</h4>
+
+<p>Tags are running deeply in ManageIQ, to allow the system to provide
+functionality like visibility of instances, chargeback, best place
+provisioning decisions, quotas, etc. You can find a lot of information
+about this in the documentation.</p>
+
+<h4 id="catalog">Catalog</h4>
+
+<p>This will allow to modify some characteristics of the instance, like the
+number of instances, its name and description.</p>
+
+<p><img src="/assets/images/docs/screenshot_0030.png" alt="screenshot0030" class="large_img" /></p>
+
+<h4 id="environment">Environment</h4>
+
+<p>This will allow you to choose the availability zone and the cloud
+network to be used.</p>
+
+<p>You can always check <strong><em>choose automatically</em></strong> to allow the system to find
+the best option for you.</p>
+
+<p><img src="/assets/images/docs/screenshot_0031.png" alt="screenshot0031" class="large_img" /></p>
+
+<h4 id="properties">Properties</h4>
+
+<p>This allows you to modify the instance type and boot disk size to adapt
+it to your necessities.</p>
+
+<p>Choose a small instance type: (<em>g1-small</em>) and a boot-disk of <em>10 GB</em>.</p>
+
+<p><img src="/assets/images/docs/screenshot_0032.png" alt="screenshot0032" class="large_img" /></p>
+
+<h4 id="schedule">Schedule</h4>
+
+<p>This allows you to decide if you want to provision the Instance now or in a later time.</p>
+
+<p><img src="/assets/images/docs/screenshot_0033.png" alt="screenshot0033" class="large_img" /></p>
+
+<p>Press <strong><em>Submit</em></strong></p>
+
+<p>You will see your request go through different stages (you can press
+<strong><em>Reload</em></strong> to see the changes)</p>
+
+<p><img src="/assets/images/docs/screenshot_0034.png" alt="screenshot0034" class="large_img" /></p>
+
+<p>After a few seconds, a new VM will be present, owner and group will be
+properly set up for this new VM and you will see all the information about it.</p>
+
+<p><img src="/assets/images/docs/screenshot_0035.png" alt="screenshot0035" class="large_img" /></p>
+
+<p>Once you have this VM created, you can go to any of the VM and choose
+<strong><em>Power → Stop</em></strong> or <strong><em>Power → Delete</em></strong> in the upper menu to avoid unnecessary
+charges</p>
+
+<p><img src="/assets/images/docs/screenshot_0036.png" alt="screenshot0036" class="large_img" /></p>
+
+<h2 id="next-create-a-self-service-catalog-item">Next: <a href="/docs/get-started/create-service-item">Create a Self-service Catalog Item</a></h2>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

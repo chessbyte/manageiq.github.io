@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/providers/openstack_infra_provider">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/providers/openstack_infra_provider">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h2 id="manageiq-openstack-infrastructure-provider">ManageIQ OpenStack Infrastructure Provider</h2>
+
+<p>The OpenStack infrastructure provider is designed to work with a <a href="https://wiki.openstack.org/wiki/TripleO">TripleO-based OpenStack deployment</a>.  It provides visibility and management capabilities for the undercloud.</p>
+
+<h3 id="features">Features</h3>
+
+<ul>
+  <li>Scaling of the overcloud through ManageIQ
+    <ul>
+      <li>Function enabled through both the UI and Automate</li>
+    </ul>
+  </li>
+  <li>Host data collection
+    <ul>
+      <li>Base attributes through OpenStack APIs (Ironic, Heat, Tuskar)</li>
+      <li>Metrics through OpenStack Ceilometer</li>
+      <li>OpenStack component views, detailing the status and configuration of installed OpenStack services, through host fleecing</li>
+    </ul>
+  </li>
+  <li>Image data collection through the OpenStack Glance API</li>
+</ul>
+
+<h3 id="in-development">In Development</h3>
+
+<ul>
+  <li>Exposing additional management capabilities provided by OpenStack APIs</li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+
+<h5 id="install-a-tripleo-based-openstack-deployment">Install a TripleO-based OpenStack deployment</h5>
+
+<p>The recommended way to do this can be found here: https://www.rdoproject.org/tripleo/</p>
+
+<p>Afterwards, you’ll need to expose the undercloud’s API endpoints: https://wiki.openstack.org/wiki/Tuskar/Instack#Connecting_to_Undercloud_from_external_place_.28e.g._your_laptop.29</p>
+
+<h6 id="enable-events-in-the-undercloud">Enable Events in the Undercloud</h6>
+
+<p>To enable events in the undercloud, update the following configuration files on the undercloud node:</p>
+
+<ul>
+  <li>/etc/heat/heat.conf
+    <ul>
+      <li>notification_driver=messaging</li>
+      <li>notification_topics=notifications</li>
+    </ul>
+  </li>
+  <li>/etc/nova/nova.conf
+    <ul>
+      <li>notification_driver = messaging</li>
+      <li>notification_topics = notifications</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Then, restart all Heat and Nova services.</p>
+
+<h5 id="install-manageiq">Install ManageIQ</h5>
+
+<ul>
+  <li>https://github.com/ManageIQ/guides/blob/master/developer_setup.md</li>
+  <li>https://github.com/ManageIQ/guides/blob/master/developer_ruby2_setup.md</li>
+</ul>
+
+<h5 id="add-the-tripleo-based-openstack-deployment-undercloud-to-manageiq">Add the TripleO-based OpenStack deployment (undercloud) to ManageIQ</h5>
+
+<p>Follow these steps to add a TripleO-based OpenStack deployment (undercloud) to ManageIQ</p>
+
+<ul>
+  <li>Go to Infrastructure -&gt; Providers</li>
+  <li>Under ‘Configuration’ select ‘Add a New Infrastructure Provider’</li>
+  <li>In the resulting form, choose ‘OpenStack Infrastructure’ as the Type and fill in the ‘Basic Information’ and ‘Credentials’ form
+    <ul>
+      <li>Note that the IP Address must match the IP shown when running ‘keystone endpoint-list’ in the undercloud</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="enable-host-fleecing-optional">Enable Host Fleecing (Optional)</h5>
+
+<p>Follow these steps to enable host fleecing.  Note that the OpenStack infrastructure provider will still work if these steps are not run; there will simply be less information available through the ManageIQ UI.</p>
+
+<ul>
+  <li>Enable the SmartProxy role:
+    <ul>
+      <li>Go to Configure -&gt; Configuration</li>
+      <li>Select SmartProxy in Server Roles, Server Control section</li>
+      <li>Click Save</li>
+    </ul>
+  </li>
+  <li>Add configuration files to default host profile:
+    <ul>
+      <li>Go to Configure -&gt; Configuration</li>
+      <li>Click on host default in Analysis profiles on the left side bar</li>
+      <li>Add configuration files that you want to analyze:
+        <ul>
+          <li>ex: /etc/*/*.conf, /etc/*/*.ini</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Enable host fleecing with the heat-admin user:
+    <ul>
+      <li>Go to undercloud node</li>
+      <li>Get the private key from /home/stack/.ssh/id_rsa</li>
+      <li>In the ‘RSA KEY pair tab’ of Infra provider add heat-admin User ID and the private file from step 2</li>
+    </ul>
+  </li>
+  <li>Enable host fleecing with the root user:
+    <ul>
+      <li>Go to undercloud node</li>
+      <li>Get the private key from /home/stack/.ssh/id_rsa</li>
+      <li>Switch to the stack user
+        <ul>
+          <li>su - stack</li>
+        </ul>
+      </li>
+      <li>Get the IP addresses of overcloud nodes
+        <ul>
+          <li>. stackrc</li>
+          <li>nova list</li>
+        </ul>
+      </li>
+      <li>Connect to each overcloud nodes by using heat-admin user
+        <ul>
+          <li>ex: ssh heat-admin@192.0.2.8</li>
+        </ul>
+      </li>
+      <li>Switch to root user
+        <ul>
+          <li>sudo -i</li>
+        </ul>
+      </li>
+      <li>Edit .ssh/authorized_keys to allow regular login
+        <ul>
+          <li>sed -i ‘s/no-port-forwarding.*10” //’ .ssh/authorized_keys</li>
+        </ul>
+      </li>
+      <li>In the ‘RSA KEY pair tab’ of Infra provider add root User ID and the private file from step 2</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="add-alert-and-event-for-auto-acaling-through-automate-optional">Add Alert and Event for Auto-Acaling through Automate (Optional)</h5>
+
+<p>To enable auto-scaling, follow <a href="http://manageiq.org/depot/extension/openstack_infrastructure_auto_scale/">the instructions in the ManageIQ depot</a>.</p>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

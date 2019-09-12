@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Review What You Can See From The Provider</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/get-started/review-provider">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/get-started/review-provider">
+      <nav class="doc_tabs">
+  <ul>
+  <li class="active">
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    <ul class="menu menu-toplevel" id="start_menu">
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/">
+      Get started
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item menu-parent">
+    <a href="#">
+      Get ManageIQ
+    </a>
+    
+    <ul>
+      
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/vagrant">
+      Vagrant
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/docker">
+      Docker
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/cloud">
+      Public Cloud
+    </a>
+    
+  </li>
+
+
+    </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/basic-configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/add-a-provider">
+      Add A Provider
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item active">
+    <a href="/docs/get-started/review-provider">
+      Review Provider Details
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/provision-machine">
+      Provision Your First Machine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/create-service-item">
+      Create Your First Service Item
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/where-to-go-from-here">
+      Where to go from here
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/concepts">
+      Concepts Guide
+    </a>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc start_doc">
+      
+      <header class="doc-header">
+        <h1 class="doc-title">Review What You Can See From The Provider</h1>
+      </header>
+      
+
+      <div class="doc-content">
+        
+        <p>Go to <strong><em>Compute → Clouds → Providers</em></strong></p>
+
+<p>You can see there your new GCE provider, and a quad icon with four zones that specifies:</p>
+
+<p><img src="/assets/images/docs/screenshot_0013a.png" alt="screenshot0013a" class="large_img" /></p>
+
+<ul>
+  <li>Type of provider</li>
+  <li>Authentication status</li>
+  <li>Some other information that depends on the provider</li>
+</ul>
+
+<p>For instance, our freshly provided Cloud has already some elements
+discovered:</p>
+
+<ul>
+  <li>Type of provider (icon of Google Cloud)</li>
+  <li>Authentication status (OK)</li>
+  <li>Number of instances (VM)</li>
+  <li>Number of Images (Templates)</li>
+</ul>
+
+<p><img src="/assets/images/docs/screenshot_0013.png" alt="screenshot0013" class="large_img" /></p>
+
+<p>Clicking it will show you more information:</p>
+
+<ul>
+  <li><strong>Properties</strong>. Characteristics of the provider as defined in ManageIQ,
+like type of provider and preferred region. This information will be
+different for each provider.</li>
+</ul>
+
+<p><img src="/assets/images/docs/screenshot_0019.png" alt="screenshot0019" /></p>
+<ul>
+  <li><strong>Status</strong>. Whether your credentials are valid and when the last refresh
+was done.</li>
+</ul>
+
+<p><img src="/assets/images/docs/screenshot_0015.png" alt="screenshot0015" class="large_img" /></p>
+<ul>
+  <li><strong>Relationships</strong>. Including the information about the components of the
+provider, like the number of security groups defined in the network,
+the number of available flavors (virtual hardware characteristics),
+cloud volumes, etc.</li>
+</ul>
+
+<p><img src="/assets/images/docs/screenshot_0018.png" alt="screenshot0018" /></p>
+
+<p>You can click on any of those elements to see detail information and a
+list of objects within. For instance, you can click on <strong><em>Instances</em></strong> to
+see names and characteristics of the instances within the provider</p>
+
+<p><img src="/assets/images/docs/screenshot_0014.png" alt="screenshot0014" class="large_img" /></p>
+
+<h2 id="discovering-a-vm">Discovering a VM</h2>
+
+<p>Click on any of the VM available (or follow the next element if you
+don’t see any to create a new VM).</p>
+
+<p>You will find in the accordion a hierarchy tree that allows you to see
+the context: our machine is part of the availability zone: <em>“us-east1-b”</em>.</p>
+
+<p><img src="/assets/images/docs/screenshot_0021a.png" alt="screenshot0021a" /></p>
+
+<p>There is a lot of detailed information out of the box:</p>
+
+<p><img src="/assets/images/docs/screenshot_0016.png" alt="screenshot0016" class="large_img" /></p>
+
+<h3 id="information-available">Information available</h3>
+
+<h4 id="properties">Properties</h4>
+
+<p>ManageIQ is capable of autodiscovering all IP addresses associated to
+the VM, the container (hardware associated to the instance), or the
+Operating System that is using, automatically.</p>
+
+<p><img src="/assets/images/docs/screenshot_0023.png" alt="screenshot0023" /></p>
+
+<h4 id="lifecycle">Lifecycle</h4>
+
+<p>It provides information about the lifecycle of the entity, when it was
+discovered, and when it was last analyzed. Whether there is a retirement
+date for the instance, and the group it belongs to.</p>
+
+<p><img src="/assets/images/docs/screenshot_0025.png" alt="screenshot0025" class="large_img" /></p>
+
+<h4 id="relationships">Relationships</h4>
+
+<p>ManageIQ stores relationships between the elements in your
+infrastructure.</p>
+
+<ul>
+  <li>Provider where the instance is stored</li>
+  <li>Availability zone</li>
+  <li>The VM-template used to provision it</li>
+  <li>Many others</li>
+</ul>
+
+<p>As different cloud providers use different concepts, it is possible that
+you find many parameters define as 0 or None. You need to check in the
+documentation what information is discovered for each one.</p>
+
+<p><img src="/assets/images/docs/screenshot_0018.png" alt="screenshot0018" class="large_img" /></p>
+
+<h4 id="compliance">Compliance</h4>
+
+<p>You can run compliance checks against your instances, and the status and
+history will be available here.</p>
+
+<h4 id="power-management">Power Management</h4>
+
+<p>Allows you to know the power state of the instance and the last time
+ManageIQ saw it changing. As these instances are discovered, ManageIQ
+does not know the last time it booted.</p>
+
+<p><img src="/assets/images/docs/screenshot_0026.png" alt="screenshot0026" class="large_img" /></p>
+
+<h4 id="security-configuration-diagnostics-and-smart-management">Security, Configuration, Diagnostics and Smart Management</h4>
+
+<p>More advanced capabilities are available for selected providers,
+including agentless inspection of workloads to discover</p>
+
+<p><img src="/assets/images/docs/screenshot_0017.png" alt="screenshot0017" class="large_img" /></p>
+
+<h2 id="reporting">Reporting</h2>
+
+<p>There is an extensive reporting capability to get reports from all this
+data and relationships in an structured way. You can find reports under <strong><em>Cloud Intelligence</em></strong></p>
+
+<p>This tutorial does not specify the information you can gather in reporting</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>[NOTE]
+Providers need to have Capacity and Utilization data available to be able to generate reports on them
+Not all providers show the same data or have the C&amp;U data available.
+
+</code></pre>
+</div>
+
+<h2 id="next-provision-your-first-machine">Next: <a href="/docs/get-started/provision-machine">Provision Your First Machine</a></h2>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

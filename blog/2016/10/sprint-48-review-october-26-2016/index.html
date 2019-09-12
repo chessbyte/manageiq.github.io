@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Sprint 48 review - October 26, 2016</title>
+  <meta name="description" content="Welcome to the Sprint 48 review recap! This was the sprint for the Euwe Beta release, with the just announced Euwe release candidate hot on its heels.">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2016/10/sprint-48-review-october-26-2016/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2016/10/sprint-48-review-october-26-2016/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Sprint 48 review - October 26, 2016</h1>
+
+            <div class="post-meta">
+              <time datetime="2016-10-28T20:20:00+00:00" itemprop="datePublished">
+                Oct 28, 2016
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  cybette
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/sprints">sprints</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>Welcome to the Sprint 48 review recap! This was the sprint for the <a href="http://manageiq.org/blog/2016/10/Announcing-Euwe-Beta-Release/">Euwe Beta</a> release, with the just announced <a href="http://manageiq.org/blog/2016/10/Announcing-Euwe-Release-Candidate/">Euwe release candidate</a> hot on its heels.</p>
+
+<p>In this sprint we had 404 pull requests merged in the main <a href="https://github.com/ManageIQ/manageiq">ManageIQ repo</a>, a big chunk consisting of bug fixes. 266 PRs were backported to the Euwe branch that we are focusing on stabilizing, and this will continue to the next sprint. Across the repos, with plenty of work going into the <a href="http://manageiq.org/">new website</a> <a href="https://github.com/ManageIQ/manageiq.org">(source)</a>, a lot of clean-up and new features in <del>Self</del> <a href="https://github.com/ManageIQ/manageiq-ui-service">Service UI</a>, as well as a <a href="https://github.com/ManageIQ/manageiq-pods">new repo to podify</a> the ManageIQ project for Kubernetes/Openshift, we accomplished a total of 693 PRs in 3 weeks!</p>
+
+<p>To start off, there is a new arrival <a href="https://github.com/ManageIQ/manageiq-providers-lenovo">Lenovo</a>, which is a physical infrastructure provider. This is a brand new provider type for ManageIQ, so we are just getting started and laying the foundation work for now. However, this promises more cool stuff to look forward to, building towards the full stack picture.</p>
+
+<p>On the Chargeback front, there’s major rework of the calculations, with reinstated weekly and monthly rates. The Service UI now supports showing Chargeback report data, and you can enable custom attributes for those reports as well.</p>
+
+<p>Further enhancements include scheduling Automate Tasks via the rails console, and several notable API support for central admin work. Cinder backup/restore has been added to OpenStack and Automate. Also take note that we are no longer appending “_” to the VM name in service provisioning as the underscore is an invalid character for some providers.</p>
+
+<p>You will notice numerous screenshots in the slides showcasing work done on the Classic UI, such as creating/updating/deleting Cloud Networks and OpenStack Cloud Tenants (previously only view and tag were supported). There are new topology views for Cloud Manager and Infrastructure providers. Finally, you can find demos on proxying the VNC or SPICE connection, hiding VMs and instances in explorer trees (for improving performance), and the added OpenStack features along with the rest of the Sprint review meeting <a href="https://www.youtube.com/watch?v=wD6dqm9hSRM">here in the video</a>.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wD6dqm9hSRM" frameborder="0" allowfullscreen=""></iframe>
+
+<p>For specific sections of the review meeting, here are the respective timestamps:</p>
+
+<ul>
+  <li>Sprint Statistics (Jason Frey) - <a href="https://youtu.be/wD6dqm9hSRM?t=52">0:52</a></li>
+  <li>Classic UI (Harpreet Kataria) - <a href="https://youtu.be/wD6dqm9hSRM?t=217">3:37</a></li>
+  <li>Service UI (Chris Kacerguis) - <a href="https://youtu.be/wD6dqm9hSRM?t=1423">23:43</a></li>
+  <li>Providers (Greg Blomquist) - <a href="https://youtu.be/wD6dqm9hSRM?t=1482">24:42</a></li>
+  <li>Automate (Greg McCullough) - <a href="https://youtu.be/wD6dqm9hSRM?t=1903">31:43</a></li>
+  <li>Platform (Gregg Tanzillo) - <a href="https://youtu.be/wD6dqm9hSRM?t=2634">43:54</a></li>
+  <li>API (Alberto Bellotti) - <a href="https://youtu.be/wD6dqm9hSRM?t=3104">51:44</a></li>
+  <li>Quality Engineering (Pete Savage) - <a href="https://youtu.be/wD6dqm9hSRM?t=3335">55:35</a></li>
+  <li>Discussion - <a href="https://youtu.be/wD6dqm9hSRM?t=3473">57:53</a></li>
+</ul>
+
+<p>Get a closer look at some of the work done this sprint with the following “Last Week in ManageIQ” posts:</p>
+
+<ul>
+  <li><a href="http://manageiq.org/blog/2016/10/lwimiq-hacktoberfest-faster-trees-chargeback-reports/">Hacktoberfest, Faster Trees, and Chargeback Reports!</a> - by <a href="https://twitter.com/imtayadeway">Tim Wade</a></li>
+  <li><a href="http://manageiq.org/blog/2016/10/last-week-in-manageiq-conversations-lead-to-merges/">Conversations lead to merges!</a> - by <a href="https://twitter.com/syncrou">Drew Bomhof</a></li>
+  <li><a href="http://manageiq.org/blog/2016/10/lwimiq-exceptions-logs-ternary/">Exceptions, Logs, and Ternary Operators!</a> - by <a href="https://github.com/jntullo">Jillian Tullo</a></li>
+</ul>
+
+<p>While getting closer to the Euwe GA, we are also embarking on the F-release on master. These are exciting times! Don’t miss out on the excitement by joining us every 3 weeks in the ManageIQ Sprint review via <a href="https://bluejeans.com/5927041376/">Bluejeans</a>. Sprint 49 review will be on November 16, 2016 @ <a href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=ManageIQ+Sprint+49+review&amp;iso=20161116T1530">7:30am PST/10:30am EST/15:30 GMT</a>. You can import the <a href="https://calendar.google.com/calendar/embed?src=contact%40manageiq.org">ManageIQ community calendar</a> to be notified about this and future Sprint reviews.</p>
+
+<h3 id="slide-deck"><a href="http://www.slideshare.net/ManageIQ/sprint-48-review">Slide deck</a></h3>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/A9MiYmAgdgOwap" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+
+<h3 id="changelog"><a href="http://manageiq.org/community/changelog/">Changelog</a></h3>
+
+<h4 id="added">Added</h4>
+
+<ul>
+  <li>Automate
+    <ul>
+      <li>Reset domain priorities at startup and restore</li>
+      <li>Set default entry points for non-generic catalog items</li>
+      <li>Model: Schema change for Cloud Orchestration Retirement class</li>
+      <li>Automation method that will choose VDC networks available in the given
+cloud provider</li>
+      <li>Provisioning
+        <ul>
+          <li>Show shared networks in the OpenStack provisioning dialog</li>
+          <li>Reconnect orchestration stack with its template at post-provisioning</li>
+        </ul>
+      </li>
+      <li>Domain Import
+        <ul>
+          <li>Rake task to import an Automate Model stored in a  Git Repository</li>
+          <li>Allow for setting up self signed certificate in Import Screen</li>
+          <li>REST API Git refresh and import</li>
+          <li>Route the REST API import call to the correct server with the Git Owner Server role</li>
+        </ul>
+      </li>
+      <li>Added Automate $evm.create_notification method</li>
+      <li>Retirement
+        <ul>
+          <li>Allow VM’s with unknown power state to retire.</li>
+          <li>Allow archived/orphaned VM’s to retire</li>
+          <li>Added checks and logging for amazon retirement</li>
+        </ul>
+      </li>
+      <li>Service Model
+        <ul>
+          <li>Added cinder backup/restore actions</li>
+          <li>RBAC for service models</li>
+        </ul>
+      </li>
+      <li>Scheduling Automate Tasks via the rails console</li>
+    </ul>
+  </li>
+  <li>Platform
+    <ul>
+      <li>Configure kerberos to do dns_lookups for external authentication</li>
+      <li>Add additional cloud objects to RBAC filter</li>
+      <li>Chargeback
+        <ul>
+          <li>Add Vm Guid to report fields for ChargebackVm reports</li>
+          <li>Enable custom attributes for chargeback reports</li>
+          <li>Add monthly/hourly/weekly in rates for ‘per time’ types</li>
+          <li>Calculation changes taking into account averages and maximums per selected interval in report(monthly, weekly, daily)</li>
+        </ul>
+      </li>
+      <li>Logging: Add the ability to use a different disk for storing log files</li>
+      <li>Tenancy: Introduce service for sharing resources across tenants</li>
+    </ul>
+  </li>
+  <li>Providers
+    <ul>
+      <li>Allow Vm to show floating and fixed ip addresses</li>
+      <li>Containers
+        <ul>
+          <li>Persist Container Templates</li>
+          <li>UI: Add Container Templates</li>
+        </ul>
+      </li>
+      <li>Google Compute Engine: Support for parsing Google health checks during refresh</li>
+      <li>OpenStack
+        <ul>
+          <li>Cloud
+            <ul>
+              <li>UI: Cloud volume backup</li>
+              <li>CRUD for OpenStack Cloud tenants</li>
+              <li>Enable Image Snapshots</li>
+              <li>CRUD for OpenStack Host Aggregates</li>
+            </ul>
+          </li>
+          <li>Infra
+            <ul>
+              <li>Enable node start and stop</li>
+              <li>Node destroy deletes node from Ironic</li>
+              <li>Add Ironic Controls</li>
+              <li>Set boot image for registered hosts</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Storage: Cinder backup</li>
+    </ul>
+  </li>
+  <li>REST API
+    <ul>
+      <li>Service power operations</li>
+      <li>Add custom attributes to provider</li>
+      <li>Service Dialog Create</li>
+      <li>Support for /api/requests creation and edits</li>
+    </ul>
+  </li>
+  <li>SmartState: Add /etc/redhat-access-insights/machine-id to the sample VM analysis profile</li>
+  <li>User Interface
+    <ul>
+      <li>Dashboard view for Infrastructure views</li>
+      <li>Conversion of Middleware Provider form to Angular</li>
+      <li>Add human name for Google &amp; Azure load balancers</li>
+      <li>Ability to get to details of Ansible jobs</li>
+      <li>Add UI for generating authorization keys for remote regions</li>
+      <li>Disable tenant edit from cloud tenant mapping</li>
+      <li>Topology for Cloud Manager</li>
+      <li>Topology for Infra provider</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="changed">Changed</h4>
+
+<ul>
+  <li>Performance
+    <ul>
+      <li>Speed up RBAC when no vm in tree in Virtual Machine Explorer</li>
+      <li>Speed-up lookup for min/max storage_used metric</li>
+      <li>Add option to hide VMs in trees</li>
+    </ul>
+  </li>
+  <li>Platform: Set appliance “system” memory/swap information</li>
+  <li>Providers
+    <ul>
+      <li>Google Cloud Platform: Use standard health states</li>
+      <li>Microsoft SCVMM: Set  default security protocol to ssl</li>
+      <li>Network: Use RESTful routes</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="fixed">Fixed</h4>
+
+<p>Notable fixes include:</p>
+
+<ul>
+  <li>Automate
+    <ul>
+      <li>Broken ordering ae_domains for a root tenant.</li>
+      <li>Model: Added missing ServiceTemplateProvisionRequest_denied and ServiceTemplateProvisionRequest_pending instances so that Denied Service requests will properly generate emails.</li>
+      <li>Validate user roles against domain edit before allowing copy/edit on any objects under it</li>
+      <li>Provisioning: Stop appending the <code class="highlighter-rouge">_</code> character as part of the enforced VM naming.</li>
+      <li>Fixed case where user can’t add alerts.</li>
+      <li>Fixed issue where alerts don’t send SNMP v1 traps</li>
+    </ul>
+  </li>
+  <li>Platform
+    <ul>
+      <li>Chargeback: Fix Group by tag in chargeback report</li>
+      <li>Replication
+        <ul>
+          <li>Add repmgr tables to replication excludes</li>
+          <li>Don’t consider tables that are always excluded during the schema check</li>
+          <li>Fixed bug in settings/access control where tenants from remote regions
+are displayed in the tenant list view and in the tenant selection when adding/editing a group</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Providers
+    <ul>
+      <li>Containers: Ability to add a container provider with a port other than 8443</li>
+      <li>Azure: Show ‘Memory (MB)’ chart for azure instance</li>
+    </ul>
+  </li>
+  <li>User Interface
+    <ul>
+      <li>Enable Provision VMs button via relationships</li>
+      <li>Missing reset button for Job Template Service Dialog</li>
+      <li>Display the number of access control elements based on user permission</li>
+    </ul>
+  </li>
+</ul>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

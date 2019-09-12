@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/external_auth">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/external_auth">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="external-authentication-httpd">External Authentication (httpd)</h1>
+
+<p>This document describes the steps needed to enable External
+Authentication (httpd) on the Appliance against an IPA Server.</p>
+
+<p>Once external authentication is enabled, users will be able
+to login to the Appliance using their IPA Server credentials.
+User accounts will be automatically created on the Appliance
+and relevant information imported from the IPA Server.</p>
+
+<p>To allow IPA server defined users to login to the Appliance,
+they must be members of at least one group on the IPA server
+which needs to be defined in the Appliance under
+<em>Configure-&gt;Configuration-&gt;Access Control-&gt;Groups</em> with the
+appropriate role assigned to that group.</p>
+
+<p>The Appliance comes pre-loaded with the necessary IPA Client
+software to be able to connect to the IPA Server. The software
+is just not configured by default.</p>
+
+<p>Enabling External Authentication is done by first enabling it
+in the Appliance Web UI then via the Appliance Console.
+Disabling External Authentication and returning to Internal
+Database Authentication also needs to be done in both the
+Appliance Web UI and then the Appliance Console.</p>
+
+<hr />
+
+<h3 id="appliance-requirements">Appliance Requirements</h3>
+
+<ul>
+  <li>
+    <p>For an Appliance to leverage an IPA Server on the network,
+the Appliance <strong>must</strong> have time synchronization enabled.
+This can be done by either configuring NTP in the Appliance UI,
+from <em>Configure-&gt;Configuration-&gt;Zone-&gt;Server-&gt;NTP Settings</em> or by using
+the Virtual Machine’s hosting provider’s Advanced Setting
+to Synchronize Time. Both Appliance and IPA Server must have
+their clocks synchronized otherwise Kerberos and LDAP based
+authentication will fail.</p>
+  </li>
+  <li>
+    <p>The IPA Server needs to be known by DNS and accessible by name.
+If DNS is not configured accordingly, the hosts files need to be
+updated to reflect both IPA server and the Appliance on
+both virtual machines.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="configuring-appliance-for-external-authentication">Configuring Appliance for External Authentication:</h3>
+
+<ul>
+  <li>Appliance UI
+    <ol>
+      <li>Login to the Appliance via an administrative account</li>
+      <li>Select <em>Configure-&gt;Configuration</em></li>
+      <li>Click on <em>Authentication</em></li>
+      <li>In the Authentication section, set Mode to <strong>External (httpd)</strong></li>
+      <li>In the Role Settings section, select the <em>Get User Groups from
+External Authentication (https)</em></li>
+      <li>Click on <strong>Save</strong></li>
+    </ol>
+  </li>
+  <li>Appliance Console
+    <ol>
+      <li>Login via the <strong>admin</strong> Username</li>
+      <li>Summary screen should show <strong>External Auth</strong> as <em>not configured</em>,
+Press any key</li>
+      <li>From the Advanced Setting menu, select the menu item
+<strong>Configure External Authentication (httpd)</strong></li>
+      <li>Enter the Fully qualified Hostname of the IPA Server,
+i.e. <em>ipaserver.test.company.com</em></li>
+      <li>Enter the IPA Server domain, i.e. <em>test.company.com</em></li>
+      <li>Enter the IPA Server Realm, i.e. <em>TEST.COMPANY.COM</em></li>
+      <li>Press enter to select the default IPA Server Principal, i.e. <em>admin</em></li>
+      <li>Enter the Password of the IPA Server Principal</li>
+      <li>Review details, and Enter <strong>y</strong> to proceed.</li>
+    </ol>
+
+    <p><strong>Note:</strong> If any of the following conditions are true, the Configuration will fail:</p>
+
+    <ul>
+      <li>The IPA server is not reachable by its FQDN</li>
+      <li>The IPA Server cannot reach the appliance by its FQDN</li>
+      <li>The time is not synchronized between the Appliance and the IPA Server</li>
+      <li>The IPA server <strong>admin</strong> password specified is incorrect</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="configuring-appliance-back-to-internal-database-authentication">Configuring Appliance back to Internal Database Authentication:</h3>
+
+<ul>
+  <li>Appliance UI
+    <ol>
+      <li>Login to the Appliance via an administrative account</li>
+      <li>Select <em>Configure-&gt;Configuration</em></li>
+      <li>Click on <em>Authentication</em></li>
+      <li>In the Authentication section, set Mode to <strong>Database</strong></li>
+      <li>Click on <strong>Save</strong></li>
+    </ol>
+  </li>
+  <li>Appliance Console
+    <ol>
+      <li>Login via the <strong>admin</strong> Username</li>
+      <li>Summary screen should have <strong>External Auth</strong> showing the fully qualified
+host name of the IPA server, Press any key</li>
+      <li>select the menu item <strong>Configure External Authentication (httpd)</strong></li>
+      <li>Configure External Authentication (httpd) would show the currently
+configured IPA Server Hostname and Domain.</li>
+      <li>Enter <strong>y</strong> to Un-Configure the IPA Client</li>
+      <li>Enter <strong>n</strong> to not proceed with the Re-Configuration.</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="optional-configuration-via-the-appliance-console-cli">Optional Configuration via the Appliance Console CLI</h3>
+
+<p>In addition to using the Appliance Console, External Authentication can be
+optionally configured and un-configured via the Appliance Console Command Line Interface.</p>
+
+<p>Appliance Console CLI command and relevant options include:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>/bin/appliance_console_cli --host &lt;appliance_fqdn&gt;
+                           --ipaserver &lt;ipa_server_fqdn&gt;
+                           --ipadomain &lt;domain_of_ipa_server&gt;
+                           --iparealm &lt;realm_of_ipa_server&gt;
+                           --ipaprincipal &lt;ipa_server_principal&gt;
+                           --ipapassword &lt;ipa_server_password&gt;
+                           --uninstall-ipa
+</code></pre>
+</div>
+
+<p>Note:</p>
+
+<ul>
+  <li>specifying --host will update the hostname of the appliance. If this
+step was already performed via the Appliance Console and the necessary updates
+made to /etc/hosts if DNS is not properly configured, the --host option
+can be omitted.</li>
+  <li>--ipadomain will be based on the appliance domain name if not specified.</li>
+  <li>--iparealm will be based on the domain name of the ipaserver if not specified.</li>
+  <li>--ipaprincipal will default to <strong>admin</strong> if not specified.</li>
+</ul>
+
+<h4 id="configuring-external-authentication-example">Configuring External Authentication Example:</h4>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@appliance.test.company.com
+<span class="gp">appliance# </span>/bin/appliance_console_cli --host appliance.test.company.com <span class="se">\</span>
+                                      --ipaserver ipaserver.test.company.com <span class="se">\</span>
+                                      --ipadomain test.company.com <span class="se">\</span>
+                                      --iparealm TEST.COMPANY.COM <span class="se">\</span>
+                                      --ipaprincipal admin <span class="se">\</span>
+                                      --ipapassword smartvm1
+</code></pre>
+</div>
+
+<h4 id="un-configuring-external-authentication-example">Un-Configuring External Authentication Example:</h4>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@appliance.test.company.com
+<span class="gp">appliance# </span>/bin/appliance_console_cli --uninstall-ipa
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="manual-configuration">Manual Configuration</h3>
+
+<p>The following Instructions are for informational purposes and describe how to manually install the
+necessary packages and configure the External Authentication (i.e. what is currently done behind
+the scene via the Appliance Console):</p>
+
+<ul>
+  <li>Installing the required packages - <a href="./external_auth/installation">Installation</a>
+    <ul>
+      <li>The packages required for enabling External Authentication are
+installed by default on the Appliance so these steps are intended
+to assist when building an appliance from scratch.</li>
+      <li>The installation instructions are targeted for the CentOS 6.x
+based ManageIQ Appliance.</li>
+    </ul>
+  </li>
+  <li>Enabling External Authentication - <a href="./external_auth/configuration">Configuration</a></li>
+</ul>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

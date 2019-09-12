@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Concepts guide</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/get-started/concepts">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/get-started/concepts">
+      <nav class="doc_tabs">
+  <ul>
+  <li class="active">
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    <ul class="menu menu-toplevel" id="start_menu">
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/">
+      Get started
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item menu-parent">
+    <a href="#">
+      Get ManageIQ
+    </a>
+    
+    <ul>
+      
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/vagrant">
+      Vagrant
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/docker">
+      Docker
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/get-started/cloud">
+      Public Cloud
+    </a>
+    
+  </li>
+
+
+    </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/basic-configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/add-a-provider">
+      Add A Provider
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/review-provider">
+      Review Provider Details
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/provision-machine">
+      Provision Your First Machine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/create-service-item">
+      Create Your First Service Item
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item">
+    <a href="/docs/get-started/where-to-go-from-here">
+      Where to go from here
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-item active">
+    <a href="/docs/get-started/concepts">
+      Concepts Guide
+    </a>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc start_doc">
+      
+      <header class="doc-header">
+        <h1 class="doc-title">Concepts guide</h1>
+      </header>
+      
+
+      <div class="doc-content">
+        
+        <h2 id="concepts">Concepts</h2>
+
+<dl>
+  <dt>Analysis Profile</dt>
+  <dd>A customized scan of hosts, virtual machines, or instances. You can collect information from categories, files, event logs, and registry entries.</dd>
+  <dt>Action</dt>
+  <dd>An execution that is performed after a condition is evaluated.</dd>
+  <dt>Alert</dt>
+  <dd>ManageIQ alerts notify administrators and monitoring systems of critical configuration changes and threshold limits in the virtual environment. The notification can take the form of either an email or an SNMP trap.</dd>
+  <dt>Analysis Profile</dt>
+  <dd>A customized scan of hosts, virtual machines, or instances. You can collect information from categories, files, event logs, and registry entries.</dd>
+  <dt>API</dt>
+  <dd>Application programming interface.</dd>
+  <dt>Appliance</dt>
+  <dd>ManageIQ is distributed as a fully installed virtual machine and comes preconfigured with CentOS 7.5, PostgreSQL 9.5, Rails 5, the ManageIQ application, and all associated Ruby gems pre-installed. An appliance is downloadable as a virtual machine image template in formats suitable for VMware, Red Hat Enterprise Virtualization, OpenStack, or Microsoft System Center Virtual Machine Manager.</dd>
+  <dt>Automate</dt>
+  <dd>Is the ManageIQ capability or product feature, and automation is the thing that Automate allows us to do. The Automation Engine allows us to create intelligent automation workflows and run automation scripts written in Ruby.</dd>
+  <dt>Automation</dt>
+  <dd>See “Automate”.</dd>
+  <dt>Automation Engine</dt>
+  <dd>See “Automate”.</dd>
+  <dt>Azure</dt>
+  <dd>A cloud computing platform and infrastructure created by Microsoft for building, deploying, and managing applications and services through a global network of Microsoft-managed data centers.</dd>
+  <dt>Catalog bundle</dt>
+  <dd>A grouping of Templates.</dd>
+  <dt>Catalog Item</dt>
+  <dd>A single Template or a group of Templates (catalog bundle).</dd>
+  <dt>Classes</dt>
+  <dd>A class is similar to a template: it contains a generic definition for a set of automation operations. Each class has a schema that defines the variables, states, relationships, or methods that instances of the class will use.</dd>
+  <dt>Cloud</dt>
+  <dd>A pool of on-demand and highly available computing resources. The usage of these resources are scaled depending on the user requirements and metered for cost.</dd>
+  <dt>Cloud Computing</dt>
+  <dd>An economic approach to computer resource management in which computers can be created and retired on demand.</dd>
+  <dt>Cloud Instance</dt>
+  <dd>A on-demand virtual machine based upon a predefined image and uses a scalable set of hardware resources such as CPU, memory, networking interfaces.</dd>
+  <dt>Control Policy</dt>
+  <dd>Policies are used to manage your virtual environment. There are two types of policies available: compliance and control. Compliance policies are used to harden your virtual infrastructure, making sure that your security requirements are adhered to. Control policies are used to check for a specific condition and perform an action based on the outcome</dd>
+  <dt>Cloud management platforms (CMPs)</dt>
+  <dd>Are software tools that allow for the integrated management of public, private, and hybrid cloud environments.</dd>
+  <dt>Cluster</dt>
+  <dd>Hosts that are grouped together to provide high availability and load balancing.</dd>
+  <dt>Condition</dt>
+  <dd>A test of criteria triggered by an event.</dd>
+  <dt>Containers</dt>
+  <dd>See “Docker”</dd>
+  <dt>Control</dt>
+  <dd>Ability to enforce security and configuration policies, using the information retrieved from insight (see “Insight”).</dd>
+  <dt>Dialog Tabs</dt>
+  <dd>Part of a Service Dialog.</dd>
+  <dt>Discovery</dt>
+  <dd>Process run by the ManageIQ server which finds virtual machine and cloud providers.</dd>
+  <dt>Docker</dt>
+  <dd>Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.</dd>
+  <dt>Domain</dt>
+  <dd>A collection of namespaces, classes, instances, and methods. The ManageIQ project provides a single ManageIQ domain for all supplied automation code.</dd>
+  <dt>Drift</dt>
+  <dd>The comparison of a virtual machine, instance, host, cluster to itself at different points in time.</dd>
+  <dt>Event</dt>
+  <dd>A trigger to check a condition.</dd>
+  <dt>Event Monitor</dt>
+  <dd>Software on the ManageIQ Appliance which monitors external providers for events and sends them to the ManageIQ server.</dd>
+  <dt>Floating IP address</dt>
+  <dd>An IP address that a project can associate with a VM so that the instance has the same public IP address each time that it boots. You create a pool of floating IP addresses and assign them to instances as they are launched to maintain a consistent IP address for maintaining DNS assignment.</dd>
+  <dt>GCE</dt>
+  <dd>Google Compute Engine. Google’s public cloud platform that is an Infrastructure as a Service (IaaS) component of Google Cloud Platform which is built on the global infrastructure. It enables users to launch virtual machines (VMs) on demand. VMs can be launched from the standard images or custom images created by users.</dd>
+  <dt>Host</dt>
+  <dd>A computer on which virtual machine monitor software is loaded.</dd>
+  <dt>Hypervisor</dt>
+  <dd>Software that arbitrates and controls VM access to the actual underlying hardware.</dd>
+  <dt>Insight</dt>
+  <dd>Is the process of gathering intelligence on our virtual or cloud infrastructure so that we can manage it effectively.</dd>
+  <dt>Instance</dt>
+  <dd>A specific instantiation or “clone” of the generic class and is the entity run by the Automation Engine. An instance contains a copy of the class schema but with actual values of the fields filled in.</dd>
+  <dt>Managed/Registered VM</dt>
+  <dd>A virtual machine that is connected to a host and exists in the VMDB. Also, a template that is connected to a provider and exists in the VMDB. Note that templates cannot be connected to a host.</dd>
+  <dt>Managed/Unregistered VM</dt>
+  <dd>A virtual machine or template that resides on a repository or is no longer connected to a provider or host and exists in the VMDB. A virtual machine that was previously considered registered may become unregistered if the virtual machine was removed from provider inventory.</dd>
+  <dt>ManageIQ</dt>
+  <dd>An open-source cloud management platform that allows us to efficient management of virtual infrastructures and Infrastructure as a Service (IaaS) clouds. Part of this efficient management involves automating many of the day-to-day tasks that would otherwise require manual involvement, or time-consuming and possibly error-prone repetitive steps.</dd>
+  <dt>ManageIQ Appliance</dt>
+  <dd>A virtual machine on which the virtual management database (VMDB) and ManageIQ server reside.</dd>
+  <dt>ManageIQ Console</dt>
+  <dd>A web-based interface into the ManageIQ Appliance.</dd>
+  <dt>ManageIQ Role</dt>
+  <dd>A designation assigned to a ManageIQ server that defines what a ManageIQ server can do.</dd>
+  <dt>ManageIQ Server</dt>
+  <dd>The application that runs on the ManageIQ Appliance and communicates with the SmartProxy and the VMDB.</dd>
+  <dt>Cloud management platforms (CMPs)</dt>
+  <dd>Are software tools that allow for the integrated management of public, private, and hybrid cloud environments.</dd>
+  <dt>Methods</dt>
+  <dd>A self-contained block of Ruby code that gets executed when we run any automation operation. Methods can have one of three location values: inline, built-in, or URI. In practice most of the methods that we create are inline methods, which means they run as a separate Ruby process outside of Rails.</dd>
+  <dt>Namespaces</dt>
+  <dd>a folder-like container for classes, instances, and methods, and is used purely for organizational purposes. Namespaces can be created to arrange code logically, and namespaces often contain other namespaces.</dd>
+  <dt>OpenStack</dt>
+  <dd>A cloud operating system that controls large pools of compute, storage, and networking resources throughout a data center, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface. OpenStack is an open source project licensed under the Apache License 2.0.</dd>
+  <dt>Orchestration</dt>
+  <dd>ManageIQ’s ability to; provision or scale out workloads, such as virtual machines or cloud instances, provision or scale out infrastructure, such as bare-metal hypervisors or compute nodes, scale back or retirement of virtual machine or cloud instances.</dd>
+  <dt>Providers</dt>
+  <dd>A provider is a server with software to manage multiple virtual machines that reside on multiple hosts</dd>
+  <dt>Provision</dt>
+  <dd>Creating resources in a Provider. See “Provider”</dd>
+  <dt>Provisioning Dialogs</dt>
+  <dd>Dialogs created for Host Provisioning, VM Migration, or VM Provisioning. The dialog name must be added to the appropriate provision instance to be processed.</dd>
+  <dt>Policy</dt>
+  <dd>A combination of an event, a condition, and an action used to manage a virtual machine.</dd>
+  <dt>Policy Profile</dt>
+  <dd>A set of policies.</dd>
+  <dt>Quotas</dt>
+  <dd>ManageIQ allows us to establish quotas on tenants or user groups. Quotas can be set for the number of virtual machines, number of CPUs, amount of memory, or quantity of storage owned by the tenant or group. If a virtual machine provisioning request would result in the quota being exceeded, the request is rejected and the requesting user is emailed.</dd>
+  <dt>Refresh</dt>
+  <dd>A process run by the ManageIQ server which checks for relationships of the provider or host to other resources, such as storage locations, repositories, virtual machines, or instances. It also checks the power states of those resources.</dd>
+  <dt>Relationships</dt>
+  <dd>One of the schema field types is a relationship, which links to other instances elsewhere in the Automate Datastore. We often use relationships as a way of chaining instances together, and relationship values can accept variable substitutions for flexibility.</dd>
+  <dt>Repository</dt>
+  <dd>A place on a datastore resource which contains virtual machines.</dd>
+  <dt>Resource</dt>
+  <dd>A host, provider, instance, virtual machine, repository, or datastore.</dd>
+  <dt>Resource Pool</dt>
+  <dd>A group of virtual machines across which CPU and memory resources are allocated.</dd>
+  <dt>Retirement</dt>
+  <dd>Allows for managing the deletion of virtual machines or instances, both from the provider and from the VMDB if required.</dd>
+  <dt>Role</dt>
+  <dd>A personality that a user assumes that enables them to perform a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits those rights and privileges.</dd>
+  <dt>Role-based Access Control (RBAC)</dt>
+  <dd>Capability of restricting visibility and access to features and transactions on ManageIQ depending on user role security profile.</dd>
+  <dt>Ruby</dt>
+  <dd>A dynamic, reflective, object-oriented, general-purpose programming language.</dd>
+  <dt>Schemas</dt>
+  <dd>A schema is made up of a number of elements, or fields, that describe the properties of the class. A schema often has just one entry—to run a single method—but in many cases it has several components.</dd>
+  <dt>Self Service user interface (SSUI)</dt>
+  <dd>ManageIQ Self Service is a web-based graphical user interface for ordering and managing IT service requests.</dd>
+  <dt>Server</dt>
+  <dd>A computer that provides data to other computers. It may serve data to systems on a local area network (LAN) or a wide area network (WAN) over the Internet.</dd>
+  <dt>Service</dt>
+  <dd>An item in a Service Catalog that can be requested.</dd>
+  <dt>Service Catalog</dt>
+  <dd>A catalog item or Catalog bundle that is available for provisioning. Provide the ability to permit users to order our orchestration workflows with a single button click.</dd>
+  <dt>Service Dialogs</dt>
+  <dd>Made up of fully customizable tabs, items, and values for use with Service provisioning.</dd>
+  <dt>SmartProxy</dt>
+  <dd>The SmartProxy is a software agent that acts on behalf of the ManageIQ Appliance to perform actions on hosts, providers, storage and virtual machines.</dd>
+  <dd>The SmartProxy can be configured to reside on the ManageIQ Appliance or on an ESX server version. The SmartProxy can be deployed from the ManageIQ Appliance, and provides visibility to the VMFS storage. Each storage location must have a SmartProxy with visibility to it. The SmartProxy acts on behalf of the ManageIQ Appliance. If the SmartProxy is not embedded in the ManageIQ server, it communicates with the ManageIQ Appliance over HTTPS (SSL) on standard port 443.</dd>
+  <dt>Smart State Analysis</dt>
+  <dd>The operation of analyzing virtual machines and instances on the providers it manages to collect information about the base operating system on those virtual machines or instances, their virtual hardware, installed applications, and other details.</dd>
+  <dt>SmartTags</dt>
+  <dd>Descriptors that allow you to create a customized, searchable index for the resources in your clouds and infrastructure.</dd>
+  <dt>Storage Location</dt>
+  <dd>A device, such as a VMware datastore, where digital information resides that is connected to a resource.</dd>
+  <dt>Tags</dt>
+  <dd>Descriptive terms defined by a ManageIQ user or the system used to categorize a resource.</dd>
+  <dt>Tenant</dt>
+  <dd>A group of users, used to isolate access to Compute resources. An alternative term for a project.</dd>
+  <dt>Unmanaged Virtual Machine</dt>
+  <dd>Files discovered on a datastore that do not have a virtual machine associated with them in the VMDB. These files may be registered to a provider that the ManageIQ server does not have configuration information on. Possible causes may be that the provider has not been discovered or that the provider has been discovered, but no security credentials have been provided.</dd>
+  <dt>User</dt>
+  <dd>In Identity Service, each user is associated with one or more tenants, and in Compute can be associated with roles, projects, or both.</dd>
+  <dt>Vagrant</dt>
+  <dd>An open-source software product for building and maintaining portable virtual development environments.</dd>
+  <dt>Virtual Machine</dt>
+  <dd>A software implementation of a system that functions similar to a physical machine. Virtual machines utilize the hardware infrastructure of a physical host, or a set of physical hosts, to provide a scalable and on-demand method of system provisioning.</dd>
+  <dt>Template</dt>
+  <dd>A template is a copy of a preconfigured virtual machine, designed to capture installed software and software configurations, as well as the hardware configuration, of the original virtual machine.</dd>
+  <dt>Virtual Management Database (VMDB)</dt>
+  <dd>A database that stores the intelligence collected about the virtual infrastructure.</dd>
+  <dt>Virtual Thumbnail</dt>
+  <dd>An icon divided into smaller areas that summarize the properties of a resource.</dd>
+  <dt>Zone</dt>
+  <dd>Unit of grouping for MIQ servers and roles.</dd>
+</dl>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/labels">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/labels">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <p>Below are charts describing all of the common labels and colors across the ManageIQ repos.</p>
+
+<h3 id="about-the-label-colors">About the label colors</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Hex</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/ee0701&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#ee0701</code></td>
+      <td>Scope - Bugs</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/84b6eb&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#84b6eb</code></td>
+      <td>Scope - Enhancement</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/bfe5bf&amp;text=+" alt="" />&lt;/br&gt;<img src="https://dummyimage.com/100x20/bcf5db&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#bfe5bf</code>&lt;/br&gt;<code class="highlighter-rouge">#bcf5db</code></td>
+      <td>Scope - Testing and tools: “test”, “developer”, “tools”</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/fef2c0&amp;text=+" alt="" />&lt;/br&gt;<img src="https://dummyimage.com/100x20/e99695&amp;text=+" alt="" />&lt;/br&gt; <img src="https://dummyimage.com/100x20/fbca04&amp;text=+" alt="" />&lt;/br&gt;<img src="https://dummyimage.com/100x20/ff7619&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#fef2c0</code>&lt;/br&gt;<code class="highlighter-rouge">#e99695</code>&lt;/br&gt;<code class="highlighter-rouge">#fbca04</code>&lt;/br&gt;<code class="highlighter-rouge">#ff7619</code></td>
+      <td>Scope - Other: “cleanup”, “performance”, “refactoring”, “technical debt”</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/0e8a16&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#0e8a16</code></td>
+      <td>Positive statuses: “help wanted”, “verified”</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>Negative statuses: “duplicate”, “notabug”, “stale”, “unmergeable”, “wip”, “wontfix”</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/cc317c&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#cc317c</code></td>
+      <td>Questions and discussions: “question”</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/5319e7&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#5319e7</code></td>
+      <td>Component: Repo specific labels that categorize what parts of the application are being changed.  See the repos for specifics.</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/d4c5f9&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#d4c5f9</code></td>
+      <td>Alternate component: A secondary, repo specific categorization (e.g. in manageiq-ui-classic, dark purple represents a specific UI tab being changed, whereas light purple is used for general components like toolbars or buttons)</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/b4a8d1&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#b4a8d1</code></td>
+      <td>Special component: A component that requires more careful handling and possibly a specific reviewer or merger. Right now this is only “dependencies” and “sql migration”.</td>
+    </tr>
+    <tr>
+      <td><img src="https://dummyimage.com/100x20/000000&amp;text=+" alt="" />&lt;/br&gt;<img src="https://dummyimage.com/100x20/555555&amp;text=+" alt="" />&lt;/br&gt; <img src="https://dummyimage.com/100x20/dddddd&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#000000</code>&lt;/br&gt;<code class="highlighter-rouge">#555555</code>&lt;/br&gt;<code class="highlighter-rouge">#dddddd</code></td>
+      <td>Backporting and release: “blocker”, “fine/yes”, “fine/no”, “darga/yes”, “darga/no”, etc.  The darkest color is for the most recent release, the middle color is the release before that, and the lightest color is for any release older than that.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="common-labels">Common labels</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Color</th>
+      <th>Hex</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>blocker</td>
+      <td><img src="https://dummyimage.com/100x20/000000&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#000000</code></td>
+      <td>Blocker for the next release.</td>
+    </tr>
+    <tr>
+      <td>bug</td>
+      <td><img src="https://dummyimage.com/100x20/ee0701&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#ee0701</code></td>
+      <td>A bug.</td>
+    </tr>
+    <tr>
+      <td>bug/sporadic test failure</td>
+      <td><img src="https://dummyimage.com/100x20/ee0701&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#ee0701</code></td>
+      <td>A bug that manifests as test failures in an unpredictable way.</td>
+    </tr>
+    <tr>
+      <td>cleanup</td>
+      <td><img src="https://dummyimage.com/100x20/fef2c0&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#fef2c0</code></td>
+      <td>Changes only making the code cleaner and that do not change how the code works nor the outputs produced (e.g. rubocop or eslint changes).</td>
+    </tr>
+    <tr>
+      <td>dependencies</td>
+      <td><img src="https://dummyimage.com/100x20/b4a8d1&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#b4a8d1</code></td>
+      <td>Changes that affect dependencies, such as gem changes.</td>
+    </tr>
+    <tr>
+      <td>developer</td>
+      <td><img src="https://dummyimage.com/100x20/bcf5db&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#bcf5db</code></td>
+      <td>Changes that affect developers only, including non-customer-facing tools (e.g. changes to bin/setup)</td>
+    </tr>
+    <tr>
+      <td>documentation</td>
+      <td><img src="https://dummyimage.com/100x20/d4c5f9&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#d4c5f9</code></td>
+      <td>Changes to documentation only (e.g. README).</td>
+    </tr>
+    <tr>
+      <td>duplicate</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The issue is a duplicate.  When applied, the duplicate issue should be referenced in a comment.</td>
+    </tr>
+    <tr>
+      <td>enhancement</td>
+      <td><img src="https://dummyimage.com/100x20/84b6eb&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#84b6eb</code></td>
+      <td>An enhancement.</td>
+    </tr>
+    <tr>
+      <td>help wanted</td>
+      <td><img src="https://dummyimage.com/100x20/0e8a16&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#0e8a16</code></td>
+      <td>An issue that could be handled by anyone, even new members of the community.</td>
+    </tr>
+    <tr>
+      <td>internationalization</td>
+      <td><img src="https://dummyimage.com/100x20/d4c5f9&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#d4c5f9</code></td>
+      <td>Changes that are for internationalization only (e.g. updating the *.po gettext files).</td>
+    </tr>
+    <tr>
+      <td>notabug</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The issue is not a bug as reported or not reproducible.  When applied the issue should be closed.</td>
+    </tr>
+    <tr>
+      <td>performance</td>
+      <td><img src="https://dummyimage.com/100x20/e99695&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#e99695</code></td>
+      <td>Changes that are for performance improvements only.</td>
+    </tr>
+    <tr>
+      <td>pinned</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The issue will not be marked by <a href="https://github.com/miq-bot"><strong>@miq-bot</strong></a> with the stale label.</td>
+    </tr>
+    <tr>
+      <td>question</td>
+      <td><img src="https://dummyimage.com/100x20/cc317c&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#cc317c</code></td>
+      <td>Issues that are just questions.  When the question is resolved, the label should be changed and/or the issue should be closed.</td>
+    </tr>
+    <tr>
+      <td>refactoring</td>
+      <td><img src="https://dummyimage.com/100x20/fbca04&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#fbca04</code></td>
+      <td>Changes in the way the code works internally without changing the output produced.  Contrast to “cleanup”.</td>
+    </tr>
+    <tr>
+      <td>stale</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The issue is old and hasn’t had activity in 6 months.  This label will be automatically applied by <a href="https://github.com/miq-bot"><strong>@miq-bot</strong></a> once that bot feature is completed.</td>
+    </tr>
+    <tr>
+      <td>technical debt</td>
+      <td><img src="https://dummyimage.com/100x20/ff7619&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#ff7619</code></td>
+      <td>Changes that remove or significantly update old unused code and/or dependencies.</td>
+    </tr>
+    <tr>
+      <td>test</td>
+      <td><img src="https://dummyimage.com/100x20/bfe5bf&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#bfe5bf</code></td>
+      <td>Changes to test code only.</td>
+    </tr>
+    <tr>
+      <td>tools</td>
+      <td><img src="https://dummyimage.com/100x20/bcf5db&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#bcf5db</code></td>
+      <td>Changes to customer-facing tools (e.g. tools/prune_metrics.rb). Contrast to “developer”.</td>
+    </tr>
+    <tr>
+      <td>unmergeable</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The PR is unmergeable.  This label is automatically applied and removed by <a href="https://github.com/miq-bot"><strong>@miq-bot</strong></a>.</td>
+    </tr>
+    <tr>
+      <td>verified</td>
+      <td><img src="https://dummyimage.com/100x20/0e8a16&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#0e8a16</code></td>
+      <td>The bug issue was reviewed and is verified to have the problem stated and a PR should be created.  This label is not necessary on a bug PR.</td>
+    </tr>
+    <tr>
+      <td>wip</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The PR is a WIP.  This label is automatically applied and removed by <a href="https://github.com/miq-bot"><strong>@miq-bot</strong></a> based on PR title having “[WIP]” or not.</td>
+    </tr>
+    <tr>
+      <td>wontfix</td>
+      <td><img src="https://dummyimage.com/100x20/eeeeee&amp;text=+" alt="" /></td>
+      <td><code class="highlighter-rouge">#eeeeee</code></td>
+      <td>The issue will not be fixed or otherwise handled.  When applied, the issue should be closed.</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Troubleshooting ManageIQ Authentication</title>
+  <meta name="description" content="The goal of this blog post is to provide a basic understanding of:  ManageIQ authentication configurations  How to troubleshoot the technologies supporting M...">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2018/01/troubleshooting-auth/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2018/01/troubleshooting-auth/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Troubleshooting ManageIQ Authentication</h1>
+
+            <div class="post-meta">
+              <time datetime="2018-01-31T00:00:00+00:00" itemprop="datePublished">
+                Jan 31, 2018
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  jvlcek
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/tutorials">tutorials</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>The goal of this blog post is to provide a basic understanding of:</p>
+<ol>
+  <li>ManageIQ authentication configurations</li>
+  <li>How to <em>troubleshoot</em> the technologies supporting ManageIQ authentication.</li>
+  <li>What to provide to engineering when an irresolvable ManageIQ authentication issue is encountered.</li>
+</ol>
+
+<h2 id="contents"><strong>Contents:</strong></h2>
+
+<ul>
+  <li><a href="#technologies-supporting-manageiq-authentication-modes"><strong>Technologies Supporting ManageIQ Authentication Modes</strong></a></li>
+  <li><a href="#manageiq-groups-and-roles"><strong>ManageIQ Groups and Roles</strong></a></li>
+  <li><a href="#manageiq-authentication-data"><strong>ManageIQ Authentication Data</strong></a></li>
+  <li><a href="#saml-a-different-beast"><strong>SAML A different beast</strong></a></li>
+  <li><a href="#common-misconceptions"><strong>Common Misconceptions</strong></a></li>
+  <li><a href="#reporting-authentication-issues"><strong>Reporting Authentication Issues</strong></a></li>
+  <li><a href="#appendix"><strong>Appendix: The Gory Details</strong></a>
+    <ul>
+      <li><a href="#capturing-manageiq-log-files">Capturing ManageIQ Log Files</a></li>
+      <li><a href="#capturing-authentication-data-from-manageiq-db">Capturing Authentication Data From ManageIQ DB</a></li>
+      <li><a href="#confirming-ldap-configuration">Confirming LDAP Configuration</a></li>
+      <li><a href="#confirming-sssd-configuration">Confirming SSSD Configuration</a></li>
+      <li><a href="#diagnosing-failed-dbus-commands">Diagnosing Failed dbus Commands</a></li>
+      <li><a href="#adding-groups-in-manageiq">Adding Groups In ManageIQ</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="technologies-supporting-manageiq-authentication-modes">Technologies Supporting ManageIQ Authentication Modes</h1>
+<hr />
+
+<p>ManageIQ supports a rich set of different authentication configurations, as outlined in the blog post:
+<a href="../auth-overview"><strong>ManageIQ Authentication Overview</strong></a></p>
+
+<p>Many of the issues reported as ManageIQ authentication problems are not directly related to ManageIQ. Instead
+many are rooted in failures with the configuration of the underlying authentication technology.</p>
+
+<p>Different technologies are used to implement the supported ManageIQ authentication <em>modes</em>.</p>
+
+<p>Below is a list of the technologies used to implement each of the authentication modes, with pointers to troubleshooting tips.</p>
+
+<h3 id="mode-database"><strong>Mode: Database</strong></h3>
+
+<p>ManageIQ configuration: <strong>Mode: Database</strong>, relies on all <strong>User</strong>, <strong>Group</strong> and <strong>Role</strong> information being stored
+  directly in the ManageIQ database to support authentication and authorization.</p>
+
+<ul>
+  <li>See: <a href="#capturing-authentication-data-from-manageiq-db"><strong>Capturing Authentication Data From ManageIQ DB</strong></a> for tips
+on how to capture the authentication information stored in the ManageIQ Database.</li>
+</ul>
+
+<h3 id="mode-ldap-and-mode-ldaps"><strong>Mode: LDAP and Mode: LDAPS</strong></h3>
+
+<p>ManageIQ configurations: <strong>Mode: LDAP and Mode: LDAPS</strong>, are implemented with the MiqLdap driver, which queries LDAP
+  servers directly via the <a href="https://rubygems.org/gems/net-ldap/"><strong>net-ldap Rubygem</strong></a>.</p>
+
+<ul>
+  <li>See: <a href="#confirming-ldap-configuration"><strong>Confirming LDAP Configuration</strong></a> for tips on how to verify an LDAP configuration.</li>
+</ul>
+
+<h3 id="mode-external-httpd"><strong>Mode: External (httpd)</strong></h3>
+
+<p>ManageIQ configurations: <strong>Mode: External (httpd)</strong> is implemented with the <em>The System Security Service Daemon</em>
+  <a href="https://docs-old.fedoraproject.org/en-US/Fedora/16/html/System_Administrators_Guide/chap-SSSD_User_Guide-Introduction.html"><strong>(SSSD)</strong></a>.</p>
+
+<ul>
+  <li>
+    <p><strong>NOTE:</strong> <em>Mode: External (httpd)</em> for <strong><em>SAML</em></strong> does not use <em>SSSD</em>: See: <a href="#saml-a-different-beast"><strong>SAML A different beast</strong></a></p>
+  </li>
+  <li>
+    <p>See: <a href="#confirming-sssd-configuration"><strong>Confirming SSSD Configuration</strong></a> for tips on how to verify an SSSD configuration.</p>
+  </li>
+</ul>
+
+<h3 id="mode-amazon"><strong>Mode: Amazon</strong></h3>
+
+<p>ManageIQ configuration: <strong>Mode: Amazon</strong>, is used to connect directly to Amazon Cloud Services for authentication.</p>
+
+<ul>
+  <li>Information regarding troubleshooting this configuration will be added in the future.</li>
+</ul>
+
+<h1 id="manageiq-groups-and-roles">ManageIQ Groups and Roles</h1>
+<hr />
+
+<p>Authentication groups are used to associate a user to ManageIQ <strong>Authorization Roles</strong></p>
+
+<p>ManageIQ uses the concept of a <strong>Role</strong> to limit the functionality a user is <em>Authorized</em> to perform.</p>
+
+<p>For an overview of ManageIQ <strong>Roles</strong> see: <a href="http://manageiq.org/docs/get-started/basic-configuration"><strong>ManageIQ Basic Configuration</strong></a></p>
+
+<p>In brief:</p>
+<ol>
+  <li>A user is associated with groups in the Identity Provider (<strong>IdP</strong>)</li>
+  <li>A group is associated with an ManageIQ role in ManageIQ</li>
+  <li>When a user logs in to ManageIQ their credentials are <strong>Authenticated</strong> by the IdP.</li>
+  <li>The IdP can the provide a list of groups the user belongs to.</li>
+  <li>ManageIQ determines if one of the groups reported by the IdP for the user is stored in the ManageIQ database.</li>
+  <li>If found ManageIQ will <strong>Authorize</strong> the user to have the <strong>Role</strong> associated with the <strong>Group</strong></li>
+</ol>
+
+<p><strong>NOTE:</strong> <strong>Groups</strong> with associated <strong>Roles</strong> must be manually created in the ManageIQ database.</p>
+
+<h1 id="manageiq-authentication-data">ManageIQ Authentication Data</h1>
+<hr />
+
+<p>ManageIQ authentication related configuration data is maintained in the ManageIQ Database and ManageIQ authentication related events are recorded in the ManageIQ logs.</p>
+
+<h3 id="authentication-settings-user-and-group-information-are-stored-in-the-manageiq-database"><strong>Authentication settings</strong>, <strong>User</strong> and <strong>Group</strong> information are stored in the ManageIQ database.</h3>
+
+<ul>
+  <li>See: <a href="#capturing-authentication-data-from-manageiq-db"><strong>Capturing Authentication Data From ManageIQ DB</strong></a> for tips
+on how to capture the authentication information stored in the ManageIQ Database.</li>
+</ul>
+
+<h3 id="manageiq-authentication-events-are-captured-in-log-files"><strong>ManageIQ Authentication Events are captured in log files.</strong></h3>
+
+<ul>
+  <li>See: <a href="#Capturing ManageIQ Log Files"><strong>Capturing ManageIQ Log Files</strong></a> for tips on how to capture the ManageIQ logs.</li>
+</ul>
+
+<h1 id="saml-a-different-beast">SAML A different beast</h1>
+<hr />
+
+<p>Authentication using SAML is a bit of a different beast. Although it is configured in ManageIQ as <em>Mode: External (httpd)</em> it does not use <em>SSSD</em>.
+Instead, Apache modules are used to make the connection to an Identity Provider (IdP) that supports SAML, e.g. <a href="http://www.keycloak.org/"><strong>Keycloak</strong></a>.</p>
+
+<p>Because SAML does not use SSSD, unlike the other ManageIQ <em>Mode: External (httpd)</em> configurations, it is not possible to verify
+a SAML configuration with <a href="https://dbus.freedesktop.org/doc/dbus-send.1.html"><strong>dbus-send</strong></a></p>
+
+<p>Here is a list of ways to help diagnose SAML configurations independently from ManageIQ.</p>
+
+<ul>
+  <li>Use <a href="https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/"><strong>SAML tracer</strong></a>  web browser plug in.</li>
+  <li>Configure Keycloak to <strong><em>Do not encrypt assertions</em></strong> so <strong>SAML Tracer</strong> can display text</li>
+  <li>Debugging the Apache modules.</li>
+</ul>
+
+<p>A future update to this blog will expand this section and provide more information regarding troubleshooting SAML</p>
+
+<h1 id="common-misconceptions">Common Misconceptions</h1>
+<hr />
+
+<ul>
+  <li>
+    <p>Groups are not auto-created</p>
+
+    <ul>
+      <li>The groups a user belongs to must be manually created in the ManageIQ DB, unless they already exist.</li>
+    </ul>
+  </li>
+  <li>
+    <p>External Authentication LDAP is not the same as Mode: LDAP(S)</p>
+
+    <ul>
+      <li>For a description of the difference see - <a href="../auth-overview"><strong>ManageIQ Authentication Overview</strong></a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Authentication is not Authorization</p>
+
+    <ul>
+      <li><strong>Authentication</strong> addresses if the specified user and password are valid.</li>
+      <li><strong>Authorization</strong> addresses what an valid <strong><em>Authenticated</em></strong> user is allowed to do.</li>
+    </ul>
+  </li>
+  <li>
+    <p>External authentication can not be configured with the <strong><em>appliance_console</em></strong> against non-<a href="https://www.freeipa.org/page/Main_Page"><strong>IPA</strong></a> servers.</p>
+
+    <ul>
+      <li>The <strong><em>appliance_console’s</em></strong> option: <strong><em>Configure External Authentication (httpd)</em></strong> runs <a href="https://www.freeipa.org/page/Client"><strong>ipa-client-install</strong></a> to configure an IPA client and <strong><em>requires</em></strong> an IPA server be configured as the IdP.</li>
+    </ul>
+  </li>
+</ul>
+
+<!--
+- Unicorns do exist. They're just not authentic.
+-->
+
+<h1 id="reporting-authentication-issues">Reporting Authentication Issues</h1>
+<hr />
+
+<p>When reporting an ManageIQ Authentication issue the below information should be gathered and included
+  in the report.</p>
+
+<ol>
+  <li>The <strong>Authentication settings</strong>, <strong>User</strong> and <strong>Group</strong> information from the ManageIQ database as described
+in section: <a href="#capturing-authentication-data-from-manageiq-db"><strong>Capturing Authentication Data From ManageIQ DB</strong></a></li>
+  <li>Attach the ManageIQ log files. See: <a href="#capturing-manageiq-log-files"><strong>Capturing ManageIQ Log Files</strong></a></li>
+  <li>If configured for <strong><em>Mode: LDAP(S)</em></strong> is the <a href="https://technicalnotes.wordpress.com/2014/04/19/openldap-setup-with-memberof-overlay/"><strong>memberof overlay</strong></a>
+being used on the LDAP server?</li>
+  <li>Can a list of groups for a specific user be found in the <strong><em>Adding a new Group</em></strong> configuration page?
+see: <a href="#adding-groups-in-manageiq"><strong>Adding Groups In ManageIQ</strong></a></li>
+  <li>If configured for <strong><em>Mode: LDAP(S)</em></strong> provide the output from ldapsearch. See: <a href="#confirming-ldap-configuration"><strong>Confirming LDAP Configuration</strong></a></li>
+  <li>If configured for <strong><em>Mode: External (httpd)</em></strong>:
+    <ul>
+      <li>attach the <code class="highlighter-rouge">/etc/sssd/sssd.conf</code></li>
+      <li>provide the output from dbus-send. See: <a href="#confirming-sssd-configuration"><strong>Confirming SSSD Configuration</strong></a></li>
+      <li>If the dbus-send commands fail to return the required information the SSSD configuration must be diagnosed and fixed before attempting to use ManageIQ.
+See: <a href="#diagnosing-failed-dbus-commands"><strong>Diagnosing Failed dbus Commands</strong></a></li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="appendix">Appendix</h1>
+<hr />
+
+<p><strong>The Gory Details</strong></p>
+
+<h2 id="capturing-manageiq-log-files">Capturing ManageIQ Log Files</h2>
+<hr />
+
+<p>ManageIQ log files are stored in directory <strong><em>/var/www/miq/vmdb/log</em></strong> which on some releases is a symbolic link.
+Be sure to include the “h” flag, as indicated below when generating the tar ball of the symbolically linked log directory.</p>
+
+<p>These shell commands shows how to generate the tar ball and verify it’s contents:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">cd</span><span class="kv"> /var/www/miq/vmdb
+</span><span class="w">$ </span><span class="nc">tar</span><span class="kv"> cvfzh my_log_files.tar.gz log
+</span><span class="w">$ </span><span class="nc">tar</span><span class="kv"> ztvf my_log_files.tar.gz
+</span></code></pre>
+</div>
+
+<h2 id="capturing-authentication-data-from-manageiq-db">Capturing Authentication Data From ManageIQ DB</h2>
+<hr />
+
+<p>The below commands can be used on the appliance where the database resides to capture 
+the authentication configuration settings, group and user information from the database.</p>
+
+<ul>
+  <li>
+    <p>This shell command can be used to query the database for the <strong><em>authentication settings</em></strong>:</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">/var/www/miq/vmdb/bin/rails</span><span class="kv"> runner 'puts Settings.authentication'
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>This shell command can be used to query the database for the list of known <strong><em>groups</em></strong>:</p>
+  </li>
+  <li>
+    <p>The groups returned from the IdP for users expected to be authenticated on ManageIQ must match at least one
+group reported by this command. If not one must be manually added using the ManageIQ UI.</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">/var/www/miq/vmdb/bin/rails</span><span class="kv"> runner 'puts MiqGroup.pluck(:description)'
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>This shell command can be used to query the database for the list of known <strong><em>users</em></strong>:</p>
+  </li>
+  <li>
+    <p>ManageIQ will auto create authenticated and authorized users if <strong>Get User Groups</strong> from the IdP is configured on the ManageIQ Authentication page.</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">/var/www/miq/vmdb/bin/rails</span><span class="kv"> runner 'puts User.pluck(:userid)'
+</span></code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="confirming-ldap-configuration">Confirming LDAP Configuration</h2>
+<hr />
+
+<p>An LDAP configuration can be confirmed independently from ManageIQ by using the ldapsearch command.</p>
+
+<p>The LDAPSEARCH(1) man page can be found by searching for <strong><em>ldapsearch</em></strong> in the <a href="http://www.openldap.org/software/man.cgi"><strong>Open LDAP man pages</strong></a>.</p>
+
+<p>Follow these steps to run ldapsearch.</p>
+
+<ul>
+  <li>
+    <p>Step 1. Get the certs from the OpenLdap Serve if using secure LDAP<strong>S</strong> <em>These commands may vary depending on how the certs are managed on the LDAP server.</em></p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code> # Remove any old certs
+<span class="w">$ </span><span class="nc">rm</span><span class="kv"> /etc/openldap/certs/&amp;ast;
+</span>
+ # Copy the certs from the LDAP server:
+<span class="w">$ </span><span class="nc">scp</span><span class="kv"> root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
+</span><span class="w">$ </span><span class="nc">scp</span><span class="kv"> root@ldaphost.example.com:/etc/pki/tls/certs/server&amp;ast;.pem /etc/openldap/certs/
+</span>
+ # Rehash the certs
+<span class="w">$ </span><span class="nc">/usr/sbin/cacertdir_rehash</span><span class="kv"> /etc/openldap/certs/
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Step 2. Update <code class="highlighter-rouge">/etc/openldap/ldap.conf</code> to:</p>
+
+    <p>Here is an example of an <code class="highlighter-rouge">ldap.conf</code>. <em>The values will vary depending on how the certs are managed on the LDAP server.</em></p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code>SASL_NOCANON    on
+URI             https://ldaphost.example.com:636
+BASE            dc=example,dc=com
+TLS_REQCERT     demand
+TLS_CACERTDIR   /etc/openldap/certs
+TLS_CACERT      /etc/openldap/certs/cacert.pem
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Step 3. Verify the cert with openssl and LDAP configuration with openssl. For example:</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">openssl</span><span class="kv"> s_client -connect ldaphost.example.com:636 -CAfile /etc/openldap/certs/cacert.pem
+</span><span class="w">$ </span><span class="nc">openssl</span><span class="kv"> s_client -showcerts -connect ldaphost.example.com:636
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>The flags used in the <code class="highlighter-rouge">ldapsearch</code> examples are:</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code>-x Use simple authentication instead of SASL.
+
+-H ldaphost
+
+-b searchbase
+   Use  searchbase  as the starting point for the search instead of the default.
+
+-D binddn
+   Use the Distinguished Name binddn to bind to the LDAP directory.
+   For SASL binds, the server is expected to ignore this value.
+
+-w passwd
+   Use passwd as the password for simple authentication.
+
+-d debuglevel
+   Set the LDAP debugging level to debuglevel. ldapsearch must be compiled with
+   LDAP_DEBUG defined for this option to have any effect.
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Step 4. Run non-secure <code class="highlighter-rouge">ldapsearch</code></p>
+
+    <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port with a binddn and password</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">ldapsearch</span><span class="kv"> -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"  -D "cn=Manager,dc=example,dc=com" -w password
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Step 5. Run <code class="highlighter-rouge">ldapsearch</code> using Transport Layer Security <strong><em>TLS</em></strong></p>
+
+    <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port but do not specify binddn or password will result in a TLS exchange.</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">ldapsearch</span><span class="kv"> -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Step 6. Run <code class="highlighter-rouge">ldapsearch</code> using Secure Sockets Layer <strong><em>SSL</em></strong></p>
+
+    <p>Specify <code class="highlighter-rouge">ldaps</code> protocol and port will result in SSL exchange.</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">ldapsearch</span><span class="kv"> -x -H ldaps://ldaphost.example.com:636  -b "dc=example,dc=com"
+</span></code></pre>
+    </div>
+
+    <p>The <code class="highlighter-rouge">-d</code> flag can be used to produce debugging information.</p>
+
+    <p>Diagnosing <code class="highlighter-rouge">ldapsearch</code> failures is beyond the scope of this blog.</p>
+  </li>
+</ul>
+
+<h2 id="confirming-sssd-configuration">Confirming SSSD Configuration</h2>
+<hr />
+
+<p>ManageIQ configurations: <strong>Mode: External (httpd)</strong> is implemented with the <em>The System Security Service Daemon</em>
+  <a href="https://docs-old.fedoraproject.org/en-US/Fedora/16/html/System_Administrators_Guide/chap-SSSD_User_Guide-Introduction.html"><strong>(SSSD)</strong></a>.</p>
+
+<p>For more information see: <a href="#technologies-supporting-manageiq-authentication-modes"><strong>Technologies Supporting ManageIQ Authentication Modes</strong></a></p>
+
+<p>SSSD can be exercised independently of ManageIQ using <a href="https://dbus.freedesktop.org/doc/dbus-send.1.html"><strong>dbus-send</strong></a></p>
+
+<p>Before attempting to configure ManageIQ authentication directly the <strong><em>dbus-send</em></strong> command should be used to confirm the external
+  authentication technology is functioning and correctly configured.</p>
+
+<h3 id="dbus-send--getuserattr"><strong><em>dbus-send / GetUserAttr</em></strong></h3>
+
+<p>This <strong><em>dbus-send / GetUserAttr</em></strong> command can be used to confirm all of the user attributes used
+by ManageIQ authentication are correctly provided by the underlying technology.</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">dbus-send</span><span class="kv"> \
+</span>  --print-reply \
+  --system \
+  --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr \
+  string:mshiffrin array:string:mail,givenname,sn,displayname,domainname
+</code></pre>
+</div>
+
+<p>The output from the above <strong><em>dbus-send / GetUserAttr</em></strong> command should look similar to the following:</p>
+
+<p><code class="highlighter-rouge">Note:</code> The <strong><em>domainname</em></strong> attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>method return sender=:1.40 -&gt; dest=:1.48 reply_serial=2
+   array [
+      dict entry(
+         string "mail"
+         variant             array [
+               string "mshiffrin@example.com"
+            ]
+      )
+      dict entry(
+         string "givenname"
+         variant             array [
+               string "Mikaela"
+            ]
+      )
+      dict entry(
+         string "sn"
+         variant             array [
+               string "Shiffrin"
+            ]
+      )
+      dict entry(
+         string "displayname"
+         variant             array [
+               string "Mikaela Shiffrin"
+            ]
+      )
+      dict entry(
+         string "domainname"
+         variant             array [
+               string "example.com"
+            ]
+      )
+   ]
+</code></pre>
+</div>
+
+<h3 id="dbus-send--getusergroups"><strong><em>dbus-send / GetUserGroups</em></strong></h3>
+
+<p>This <strong><em>dbus-send / GetUserGroups</em></strong> command can be used to confirm all of the user’s groups are correctly provided by the underlying technology.</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">dbus-send</span><span class="kv"> \
+</span>  --print-reply \
+  --system \
+  --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserGroups \
+  string:mshiffrin
+</code></pre>
+</div>
+
+<p>The output from the above <strong><em>dbus-send / GetUserAttr</em></strong> command should look similar to the following:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>method return sender=:1.40 -&gt; dest=:1.189 reply_serial=2
+   array [
+      string "evmgroup-super_administrator"
+      string "gs-group"
+   ]
+</code></pre>
+</div>
+
+<ul>
+  <li>If these dbus-send commands fail to return the required information the SSSD configuration must be diagnosed and fixed before attempting to use ManageIQ.
+See: <a href="#diagnosing-failed-dbus-commands"><strong>Diagnosing Failed dbus Commands</strong></a></li>
+</ul>
+
+<h2 id="diagnosing-failed-dbus-commands">Diagnosing Failed dbus Commands</h2>
+<hr />
+
+<p>If the <strong><em>dbus-send</em></strong> commands described in section <a href="#confirming-sssd-configuration"><strong>Confirming SSSD Configuration</strong></a>
+do not succeed the SSSD configuration can be diagnosed by doing the following:</p>
+
+<ul>
+  <li>
+    <p>Add <strong><em>debug_level=9</em></strong> to each of the sections of the SSSD configuration file: <strong><em>/etc/sssd/sssd.conf</em></strong></p>
+  </li>
+  <li>
+    <p>Restart the sssd service and confirm it is running.</p>
+
+    <p>If it does not restart there could be errors in the <code class="highlighter-rouge">/etd/sssd/sssd.conf</code> file that need to be addressed.</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">systemctl</span><span class="kv"> restart sssd.service
+</span><span class="w">$ </span><span class="nc">systemctl</span><span class="kv"> status sssd.service
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Note:</code> If updates are done to the  <strong><em>/etc/sssd/sssd.conf</em></strong> file and not immediately seen when authenticating,
+ then clean the SSSD cache as follows and restart the service:</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">sss_cache</span><span class="kv"> -E
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>tail the sssd log files</p>
+
+    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">tail</span><span class="kv"> -f /var/log/sssd/&amp;ast;.log
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Rerun the <strong><em>dbus-send</em></strong> commands described in section <a href="#confirming-sssd-configuration"><strong>Confirming SSSD configuration</strong></a></p>
+  </li>
+</ul>
+
+<h2 id="adding-groups-in-manageiq">Adding Groups In ManageIQ</h2>
+<hr />
+
+<p>Groups can be manually added in ManageIQ <strong><em>and</em></strong> they can be retrieving for a specified user from the configured IdP.
+Retrieving them is a good test to confirm connectivity to the IdP server and it is reporting group membership for
+the specified user. Doing this is analogous to using the <strong><em>dbus-send / GetUserGroups</em></strong> command.</p>
+
+<p><code class="highlighter-rouge">Note:</code> <strong><em>Look up Groups</em></strong> does not work with SAML.</p>
+
+<p>Look up groups for a specific user with ManageIQ by doing:</p>
+
+<ol>
+  <li>Using the ManageIQ UI navigate to <em>Configuration</em> -&gt; <em>Access Control</em> -&gt; <em>Groups</em> -&gt; <em>Configuration</em> -&gt; <em>Add a new Group</em></li>
+  <li>Check <strong><em>Look up Groups</em></strong>, provide the credentials if necessary for the specific configuration.</li>
+  <li>Click <em>Retrieve</em></li>
+  <li>Near the top of the page a new drop-down should appear populated with group names the specified user is associated with on the IdP</li>
+</ol>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - Hawkular Alerts in ManageIQ</title>
+  <meta name="description" content="Note: Hawkular was deprecated as of December 18th, 2017. New releases ofManageIQ won’t include support for Hawkular as a Middleware Provider.">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/10/hawkular-alerts-in-miq/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/10/hawkular-alerts-in-miq/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Hawkular Alerts in ManageIQ</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-10-20T00:00:00+00:00" itemprop="datePublished">
+                Oct 20, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  israel-hdez
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/tutorials">tutorials</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p><em><strong>Note:</strong> Hawkular was deprecated as of December 18th, 2017. New releases of
+ManageIQ won’t include support for Hawkular as a Middleware Provider.</em></p>
+
+<p>Hello! This is <a href="https://github.com/israel-hdez">Edgar</a> from the Middleware team. This is my first
+time writing in the ManageIQ blog. Nevertheless, I hope you’ll enjoy this post
+explaining the basics of the alerting integration between ManageIQ and Hawkular.</p>
+
+<p>Probably, you’ve already seen the <em>Middleware</em> entry in the main menu of
+ManageIQ. This is where you can manage <em>servers</em> in ManageIQ. In the
+<em>Middleware</em> context, a <em>server</em> is the software providing a service or serving
+applications. Like other parts of ManageIQ, <em>Middleware</em> features are made
+available through providers.</p>
+
+<p>At the time of writing, <a href="http://www.hawkular.org/">Hawkular</a> is the only available provider and
+the supported servers are <a href="http://wildfly.org/">WildFly</a> and its downstream product <a href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform">JBoss
+EAP</a>. In the future, the list of supported servers is expected to grow.</p>
+
+<p>Hawkular project includes its own alerting module that can be used to send
+notifications when certain conditions are met. The alerting module is bundled
+in Hawkular Middleware Manager (aka. Hawkular Services)</p>
+
+<p>ManageIQ also has alerting capabilities and Hawkular Middleware Manager
+integrates to it. Once Hawkular is added as a provider, ManageIQ alerting
+features can be used to monitor servers managed by Hawkular.</p>
+
+<p>I’m assuming that you already have added a Hawkular provider in ManageIQ (i.e
+you know how to setup a Hawkular Middleware Manager instance and connect it to
+ManageIQ). So, let’s move directly to the alerting matter and start explaining
+some concepts.</p>
+
+<h2 id="manageiq-alerting-terminology">ManageIQ alerting terminology</h2>
+
+<p>In ManageIQ, two terms are used:</p>
+
+<dl>
+  <dt>Alert</dt>
+  <dd>Defines the which type of infrastructure item should be monitored, the
+conditions and the actions to take when the conditions are met.</dd>
+  <dt>Alert profile</dt>
+  <dd>It is a relation between a set of alerts and a set of
+infrastructure items. The set of alerts in the profile will all be applied to
+the set of infrastructure items. If any of the infrastructure items met the
+conditions in one of the alerts, the actions of the alert will run.</dd>
+</dl>
+
+<p>Remember that Hawkular, as a Middleware provider, will only support features
+related to middleware infrastructure items, but ManageIQ has support for
+other types of infrastructure items.</p>
+
+<h2 id="hawkular-alerting-terminology">Hawkular alerting terminology</h2>
+
+<p>Hawkular’s alerting module has several kinds of objects (and terms). The two
+objects that are relevant from a ManageIQ perspective are:</p>
+
+<dl>
+  <dt>Group trigger</dt>
+  <dd>Defines the set of conditions that should be met to fire an
+alert or an event. A group trigger is a template and no alert nor events will
+be fired until a member is added to it.</dd>
+  <dt>Group member</dt>
+  <dd>It’s an association of a group trigger with the actual data to be
+evaluated. Internally to Hawkular, group members are managed instances of group
+triggers. Changes to the group trigger are pushed down to the members.</dd>
+</dl>
+
+<p>An implementation note: currently, ManageIQ creates group triggers that raise
+Hawkular events (not alerts) and polls Hawkular to catch the events and run
+ManageIQ configured actions, if needed.</p>
+
+<h2 id="terminology-relationships">Terminology relationships</h2>
+
+<p>When a user creates a ManageIQ alert, a Hawkular group trigger is created in
+the background. From then, any changes to the ManageIQ alert are replicated to
+the associated Hawkular group trigger until the alert is deleted, which causes
+the group trigger to also be deleted.</p>
+
+<p>While ManageIQ alerts have a direct relation with Hawkular group triggers,
+ManageIQ alert profiles are a little bit more complicated. For each alert in a
+ManageIQ profile, one Hawkular group member is created for each infrastructure
+item in the profile.</p>
+
+<p>This means that nothing is created in Hawkular if:</p>
+
+<ul>
+  <li>The alert profile is empty (has no alerts nor infrastructure items)</li>
+  <li>The alert profile has alerts but has no infrastructure items</li>
+  <li>The alert profile has infrastructure items but has no alerts</li>
+</ul>
+
+<p>If a ManageIQ alert profile has one alert and has assigned multiple
+infrastructure items, then the relevant Hawkular group trigger will have as
+many members as infrastructure items are in the ManageIQ alert profile.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/miq-hawkular-one-alert-three-inf-items.png" alt="Mapping of a ManageIQ alert profile with one alert and three infrastructure items" /></p>
+
+<p>If a ManageIQ alert profile has multiple alerts and has assigned only one
+infrastructure item, then each Hawkular group trigger will have one member.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/miq-hawkular-three-alerts-one-inf-item.png" alt="Mapping of a ManageIQ alert profile with three alerts and one infrastructure item" /></p>
+
+<p>With these two examples, you should be able to guess what will happen if the
+ManageIQ alert profile has a set of alerts and a set of infrastructure items.</p>
+
+<h2 id="creating-manageiq-alerts">Creating ManageIQ alerts</h2>
+
+<p>Alerts are created by navigating to <em>Control &gt; Explorer &gt; Alerts</em>. In the alerts
+tree, select the <em>All alerts</em> folder. This will enable the <em>Add a New Alert</em> option
+under the <em>Configuration</em> button.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-create-alert.png" alt="Create new ManageIQ alert" class="large_img" /></p>
+
+<p>In the form to create/edit an alert, be sure to select <em>Middleware server</em> in
+the <em>Based On</em> field. Currently, this is the only infrastructure item supported
+by Hawkular provider for alerting purposes. If you choose something else, the alert
+won’t be managed by Hawkular.  All other options can be filled as desired.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-create-alert-form.png" alt="Form to create new ManageIQ alert" /></p>
+
+<p>When the alert is created, it will be available in the control explorer and
+will be available to be included in an alert profile. In the background, a
+Hawkular group trigger is also created.</p>
+
+<h2 id="creating-an-alert-profile">Creating an alert profile</h2>
+
+<p>Alert profiles are created by navigating to <em>Control &gt; Explorer &gt; Alert
+Profiles</em>. In the alerts tree, select the <em>Middleware server Alert Profiles</em> item.
+This will enable the <em>Add a Middleware Server Alert Profile</em> option under the
+<em>Configuration</em> button.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-create-alert-profile.png" alt="Create new ManageIQ alert profile" class="large_img" /></p>
+
+<p>In the form to create/edit an alert profile, write a description and select the
+desired alerts to evaluate. At least, one alert is required to be able to
+create the alert profile.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-create-alert-profile-form.png" alt="Form to create new ManageIQ alert profile" /></p>
+
+<p>When the alert profile is created, it will be available in the control explorer
+which will also list the alerts contained in the profile. Nothing will be
+created in Hawkular because when the profile is created it is still not
+assigned to middleware servers.</p>
+
+<h2 id="assigning-middleware-servers-to-an-alert-profile">Assigning middleware servers to an alert profile</h2>
+
+<p>To assign middleware servers to an alert profile, select the desired profile in
+the control explorer. In the toolbar, use the <em>Edit assignments for this Alert
+Profile</em> options under the <em>Configuration</em> button.</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-alert-profile-assignments-button.png" alt="ManageIQ edit assignments option for alert profiles" /></p>
+
+<p>This will show the assignments page. An alert profile can be assigned to
+specific middleware servers or to all inventoried middleware servers (The
+Enterprise).</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-alert-profile-edit-assignments-screen.png" alt="ManageIQ edit assignments screen for alert profiles" /></p>
+
+<p>Once you have chosen the desired middleware servers (or the enterprise) and
+changes are saved, the view page of the alert will be displayed again.</p>
+
+<p>In the background, Hawkular group members will be created to make effective the
+configuration and alerts should start triggering.</p>
+
+<h2 id="viewing-alerts-in-the-timeline">Viewing alerts in the timeline</h2>
+
+<p>The timeline of ManageIQ Hawkular provider will log events if the configuration
+of an alert is enabled to show timeline events.  Hawkular’s provider timeline
+can be accessed through the summary page of the provider, under the <em>Monitoring</em>
+menu:</p>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-hawkular-summary-timeline-button.png" alt="ManageIQ Hawkular provider timeline menu button" class="large_img" /></p>
+
+<p>If the alert has enabled the standard <em>Show on Timeline</em> configuration, the
+options to query the events are:</p>
+
+<ul>
+  <li>Event type: Management Events</li>
+  <li>Category: Alarm/Status Change/Errors</li>
+</ul>
+
+<p><img src="http://www.hawkular.org/img/blog/2017/2017-10-11-miq-hawkular-timeline-alerts.png" alt="Hawkular timeline alerts" class="large_img" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>ManageIQ and Hawkular, albeit being two independent projects, they can be
+connected together to complement each other features. In this post is discussed
+how the alerting integration works and how to configure a basic alert.</p>
+
+<p>At the time of writing, ManageIQ supports only <em>Middleware Servers</em> as targets
+and, also, only a limited set of metrics is available to configure alerts.
+There is ongoing work to provide a wider range of metrics and this is expected
+to be available in following versions.</p>
+
+<p><em>This post was originally published on the <a href="http://www.hawkular.org/blog/2017/10/alerts-in-manageiq.html">Hawkular Blog</a> on 11 October 2017.</em></p>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

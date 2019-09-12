@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/developer_setup/plugins">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/developer_setup/plugins">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h2 id="manageiq-plugin-development">ManageIQ Plugin Development</h2>
+
+<h3 id="plugin-layout">Plugin layout</h3>
+
+<p>Plugins in ManageIQ are developed as <a href="http://guides.rubyonrails.org/engines.html">Rails Engines</a>. All models, 
+controllers etc. are loaded during boot time of ManageIQ and are just available as you would expect.</p>
+
+<h3 id="cloning-plugins">Cloning plugins</h3>
+
+<p>Before anything, you have to create a fork of the plugin on Github.</p>
+
+<ul>
+  <li>Go to the plugins repository page, e.g. <a href="https://github.com/ManageIQ/manageiq-ui-classic">ManageIQ/manageiq-ui-classic</a></li>
+  <li>Click the Fork button and choose “Fork to &lt;yourname&gt;”</li>
+</ul>
+
+<p>It does not really matter <em>where</em> you clone your plugins. Both approaches have their advantages.</p>
+
+<h4 id="side-by-side">Side by side</h4>
+
+<p>Having the plugins and the core repository side by side, i.e. at the same directory level, is straight forward and
+lets you separate checkouts cleanly.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:JoeSmith/manageiq-providers-amazon.git
+git clone git@github.com:JoeSmith/manageiq-content.git
+git clone git@github.com:JoeSmith/manageiq-ui-classic.git
+</code></pre>
+</div>
+
+<h4 id="inside-the-core-manageiq-checkout">Inside the core ManageIQ checkout</h4>
+
+<p>The <code class="highlighter-rouge">plugins/</code> directory inside the core repository is ignored by <code class="highlighter-rouge">.gitignore</code>. This means you can clone plugins
+into this directory. The benefit is, e.g. when working with a project oriented IDE, you have all code under one
+directory. This way you can easily search across the core <em>and</em> plugin code base.</p>
+
+<p>You still have to change into the plugin root directory to run the tests - running <code class="highlighter-rouge">rspec</code> from the ManageIQ root will
+not pickup your plugin code, but the core code. This is a drawback which can lead to some confusion.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /path/to/manageiq ; mkdir plugins
+git clone git@github.com:JoeSmith/manageiq-providers-amazon.git plugins/manageiq-providers-amazon
+git clone git@github.com:JoeSmith/manageiq-content.git plugins/manageiq-content
+git clone git@github.com:JoeSmith/manageiq-ui-classic.git plugins/manageiq-ui-classic
+</code></pre>
+</div>
+
+<h4 id="setting-the-correct-remotes">Setting the correct remotes</h4>
+
+<p>Inside your checkout you will have the default remote origin pointing to your fork. Now add an upstream remote which
+points to the upstream repository. To keep your fork up to date, you will have to merge changes from upstream
+into your fork.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>manageiq-ui-classic
+git remote -v
+<span class="c"># origin  git@github.com:JoeSmith/manageiq-ui-classic.git (fetch)</span>
+<span class="c"># origin  git@github.com:JoeSmith/manageiq-ui-classic.git (push)</span>
+git remote add upstream git@github.com:ManageIQ/manageiq-ui-classic
+git fetch upstream
+<span class="c"># merge upstream into your fork</span>
+git checkout master
+git pull upstream master
+git push origin master
+</code></pre>
+</div>
+
+<h3 id="running-tests">Running tests</h3>
+
+<p>To run the tests for a plugin, we need an application context. Usually Rails expects a dummy Rails app. But because
+our plugins are only for ManageIQ, we run the tests inside the ManageIQ app. Therefore we need a checkout of ManageIQ
+at <code class="highlighter-rouge">spec/manageiq</code>. The database used for tests is the same as for the core app. Keep that in mind when developing a
+feature that requires database migrations.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>manageiq-providers-amazon
+bin/setup
+<span class="c"># == Cloning manageiq sample app ==</span>
+<span class="c"># Cloning into 'spec/manageiq'...</span>
+bundle install
+bundle <span class="nb">exec </span>rake spec:setup
+<span class="c"># ** Preparing database</span>
+<span class="c"># Dropped database 'vmdb_test'</span>
+<span class="c"># Created database 'vmdb_test'</span>
+bundle <span class="nb">exec </span>rake
+</code></pre>
+</div>
+
+<p>Updating the sample app is handled by <code class="highlighter-rouge">bin/update</code>:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bin/update
+<span class="c"># == Updating manageiq sample app ==</span>
+</code></pre>
+</div>
+
+<h3 id="cross-repository-dependencies">Cross repository dependencies</h3>
+
+<p>Sometimes you need to develop your feature against a branch of ManageIQ that is not yet merged into master. This creates
+cross repository dependencies, which can be handled from the plugin side or from the core side.</p>
+
+<h4 id="symlink-your-sample-app">Symlink your sample app</h4>
+
+<p>Creating a symlink from <code class="highlighter-rouge">spec/manageiq</code> to your current checkout of ManageIQ will run the tests inside whatever branch
+you checked out in the core repo.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># remove current sample app</span>
+rm -rf spec/manageiq 
+<span class="c"># create a symlink</span>
+ln -s /path/to/manageiq spec/manageiq
+</code></pre>
+</div>
+
+<h4 id="dependency-on-a-local-gem">Dependency on a local gem</h4>
+
+<p>Inside ManageIQ core, you can override gem dependencies with <code class="highlighter-rouge">override_gem</code>. This is a small helper to be used under
+<code class="highlighter-rouge">bundler.d</code> directory. Use it to point the dependency to a local version of your plugin.</p>
+
+<p>Please, use absolute path in</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
+<span class="n">override_gem</span> <span class="s1">'manageiq-providers-amazon'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'/home/developer/repos/manageiq-providers-amazon'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>or use relative path to current file and <code class="highlighter-rouge">__dir__</code> like</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
+<span class="n">override_gem</span> <span class="s1">'manageiq-providers-amazon'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../../manageiq-providers-amazon'</span><span class="p">,</span> <span class="n">__dir__</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="rails-console">Rails console</h4>
+
+<p>Unfortunately Rails Engines don’t support running <code class="highlighter-rouge">rails console</code> from the root of the plugin. To test your code you
+will have to change the dependency of ManageIQ to point to your local plugin. See above.</p>
+
+<h3 id="migrating-a-pr-from-manageiq">Migrating a PR from ManageIQ</h3>
+
+<p>If you have an open PR on ManageIQ that has not been merged before the split, you can cherry-pick all commits from
+the feature branch into a new branch in the plugin repository.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># get all commit shas that are not yet in master - or just look at https://github.com/ManageIQ/manageiq/pull/&lt;id&gt;</span>
+<span class="nb">cd</span> /path/to/manageiq
+git checkout feature_branch
+git log <span class="k">$(</span>git rev-parse --abbrev-ref HEAD<span class="k">)</span> --not refs/heads/master
+
+<span class="c"># add ManageIQ as a remote in your plugin</span>
+<span class="nb">cd</span> /path/to/manageiq-providers-amazon
+git remote add miq /path/to/manageiq
+git fetch miq
+
+<span class="c"># create a new branch in the plugin and cherry-pick commits</span>
+git checkout -b feature_branch
+git cherry-pick &lt;sha from above&gt;
+<span class="c"># should be a clean cherry-pick if it only changes files that are in the new plugin, if not:</span>
+<span class="c"># git checkout master -- path/to/file # will discard your changes to file</span>
+<span class="c"># git rm path/to/file # will drop the file from the cherry-pick in progress</span>
+<span class="c"># git cherry-pick --continue # will continue the cherry-pick</span>
+<span class="c"># git cherry-pick --abort # will abort</span>
+</code></pre>
+</div>
+
+<p>If your PR has a lot of commits or you have a lot of PRs, this script automates it.
+It needs <code class="highlighter-rouge">jq</code> to parse the github API output - <code class="highlighter-rouge">brew install jq</code> or <code class="highlighter-rouge">dnf install jq</code> or <code class="highlighter-rouge">apt install jq</code>.
+Optionally uses <a href="https://hub.github.com/">hub</a> to create the pull request.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>PR=123
+COMMITS=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR/commits | jq -r .[].sha`
+TITLE=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR | jq -r .title`
+DESCRIPTION=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR | jq -r .body`
+
+cd manageiq-ui-classic/
+
+git remote add tmp https://github.com/ManageIQ/manageiq.git
+
+git fetch tmp pull/$PR/head
+git checkout -b miq_pr_$PR
+
+echo "Running cherry-pick - if there's a conflict, resolve it, commit, and do git cherry-pick --continue"
+git cherry-pick -x $COMMITS
+
+git push -u origin miq_pr_$PR
+[ -x "`which hub`" ] &amp;&amp; hub pull-request -m "$TITLE"
+
+$DESCRIPTION
+
+(converted from ManageIQ/manageiq#$PR)" || echo "hub not found, not creating PR"
+
+git remote rm tmp
+</code></pre>
+</div>
+
+<h3 id="creating-a-new-provider-plugin">Creating a new provider (plugin)</h3>
+
+<p>If you plan to create a cloud manager type provider, you can use this <a href="/docs/guides/providers/generator/generator">provider generator</a> to scaffold.</p>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

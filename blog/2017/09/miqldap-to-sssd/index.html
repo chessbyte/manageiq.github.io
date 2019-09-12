@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ - MiqLdap To SSSD conversion tool</title>
+  <meta name="description" content="How does one use the miqldap_to_sssd conversion tool?">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/blog/2017/09/miqldap-to-sssd/">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/blog/2017/09/miqldap-to-sssd/">
+      <div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+        </header>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">MiqLdap To SSSD conversion tool</h1>
+
+            <div class="post-meta">
+              <time datetime="2017-09-29T00:00:00+00:00" itemprop="datePublished">
+                Sep 29, 2017
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  jvlcek
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/tutorials">tutorials</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>How does one use the <em>miqldap_to_sssd</em> conversion tool?</p>
+
+<h1 id="miqldap-to-sssd-conversion-tool">MiqLdap To SSSD Conversion Tool</h1>
+
+<h2 id="contents"><strong>Contents:</strong></h2>
+
+<ul>
+  <li><a href="#a-brief-why-before-the-how"><strong>A brief Why before The How</strong></a></li>
+  <li><a href="#the-how"><strong>The How</strong></a></li>
+  <li><a href="#kicking-the-tires"><strong>Kicking the tires</strong></a>
+    <ul>
+      <li><a href="#example-1-the-simple-case"><strong>Example 1 The simple Case</strong></a></li>
+      <li><a href="#example-2-a-case-with-a-small-complication"><strong>Example 2 A case with a small complication</strong></a></li>
+      <li><a href="#example-3-a-case-with-a-different-small-complication"><strong>Example 3 A case with a different small complication</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#the-other-miqldap_to_sssd-arguments"><strong>The other miqldap_to_sssd arguments</strong></a></li>
+  <li><a href="#customizing-the-generated-configuration"><strong>Customizing The Generated Configuration</strong></a></li>
+  <li><a href="#debugging-failed-conversions"><strong>Debugging Failed Conversions</strong></a></li>
+  <li><a href="#edge-cases"><strong>Edge Cases</strong></a></li>
+</ul>
+
+<h1 id="a-brief-why-before-the-how"><strong>A brief Why before The How</strong></h1>
+
+<p>Why did the <em>miqldap_to_sssd</em> conversion tool come to be?</p>
+
+<p>ManageIQ (MiQ) is delivered with the built in LDAP client, <em>MiqLdap</em>. There are multiple, more robust and
+customizable, mechanisms built into the operating system that provide an interface to an LDAP directory.
+The  <em>miqldap_to_sssd</em> conversion tool is intended to automate and simplify moving to the SSSD authentication mechanism.</p>
+
+<h1 id="the-how"><strong>The How</strong></h1>
+
+<p>The <em>miqldap_to_sssd</em> conversion tool will convert an MiQ appliance configured to use the <em>MiqLdap</em> client to using external authentication.</p>
+
+<p>To perform this re-configuration <em>miqldap_to_sssd</em> simply automates the instructions for manually configuring an MiQ Appliance’s external authentication to work against LDAP <a href="http://manageiq.org/docs/reference/latest/auth/ldap">(as documented here)</a>. It then customizes the configuration to emulate the <em>MiqLdap</em> configuration settings.</p>
+
+<p>The <em>MiqLdap</em> client is enabled when the appliance authentication mode is set to <strong>LDAP(S)</strong>
+The external authentication mechanism is enabled when the appliance authentication mode is set to <strong>External (httpd)</strong></p>
+
+<h1 id="kicking-the-tires"><strong>Kicking the tires</strong></h1>
+
+<p>I’ll present 3 examples:</p>
+
+<ul>
+  <li><strong>Example 1 The simple Case</strong>
+    <ul>
+      <li>Authentication <em>Mode LDAP</em> and with <em>Get User Groups from LDAP</em> <strong>checked</strong></li>
+    </ul>
+  </li>
+  <li><strong>Example 2 A case with a small complication</strong>
+    <ul>
+      <li>Authentication <em>Mode LDAP</em> but with <em>Get User Groups from LDAP</em> <strong>un-checked</strong></li>
+    </ul>
+  </li>
+  <li><strong>Example 3 A case with a different small complication</strong>
+    <ul>
+      <li>Authentication <em>Mode LDAPS</em> using certificate files</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="example-1-the-simple-case"><strong>Example 1 The simple Case</strong></h1>
+
+<p>Prior to running the <em>miqldap_to_sssd</em> conversion the appliance is configured with:</p>
+
+<p>Authentication <em>Mode LDAP</em> and with <em>Get User Groups from LDAP</em> <strong>checked</strong></p>
+
+<p>Authentication Configuration Settings:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Mode:</em></td>
+      <td style="text-align: left"><strong>LDAP</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Get User Groups from LDAP:</em></td>
+      <td style="text-align: left"><strong>checked</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Get Roles from Home Forest:</em></td>
+      <td style="text-align: left"><strong>checked</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Base DN:</em></td>
+      <td style="text-align: left"><strong>filled in</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Bind DN:</em></td>
+      <td style="text-align: left"><strong>filled in</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Bind Password:</em></td>
+      <td style="text-align: left"><strong>filled in</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Screenshot showing the appliance configuration for Mode: LDAP:
+<a href="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ldap.png"><img src="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ldap.png" alt="Screenshot Showing Appliance Configuration Mode: LDAP" /></a></p>
+
+<h2 id="note-the-username-userid"><strong>Note the username (userid)</strong></h2>
+
+<ul>
+  <li>When the <strong>LDAP Host</strong> is an LDAP directory the username field stored in the MiQ database is a <strong>Distinguished Name</strong>
+    <ul>
+      <li>e.g.: <em>cn=user,ou=people,ou=proc,dc=example,dc=com</em></li>
+    </ul>
+  </li>
+  <li>When the <strong>LDAP Host</strong> is an AD directory the username field stored in the MiQ database is a <strong>User Principal Name</strong>.
+    <ul>
+      <li>e.g.: <em>example.com</em></li>
+    </ul>
+  </li>
+  <li>After the conversion to external authentication the username field stored in the MiQ database will always be <strong>User Principal Name</strong>.</li>
+</ul>
+
+<p>Screenshot showing usernames in <strong>Distinguished Name</strong> form
+<a href="/assets/images/blog/miqldap_to_sssd_userid_mode_ldap.png"><img src="/assets/images/blog/miqldap_to_sssd_userid_mode_ldap.png" alt="UserID Mode: LDAP" /></a></p>
+
+<h2 id="snapshot-your-manageiq-virtual-machine"><strong>Snapshot your ManageIQ Virtual machine.</strong></h2>
+
+<p>The miqldap_to_sssd conversion is <strong>not reversible</strong>.</p>
+
+<p>It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to
+running the <em>miqldap_to_sssd</em> conversion tool.</p>
+
+<h2 id="run-the-conversion"><strong>Run the conversion</strong></h2>
+
+<p>To run the conversion from this <em>simple</em> <em>MiqLdap</em> configuration simply execute the command <em>miqldap_to_sssd</em> with no arguments</p>
+
+<p>Note the warning regarding the unsecured LDAP and not encrypted passwords. To avoid this start by using
+LDAPS with certificates or, after running <em>miqldap_to_sssd</em>, update the <em>/etc/sssd/sssd.conf</em> file to
+include certificates. See the LDAPS example below and the SSSD(8) man page for more information about
+certificates.</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> 
+</span>Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
+tools/miqldap_to_sssd.rb Conversion Completed
+$
+</code></pre>
+</div>
+
+<h2 id="miqldap_to_sssd-log"><strong>miqldap_to_sssd log</strong></h2>
+
+<p><em>miqldap_to_sssd</em> logs progress in file <em>/var/www/miq/vmdb/log/miqldap_to_sssd.log</em></p>
+
+<h2 id="authentication-mode-externalhttpd"><strong>Authentication Mode External(httpd)</strong></h2>
+
+<p>The <em>miqldap_to_sssd</em> will reconfigure the appliance for authentication <strong>Mode: External (httpd)</strong></p>
+
+<p><a href="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ext_auth.png"><img src="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ext_auth.png" alt="Appliance Configuration Mode: External (httpd)" /></a></p>
+
+<h2 id="note-the-username-are-user-principal-name"><strong>Note the username are User Principal Name</strong></h2>
+
+<p>Now that conversion to external authentication has completed the username field will always be <em>User Principal Name</em>.</p>
+
+<p><a href="/assets/images/blog/miqldap_to_sssd_userid_mode_ext_auth.png"><img src="/assets/images/blog/miqldap_to_sssd_userid_mode_ext_auth.png" alt="UserID Mode: LDAP" /></a></p>
+
+<h1 id="example-2-a-case-with-a-small-complication"><strong>Example 2 A case with a small complication</strong></h1>
+
+<p>Prior to running the <em>miqldap_to_sssd</em> conversion the appliance is configured with Authentication <em>Mode LDAP</em> but, and
+this creates the <em>small complication</em>,  with <em>Get User Groups from LDAP</em> <strong>un-checked</strong>. The reason this creates the
+<em>small complication</em> is because without  <em>Get User Groups from LDAP</em> checked the <strong>Base DN</strong>, <strong>Bind DN</strong> and <strong>Bind PWD</strong>
+are not prompted for and the <em>miqldap_to_sssd</em> conversion tool requires values for these.</p>
+
+<p>Authentication Configuration Settings:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Mode:</em></td>
+      <td style="text-align: left"><strong>LDAP</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Get User Groups from LDAP:</em></td>
+      <td style="text-align: left"><strong>un-checked</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Get Roles from Home Forest:</em></td>
+      <td style="text-align: left"><strong>un-checked</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Base DN:</em></td>
+      <td style="text-align: left"><strong>empty</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Bind DN:</em></td>
+      <td style="text-align: left"><strong>empty</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Bind Password:</em></td>
+      <td style="text-align: left"><strong>empty</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Screenshot showing the appliance configuration for Mode: LDAP:
+<a href="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ldap_get_groups_unchecked.png"><img src="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ldap_get_groups_unchecked.png" alt="Screenshot Showing Appliance Configuration Mode: LDAP" /></a></p>
+
+<h2 id="snapshot-your-manageiq-virtual-machine-1"><strong>Snapshot your ManageIQ Virtual machine.</strong></h2>
+
+<p><strong>I feel compelled to repeat this.</strong></p>
+
+<p>The miqldap_to_sssd conversion is <strong>not reversible</strong>.</p>
+
+<p>It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to
+running the <em>miqldap_to_sssd</em> conversion tool.</p>
+
+<h2 id="run-the-conversion-1"><strong>Run the conversion</strong></h2>
+
+<p>To run the conversion from this <em>MiqLdap</em> configuration the <em>miqldap_to_sssd</em> command needs to be passed
+the <strong>domain</strong>, <strong>bind-dn</strong> and <strong>bind-pwd</strong> arguments.
+This is because, with this configuration, values for these items are not available in the appliance database.</p>
+
+<p><em>miqldap_to_sssd</em> supports 7 arguments. This example uses the <strong>domain</strong>, <strong>bind-dn</strong> and <strong>bind-pwd</strong> arguments.</p>
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --help
+</span>Usage: ruby tools/miqldap_to_sssd.rb [options]
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
+  -c, --tls-cacert                           Path to certificate file
+  -n, --only-change-userids                  normalize the userids then exit
+  -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
+  -h, --help                                 Show this message
+</code></pre>
+</div>
+
+<p><strong>Note:</strong> The Base DN must be in “dot” form e.g.: <em>example.com</em></p>
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
+</span>Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
+tools/miqldap_to_sssd.rb Conversion Completed
+$
+</code></pre>
+</div>
+
+<h2 id="authentication-mode-externalhttpd-1"><strong>Authentication Mode External(httpd)</strong></h2>
+
+<p>The <em>miqldap_to_sssd</em> will reconfigure the appliance for authentication <strong>Mode: External (httpd)</strong> and <em>Get User Groups from External Authentication</em> <strong>un-checked</strong></p>
+
+<p><a href="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ext_auth_get_groups_uncheck.png"><img src="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ext_auth_get_groups_uncheck.png" alt="Appliance Configuration Mode: External (httpd)" /></a></p>
+
+<h1 id="example-3-a-case-with-a-different-small-complication"><strong>Example 3 A case with a different small complication</strong></h1>
+
+<p>Prior to running the <em>miqldap_to_sssd</em> conversion the appliance is configured with Authentication Mode LDAP<strong>S</strong> for secure LDAP.
+The source of the certificates must be passed to the <em>miqldap_to_sssd</em> conversion tool.</p>
+
+<p>Authentication Configuration Settings:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Mode:</em></td>
+      <td style="text-align: left"><strong>LDAPS</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Get User Groups from LDAP:</em></td>
+      <td style="text-align: left"><strong>checked</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Get Roles from Home Forest:</em></td>
+      <td style="text-align: left"><strong>checked</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Base DN:</em></td>
+      <td style="text-align: left"><strong>filled in</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Bind DN:</em></td>
+      <td style="text-align: left"><strong>filled in</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><em>Bind Password:</em></td>
+      <td style="text-align: left"><strong>filled in</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Screenshot showing the appliance configuration for Mode: LDAP:
+<a href="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ldaps.png"><img src="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ldaps.png" alt="Screenshot Showing Appliance Configuration Mode: LDAP" /></a></p>
+
+<h2 id="snapshot-your-manageiq-virtual-machine-2"><strong>Snapshot your ManageIQ Virtual machine.</strong></h2>
+
+<p><strong>I feel compelled to repeat this.</strong></p>
+
+<p>The miqldap_to_sssd conversion is <strong>not reversible</strong>.</p>
+
+<p>It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to
+running the <em>miqldap_to_sssd</em> conversion tool.</p>
+
+<h2 id="run-the-conversion-2"><strong>Run the conversion</strong></h2>
+
+<p>To run the conversion from this <em>MiqLdap</em> configuration the <em>miqldap_to_sssd</em> command needs to be passed the <strong>–tls-cacert</strong> argument
+with the path to the certificate file.</p>
+
+<p><em>miqldap_to_sssd</em> supports 7 arguments. This example uses the <strong>–tls-cacert</strong> argument.</p>
+
+<p>Note the warning regarding the unsecured LDAP and not encrypted passwords, is not displayed because the conversion from LDAP<strong>S</strong>
+preserves the certificate security.</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --help
+</span>Usage: ruby tools/miqldap_to_sssd.rb [options]
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
+  -c, --tls-cacert                           Path to certificate file
+  -n, --only-change-userids                  normalize the userids then exit
+  -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
+  -h, --help                                 Show this message
+</code></pre>
+</div>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --tls-cacert  /etc/openldap/certs/cacert.pem
+</span>tools/miqldap_to_sssd.rb Conversion Completed
+$
+</code></pre>
+</div>
+
+<h2 id="authentication-mode-externalhttpd-2"><strong>Authentication Mode External(httpd)</strong></h2>
+
+<p>The <em>miqldap_to_sssd</em> will reconfigure the appliance for authentication <strong>Mode: External (httpd)</strong></p>
+
+<p><a href="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ext_auth.png"><img src="/assets/images/blog/miqldap_to_sssd_auth_config_mode_ext_auth.png" alt="Appliance Configuration Mode: External (httpd)" /></a></p>
+
+<h1 id="the-other-miqldap_to_sssd-arguments"><strong>The other miqldap_to_sssd arguments</strong></h1>
+
+<p>So far only 5 of the 7 arguments supported by <em>miqldap_to_sssd</em> have been used.
+The other 2 will be explained here.</p>
+
+<p>Again the 7 supported argument are:</p>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --help
+</span>Usage: ruby tools/miqldap_to_sssd.rb [options]
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
+  -c, --tls-cacert                           Path to certificate file
+  -n, --only-change-userids                  normalize the userids then exit
+  -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
+  -h, --help                                 Show this message
+</code></pre>
+</div>
+
+<p>As mentioned earlier :</p>
+
+<p>When the <strong>LDAP Host</strong> is an LDAP directory the username field stored in the MiQ database is a <strong>Distinguished Name</strong></p>
+
+<p>When the <strong>LDAP Host</strong> is an AD directory the username field stored in the MiQ database is a <strong>User Principal Name</strong>.</p>
+
+<p>After the conversion to external authentication the username field stored in the MiQ database will always be <strong>User Principal Name</strong>.</p>
+
+<p>To ensure that the username field stored in the MiQ database will always be <strong>User Principal Name</strong> the <em>miqldap_to_sssd</em> conversion
+tool will convert the username fields to <strong>User Principal Name</strong> if they are not.</p>
+
+<p>If for any reason this conversion of the username field to  <strong>User Principal Name</strong> is not desired the –skip-post-conversion-userid-change
+argument can be used.</p>
+
+<p>If, on the other hand, the conversion from authentication <strong>Mode: LDAP(s):</strong> to <strong>Mode: External (httpd)</strong>
+is not desired the username userids can still be normalized to <strong>User Principal Name</strong> format by using the <strong>–only-change-userids</strong> argument.</p>
+
+<h1 id="customizing-the-generated-configuration"><strong>Customizing The Generated Configuration</strong></h1>
+
+<p>The configuration generated by the  <em>miqldap_to_sssd</em> conversion tool will leverage the highly configurable <em>System Security Service Daemon</em>
+<a href="https://docs-old.fedoraproject.org/en-US/Fedora/16/html/System_Administrators_Guide/chap-SSSD_User_Guide-Introduction.html"><strong>(SSSD)</strong></a>.</p>
+
+<p>It is beyond the scope of this document to describe the extensive configuration options. It will be left to the user to research
+<a href="https://docs-old.fedoraproject.org/en-US/Fedora/16/html/System_Administrators_Guide/chap-SSSD_User_Guide-Introduction.html"><strong>(SSSD)</strong></a>.</p>
+
+<p>One noteworthy configuration parameter is <strong>ldap_default_authtok</strong>
+The  <em>miqldap_to_sssd</em> conversion tool populates this parameter in the <strong>SSSD</strong> configuration file <strong>/etc/sssd/sssd.conf</strong></p>
+
+<p><strong>ldap_default_authtok</strong> is a string that represents the authentication token of the default bind DN. Currently only clear text passwords are supported.
+Although the <strong>SSSD</strong> configuration file <strong>/etc/sssd/sssd.conf</strong> has limited ownership flags, some may want to obfuscate this.
+To accomplish this one could leverage the tool <a href="https://linux.die.net/man/8/sss_obfuscate">sss_obfuscate(8)</a></p>
+
+<h1 id="debugging-failed-conversions"><strong>Debugging Failed Conversions</strong></h1>
+
+<p>There are many different possible authentication configurations. Some may be encountered that result in the <em>miqldap_to_sssd</em> conversion tool
+not fully completing. If things go wrong, to diagnose why, start by examining the log file <em>/var/www/miq/vmdb/log/miqldap_to_sssd.log</em></p>
+
+<p>For more help diagnosing failures see the instructions for manually configuring an MiQ Appliance for external authentication.
+<a href="http://manageiq.org/docs/reference/latest/auth/ldap">(as documented here)</a></p>
+
+<p>This document has diagnostics tips, including:</p>
+<ul>
+  <li>How to use <strong>ldapsearch</strong>, with usage examples.</li>
+  <li>How to use <strong>dbus-send</strong>, with usage examples</li>
+  <li>Adding <strong>debug_level=9</strong> to the sssd.conf to produce more sssd logging information</li>
+</ul>
+
+<h1 id="edge-cases"><strong>Edge Cases</strong></h1>
+
+<p>The <em>miqldap_to_sssd</em> conversion tool attempts to make assumptions about the initial configuration in order to produce a working SSSD configuration.
+Because there are so many different possibilities, these authentication configuration assumptions may not be completely accurate, resulting in
+an SSSD configuration that may not work correctly.</p>
+
+<p>Updating the <em>miqldap_to_sssd</em> conversion tool to handle each edge case, as they are identified, could result in the  <em>miqldap_to_sssd</em> conversion tool
+becoming bloated and unwieldy. For this reason it was decided to document edge cases, especially those not likely to be encountered by many users, here.</p>
+
+<h2 id="edge-case-1-active-directory-configured-with-an-atypical-user-type"><strong>Edge Case 1:</strong> <em>Active Directory</em> configured with an atypical <em>User Type</em></h2>
+
+<p><strong>Cause:</strong></p>
+<ol>
+  <li>MiqLdap was configured with an <em>Active Directory</em> host.</li>
+  <li>An atypical <em>Active Directory</em> User Type, of *Distinguished Name (CN=<user>* was specifed.</user></li>
+  <li>When <em>miqldap_to_sssd</em> is run it makes the incorrect assumption the that backing directory is <em>LDAP</em> because the specified User Type is typical for <em>LDAP</em>.</li>
+  <li><em>miqldap_to_sssd</em> generates an <em>SSSD</em> configuration with a typical <em>LDAP</em> group object class of <em>groupOfNames</em></li>
+</ol>
+
+<p><strong>Fix:</strong></p>
+<ol>
+  <li>The fix is to simply update the one line in the <em>SSSD</em> configuration file, <em>/etc/sssd/sssd.conf</em>.</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>      From: ldap_group_object_class = groupOfNames
+        To: ldap_group_object_class = group
+</code></pre>
+</div>
+
+<ol>
+  <li>Restart</li>
+</ol>
+
+<div class="language-console highlighter-rouge"><pre class="highlight"><code>     $ systemctl stop sssd.service
+     $ sss_cache -E
+     $ systemctl start sssd.service
+     $ systemctl status sssd.service
+</code></pre>
+</div>
+
+
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements">announcements</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/events">events</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/collaboration">collaboration</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/releases">releases</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/sprints">sprints</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/LWIMIQ">LWIMIQ</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/developers">developers</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/tutorials">tutorials</a>
+    </li>
+    
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/ruby">ruby</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    
+    
+    
+
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2019/index.html">
+        2019
+      </a>
+      
+        <ul class="blog_menu blog_months">
+  
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/09/index.html">
+      September
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/08/index.html">
+      August
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/07/index.html">
+      July
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/06/index.html">
+      June
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/05/index.html">
+      May
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/04/index.html">
+      April
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/03/index.html">
+      March
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/02/index.html">
+      February
+    </a>
+    
+  </li>
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/01/index.html">
+      January
+    </a>
+    
+  </li>
+  
+</ul>
+
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2018/index.html">
+        2018
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2017/index.html">
+        2017
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2016/index.html">
+        2016
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2015/index.html">
+        2015
+      </a>
+      
+    </li>
+    
+    <li class="blog_menu-year">
+      <a href="/blog/2014/index.html">
+        2014
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li class="active">
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

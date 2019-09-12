@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/ui/register_react_component">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/ui/register_react_component">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h3 id="register-react-component">Register react component</h3>
+<p>In ManageIQ project there is a way of sharing components, getting their state and control their flow by something which is called ManageIQ component.</p>
+
+<p>This registry and usage consists of three steps, define blueprint that holds the react component with its props. Then you will define it inside shared components (use blueprint created in step 1). And when someone decides to use such component he will call function newInstance with custom props and element to which such component is bound to.</p>
+
+<p>This way using such component is abstract for user, he doesn’t know if such component was written in pure JS, React, Angular or whatever.</p>
+
+<h4 id="1-define-react-component">1. Define react component</h4>
+<p>This is your first step of creating shared abstract component. You may use our custom function which fits react, should you choose angular, Vue.js or whatever you’ll have to write your own funcion.</p>
+
+<p>When using react blueprint function, just wrap your component (or HTML) with <code class="highlighter-rouge">addReact</code> function and as argument use callback which will be called with props. These props will be passed when new isntance of this component is created.</p>
+
+<pre><code class="language-JSX">import React from 'react';
+import addReact from 'helpers';
+import { YourComponent } from 'your-components/custom-component';
+
+addReact('YourComponentName', YourComponent);
+</code></pre>
+
+<h4 id="2-new-instance">2. New instance</h4>
+<p>When you want to create new instance of recently created component just call <code class="highlighter-rouge">newInstance</code> function with these arguments</p>
+<ul>
+  <li>name - name of the component you wish to use.</li>
+  <li>element - DOM element where this new instance of component should be rendered.</li>
+  <li>props - object with props that will be mapped to your components (used when creating blueprint)</li>
+</ul>
+
+<p>Props are optional, if you do not pass props object the component factory will look for data attribute of DOM element.</p>
+<pre><code class="language-JS">import { componentFactory } from 'helpers';
+
+componentFactory('YourComponentName', '#selector');
+</code></pre>
+
+<p>There is helper method in ManageIQ, which helps you do this automatically by calling <code class="highlighter-rouge">react</code> in .haml file. This will 
+result in div element with generic ID and it places component defined in step 1. over it.</p>
+
+<div class="language-haml highlighter-rouge"><pre class="highlight"><code><span class="p">=</span> <span class="n">react</span> <span class="s1">'YourComponentName'</span><span class="p">,</span> <span class="p">{</span><span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="s1">'ps'</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="shared-component-api">Shared component API</h3>
+<p>Abstract shared components has API controlling active components, this way you can define and create new component, later you can access to all active components on screen and use its shared interface to interact with it.</p>
+
+<h4 id="define">Define</h4>
+<p>When you want to define new component to be used by someone call define function with name of such component and its blueprint.</p>
+<pre><code class="language-JS">import define from 'registry';
+
+define('YourComponentName', componentBlueprint);
+</code></pre>
+
+<h4 id="get-definition">Get definition</h4>
+<p>To fetch definition of component you created you can call specific function. You will get name of such component and its blueprint. With such blueprint you can call functions to update, create or remove it.</p>
+<pre><code class="language-JS">import getDefinition from 'registry';
+
+getDefinition('YourComponentName');
+</code></pre>
+
+<h4 id="new-instance">New instance</h4>
+<p>To create new instance and mount it to DOM element call function <code class="highlighter-rouge">newInstance</code>. This function not only creates new instance it also gives you object over which you can update its pros, update it or destroy it from component’s drawer. Inside this object you will also find comeponent’s instance ID and should the component choose its interact property for side channel communication.</p>
+
+<p>When creating new instance you have option to pass multiple parameters:</p>
+<ul>
+  <li>name - component’s name under which component was defined</li>
+  <li>props - default props for the component</li>
+  <li>element - DOM element under which this component should be rendered (optional)
+```JS
+import newInstance from ‘registry’;</li>
+</ul>
+
+<p>newInstance(‘YourComponentName’, {}, element);</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+#### export instance
+To receive component's instance from registery you can call function `getInstance`. You will get full information about this instance, ways to interact with it and s name and ID.
+```JS
+import getInstance from 'registry';
+
+getInstance('YourComponentName', componentID);
+</code></pre>
+</div>
+
+<h4 id="is-defined">Is defined</h4>
+<p>Check if component with some name is defined in drawer. Great for checking if component’s name is available.</p>
+<pre><code class="language-JS">import isDefined from 'registry';
+
+isDefined('YourComponentName');
+</code></pre>
+
+<h3 id="component-instance-api">Component instance API</h3>
+<p>When you create new instance or search for instance of component you will receive object over which you can interact with this instance and observe its properties.</p>
+
+<h4 id="id">ID</h4>
+<p>Instance’s ID under which its created.</p>
+
+<h4 id="interact">interact</h4>
+<p>Should the component chooses it can supply object over which its possible side channel communication.</p>
+
+<h4 id="props">props</h4>
+<p>Instance’s props object containing public properties.</p>
+
+<h4 id="update">update</h4>
+<p>This function helps you to update component’s public props. You can add new prop or update existing prop.</p>
+
+<h4 id="destroy">destroy</h4>
+<p>To destroy instance and remove it from DOM (no point of return) simply call this function.</p>
+
+<h3 id="import-mapping">Import mapping</h3>
+<p>When using this API in older code without option to import some functions were made available over <code class="highlighter-rouge">window.ManageIQ</code> object.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">addReact</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.addReact</code></li>
+  <li><code class="highlighter-rouge">define</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.define</code></li>
+  <li><code class="highlighter-rouge">getInstance</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.getInstance</code></li>
+  <li><code class="highlighter-rouge">isDefined</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.isDefined</code></li>
+  <li><code class="highlighter-rouge">newInstance</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.newInstance</code></li>
+  <li><code class="highlighter-rouge">reactBlueprint</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.reactBlueprint</code></li>
+</ul>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/developer_setup">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/developer_setup">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="new-developer-setup">New Developer Setup</h1>
+
+<h3 id="requirements-summary">Requirements Summary</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>Version</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ruby</td>
+      <td>2.4.x</td>
+    </tr>
+    <tr>
+      <td>Rails</td>
+      <td>5.1.x</td>
+    </tr>
+    <tr>
+      <td>Bundler</td>
+      <td>1.15.x</td>
+    </tr>
+    <tr>
+      <td>NodeJS</td>
+      <td>10.16.x</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>2.7.x</td>
+    </tr>
+    <tr>
+      <td>PostgresQL</td>
+      <td>10.x</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="build-requirements">Build Requirements</h2>
+
+<p>In order to compile Ruby, native Gems and native NodeJS modules, GCC and its related utilities are required. Depending on your Linux distribution, package names may vary slightly.</p>
+
+<ul>
+  <li>Using dnf: <code class="highlighter-rouge">sudo dnf -y install @c-development libffi-devel postgresql-devel libxml2-devel libcurl-devel cmake sqlite-devel python</code></li>
+  <li>Using yum: <code class="highlighter-rouge">sudo yum -y install @development libffi-devel postgresql-devel libxml2-devel libcurl-devel cmake sqlite-devel python</code></li>
+  <li>Using apt: <code class="highlighter-rouge">sudo apt -y install build-essential libffi-dev libpq-dev libxml2-dev libcurl4-openssl-dev cmake libsqlite3-dev python</code></li>
+  <li>Using brew: <code class="highlighter-rouge">brew install cmake</code></li>
+</ul>
+
+<p>To ensure the appropriate extensions are built when Ruby is compiled, install the header files for OpenSSL, readline and zlib.</p>
+
+<ul>
+  <li>Using dnf: <code class="highlighter-rouge">sudo dnf -y install openssl-devel readline-devel zlib-devel</code></li>
+  <li>Using yum: <code class="highlighter-rouge">sudo yum -y install openssl-devel readline-devel zlib-devel</code></li>
+  <li>Using apt: <code class="highlighter-rouge">sudo apt -y install libssl-dev libreadline-dev zlib1g-dev</code></li>
+  <li>Using brew: <code class="highlighter-rouge">brew install openssl</code></li>
+</ul>
+
+<h2 id="service-requirements">Service Requirements</h2>
+
+<p>ManageIQ requires a memcached instance for session caching and a PostgreSQL database for persistent data storage.</p>
+
+<h3 id="containers">Containers</h3>
+
+<p>Run memcached, exposing port 11211 to the host:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>podman run --detach --publish 11211:11211 memcached
+</code></pre>
+</div>
+
+<p>Run PostgreSQL, exposing port 5432 to the host:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>podman run --detach --publish 5432:5432 --env <span class="nv">POSTGRES_USER</span><span class="o">=</span>root postgres
+</code></pre>
+</div>
+
+<h3 id="locally">Locally</h3>
+
+<p>Install memcached:</p>
+
+<ul>
+  <li>Using dnf: <code class="highlighter-rouge">sudo dnf -y install memcached</code></li>
+  <li>Using yum: <code class="highlighter-rouge">sudo yum -y install memcached</code></li>
+  <li>Using apt: <code class="highlighter-rouge">sudo apt -y install memcached</code></li>
+  <li>Using brew: <code class="highlighter-rouge">brew install memcached</code></li>
+</ul>
+
+<p>Enable and start the service.</p>
+
+<p>Using systemd:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>systemctl <span class="nb">enable</span> --now memcached
+</code></pre>
+</div>
+
+<p>Using Homebrew:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>brew services start memcached
+</code></pre>
+</div>
+
+<p>Install postgresql:</p>
+
+<ul>
+  <li>Using dnf: <code class="highlighter-rouge">sudo dnf -y install postgresql-server</code></li>
+  <li>Using yum: <code class="highlighter-rouge">sudo yum -y install postgresql-server</code></li>
+  <li>Using apt: <code class="highlighter-rouge">sudo apt -y install postgresql</code></li>
+  <li>Using brew: <code class="highlighter-rouge">brew install postgresql</code></li>
+</ul>
+
+<hr />
+<p><strong>NOTE</strong></p>
+
+<p>CentOS 7 ships PostgreSQL 9.x. In order to use PostgreSQL 10.x, you will need to <a href="https://www.softwarecollections.org/en/docs/">enable Software Collections</a> and install <code class="highlighter-rouge">rh-postgresql10</code>.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo yum -y autoremove postgresql-devel
+sudo yum -y install rh-postgresql10 rh-postgresql10-postgresql-syspaths rh-postgresql10-postgresql-devel rh-postgresql10-postgresql-server-syspaths
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="configure-the-cluster">Configure the cluster</h4>
+
+<p>On Fedora and CentOS, configure a cluster using <code class="highlighter-rouge">postgresql-setup</code>.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo <span class="nv">PGSETUP_INITDB_OPTIONS</span><span class="o">=</span><span class="s1">'--auth trust --username root --encoding UTF-8 --locale C'</span> postgresql-setup --initdb
+</code></pre>
+</div>
+
+<p>On Debian and Ubuntu, configure a cluster using <code class="highlighter-rouge">pg_createcluster</code>.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo pg_dropcluster --stop 10 main
+sudo pg_createcluster -e UTF-8 -l C 10 main -- --auth trust --username root
+</code></pre>
+</div>
+
+<p>On macOS, configured a cluster using <code class="highlighter-rouge">initdb</code> directly.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>rm -rf /usr/local/var/postgres
+initdb --auth trust --username root --encoding UTF-8 --locale C /usr/local/var/postgres
+</code></pre>
+</div>
+
+<p>Enable and start the service.</p>
+
+<p>Using systemd:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>systemctl <span class="nb">enable</span> --now postgresql
+</code></pre>
+</div>
+
+<p>Using Homebrew:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>brew services start postgresql
+</code></pre>
+</div>
+
+<h2 id="install-nvm-and-javascript-build-utilities">Install nvm and JavaScript build utilities</h2>
+
+<p>Yarn, Gulp and Webpack are required to compile JavaScript assets. NodeJS version 10.16.x is required. If your distribution doesn’t ship NodeJS 10.x, you can install <a href="https://github.com/nvm-sh/nvm">nvm</a> and follow the setup steps (you will need to restart your shell in order to source the nvm initialization environment). Then install <code class="highlighter-rouge">yarn</code>, <code class="highlighter-rouge">gulp-cli</code> and <code class="highlighter-rouge">webpack</code>.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>nvm install 10
+npm install -g yarn gulp-cli webpack
+</code></pre>
+</div>
+
+<h2 id="install-ruby-and-bundler">Install Ruby and Bundler</h2>
+
+<p>A Ruby version manager is <em>strongly</em> recommended. Use any one of the following:</p>
+
+<ul>
+  <li><a href="https://github.com/rbenv/rbenv">rbenv</a></li>
+  <li><a href="http://rvm.io/">rvm</a></li>
+  <li><a href="https://github.com/postmodern/chruby">chruby</a></li>
+</ul>
+
+<p>Using the Ruby version manager, install <code class="highlighter-rouge">ruby</code> &gt;= 2.4.0 and &lt; 2.6.0 and <code class="highlighter-rouge">bundler</code> &gt;= 1.16.</p>
+
+<h2 id="clone-the-project">Clone the project</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:ManageIQ/manageiq.git
+<span class="nb">cd </span>manageiq
+</code></pre>
+</div>
+
+<h2 id="configure-project">Configure Project</h2>
+
+<p>A Ruby script called <code class="highlighter-rouge">setup</code> is available to quickly set up the application. This script installs the required Gems, sets up necessary JavaScript libraries, creates and migrates the database, and finally seeds the database with initial content.</p>
+
+<hr />
+<p><strong>NOTE</strong></p>
+
+<p>macOS requires platform specific Gems. Run <code class="highlighter-rouge">bundle config specific_platform true</code> before running <code class="highlighter-rouge">setup</code>.</p>
+
+<p>CentOS 7 requires the <code class="highlighter-rouge">rh-postgresql10</code> SCL environment in order to compile the <code class="highlighter-rouge">pq</code> Gem’s native extensions. Run <code class="highlighter-rouge">setup</code> inside the <code class="highlighter-rouge">scl</code> environment: <code class="highlighter-rouge">scl enable rh-postgresql10 'bin/setup'</code>.</p>
+
+<p>If you’ve run PostgreSQL in a container, be sure to export the <code class="highlighter-rouge">DATABASE_URL</code> variable to connect to the container over TCP instead of a UNIX file socket.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s1">'posgresql://localhost:5432'</span> <span class="c"># optional, only necessary if PostgreSQL is running in a container</span>
+</code></pre>
+</div>
+
+<hr />
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bin/setup
+</code></pre>
+</div>
+
+<h2 id="start-the-application">Start the Application</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bundle <span class="nb">exec </span>rails evm:start
+</code></pre>
+</div>
+
+<p>The web UI should now be available at <code class="highlighter-rouge">http://localhost:3000</code>. The default username is <code class="highlighter-rouge">admin</code> and the default password is <code class="highlighter-rouge">smartvm</code>.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li><a href="developer_setup/minimal_mode">Minimal Mode</a> starts the application with fewer services and workers for faster startup or targeted end-user testing.</li>
+  <li><a href="developer_setup/foreman">Individual workers</a> can be started using <a href="https://ddollar.github.io/foreman">Foreman</a> directly.</li>
+  <li><a href="developer_setup/running_test_suites">Running the test suites</a></li>
+  <li><a href="developer_setup/plugins">Provider, UI and plugin development</a> describes the plugin and external provider development process.</li>
+  <li><a href="developer_setup/git_workflow">Git workflow</a> outlines the recommended <code class="highlighter-rouge">git</code> and GitHub options.</li>
+</ul>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>
