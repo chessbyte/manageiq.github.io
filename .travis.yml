@@ -1,0 +1,27 @@
+language: ruby
+rvm: 2.5.6
+cache:
+  bundler: true
+install:
+- git clone https://github.com/ManageIQ/manageiq.org
+- cd manageiq.org
+- bundle install --jobs=3 --retry=3
+script:
+- exe/miq build all
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: manageiq.org/dest
+  repo: ManageIQ/manageiq.github.io
+  target_branch: master
+  keep_history: true
+  on:
+    branch: build
+notifications:
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/bccd4e19564e564508d1
+    on_success: change
+    on_failure: always
+    on_start: never
