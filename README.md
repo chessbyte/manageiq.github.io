@@ -1,5 +1,7 @@
 # manageiq.github.io
 
+[![Build Status](https://travis-ci.com/ManageIQ/manageiq.github.io.svg?branch=build)](https://travis-ci.com/ManageIQ/manageiq.github.io)
+
 This is the GitHub pages repo for manageiq.org.
 
 The files in `master` are generated from a number of repos, so changes are not made here.
