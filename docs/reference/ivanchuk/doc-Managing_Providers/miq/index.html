@@ -3625,7 +3625,7 @@ When using the <code>admin</code> credentials, a user in ManageIQ provisions int
 </table>
 </div>
 <div class="paragraph">
-<p>When adding an OpenStack cloud or infrastructure provider, you can enable <em>tenant mapping</em> in ManageIQ to map any existing tenants from that provider. This means ManageIQ will create new cloud tenants to match each existing OpenStack tenant; each new cloud tenant and its corresponding OpenStack tenant will have identical resources assignments, with the exception of quotas. Tenant quotas are not synchronized between ManageIQ and OpenStack, and are available for reporting purposes only. You can manage quotas in ManageIQ but this will not affect the quotas created in OpenStack.</p>
+<p>When adding an OpenStack cloud or infrastructure provider, you can enable <em>tenant mapping</em> in ManageIQ to map any existing tenants from that provider. This means ManageIQ will create new cloud tenants to match each existing OpenStack tenant; each new cloud tenant and its corresponding OpenStack tenant will have identical resources assignments (including user and role synchronization) with the exception of quotas. Tenant quotas are not synchronized between ManageIQ and OpenStack, and are available for reporting purposes only. You can manage quotas in ManageIQ but this will not affect the quotas created in OpenStack.</p>
 </div>
 <div class="paragraph">
 <p>During a provider refresh, ManageIQ will also check for any changes to the tenant list in OpenStack. ManageIQ will create new cloud tenants to match any new tenants, and delete any cloud tenants whose corresponding OpenStack tenants no longer exist. ManageIQ will also replicate any changes to OpenStack tenants to their corresponding cloud tenants.</p>
@@ -3723,7 +3723,7 @@ When using the <code>admin</code> credentials, a user in ManageIQ provisions int
 <p>Enter the appropriate <strong>Zone</strong> for the provider. If you do not specify a zone, it is set to <code>default</code>.</p>
 </li>
 <li>
-<p>By default, <em>tenant mapping</em> is disabled. To enable it, set <strong>Tenant Mapping Enabled</strong> to <strong>Yes</strong>.</p>
+<p>(Optional) Enable tenant mapping by toggling the <strong>Tenant Mapping Enabled</strong> option to <strong>Yes</strong>. This synchronizes resources and users between the OpenStack cloud provider and ManageIQ. By default, tenant mapping is disabled.</p>
 </li>
 <li>
 <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the zone is set to <strong>default</strong>.</p>
