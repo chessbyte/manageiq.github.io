@@ -1,12 +1,16 @@
 language: ruby
 rvm: 2.5.6
+env:
+  global:
+  - BUNDLE_PATH=${TRAVIS_BUILD_DIR}/vendor/bundle
 cache:
-  bundler: true
+  directories:
+  - ${TRAVIS_BUILD_DIR}/vendor/bundle
 before_install:
-- git clone https://github.com/ManageIQ/manageiq.org
-- cd manageiq.org
+- git clone https://github.com/ManageIQ/manageiq.org ${TRAVIS_BUILD_DIR}/manageiq.org
+- cd ${TRAVIS_BUILD_DIR}/manageiq.org
 script:
-- exe/miq build all
+- "true"
 deploy:
   provider: pages
   skip_cleanup: true
