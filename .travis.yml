@@ -15,7 +15,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: manageiq.org/dest
+  local_dir: ${TRAVIS_BUILD_DIR}/manageiq.org/dest
   repo: ManageIQ/manageiq.github.io
   target_branch: master
   keep_history: true
