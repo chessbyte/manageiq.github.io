@@ -7,15 +7,15 @@ cache:
   directories:
   - ${TRAVIS_BUILD_DIR}/vendor/bundle
 before_install:
-- git clone https://github.com/ManageIQ/manageiq.org ${TRAVIS_BUILD_DIR}/manageiq.org
-- cd ${TRAVIS_BUILD_DIR}/manageiq.org
+- git clone https://github.com/ManageIQ/manageiq.org
+- cd manageiq.org
 script:
-- "true"
+- "exe/miq build all"
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: ${TRAVIS_BUILD_DIR}/manageiq.org/dest
+  local_dir: manageiq.org/dest
   repo: ManageIQ/manageiq.github.io
   target_branch: master
   keep_history: true
