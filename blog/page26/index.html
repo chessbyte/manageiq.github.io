@@ -74,6 +74,39 @@
         
         <article class="post_excerpt">
           <header class="post-header">
+            <h1><a href="/blog/2014/07/integration-with-travis/">Integration with Travis CI</a></h1>
+            <div class="post-meta">
+              <time datetime="2014-07-08T14:55:00+00:00" itemprop="datePublished">
+                Jul 8, 2014
+              </time>
+            </div>
+          </header>
+          <div class="post-content">
+            <p>When we originally open-sourced ManageIQ, the <a href="https://github.com/ManageIQ/manageiq">ManageIQ GitHub
+Repo</a> was integrated with <a href="https://codeclimate.com/github/ManageIQ/manageiq">Code
+Climate</a>.  Integrating with
+Code Climate allowed the developer community to find code with too much
+complexity and/or duplication and refactor it.</p>
+
+<p>This week, we integrated the <a href="https://github.com/ManageIQ/manageiq">ManageIQ GitHub
+Repo</a> with <a href="https://travis-ci.org/ManageIQ/manageiq">Travis
+CI</a>, the continuous integration
+service.  This service runs on each GitHub pull request to ensure that no new
+code is breaking existing tests (i.e. no regression).  If the pull request does
+cause a regression, the core maintainers of the ManageIQ project will not merge
+it until this is resolved.</p>
+
+<p>So, keep creating pull requests to make ManageIQ better, but make sure that they
+do not break any tests!</p>
+
+<p>Thanks,
+chessbyte</p>
+
+          </div>
+        </article>
+        
+        <article class="post_excerpt">
+          <header class="post-header">
             <h1><a href="/blog/2014/06/third-tenet-of-open-source/">The Third Tenet of Open Source</a></h1>
             <div class="post-meta">
               <time datetime="2014-06-18T16:30:00+00:00" itemprop="datePublished">

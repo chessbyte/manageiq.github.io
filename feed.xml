@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Sep 2019 10:19:08 +0000</pubDate>
-    <lastBuildDate>Wed, 18 Sep 2019 10:19:08 +0000</lastBuildDate>
+    <pubDate>Wed, 18 Sep 2019 14:02:23 +0000</pubDate>
+    <lastBuildDate>Wed, 18 Sep 2019 14:02:23 +0000</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>ManageIQ Ivanchuk GA announcement</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/assets/images/blog/Ivanchuk_GA_release.png&quot;&gt;&lt;img src=&quot;/assets/images/blog/Ivanchuk_GA_release.png&quot; alt=&quot;ManageIQ Ivanchuk release&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+        <link>http://manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Expression Editor Redesign - feedback needed</title>
@@ -143,23 +159,6 @@ Here are just a few of the things added since Hammer-9 release:&lt;/p&gt;
         <pubDate>Fri, 26 Jul 2019 07:49:24 +0000</pubDate>
         <link>http://manageiq.org/blog/2019/07/Announcing-Ivanchuk-Beta1/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2019/07/Announcing-Ivanchuk-Beta1/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Announcing Hammer-9</title>
-        <description>&lt;p&gt;We’ve just built Hammer-9. This release contains bug fixes, UI tweaks, and stabilization.
-Here are just a few of the things added since Hammer-8 release:&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 23 Jul 2019 08:35:39 +0000</pubDate>
-        <link>http://manageiq.org/blog/2019/07/Announcing-Hammer-9/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2019/07/Announcing-Hammer-9/</guid>
         
         <category>releases</category>
         
