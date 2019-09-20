@@ -16,6 +16,7 @@ deploy:
   edge: true
   local_dir: dest
   target_branch: master
+  commit_message: ${TRAVIS_COMMIT_MESSAGE}
   verbose: true
   on:
     branch: build
