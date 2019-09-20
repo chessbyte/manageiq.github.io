@@ -12,13 +12,11 @@ before_install:
 script:
 - "exe/miq build all"
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  provider: pages:git
+  edge: true
   local_dir: manageiq.org/dest
-  repo: ManageIQ/manageiq.github.io
   target_branch: master
-  keep_history: true
+  verbose: true
   on:
     branch: build
 notifications:
