@@ -14,7 +14,7 @@ script:
 deploy:
   provider: pages:git
   edge: true
-  local_dir: manageiq.org/dest
+  local_dir: dest
   target_branch: master
   verbose: true
   on:
