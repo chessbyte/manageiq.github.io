@@ -14,6 +14,7 @@ script:
 deploy:
   provider: pages:git
   edge: true
+  token: ${GITHUB_TOKEN}
   fqdn: manageiq.org
   local_dir: dest
   target_branch: master
