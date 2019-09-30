@@ -3618,17 +3618,23 @@ When using the <code>admin</code> credentials, a user in ManageIQ provisions int
 <p>In OpenStack, you must add <code>admin</code> as a member of all tenants that users want to access and use in ManageIQ.</p>
 </div>
 <div class="paragraph">
-<p>See  <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/deployment_planning_guide/#tenants">Tenancy</a> in the <em>Deployment Planning Guide</em> for more details on tenancy in ManageIQ.</p>
+<p>See  <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/5.0-beta/html-single/managing_infrastructure_and_inventory/index#tenants">Cloud Tenants</a> in <em>Managing Infrastructure and Inventory</em> for information on working with OpenStack tenants (projects) in ManageIQ.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When adding an OpenStack cloud or infrastructure provider, you can enable <em>tenant mapping</em> in ManageIQ to map any existing tenants from that provider. This means ManageIQ will create new cloud tenants to match each existing OpenStack tenant; each new cloud tenant and its corresponding OpenStack tenant will have identical resources assignments (including user and role synchronization) with the exception of quotas. Tenant quotas are not synchronized between ManageIQ and OpenStack, and are available for reporting purposes only. You can manage quotas in ManageIQ but this will not affect the quotas created in OpenStack.</p>
+<p>When adding an OpenStack cloud or infrastructure provider, enable <em>tenant mapping</em> in ManageIQ to map any existing tenants from that provider.</p>
+</div>
+<div class="paragraph">
+<p>This means ManageIQ will create new cloud tenants to match each existing OpenStack tenant; each new cloud tenant and its corresponding OpenStack tenant will have identical resource assignments (including user and role synchronization) with the exception of quotas. Tenant quotas are not synchronized between ManageIQ and OpenStack, and are available for reporting purposes only. You can manage quotas in ManageIQ but this will not affect the quotas created in OpenStack.</p>
 </div>
 <div class="paragraph">
 <p>During a provider refresh, ManageIQ will also check for any changes to the tenant list in OpenStack. ManageIQ will create new cloud tenants to match any new tenants, and delete any cloud tenants whose corresponding OpenStack tenants no longer exist. ManageIQ will also replicate any changes to OpenStack tenants to their corresponding cloud tenants.</p>
+</div>
+<div class="paragraph">
+<p>If you leave tenant mapping disabled, ManageIQ will not create cloud tenants or tenant object hierarchy from OpenStack.</p>
 </div>
 <div class="admonitionblock note">
 <table>
