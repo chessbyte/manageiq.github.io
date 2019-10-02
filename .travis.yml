@@ -12,14 +12,9 @@ before_install:
 script:
 - "exe/miq build all"
 deploy:
-  provider: pages:git
-  edge: true
-  token: ${GITHUB_TOKEN}
-  fqdn: www.manageiq.org
-  local_dir: dest
-  target_branch: master
-  commit_message: ${TRAVIS_COMMIT_MESSAGE}
-  verbose: true
+  provider: script
+  skip_cleanup: true
+  script: deploy.sh
   on:
     branch: build
 notifications:
