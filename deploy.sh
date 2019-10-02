@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 cd dest
 
 echo "www.manageiq.org" > CNAME
