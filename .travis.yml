@@ -14,7 +14,7 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: deploy.sh
+  script: ${TRAVIS_BUILD_DIR}/deploy.sh
   on:
     branch: build
 notifications:
