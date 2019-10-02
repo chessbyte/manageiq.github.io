@@ -1,16 +1,31 @@
 #!/bin/bash
 
 cat << RUBY | ruby -r json
-target =
+source =
   if ENV["TRAVIS_COMMIT_MESSAGE"].to_s =~ /\AMerge pull request (#\d+)/
     "#{ENV["TRAVIS_REPO_SLUG"]}#{\$1}"
   else
     "#{ENV["TRAVIS_REPO_SLUG"]}@#{ENV["TRAVIS_COMMIT"]} (#{ENV["TRAVIS_BRANCH"]})"
   end
+
+user_name, user_email, commit_message =
+  `git log -1 --pretty=format:"%aN%x00%aE%x00%B"`.split("\0")
+
 File.write("/tmp/post.json", {
   "request" => {
     "branch"  => "build",
-    "message" => "Deployed site for #{target}"
+    "message" => "Deployed site for #{source}",
+    "config"  => {
+      "merge_mode" => "deep_merge",
+      "env"        => {
+        "global" => [
+          "SOURCE_REPO_INFO"      => source,
+          "SOURCE_USER_NAME"      => user_name,
+          "SOURCE_USER_EMAIL"     => user_email,
+          "SOURCE_COMMIT_MESSAGE" => commit_message,
+        ]
+      }
+    }
   }
 }.to_json)
 RUBY
