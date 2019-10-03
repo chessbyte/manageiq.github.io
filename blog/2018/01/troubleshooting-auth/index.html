@@ -225,20 +225,95 @@ on how to capture the authentication information stored in the ManageIQ Database
 <hr />
 
 <p>Authentication using SAML is a bit of a different beast. Although it is configured in ManageIQ as <em>Mode: External (httpd)</em> it does not use <em>SSSD</em>.
-Instead, Apache modules are used to make the connection to an Identity Provider (IdP) that supports SAML, e.g. <a href="http://www.keycloak.org/"><strong>Keycloak</strong></a>.</p>
+Instead, the mod_auth_mellon Apache module is used to make the connection to an Identity Provider (IdP) that supports SAML, e.g. <a href="http://www.keycloak.org/"><strong>Keycloak</strong></a>.</p>
+
+<p>This <a href="https://jdennis.fedorapeople.org/doc/mellon-user-guide/mellon_user_guide.html">Users Guide</a> provides an extensive description of mod_auth_mellon.</p>
 
 <p>Because SAML does not use SSSD, unlike the other ManageIQ <em>Mode: External (httpd)</em> configurations, it is not possible to verify
 a SAML configuration with <a href="https://dbus.freedesktop.org/doc/dbus-send.1.html"><strong>dbus-send</strong></a></p>
 
-<p>Here is a list of ways to help diagnose SAML configurations independently from ManageIQ.</p>
+<h3 id="diagnosing-saml-configurations-in-manageiq">Diagnosing SAML configurations in ManageIQ.</h3>
 
 <ul>
   <li>Use <a href="https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/"><strong>SAML tracer</strong></a>  web browser plug in.</li>
   <li>Configure Keycloak to <strong><em>Do not encrypt assertions</em></strong> so <strong>SAML Tracer</strong> can display text</li>
-  <li>Debugging the Apache modules.</li>
+  <li>
+    <p>Debugging the Apache modules on an ManageIQ appliance</p>
+
+    <p>To aid in the debugging of issues encountered when using SAML the Apache log level
+can be increased to debug on the ManageIQ appliance.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
+...
+LogLevel debug
+...
+</code></pre>
+    </div>
+
+    <p>Then restart the httpd service</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code># systemctl restart httpd
+</code></pre>
+    </div>
+
+    <p>Then attemp to perform a SAML authentication while tailing the ssl_error.log file.</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code># tail -f /var/www/miq/vmdb/log/apache/ssl_error.log
+
+</code></pre>
+    </div>
+
+    <p>NOTE: Once any issues have been resolved return the log level to warn:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
+...
+LogLevel warn
+...
+</code></pre>
+    </div>
+  </li>
 </ul>
 
-<p>A future update to this blog will expand this section and provide more information regarding troubleshooting SAML</p>
+<h3 id="common-saml-configuration-mistakes">Common SAML configuration mistakes:</h3>
+
+<ul>
+  <li>
+    <p>Hostname must be DNS resolvable.</p>
+
+    <p>SAML requires DNS resolvable hostnames, IP addresses and unresolvable hostnames will not work.</p>
+
+    <p>Ensure the hostname assigned to the ManageIQ appliance is resolvable on the SAML identity provider and the
+client running the browser used to access the ManageIQ appliance UI.</p>
+
+    <p>Also ensure the hostname assigned to the SAML IdP is resolvable on the ManageIQ appliance and the
+client running the browser used to access the ManageIQ appliance UI.</p>
+  </li>
+  <li>
+    <p>Unsynchronized system times</p>
+
+    <p>A common issue occures when the date on the SAML identity provider and the ManageIQ appliance are out of sync. This configuration error can result in <a href="/assets/images/blog/auth_saml_bad_request_date_time.png">this <strong><em>Bad Request</em></strong></a> message being displayed.</p>
+
+    <p>If the Apache LogLevel is set to debug, as described above, errors similar to the bellow will be found in the <strong><em>/var/www/miq/vmdb/log/apache/ssl_error.log</em></strong> log file:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>  SubjectConfirmationData was in the past
+    and
+  SSL Library Error: error:14094416:SSL routines:ssl3_read_bytes:sslv3 alert certificate unknown
+</code></pre>
+    </div>
+
+    <p>The <strong><em>DATE(1)</em></strong> command can be used on the SAML identity provider and the ManageIQ appliance to confirm the dates on each are synchronized.</p>
+  </li>
+  <li>
+    <p>Incorrectly configured SAML <strong><em>client</em></strong> mappers</p>
+
+    <ul>
+      <li>The SAML client mappers must be appropriately configured, especially the case or each field.</li>
+      <li>Follow these screenshots: <a href="/assets/images/blog/auth_saml_mapper_fullname.png">fullname</a>,
+<a href="/assets/images/blog/auth_saml_mapper_firstname.png">firstname</a>,
+<a href="/assets/images/blog/auth_saml_mapper_lastname.png">lastname</a>,
+<a href="/assets/images/blog/auth_saml_mapper_username.png">username</a>,
+<a href="/assets/images/blog/auth_saml_mapper_email.png">email</a>,
+<a href="/assets/images/blog/auth_saml_mapper_groups.png">groups</a></li>
+    </ul>
+  </li>
+</ul>
 
 <h1 id="common-misconceptions">Common Misconceptions</h1>
 <hr />

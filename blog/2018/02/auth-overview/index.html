@@ -239,7 +239,7 @@ It also gives a brief summary of the steps used to configure them.</p>
 <h1 id="external-authentication-with-saml">External Authentication with SAML</h1>
 <hr />
 
-<p>Configuring ManageIQ for external authentication using SAML is documented <a href="http://manageiq.org/docs/reference/latest/auth/saml">here</a></p>
+<p>Configuring ManageIQ for external authentication using SAML following the <a href="http://manageiq.org/docs/reference/latest/auth/saml">ManageIQ Authentication SAML documentation</a></p>
 
 <p>The identity provider tool, <a href="http://www.keycloak.org/">Keycloak</a>, has been used to test the SAML functionality.</p>
 
@@ -248,11 +248,20 @@ It also gives a brief summary of the steps used to configure them.</p>
 <ol>
   <li>Configuration Apache</li>
   <li>Configure SAML with mellon_create_metadata script</li>
-  <li>Configure a Client on the Keycloak Administration Console and configure the required SAML Assertions</li>
+  <li>Configure a Client on the Keycloak Administration Console following the <a href="http://manageiq.org/docs/reference/latest/auth/saml">ManageIQ Authentication SAML documentation</a></li>
+  <li>Add the necessary mappers, paying close attention to the case for each field. Follow these screenshots:
+    <ul>
+      <li><a href="/assets/images/blog/auth_saml_mapper_fullname.png">fullname</a>,
+  <a href="/assets/images/blog/auth_saml_mapper_firstname.png">firstname</a>,
+  <a href="/assets/images/blog/auth_saml_mapper_lastname.png">lastname</a>,
+  <a href="/assets/images/blog/auth_saml_mapper_username.png">username</a>,
+  <a href="/assets/images/blog/auth_saml_mapper_email.png">email</a>,
+  <a href="/assets/images/blog/auth_saml_mapper_groups.png">groups</a></li>
+    </ul>
+  </li>
   <li>Copy the Client Metadata file from the Keycloak server onto the ManageIQ appliance</li>
   <li>Configure the ManageIQ appliance to use external authentication</li>
 </ol>
-
 
           </div>
         </article>
