@@ -9,7 +9,7 @@ source =
   end
 
 user_name, user_email, commit_message =
-  `git log -1 --pretty=format:"%aN%x00%aE%x00%B"`.split("\0")
+  \`git log -1 --pretty=format:"%aN%x00%aE%x00%B"\`.split("\0")
 
 File.write("/tmp/post.json", {
   "request" => {
