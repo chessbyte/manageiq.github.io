@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/ui/breadcrumbs">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/ui/breadcrumbs">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h3 id="breadcrumbs">Breadcrumbs</h3>
+
+<p>Breadcrumbs help to expose the hierarchy, not the particular clicks of a user.</p>
+
+<h5 id="table-of-contents">Table of Contents</h5>
+<ul>
+  <li><a href="#breadcrumbs">Breadcrumbs</a>
+    <ul>
+      <li><a href="#table-of-contents">Table of Contents</a></li>
+    </ul>
+  </li>
+  <li><a href="#usage">Usage</a>
+    <ul>
+      <li><a href="#breadcrumbs-1">Breadcrumbs</a></li>
+    </ul>
+  </li>
+  <li><a href="#structure">Structure</a>
+    <ul>
+      <li><a href="#non-explorer-controllers">Non-explorer controllers</a>
+        <ul>
+          <li><a href="#default-list">Default list</a></li>
+          <li><a href="#detail">Detail</a></li>
+          <li><a href="#action">Action</a></li>
+        </ul>
+      </li>
+      <li><a href="#explorer-controllers">Explorer controllers</a>
+        <ul>
+          <li><a href="#default--detail-view">Default + detail view</a></li>
+          <li><a href="#action-1">Action</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#design">Design</a></li>
+  <li><a href="#examples">Examples</a>
+    <ul>
+      <li><a href="#1-explorer-screens">1) Explorer screens</a></li>
+      <li><a href="#2-non-explorer-screens">2) Non-explorer screens</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="usage">Usage</h3>
+
+<p>Breadcrumbs are automatically generated from information collected in the controller. To allow generating the breadcrumbs, a controller should include the Breadcrumbs mixin:</p>
+
+<p><code class="highlighter-rouge">include Mixins::BreadcrumbMixin</code></p>
+
+<p>and then it has to define a new method which returns a hash with variables depended on the controller and its type.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">breadcrumbs_options</span>
+    <span class="p">{</span>
+    <span class="ss">:breadcrumbs</span>    <span class="o">=&gt;</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span>
+    <span class="ss">:include_record</span> <span class="o">=&gt;</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span>
+    <span class="ss">:record_info</span>    <span class="o">=&gt;</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span>
+    <span class="ss">:record_title</span>   <span class="o">=&gt;</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span>
+    <span class="p">}</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">option</th>
+      <th style="text-align: center">type</th>
+      <th style="text-align: center">default</th>
+      <th style="text-align: center">type of controller</th>
+      <th style="text-align: right">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:breadcrumbs</code></td>
+      <td style="text-align: center">array</td>
+      <td style="text-align: center"><strong>required</strong></td>
+      <td style="text-align: center">all</td>
+      <td style="text-align: right">Initial sets of breadcrumbs. Should include the menu path.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:record_info</code></td>
+      <td style="text-align: center">hash</td>
+      <td style="text-align: center"><code class="highlighter-rouge">@record</code></td>
+      <td style="text-align: center">both</td>
+      <td style="text-align: right">Object where currently shown record is stored.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:record_title</code></td>
+      <td style="text-align: center">symbol</td>
+      <td style="text-align: center"><code class="highlighter-rouge">:name</code></td>
+      <td style="text-align: center">both</td>
+      <td style="text-align: right">Attribute of the <code class="highlighter-rouge">:record_info</code> object, which will be used as a title in breadcrumbs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:include_record</code></td>
+      <td style="text-align: center">bool</td>
+      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center">both</td>
+      <td style="text-align: right">Will use <code class="highlighter-rouge">:record_info</code> for creating the item breadcrumb.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:hide_title</code></td>
+      <td style="text-align: center">bool</td>
+      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center">non-explorer</td>
+      <td style="text-align: right">Will not append <code class="highlighter-rouge">@title</code> to breadcrumbs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:ancestry</code></td>
+      <td style="text-align: center">Class</td>
+      <td style="text-align: center"><code class="highlighter-rouge">nil</code></td>
+      <td style="text-align: center">explorer</td>
+      <td style="text-align: right">Parent class for ancestry. Used in <code class="highlighter-rouge">service</code> controller</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:not_tree</code></td>
+      <td style="text-align: center">bool</td>
+      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center">explorer</td>
+      <td style="text-align: right">This sets that the controller is not explorer. It should be used in controllers used in more places which someones do not use the explorer presenter.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:disable_tree</code></td>
+      <td style="text-align: center">bool</td>
+      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center">explorer</td>
+      <td style="text-align: right">Will disable all links in breadcrumbs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:to_explorer</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center"><code class="highlighter-rouge">nil</code></td>
+      <td style="text-align: center">explorer</td>
+      <td style="text-align: right">Link to the explorer page. Will be appended to the penultimate breadcrumb when <code class="highlighter-rouge">:disable_tree</code> is set.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">:x_node</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center"><code class="highlighter-rouge">x_node</code></td>
+      <td style="text-align: center">explorer</td>
+      <td style="text-align: right">Use custom node id instead of default <code class="highlighter-rouge">x_node</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="breadcrumbs-1">Breadcrumbs</h4>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<span class="ss">:breadcrumbs</span> <span class="o">=&gt;</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span> <span class="nf">,</span> <span class="ss">:url</span> <span class="o">=&gt;</span> <span class="sc">?,</span> <span class="ss">:key</span> <span class="o">=&gt;</span> <span class="p">?</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The path in the main navigation menu.</p>
+
+<p>Hash consists of:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+    <span class="ss">:title</span>  <span class="o">=&gt;</span> <span class="n">_</span><span class="p">(</span><span class="s1">'Cloud Providers'</span><span class="p">),</span> <span class="c1"># Title of the breadcrumb</span>
+    <span class="ss">:url</span>    <span class="o">=&gt;</span> <span class="n">controller_url</span><span class="p">,</span>       <span class="c1"># URL to the controller</span>
+    <span class="ss">:key</span>    <span class="o">=&gt;</span> <span class="s1">'root'</span><span class="p">,</span>               <span class="c1"># ID in the tree view, only explorer controllers</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="structure">Structure</h3>
+
+<h4 id="non-explorer-controllers">Non-explorer controllers</h4>
+
+<p>Non-explorer controllers should have this structure:</p>
+
+<p><code class="highlighter-rouge">show_list</code> &gt; <code class="highlighter-rouge">show</code> &gt; <code class="highlighter-rouge">action</code></p>
+
+<ul>
+  <li>On <code class="highlighter-rouge">show_list</code> the title is not appended, because the title from the menu path is used.</li>
+  <li>On <code class="highlighter-rouge">show</code> the <code class="highlighter-rouge">:record_info</code> is not used by default, because the <code class="highlighter-rouge">@title</code> of the page serves as a title in the last breadcrumb.</li>
+  <li>On <code class="highlighter-rouge">action</code> the <code class="highlighter-rouge">:record_info</code> is used to generate item breadcrumb and <code class="highlighter-rouge">@title</code> is used as an action breadcrumb.</li>
+</ul>
+
+<h5 id="default-list">Default list</h5>
+
+<p><code class="highlighter-rouge">[MENU]</code></p>
+
+<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Hosts / Nodes</code></p>
+
+<p>When the title of the page is different from the last item in the main navigation, the navigation title is used as the breadcrumb title.</p>
+
+<h5 id="detail">Detail</h5>
+
+<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ITEM TITLE]</code></p>
+
+<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Hosts / Nodes</code> &gt; <code class="highlighter-rouge">17d6ec2e-0e75-45ab-95a6-642eb41855cd (Controller) (Summary)</code></p>
+
+<p>The whole title is used (with <code class="highlighter-rouge">Summary</code>, <code class="highlighter-rouge">Dashboard</code>)</p>
+
+<h5 id="action">Action</h5>
+
+<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ITEM TITLE]</code> &gt; <code class="highlighter-rouge">[ACTION HEADER]</code></p>
+
+<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Hosts / Nodes</code> &gt; <code class="highlighter-rouge">17d6ec2e-0e75-45ab-95a6-642eb41855cd (Controller)</code> &gt; <code class="highlighter-rouge">Info/Settings</code></p>
+
+<p>Notice the item title is now without the appendix (<code class="highlighter-rouge">Summary</code>, <code class="highlighter-rouge">Dashboard</code>). That is correct.</p>
+
+<p>Breadcrumbs should not be deeper than this.</p>
+
+<h4 id="explorer-controllers">Explorer controllers</h4>
+
+<h5 id="default--detail-view">Default + detail view</h5>
+
+<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ACCORDION TITLE]</code> &gt; <code class="highlighter-rouge">[CURRENT NODE TEXT]</code></p>
+
+<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Virtual Machines</code> &gt; <code class="highlighter-rouge">VMs &amp; Templates</code> &gt; <code class="highlighter-rouge">All VMs &amp; Templates</code></p>
+
+<p>Accordion title should lead to the tree’s root.</p>
+
+<p><strong>! Breadcrumbs do not contain the whole tree path currently !</strong></p>
+
+<h5 id="action-1">Action</h5>
+
+<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ACCORDION TITLE]</code> &gt; <code class="highlighter-rouge">[CURRENT NODE TEXT]</code> &gt; <code class="highlighter-rouge">[ACTION TITLE]</code></p>
+
+<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Virtual Machines</code> &gt; <code class="highlighter-rouge">VMs &amp; Templates</code> &gt; <code class="highlighter-rouge">3.9ocp</code> &gt; <code class="highlighter-rouge">Editing Virtual Machine "3.9ocp"</code></p>
+
+<p>As a <code class="highlighter-rouge">action title</code> it used one of these variables (sorted by the highest priority):</p>
+<ul>
+  <li><code class="highlighter-rouge">right_cell_text</code> as a local variable provided to the breadcrumbs template (if you provide it in <code class="highlighter-rouge">replace_right_cell</code> method)</li>
+  <li><code class="highlighter-rouge">@title_for_breadcrumbs</code> (non standard use)</li>
+  <li><code class="highlighter-rouge">@right_cell_text</code> (standard use)</li>
+  <li><code class="highlighter-rouge">@title</code> (explorer controller switched to non-explorer)</li>
+</ul>
+
+<p>Breadcrumbs should not be deeper than this.</p>
+
+<h3 id="design"><a href="https://www.patternfly.org/pattern-library/navigation/breadcrumbs/">Design</a></h3>
+<ul>
+  <li>this design follows <a href="https://www.patternfly.org/pattern-library/navigation/breadcrumbs/">Patternfly guidelines</a></li>
+  <li>First, show the path from the navigation (E.g.: Compute &gt; Infrastructure &gt; Providers)</li>
+  <li>Only breadcrumbs which lead somewhere should be clickable (last breadcrumb in the menu, etc.)</li>
+  <li>The end of the breadcrumb string should represent the page a user is currently viewing.</li>
+  <li>When using breadcrumbs, be sure to include them on every page throughout the application.
+    <ul>
+      <li>Exception: when content is shown on in a separate window without navigation (ex. reports), breadcrumbs are not required.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/36040135/57836403-e6bbbc00-77c0-11e9-8f13-26b1dbef2633.png" alt="breadcrumbs" /></p>
+
+<h3 id="examples">Examples</h3>
+<h4 id="1-explorer-screens">1) Explorer screens</h4>
+
+<p><strong>Default</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66040960-fd1ca700-e518-11e9-80ae-3702f7de7d65.png" alt="Screenshot from 2019-10-02 13-18-24" /></p>
+
+<p><strong>Detail</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66040958-fc841080-e518-11e9-907e-718d14ce5dce.png" alt="Screenshot from 2019-10-02 13-18-48" /></p>
+
+<p><strong>Action</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66040957-fc841080-e518-11e9-8959-fbba06feb988.png" alt="Screenshot from 2019-10-02 13-18-59" /></p>
+
+<p><strong>Tagging/Ownership/etc.</strong></p>
+<ul>
+  <li>Show the item breadcrumb only when there is only one item</li>
+</ul>
+
+<p>One item</p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66040956-fc841080-e518-11e9-98d2-c143a0d02198.png" alt="Screenshot from 2019-10-02 13-21-03" /></p>
+
+<p>More items</p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66040954-fc841080-e518-11e9-8321-1e3ce1da30fe.png" alt="Screenshot from 2019-10-02 13-22-32" /></p>
+
+<p><strong>Ancestry</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/56895268-e6b18180-6a88-11e9-8d7b-12ffbb3f889d.png" alt="image" /></p>
+
+<ul>
+  <li>only Services. Services are missing hierarchy in the tree (because of performance).</li>
+</ul>
+
+<h4 id="2-non-explorer-screens">2) Non-explorer screens</h4>
+
+<p><strong>Default</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66041374-ff333580-e519-11e9-96c2-0d9440195153.png" alt="Screenshot from 2019-10-02 13-36-07" /></p>
+
+<ul>
+  <li>There could be a different header on the landing page - that is a longer version of the item in the menu. Breadcrumbs should contain the same name as in the menu - the shorter version.</li>
+</ul>
+
+<p><strong>Detail</strong>
+<img src="https://user-images.githubusercontent.com/32869456/66041373-ff333580-e519-11e9-8d6c-716826b8eca1.png" alt="Screenshot from 2019-10-02 13-36-42" /></p>
+
+<p><strong>Detail Action/Action</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/32869456/66041372-fe9a9f00-e519-11e9-9da3-ec8bb5a18cd1.png" alt="Screenshot from 2019-10-02 13-37-03" /></p>
+
+<p><strong>Tagging/Ownership/etc.</strong></p>
+<ul>
+  <li>Show item breadcrumb only when there is only one item</li>
+</ul>
+
+<p>One item
+<img src="https://user-images.githubusercontent.com/32869456/66041371-fe9a9f00-e519-11e9-8580-e70e8ea44f41.png" alt="Screenshot from 2019-10-02 13-37-35" /></p>
+
+<p>More items
+<img src="https://user-images.githubusercontent.com/32869456/66041370-fe9a9f00-e519-11e9-82d9-39ec6df5c89e.png" alt="Screenshot from 2019-10-02 13-38-40" /></p>
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2019 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://plus.google.com/+ManageiqOrg" class="social_link social_link-google_plus">
+            <span class="social_link-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>
