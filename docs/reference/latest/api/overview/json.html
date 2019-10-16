@@ -1969,13 +1969,25 @@ the response:</p>
 be targeted in a request.</p>
 </div>
 <div class="paragraph">
-<p>NOTE:
-* success and message are always there.
-* result is optional and would exist when an action results in data, i.e. policy resolve.
-* href is populated for the resource being targeted by the action
-* task_id and task_href are optional. They are defined when actions are run
+<p>NOTE:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>success and message are always there.</p>
+</li>
+<li>
+<p>result is optional and would exist when an action results in data, i.e. policy resolve.</p>
+</li>
+<li>
+<p>href is populated for the resource being targeted by the action</p>
+</li>
+<li>
+<p>task_id and task_href are optional. They are defined when actions are run
 asynchronously and a task is created, i.e. <a href="http://localhost:3000/api/tasks/:id" class="bare">http://localhost:3000/api/tasks/:id</a> which
 can be monitored for action completion.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Other action specific attributes could also be returned in the the action result.</p>
