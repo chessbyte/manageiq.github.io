@@ -465,10 +465,10 @@ Quadicons are present, but not limited to Explorer trees, GTLs and Listnavs.</p>
 <img src="../images/quadicon.png" alt="Textual Summary Example" /></p>
 
 <p>The definition of quadicons is stored as methods in model decorators under the <code class="highlighter-rouge">app/decorators</code> folder.
-The single icon definition should be defined as <code class="highlighter-rouge">single_quad</code> while the 4-view version should be <code class="highlighter-rouge">quadicon</code>.
-At least the <code class="highlighter-rouge">single_quad</code> method needs to be defined as this is both the default and the fallback.</p>
+The format allows you to specify either a single quadrant large icon, or four small ones (see the examples below).
+Ideally each new model that gets displayed in a GTL should have a <code class="highlighter-rouge">quadicon</code> method defined.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quadicon</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quadicon</span> <span class="c1"># icon with four quadrants</span>
   <span class="p">{</span>
     <span class="ss">:top_left</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="ss">:fonticon</span> <span class="o">=&gt;</span> <span class="s1">'fa fa-play'</span><span class="p">,</span>
@@ -491,7 +491,7 @@ At least the <code class="highlighter-rouge">single_quad</code> method needs to 
   <span class="p">}</span>
 <span class="k">end</span>
 
-<span class="k">def</span> <span class="nf">single_quad</span>
+<span class="k">def</span> <span class="nf">quadicon</span> <span class="c1"># one large icon</span>
   <span class="p">{</span>
     <span class="ss">:fileicon</span> <span class="o">=&gt;</span> <span class="s1">'/assets/svg/something.svg'</span><span class="p">,</span>
     <span class="ss">:tooltip</span> <span class="o">=&gt;</span> <span class="s1">'hello world'</span>
@@ -500,10 +500,7 @@ At least the <code class="highlighter-rouge">single_quad</code> method needs to 
 </code></pre>
 </div>
 
-<p>The decorators should not inherit from each other and everything has to be as explicit as possible. Any common behavior that affects all of the quadicons should be moved into a static method in <code class="highlighter-rouge">app/helpers/quadicon_helper.rb</code>, see <code class="highlighter-rouge">QuadiconHelper.machine_state</code> as an example.</p>
-
-<p>TODO: documentation for quad/single icon selection process</p>
-
+<p>It’s not recommended to use too much inheritance between decorators, because there might be side effects and we would like to have everything as explicit as possible. Any common behavior that affects all of the quadicons should be moved into a static method in <code class="highlighter-rouge">app/helpers/quadicon_helper.rb</code>, see <code class="highlighter-rouge">QuadiconHelper.machine_state</code> as an example.</p>
 
       </div>
     </article>
