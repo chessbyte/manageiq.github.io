@@ -124,6 +124,7 @@
       <li><a href="#confirming-sssd-configuration">Confirming SSSD Configuration</a></li>
       <li><a href="#diagnosing-failed-dbus-commands">Diagnosing Failed dbus Commands</a></li>
       <li><a href="#adding-groups-in-manageiq">Adding Groups In ManageIQ</a></li>
+      <li><a href="#example-authentication-config">Example Authentication Config</a></li>
     </ul>
   </li>
 </ul>
@@ -689,6 +690,53 @@ the specified user. Doing this is analogous to using the <strong><em>dbus-send /
   <li>Near the top of the page a new drop-down should appear populated with group names the specified user is associated with on the IdP</li>
 </ol>
 
+<h2 id="example-authentication-config">Example Authentication Config</h2>
+<hr />
+
+<p>This example, with screenshots, shows one possible authentication configuration.</p>
+
+<ul>
+  <li>
+    <p>This <a href="/assets/images/blog/my_ad_miqldap_auth_config.png">Authentication Configuration page screenshot</a> shows a configuration for Active Directory with <strong><em>Mode: LDAP(s)</em></strong>, <strong>User Type</strong> of <strong>Sam Account Name</strong> and <strong>Get User Groups from LDAP</strong> set.</p>
+  </li>
+  <li>
+    <p>This <a href="/assets/images/blog/my_ad_miqldap_group_config.png">group add page screenshot</a> depicts one example of manually adding a new group by looking up the groups for user <strong>testuser1</strong> in the Identity Provider.</p>
+
+    <p>It is a requirement that at least one group reported by the Identity Provider for each user match a group in the ManageIQ database.
+Some default groups are provided, others must be manually created.
+ For more information see: <a href="#adding-groups-in-manageiq"><strong>Adding Groups In ManageIQ</strong></a></p>
+  </li>
+  <li>
+    <p>The below examples of the <strong>ldapsearch</strong> command can be used to confirm a user is configured along with group membership associations via the <strong>memberof overlay</strong>.</p>
+
+    <p>When configurng for <strong><em>Mode: LDAP(S)</em></strong> the <a href="https://technicalnotes.wordpress.com/2014/04/19/openldap-setup-with-memberof-overlay/"><strong>memberof overlay</strong></a> is required by default.</p>
+  </li>
+  <li>
+    <p>ldapsearch example using userPrincipalName</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ ldapsearch -x -LLL \
+    -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389 \
+    -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com" \
+    -D "my-ad\testuser1" \
+    -w ******** \
+    -s sub "(userPrincipalName=testuser1@MY-AD.example.lab.eng.rdu2.redhat.com)" '*' memberof
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>ldapsearch example using sAMAccountName</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ ldapsearch -x -LLL \
+    -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389  \
+    -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com"  \
+    -D "my-ad\testuser1" \
+    -w ******** \
+    -s sub "(sAMAccountName=testuser1)" '*' memberof
+</code></pre>
+    </div>
+  </li>
+</ul>
+
 
           </div>
         </article>
@@ -738,6 +786,10 @@ the specified user. Doing this is analogous to using the <strong><em>dbus-send /
       <a href="/blog/tags/ruby">ruby</a>
     </li>
     
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/announcements,">announcements,</a>
+    </li>
+    
   </ul>
 </div>
 
@@ -759,6 +811,13 @@ the specified user. Doing this is analogous to using the <strong><em>dbus-send /
       
         <ul class="blog_menu blog_months">
   
+  
+  <li class="blog_menu-month">
+    <a href="/blog/2019/12/index.html">
+      December
+    </a>
+    
+  </li>
   
   <li class="blog_menu-month">
     <a href="/blog/2019/09/index.html">
