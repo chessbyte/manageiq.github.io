@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ManageIQ - December</title>
-  <meta name="description" content="">
+  <title>ManageIQ - Announcing Ivanchuk-2</title>
+  <meta name="description" content="We’ve just built Ivanchuk-2. This release contains bug fixes, UI tweaks, and stabilization.Here are just a few of the things added since the Ivanchuk GA rele...">
   <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
   
   <link type="text/css" rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://manageiq.org/blog/2019/12/">
+  <link rel="canonical" href="http://manageiq.org/blog/2019/12/Announcing-Ivanchuk-2/">
   <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
 
   <link href="/assets/images/favicon.ico" rel="shortcut icon">
@@ -57,58 +57,87 @@
 </header>
 
 
-    <main data-url="/blog/2019/12/">
-      <div class="blog blog_year">
+    <main data-url="/blog/2019/12/Announcing-Ivanchuk-2/">
+      <div class="blog">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-10">
         <header class="blog_header">
           <h1>
-            December
+            ManageIQ Blog
           </h1>
         </header>
       </div>
     </div>
-    <div class="row">
+    <div class="row"> 
       <div class="col-xs-12 col-sm-10 blog_main">
-        <div class="posts month_archive">
-  
-  <article class="post_excerpt">
-    <header class="post-header">
-      <h1><a href="/blog/2019/12/introducing-new-provider-microsoft-azure-stack/">Introducing New Cloud Provider: Microsoft Azure Stack</a></h1>
-    </header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Announcing Ivanchuk-2</h1>
 
-    <div class="post-content">
-      <p>With the release of <a href="https://www.manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/">ManageIQ
-Ivanchuk</a>,
-we are introducing new integrated provider: <a href="https://azure.microsoft.com/en-us/overview/azure-stack/">Microsoft Azure
-Stack</a>. Integration
-was developed by <a href="https://steampunk.si/">XLAB Steampunk</a>, a trusted Red Hat
-partner specialized in integrating third-party technologies with Red Hat
-CloudForms and Red Hat Ansible Automation Platform.</p>
+            <div class="post-meta">
+              <time datetime="2019-12-13T19:12:13+00:00" itemprop="datePublished">
+                Dec 13, 2019
+              </time>
 
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  cybette
+                </i>
+              </span>
+              
 
-    </div>
-  </article>
-  
-  <article class="post_excerpt">
-    <header class="post-header">
-      <h1><a href="/blog/2019/12/Announcing-Ivanchuk-2/">Announcing Ivanchuk-2</a></h1>
-    </header>
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/releases">releases</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/announcements">announcements</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
 
-    <div class="post-content">
-      <p>We’ve just built Ivanchuk-2. This release contains bug fixes, UI tweaks, and stabilization.
+          <div class="post-content" itemprop="articleBody">
+            <p>We’ve just built Ivanchuk-2. This release contains bug fixes, UI tweaks, and stabilization.
 Here are just a few of the things added since the Ivanchuk GA release:</p>
 
+<ul>
+  <li>ADDED
+    <ul>
+      <li>Add Settings attribute for displaying the ops/database screen <a href="https://github.com/ManageIQ/manageiq/pull/19208">(#19208)</a></li>
+      <li>Add export/import of schedules to rake task <a href="https://github.com/ManageIQ/manageiq/pull/19192">(#19192)</a></li>
+      <li>Adding ability to update additional authentication settings <a href="https://github.com/ManageIQ/manageiq/pull/19525">(#19525)</a></li>
+    </ul>
+  </li>
+  <li>FIXED
+    <ul>
+      <li>Update translations for ivanchuk <a href="https://github.com/ManageIQ/manageiq/pull/19301">(#19301)</a></li>
+      <li>[EmbeddedAnsible] Force embedded_ansible role for workflow <a href="https://github.com/ManageIQ/manageiq/pull/19187">(#19187)</a></li>
+      <li>[V2V] Allow active InfraConversionJob to be throttled <a href="https://github.com/ManageIQ/manageiq/pull/19277">(#19277)</a></li>
+    </ul>
+  </li>
+</ul>
 
-    </div>
-  </article>
-  
-</div>
+<p>You can download the Ivanchuk-2 release <a href="http://manageiq.org/download/">here</a>.</p>
 
+<p>Here is the changelog:
+<a href="https://github.com/ManageIQ/manageiq/blob/ivanchuk/CHANGELOG.md">Ivanchuk-2</a></p>
+
+<p>For questions or support,
+<a href="http://talk.manageiq.org/">join in on the talk page</a>.</p>
+
+          </div>
+        </article>
       </div>
-    
-        <div class="blog_side-group">
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
   <h3 class="blog_side-heading">
     Categories
   </h3>
@@ -287,6 +316,7 @@ Here are just a few of the things added since the Ivanchuk GA release:</p>
 </div>
 
       </div>
+
     </div>
   </div>
 </div>
