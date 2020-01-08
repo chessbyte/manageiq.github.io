@@ -545,7 +545,9 @@ texts.</p>
   <li>:<code class="highlighter-rouge">klass</code>.</li>
 </ul>
 
-<p>Toolbars are rendered into JSON by the ManageIQ and then processed by toolbar component from the <a href="https://github.com/ManageIQ/ui-components">ui-components repository</a></p>
+<p>Toolbars are rendered by the ManageIQ using the <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/javascript/components/miq-toolbar.jsx"><code class="highlighter-rouge">MiqToolbar</code> component</a>. That in turn uses the <code class="highlighter-rouge">Toolbar</code> and other components from the <a href="https://github.com/ManageIQ/react-ui-components/tree/master/src/toolbar">react-ui-components repository</a>.</p>
+
+<p><code class="highlighter-rouge">MiqToolbar</code> also calls custom toolbars such as the <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/javascript/components/dashboard_toolbar.jsx"><code class="highlighter-rouge">DashboardToolbar</code></a>.</p>
 
 <h4 id="button-details">Button details</h4>
 

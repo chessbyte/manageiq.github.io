@@ -3286,21 +3286,55 @@ remove the policy profiles from.</p>
 <div class="paragraph">
 <p>ManageIQ SmartState analysis requires an analysis profile to select the files to be scanned by a compliance policy. ManageIQ has the ability to export and import SmartState analysis profiles via the command line using rake commands. As a result, approved configurations can be easily imported into customer environments, without having to manually recreate the profile through the user interface.</p>
 </div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change to the <code>vmdb</code> directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>cd /var/www/miq/vmdb</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create an export directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir exports</pre>
+</div>
+</div>
+</li>
+<li>
 <p>To export an analysis profile, run:</p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre>bundle exec rake evm:export:scan_profiles -- --outputdirectory</pre>
+<pre>bundle exec rake evm:export:scan_profiles -- --directory exports</pre>
 </div>
 </div>
+</li>
+<li>
+<p>To import the default analysis profile, run:</p>
+<div class="listingblock">
+<div class="content">
+<pre>bundle exec rake evm:import:scan_profiles -- --source exports/host_default.yaml</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>To import an analysis profile, run:</p>
+<p>If the default profile already exists in ManageIQ, the new profile does not overwrite the old profile. Instead, it duplicates the file items in the default profile.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>bundle exec rake evm:import:scan_profiles -- --sourcefile</pre>
+</td>
+</tr>
+</table>
 </div>
+</li>
+</ol>
 </div>
 </div>
 </div>
