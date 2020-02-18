@@ -135,7 +135,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the full list of objects/instances in the workspace (get_object_names)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_object_names: yes
   register: workspace_object_names
 - debug: msg="Result:"
@@ -182,7 +182,7 @@ set_encrypted_attribute
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the full list of configuration domain attribute names (get_object_attribute_names)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_object_attribute_names:
       object: "/Configuration/OpenShift/Parameters/default"
   register: configuration_domain_attribute_names
@@ -207,7 +207,7 @@ ok: [localhost] =&gt; {
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Check if an object/instance attribute exists (attribute_exists)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     attribute_exists:
       object: "/Configuration/OpenShift/Parameters/default"
       attribute: "rhel_subscription_pool"
@@ -233,7 +233,7 @@ ok: [localhost] =&gt; {
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain instance (get_attribute)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_attribute:
       object: "/Configuration/OpenShift/Parameters/default"
       attribute: "rhel_subscription_pool"
@@ -258,7 +258,7 @@ ok: [localhost] =&gt; {
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the value of the "ipam_passwd" attribute defined by a prior Ruby method (get_attribute)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_attribute:
       object: root
       attribute: "ipam_passwd"
@@ -273,7 +273,7 @@ ok: [localhost] =&gt; {
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain instance (get_decrypted_attribute)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_decrypted_attribute:
       object: "/Configuration/OpenShift/Parameters/default"
       attribute: "ldap_user_password"
@@ -297,7 +297,7 @@ ok: [localhost] =&gt; {
 <h5 id="set_attribute">set_attribute</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Set a "domain_name" root attribute (set_attribute)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     set_attribute:
       object: "root"
       attribute: "domain_name"
@@ -308,7 +308,7 @@ ok: [localhost] =&gt; {
 <h5 id="set_attributes">set_attributes</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Set several IPAM-related root attributes (set_attributes)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     set_attributes:
       object: "root"
       attributes:
@@ -321,7 +321,7 @@ ok: [localhost] =&gt; {
 <h5 id="set_encrypted_attribute">set_encrypted_attribute</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Encrypt a "root_passwd" object attribute (set_encrypted_attribute)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     set_encrypted_attribute:
       object: root
       attribute: "root_passwd"
@@ -352,14 +352,14 @@ $evm.log(:info, "root_passwd from Ansible = #{$evm.root.decrypt('root_passwd')}"
   tasks:   
   - name: Update task with new IP information
     manageiq_vmdb:
-      href: ""
+      href: "{{ manageiq.request_task }}" 
       action: edit
       data:
         options:
           addr_mode: ["static", "Static"]
-          ip_addr: ""
-          subnet_mask: ""
-          gateway: ""
+          ip_addr: "{{ ip_addr }}"
+          subnet_mask: "{{ netmask }}"
+          gateway: "{{ gateway }}"
 </code></pre>
 </div>
 

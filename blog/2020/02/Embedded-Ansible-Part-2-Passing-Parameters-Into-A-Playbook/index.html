@@ -176,7 +176,7 @@ $evm.execute('create_service_provision_request', service_template, options)
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the full list of method parameters (get_method_parameters)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_method_parameters: yes
   register: get_method_parameters
 - debug: msg="Result:"
@@ -200,7 +200,7 @@ ok: [localhost] =&gt; {
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Check if a method parameter called 'ipam_url' exists (method_parameter_exists)
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     method_parameter_exists:
       parameter: "ipam_url"
   register: method_parameter_exists

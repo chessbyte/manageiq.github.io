@@ -126,7 +126,7 @@
   tasks:
   - name: Get the "rhel_subscription_pool" attribute from a configuration domain instance
     manageiq_automate:
-      workspace: ""
+      workspace: "{{ workspace }}"
       get_attribute:
         object: "/Configuration/OpenShift/Parameters"
         attribute: "rhel_subscription_pool"
@@ -181,7 +181,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_attribute:
       object: "/Configuration/OpenShift/Parameters"
       attribute: "rhel_subscription_pool"
@@ -205,7 +205,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain
   manageiq_automate:
-    workspace: ""
+    workspace: "{{ workspace }}"
     get_decrypted_attribute:
       object: "/Configuration/OpenShift/Parameters"
       attribute: "ldap_user_password"
@@ -237,7 +237,7 @@ ok: [localhost] =&gt; {
   tasks:
   - name: Get the service object
     manageiq_vmdb:
-      href: ""
+      href: "{{ manageiq.service }}"
     register: service
 
   - name: Get the VM object
@@ -247,19 +247,19 @@ ok: [localhost] =&gt; {
 
   - name: Rename the service
     manageiq_vmdb:
-      vmdb: ""
+      vmdb: "{{ service }}"
       action: edit
       data:
         name: "New Engineering VM"
-        description: "VM created on "
+        description: "VM created on {{ lookup('pipe', 'date +%Y-%m-%d\\ %H:%M') }}"
 
   - name: Add the VM to the service
     manageiq_vmdb:
-      vmdb: ""
+      vmdb: "{{ service }}"
       action: add_resource
       data:
         resource:
-          href: ""
+          href: "{{ vm.href }}"
 </code></pre>
 </div>
 
