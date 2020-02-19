@@ -254,7 +254,7 @@ ok: [localhost] =&gt; {
 
 <p><img src="/assets/images/blog/input_params-embedded-2.5.jpg" alt="input_params" /></p>
 
-<p>A parameter of this type is decrypted automatically and is available to the playbook as the named extra variable, for example “”. It should be noted that an input parameter that has the text string “password” anywhere in the name will not be passed as a method parameter, and so will not appear in the list of method parameters returned by the <code class="highlighter-rouge">get_method_parameters</code> function. The variable will however be available as an extra_var with the password value decrypted correctly.</p>
+<p>A parameter of this type is decrypted automatically and is available to the playbook as the named extra variable, for example “{{ scrambled_this }}”. It should be noted that an input parameter that has the text string “password” anywhere in the name will not be passed as a method parameter, and so will not appear in the list of method parameters returned by the <code class="highlighter-rouge">get_method_parameters</code> function. The variable will however be available as an extra_var with the password value decrypted correctly.</p>
 
 <h4 id="password-defined-earlier-in-workflow">Password Defined Earlier in Workflow</h4>
 <p>A variable encrypted earlier in the workflow (for example when input into a service dialog) can generally be identified as having a name prefixed by the string “password::”. This signifies that the object is of type <em>MiqPassword</em>.</p>
