@@ -131,15 +131,13 @@ explicitly in the options hash, instead pulling from the passed scope itself.</p
 
 <p>Before:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Rbac.filtered(Vm.all, :limit =&gt; 20, :offset =&gt; 40)
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rbac.filtered(Vm.all, :limit =&gt; 20, :offset =&gt; 40)
+</code></pre></div></div>
 
 <p>After:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Rbac.filtered(Vm.limit(20).offset(40))
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rbac.filtered(Vm.limit(20).offset(40))
+</code></pre></div></div>
 
 <p>The old hash signature is still valid for now while hashes are converted to scopes.</p>
 

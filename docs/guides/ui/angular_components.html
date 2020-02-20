@@ -467,21 +467,19 @@ Set <code class="highlighter-rouge">controllerAs: "vm"</code>.<br />
 
 <h4 id="miq-button"><code class="highlighter-rouge">miq-button</code></h4>
 <p>Component for a button element.</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>%miq-button{:name      =&gt; t = _('Cancel'),
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%miq-button{:name      =&gt; t = _('Cancel'),
             :title     =&gt; t,
             :alt       =&gt; t,
             :enabled   =&gt; "true",
             'on-click' =&gt; "cancelClicked()"}
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>%miq-button{:name          =&gt; t = _('Validate'),
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%miq-button{:name          =&gt; t = _('Validate'),
             :enabledTitle  =&gt; validate_title_on,
             :disabledTitle =&gt; validate_title_off,
             :enabled       =&gt; "true",
             'on-click'     =&gt; "cancelClicked(),
             :primary       =&gt; "true"}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It consists of:</p>
 <ul>

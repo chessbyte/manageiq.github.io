@@ -483,7 +483,7 @@
 
 <p>Below is the full tree of rollups that will occur:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Vm (realtime collected)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Vm (realtime collected)
  Vm (hourly)
    Vm (daily)
    Host (hourly)
@@ -494,8 +494,7 @@
          ExtManagementSystem (daily)
          MiqRegion (hourly)
            MiqRegion (daily)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>That is the simplest description. In reality, there are some nuances that should be mentioned.</p>
 
@@ -525,10 +524,9 @@
   <li>
     <p><strong>A capture of a Vm can be kicked off in a rails console with <code class="highlighter-rouge">vm.perf_capture("realtime")</code></strong>.  The rollups on the queue can be executed without a worker by just delivering them from the queue</p>
 
-    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">q</span> <span class="o">=</span> <span class="no">MiqQueue</span><span class="p">.</span><span class="nf">find</span>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">q</span> <span class="o">=</span> <span class="no">MiqQueue</span><span class="p">.</span><span class="nf">find</span>
   <span class="n">q</span><span class="p">.</span><span class="nf">delivered</span><span class="p">(</span><span class="o">*</span><span class="n">q</span><span class="p">.</span><span class="nf">deliver</span><span class="p">)</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>If you want to fake creating rollups, you can just do <code class="highlighter-rouge">vm.perf_rollup_to_parent("realtime", start_time, end_time)</code>, which queues them up and starts the chain.</p>
   </li>

@@ -523,15 +523,13 @@
 
 <p>Run memcached, exposing port 11211 to the host:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>podman run --detach --publish 11211:11211 memcached
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman run <span class="nt">--detach</span> <span class="nt">--publish</span> 11211:11211 memcached
+</code></pre></div></div>
 
 <p>Run PostgreSQL, exposing port 5432 to the host:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>podman run --detach --publish 5432:5432 --env <span class="nv">POSTGRES_USER</span><span class="o">=</span>root postgres
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podman run <span class="nt">--detach</span> <span class="nt">--publish</span> 5432:5432 <span class="nt">--env</span> <span class="nv">POSTGRES_USER</span><span class="o">=</span>root postgres
+</code></pre></div></div>
 
 <h3 id="locally">Locally</h3>
 
@@ -548,15 +546,13 @@
 
 <p>Using systemd:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>systemctl <span class="nb">enable</span> --now memcached
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nb">enable</span> <span class="nt">--now</span> memcached
+</code></pre></div></div>
 
 <p>Using Homebrew:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>brew services start memcached
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start memcached
+</code></pre></div></div>
 
 <p>Install postgresql:</p>
 
@@ -572,10 +568,9 @@
 
 <p>CentOS 7 ships PostgreSQL 9.x. In order to use PostgreSQL 10.x, you will need to <a href="https://www.softwarecollections.org/en/docs/">enable Software Collections</a> and install <code class="highlighter-rouge">rh-postgresql10</code>.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo yum -y autoremove postgresql-devel
-sudo yum -y install rh-postgresql10 rh-postgresql10-postgresql-syspaths rh-postgresql10-postgresql-devel rh-postgresql10-postgresql-server-syspaths
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> autoremove postgresql-devel
+<span class="nb">sudo </span>yum <span class="nt">-y</span> install rh-postgresql10 rh-postgresql10-postgresql-syspaths rh-postgresql10-postgresql-devel rh-postgresql10-postgresql-server-syspaths
+</code></pre></div></div>
 
 <hr />
 
@@ -583,46 +578,40 @@ sudo yum -y install rh-postgresql10 rh-postgresql10-postgresql-syspaths rh-postg
 
 <p>On Fedora and CentOS, configure a cluster using <code class="highlighter-rouge">postgresql-setup</code>.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo <span class="nv">PGSETUP_INITDB_OPTIONS</span><span class="o">=</span><span class="s1">'--auth trust --username root --encoding UTF-8 --locale C'</span> postgresql-setup --initdb
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span><span class="nv">PGSETUP_INITDB_OPTIONS</span><span class="o">=</span><span class="s1">'--auth trust --username root --encoding UTF-8 --locale C'</span> postgresql-setup <span class="nt">--initdb</span>
+</code></pre></div></div>
 
 <p>On Debian and Ubuntu, configure a cluster using <code class="highlighter-rouge">pg_createcluster</code>.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo pg_dropcluster --stop 10 main
-sudo pg_createcluster -e UTF-8 -l C 10 main -- --auth trust --username root
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pg_dropcluster <span class="nt">--stop</span> 10 main
+<span class="nb">sudo </span>pg_createcluster <span class="nt">-e</span> UTF-8 <span class="nt">-l</span> C 10 main <span class="nt">--</span> <span class="nt">--auth</span> trust <span class="nt">--username</span> root
+</code></pre></div></div>
 
 <p>On macOS, configure a cluster using <code class="highlighter-rouge">initdb</code> directly.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>rm -rf /usr/local/var/postgres
-initdb --auth trust --username root --encoding UTF-8 --locale C /usr/local/var/postgres
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> /usr/local/var/postgres
+initdb <span class="nt">--auth</span> trust <span class="nt">--username</span> root <span class="nt">--encoding</span> UTF-8 <span class="nt">--locale</span> C /usr/local/var/postgres
+</code></pre></div></div>
 
 <p>Enable and start the service.</p>
 
 <p>Using systemd:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>systemctl <span class="nb">enable</span> --now postgresql
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nb">enable</span> <span class="nt">--now</span> postgresql
+</code></pre></div></div>
 
 <p>Using Homebrew:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>brew services start postgresql
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start postgresql
+</code></pre></div></div>
 
 <h2 id="install-nvm-and-javascript-build-utilities">Install nvm and JavaScript build utilities</h2>
 
 <p>Yarn, Gulp and Webpack are required to compile JavaScript assets. NodeJS version 10.16.x is required. If your distribution doesn’t ship NodeJS 10.x, you can install <a href="https://github.com/nvm-sh/nvm">nvm</a> and follow the setup steps (you will need to restart your shell in order to source the nvm initialization environment). Then install <code class="highlighter-rouge">yarn</code>, <code class="highlighter-rouge">gulp-cli</code> and <code class="highlighter-rouge">webpack</code>.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>nvm install 10
-npm install -g yarn gulp-cli webpack
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install 10
+npm install <span class="nt">-g</span> yarn gulp-cli webpack
+</code></pre></div></div>
 
 <h2 id="install-ruby-and-bundler">Install Ruby and Bundler</h2>
 
@@ -638,10 +627,9 @@ npm install -g yarn gulp-cli webpack
 
 <h2 id="clone-the-project">Clone the project</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:ManageIQ/manageiq.git
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:ManageIQ/manageiq.git
 <span class="nb">cd </span>manageiq
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="configure-project">Configure Project</h2>
 
@@ -656,21 +644,18 @@ npm install -g yarn gulp-cli webpack
 
 <p>If you’ve run PostgreSQL in a container, be sure to export the <code class="highlighter-rouge">DATABASE_URL</code> variable to connect to the container over TCP instead of a UNIX file socket.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s1">'postgresql://localhost:5432'</span> <span class="c"># optional, only necessary if PostgreSQL is running in a container</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s1">'postgresql://localhost:5432'</span> <span class="c"># optional, only necessary if PostgreSQL is running in a container</span>
+</code></pre></div></div>
 
 <hr />
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bin/setup
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/setup
+</code></pre></div></div>
 
 <h2 id="start-the-application">Start the Application</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bundle <span class="nb">exec </span>rails evm:start
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>rails evm:start
+</code></pre></div></div>
 
 <p>The web UI should now be available at <code class="highlighter-rouge">http://localhost:3000</code>. The default username is <code class="highlighter-rouge">admin</code> and the default password is <code class="highlighter-rouge">smartvm</code>.</p>
 

@@ -472,11 +472,10 @@ method is called.</p>
 
 <p>The <code class="highlighter-rouge">x_button</code> or <code class="highlighter-rouge">button</code> handlers should follow this pattern:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> def x_button
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> def x_button
    generic_x_button(AE_CUSTOM_X_BUTTON_ALLOWED_ACTIONS)
  end
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Meaning that just a lookup in the list of valid actions for the controller is
 done and the action is called if found. Nothing else.</p>

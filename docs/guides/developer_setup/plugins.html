@@ -479,11 +479,10 @@ controllers etc. are loaded during boot time of ManageIQ and are just available 
 <p>Having the plugins and the core repository side by side, i.e. at the same directory level, is straight forward and
 lets you separate checkouts cleanly.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:JoeSmith/manageiq-providers-amazon.git
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:JoeSmith/manageiq-providers-amazon.git
 git clone git@github.com:JoeSmith/manageiq-content.git
 git clone git@github.com:JoeSmith/manageiq-ui-classic.git
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="inside-the-core-manageiq-checkout">Inside the core ManageIQ checkout</h4>
 
@@ -494,12 +493,11 @@ directory. This way you can easily search across the core <em>and</em> plugin co
 <p>You still have to change into the plugin root directory to run the tests - running <code class="highlighter-rouge">rspec</code> from the ManageIQ root will
 not pickup your plugin code, but the core code. This is a drawback which can lead to some confusion.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /path/to/manageiq ; mkdir plugins
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /path/to/manageiq <span class="p">;</span> mkdir plugins
 git clone git@github.com:JoeSmith/manageiq-providers-amazon.git plugins/manageiq-providers-amazon
 git clone git@github.com:JoeSmith/manageiq-content.git plugins/manageiq-content
 git clone git@github.com:JoeSmith/manageiq-ui-classic.git plugins/manageiq-ui-classic
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="setting-the-correct-remotes">Setting the correct remotes</h4>
 
@@ -507,8 +505,8 @@ git clone git@github.com:JoeSmith/manageiq-ui-classic.git plugins/manageiq-ui-cl
 points to the upstream repository. To keep your fork up to date, you will have to merge changes from upstream
 into your fork.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>manageiq-ui-classic
-git remote -v
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>manageiq-ui-classic
+git remote <span class="nt">-v</span>
 <span class="c"># origin  git@github.com:JoeSmith/manageiq-ui-classic.git (fetch)</span>
 <span class="c"># origin  git@github.com:JoeSmith/manageiq-ui-classic.git (push)</span>
 git remote add upstream git@github.com:ManageIQ/manageiq-ui-classic
@@ -517,8 +515,7 @@ git fetch upstream
 git checkout master
 git pull upstream master
 git push origin master
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="running-tests">Running tests</h3>
 
@@ -527,7 +524,7 @@ our plugins are only for ManageIQ, we run the tests inside the ManageIQ app. The
 at <code class="highlighter-rouge">spec/manageiq</code>. The database used for tests is the same as for the core app. Keep that in mind when developing a
 feature that requires database migrations.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>manageiq-providers-amazon
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>manageiq-providers-amazon
 bin/setup
 <span class="c"># == Cloning manageiq sample app ==</span>
 <span class="c"># Cloning into 'spec/manageiq'...</span>
@@ -537,15 +534,13 @@ bundle <span class="nb">exec </span>rake spec:setup
 <span class="c"># Dropped database 'vmdb_test'</span>
 <span class="c"># Created database 'vmdb_test'</span>
 bundle <span class="nb">exec </span>rake
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Updating the sample app is handled by <code class="highlighter-rouge">bin/update</code>:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bin/update
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/update
 <span class="c"># == Updating manageiq sample app ==</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="cross-repository-dependencies">Cross repository dependencies</h3>
 
@@ -557,12 +552,11 @@ cross repository dependencies, which can be handled from the plugin side or from
 <p>Creating a symlink from <code class="highlighter-rouge">spec/manageiq</code> to your current checkout of ManageIQ will run the tests inside whatever branch
 you checked out in the core repo.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># remove current sample app</span>
-rm -rf spec/manageiq 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># remove current sample app</span>
+rm <span class="nt">-rf</span> spec/manageiq 
 <span class="c"># create a symlink</span>
-ln -s /path/to/manageiq spec/manageiq
-</code></pre>
-</div>
+ln <span class="nt">-s</span> /path/to/manageiq spec/manageiq
+</code></pre></div></div>
 
 <h4 id="dependency-on-a-local-gem">Dependency on a local gem</h4>
 
@@ -570,16 +564,14 @@ ln -s /path/to/manageiq spec/manageiq
 <code class="highlighter-rouge">bundler.d</code> directory. Use it to point the dependency to a local version of your plugin.</p>
 
 <p>Please, use absolute path in</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
 <span class="n">override_gem</span> <span class="s1">'manageiq-providers-amazon'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'/home/developer/repos/manageiq-providers-amazon'</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>or use relative path to current file and <code class="highlighter-rouge">__dir__</code> like</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
 <span class="n">override_gem</span> <span class="s1">'manageiq-providers-amazon'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../../manageiq-providers-amazon'</span><span class="p">,</span> <span class="n">__dir__</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="rails-console">Rails console</h4>
 
@@ -591,10 +583,10 @@ will have to change the dependency of ManageIQ to point to your local plugin. Se
 <p>If you have an open PR on ManageIQ that has not been merged before the split, you can cherry-pick all commits from
 the feature branch into a new branch in the plugin repository.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># get all commit shas that are not yet in master - or just look at https://github.com/ManageIQ/manageiq/pull/&lt;id&gt;</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get all commit shas that are not yet in master - or just look at https://github.com/ManageIQ/manageiq/pull/&lt;id&gt;</span>
 <span class="nb">cd</span> /path/to/manageiq
 git checkout feature_branch
-git log <span class="k">$(</span>git rev-parse --abbrev-ref HEAD<span class="k">)</span> --not refs/heads/master
+git log <span class="k">$(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="k">)</span> <span class="nt">--not</span> refs/heads/master
 
 <span class="c"># add ManageIQ as a remote in your plugin</span>
 <span class="nb">cd</span> /path/to/manageiq-providers-amazon
@@ -602,21 +594,20 @@ git remote add miq /path/to/manageiq
 git fetch miq
 
 <span class="c"># create a new branch in the plugin and cherry-pick commits</span>
-git checkout -b feature_branch
+git checkout <span class="nt">-b</span> feature_branch
 git cherry-pick &lt;sha from above&gt;
 <span class="c"># should be a clean cherry-pick if it only changes files that are in the new plugin, if not:</span>
 <span class="c"># git checkout master -- path/to/file # will discard your changes to file</span>
 <span class="c"># git rm path/to/file # will drop the file from the cherry-pick in progress</span>
 <span class="c"># git cherry-pick --continue # will continue the cherry-pick</span>
 <span class="c"># git cherry-pick --abort # will abort</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If your PR has a lot of commits or you have a lot of PRs, this script automates it.
 It needs <code class="highlighter-rouge">jq</code> to parse the github API output - <code class="highlighter-rouge">brew install jq</code> or <code class="highlighter-rouge">dnf install jq</code> or <code class="highlighter-rouge">apt install jq</code>.
 Optionally uses <a href="https://hub.github.com/">hub</a> to create the pull request.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>PR=123
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PR=123
 COMMITS=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR/commits | jq -r .[].sha`
 TITLE=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR | jq -r .title`
 DESCRIPTION=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR | jq -r .body`
@@ -639,8 +630,7 @@ $DESCRIPTION
 (converted from ManageIQ/manageiq#$PR)" || echo "hub not found, not creating PR"
 
 git remote rm tmp
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="creating-a-new-provider-plugin">Creating a new provider (plugin)</h3>
 

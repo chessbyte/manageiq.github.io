@@ -242,12 +242,11 @@ LDAPS with certificates or, after running <em>miqldap_to_sssd</em>, update the <
 include certificates. See the LDAPS example below and the SSSD(8) man page for more information about
 certificates.</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> 
-</span>Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> miqldap_to_sssd 
+<span class="go">Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
-$
-</code></pre>
-</div>
+</span><span class="gp">$</span>
+</code></pre></div></div>
 
 <h2 id="miqldap_to_sssd-log"><strong>miqldap_to_sssd log</strong></h2>
 
@@ -328,8 +327,8 @@ the <strong>domain</strong>, <strong>bind-dn</strong> and <strong>bind-pwd</stro
 This is because, with this configuration, values for these items are not available in the appliance database.</p>
 
 <p><em>miqldap_to_sssd</em> supports 7 arguments. This example uses the <strong>domain</strong>, <strong>bind-dn</strong> and <strong>bind-pwd</strong> arguments.</p>
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --help
-</span>Usage: ruby tools/miqldap_to_sssd.rb [options]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> miqldap_to_sssd <span class="nt">--help</span>
+<span class="go">Usage: ruby tools/miqldap_to_sssd.rb [options]
   -d, --domain                               The domain name for the Base DN, e.g. example.com
   -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
                                              cn=Manager,dc=example,dc=com
@@ -338,16 +337,14 @@ This is because, with this configuration, values for these items are not availab
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p><strong>Note:</strong> The Base DN must be in “dot” form e.g.: <em>example.com</em></p>
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
-</span>Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> miqldap_to_sssd <span class="nt">--domain</span> example.com <span class="nt">--bind-dn</span> <span class="nv">cn</span><span class="o">=</span>Manager,dc<span class="o">=</span>example,dc<span class="o">=</span>com <span class="nt">--bind-pwd</span> password
+<span class="go">Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
-$
-</code></pre>
-</div>
+</span><span class="gp">$</span>
+</code></pre></div></div>
 
 <h2 id="authentication-mode-externalhttpd-1"><strong>Authentication Mode External(httpd)</strong></h2>
 
@@ -419,8 +416,8 @@ with the path to the certificate file.</p>
 <p>Note the warning regarding the unsecured LDAP and not encrypted passwords, is not displayed because the conversion from LDAP<strong>S</strong>
 preserves the certificate security.</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --help
-</span>Usage: ruby tools/miqldap_to_sssd.rb [options]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> miqldap_to_sssd <span class="nt">--help</span>
+<span class="go">Usage: ruby tools/miqldap_to_sssd.rb [options]
   -d, --domain                               The domain name for the Base DN, e.g. example.com
   -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
                                              cn=Manager,dc=example,dc=com
@@ -429,14 +426,12 @@ preserves the certificate security.</p>
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --tls-cacert  /etc/openldap/certs/cacert.pem
-</span>tools/miqldap_to_sssd.rb Conversion Completed
-$
-</code></pre>
-</div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> miqldap_to_sssd <span class="nt">--tls-cacert</span>  /etc/openldap/certs/cacert.pem
+<span class="go">tools/miqldap_to_sssd.rb Conversion Completed
+</span><span class="gp">$</span>
+</code></pre></div></div>
 
 <h2 id="authentication-mode-externalhttpd-2"><strong>Authentication Mode External(httpd)</strong></h2>
 
@@ -451,8 +446,8 @@ The other 2 will be explained here.</p>
 
 <p>Again the 7 supported argument are:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">miqldap_to_sssd</span><span class="kv"> --help
-</span>Usage: ruby tools/miqldap_to_sssd.rb [options]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> miqldap_to_sssd <span class="nt">--help</span>
+<span class="go">Usage: ruby tools/miqldap_to_sssd.rb [options]
   -d, --domain                               The domain name for the Base DN, e.g. example.com
   -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
                                              cn=Manager,dc=example,dc=com
@@ -461,8 +456,7 @@ The other 2 will be explained here.</p>
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>As mentioned earlier :</p>
 
@@ -535,21 +529,19 @@ becoming bloated and unwieldy. For this reason it was decided to document edge c
   <li>The fix is to simply update the one line in the <em>SSSD</em> configuration file, <em>/etc/sssd/sssd.conf</em>.</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>      From: ldap_group_object_class = groupOfNames
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      From: ldap_group_object_class = groupOfNames
         To: ldap_group_object_class = group
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>Restart</li>
 </ol>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code>     $ systemctl stop sssd.service
-     $ sss_cache -E
-     $ systemctl start sssd.service
-     $ systemctl status sssd.service
-</code></pre>
-</div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">     $</span> systemctl stop sssd.service
+<span class="gp">     $</span> sss_cache <span class="nt">-E</span>
+<span class="gp">     $</span> systemctl start sssd.service
+<span class="gp">     $</span> systemctl status sssd.service
+</code></pre></div></div>
 
 
           </div>

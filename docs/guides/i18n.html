@@ -579,15 +579,13 @@ The <code class="highlighter-rouge">angular-gettext</code> module allows for ann
 <p>In certain situations, it’s not possible to correctly annotate strings for translation when these
 strings are a value of an HTML element and contain a variable interpolation. For example:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">tooltip=</span><span class="s">"{{item.v_total_vms}} VMs"</span><span class="nt">&gt;</span>
-</code></pre>
-</div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">tooltip=</span><span class="s">"{{item.v_total_vms}} VMs"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
 
 <p>This is where the <code class="highlighter-rouge">substitute</code> filter comes in handy. The above situation would then be resolved as:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">tooltip=</span><span class="s">"{{ '[[number]] VMs'|translate|substitute:{number: item.v_total_vms} }}"</span><span class="nt">&gt;</span>
-</code></pre>
-</div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">tooltip=</span><span class="s">"{{ '[[number]] VMs'|translate|substitute:{number: item.v_total_vms} }}"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
 
 <p>i.e. <code class="highlighter-rouge">[[</code> and <code class="highlighter-rouge">]]</code> mark start and end of a variable to be substituted, the actual values would be
 then substituted with the context of the <code class="highlighter-rouge">substitute</code> filter.</p>
@@ -600,21 +598,19 @@ then substituted with the context of the <code class="highlighter-rouge">substit
   <li><strong>Be careful where you put the <code class="highlighter-rouge">translate</code> directive</strong>. For example, a markup like:</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"outside"</span> <span class="na">translate</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"outside"</span> <span class="na">translate</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inside"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span&gt;</span>Text<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>will result in the whole</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inside"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inside"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span&gt;</span>Text<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>block being collected during string extraction by <code class="highlighter-rouge">gulp gettext-extract</code>. Correctly, the <code class="highlighter-rouge">translate</code> directive should be placed inside the <code class="highlighter-rouge">span</code> element.</p>
 
@@ -622,60 +618,54 @@ then substituted with the context of the <code class="highlighter-rouge">substit
   <li><strong>Don’t use dynamic content inside <code class="highlighter-rouge">__()</code></strong>. For example, the following javascript code won’t be collected correctly by <code class="highlighter-rouge">gulp gettext-extract</code>.</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="s2">"My name is %s."</span><span class="p">,</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="s2">"My name is %s."</span><span class="p">,</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
+</code></pre></div></div>
 
 <p>The above should correctly be:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s2">"My name is %s."</span><span class="p">),</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s2">"My name is %s."</span><span class="p">),</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
 
 <ul>
   <li><strong>Don’t apply the <code class="highlighter-rouge">translate</code> filter on a dynamic content</strong>. The string inside would not be correctly extracted during string collection. For example the following won’t be collected correctly by <code class="highlighter-rouge">gulp gettext-extract</code>.</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span>
 {{ ((magicVariable != null) ? "It's there" : "It's not there") | translate }}
 <span class="nt">&lt;/span&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The above should correctly be:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">ng=</span><span class="s">if="magicVaiable"</span> <span class="na">translate</span><span class="nt">&gt;</span>It's there<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">ng=</span><span class="s">if="!magicVariable"</span> <span class="na">translate</span><span class="nt">&gt;</span>It's not there<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/span&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><strong>Avoid concatenating English strings.</strong> For example, a javascript code like:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"create"</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"create"</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">verb</span> <span class="o">=</span> <span class="s2">"created"</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">verb</span> <span class="o">=</span> <span class="s2">"updated"</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">message</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s2">"Item was %s"</span><span class="p">),</span> <span class="nx">verb</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>would contain mixed languages when shown in non-English locale.</p>
 
 <p>Correctly, the code should read:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"create"</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"create"</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="s2">"Item was created"</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="nx">message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="s2">"Item was updated"</span><span class="p">);</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="delayed--dynamic-translations">Delayed / dynamic translations</h3>
 
@@ -683,28 +673,24 @@ then substituted with the context of the <code class="highlighter-rouge">substit
 
 <p>In the simplest case you can use <code class="highlighter-rouge">N_('bar')</code> saying “do not translate this string” such as:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">menu_item</span> <span class="o">=</span> <span class="no">Menu</span><span class="o">::</span><span class="no">Item</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">N_</span><span class="p">(</span><span class="s1">'Cloud Tennants'</span><span class="p">))</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">menu_item</span> <span class="o">=</span> <span class="no">Menu</span><span class="o">::</span><span class="no">Item</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">N_</span><span class="p">(</span><span class="s1">'Cloud Tennants'</span><span class="p">))</span>
+</code></pre></div></div>
 
 <p>and such strings will be caught by the <code class="highlighter-rouge">rake gettext:find</code> task so these strings end up in the catalog.
 Then you do the translation when needed <em>(e.g. when generating the HTML or JSON format of the data)</em> by calling <code class="highlighter-rouge">_()</code> such as:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">menu_item_text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="n">menu_item</span><span class="p">.</span><span class="nf">text</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">menu_item_text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="n">menu_item</span><span class="p">.</span><span class="nf">text</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>To properly internationalize a string with interpolation that needs to be translated at render time rather than right away, use <code class="highlighter-rouge">PostponedTranslation</code> class.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">tip</span> <span class="o">=</span> <span class="no">PostponedTranslation</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="n">_N</span><span class="p">(</span><span class="s2">"%s Alert Profiles"</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="s2">"already translated string"</span> <span class="p">}</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tip</span> <span class="o">=</span> <span class="no">PostponedTranslation</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="n">_N</span><span class="p">(</span><span class="s2">"%s Alert Profiles"</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="s2">"already translated string"</span> <span class="p">}</span>
+</code></pre></div></div>
 
 <p>and then in the place where the value is used you will have:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">translated_tip</span> <span class="o">=</span> <span class="n">tip</span><span class="p">.</span><span class="nf">kind_of?</span><span class="p">(</span><span class="no">Proc</span><span class="p">)</span> <span class="p">?</span> <span class="n">tip</span><span class="p">.</span><span class="nf">call</span> <span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="n">tip</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">translated_tip</span> <span class="o">=</span> <span class="n">tip</span><span class="p">.</span><span class="nf">kind_of?</span><span class="p">(</span><span class="no">Proc</span><span class="p">)</span> <span class="p">?</span> <span class="n">tip</span><span class="p">.</span><span class="nf">call</span> <span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="n">tip</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="string-interpolation">String interpolation</h3>
 
@@ -714,16 +700,14 @@ Then you do the translation when needed <em>(e.g. when generating the HTML or JS
   <li>different languages might have different word orders so we <strong>use named placeholders</strong>:</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">_</span><span class="p">(</span><span class="s2">"%{model} </span><span class="se">\"</span><span class="s2">%{name}</span><span class="se">\"</span><span class="s2"> was added"</span><span class="p">)</span> <span class="o">%</span> <span class="p">{</span><span class="ss">:model</span> <span class="o">=&gt;</span> <span class="n">ui_lookup</span><span class="p">(</span><span class="ss">:model</span><span class="o">=&gt;</span><span class="s2">"MiqReport"</span><span class="p">),</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="vi">@rpt</span><span class="p">.</span><span class="nf">name</span><span class="p">}</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span><span class="p">(</span><span class="s2">"%{model} </span><span class="se">\"</span><span class="s2">%{name}</span><span class="se">\"</span><span class="s2"> was added"</span><span class="p">)</span> <span class="o">%</span> <span class="p">{</span><span class="ss">:model</span> <span class="o">=&gt;</span> <span class="n">ui_lookup</span><span class="p">(</span><span class="ss">:model</span><span class="o">=&gt;</span><span class="s2">"MiqReport"</span><span class="p">),</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="vi">@rpt</span><span class="p">.</span><span class="nf">name</span><span class="p">}</span>
+</code></pre></div></div>
 
 <p>These forms <strong>are not acceptable</strong>:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">_</span><span class="p">(</span><span class="s2">"%s (All %s)"</span> <span class="o">%</span> <span class="p">[</span><span class="vi">@ems_cluster</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span> <span class="n">title_for_hosts</span><span class="p">])</span> <span class="c1"># the name of the placeholder can provide vital information to the translator</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span><span class="p">(</span><span class="s2">"%s (All %s)"</span> <span class="o">%</span> <span class="p">[</span><span class="vi">@ems_cluster</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span> <span class="n">title_for_hosts</span><span class="p">])</span> <span class="c1"># the name of the placeholder can provide vital information to the translator</span>
 <span class="n">_</span><span class="p">(</span><span class="s2">"No %s were selected to move up"</span><span class="p">)</span> <span class="o">%</span> <span class="s2">"fields"</span>          <span class="c1"># use named placeholder even in the case of a single placeholder</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><strong>do not use variables inside gettext strings</strong> as these will not be extracted and placed in the gettext catalog</li>
@@ -731,31 +715,27 @@ Then you do the translation when needed <em>(e.g. when generating the HTML or JS
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="s2">"Some random text"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="s2">"Some random text"</span>
 <span class="n">_</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">_</span><span class="p">(</span><span class="s2">"Some random text"</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span><span class="p">(</span><span class="s2">"Some random text"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="marking-gettext-strings-in-ui">Marking gettext strings in UI</h3>
 
 <p>To be able to see strings which pass through gettext <em>(i.e. are translatable)</em>, you have to add the following to the servers advanced settings:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">ui</span><span class="pi">:</span>
-  <span class="s">mark_translated_strings</span><span class="pi">:</span> <span class="s">true</span>
-</code></pre>
-</div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">ui</span><span class="pi">:</span>
+  <span class="na">mark_translated_strings</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
 
 <p>and <strong>restart</strong> the ManageIQ application. With these settings on, all strings passing through gettext will be marked with <code class="highlighter-rouge">»</code> and <code class="highlighter-rouge">«</code> markers:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>»webui text that went through some of the gettext routines«
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>»webui text that went through some of the gettext routines«
+</code></pre></div></div>
 
 <h2 id="translating-manageiq">Translating ManageIQ</h2>
 
@@ -810,9 +790,8 @@ and navigate to <a href="https://translate.zanata.org/zanata/project/view/manage
 To update the catalog, run the following rake task in the root of ManageIQ git checkout:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bundle <span class="nb">exec </span>rake locale:update
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>rake locale:update
+</code></pre></div></div>
 
 <p>This task will:</p>
 <ul>
@@ -824,22 +803,20 @@ To update the catalog, run the following rake task in the root of ManageIQ git c
 
 <p>Now, commit and push changed files into git (branch, pull request, etc.). Make sure no other files than the following list is commited:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>config/model_attributes.rb
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/model_attributes.rb
 config/dictionary_strings.rb
 config/yaml_strings.rb
 config/locales/manageiq.pot
 config/locales/*/*.po
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Upload the catalog created in previous step to <a href="http://translate.zanata.org">zanata</a>:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>config/locales
-<span class="gp">$ </span>zanata-cli push --push-type <span class="nb">source</span>
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>config/locales
+<span class="nv">$ </span>zanata-cli push <span class="nt">--push-type</span> <span class="nb">source</span>
+</code></pre></div></div>
 
 <p>Now translators in zanata will have the latest stuff to translate available.</p>
 
@@ -849,28 +826,25 @@ config/locales/*/*.po
 
 <p>Run the following in ManageIQ git checkout:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>config/locales
-<span class="gp">$ </span>zanata-cli pull --pull-type trans    <span class="c"># add --locales ... if you wish to download only specific locales</span>
-<span class="gp">$ </span>bundle <span class="nb">exec </span>rake gettext:po_to_json
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>config/locales
+<span class="nv">$ </span>zanata-cli pull <span class="nt">--pull-type</span> trans    <span class="c"># add --locales ... if you wish to download only specific locales</span>
+<span class="nv">$ </span>bundle <span class="nb">exec </span>rake gettext:po_to_json
+</code></pre></div></div>
 
 <p>If you are adding new locales / languages to ManageIQ, don’t forget to create yaml file containing localized names of each included
 language. From the root of ManageIQ checkout, run the following:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bundle <span class="nb">exec </span>rake locale:extract_locale_names
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>rake locale:extract_locale_names
+</code></pre></div></div>
 
 <p>This will update <code class="highlighter-rouge">config/human_locale_names.yaml</code> file.</p>
 
 <p>Now commit and push the changes (branch, pull request, etc.). Make sure no other files than the following list is commited:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>config/locales/*/*.po
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/locales/*/*.po
 app/assets/javascripts/locale/*/*.js
 config/human_locale_names.yaml        # optionally, if you added locales
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="manageiq-self-service-ui">ManageIQ Self Service UI</h3>
 
@@ -878,51 +852,45 @@ config/human_locale_names.yaml        # optionally, if you added locales
   <li>Update the gettext catalogs:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>client
-<span class="gp">$ </span>gulp gettext-extract
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>client
+<span class="nv">$ </span>gulp gettext-extract
+</code></pre></div></div>
 
 <ul>
   <li>Upload the catalogs to zanata:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>zanata-cli push --push-type <span class="nb">source</span>
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli push <span class="nt">--push-type</span> <span class="nb">source</span>
+</code></pre></div></div>
 
 <ul>
   <li>Once the translations are complete, download the translated catalogs:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>zanata-cli pull --pull-type trans --locales ...
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli pull <span class="nt">--pull-type</span> trans <span class="nt">--locales</span> ...
+</code></pre></div></div>
 
 <ul>
   <li>Convert the translated .po catalogs into .json files:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gulp gettext-compile
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gulp gettext-compile
+</code></pre></div></div>
 
 <ul>
   <li>Update locale names:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gulp available-languages
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gulp available-languages
+</code></pre></div></div>
 
 <ul>
   <li>Commit and push the new content into git:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git commit client/gettext/po client/gettext/json
-<span class="gp">$ </span>git push
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit client/gettext/po client/gettext/json
+<span class="nv">$ </span>git push
+</code></pre></div></div>
 
 <h3 id="manageiq-amazon-provider">ManageIQ Amazon Provider</h3>
 
@@ -932,34 +900,30 @@ config/human_locale_names.yaml        # optionally, if you added locales
   <li>Update the gettext catalog. With the Amazon provider engine (plugin) hooked into your ManageIQ instance, run the following from the ManageIQ git checkout:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>rake locale:plugin:find[ManageIQ::Providers::Amazon]
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rake locale:plugin:find[ManageIQ::Providers::Amazon]
+</code></pre></div></div>
 
 <ul>
   <li>Upload the catalog to zanata:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>zanata-cli push --push-type <span class="nb">source</span>
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli push <span class="nt">--push-type</span> <span class="nb">source</span>
+</code></pre></div></div>
 
 <ul>
   <li>Once the translations are complete, download the translated catalogs:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>zanata-cli pull --pull-type trans --locales ...
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli pull <span class="nt">--pull-type</span> trans <span class="nt">--locales</span> ...
+</code></pre></div></div>
 
 <ul>
   <li>Commit and push the new catalogs into git:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git commit locale/
-<span class="gp">$ </span>git push
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit locale/
+<span class="nv">$ </span>git push
+</code></pre></div></div>
 
 <h2 id="internationalization-in-rails-engines-plugins">Internationalization in rails engines (plugins)</h2>
 
@@ -967,25 +931,23 @@ config/human_locale_names.yaml        # optionally, if you added locales
   <li>Create an initializer in your engine / plugin with a content similar to:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>cat config/initializers/gettext.rb
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>config/initializers/gettext.rb
 Vmdb::Gettext::Domains.add_domain<span class="o">(</span><span class="s1">'ManageIQ_Providers_Amazon'</span>,
   ManageIQ::Providers::Amazon::Engine.root.join<span class="o">(</span><span class="s1">'locale'</span><span class="o">)</span>.to_s,
   :po<span class="o">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Initial extraction of gettext strings found in your engine / plugin:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> /path/to/your/plugin/root
-<span class="gp">$ </span>mkdir ./locale
-<span class="gp">$ </span><span class="k">for </span>locale <span class="k">in </span>en, ...; <span class="k">do </span>mkdir ./locale/<span class="nv">$locale</span>; <span class="k">done</span>
-<span class="gp">$ </span><span class="nb">cd</span> /path/to/your/manageiq/root
-<span class="gp">$ </span>rake locale:plugin:find[YourPlugin]
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/plugin/root
+<span class="nv">$ </span>mkdir ./locale
+<span class="nv">$ </span><span class="k">for </span>locale <span class="k">in </span>en, ...<span class="p">;</span> <span class="k">do </span>mkdir ./locale/<span class="nv">$locale</span><span class="p">;</span> <span class="k">done</span>
+<span class="nv">$ </span><span class="nb">cd</span> /path/to/your/manageiq/root
+<span class="nv">$ </span>rake locale:plugin:find[YourPlugin]
+</code></pre></div></div>
 
 <p>Refer to <a href="https://github.com/ManageIQ/manageiq-providers-amazon/pull/28">ManageIQ/manageiq-providers-amazon/pull/28</a> as an example.</p>
 

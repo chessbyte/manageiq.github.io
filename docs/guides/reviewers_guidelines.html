@@ -478,7 +478,7 @@ this document is intended to summarize common pitfalls and also good examples.</
 <p>Make sure, the introduced code is checking the permissions on items checked in UI.
 There is a list of classes, that support RBAC check in <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/rbac/filterer.rb#L8"><code class="highlighter-rouge">CLASSES_THAT_PARTICIPATE_IN_RBAC</code></a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># =====</span>
 <span class="c1"># wrong</span>
 <span class="c1"># =====</span>
 <span class="k">if</span> <span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show_list"</span> <span class="o">||</span> <span class="p">(</span><span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show"</span> <span class="o">&amp;&amp;</span> <span class="vi">@layout</span> <span class="o">!=</span> <span class="s2">"cloud_network"</span><span class="p">)</span> <span class="o">||</span> <span class="vi">@lastaction</span><span class="p">.</span><span class="nf">nil?</span>
@@ -486,12 +486,11 @@ There is a list of classes, that support RBAC check in <a href="https://github.c
 <span class="k">else</span>
   <span class="p">[</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Also, we still have 5 different <em>(deprecated)</em> methods spread in the UI code for doing RBAC check, that basically do the same thing, just for different cases.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># =====</span>
 <span class="c1"># wrong</span>
 <span class="c1"># =====</span>
 <span class="k">if</span> <span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show_list"</span> <span class="o">||</span> <span class="p">(</span><span class="vi">@lastaction</span> <span class="o">==</span> <span class="s2">"show"</span> <span class="o">&amp;&amp;</span> <span class="vi">@layout</span> <span class="o">!=</span> <span class="s2">"cloud_subnet"</span><span class="p">)</span> <span class="o">||</span> <span class="vi">@lastaction</span><span class="p">.</span><span class="nf">nil?</span>
@@ -499,27 +498,24 @@ There is a list of classes, that support RBAC check in <a href="https://github.c
 <span class="k">else</span>
   <span class="p">[</span><span class="n">find_record_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])]</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For checking the permissions on the particular items, please use <code class="highlighter-rouge">find_records_with_rbac</code> method.
 <em>related issue: https://github.com/ManageIQ/manageiq-ui-classic/issues/1134</em></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># =====</span>
 <span class="c1"># right</span>
 <span class="c1"># =====</span>
 <span class="n">find_records_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">,</span> <span class="n">checked_or_params</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In case you want to check a single item, please use <code class="highlighter-rouge">find_record_with_rbac</code>, added in (https://github.com/ManageIQ/manageiq-ui-classic/pull/1636):</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># =====</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># =====</span>
 <span class="c1"># right</span>
 <span class="c1"># =====</span>
 <span class="n">find_record_with_rbac</span><span class="p">(</span><span class="no">CloudSubnet</span><span class="p">,</span> <span class="n">checked_or_params</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>more info:
 http://manageiq.org/docs/guides/ui/rbac_features</p>
@@ -532,13 +528,12 @@ http://manageiq.org/docs/guides/ui/rbac_features</p>
 
 <p>That means the double checking the variable with loaded records is not necessary, and therefore can be removed.</p>
 
-<div class="language-diff highlighter-rouge"><pre class="highlight"><code>     scheds = find_records_with_rbac(MiqSchedule, checked_or_params)
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     scheds = find_records_with_rbac(MiqSchedule, checked_or_params)
 <span class="gd">-    if scheds.empty?
 -      add_flash(msg1, :error)
 -      javascript_flash
 -    end
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
       </div>
     </article>

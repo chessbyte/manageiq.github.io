@@ -461,7 +461,7 @@
 <p>Listnavs are the left parts of the non-explorer screens. They typically contain information about entities and their relationships organized into accordions.
 Listnavs are defined under <code class="highlighter-rouge">app/views/layouts/listnav/</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- if @record.try(:name)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- if @record.try(:name)
   #accordion.panel-group
     = miq_accordion_panel(truncate(@record.name, :length =&gt; truncate_length), true, "icon") do
       = render_quadicon(@record, :mode =&gt; :icon, :size =&gt; 72, :typ =&gt; :listnav)
@@ -477,8 +477,7 @@ Listnavs are defined under <code class="highlighter-rouge">app/views/layouts/lis
     = miq_accordion_panel(_("Relationships"), false, "container_node_rel") do
       %ul.nav.nav-pills.nav-stacked
         = single_relationship_link(@record, :ems_container, "ext_management_system")
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Notice the use of helper methods <code class="highlighter-rouge">miq_accordion_panel</code>, <code class="highlighter-rouge">single_relationship_link</code> and more.</p>
 

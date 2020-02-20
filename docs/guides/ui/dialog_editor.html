@@ -465,7 +465,7 @@
 <p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/dialog-editor"><code class="highlighter-rouge">%dialog-editor</code></a> is the component on the top of the hierarchy of the whole editor.</p>
 
 <p>The overall dialog editor hierarchy is as follows:</p>
-<div class="language-haml highlighter-rouge"><pre class="highlight"><code><span class="nt">%dialog-editor</span>
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">%dialog-editor</span>
   <span class="nt">%dialog-editor-tabs</span>
   <span class="nt">%dialog-editor-boxes</span>
     | %dialog-editor-field
@@ -474,12 +474,11 @@
     | %dialog-editor-modal-box
     | %dialog-editor-modal-field
         | %dialog-editor-modal-field-template -# per field type
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The structure of JSON object used to describe the service dialogs is as follows:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'content'</span><span class="err">:</span> <span class="p">[{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'content'</span><span class="p">:</span> <span class="p">[{</span>
   <span class="s1">'dialog_tabs'</span><span class="p">:</span> <span class="p">[{</span>
     <span class="p">...</span>
     <span class="s1">'dialog_groups'</span><span class="p">:</span> <span class="p">[{</span>
@@ -488,8 +487,7 @@
     <span class="p">}],</span>
   <span class="p">}],</span>
 <span class="p">}],</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="dialog-tabs">Dialog Tabs</h3>
 
@@ -498,24 +496,22 @@
 <p>It is the main component as all the content is stored inside the object.</p>
 
 <p>At the beginning, the component’s controller loads the tabs of the dialog:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">tabList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">getDialogTabs</span><span class="p">();</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">tabList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">getDialogTabs</span><span class="p">();</span>
+</code></pre></div></div>
 <p>and assigns id of the currently active tab in the  <code class="highlighter-rouge">activeTab</code> variable in the <code class="highlighter-rouge">DialogEditor</code> service.</p>
 
 <h4 id="addtab"><code class="highlighter-rouge">addTab()</code></h4>
 
 <p>function <code class="highlighter-rouge">addTab</code> creates a new empty tab, pushes it to the array with the other tabs, and updates <code class="highlighter-rouge">activeTab</code> to the new tab.</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="nl">description</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
-  <span class="nx">display</span><span class="err">:</span> <span class="s1">'edit'</span><span class="p">,</span>
-  <span class="nx">label</span><span class="err">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
-  <span class="nx">position</span><span class="err">:</span> <span class="nx">nextIndex</span><span class="p">,</span>
-  <span class="nx">active</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">dialog_groups</span><span class="err">:</span> <span class="p">[],</span>
+  <span class="nx">display</span><span class="p">:</span> <span class="s1">'edit'</span><span class="p">,</span>
+  <span class="nx">label</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
+  <span class="nx">position</span><span class="p">:</span> <span class="nx">nextIndex</span><span class="p">,</span>
+  <span class="nx">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">dialog_groups</span><span class="p">:</span> <span class="p">[],</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="removetabid-number"><code class="highlighter-rouge">removeTab(id: number)</code></h4>
 
@@ -524,18 +520,16 @@
 <h4 id="update-positions-of-tabs">Update positions of tabs</h4>
 
 <p>Because it is possible to remove (or just move the position) tab in the middle of the list, after every change the positions are updated by calling <code class="highlighter-rouge">updatePosition</code> method defined in the <code class="highlighter-rouge">Dialog Editor</code> service:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">updatePositions</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tabList</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">updatePositions</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tabList</span><span class="p">);</span>
+</code></pre></div></div>
 
 <h3 id="dialog-groups">Dialog Groups</h3>
 
 <p>On the first level, the <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/box"><code class="highlighter-rouge">%dialog-editor-boxes</code></a> component iterates through all the tabs, selects the one that is <code class="highlighter-rouge">active</code>, and renders its groups:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>ng-repeat='tab in vm.dialogTabs'
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ng-repeat='tab in vm.dialogTabs'
 ng-if='tab.position === vm.service.activeTab'
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After, it iterates through all the tabs, and calls <code class="highlighter-rouge">%dialog-editor-field</code> component belonging to the group (decided by the position of the group).</p>
 
@@ -543,20 +537,19 @@ ng-if='tab.position === vm.service.activeTab'
 
 <p>After every change, the position needs to be updated:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">updatePositions</span><span class="p">(</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">updatePositions</span><span class="p">(</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">dialogTabs</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">activeTab</span><span class="p">].</span><span class="nx">dialog_groups</span>
 <span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The Group is <code class="highlighter-rouge">droppable</code> which means that elements can be Drag&amp;Drop-ed into the content of the group.</p>
 
 <p>Therefore in the controller of the component handling for updating position of dialog fields needs to be done:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">droppableOptions</span><span class="p">(</span><span class="nx">e</span><span class="err">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">ui</span><span class="err">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">elementScope</span><span class="err">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">ng</span><span class="p">.</span><span class="nx">element</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">).</span><span class="nx">scope</span><span class="p">();</span>
-  <span class="kd">let</span> <span class="nx">droppedItem</span><span class="err">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">elementScope</span><span class="p">.</span><span class="nx">dndDragItem</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">droppedPlace</span><span class="err">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">elementScope</span><span class="p">.</span><span class="nx">box</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">droppableOptions</span><span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">ui</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">elementScope</span><span class="p">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">ng</span><span class="p">.</span><span class="nx">element</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">).</span><span class="nx">scope</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">droppedItem</span><span class="p">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">elementScope</span><span class="p">.</span><span class="nx">dndDragItem</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">droppedPlace</span><span class="p">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">elementScope</span><span class="p">.</span><span class="nx">box</span><span class="p">;</span>
   <span class="c1">// update name for the dropped field</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">droppedItem</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">updateFieldName</span><span class="p">(</span><span class="nx">droppedItem</span><span class="p">);</span>
@@ -566,8 +559,7 @@ ng-if='tab.position === vm.service.activeTab'
     <span class="nx">droppedPlace</span><span class="p">.</span><span class="nx">dialog_fields</span>
   <span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="dialog-fields">Dialog Fields</h3>
 
@@ -590,11 +582,10 @@ ng-if='tab.position === vm.service.activeTab'
 
 <p>In case of Dropdown, the <code class="highlighter-rouge">default_value</code> can be represented either as an array (if the Dropdown is multiselect) or a string. For multiselect dropdowns there is a method for converting the <code class="highlighter-rouge">default_value</code> attribute:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">convertValuesToArray</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">convertValuesToArray</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">fieldData</span><span class="p">.</span><span class="nx">default_value</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">fromJson</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fieldData</span><span class="p">.</span><span class="nx">default_value</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="modal">Modal</h3>
 
@@ -602,11 +593,10 @@ ng-if='tab.position === vm.service.activeTab'
 
 <p>The primary function of the component is to load data it needs. Each type has its own mehthods to load the data into <code class="highlighter-rouge">this.modalData</code>. The source for the data is again the commonly used <code class="highlighter-rouge">DialogEditor</code> service method: <code class="highlighter-rouge">this.DialogEditor.getDialogTabs()</code>.</p>
 
-<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">public</span> <span class="nx">loadModalTabData</span><span class="p">(</span><span class="nx">tab</span><span class="err">:</span> <span class="kr">number</span><span class="p">)</span>
-<span class="k">public</span> <span class="nx">loadModalBoxData</span><span class="p">(</span><span class="nx">tab</span><span class="err">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">box</span><span class="err">:</span> <span class="kr">number</span><span class="p">)</span>
-<span class="k">public</span> <span class="nx">loadModalFieldData</span><span class="p">(</span><span class="nx">tab</span><span class="err">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">box</span><span class="err">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">field</span><span class="err">:</span> <span class="kr">number</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">loadModalTabData</span><span class="p">(</span><span class="nx">tab</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span>
+<span class="kr">public</span> <span class="nx">loadModalBoxData</span><span class="p">(</span><span class="nx">tab</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">box</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span>
+<span class="kr">public</span> <span class="nx">loadModalFieldData</span><span class="p">(</span><span class="nx">tab</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">box</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">field</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Modal controller also contains methods <code class="highlighter-rouge">addEntry()</code> and <code class="highlighter-rouge">removeEntry()</code> that are specific for Dropdown List or Radio Button component.</p>
 
@@ -631,7 +621,7 @@ ng-if='tab.position === vm.service.activeTab'
 <p>The component’s template mostly consists of <code class="highlighter-rouge">ng-switch</code>, which renders templates of specific fields from the <code class="highlighter-rouge">modal-field-template</code> component described lower, with necessary methods passed into the component through the binding described in <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal"><code class="highlighter-rouge">%dialog-editor-modal</code></a> component.</p>
 
 <p>Example for the Radio Button Dialog Field:</p>
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dialog-editor-modal-field-template</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dialog-editor-modal-field-template</span>
 <span class="na">ng-switch-when=</span><span class="s">"DialogFieldRadioButton"</span>
 <span class="na">template=</span><span class="s">"radio-button.html"</span>
 <span class="na">show-fully-qualified-name=</span><span class="s">"vm.showFullyQualifiedName"</span>
@@ -641,8 +631,7 @@ ng-if='tab.position === vm.service.activeTab'
 <span class="na">add-entry=</span><span class="s">"vm.addEntry"</span>
 <span class="na">remove-entry=</span><span class="s">"vm.removeEntry"</span>
 <span class="na">modal-data=</span><span class="s">"vm.modalData"</span><span class="nt">&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Label and Description for the Dialog Field are also set in this component, as well as setting Dialog Field to be <em>Dynamic</em> or <em>Reconfigurable</em>, as these properties are same for all the fields except Tag Control types.</p>
 
 <h4 id="field-template">Field Template</h4>
@@ -945,14 +934,13 @@ and a <code class="highlighter-rouge">timeField</code> since the controls are se
 
 <p>The <a href="https://github.com/ManageIQ/ui-components/blob/master/src/dialog-editor/services/dialogEditorService.ts"><code class="highlighter-rouge">DialogEditor</code></a> service’s primary use is to store the data of the edited dialog in the <code class="highlighter-rouge">setData</code> function:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="err">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
   <span class="c1">// the dialog data are now stored in this.data.content[0]</span>
   <span class="c1">// as indicated earlier in the document</span>
   <span class="p">...</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">setData</code> function is then called in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L86">Dialog Editor controller</a></p>
 
@@ -960,19 +948,18 @@ and a <code class="highlighter-rouge">timeField</code> since the controls are se
 
 <p>The Dialog Editor also uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">sessionStorage</a> to protect the users from mistakenly losing the changes while editing the dialog. In the <code class="highlighter-rouge">sessionStorage</code> the dialogs are stored by identificator <code class="highlighter-rouge">'service_dialog-' + id</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">clearSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">clearSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sessionStorageKey</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
 <span class="p">}</span>
 
-<span class="kr">public</span> <span class="nx">backupSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">dialog</span><span class="err">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">public</span> <span class="nx">backupSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">dialog</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sessionStorageKey</span><span class="p">(</span><span class="nx">id</span><span class="p">),</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dialog</span><span class="p">));</span>
 <span class="p">}</span>
 
-<span class="kr">public</span> <span class="nx">restoreSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">public</span> <span class="nx">restoreSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sessionStorageKey</span><span class="p">(</span><span class="nx">id</span><span class="p">)));</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="dialog-editor-validation">Dialog Editor Validation</h3>
 
@@ -1020,21 +1007,19 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
 
 <p>The top level component <code class="highlighter-rouge">%dialog-editor</code> is used in the <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/views/miq_ae_customization/editor.html.haml">editor.html.haml</a> template, where the ID of the dialog is also stored by:</p>
 
-<div class="language-haml highlighter-rouge"><pre class="highlight"><code>ManageIQ.angular.app.value('dialogIdAction', '<span class="si">#{</span> <span class="n">dialog_id_action</span><span class="p">.</span><span class="nf">to_json</span> <span class="si">}</span>');
-</code></pre>
-</div>
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ManageIQ.angular.app.value('dialogIdAction', '<span class="si">#{</span> <span class="n">dialog_id_action</span><span class="p">.</span><span class="nf">to_json</span> <span class="si">}</span>');
+</code></pre></div></div>
 
 <h3 id="data-from-the-api">Data from the API</h3>
 
 <p>Service Dialogs are serialized together from four database tables - <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog.rb">dialog</a>, <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog_tab.rb">dialog tab</a>, <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog_group.rb">dialog group</a>, and <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog_field.rb">dialog fields</a>. The data are serialized into a single object, before being passed to the Dialog Editor.</p>
 
 <p>The data are loaded by <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/assets/javascripts/services/dialog_editor_http_service.js">Dialog Editor HTTP service</a> from API by the request:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/api/service_dialogs/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'?attributes=content,buttons,label'</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/api/service_dialogs/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'?attributes=content,buttons,label'</span><span class="p">);</span>
+</code></pre></div></div>
 <p>or in case of a new Dialog, an empty dialog structure, defined  in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L23-L35">Dialog Editor controller</a> is used:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dialogInitContent</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dialogInitContent</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'content'</span><span class="p">:</span> <span class="p">[{</span>
     <span class="s1">'dialog_tabs'</span><span class="p">:</span> <span class="p">[{</span>
       <span class="s1">'label'</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab'</span><span class="p">),</span>
@@ -1047,17 +1032,15 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
     <span class="p">}],</span>
   <span class="p">}],</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>from the API the data are received from the method <a href="https://github.com/ManageIQ/manageiq-api/blob/e9ca3256ded6d026fe412c0815e1bb672ee0d4e1/app/controllers/api/service_dialogs_controller.rb#L19-L22"><code class="highlighter-rouge">fetch_service_dialogs_content</code></a>:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fetch_service_dialogs_content</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fetch_service_dialogs_content</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
   <span class="n">target</span><span class="p">,</span> <span class="n">resource_action</span> <span class="o">=</span> <span class="n">validate_dialog_content_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
   <span class="n">resource</span><span class="p">.</span><span class="nf">content</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">resource_action</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>after JSON is loaded for dynamic fields, dialog_field_responders needs to have an id, customized by: <code class="highlighter-rouge">translateResponderNamesToIds</code>.</p>
 
@@ -1067,9 +1050,8 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
 
 <p>After, the Dialog is saved by calling:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/api/service_dialogs'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="na">action</span><span class="p">:</span> <span class="nx">action</span><span class="p">,</span> <span class="na">resource</span><span class="p">:</span> <span class="nx">data</span> <span class="p">},</span> <span class="p">{</span> <span class="na">skipErrors</span><span class="p">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">]</span> <span class="p">});</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/api/service_dialogs'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="na">action</span><span class="p">:</span> <span class="nx">action</span><span class="p">,</span> <span class="na">resource</span><span class="p">:</span> <span class="nx">data</span> <span class="p">},</span> <span class="p">{</span> <span class="na">skipErrors</span><span class="p">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">]</span> <span class="p">});</span>
+</code></pre></div></div>
 
 <h2 id="demo">Demo</h2>
 

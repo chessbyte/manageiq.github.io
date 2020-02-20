@@ -469,9 +469,8 @@ example) is 9.2, and that won’t change in the near future.</p>
 <em>SoftwareCollections.org</em> package repository. If you are using <em>CentOS</em>
 then the command is the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo yum -y install centos-release-scl
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo yum -y install centos-release-scl
+</code></pre></div></div>
 
 <h2 id="make-sure-that-old-packages-are-removed">Make sure that old packages are removed</h2>
 
@@ -480,18 +479,16 @@ may encounter conflicts with network ports, so it is good idea to stop
 the database and remove those older packages before installing the new
 version:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo systemctl stop postgresql-server
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl stop postgresql-server
 $ sudo systemctl disable postgresql-server
 $ sudo yum -y remove 'postgresql-*'
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">pg</code> gem will also need to be re-compiled, so make sure you remove
 it:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> $ gem uninstall pg
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ gem uninstall pg
+</code></pre></div></div>
 
 <p>It will be re-compiled and re-installed the next time you run
 <code class="highlighter-rouge">bin/setup</code>.</p>
@@ -501,19 +498,17 @@ it:</p>
 <p>Then you need to install the software collection for version 10 (or
 newer) of <em>PostgreSQL</em>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo yum -y install \
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo yum -y install \
 rh-postgresql10-postgresql-server \
 rh-postgresql10-postgresql-devel
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will install the required files under <code class="highlighter-rouge">/opt/rh/rh-postgresql10</code>, so
 each time you need to use a command like <code class="highlighter-rouge">pgsql</code> you will have to use
 the complete path. Alternatively, you can <em>enable</em> that collection:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ scl enable rh-postgresql10 bash
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ scl enable rh-postgresql10 bash
+</code></pre></div></div>
 
 <p>This will spawn a new shell where you can use the commands without the
 full path, and it is useful when don’t need to run commands frequently.
@@ -521,17 +516,15 @@ But as you will probably want to run commands like <code class="highlighter-roug
 is better to enable the collection permanently, adding the following to
 the relevant <code class="highlighter-rouge">.bash_profile</code> files:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>source /opt/rh/rh-postgresql10/enable
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source /opt/rh/rh-postgresql10/enable
+</code></pre></div></div>
 
 <p>It is good idea to add this to your personal <code class="highlighter-rouge">.bash_profile</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cat &gt; $HOME/.bash_profile &lt;&lt;.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat &gt; $HOME/.bash_profile &lt;&lt;.
 source /opt/rh/rh-postgresql10/enable
 .
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="create-and-configure-the-database">Create and configure the database</h2>
 
@@ -542,36 +535,32 @@ service is also different. Make sure to take these differences into
 account when creating and configure the database. For example, to
 initially create the database you will need to do the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ su - root
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ su - root
 # scl enable rh-postgresql10 bash
 # postgresql-setup initdb
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To setup authentication you will need to modify the <code class="highlighter-rouge">pg_hba.conf</code> file,
 as described in the instructions, but taking into account the different
 location:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ PGDATA=/var/opt/rh/rh-postgresql10/lib/pgsql/data
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PGDATA=/var/opt/rh/rh-postgresql10/lib/pgsql/data
 $ sudo grep -q '^local\s' $PGDATA/pg_hba.conf || echo "local all all trust" | sudo tee -a $PGDATA/pg_hba.conf
 $ sudo sed -i.bak 's/\(^local\s*\w*\s*\w*\s*\)\(peer$\)/\1trust/' $PGDATA/pg_hba.conf
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To enable and start the server:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo systemctl enable rh-postgresql10-postgresql
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl enable rh-postgresql10-postgresql
 $ sudo systemctl start rh-postgresql10-postgresql
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And, finally, to create the database user:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ su - postgres
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ su - postgres
 $ scl enable rh-postgresql10 bash
 $ psql -c "CREATE ROLE root SUPERUSER LOGIN PASSWORD 'smartvm'"
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

@@ -156,7 +156,7 @@
 <h3 id="amazon-virtualization-type">Amazon Virtualization Type</h3>
 
 <h3 id="service-models-cloud-relationship">Service Models: Cloud Relationship</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>class Flavor
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Flavor
     expose :ext_management_system
     expose :vms
 end
@@ -202,8 +202,7 @@ class EmsCloud
     expose :key_pairs
     expose :security_groups
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="persistent-state-data-through-retries">Persistent state data through retries</h3>
 
@@ -219,15 +218,14 @@ end
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>if $evm.state_var_exist?(â€œtest_dataâ€)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if $evm.state_var_exist?(â€œtest_dataâ€)
     test_data = $evm.get_state_var(â€œtest_dataâ€)
     # TODO: Something interesting
 else
     # First time through, initialize data
     $evm.set_state_var(â€œtest_dataâ€, 1)
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="automate-model-changes">Automate Model changes</h3>
 

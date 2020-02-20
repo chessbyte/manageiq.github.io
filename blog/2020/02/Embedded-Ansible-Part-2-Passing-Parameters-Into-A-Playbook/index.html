@@ -131,7 +131,7 @@
 
 <p>If a playbook service is ordered programmatically from Ruby then input parameters can be passed via the options hash to the <code class="highlighter-rouge">create_service_provision_request</code> call, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>CREDENTIAL_CLASS = "ManageIQ_Providers_EmbeddedAnsible_AutomationManager_MachineCredential"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREDENTIAL_CLASS = "ManageIQ_Providers_EmbeddedAnsible_AutomationManager_MachineCredential"
 TEMPLATE_CLASS   = "ServiceTemplate"
 
 service_template = $evm.vmdb(TEMPLATE_CLASS).where(:name =&gt; 'Install a Package').first
@@ -142,8 +142,7 @@ options          = {
   "param_package" =&gt; "mlocate"
   }
 $evm.execute('create_service_provision_request', service_template, options)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="playbook-method-input-parameters-aka-method-parameters">Playbook Method Input Parameters (aka Method Parameters)</h3>
 <p>The Automate Explorer allows for input parameters (also called method parameters) to be defined when an Ansible playbook method is created. The parameters can be any of the standard data types such as string, boolean, integer, password, etc., for example:</p>
@@ -174,51 +173,47 @@ $evm.execute('create_service_provision_request', service_template, options)
 <h5 id="get_method_parameters">get_method_parameters</h5>
 <p>The <em>get_method_parameters</em> function reads the full list of input parameters with their values, as illustrated below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the full list of method parameters (get_method_parameters)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the full list of method parameters (get_method_parameters)
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_method_parameters: yes
   register: get_method_parameters
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Get the full list of method parameters (get_method_parameters)] ***************
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Get the full list of method parameters (get_method_parameters)] ***************
 ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     "msg": "Result:{u'ipam_user': u'ipam_admin', u'default_passwd': u'password::********', u'ipam_url': u'https://ipam.company.org', u'manageiq_validate_certs': False}"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="method_parameter_exists">method_parameter_exists</h5>
 <p>The <em>method_parameter_exists</em> function checks if a method parameter with a given name exists, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Check if a method parameter called 'ipam_url' exists (method_parameter_exists)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Check if a method parameter called 'ipam_url' exists (method_parameter_exists)
   manageiq_automate:
     workspace: "{{ workspace }}"
     method_parameter_exists:
       parameter: "ipam_url"
   register: method_parameter_exists
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Check if a method parameter called 'ipam_url' exists (method_parameter_exists)] ***
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Check if a method parameter called 'ipam_url' exists (method_parameter_exists)] ***
 ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     "msg": "Result:True"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It should be noted that the return from each of these tasks (stored by the <em>register</em> keyword) is a hash, and value of the return is referenced using the <em>value</em> key of this hash, for example <code class="highlighter-rouge">method_parameter_exists.value</code>.</p>
 
@@ -229,7 +224,7 @@ ok: [localhost] =&gt; {
 
 <p>From the VM Provision state machine this is accessible from <code class="highlighter-rouge">$evm.root['miq_provision'].miq_provision_request.options</code>, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$evm.root['miq_provision'].miq_provision_request.options[:dialog] = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$evm.root['miq_provision'].miq_provision_request.options[:dialog] = {
 "dialog_service_name" =&gt; "New Engineering VM", 
 "dialog_vm_name" =&gt; "pemcg-eng-03", 
 "dialog_option_0_cores_per_socket" =&gt; 2, 
@@ -237,14 +232,12 @@ ok: [localhost] =&gt; {
 "dialog_option_0_hostname" =&gt; "pemcg-eng-03.lon.redhat.com", "Array::dialog_tag_0_department" =&gt; "Classification::1000000000046", 
 "password::dialog_option_0_root_password" =&gt; "********"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To inject the <code class="highlighter-rouge">cores_per_socket</code> value from the service dialog as an input parameter using substitution syntax would therefore require the following input parameter value:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>${/#miq_provision.miq_provision_request.get_option(:dialog).fetch(dialog_option_0_cores_per_socket)}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>${/#miq_provision.miq_provision_request.get_option(:dialog).fetch(dialog_option_0_cores_per_socket)}
+</code></pre></div></div>
 
 <h3 id="encrypted-input-parameters">Encrypted Input Parameters</h3>
 <p>The parameters passed to a playbook method are often encrypted, either by definition as a “password” data type in the list of input parameters, or by being encrypted elsewhere in a workflow.</p>
@@ -263,9 +256,8 @@ ok: [localhost] =&gt; {
 
 <p>For example, to inject the <code class="highlighter-rouge">root_password</code> value from the previous service dialog using substitution syntax, an input parameter should be defined with a string data type and the following input parameter value:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> password::${/#miq_provision.miq_provision_request.get_option(:dialog).fetch(password::dialog_option_0_root_password)}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> password::${/#miq_provision.miq_provision_request.get_option(:dialog).fetch(password::dialog_option_0_root_password)}
+</code></pre></div></div>
 
 <p>A screenshot of these input parameters for illustration is as follows:</p>
 

@@ -517,23 +517,21 @@ documentation server which regenerates the docs on each request.</p>
   <li>
     <p>Log messages should be prefixed consistently.</p>
 
-    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># in a class method (notice the . notation)</span>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># in a class method (notice the . notation)</span>
 <span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">) The rest of the log message."</span><span class="p">)</span>
 
 <span class="c1"># in an instance method (notice the # notation)</span>
 <span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">) The rest of the log message."</span><span class="p">)</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If the same log prefix will be used many times within the same method,
 consider using a variable named log_prefix.</p>
 
-    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">log_prefix</span> <span class="o">=</span> <span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">)"</span>
-<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">log_prefix</span> <span class="o">=</span> <span class="s2">"MIQ(</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">__method__</span><span class="si">}</span><span class="s2">)"</span>
+<span class="o">...</span>
 <span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> The rest of the log message."</span><span class="p">)</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>When wrapping a block of code in logging, consider using the same
@@ -542,16 +540,15 @@ corollary, avoid using words that would not make sense on both ends, such as
 “Starting”.  Attach any extra information after the latter message using
 <code class="highlighter-rouge">" - #{extra_info}"</code></p>
 
-    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
-<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+<span class="o">...</span>
 <span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">...Complete"</span><span class="p">)</span>
 
 <span class="c1"># with extra information, such as timings or counts</span>
 <span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
-<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="o">...</span>
 <span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">...Complete - Timings: </span><span class="si">#{</span><span class="n">timings</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -611,15 +608,14 @@ a separate pull request.</li>
     <p>Use descriptive names for feature branches as they are included in the
 Git history.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code># bad
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># bad
 faster_tests
 rework_amazon_code
 
 # good
 remove_test_duplication_for_performance
 change_ems_amazon_to_be_region_specific
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Write a good pull request message.  By default, Github will use your
 branch name as the title.  Adjust the title if this is not appropriate for
@@ -662,17 +658,15 @@ production.log.  A snippet from there with the entire UI transaction is
 needed, including the error message and the stack trace.  A UI transaction
 starts with something that looks like</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:11.910803 #24340:3fd36e0349dc]  INFO -- : Started GET "/ems_infra/show/7" for 127.0.0.1 at 2013-08-22 00:39:11 -0400
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:11.910803 #24340:3fd36e0349dc]  INFO -- : Started GET "/ems_infra/show/7" for 127.0.0.1 at 2013-08-22 00:39:11 -0400
 [----] I, [2013-08-22T04:39:11.929926 #24340:3fd36e0349dc]  INFO -- : Processing by EmsInfraController#show as HTML
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>and ends with something that looks like</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:12.127578 #24340:3fd36e0349dc]  INFO -- : Rendered layouts/_global_footer.html.erb (0.1ms)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:12.127578 #24340:3fd36e0349dc]  INFO -- : Rendered layouts/_global_footer.html.erb (0.1ms)
 [----] I, [2013-08-22T04:39:12.127794 #24340:3fd36e0349dc]  INFO -- : Completed 200 OK in 198ms (Views: 110.1ms | ActiveRecord: 15.4ms)
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Everything in between with the same PID (the number between the # and :
 symbols in the log line header) is important.</p>
@@ -783,10 +777,9 @@ want to go back to a specific commit and delete commits after that, use
   <li>
     <p>Uncommit a file from an existing commit</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git reset HEAD^ path/to/file/to/revert
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD^ path/to/file/to/revert
 git commit --amend
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 

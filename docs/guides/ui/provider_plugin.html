@@ -492,7 +492,7 @@ be collected using a custom form.</p>
 
 <p>In addition to what is documented on the <a href="toolbars">toolbars</a> page, providers can specify what Dialog has to be displayed then a toolbar button is pressed.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">ManageIQ</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">ManageIQ</span>
   <span class="k">module</span> <span class="nn">Providers</span>
     <span class="k">module</span> <span class="nn">Amazon</span>
       <span class="k">module</span> <span class="nn">ToolbarOverrides</span>
@@ -514,8 +514,7 @@ be collected using a custom form.</p>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Above is an example where provider <code class="highlighter-rouge">ManageIQ::Providers::Amazon</code> is extending existing toolbar <code class="highlighter-rouge">EmsCloudCenter</code>with a new group containing a single button.</p>
 
@@ -552,7 +551,7 @@ be collected using a custom form.</p>
 
 <p>Example definition of a button that opens a Dialog Player dialog follows.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">ManageIQ</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">ManageIQ</span>
   <span class="k">module</span> <span class="nn">Providers</span>
     <span class="k">module</span> <span class="nn">Amazon</span>
       <span class="k">module</span> <span class="nn">ToolbarOverrides</span>
@@ -580,15 +579,14 @@ be collected using a custom form.</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>When a user clicks this button, a series of actions take place.</p>
 <ol>
   <li>Dialog definition is fetched from disk. The dialog definition has to be stored under the name matching the <code class="highlighter-rouge">:dialog_name</code> argument from path <code class="highlighter-rouge">&lt;provider_repo_root&gt;/dialogs/&lt;dialog_name&gt;.json</code>.</li>
   <li>A modal is displayed with a form created from the dialog definition. The correct dialog data is located using <code class="highlighter-rouge">:class</code> and <code class="highlighter-rouge">dialog_name</code>. Title of the modal is taken from <code class="highlighter-rouge">:dialog_title</code>.</li>
   <li>User interacts with the form.</li>
-  <li>If “Ok” was pressed by the user, an API call is made by POST to <code class="highlighter-rouge">/api/&lt;entity_name&gt;</code> and <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">action:</span><span class="w"> </span><span class="err">&lt;action_name&gt;</span><span class="w"> </span><span class="p">}</span></code>. Serialized data from the form are passed in <code class="highlighter-rouge">data</code> key.</li>
+  <li>If “Ok” was pressed by the user, an API call is made by POST to <code class="highlighter-rouge">/api/&lt;entity_name&gt;</code> and <code class="highlighter-rouge">{ action: &lt;action_name&gt; }</code>. Serialized data from the form are passed in <code class="highlighter-rouge">data</code> key.</li>
   <li>If the call is successfull the <code class="highlighter-rouge">:success_message</code> is displayed as a flash message. Otherwise an error message is displayed.</li>
 </ol>
 

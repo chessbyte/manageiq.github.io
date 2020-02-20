@@ -471,9 +471,8 @@
 
 <h4 id="menu-sections">Menu Sections</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Menu::Section.new(:clo, N_("Clouds"), 'fa fa-plus fa-2x', [
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Menu::Section.new(:clo, N_("Clouds"), 'fa fa-plus fa-2x', [
+</code></pre></div></div>
 
 <p>Menu sections looks like the example above. It consists of:</p>
 <ul>
@@ -495,9 +494,8 @@
 
 <h4 id="menu-items">Menu Items</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Menu::Item.new('miq_policy', N_('Explorer'), 'control_explorer', {:feature =&gt; 'control_explorer_view'}, '/miq_policy/explorer'),
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Menu::Item.new('miq_policy', N_('Explorer'), 'control_explorer', {:feature =&gt; 'control_explorer_view'}, '/miq_policy/explorer'),
+</code></pre></div></div>
 
 <p>Menu item consists of:</p>
 <ul>
@@ -532,11 +530,10 @@ remembered GET request’s URL is opened so that the user lands where he last wa
 <p>This relationship is declared by specifying the menu section in each controller
 whose GET request should be remembered under a menu section:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class FoobarController &lt; ApplicationController
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class FoobarController &lt; ApplicationController
   menu_section :opt
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
       </div>

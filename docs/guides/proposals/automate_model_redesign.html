@@ -499,26 +499,24 @@
 
 <h3 id="proposed-example-namespace-file-structure">Proposed example namespace file structure</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/&lt;namespace&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/&lt;namespace&gt;
     README
     /&lt;class&gt;
         README
         instance.yaml
         method.rb
         schema.yaml
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="proposed-example-instanceyaml">Proposed example instance.yaml</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>param_1: default
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>param_1: default
 execute: my_method.rb
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="proposed-example-schemayaml">Proposed example schema.yaml</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>param_1:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>param_1:
     type: attribute
     default_value: my string
     substitute: 1
@@ -526,12 +524,11 @@ execute: my_method.rb
 method_1:
     type: method
     default_value: my_method.rb
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="proposed-namespaceclass-restructure">Proposed Namespace/Class Restructure</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/ManageIQ (domain)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/ManageIQ (domain)
   /Cloud
     /VM
       /LifeCycle
@@ -616,8 +613,7 @@ method_1:
     /Change (New class to align with ITIL standards)
     /Remedy
     /LDAP (Active Directory Integration for OU placement)
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

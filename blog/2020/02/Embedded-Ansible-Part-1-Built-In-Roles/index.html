@@ -117,7 +117,7 @@
 
 <p>The following is an example of how the role can be used:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  vars:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  vars:
   - manageiq_validate_certs: false
 
   roles:
@@ -131,8 +131,7 @@
         object: "/Configuration/OpenShift/Parameters"
         attribute: "rhel_subscription_pool"
     register: get_attribute_result
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The role uses a <em>manageiq_validate_certs</em> internal variable to determine whether to validate the SSL connection back to the API. The default for this value is <em>true</em>, but must be overridden to <em>false</em> if the default self-signed SSL certificate is used. This can be done using a playbook var or input parameter (i.e. extra_var) called <em>manageiq_validate_certs</em> with the boolean value of <em>false</em>, for example:</p>
 
@@ -179,7 +178,7 @@
 <h2 id="return-values">Return Values</h2>
 <p>The <code class="highlighter-rouge">get_*</code> and <code class="highlighter-rouge">*_exists</code> functions return their values into a variable using the <em>register</em> command, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_attribute:
@@ -187,23 +186,21 @@
       attribute: "rhel_subscription_pool"
   register: get_attribute_result
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The return value from these commands is typically a hash, and the value of interest has the <code class="highlighter-rouge">value</code> key in this hash. For example, the debug line above will print the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ok: [localhost] =&gt; {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ok: [localhost] =&gt; {
     "msg": "Result:{'changed': False, 'value': 'Red Hat OpenShift Container Platform, Premium*', 'failed': False}"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If the variable is to be used elsewhere in the playbook it should therefore be referenced using the <code class="highlighter-rouge">value</code> key, for example
 <code> {{ get_attribute_result.value }} </code>.</p>
 
 <p>Some of the functions return an object. For example, <em>get_decrypted_attribute</em> returns a hash whose <em>value</em> key itself points to a further object hash:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_decrypted_attribute:
@@ -215,8 +212,7 @@
 ok: [localhost] =&gt; {
     "msg": "Result:{'changed': False, 'value': {'object': '/Configuration/OpenShift/Parameters', 'attribute': 'ldap_user_password', 'value': 'so_secret'}, 'failed': False}"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If the variable is to be used elsewhere in the playbook it should be referenced with the <code class="highlighter-rouge">value.value</code> key, for example
 <code> {{ get_decrypted_attribute_result.value.value }} </code> .</p>
@@ -228,7 +224,7 @@ ok: [localhost] =&gt; {
 
 <p>The following is an example of how the role can be used:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  vars:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  vars:
   - manageiq_validate_certs: false
 
   roles:
@@ -260,8 +256,7 @@ ok: [localhost] =&gt; {
       data:
         resource:
           href: "{{ vm.href }}"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The actions available to an object are those described in the API reference guide.</p>
 <h2 id="cfme-appliance-hostname">CFME Appliance Hostname</h2>

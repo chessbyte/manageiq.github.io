@@ -120,8 +120,7 @@
 The collection will need to return details about the coffee, update them if they need some more sugar, create new ones (Pumpkin, anyone?), and delete any we’re not a fan of - basic CRUD.</p>
 
 <p>Here is a glimpse into what adding the new collection with basic CRUD will look like:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>:collections:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:collections:
     :coffees:
         :description: Coffee
         :options: 
@@ -151,8 +150,7 @@ The collection will need to return details about the coffee, update them if they
             :delete:
             - :name: delete
               :identifier: coffee_delete
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Below is a breakdown of what some of the above elements mean:</p>
 <ul>
@@ -204,8 +202,7 @@ The collection will need to return details about the coffee, update them if they
 </ul>
 
 <p>Through the above definition, the following endpoints and actions were created:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>GET /api/coffee
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/coffee
 GET /api/coffee/:c_id
 
 POST /api/coffee
@@ -215,24 +212,20 @@ POST /api/coffee/:c_id { "action": "edit" }
 POST /api/coffee/:c_id { "action": "delete" } 
 
 DELETE /api/coffee/:c_id
-</code></pre>
-</div>
+</code></pre></div></div>
 <h3 id="where-are-the-methods"><strong>Where are the methods?</strong></h3>
 <p>Now that the routes exist, let’s take care of the methods. Once the new collection has been added to the <code class="highlighter-rouge">api.yml</code>, the corresponding controller needs to be <a href="https://github.com/ManageIQ/manageiq-api/tree/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api">created here</a>. The controller will look something like:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>module Api
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module Api
   class CoffeesController &lt; BaseController 
   end 
 end 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Because the <code class="highlighter-rouge">CoffeesController</code> inherits from the <code class="highlighter-rouge">BaseController</code>, a lot of what has been defined in the <code class="highlighter-rouge">api.yml</code> will already work <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png" height="20" width="20" align="absmiddle">. The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api/base_controller.rb">Base Controller</a> holds the action methods (<code class="highlighter-rouge">#show</code>, <code class="highlighter-rouge">#index</code>, <code class="highlighter-rouge">#update</code>, <code class="highlighter-rouge">#destroy</code>) that will be called if they are not overridden in the <code class="highlighter-rouge">CoffeesController</code>.</p>
 <h2 id="custom-resource-actions">Custom Resource Actions</h2>
 <p>Once basic CRUD is established, what good is seeing a coffee if you can’t order one? A custom resource action is the solution for that. In traditional REST, this would be solved via <code class="highlighter-rouge">POST /api/coffee/:c_id/order</code>. We instead use actions, <code class="highlighter-rouge">POST /api/coffee/:c_id { "action": "order" }</code></p>
 
 <p>With the new order action, the <code class="highlighter-rouge">:resource_actions:</code> section will look as follows:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>        :resource_actions:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        :resource_actions:
             :get:
             - :name: read
               :identifier: coffee_show 
@@ -246,12 +239,10 @@ end
             :delete:
             - :name: delete
               :identifier: coffee_delete
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Since ordering a coffee isn’t a basic CRUD action handled by the generic methods, that will need to be defined in the <code class="highlighter-rouge">CoffeesController</code>:</p>
-<div class="language-ruby highlighter-rouge">
-<pre class="highlight"><code><span class="k">module</span> <span class="nn">Api</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Api</span>
   <span class="k">class</span> <span class="nc">CoffeesController</span> <span class="o">&lt;</span> <span class="no">BaseController</span>
     <span class="k">def</span> <span class="nf">order_resource</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
       <span class="n">coffee</span> <span class="o">=</span> <span class="n">resource_search</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">collection_class</span><span class="p">(</span><span class="n">type</span><span class="p">))</span>
@@ -261,8 +252,7 @@ end
     <span class="k">end</span> 
   <span class="k">end</span> 
 <span class="k">end</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>The above example demonstrates a couple of the basic methods and formats that you’ll see used throughout the API.</p>
 <ul>
   <li>
@@ -286,7 +276,7 @@ end
   </li>
   <li>data
     <ul>
-      <li>The data input is the request body that was passed in with the order request. I like my coffee <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"cream"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">"sugar"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}</span></code>, so that is the request body that would be passed to my order.</li>
+      <li>The data input is the request body that was passed in with the order request. I like my coffee <code class="highlighter-rouge">{"cream": false, "sugar": false}</code>, so that is the request body that would be passed to my order.</li>
     </ul>
   </li>
 </ul>
@@ -295,8 +285,7 @@ end
 <p>Oftentimes, we need subcollections on a resource to return child resources. Coffee is great by itself, but it’s even better with donuts. And it’s your lucky day - every coffee has a set of donuts picked to pair perfectly with it. Sounds like the perfect job for a subcollection.</p>
 
 <p>Although the Donuts could also be a collection (they can still be enjoyed on their own), this example will only outline the subcollection actions for reading and deleting them.</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>    :donuts:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    :donuts:
         :description: Donuts
         :options: 
         - :subcollection
@@ -316,11 +305,9 @@ end
             :post:
             - :name: delete
               :identifier: coffee_delete
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>The above configuration is very similar to that of a collection, only it defines <code class="highlighter-rouge">:subcollection_actions:</code> and <code class="highlighter-rouge">:subresource_actions:</code>. The coffee options will also need to be updated to include the Donuts subcollection:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>    :coffees:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    :coffees:
         :description: Coffee
         :options: 
         - :collection
@@ -328,14 +315,12 @@ end
         :klass: Coffee
         :subcollections:
         - :donuts
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Subcollection actions are defined in <a href="https://github.com/ManageIQ/manageiq-api/tree/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api/subcollections">modules</a> and included in the collection controller they are a subcollection of.</p>
 
 <p>Below is a simple example of what the <code class="highlighter-rouge">Donuts</code> module would look like:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>module Api
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module Api
   module Subcollections
     module Donuts
       def donuts_query_resource(object)
@@ -347,15 +332,13 @@ end
       end
   end
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>In the above example, the <code class="highlighter-rouge">object</code> passed to the <code class="highlighter-rouge">donuts_query_resource</code> will be the <code class="highlighter-rouge">Coffee</code> object that the donuts are being queried on (the parent resource to the donuts).</p>
 
 <p>The two method signatures <code class="highlighter-rouge">donuts_query_resource(object)</code> and <code class="highlighter-rouge">donuts_delete_resource(object, type, id, data)</code> are the normal naming conventions for subcollection actions, <code class="highlighter-rouge">&lt;subcollection name&gt;_&lt;action&gt;_resource</code>. Like the collection, you can see the target method being generated <a href="https://github.com/ManageIQ/manageiq-api/blob/e9a142a2c4d55d8d0dc18d2e342cdfef251d37bf/app/controllers/api/base_controller/manager.rb#L80-L88">here</a>.</p>
 
 <p>The <code class="highlighter-rouge">CoffeesController</code> then includes the <code class="highlighter-rouge">Donut</code> module as follows:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>module Api
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module Api
   class CoffeesController &lt; BaseController
     include Subcollections::Donuts 
         
@@ -367,32 +350,27 @@ end
     end 
   end 
 end 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This subcollection now gives us the endpoints</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>GET /api/coffee/:c_id/donuts
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/coffee/:c_id/donuts
 GET /api/coffee/:c_id/donuts/:s_id
 
 POST /api/coffee/:c_id/donuts/:s_id { "action": "delete" }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And just like that, our API now serves both <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20" align="absmiddle"> and donuts!</p>
 
 <h2 id="creating-a-pr">Creating a PR</h2>
 <p>Small PRs are always easier to review, and this example would be broken down into two PRs - the Coffee CRUD PR and a Donuts subcollection PR. Examples in the PR description help reviewers to understand what was added, and also helps the users to get up to speed quickly! 
 Here is a snippet of what we might include as an example for ordering a coffee:</p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>POST /api/coffee/:id
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/coffee/:id
 {
     "action": "order",
     "cream": true,
     "sugar": false
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="questions-and-examples">Questions and Examples</h2>
 <p>Below you’ll find some common questions and example PRs to guide you through the development process.</p>

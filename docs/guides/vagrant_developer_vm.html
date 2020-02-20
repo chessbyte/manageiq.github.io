@@ -512,10 +512,9 @@ Code is copied from the host during provisioning, so you can test changes in you
   <li>Interact with the VM</li>
 </ol>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="nv">$ </span>vagrant ssh <span class="c"># Connect to the VM via SSH</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>vagrant ssh <span class="c"># Connect to the VM via SSH</span>
   <span class="nv">$ </span>vagrant rsync <span class="c"># rsync the content of /manageiq to update the content</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ports 3000 for the UI and 4000 for the API are forwared in your local machine, so you can access them through http://127.0.0.1:3000 and http://127.0.0.1:4000</p>
 

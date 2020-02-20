@@ -244,32 +244,28 @@ a SAML configuration with <a href="https://dbus.freedesktop.org/doc/dbus-send.1.
     <p>To aid in the debugging of issues encountered when using SAML the Apache log level
 can be increased to debug on the ManageIQ appliance.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
 ...
 LogLevel debug
 ...
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Then restart the httpd service</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code># systemctl restart httpd
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># systemctl restart httpd
+</code></pre></div>    </div>
 
     <p>Then attemp to perform a SAML authentication while tailing the ssl_error.log file.</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code># tail -f /var/www/miq/vmdb/log/apache/ssl_error.log
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tail -f /var/www/miq/vmdb/log/apache/ssl_error.log
 
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>NOTE: Once any issues have been resolved return the log level to warn:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
 ...
 LogLevel warn
 ...
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -293,11 +289,10 @@ client running the browser used to access the ManageIQ appliance UI.</p>
     <p>A common issue occures when the date on the SAML identity provider and the ManageIQ appliance are out of sync. This configuration error can result in <a href="/assets/images/blog/auth_saml_bad_request_date_time.png">this <strong><em>Bad Request</em></strong></a> message being displayed.</p>
 
     <p>If the Apache LogLevel is set to debug, as described above, errors similar to the bellow will be found in the <strong><em>/var/www/miq/vmdb/log/apache/ssl_error.log</em></strong> log file:</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code>  SubjectConfirmationData was in the past
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  SubjectConfirmationData was in the past
     and
   SSL Library Error: error:14094416:SSL routines:ssl3_read_bytes:sslv3 alert certificate unknown
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>The <strong><em>DATE(1)</em></strong> command can be used on the SAML identity provider and the ManageIQ appliance to confirm the dates on each are synchronized.</p>
   </li>
@@ -393,11 +388,10 @@ Be sure to include the “h” flag, as indicated below when generating the tar 
 
 <p>These shell commands shows how to generate the tar ball and verify it’s contents:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">cd</span><span class="kv"> /var/www/miq/vmdb
-</span><span class="w">$ </span><span class="nc">tar</span><span class="kv"> cvfzh my_log_files.tar.gz log
-</span><span class="w">$ </span><span class="nc">tar</span><span class="kv"> ztvf my_log_files.tar.gz
-</span></code></pre>
-</div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">cd</span> /var/www/miq/vmdb
+<span class="gp">$</span> <span class="nb">tar </span>cvfzh my_log_files.tar.gz log
+<span class="gp">$</span> <span class="nb">tar </span>ztvf my_log_files.tar.gz
+</code></pre></div></div>
 
 <h2 id="capturing-authentication-data-from-manageiq-db">Capturing Authentication Data From ManageIQ DB</h2>
 <hr />
@@ -409,9 +403,8 @@ the authentication configuration settings, group and user information from the d
   <li>
     <p>This shell command can be used to query the database for the <strong><em>authentication settings</em></strong>:</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">/var/www/miq/vmdb/bin/rails</span><span class="kv"> runner 'puts Settings.authentication'
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /var/www/miq/vmdb/bin/rails runner <span class="s1">'puts Settings.authentication'</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>This shell command can be used to query the database for the list of known <strong><em>groups</em></strong>:</p>
@@ -420,9 +413,8 @@ the authentication configuration settings, group and user information from the d
     <p>The groups returned from the IdP for users expected to be authenticated on ManageIQ must match at least one
 group reported by this command. If not one must be manually added using the ManageIQ UI.</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">/var/www/miq/vmdb/bin/rails</span><span class="kv"> runner 'puts MiqGroup.pluck(:description)'
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /var/www/miq/vmdb/bin/rails runner <span class="s1">'puts MiqGroup.pluck(:description)'</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>This shell command can be used to query the database for the list of known <strong><em>users</em></strong>:</p>
@@ -430,9 +422,8 @@ group reported by this command. If not one must be manually added using the Mana
   <li>
     <p>ManageIQ will auto create authenticated and authorized users if <strong>Get User Groups</strong> from the IdP is configured on the ManageIQ Authentication page.</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">/var/www/miq/vmdb/bin/rails</span><span class="kv"> runner 'puts User.pluck(:userid)'
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /var/www/miq/vmdb/bin/rails runner <span class="s1">'puts User.pluck(:userid)'</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -449,44 +440,41 @@ group reported by this command. If not one must be manually added using the Mana
   <li>
     <p>Step 1. Get the certs from the OpenLdap Serve if using secure LDAP<strong>S</strong> <em>These commands may vary depending on how the certs are managed on the LDAP server.</em></p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code> # Remove any old certs
-<span class="w">$ </span><span class="nc">rm</span><span class="kv"> /etc/openldap/certs/&amp;ast;
-</span>
- # Copy the certs from the LDAP server:
-<span class="w">$ </span><span class="nc">scp</span><span class="kv"> root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
-</span><span class="w">$ </span><span class="nc">scp</span><span class="kv"> root@ldaphost.example.com:/etc/pki/tls/certs/server&amp;ast;.pem /etc/openldap/certs/
-</span>
- # Rehash the certs
-<span class="w">$ </span><span class="nc">/usr/sbin/cacertdir_rehash</span><span class="kv"> /etc/openldap/certs/
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> #</span> Remove any old certs
+<span class="gp">$</span> rm /etc/openldap/certs/&amp;ast<span class="p">;</span>
+<span class="go">
+</span><span class="gp"> #</span> Copy the certs from the LDAP server:
+<span class="gp">$</span> scp root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
+<span class="gp">$</span> scp root@ldaphost.example.com:/etc/pki/tls/certs/server&amp;ast<span class="p">;</span>.pem /etc/openldap/certs/
+<span class="go">
+</span><span class="gp"> #</span> Rehash the certs
+<span class="gp">$</span> /usr/sbin/cacertdir_rehash /etc/openldap/certs/
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Step 2. Update <code class="highlighter-rouge">/etc/openldap/ldap.conf</code> to:</p>
 
     <p>Here is an example of an <code class="highlighter-rouge">ldap.conf</code>. <em>The values will vary depending on how the certs are managed on the LDAP server.</em></p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code>SASL_NOCANON    on
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">SASL_NOCANON    on
 URI             https://ldaphost.example.com:636
 BASE            dc=example,dc=com
 TLS_REQCERT     demand
 TLS_CACERTDIR   /etc/openldap/certs
 TLS_CACERT      /etc/openldap/certs/cacert.pem
-</code></pre>
-    </div>
+</span></code></pre></div>    </div>
   </li>
   <li>
     <p>Step 3. Verify the cert with openssl and LDAP configuration with openssl. For example:</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">openssl</span><span class="kv"> s_client -connect ldaphost.example.com:636 -CAfile /etc/openldap/certs/cacert.pem
-</span><span class="w">$ </span><span class="nc">openssl</span><span class="kv"> s_client -showcerts -connect ldaphost.example.com:636
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> openssl s_client <span class="nt">-connect</span> ldaphost.example.com:636 <span class="nt">-CAfile</span> /etc/openldap/certs/cacert.pem
+<span class="gp">$</span> openssl s_client <span class="nt">-showcerts</span> <span class="nt">-connect</span> ldaphost.example.com:636
+</code></pre></div>    </div>
   </li>
   <li>
     <p>The flags used in the <code class="highlighter-rouge">ldapsearch</code> examples are:</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code>-x Use simple authentication instead of SASL.
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">-x Use simple authentication instead of SASL.
 
 -H ldaphost
 
@@ -503,35 +491,31 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 -d debuglevel
    Set the LDAP debugging level to debuglevel. ldapsearch must be compiled with
    LDAP_DEBUG defined for this option to have any effect.
-</code></pre>
-    </div>
+</span></code></pre></div>    </div>
   </li>
   <li>
     <p>Step 4. Run non-secure <code class="highlighter-rouge">ldapsearch</code></p>
 
     <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port with a binddn and password</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">ldapsearch</span><span class="kv"> -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"  -D "cn=Manager,dc=example,dc=com" -w password
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>  <span class="nt">-D</span> <span class="s2">"cn=Manager,dc=example,dc=com"</span> <span class="nt">-w</span> password
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Step 5. Run <code class="highlighter-rouge">ldapsearch</code> using Transport Layer Security <strong><em>TLS</em></strong></p>
 
     <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port but do not specify binddn or password will result in a TLS exchange.</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">ldapsearch</span><span class="kv"> -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Step 6. Run <code class="highlighter-rouge">ldapsearch</code> using Secure Sockets Layer <strong><em>SSL</em></strong></p>
 
     <p>Specify <code class="highlighter-rouge">ldaps</code> protocol and port will result in SSL exchange.</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">ldapsearch</span><span class="kv"> -x -H ldaps://ldaphost.example.com:636  -b "dc=example,dc=com"
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldaps://ldaphost.example.com:636  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
+</code></pre></div>    </div>
 
     <p>The <code class="highlighter-rouge">-d</code> flag can be used to produce debugging information.</p>
 
@@ -557,20 +541,19 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 <p>This <strong><em>dbus-send / GetUserAttr</em></strong> command can be used to confirm all of the user attributes used
 by ManageIQ authentication are correctly provided by the underlying technology.</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">dbus-send</span><span class="kv"> \
-</span>  --print-reply \
-  --system \
-  --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr \
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> dbus-send <span class="se">\</span>
+  <span class="nt">--print-reply</span> <span class="se">\</span>
+  <span class="nt">--system</span> <span class="se">\</span>
+  <span class="nt">--dest</span><span class="o">=</span>org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr <span class="se">\</span>
   string:mshiffrin array:string:mail,givenname,sn,displayname,domainname
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output from the above <strong><em>dbus-send / GetUserAttr</em></strong> command should look similar to the following:</p>
 
 <p><code class="highlighter-rouge">Note:</code> The <strong><em>domainname</em></strong> attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code>method return sender=:1.40 -&gt; dest=:1.48 reply_serial=2
-   array [
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span> <span class="nv">dest</span><span class="o">=</span>:1.48 <span class="nv">reply_serial</span><span class="o">=</span>2
+<span class="go">   array [
       dict entry(
          string "mail"
          variant             array [
@@ -602,30 +585,27 @@ by ManageIQ authentication are correctly provided by the underlying technology.<
             ]
       )
    ]
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="dbus-send--getusergroups"><strong><em>dbus-send / GetUserGroups</em></strong></h3>
 
 <p>This <strong><em>dbus-send / GetUserGroups</em></strong> command can be used to confirm all of the user’s groups are correctly provided by the underlying technology.</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">dbus-send</span><span class="kv"> \
-</span>  --print-reply \
-  --system \
-  --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserGroups \
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> dbus-send <span class="se">\</span>
+  <span class="nt">--print-reply</span> <span class="se">\</span>
+  <span class="nt">--system</span> <span class="se">\</span>
+  <span class="nt">--dest</span><span class="o">=</span>org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserGroups <span class="se">\</span>
   string:mshiffrin
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output from the above <strong><em>dbus-send / GetUserAttr</em></strong> command should look similar to the following:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code>method return sender=:1.40 -&gt; dest=:1.189 reply_serial=2
-   array [
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span> <span class="nv">dest</span><span class="o">=</span>:1.189 <span class="nv">reply_serial</span><span class="o">=</span>2
+<span class="go">   array [
       string "evmgroup-super_administrator"
       string "gs-group"
    ]
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <ul>
   <li>If these dbus-send commands fail to return the required information the SSSD configuration must be diagnosed and fixed before attempting to use ManageIQ.
@@ -647,25 +627,22 @@ do not succeed the SSSD configuration can be diagnosed by doing the following:</
 
     <p>If it does not restart there could be errors in the <code class="highlighter-rouge">/etd/sssd/sssd.conf</code> file that need to be addressed.</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">systemctl</span><span class="kv"> restart sssd.service
-</span><span class="w">$ </span><span class="nc">systemctl</span><span class="kv"> status sssd.service
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> systemctl restart sssd.service
+<span class="gp">$</span> systemctl status sssd.service
+</code></pre></div>    </div>
   </li>
   <li>
     <p><code class="highlighter-rouge">Note:</code> If updates are done to the  <strong><em>/etc/sssd/sssd.conf</em></strong> file and not immediately seen when authenticating,
  then clean the SSSD cache as follows and restart the service:</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">sss_cache</span><span class="kv"> -E
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> sss_cache <span class="nt">-E</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>tail the sssd log files</p>
 
-    <div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">tail</span><span class="kv"> -f /var/log/sssd/&amp;ast;.log
-</span></code></pre>
-    </div>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> tail <span class="nt">-f</span> /var/log/sssd/&amp;ast<span class="p">;</span>.log
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Rerun the <strong><em>dbus-send</em></strong> commands described in section <a href="#confirming-sssd-configuration"><strong>Confirming SSSD configuration</strong></a></p>
@@ -714,26 +691,24 @@ Some default groups are provided, others must be manually created.
   <li>
     <p>ldapsearch example using userPrincipalName</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>$ ldapsearch -x -LLL \
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ldapsearch -x -LLL \
     -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389 \
     -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com" \
     -D "my-ad\testuser1" \
     -w ******** \
     -s sub "(userPrincipalName=testuser1@MY-AD.example.lab.eng.rdu2.redhat.com)" '*' memberof
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>ldapsearch example using sAMAccountName</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>$ ldapsearch -x -LLL \
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ldapsearch -x -LLL \
     -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389  \
     -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com"  \
     -D "my-ad\testuser1" \
     -w ******** \
     -s sub "(sAMAccountName=testuser1)" '*' memberof
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 

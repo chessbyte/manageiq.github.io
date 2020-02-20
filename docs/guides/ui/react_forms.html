@@ -482,13 +482,11 @@
 
 <h3 id="dependencies">Dependencies</h3>
 <p>To use form components, you need to add react-ui-components to your dependencies:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>yarn add @manageiq/react-ui-components
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yarn add @manageiq/react-ui-components
+</code></pre></div></div>
 <p>As a form API we are using <a href="https://github.com/final-form/react-final-form">React Final Form</a> library. This is not shipped with the react-ui-components package, because you might not want to use form components but something else and we want to ship the smallest package as possible. Therefor you will also have to add these dependencies</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>yarn add react-final-form final-form
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yarn add react-final-form final-form
+</code></pre></div></div>
 
 <p>###<a name="FormAPI"></a> Form API
 As a form API we are using <a href="https://github.com/final-form/react-final-form">React Final Form</a> library. Before reading anything else, it is recomended to go through their docs and examples. Also if you don’t find some specific use-case or example here, it is possible it will be addressed in the official docs.</p>
@@ -498,20 +496,18 @@ As a form API we are using <a href="https://github.com/final-form/react-final-fo
 <p>The Form component is basically just a <a href="https://reactjs.org/docs/context.html">React context</a>, that provides data and functions to its children, mainly to the <strong>Field</strong> components.</p>
 
 <p>To use this component, you have to add it to your file first:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
+</code></pre></div></div>
 
 <p>Form has several props, but only <strong>onSubmit</strong> callback must be specified. The onSubmit callback provides the current <strong>values</strong> and the whole <strong>formApi</strong>. OnSubmit will be called if all values are valid. Further information can be found <a href="https://github.com/final-form/final-form#onsubmit-values-object-form-formapi-callback-errors-object--void--object--promiseobject--void">here</a>.</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
 <span class="o">&lt;</span><span class="nx">Form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{(</span><span class="nx">values</span><span class="p">,</span> <span class="nx">formApi</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Submited values: '</span><span class="p">,</span> <span class="nx">values</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Another important prop is <strong>render</strong>. This prop is used to create template of the form. You specify form children, but using the render method will result in cleaner code.</p>
 
 <p>Following example is a simple form with one text input and submit button.</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
 
 <span class="o">&lt;</span><span class="nx">Form</span>
   <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">values</span> <span class="o">=&gt;</span> <span class="nx">submitFunction</span><span class="p">(</span><span class="nx">values</span><span class="p">)}</span>
@@ -532,13 +528,12 @@ As a form API we are using <a href="https://github.com/final-form/react-final-fo
 </span>    <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
 </span>  <span class="p">)}</span>
 <span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>FormApi provides usefull information about current form state. You can access them from the context or even better from <strong>render parameters</strong>. Full list of form state values can be found <a href="https://github.com/final-form/final-form#formstate">here</a>.</p>
 
 <p>This example shows most commonly used state values:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
 <span class="o">&lt;</span><span class="nx">Form</span>
   <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">values</span> <span class="o">=&gt;</span> <span class="nx">submitFunction</span><span class="p">(</span><span class="nx">values</span><span class="p">)}</span>
   <span class="nx">render</span><span class="o">=</span><span class="p">{({</span>
@@ -555,8 +550,7 @@ As a form API we are using <a href="https://github.com/final-form/react-final-fo
       <span class="c1">// some form template</span>
   <span class="p">}}</span>
 <span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 <p><strong>handleSubmit</strong></p>
 <ul>
   <li>function defined in <em>onSubmit</em>  prop</li>
@@ -573,20 +567,18 @@ As a form API we are using <a href="https://github.com/final-form/react-final-fo
 <ul>
   <li>values of form fields</li>
   <li>it is a object, where keys are the names (the <em>name</em> prop if Field component) of individual fields and values are current values of fields.
-    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
 <span class="nl">name</span><span class="p">:</span> <span class="s1">'Thomas'</span><span class="p">,</span>
-<span class="nx">password</span><span class="err">:</span> <span class="s1">'very secure password'</span>
+<span class="nx">password</span><span class="p">:</span> <span class="s1">'very secure password'</span>
 <span class="p">...</span>
 <span class="p">}</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>can be used for some dynamic form changes like showing new field when a certain values is equal to something:
-    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
 <span class="p">{</span><span class="nx">values</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">'Andrew'</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">Field</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"andrews-field"</span> <span class="p">{...</span> <span class="nx">other</span> <span class="nx">field</span> <span class="nx">props</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">}
 </span><span class="p">...</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -637,9 +629,8 @@ As a form API we are using <a href="https://github.com/final-form/react-final-fo
 <p>There are several ways to pass information about field rendering. There is a set of default components, that can be rendered. These are just simple HTML5 form inputs like <code class="highlighter-rouge">&lt;input&gt;, &lt;select&gt;</code> etc. You can also render custom components. The only rule for rendering custom components is to pass <strong>Field</strong> <code class="highlighter-rouge">input</code> and <code class="highlighter-rouge">meta</code> props to the actual form control.</p>
 
 <p><strong>Simple example</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Field</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"default"</span> <span class="nx">component</span><span class="o">=</span><span class="s2">"input"</span> <span class="o">/&gt;</span> <span class="c1">// this will render default HTML input</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Field</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"default"</span> <span class="nx">component</span><span class="o">=</span><span class="s2">"input"</span> <span class="o">/&gt;</span> <span class="c1">// this will render default HTML input</span>
+</code></pre></div></div>
 
 <p><strong>Custom component</strong>
 Custom component can be anything(not just input fields) as long as its uses the <code class="highlighter-rouge">onChange</code> callback provided by <code class="highlighter-rouge">Field</code> component.</p>
@@ -651,10 +642,10 @@ Every other prop added to Field component will be also passed to the custom comp
 <p>The preferad way to render custom components in MIQ is use the <code class="highlighter-rouge">component</code> prop.</p>
 
 <p><strong>Using the component prop</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
 
-<span class="kr">const</span> <span class="nx">CustomTextField</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">input</span><span class="p">,</span> <span class="nx">meta</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="err">`</span><span class="nx">form</span><span class="o">-</span><span class="nx">field</span> <span class="nx">$</span><span class="p">{</span><span class="nx">meta</span><span class="p">.</span><span class="nx">error</span> <span class="p">?</span> <span class="s1">'invalid'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">}</span><span class="err">`</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="kd">const</span> <span class="nx">CustomTextField</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">input</span><span class="p">,</span> <span class="nx">meta</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s2">`form-field </span><span class="p">${</span><span class="nx">meta</span><span class="p">.</span><span class="nx">error</span> <span class="p">?</span> <span class="s1">'invalid'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">rest</span><span class="p">.</span><span class="nx">label</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="nx">input</span>
       <span class="p">{...</span><span class="nx">rest</span><span class="p">}</span>
@@ -674,19 +665,18 @@ Every other prop added to Field component will be also passed to the custom comp
   <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Insert your value here!"</span>
   <span class="nx">type</span><span class="o">=</span><span class="s2">"number"</span>
   <span class="nx">label</span><span class="o">=</span><span class="s2">"Field label"</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+<span class="o">/&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Using the render prop</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
 
 <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"render-input-field"</span>
   <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span>
   <span class="nx">label</span><span class="o">=</span><span class="s2">"Field label"</span>
   <span class="nx">render</span><span class="o">=</span><span class="p">{({</span><span class="nx">input</span><span class="p">,</span> <span class="nx">meta</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>    
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="err">`</span><span class="nx">form</span><span class="o">-</span><span class="nx">field</span> <span class="nx">$</span><span class="p">{</span><span class="nx">meta</span><span class="p">.</span><span class="nx">error</span> <span class="p">?</span> <span class="s1">'invalid'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">}</span><span class="err">`</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s2">`form-field </span><span class="p">${</span><span class="nx">meta</span><span class="p">.</span><span class="nx">error</span> <span class="p">?</span> <span class="s1">'invalid'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">rest</span><span class="p">.</span><span class="nx">label</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
 </span>      <span class="o">&lt;</span><span class="nx">input</span>
         <span class="p">{...</span><span class="nx">rest</span><span class="p">}</span>
@@ -699,11 +689,10 @@ Every other prop added to Field component will be also passed to the custom comp
 </span>  <span class="p">)}</span>
 <span class="sr">/</span><span class="err">&gt;
 </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Using the React children</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span>
 
 <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"render-input-field"</span>
@@ -711,7 +700,7 @@ Every other prop added to Field component will be also passed to the custom comp
   <span class="nx">label</span><span class="o">=</span><span class="s2">"Field label"</span>
 <span class="o">&gt;</span>
   <span class="p">{({</span><span class="nx">input</span><span class="p">,</span> <span class="nx">meta</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="err">`</span><span class="nx">form</span><span class="o">-</span><span class="nx">field</span> <span class="nx">$</span><span class="p">{</span><span class="nx">meta</span><span class="p">.</span><span class="nx">error</span> <span class="p">?</span> <span class="s1">'invalid'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">}</span><span class="err">`</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s2">`form-field </span><span class="p">${</span><span class="nx">meta</span><span class="p">.</span><span class="nx">error</span> <span class="p">?</span> <span class="s1">'invalid'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">rest</span><span class="p">.</span><span class="nx">label</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
 </span>      <span class="o">&lt;</span><span class="nx">input</span>
         <span class="p">{...</span><span class="nx">rest</span><span class="p">}</span>
@@ -723,15 +712,14 @@ Every other prop added to Field component will be also passed to the custom comp
 </span>  <span class="p">)}</span>
 <span class="o">&lt;</span><span class="sr">/Field</span><span class="err">&gt;
 </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="miq-form-components">MIQ Form Components</h3>
 <p>React-ui-components provides multiple custom Field components. Their look and feel is based on patternfly 3.</p>
 
 <p>React-ui-components export multiple packages to further decrease the size of final build of your app. To import Form components:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span>
   <span class="nx">FinalFormField</span><span class="p">,</span>
   <span class="nx">FinalFormSelect</span><span class="p">,</span>
   <span class="nx">FieldGroup</span><span class="p">,</span>
@@ -739,9 +727,8 @@ Every other prop added to Field component will be also passed to the custom comp
   <span class="nx">FinalFormRadio</span><span class="p">,</span>
   <span class="nx">FinalFormTextArea</span><span class="p">,</span>
   <span class="nx">FinalFormSwitch</span><span class="p">,</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span><span class="p">;</span>
-</code></pre>
-</div>
+<span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h4 id="finalformfield">FinalFormField</h4>
 <p>This component represents classic HTML5 <code class="highlighter-rouge">&lt;input /&gt;</code>. Do not use this component for radiobutton or checkbox. These have dedicated components.</p>
@@ -816,8 +803,8 @@ Every other prop added to Field component will be also passed to the custom comp
 </table>
 
 <p><strong>Usage</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FinalFormField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FinalFormField</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
 <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"final-form-field"</span>
@@ -828,8 +815,7 @@ Every other prop added to Field component will be also passed to the custom comp
   <span class="nx">inputColumnSize</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span>
   <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormField</span><span class="p">}</span>
 <span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="finalformselect">FinalFormSelect</h4>
 <p>Select form component. Uses the <a href="https://react-select.com/home">ReactSelect v1</a> component.</p>
@@ -916,8 +902,8 @@ Every other prop added to Field component will be also passed to the custom comp
 </table>
 
 <p><strong>Usage</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FinalFormSelect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FinalFormSelect</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
 <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"select-field"</span>
@@ -928,9 +914,8 @@ Every other prop added to Field component will be also passed to the custom comp
   <span class="nx">multi</span>
   <span class="nx">clearable</span>
   <span class="nx">searchable</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+<span class="o">/&gt;</span>
+</code></pre></div></div>
 
 <h4 id="finalformtextarea">FinalFormTextArea</h4>
 <p>Textarea form component.</p>
@@ -993,17 +978,16 @@ Every other prop added to Field component will be also passed to the custom comp
 </table>
 
 <p><strong>Usage</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FinalFormTextArea</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FinalFormTextArea</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
 <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"texarea-field"</span>
   <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Write text here"</span>
   <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormTextArea</span><span class="p">}</span>
   <span class="nx">label</span><span class="o">=</span><span class="s2">"Textarea"</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+<span class="o">/&gt;</span>
+</code></pre></div></div>
 
 <h4 id="finalformswitch">FinalFormSwitch</h4>
 <p>Switch/Toggle form component. Should be used for single <code class="highlighter-rouge">true/false</code> form values.</p>
@@ -1072,8 +1056,8 @@ Every other prop added to Field component will be also passed to the custom comp
 <p>PF3 is using boostrap switch. Rest of the component props is described <a href="https://github.com/Julusian/react-bootstrap-switch">here</a>.</p>
 
 <p><strong>Usage</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FinalFormSwitch</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FinalFormSwitch</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
 <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"switch-field"</span>
@@ -1081,9 +1065,8 @@ Every other prop added to Field component will be also passed to the custom comp
   <span class="nx">label</span><span class="o">=</span><span class="s2">"Turn on?"</span>
   <span class="nx">onText</span><span class="o">=</span><span class="s2">"Yes"</span>
   <span class="nx">offText</span><span class="o">=</span><span class="s2">"No"</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+<span class="o">/&gt;</span>
+</code></pre></div></div>
 
 <h4 id="fieldgroup">FieldGroup</h4>
 <p>To use checkboxes/radiobuttons, you should group them together. If you want to have a single toggle field, please use the switch component.
@@ -1160,8 +1143,8 @@ Field group is used to style and handle selection sections of forms.</p>
 <p><strong>You must pass type=”checkbox” prop to the Field component for checkbox field group</strong></p>
 
 <p><strong>Usage</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FieldGroup</span><span class="p">,</span> <span class="nx">FinalFormCheckBox</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FieldGroup</span><span class="p">,</span> <span class="nx">FinalFormCheckBox</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
 <span class="o">&lt;</span><span class="nx">FieldGroup</span> <span class="nx">label</span><span class="o">=</span><span class="s2">"Field group"</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"checkboxGroup"</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="nx">Field</span>
@@ -1170,17 +1153,16 @@ Field group is used to style and handle selection sections of forms.</p>
     <span class="nx">type</span><span class="o">=</span><span class="s2">"checkbox"</span>
     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormCheckBox</span><span class="p">}</span>
     <span class="nx">label</span><span class="o">=</span><span class="s2">"Checkbox"</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">Field</span>
+  <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Field</span>
     <span class="nx">name</span><span class="o">=</span><span class="s2">"check2"</span>
     <span class="nx">id</span><span class="o">=</span><span class="s2">"check2"</span>
     <span class="nx">type</span><span class="o">=</span><span class="s2">"checkbox"</span>
     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormCheckBox</span><span class="p">}</span>
     <span class="nx">label</span><span class="o">=</span><span class="s2">"Checkbox"</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/FieldGroup</span><span class="err">&gt;
-</span></code></pre>
-</div>
+  <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/FieldGroup</span><span class="err">&gt;
+</span></code></pre></div></div>
 
 <p>####Rediobutton FieldGroup</p>
 
@@ -1238,8 +1220,8 @@ Field group is used to style and handle selection sections of forms.</p>
 <p><strong>You must pass type=”radio” and value prop to Field component for radio field group</strong></p>
 
 <p><strong>Usage</strong></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FieldGroup</span><span class="p">,</span> <span class="nx">FinalFormRadio</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FieldGroup</span><span class="p">,</span> <span class="nx">FinalFormRadio</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
 <span class="o">&lt;</span><span class="nx">FieldGroup</span> <span class="nx">label</span><span class="o">=</span><span class="s2">"Field group"</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"radioGroup"</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="nx">Field</span>
@@ -1249,18 +1231,17 @@ Field group is used to style and handle selection sections of forms.</p>
     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormRadio</span><span class="p">}</span>
     <span class="nx">label</span><span class="o">=</span><span class="s2">"Option 1"</span>
     <span class="nx">value</span><span class="o">=</span><span class="s2">"First value"</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">Field</span>
+  <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Field</span>
     <span class="nx">name</span><span class="o">=</span><span class="s2">"radioGroup"</span>
     <span class="nx">id</span><span class="o">=</span><span class="s2">"radio2"</span>
     <span class="nx">type</span><span class="o">=</span><span class="s2">"radio"</span>
     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormRadio</span><span class="p">}</span>
     <span class="nx">label</span><span class="o">=</span><span class="s2">"Option 2"</span>
     <span class="nx">value</span><span class="o">=</span><span class="s2">"Second value"</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/FieldGroup</span><span class="err">&gt;
-</span></code></pre>
-</div>
+  <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/FieldGroup</span><span class="err">&gt;
+</span></code></pre></div></div>
 
 <h3 id="examples">Examples</h3>
 
@@ -1269,12 +1250,12 @@ Field group is used to style and handle selection sections of forms.</p>
 <h4 id="simple-form">Simple form</h4>
 <p>This will create very simple form with two inputs and no validation. The Submit button is disabled if the form has not been changed. And there is also a reset button.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">'react'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="nx">as</span> <span class="nx">PfForm</span><span class="p">,</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Grid</span><span class="p">,</span> <span class="nx">Row</span><span class="p">,</span> <span class="nx">Col</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'patternfly-react'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FinalFormField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="k">as</span> <span class="nx">PfForm</span><span class="p">,</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Grid</span><span class="p">,</span> <span class="nx">Row</span><span class="p">,</span> <span class="nx">Col</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'patternfly-react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FinalFormField</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
-<span class="kr">const</span> <span class="nx">SimpleForm</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="kd">const</span> <span class="nx">SimpleForm</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">Grid</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">Form</span>
       <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">}</span>
@@ -1313,25 +1294,24 @@ Field group is used to style and handle selection sections of forms.</p>
 </span>  <span class="o">&lt;</span><span class="sr">/Grid</span><span class="err">&gt;
 </span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="global-form-validation">Global form validation</h4>
 <p>You can use global form values validation. By adding a validation function prop to form, you can achieve Form-level validation.
 Validation functions are pure functions that have the field value on input. If the field is valid, it should return <code class="highlighter-rouge">undefined</code>. If the Field is invalid, it should return string Error message. We can use the same example as before and add required propery to both fields and some other validation.
 Writing the global validation is not very clean and is not very reusable. It should be used for specific use-cases such as comparing two or more field values (comparing passwords for example).</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">'react'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="nx">as</span> <span class="nx">PfForm</span><span class="p">,</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Grid</span><span class="p">,</span> <span class="nx">Row</span><span class="p">,</span> <span class="nx">Col</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'patternfly-react'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">FinalFormField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span> <span class="k">as</span> <span class="nx">PfForm</span><span class="p">,</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Grid</span><span class="p">,</span> <span class="nx">Row</span><span class="p">,</span> <span class="nx">Col</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'patternfly-react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FinalFormField</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span>
 
-<span class="kr">const</span> <span class="nx">SimpleForm</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="kd">const</span> <span class="nx">SimpleForm</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">Grid</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">Form</span>
       <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">}</span>
       <span class="nx">validate</span><span class="o">=</span><span class="p">{</span><span class="nx">values</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">errors</span> <span class="o">=</span> <span class="p">{};</span>
+        <span class="kd">const</span> <span class="nx">errors</span> <span class="o">=</span> <span class="p">{};</span>
         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">[</span><span class="s1">'first-name'</span><span class="p">]</span> <span class="o">||</span> <span class="o">!</span><span class="nx">values</span><span class="p">[</span><span class="s1">'first-name'</span><span class="p">].</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">errors</span><span class="p">[</span><span class="s1">'first-name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'First name is required!'</span>
         <span class="p">}</span>
@@ -1374,13 +1354,12 @@ Writing the global validation is not very clean and is not very reusable. It sho
 </span>  <span class="o">&lt;</span><span class="sr">/Grid</span><span class="err">&gt;
 </span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="field-level-validation">Field level validation</h4>
 <p>You can also validate each field separately. This is the prefered way of validation. Validation function has the same rules as in global validation.
 Field level validation example:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Pepa'</span><span class="p">,</span> <span class="s1">'Karel'</span><span class="p">,</span> <span class="s1">'Mojmir'</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="s1">'Name must be one of: Pepa, Karel, Mojmir'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Pepa'</span><span class="p">,</span> <span class="s1">'Karel'</span><span class="p">,</span> <span class="s1">'Mojmir'</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="s1">'Name must be one of: Pepa, Karel, Mojmir'</span>
 
  <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"last-name"</span>
@@ -1389,16 +1368,15 @@ Field level validation example:</p>
   <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormField</span><span class="p">}</span>
   <span class="nx">validate</span><span class="o">=</span><span class="p">{</span><span class="nx">validate</span><span class="p">}</span>
 <span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="multiple-validatotors">Multiple validatotors</h4>
 <p>There are cases where you might need multiple validators on one field. You can use <code class="highlighter-rouge">composeValidators</code> function. Validators are run sequentually. And only the first validation error will be shown.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">composeValidators</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">composeValidators</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@manageiq/react-ui-components/dist/forms'</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Pepa'</span><span class="p">,</span> <span class="s1">'Karel'</span><span class="p">,</span> <span class="s1">'Mojmir'</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="s1">'Name must be one of: Pepa, Karel, Mojmir'</span>
-<span class="kr">const</span> <span class="nx">validateRequired</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="s1">'Name is required'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Pepa'</span><span class="p">,</span> <span class="s1">'Karel'</span><span class="p">,</span> <span class="s1">'Mojmir'</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="s1">'Name must be one of: Pepa, Karel, Mojmir'</span>
+<span class="kd">const</span> <span class="nx">validateRequired</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="kc">undefined</span> <span class="p">:</span> <span class="s1">'Name is required'</span><span class="p">;</span>
 
  <span class="o">&lt;</span><span class="nx">Field</span>
   <span class="nx">name</span><span class="o">=</span><span class="s2">"last-name"</span>
@@ -1407,16 +1385,15 @@ Field level validation example:</p>
   <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">FinalFormField</span><span class="p">}</span>
   <span class="nx">validate</span><span class="o">=</span><span class="p">{</span><span class="nx">composeValidators</span><span class="p">(</span><span class="nx">validateRequired</span><span class="p">,</span> <span class="nx">validate</span><span class="p">)}</span>
 <span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="passing-data-outside-of-the-form">Passing data outside of the form</h3>
 <p>If you need to access the data outside of the form component (store them to Redux for example), you can use <code class="highlighter-rouge">FormSpy</code> component. FormSpy <code class="highlighter-rouge">onChange</code> method will receive the <code class="highlighter-rouge">formState</code> as a default param. From there you can access all the information you might need in some other component.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">'react'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span><span class="p">,</span> <span class="nx">FormSpy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span><span class="p">,</span> <span class="nx">FormSpy</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-final-form'</span><span class="p">;</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">customOnChange</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="k">export</span> <span class="k">default</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">customOnChange</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">Form</span>
   <span class="p">...</span>
   <span class="nx">render</span><span class="o">=</span><span class="p">{({</span> <span class="nx">values</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
@@ -1428,8 +1405,7 @@ Field level validation example:</p>
   <span class="p">...</span>
   <span class="o">&gt;</span>
 <span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

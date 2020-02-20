@@ -468,7 +468,7 @@ Quadicons are present, but not limited to Explorer trees, GTLs and Listnavs.</p>
 The format allows you to specify either a single quadrant large icon, or four small ones (see the examples below).
 Ideally each new model that gets displayed in a GTL should have a <code class="highlighter-rouge">quadicon</code> method defined.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quadicon</span> <span class="c1"># icon with four quadrants</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quadicon</span> <span class="c1"># icon with four quadrants</span>
   <span class="p">{</span>
     <span class="ss">:top_left</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="ss">:fonticon</span> <span class="o">=&gt;</span> <span class="s1">'fa fa-play'</span><span class="p">,</span>
@@ -497,8 +497,7 @@ Ideally each new model that gets displayed in a GTL should have a <code class="h
     <span class="ss">:tooltip</span> <span class="o">=&gt;</span> <span class="s1">'hello world'</span>
   <span class="p">}</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It’s not recommended to use too much inheritance between decorators, because there might be side effects and we would like to have everything as explicit as possible. Any common behavior that affects all of the quadicons should be moved into a static method in <code class="highlighter-rouge">app/helpers/quadicon_helper.rb</code>, see <code class="highlighter-rouge">QuadiconHelper.machine_state</code> as an example.</p>
 

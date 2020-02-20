@@ -488,7 +488,7 @@ even able to reach the API endpoint of the underlying provider.</p>
 
 <p>Example in <code class="highlighter-rouge">create</code> we do a call that returns a <code class="highlighter-rouge">task\_id</code>. Then we call <code class="highlighter-rouge">initiate\_wait\_for\_task</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>def create
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def create
   ...
 
   task_id = CloudTenant.create_cloud_tenant_queue(session[:userid], ems, options)
@@ -502,14 +502,13 @@ even able to reach the API endpoint of the underlying provider.</p>
     initiate_wait_for_task(:task_id =&gt; task_id, :action =&gt; "create_finished")
   end
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This results in a transaction that fired busy waiting in the browser and polling <code class="highlighter-rouge">ApplicationController::wait\_for\_task</code>.</p>
 
 <p>When the task is finished, the <code class="highlighter-rouge">:action</code> passed in is called with the original parameters passed to the <code class="highlighter-rouge">create</code> call plus the task_id.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  def create_finished
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  def create_finished
     task_id = session[:async][:params][:task_id]
     tenant_name = session[:async][:params][:name]
     task = MiqTask.find(task_id)
@@ -532,8 +531,7 @@ end
 
     javascript_redirect :action =&gt; "show_list"
   end
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

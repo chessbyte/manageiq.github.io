@@ -468,7 +468,7 @@ Hardware for Host etc.).</p>
 
 <p>In a controller a list of textual groups is declared:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class CloudNetworkController &lt; ApplicationController
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class CloudNetworkController &lt; ApplicationController
 
 ...
 
@@ -479,26 +479,24 @@ Hardware for Host etc.).</p>
   end
   helper_method :textual_group_list
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Definition of each group can found in modules named according to scheme
 <code class="highlighter-rouge">XxxHelper::TextualSummary</code> in <code class="highlighter-rouge">app/helpers/*_helper/textual_summary.rb</code>.</p>
 
 <p>Example group definition:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>def textual_group_power_management
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def textual_group_power_management
   TextualGroup.new(_("Power Management"), %i(power_state boot_time state_changed_on))
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The group definition consists of a formatter – <code class="highlighter-rouge">TextualGroup</code>, a label and a list of properties.</p>
 
 <p>Other formatters include <code class="highlighter-rouge">TextualMultilabel</code> and <code class="highlighter-rouge">TextualTags</code>. All formatters live under <code class="highlighter-rouge">src/textual_summary</code> in <a href="https://github.com/ManageIQ/react-ui-components/tree/master/src/textual_summary">react-ui-components repository</a>.</p>
 
 <p>Example property definitions:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>  def textual_vapp
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  def textual_vapp
     {:label =&gt; _("vApp"), :value =&gt; @record.vapp}
   end
 
@@ -511,8 +509,7 @@ end
     {:label =&gt; _("Total %{title} Memory") % {:title =&gt; title_for_host},
      :value =&gt; number_to_human_size(@record.aggregate_memory.megabytes, :precision =&gt; 0)}
   end
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

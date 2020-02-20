@@ -551,10 +551,9 @@
   all servers via the queue that they should invalidate their caches as well.</p>
 
 <p>The api should provide singleton methods to access the cached copy at different scopes for each file</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Vmdb</span><span class="o">::</span><span class="no">Config</span><span class="p">[</span><span class="s2">"vmdb"</span><span class="p">]</span> <span class="c1"># default is my_server level</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Vmdb</span><span class="o">::</span><span class="no">Config</span><span class="p">[</span><span class="s2">"vmdb"</span><span class="p">]</span> <span class="c1"># default is my_server level</span>
 <span class="no">Vmdb</span><span class="o">::</span><span class="no">Config</span><span class="p">[</span><span class="s2">"vmdb"</span><span class="p">,</span> <span class="ss">:region</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Callers currently treat the config like a set of nested hashes, so we may want expose the same interface.  fetch_path (an evm Hash extension) is used extensively in caller code as well.</p>
 
@@ -612,7 +611,7 @@
   <li>Present each value in a tree structure, at the end of which is a text box and/or a “reset to default” button</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- performance
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- performance
   - history
     - initial_capture_days
       - Default Value: "0", Current Value: `&lt;default&gt;`  New Value: `[_____] (Reset to Default)`
@@ -622,8 +621,7 @@
       - Default Value: "6.months", Current Value: "3.months"  New Value: `[_____] (Reset to Default)`
     - keep_realtime_performances
       - Default Value: "4.hours", Current Value: `&lt;default&gt;`  New Value: `[_____] (Reset to Default)`
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

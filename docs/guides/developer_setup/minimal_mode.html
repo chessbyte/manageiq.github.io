@@ -462,9 +462,8 @@
 
 <p>In development, to start the application in standard mode, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; rake evm:start
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; rake evm:start
+</code></pre></div></div>
 
 <p>This command will start the following workers:</p>
 
@@ -483,9 +482,8 @@
 
 <p>In development, to start the application in minimal mode, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal rake evm:start
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal rake evm:start
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">MIQ_SPARTAN</code> environment variable is inspected by the <code class="highlighter-rouge">MiqServer</code> class (specifically, the <code class="highlighter-rouge">EnvironmentManagement</code> mixin), which determines whether the application is starting in a minimal mode.  In this strict minimal mode, the following workers are started:</p>
 
@@ -500,9 +498,8 @@
 
 <p>To start the application with a specific set of workers in minimal mode, run</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal:&lt;role_name&gt;:&lt;role_name&gt; rake evm:start
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal:&lt;role_name&gt;:&lt;role_name&gt; rake evm:start
+</code></pre></div></div>
 
 <p>Following is a mapping of role names to worker types:</p>
 
@@ -571,9 +568,8 @@
 
 <p>For example, to start in minimal mode with event catching and EMS refreshing enabled, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal:event:ems_inventory rake evm:start
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; MIQ_SPARTAN=minimal:event:ems_inventory rake evm:start
+</code></pre></div></div>
 
 <p>Note:</p>
 

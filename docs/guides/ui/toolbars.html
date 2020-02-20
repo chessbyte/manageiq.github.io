@@ -474,7 +474,7 @@ based on a number of controller instance variables.</p>
 
 <p>Toolbars are defined under <code class="highlighter-rouge">app/helpers/application_helper/toolbar/</code>. Each is a class of it’s own and it’s content is described by a simple DSL.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">VmCloudsCenter</span> <span class="o">&lt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">Basic</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">VmCloudsCenter</span> <span class="o">&lt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">Basic</span>
   <span class="n">button_group</span><span class="p">(</span><span class="s1">'instance_vmdb'</span><span class="p">,</span> <span class="p">[</span>
     <span class="nb">select</span><span class="p">(</span>
       <span class="ss">:instance_vmdb_choice</span><span class="p">,</span>
@@ -493,10 +493,9 @@ based on a number of controller instance variables.</p>
           <span class="ss">:confirm</span>   <span class="o">=&gt;</span> <span class="no">N_</span><span class="p">(</span><span class="s2">"Refresh relationships and power states for all items related to the selected items?"</span><span class="p">),</span>
           <span class="ss">:enabled</span>   <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
           <span class="ss">:onwhen</span>    <span class="o">=&gt;</span> <span class="s2">"1+"</span><span class="p">),</span>
-        <span class="n">button</span><span class="p">(</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+        <span class="n">button</span><span class="p">(</span> <span class="o">...</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="toolbar-building-diagram">Toolbar building diagram</h4>
 
@@ -564,7 +563,7 @@ logic to test if active entity in the UI such as VM, Host, Instance, Storage,
 etc. has particular <strong>feature</strong>.</p>
 
 <p>Example usage:</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">button</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="p">(</span>
   <span class="ss">:vm_collect_running_processes</span><span class="p">,</span>
   <span class="s1">'fa fa-eyedropper fa-lg'</span><span class="p">,</span>
   <span class="no">N_</span><span class="p">(</span><span class="s1">'Extract Running Processes for this VM'</span><span class="p">),</span>
@@ -572,8 +571,7 @@ etc. has particular <strong>feature</strong>.</p>
   <span class="ss">:confirm</span> <span class="o">=&gt;</span> <span class="no">N_</span><span class="p">(</span><span class="s2">"Extract Running Processes for this VM?"</span><span class="p">),</span>
   <span class="ss">:klass</span> <span class="o">=&gt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Button</span><span class="o">::</span><span class="no">GenericFeatureButtonWithDisable</span><span class="p">,</span>
   <span class="ss">:options</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:feature</span> <span class="o">=&gt;</span> <span class="ss">:collect_running_processes</span><span class="p">}),</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The feature to be tested is passed in the :options hash as :feature. All
 content of the :options is passed to the Button classes and can be used to
@@ -584,7 +582,7 @@ parametrize generic button classes.</p>
 <p>You can create buttons that don’t need a client–server roundtrip when pressed. Such buttons instead call some javascript function, talk to Angular components or send RxJS messages to perform their action.</p>
 
 <p>Example of such button definition:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>  button_group('middleware_server_operations', [
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  button_group('middleware_server_operations', [
     select(
       :middleware_server_power_choice,
       'fa fa-power-off fa-lg',
@@ -603,8 +601,7 @@ parametrize generic button classes.</p>
                      'function-data' =&gt; '{"type": "mwServerOps", "operation": "shutdown", "timeout": 0}'},
           :klass =&gt; ApplicationHelper::Button::MiddlewareStandaloneServerAction),
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Under <code class="highlighter-rouge">:data</code> you need to set 2 important keys:</p>
 <ul>

@@ -461,22 +461,19 @@
 <h3 id="deploying-kubernetes-locally-with-hacklocal-up-clustersh">Deploying Kubernetes locally with <a href="https://github.com/kubernetes/kubernetes/blob/master/hack/local-up-cluster.sh">hack/local-up-cluster.sh</a></h3>
 <p>Clone the core kubernetes repo:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir -p <span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/k8s.io/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/k8s.io/
 <span class="nb">cd</span> <span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/k8s.io/
 git clone https://github.com/kubernetes/kubernetes/
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Build binaries &amp; launch a single node cluster running on localhost, <strong>with privileged containers enabled (required for running SSA scans)</strong>:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>kubernetes
-sudo env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>kubernetes
+<span class="nb">sudo </span>env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh
+</code></pre></div></div>
 
 <p>Note, to skip re-building binaries in the future, run like so:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh -o _output/bin/
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh <span class="nt">-o</span> _output/bin/
+</code></pre></div></div>
 
 <h3 id="deploying-kubernetes-manually">Deploying Kubernetes Manually</h3>
 <p>When deploying Kubernetes manually, there are a few extra steps necessary to get it working with ManageIQ.</p>
@@ -495,25 +492,21 @@ sudo env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span c
 <h3 id="prepare-cluster-for-use-with-manageiq">Prepare cluster for use with ManageIQ:</h3>
 <ol>
   <li>Create <code class="highlighter-rouge">management-infra</code> namespace:
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code> kubectl create ns management-infra
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl create ns management-infra
+</code></pre></div>    </div>
   </li>
   <li>Create required serviceaccounts:
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code> kubectl create sa -n management-infra management-admin   
- kubectl create sa -n management-infra inspector-admin   
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl create sa <span class="nt">-n</span> management-infra management-admin   
+ kubectl create sa <span class="nt">-n</span> management-infra inspector-admin   
+</code></pre></div>    </div>
   </li>
   <li>Grant cluster-reader cluster role to <code class="highlighter-rouge">management-admin</code> SA:
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code> kubectl create clusterrolebinding management-infra-cluster-reader --clusterrole<span class="o">=</span>cluster-reader --user<span class="o">=</span>system:serviceaccount:management-infra:management-admin
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl create clusterrolebinding management-infra-cluster-reader <span class="nt">--clusterrole</span><span class="o">=</span>cluster-reader <span class="nt">--user</span><span class="o">=</span>system:serviceaccount:management-infra:management-admin
+</code></pre></div>    </div>
   </li>
   <li>Retrieve the serviceaccount token for <code class="highlighter-rouge">management-admin</code> (this will be the auth token ManageIQ uses):
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code> kubectl describe secret -n management-infra <span class="k">$(</span>kubectl get secrets -n management-infra | grep management-admin | cut -f1 -d <span class="s1">' '</span><span class="k">)</span> | grep -E <span class="s1">'^token'</span> | cut -f2 -d<span class="s1">':'</span> | tr -d <span class="s1">'\t'</span>
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl describe secret <span class="nt">-n</span> management-infra <span class="k">$(</span>kubectl get secrets <span class="nt">-n</span> management-infra | <span class="nb">grep </span>management-admin | cut <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s1">' '</span><span class="k">)</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s1">'^token'</span> | cut <span class="nt">-f2</span> <span class="nt">-d</span><span class="s1">':'</span> | tr <span class="nt">-d</span> <span class="s1">'\t'</span>
+</code></pre></div>    </div>
   </li>
 </ol>
 

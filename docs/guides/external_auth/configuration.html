@@ -500,10 +500,9 @@ IPA Server and Appliance:</p>
 
 <p><strong>/etc/hosts</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com
 192.168.100.12   appliance.test.company.com
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>On the non-DNS environment, the network configuration for
 the systems must reflect their FQDN.</p>
@@ -511,34 +510,30 @@ the systems must reflect their FQDN.</p>
 <p>If specifying both FQDN and Hostname in the /etc/hosts file,
 make sure the FQDN comes first:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com   ipaserver
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com   ipaserver
 192.168.100.12   appliance.test.company.com   appliance
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>/etc/sysconfig/network</strong> on Appliance.</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nv">NETWORKING</span><span class="o">=</span>yes
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">NETWORKING</span><span class="o">=</span>yes
 <span class="nv">HOSTNAME</span><span class="o">=</span>appliance.test.company.com
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then run:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>hostname appliance.test.company.com
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hostname appliance.test.company.com
+</code></pre></div></div>
 
 <hr />
 <h3 id="installing-and-configuring-the-ipa-client-software">Installing and Configuring the IPA Client Software</h3>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>/usr/sbin/ipa-client-install -N <span class="se">\</span>
-  --realm<span class="o">=</span>TEST.COMPANY.COM --domain<span class="o">=</span>test.company.com   <span class="se">\</span>
-  --server<span class="o">=</span>ipaserver.test.company.com   <span class="se">\</span>
-  --principal<span class="o">=</span>admin --password<span class="o">=</span>PASSWORD <span class="se">\</span>
-  --fixed-primary
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/sbin/ipa-client-install <span class="nt">-N</span> <span class="se">\</span>
+  <span class="nt">--realm</span><span class="o">=</span>TEST.COMPANY.COM <span class="nt">--domain</span><span class="o">=</span>test.company.com   <span class="se">\</span>
+  <span class="nt">--server</span><span class="o">=</span>ipaserver.test.company.com   <span class="se">\</span>
+  <span class="nt">--principal</span><span class="o">=</span>admin <span class="nt">--password</span><span class="o">=</span>PASSWORD <span class="se">\</span>
+  <span class="nt">--fixed-primary</span>
+</code></pre></div></div>
 
 <hr />
 <h3 id="configure-sssd">Configure SSSD</h3>
@@ -553,30 +548,27 @@ the Apache modules for external authentication:</p>
   <li>Add to the [domain/test.company.com] section:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[domain/test.company.com]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[domain/test.company.com]
   ldap_user_extra_attrs = mail, givenname, sn, displayname
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>In the [sssd] section, update the services section
 to include “, ifp”:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[sssd]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[sssd]
    services = nss, pam, ssh, ifp
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Add an [ifp] section at the end of the file:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[ifp]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ifp]
   allowed_uids = apache, root
   user_attributes = +mail, +givenname, +sn, +displayname
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 <h3 id="configure-pam">Configure PAM</h3>
@@ -585,10 +577,9 @@ to include “, ifp”:</li>
 
 <p><strong>/etc/pam.d/httpd-auth</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>auth    required pam_sss.so
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auth    required pam_sss.so
 account required pam_sss.so
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 <h3 id="configure-apache">Configure Apache</h3>
@@ -597,7 +588,7 @@ account required pam_sss.so
 
 <p><strong>/etc/httpd/conf.d/manageiq-external-auth</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>LoadModule authnz_pam_module modules/mod_authnz_pam.so
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule authnz_pam_module modules/mod_authnz_pam.so
 LoadModule intercept_form_submit_module modules/mod_intercept_form_submit.so
 LoadModule lookup_identity_module modules/mod_lookup_identity.so
 
@@ -642,8 +633,7 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   LookupDbusTimeout            5000
 
 &lt;/LocationMatch&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="update-the-appliance-apache-configuration-to-enable-external-authentication">Update the Appliance Apache Configuration to enable External Authentication</h4>
 
@@ -655,9 +645,8 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   <li>add this line before the <em>VirtualHost</em> directive:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Include conf.d/manageiq-external-auth
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Include conf.d/manageiq-external-auth
+</code></pre></div></div>
 
 <ul>
   <li>
@@ -669,7 +658,7 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>RequestHeader unset X_REMOTE_USER
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RequestHeader unset X_REMOTE_USER
 RequestHeader set X_REMOTE_USER           %{REMOTE_USER}e            env=REMOTE_USER
 RequestHeader set X_EXTERNAL_AUTH_ERROR   %{EXTERNAL_AUTH_ERROR}e    env=EXTERNAL_AUTH_ERROR
 RequestHeader set X_REMOTE_USER_EMAIL     %{REMOTE_USER_EMAIL}e      env=REMOTE_USER_EMAIL
@@ -677,8 +666,7 @@ RequestHeader set X_REMOTE_USER_FIRSTNAME %{REMOTE_USER_FIRSTNAME}e  env=REMOTE_
 RequestHeader set X_REMOTE_USER_LASTNAME  %{REMOTE_USER_LASTNAME}e   env=REMOTE_USER_LASTNAME
 RequestHeader set X_REMOTE_USER_FULLNAME  %{REMOTE_USER_FULLNAME}e   env=REMOTE_USER_FULLNAME
 RequestHeader set X_REMOTE_USER_GROUPS    %{REMOTE_USER_GROUPS}e     env=REMOTE_USER_GROUPS
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 <h3 id="configure-selinux">Configure SELinux</h3>
@@ -686,31 +674,27 @@ RequestHeader set X_REMOTE_USER_GROUPS    %{REMOTE_USER_GROUPS}e     env=REMOTE_
 <p>For external authentication to work with Apache through
 SSSD on SELinux systems, run the following command:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>setsebool -P allow_httpd_mod_auth_pam on
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setsebool <span class="nt">-P</span> allow_httpd_mod_auth_pam on
+</code></pre></div></div>
 
 <p>Also, on RHEL 6.5 and later as well as CentOS 6.6 and later based Appliances, run the following command:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>setsebool -P httpd_dbus_sssd on
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setsebool <span class="nt">-P</span> httpd_dbus_sssd on
+</code></pre></div></div>
 
 <hr />
 <h3 id="restart-sssd-and-apache">Restart SSSD and Apache</h3>
 
 <p>Make sure SSSD starts upon reboot:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>chkconfig sssd on
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chkconfig sssd on
+</code></pre></div></div>
 
 <p>Restart both:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>service sssd  restart
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service sssd  restart
 service httpd restart
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 <p>Back to <a href="../external_auth">External Authentication</a></p>

@@ -477,9 +477,8 @@ to items selected in the UI.</p>
 <p>Example below fetches cloud volumes whose IDs are either passed in as checked
 items from a GTL view or in <code class="highlighter-rouge">params[:id]</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  volumes = find_records_with_rbac(CloudVolume, checked_or_params)
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  volumes = find_records_with_rbac(CloudVolume, checked_or_params)
+</code></pre></div></div>
 
       </div>
     </article>

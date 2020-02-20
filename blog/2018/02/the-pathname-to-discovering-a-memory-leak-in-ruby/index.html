@@ -272,11 +272,10 @@ be autoloaded.  With that, we tried running a high number of invocations of
 that method in a row, and watched the <code class="highlighter-rouge">/proc/&lt;PID&gt;/smaps</code> to see if the
 <code class="highlighter-rouge">[heap]</code> section grew.  It looked something like this**:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">gdb</span><span class="kv"> -p [PID_OF_THE_MIQ_SERVER_PROCESS]
-</span>(gdb) p rb_eval_string("GC.start")
-(gdb) p rb_eval_string("500.times { MiqServer.my_server.sync_workers; GC.start }")
-</code></pre>
-</div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> gdb <span class="nt">-p</span> <span class="o">[</span>PID_OF_THE_MIQ_SERVER_PROCESS]
+<span class="go">(gdb) p rb_eval_string("GC.start")
+</span><span class="gp">(gdb) p rb_eval_string("500.times { MiqServer.my_server.sync_workers;</span> GC.start <span class="o">}</span><span class="s2">")
+</span></code></pre></div></div>
 
 <p>Nothing.  Not even a budge.  Well shoot… there goes that theory.</p>
 
@@ -300,9 +299,8 @@ tested the middle bit via some scripts outside of the context of ManageIQ, but
 for verbosity sake, using the same <code class="highlighter-rouge">gdb</code> process, we decided to update the
 <code class="highlighter-rouge">500.times {}</code> block to include that call:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">MiqServer</span><span class="p">.</span><span class="nf">my_server</span><span class="p">.</span><span class="nf">sync_workers</span><span class="p">;</span> <span class="no">MiqWorker</span><span class="p">.</span><span class="nf">status_update_all</span><span class="p">;</span> <span class="no">GC</span><span class="p">.</span><span class="nf">start</span> 
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">MiqServer</span><span class="p">.</span><span class="nf">my_server</span><span class="p">.</span><span class="nf">sync_workers</span><span class="p">;</span> <span class="no">MiqWorker</span><span class="p">.</span><span class="nf">status_update_all</span><span class="p">;</span> <span class="no">GC</span><span class="p">.</span><span class="nf">start</span> 
+</code></pre></div></div>
 
 <p>And… it leaked… !?</p>
 
@@ -318,7 +316,7 @@ first place”, let me explain.  We had tried something similar in a test script
 with no leak, but ended up trying it again.  The first draft of the script
 looked basically like this:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Code needed to get MiqProcess.processInfo loaded and working</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Code needed to get MiqProcess.processInfo loaded and working</span>
 <span class="nb">require</span> <span class="s1">'manageiq-gems-pending'</span>
 <span class="nb">require</span> <span class="s1">'util/miq-process'</span>
 <span class="nb">require</span> <span class="s1">'active_support/all'</span>
@@ -328,10 +326,9 @@ looked basically like this:</p>
 <span class="kp">loop</span> <span class="k">do</span>
   <span class="no">MiqProcess</span><span class="p">.</span><span class="nf">processInfo</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
   <span class="no">GC</span><span class="p">.</span><span class="nf">start</span>
-  <span class="nb">sleep</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+  <span class="nb">sleep</span> <span class="mf">0.5</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Unfortunately, it didn’t leak…</p>
 
@@ -353,13 +350,12 @@ and ran each bit overnight and logged the <code class="highlighter-rouge">[heap]
 <code class="highlighter-rouge">/proc/&lt;PID&gt;/smaps</code> overtime.  The leaky section ended up being a call to
 <code class="highlighter-rouge">MiqSystem.num_cpus</code>, and the code for that method can be seen below:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">num_cpus</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">num_cpus</span>
   <span class="k">return</span> <span class="k">unless</span> <span class="no">Sys</span><span class="o">::</span><span class="no">Platform</span><span class="o">::</span><span class="no">IMPL</span> <span class="o">==</span> <span class="ss">:linux</span>
   <span class="nb">require</span> <span class="s1">'linux_admin'</span>
   <span class="vi">@num_cpus</span> <span class="o">||=</span> <span class="no">LinuxAdmin</span><span class="o">::</span><span class="no">Hardware</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">total_cores</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Looks completely harmless… what gives!</p>
 
@@ -427,7 +423,7 @@ configs, the leak disappeared!  Hooray!</p>
 <p>With this, we quickly ruled out <code class="highlighter-rouge">Rails</code> being the issue here because we could
 replicate using a simple Ruby script:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'pathname'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'pathname'</span>
 
 <span class="nb">puts</span> <span class="no">Process</span><span class="p">.</span><span class="nf">pid</span>
 <span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="no">Pathname</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">__dir__</span><span class="p">))</span>
@@ -435,8 +431,7 @@ replicate using a simple Ruby script:</p>
 <span class="n">dot</span>      <span class="o">=</span> <span class="s2">"."</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s2">"ostruct"</span>
 <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">require</span> <span class="n">filename</span> <span class="p">};</span> <span class="nb">print</span> <span class="n">dot</span><span class="p">;</span> <span class="no">GC</span><span class="p">.</span><span class="nf">start</span><span class="p">;</span> <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And we confirmed that Rails even adds <code class="highlighter-rouge">autoload_paths</code> to the <code class="highlighter-rouge">$LOAD_PATH</code> <a href="https://github.com/rails/rails/blob/20c9111/railties/lib/rails/engine.rb#L555-L560">in
 an initializer</a>, so this was clearly a Ruby bug.  We tested across multiple

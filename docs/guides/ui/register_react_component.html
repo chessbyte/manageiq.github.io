@@ -492,9 +492,8 @@ componentFactory('YourComponentName', '#selector');
 <p>There is helper method in ManageIQ, which helps you do this automatically by calling <code class="highlighter-rouge">react</code> in .haml file. This will 
 result in div element with generic ID and it places component defined in step 1. over it.</p>
 
-<div class="language-haml highlighter-rouge"><pre class="highlight"><code><span class="p">=</span> <span class="n">react</span> <span class="s1">'YourComponentName'</span><span class="p">,</span> <span class="p">{</span><span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="s1">'ps'</span><span class="p">}</span>
-</code></pre>
-</div>
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">=</span> <span class="n">react</span> <span class="s1">'YourComponentName'</span><span class="p">,</span> <span class="p">{</span><span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="s1">'ps'</span><span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="shared-component-api">Shared component API</h3>
 <p>Abstract shared components has API controlling active components, this way you can define and create new component, later you can access to all active components on screen and use its shared interface to interact with it.</p>
@@ -526,15 +525,14 @@ import newInstance from ‘registry’;</li>
 </ul>
 
 <p>newInstance(‘YourComponentName’, {}, element);</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 #### export instance
 To receive component's instance from registery you can call function `getInstance`. You will get full information about this instance, ways to interact with it and s name and ID.
 ```JS
 import getInstance from 'registry';
 
 getInstance('YourComponentName', componentID);
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="is-defined">Is defined</h4>
 <p>Check if component with some name is defined in drawer. Great for checking if component’s name is available.</p>

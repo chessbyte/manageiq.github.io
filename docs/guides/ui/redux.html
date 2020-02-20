@@ -611,7 +611,7 @@ export function secondReducerFn(state, action) {
   // do something completely different with state
   return state;
 }</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>**`app/javascipt/reducers/reducer-example/types.js`**
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**`app/javascipt/reducers/reducer-example/types.js`**
 
 Here you will write constants which will be used for dispatching and for mapping simple functions to action types
 ```javascript 1.8
@@ -620,8 +620,7 @@ export const SECOND_ACTION = 'secondExampleAction';
 //... more actions
 export const ANOTHER_ACTION = 'someOtherAction';
 export const ONE_MORE_ACTION = 'absolutelyDifferentAction';
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><strong><code class="highlighter-rouge">app/javascipt/reducers/reducer-example/index.js</code></strong></p>
 
 <p>Here you will glue together actions and types, plus you will export all types so they can be dispatched later on.
@@ -643,7 +642,7 @@ import { addReducer, applyReducerHash } from ‘../miq-redux/reducer’;</p>
 <p>addReducer(
   (state, action) =&gt; applyReducerHash(typesToActions, state, action)
 )</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 #### Dispatching action
 Dispatching actions is basically how redux changes it's state. 
 
@@ -651,8 +650,7 @@ To dispatch single action for any reducer you have to call publicly available re
 ```javascript 1.8
 import { FIRST_ACTION } from './reducers';
 ManageIq.redux.store.dispatch({type: FIRST_ACTION, payload: {someValue: {}}});
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

@@ -463,7 +463,7 @@
 <p>Trees are built using <code class="highlighter-rouge">TreeBuilder</code> subclasses located in <code class="highlighter-rouge">app/presenters/tree_builder*</code>.</p>
 
 <p>Example tree builder:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>class TreeBuilderInstances &lt; TreeBuilder
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class TreeBuilderInstances &lt; TreeBuilder
   has_kids_for AvailabilityZone, [:x_get_tree_az_kids]
   has_kids_for ExtManagementSystem, [:x_get_tree_ems_kids]
 
@@ -504,8 +504,7 @@
   end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li><code class="highlighter-rouge">x_get_tree_roots</code> describes the root element(s) of the tree.</li>
   <li><code class="highlighter-rouge">has_kids_for</code> is used to declare non-root branches in the tree and methods that produce those.</li>
@@ -516,7 +515,7 @@ end
 <p>Trees in explorer screens are wrapped in accordions. The list of accordions with trees in a particular controller is specified via “features”.</p>
 
 <p>Example:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>def features
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def features
   [
     ApplicationController::Feature.new_with_hash(
       :role  =&gt; "vandt_accord",
@@ -534,8 +533,7 @@ end
       :title =&gt; _("Templates"),),
   ]
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

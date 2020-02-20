@@ -151,7 +151,7 @@ id assigned.</p>
 
 <p><code class="highlighter-rouge">cloud_subnets_network_ports</code> prior to the change:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
        id       | cloud_subnet_id | network_port_id | address 
 ----------------+-----------------+-----------------+---------
  99000000000001 |               2 |               1 |        |
@@ -159,12 +159,11 @@ id assigned.</p>
  99000000000003 |               3 |               3 |        |
  99000000000004 |               3 |               4 |        |
  99000000000005 |               3 |               5 |        |
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The same table after the change:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
  id | cloud_subnet_id | network_port_id |    address     
 ----+-----------------+-----------------+----------------
   1 |               2 |               1 | 192.0.2.1     |
@@ -172,8 +171,7 @@ id assigned.</p>
   3 |               3 |               3 | 192.0.2.3     |
   4 |               3 |               4 | 192.0.2.4     |
   5 |               3 |               5 | 192.0.2.5     |
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="new">New</h2>
 

@@ -464,19 +464,17 @@
 
 <p>For example, to create a plugin called ManageIQ::MyPlugin, do the following</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>manageiq
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>manageiq
 bundle <span class="nb">exec </span>rails generate manageiq:plugin ManageIQ::MyPlugin
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will create the directory <code class="highlighter-rouge">plugins/manageiq-my_plugin</code>, and you will see
 the creation progress emitted to the console:</p>
 
-<div class="language-text highlighter-rouge"><pre class="highlight"><code>create
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create
 create  .codeclimate.yml
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>By default, the plugin will be created in the <code class="highlighter-rouge">plugins</code> directory, but you can
 specify an alternate directory with <code class="highlighter-rouge">--path &lt;path&gt;</code>.</p>
@@ -488,17 +486,15 @@ ManageIQ files in order connect the application with the new plugin.</p>
 
 <p>The following lines are added to the <code class="highlighter-rouge">Gemfile</code>:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">group</span> <span class="ss">:my_plugin</span><span class="p">,</span> <span class="ss">:manageiq_default</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group</span> <span class="ss">:my_plugin</span><span class="p">,</span> <span class="ss">:manageiq_default</span> <span class="k">do</span>
   <span class="n">manageiq_plugin</span> <span class="s2">"manageiq-my_plugin"</span> <span class="c1"># TODO: Sort alphabetically...</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>During active development, you can replace the second line with</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'manageiq-my_plugin'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'plugins/manageiq-my_plugin'</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'manageiq-my_plugin'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'plugins/manageiq-my_plugin'</span>
+</code></pre></div></div>
 
 <p>Now you can run <code class="highlighter-rouge">bundle install</code> to activate the new plugin.</p>
 
@@ -511,10 +507,9 @@ generator but with some extra features.</p>
 <p>For example, to create a provider plugin called ManageIQ::Providers::AwesomeCloud,
 do the following:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>manageiq
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>manageiq
 bundle <span class="nb">exec </span>rails generate manageiq:provider ManageIQ::Providers::AwesomeCloud
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Much like the plugin generator, you can pass <code class="highlighter-rouge">--path</code> to change the path.
 Additionally, you also have the following options</p>
@@ -539,21 +534,19 @@ core models and common workers. The generated scaffolding is similar to the
 
 <p>The following lines are added to <code class="highlighter-rouge">lib/workers/miq_worker_types.rb</code>:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::EventCatcher"</span>           <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::EventCatcher"</span>           <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
 <span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::MetricsCollectorWorker"</span> <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
 <span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::RefreshWorker"</span>          <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="create-an-awesomecloud-instance">Create an AwesomeCloud instance</h4>
 
 <p>Start rails console by executing <code class="highlighter-rouge">bundle exec rails c</code> and perform the following
 in the rails console, to create the cloud manager with an associated authentication.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">ems</span> <span class="o">=</span> <span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">AwesomeCloud</span><span class="o">::</span><span class="no">CloudManager</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'CloudAwesome'</span><span class="p">,</span> <span class="ss">:zone</span> <span class="o">=&gt;</span> <span class="no">Zone</span><span class="p">.</span><span class="nf">default_zone</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ems</span> <span class="o">=</span> <span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">AwesomeCloud</span><span class="o">::</span><span class="no">CloudManager</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'CloudAwesome'</span><span class="p">,</span> <span class="ss">:zone</span> <span class="o">=&gt;</span> <span class="no">Zone</span><span class="p">.</span><span class="nf">default_zone</span><span class="p">)</span>
 <span class="n">ems</span><span class="p">.</span><span class="nf">update_authentication</span><span class="p">(</span><span class="ss">:default</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:userid</span> <span class="o">=&gt;</span> <span class="n">user</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">pass</span><span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
       </div>
     </article>

@@ -500,9 +500,8 @@ It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</
 <p><em>This interface is intended to replace older interfaces <code class="highlighter-rouge">add_inventory_collection()</code> and <code class="highlighter-rouge">has_inventory()</code></em></p>
 
 <p>Entry point for creating IC definition. It defines parameters:</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">builder_class</span><span class="p">,</span> <span class="n">collection_name</span><span class="p">,</span> <span class="n">extra_properties</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">settings</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">builder_class</span><span class="p">,</span> <span class="n">collection_name</span><span class="p">,</span> <span class="n">extra_properties</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">settings</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</code></pre></div></div>
 <p>which we’ll see more detailed in this chapter.</p>
 
 <p>It creates <code class="highlighter-rouge">ManagerRefresh::InventoryCollection</code>  and assigns it to <strong>persister’s @collections[:vms]</strong></p>
@@ -525,9 +524,8 @@ It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</
 
 <h5 id="example">Example</h5>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Instantiates <code class="highlighter-rouge">cloud</code> builder class, searches for <code class="highlighter-rouge">vms</code> method in it, searches for <code class="highlighter-rouge">...::CloudManager::Vm</code> as model_class property and discovers model_class attributes.</p>
 
@@ -570,9 +568,8 @@ It overwrites both shared and IC specific properties. Added by <code class="high
 <p>Applied at <strong>lowest level priority</strong> so these properties cannot overwrite properties written in code.</p>
 
 <p>Can be found in tab Advanced(yaml editor):</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>ems/ems_refresh/&lt;ExtManagementSystem.ems_type&gt;/inventory_collections/
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ems/ems_refresh/&lt;ExtManagementSystem.ems_type&gt;/inventory_collections/
+</code></pre></div></div>
 
 <h5 id="shared-options">Shared options</h5>
 
@@ -590,9 +587,8 @@ Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strate
 
 <h5 id="example-1">Example</h5>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vm_and_miq_template_ancestry</span><span class="p">,</span> <span class="p">{},</span> <span class="p">{</span><span class="ss">:auto_inventory_attributes</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span> <span class="ss">:without_model_class</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vm_and_miq_template_ancestry</span><span class="p">,</span> <span class="p">{},</span> <span class="p">{</span><span class="ss">:auto_inventory_attributes</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span> <span class="ss">:without_model_class</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="--block">- block</h4>
 
@@ -600,11 +596,10 @@ Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strate
 
 <h5 id="example-2">Example</h5>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:custom_ic_definition</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">builder</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:custom_ic_definition</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">builder</span><span class="o">|</span>
   <span class="n">builder</span><span class="p">.</span><span class="nf">add_properties</span><span class="p">(</span><span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="o">::</span><span class="no">MySpecialClass</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="inventorycollection-builder">InventoryCollection Builder</h3>
 
@@ -690,9 +685,8 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 <h4 id="example-3">Example</h4>
 <p>Let’s look how it works:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:host_networks</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:host_networks</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>This simple definition performs following steps:</p>
 
@@ -708,7 +702,7 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 </ul>
 
 <p>So properties given to <code class="highlighter-rouge">InventoryCollection</code> object are following:</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:host_networks</span><span class="p">,</span>
   <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">Network</span><span class="p">,</span>
   <span class="ss">:manager_ref</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:hardware</span><span class="p">,</span> <span class="ss">:ipaddress</span><span class="p">],</span>
@@ -723,11 +717,10 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
   <span class="ss">:default_values</span> <span class="o">=&gt;</span> <span class="p">{},</span>
   <span class="ss">:dependency_attributes</span> <span class="o">=&gt;</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="example-2">Example 2</h4>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:host_networks</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">builder</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">infra</span><span class="p">,</span> <span class="ss">:host_networks</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">builder</span><span class="o">|</span>
   <span class="n">builder</span><span class="p">.</span><span class="nf">add_properties</span><span class="p">(</span>
     <span class="ss">:strategy</span> <span class="o">=&gt;</span> <span class="ss">:local_db_find_references</span><span class="p">,</span>
     <span class="ss">:targeted</span> <span class="o">=&gt;</span> <span class="kp">false</span>
@@ -735,12 +728,11 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
   <span class="n">builder</span><span class="p">.</span><span class="nf">add_default_values</span><span class="p">(</span>
     <span class="ss">:ems_id</span> <span class="o">=&gt;</span> <span class="mi">1</span>
   <span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>produces <code class="highlighter-rouge">InventoryCollection</code> attributes:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:host_networks</span><span class="p">,</span>
   <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">Network</span><span class="p">,</span>
   <span class="ss">:manager_ref</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:hardware</span><span class="p">,</span> <span class="ss">:ipaddress</span><span class="p">],</span>
@@ -751,8 +743,7 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
   <span class="ss">:strategy</span> <span class="o">=&gt;</span> <span class="ss">:local_db_find_references</span><span class="p">,</span>
   <span class="ss">:targeted</span> <span class="o">=&gt;</span> <span class="kp">false</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="provider-specific-definitions">Provider specific definitions</h3>
 
@@ -772,20 +763,19 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 </ul>
 
 <p>Simple definition of :vms is following:</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>It produces IC with attributes:</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:vms</span><span class="p">,</span>
   <span class="ss">:strategy</span> <span class="o">=&gt;</span> <span class="ss">:local_db_find_missing_references</span><span class="p">,</span> 		<span class="c1"># defined in shared_options()</span>
   <span class="ss">:targeted</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> 						<span class="c1"># defined in shared_options()</span>
   <span class="ss">:parent</span>   <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">Amazon</span><span class="o">::</span><span class="no">CloudManager</span><span class="o">&gt;</span><span class="p">,</span> 	<span class="c1"># defined in shared_options()</span>
   <span class="ss">:saver_strategy</span> <span class="o">=&gt;</span> <span class="ss">:default</span><span class="p">,</span> <span class="c1"># defined in ManagerRefresh::InventoryCollection::Builder::Shared#vms</span>
-  <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+  <span class="o">...</span>
   <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">Amazon</span><span class="o">::</span><span class="no">CloudManager</span><span class="o">::</span><span class="no">Vm</span><span class="p">,</span> <span class="c1"># derived automatically</span>
-  <span class="ss">:inventory_object_attributes</span> <span class="o">=&gt;</span> <span class="p">[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> 			 <span class="c1"># derived automatically</span>
+  <span class="ss">:inventory_object_attributes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span> 			 <span class="c1"># derived automatically</span>
   <span class="ss">:default_values</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="ss">:ems_id</span>   <span class="o">=&gt;</span> <span class="mi">1234567</span><span class="p">,</span> <span class="c1"># defined as lambda block</span>
     <span class="ss">:vendor</span>   <span class="o">=&gt;</span> <span class="s2">"amazon"</span><span class="p">,</span>
@@ -793,8 +783,7 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
     <span class="ss">:location</span> <span class="o">=&gt;</span> <span class="s2">"unknown"</span>
   <span class="p">}</span> <span class="c1"># defined in ManagerRefresh::InventoryCollection::Builder::Shared#vms</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="conclusion">Conclusion</h2>
 

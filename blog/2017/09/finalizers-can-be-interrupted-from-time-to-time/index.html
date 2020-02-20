@@ -110,8 +110,8 @@ it’s still around in the libraries we use.</p>
 
 <p>Note, I even filtered out some of the results below:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r -E "\bTimeout.timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
-</span>ruby_parser-3.10.1/lib/ruby_parser_extras.rb:                                     Timeout.timeout time do
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-E</span> <span class="s2">"</span><span class="se">\b</span><span class="s2">Timeout.timeout</span><span class="se">\b</span><span class="s2">"</span> /Users/joerafaniello/.gem/ruby/2.4.2/gems
+<span class="go">ruby_parser-3.10.1/lib/ruby_parser_extras.rb:                                     Timeout.timeout time do
 capybara-2.5.0/lib/capybara/server.rb:                                            Timeout.timeout(60) { @server_thread.join(0.1) until responsive? }
 dalli-2.7.6/lib/dalli/socket.rb:                                                  Timeout.timeout(options[:socket_timeout]) do
 excon-0.59.0/lib/excon/socket.rb:                                                 Timeout.timeout(@data[:read_timeout]) do
@@ -132,18 +132,17 @@ multipart-post-2.0.0/test/test_composite_io.rb:                                 
 net-ping-1.7.8/lib/net/ping/icmp.rb:                                              Timeout.timeout(@timeout){
 net-ping-1.7.8/lib/net/ping/udp.rb:                                               Timeout.timeout(@timeout){
 nio4r-2.1.0/spec/nio/selector_spec.rb:                                            Timeout.timeout(2) do
-nio4r-2.1.0/spec/spec_helper.rb:                                                  sock = Timeout.timeout(1) { TCPSocket.new("localhost", $current_tcp_port) }
-open4-1.3.4/lib/open4.rb:                                                         Timeout.timeout(timeout){ yield }
+</span><span class="gp">nio4r-2.1.0/spec/spec_helper.rb:                                                  sock = Timeout.timeout(1) { TCPSocket.new("localhost", $</span>current_tcp_port<span class="o">)</span> <span class="o">}</span>
+<span class="go">open4-1.3.4/lib/open4.rb:                                                         Timeout.timeout(timeout){ yield }
 rack-2.0.3/test/spec_utils.rb:                                                    Timeout.timeout(1) do
 ruby-dbus-0.13.0/spec/spec_helper.rb:                                             Timeout.timeout(10) do
 snmp-1.2.0/lib/snmp/manager.rb:                                                   Timeout.timeout(@timeout) do
 vcr-3.0.3/lib/vcr/util/internet_connection.rb:                                    Timeout.timeout(timeout) do
 webmock-2.3.2/spec/support/network_connection.rb:                                 Timeout.timeout(timeout) do
 
-<span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r -E "\bTimeout::timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
-</span>open4-1.3.4/lib/open4.rb:                                                         Timeout::timeout(timeout) do
-</code></pre>
-</div>
+</span><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-E</span> <span class="s2">"</span><span class="se">\b</span><span class="s2">Timeout::timeout</span><span class="se">\b</span><span class="s2">"</span> /Users/joerafaniello/.gem/ruby/2.4.2/gems
+<span class="go">open4-1.3.4/lib/open4.rb:                                                         Timeout::timeout(timeout) do
+</span></code></pre></div></div>
 
 <p>Those are only gems used by ManageIQ.  I’m sure there are many other gems used by other
 projects that still use Timeout.</p>
@@ -181,7 +180,7 @@ a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workar
 
 <p>We minimized his test case:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'tempfile'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'tempfile'</span>
 <span class="nb">require</span> <span class="s1">'timeout'</span>
 <span class="no">Tempfile</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"x"</span><span class="p">)</span>
 
@@ -202,8 +201,7 @@ a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workar
   <span class="k">rescue</span> <span class="no">Timeout</span><span class="o">::</span><span class="no">Error</span> <span class="o">=&gt;</span> <span class="n">e</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note: Don’t ask about the <code class="highlighter-rouge">stuff</code> method.  Without it, I couldn’t get the test to hang sporadically.</p>
 
@@ -211,18 +209,16 @@ a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workar
 
 <p>When it worked, it looked like this:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code>Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57250-s683fs...
 done
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>When it would hang, it looked like this:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code>Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57351-jfeu6l...
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>If you’re still reading, you might have noticed that <code class="highlighter-rouge">done</code> is missing when the
 test hangs. The <code class="highlighter-rouge">done</code> happens after <code class="highlighter-rouge">Tempfile</code> wants to <a href="https://github.com/ruby/ruby/blob/820605ba3c10b9f4dafc4e5d6e09765b8b31cbea/lib/tempfile.rb#L255-L257">close and unlink the file here</a>.</p>
@@ -243,13 +239,13 @@ not something we want to troubleshoot at 5pm on a Friday.</p>
 
 <p>It’s ok, there aren’t many places that define finalizers:</p>
 
-<div class="language-console highlighter-rouge"><pre class="highlight"><code><span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
-</span>lib/ruby/2.4.0/cgi/session.rb:                                         ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
+<span class="go">lib/ruby/2.4.0/cgi/session.rb:                                         ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
 lib/ruby/2.4.0/drb/timeridconv.rb:                                     ObjectSpace.define_finalizer(Object.new) {on_gc}
 lib/ruby/2.4.0/tempfile.rb:                                            ObjectSpace.define_finalizer(self, Remover.new(@tmpfile))
 
-<span class="w">$ </span><span class="nc">grep</span><span class="kv"> -r define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
-</span>actionview-5.0.6/lib/action_view/template.rb:                          ObjectSpace.define_finalizer(self, Finalizer[method_name, mod])
+</span><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
+<span class="go">actionview-5.0.6/lib/action_view/template.rb:                          ObjectSpace.define_finalizer(self, Finalizer[method_name, mod])
 concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(me, self.class.thread_finalizer(array))
 concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))
 ffi-1.9.18/lib/ffi/autopointer.rb:                                     ObjectSpace.define_finalizer(self, @releaser)
@@ -258,8 +254,7 @@ logging-2.2.2/lib/logging.rb:                                          ObjectSpa
 tins-1.15.0/lib/tins/thread_local.rb:                                  ObjectSpace.define_finalizer(self, @@cleanup)
 vcr-3.0.3/lib/vcr/library_hooks/webmock.rb:                            ObjectSpace.define_finalizer(Thread.current, lambda {
 winrm-2.2.3/lib/winrm/shells/base.rb:                                  ObjectSpace.define_finalizer(
-</code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>It’s a small list but libraries like tempfile, concurrent-ruby, ffi, actionview,
 etc. are pretty common.  Again, this is only in the gems that ManageIQ uses.  This

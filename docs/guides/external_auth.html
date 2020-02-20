@@ -585,15 +585,14 @@ optionally configured and un-configured via the Appliance Console Command Line I
 
 <p>Appliance Console CLI command and relevant options include:</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>/bin/appliance_console_cli --host &lt;appliance_fqdn&gt;
-                           --ipaserver &lt;ipa_server_fqdn&gt;
-                           --ipadomain &lt;domain_of_ipa_server&gt;
-                           --iparealm &lt;realm_of_ipa_server&gt;
-                           --ipaprincipal &lt;ipa_server_principal&gt;
-                           --ipapassword &lt;ipa_server_password&gt;
-                           --uninstall-ipa
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/appliance_console_cli <span class="nt">--host</span> &lt;appliance_fqdn&gt;
+                           <span class="nt">--ipaserver</span> &lt;ipa_server_fqdn&gt;
+                           <span class="nt">--ipadomain</span> &lt;domain_of_ipa_server&gt;
+                           <span class="nt">--iparealm</span> &lt;realm_of_ipa_server&gt;
+                           <span class="nt">--ipaprincipal</span> &lt;ipa_server_principal&gt;
+                           <span class="nt">--ipapassword</span> &lt;ipa_server_password&gt;
+                           <span class="nt">--uninstall-ipa</span>
+</code></pre></div></div>
 
 <p>Note:</p>
 
@@ -609,22 +608,20 @@ can be omitted.</li>
 
 <h4 id="configuring-external-authentication-example">Configuring External Authentication Example:</h4>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@appliance.test.company.com
-<span class="gp">appliance# </span>/bin/appliance_console_cli --host appliance.test.company.com <span class="se">\</span>
-                                      --ipaserver ipaserver.test.company.com <span class="se">\</span>
-                                      --ipadomain test.company.com <span class="se">\</span>
-                                      --iparealm TEST.COMPANY.COM <span class="se">\</span>
-                                      --ipaprincipal admin <span class="se">\</span>
-                                      --ipapassword smartvm1
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh root@appliance.test.company.com
+appliance# /bin/appliance_console_cli <span class="nt">--host</span> appliance.test.company.com <span class="se">\</span>
+                                      <span class="nt">--ipaserver</span> ipaserver.test.company.com <span class="se">\</span>
+                                      <span class="nt">--ipadomain</span> test.company.com <span class="se">\</span>
+                                      <span class="nt">--iparealm</span> TEST.COMPANY.COM <span class="se">\</span>
+                                      <span class="nt">--ipaprincipal</span> admin <span class="se">\</span>
+                                      <span class="nt">--ipapassword</span> smartvm1
+</code></pre></div></div>
 
 <h4 id="un-configuring-external-authentication-example">Un-Configuring External Authentication Example:</h4>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@appliance.test.company.com
-<span class="gp">appliance# </span>/bin/appliance_console_cli --uninstall-ipa
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh root@appliance.test.company.com
+appliance# /bin/appliance_console_cli <span class="nt">--uninstall-ipa</span>
+</code></pre></div></div>
 
 <hr />
 

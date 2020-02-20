@@ -112,7 +112,7 @@
 
 <p>The inspiration for the Ruby implementation came from ActionCable. The Rack webserver exposes a socket hijacking interface that is able to expose the underlying socket of an HTTP request. The recipe is simple: if an HTTP request contains an “Upgrade: websocket” header, hijack the socket and return the worker thread for handling other requests. In the meantime initiate a connection to the other endpoint and when both sockets are available, pass them further to the proxy. In code it would look something like this:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">env</span><span class="p">[</span><span class="s1">'HTTP_UPGRADE'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'websocket'</span>
     <span class="n">ws_sock</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'rack.hijack'</span><span class="p">].</span><span class="nf">call</span>
     <span class="n">console_sock</span> <span class="o">=</span> <span class="no">SystemConsole</span><span class="p">.</span><span class="nf">find_by!</span><span class="p">(</span><span class="ss">:url_secret</span> <span class="o">=&gt;</span> <span class="n">env</span><span class="p">[</span><span class="s1">'REQUEST_URI'</span><span class="p">])</span>
@@ -124,12 +124,11 @@
     <span class="k">return</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span><span class="s2">"ERROR"</span><span class="p">]]</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The proxy itself needs to outlive a Rack request handling, however, it cannot run in a separate context as it needs to access the sockets. This can be easily achieved by using a  thread, even if threads are not the strongest side of Ruby due to the <a href="https://en.wikipedia.org/wiki/Global_interpreter_lock">GVL</a>. The job of the proxy is to transmit between one or more socket pairs with translation between WebSocket and regular TCP. A naive implementation could be to use a pair of threads for a pair of sockets with blocking read and write:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Proxy</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Proxy</span>
   <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="n">ws_sock</span><span class="p">,</span> <span class="n">console_sock</span><span class="p">)</span>
     <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
       <span class="kp">loop</span> <span class="k">do</span>
@@ -147,17 +146,16 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>The problems appear when having more clients, e.g. with the SPICE protocol that require more than a single connection to operate. By using non-blocking read and write it is enough to have a single thread that implements the <a href="https://en.wikipedia.org/wiki/Reactor_pattern">reactor pattern</a>. This thread should run two repeating operations in a loop: testing the readiness of sockets and transmitting data between the ready ones in a non-blocking way:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Proxy</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Proxy</span>
   <span class="k">def</span> <span class="nf">initialize</span>
     <span class="vi">@pairing</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
       <span class="kp">loop</span> <span class="k">do</span>
-        <span class="n">reads</span><span class="p">,</span> <span class="n">writes</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="vi">@sockets</span><span class="p">,</span> <span class="vi">@sockets</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">reads</span><span class="p">,</span> <span class="n">writes</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="vi">@sockets</span><span class="p">,</span> <span class="vi">@sockets</span><span class="p">,</span> <span class="p">[],</span> <span class="mf">0.1</span><span class="p">)</span>
         <span class="c1"># Iterate through the reads</span>
         <span class="n">read</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">reads</span><span class="o">|</span>
           <span class="c1"># Retrieve the other end and the translator method from the pairing hash</span>
@@ -182,8 +180,7 @@
     <span class="vi">@pairing</span><span class="p">[</span><span class="n">console_sock</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ws_sock</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:translate_console</span><span class="p">)]</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This implementation is really close to what we used to have in the last two years, of course with additional mutexes and error handling. As you can see, the <code class="highlighter-rouge">IO.select</code> was utilized to determine if a socket is ready for reading and/or writing. However, this implementation can cause a <a href="https://en.wikipedia.org/wiki/Spinlock">spinlock</a> that is encoded into the usage of <code class="highlighter-rouge">IO.select</code> inside the <code class="highlighter-rouge">loop</code>. The last argument of the <code class="highlighter-rouge">IO.select</code> method is a timeout which states how many seconds should the thread wait if no socket is ready. This should cause our thread to sleep when there is nothing to transmit and so the computer can do other useful stuff in the meantime. The problem with this is that the <code class="highlighter-rouge">IO.select</code> will return from its sleep whenever a single socket is ready for transmission. In other words, <code class="highlighter-rouge">IO.select</code> cannot be forced to wait longer for a pair of sockets to become ready for reading and writing at least in one direction.</p>
 
@@ -193,8 +190,8 @@
 
 <p>With the help of my colleague <a href="https://github.com/kbrock">Keenan</a> we came up with the idea of a bouncing select. I was investing a lot of hours to come up with a solution, so I was really shocked when I realized that it can be explained really easily. The arrays passed to the <code class="highlighter-rouge">IO.select</code> should be dynamic: if a socket becomes ready for reading, it should be temporarily removed (bounced) from the first array. This forces the thread to sleep in any next iteration until a new readiness event happens. After a successful transmission between a pair of sockets, each of them should be added (bounced) back to the corresponding arrays.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="kp">loop</span> <span class="k">do</span>
-  <span class="n">read</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="vi">@to_read</span><span class="p">,</span> <span class="vi">@to_write</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kp">loop</span> <span class="k">do</span>
+  <span class="n">read</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="vi">@to_read</span><span class="p">,</span> <span class="vi">@to_write</span><span class="p">,</span> <span class="p">[],</span> <span class="mf">0.1</span><span class="p">)</span>
   <span class="vi">@to_read</span> <span class="o">-=</span> <span class="n">read</span>
   <span class="vi">@to_write</span> <span class="o">-=</span> <span class="n">write</span>
 
@@ -207,8 +204,7 @@
     <span class="vi">@to_write</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">wr</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The performance of this solution is acceptable even with just having a few connections. As the <code class="highlighter-rouge">IO.select</code> needs to pass the arrays of sockets to the kernel every time it is called, the performance can drop significantly with a higher number of connections. Also the bouncing operations on the arrays add some extra overhead. These problems can be avoided by using <code class="highlighter-rouge">epoll</code> that uses an internal structure in the kernel space to hold the sockets we are interested in. An application can register sockets to an <em>epoll instance</em> and then in a separate call wait for events to happen. Another advantage is that by using <code class="highlighter-rouge">EPOLLONESHOT</code> it is possible to register a socket for a single readiness event only. This way only half of the bouncing needs to be implemented, the other half happens automatically.</p>
 

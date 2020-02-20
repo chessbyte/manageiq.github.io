@@ -461,9 +461,8 @@
 <p>Remote consoles allow you to access the screen of a VM through the browser. Each supported protocol has a its own Javascript client and they all connect to a common WebSocket endpoint. This endpoint is provided by the Rails application under <code class="highlighter-rouge">/ws/console</code> and in production it’s being served by the <code class="highlighter-rouge">RemoteConsoleWorker</code>. This worker runs a <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/remote_console/rack_server.rb"><code class="highlighter-rouge">RemoteConsole::RackServer</code></a> middleware as a web server and it’s responsible for proxying and translating between the remote console endpoint and the incoming WebSocket connections.</p>
 
 <p>The server can also be mounted into the development setup of Rails by setting the <code class="highlighter-rouge">MOUNT_REMOTE_CONSOLE_PROXY</code> environment variable:</p>
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nv">MOUNT_REMOTE_CONSOLE_PROXY</span><span class="o">=</span>1 bin/rails server
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MOUNT_REMOTE_CONSOLE_PROXY</span><span class="o">=</span>1 bin/rails server
+</code></pre></div></div>
 
 <p>The proxy is implemented using an event loop and the <a href="https://github.com/skateman/surro-gate">surro-gate</a> gem as the selector for testing the readiness of socket pairs. The translation is done using adapters that are available as subclasses of <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/remote_console/server_adapter.rb"><code class="highlighter-rouge">RemoteConsole::ServerAdapter</code></a> for WebSocket and <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/remote_console/client_adapter.rb"><code class="highlighter-rouge">RemoteConsole::ClientAdapter</code></a> for the client protocols. Implementing a new protocol requires to create a new subclass in and update the <code class="highlighter-rouge">.new</code> method in the related adapter to be able to select it based on the passed context.</p>
 

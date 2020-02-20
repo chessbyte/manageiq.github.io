@@ -490,9 +490,8 @@ We recommend running <code class="highlighter-rouge">rails console</code> (or <c
 rails console will do the work if you click in UI on the refresh button. If you want to run the refresh
 directly from the rails console, you may want to do that by</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">reload!</span><span class="p">;</span> <span class="no">EmsRefresh</span><span class="p">.</span><span class="nf">refresh</span><span class="p">(</span><span class="no">ExtManagementSystem</span><span class="p">.</span><span class="nf">last</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reload!</span><span class="p">;</span> <span class="no">EmsRefresh</span><span class="p">.</span><span class="nf">refresh</span><span class="p">(</span><span class="no">ExtManagementSystem</span><span class="p">.</span><span class="nf">last</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">reload!</code> in the command is not necessary if you didn’t modify the code.</p>
 
@@ -507,15 +506,13 @@ table. They are stored in <a href="https://github.com/ManageIQ/manageiq-schema/t
 is prefixed by the time when it was created and then followed by a brief description of what it does. Rails provide
 a way to scaffold them using for instance:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>rails generate migration AddColumnNameToTableName column:string
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails generate migration AddColumnNameToTableName column:string
+</code></pre></div></div>
 
 <p>This command should generate the properly named file with following content:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddColumnToTable</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span> <span class="k">def</span> <span class="nf">change</span> <span class="n">add_column</span> <span class="ss">:table_name</span><span class="p">,</span> <span class="ss">:column_name</span><span class="p">,</span> <span class="ss">:string</span> <span class="k">end</span> <span class="k">end</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddColumnToTable</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">5.0</span><span class="p">]</span> <span class="k">def</span> <span class="nf">change</span> <span class="n">add_column</span> <span class="ss">:table_name</span><span class="p">,</span> <span class="ss">:column_name</span><span class="p">,</span> <span class="ss">:string</span> <span class="k">end</span> <span class="k">end</span>
+</code></pre></div></div>
 
 <p>Scaffolding can make things faster, but often it’s easier to write it from scratch for more complex scenarios.</p>
 
@@ -534,18 +531,17 @@ It’s important to keep it mind, that when implementing a new feature that chan
 <p>Haml is the templating mechanism used across ManageIQ. It provides a way to write the HTML code in a yaml-like language
 without the need of writing the tons of nested divs. It’s pretty simple format and for instance this piece of haml code</p>
 
-<div class="language-haml highlighter-rouge"><pre class="highlight"><code><span class="nf">#content</span>
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#content</span>
   <span class="nc">.left.column</span>
     <span class="nt">%h2</span> Welcome to our site!
     <span class="nt">%p</span><span class="p">=</span> <span class="n">print_information</span>
   <span class="nc">.right.column</span>
     <span class="p">=</span> <span class="n">render</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">"sidebar"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>will be transformed into</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'content'</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'content'</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'left column'</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h2&gt;</span>Welcome to our site!<span class="nt">&lt;/h2&gt;</span>
     <span class="nt">&lt;p&gt;</span>Output of the print_information method.<span class="nt">&lt;/p&gt;</span>
@@ -554,8 +550,7 @@ without the need of writing the tons of nested divs. It’s pretty simple format
     ... <span class="c">&lt;!-- some component included as a partial --&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If you prefer the plain HTML or you already have your code in HTML, you may want to use
 some <a href="https://html2haml.herokuapp.com/">conversion tools</a> for that.</p>
@@ -660,17 +655,15 @@ need to be modified.</p>
 
 <p>There should be a lot of SQL queries that may be handy during the development. Of course, you can use them in the good old <code class="highlighter-rouge">psql</code> client.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>psql -U postgres vmdb_development
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres vmdb_development
+</code></pre></div></div>
 <p>The command should open the Postgres client on the dev db. Btw. by default the development environment is active, this can be changed
 by <code class="highlighter-rouge">rails s -e production</code>.</p>
 
 <p>Even better option is to inspect the db with:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bundle <span class="nb">exec </span>rails dbconsole
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>rails dbconsole
+</code></pre></div></div>
 
 <p>This command takes into consideration the actual environment and the configured database.</p>
 
@@ -678,9 +671,8 @@ by <code class="highlighter-rouge">rails s -e production</code>.</p>
 <p>Pry is a command line oriented debugger similar to famous <code class="highlighter-rouge">gdb</code>.
 We suggest adding this line to <code class="highlighter-rouge">Gemfile.dev.rb</code> (create this file if it doesn’t exist in the root of manageiq/manageiq repo):</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'pry-byebug'</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'pry-byebug'</span>
+</code></pre></div></div>
 <p>Then after running <code class="highlighter-rouge">bundle install</code>, you should be all set. Now, adding the breakpoint means writing <code class="highlighter-rouge">binding.pry</code> somewhere in the code.
 Once the ruby executes the code with this line, it stops the execution and opens a REPL where Ruby code can be inspected and executed.</p>
 
@@ -773,24 +765,22 @@ Then automagic should work.</p>
   <li>the <code class="highlighter-rouge">show.haml</code> of the entity has to contain:</li>
 </ul>
 
-<div class="language-haml highlighter-rouge"><pre class="highlight"><code><span class="p">-</span> <span class="k">if</span> <span class="vi">@showtype</span> <span class="o">==</span> <span class="s2">"performance"</span>
+<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> <span class="k">if</span> <span class="vi">@showtype</span> <span class="o">==</span> <span class="s2">"performance"</span>
     <span class="p">=</span> <span class="n">render</span><span class="p">(</span><span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">"layouts/performance"</span><span class="p">)</span>
     <span class="nd">:javascript
-</span>      <span class="kd">var</span> <span class="nx">miq_after_onload</span> <span class="o">=</span> <span class="err">"</span><span class="nx">miqAsyncAjax</span><span class="p">(</span><span class="err">'</span><span class="si">#{</span><span class="n">url_for</span><span class="p">(</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="vi">@ajax_action</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@record</span><span class="p">)</span><span class="si">}</span><span class="err">'</span><span class="p">);</span><span class="err">"</span>
-</code></pre>
-</div>
+</span>      <span class="kd">var</span> <span class="nx">miq_after_onload</span> <span class="o">=</span> <span class="s2">"miqAsyncAjax('</span><span class="si">#{</span><span class="n">url_for</span><span class="p">(</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="vi">@ajax_action</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@record</span><span class="p">)</span><span class="si">}</span><span class="s2">');"</span>
+</code></pre></div></div>
 
 <ul>
   <li>adding <code class="highlighter-rouge">perf_chart_chooser</code> action into <code class="highlighter-rouge">router.rb</code> to corresponding entity</li>
   <li>adding to <code class="highlighter-rouge">db/fixtures/miq_product_features.yml</code> (<code class="highlighter-rouge">X</code> is the entity name)</li>
 </ul>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="pi">-</span> <span class="s">:name</span><span class="pi">:</span> <span class="s">Utilization</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">:name</span><span class="pi">:</span> <span class="s">Utilization</span>
     <span class="s">:description</span><span class="pi">:</span> <span class="s">Show Capacity &amp; Utilization data of X</span>
     <span class="s">:feature_type</span><span class="pi">:</span> <span class="s">view</span>
     <span class="s">:identifier</span><span class="pi">:</span> <span class="s">X_perf</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>create <code class="highlighter-rouge">/product/live_metric_X.yaml</code> similar to the existing ones</li>

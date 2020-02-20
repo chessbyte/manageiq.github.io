@@ -112,7 +112,7 @@
 
 <p>Workspace objects are arranged in a parent-child hierarchy with the topmost object being the root object. A typical set of workspace objects as seen from part-way through the VM Provision state machine might be as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/ManageIQ/System/Process/AUTOMATION  ($evm.root)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/ManageIQ/System/Process/AUTOMATION  ($evm.root)
 |    /ManageIQ/infrastructure/VM/Lifecycle/Provisioning
 |    |    /ManageIQ/Infrastructure/VM/Provisioning/Profile/EvmGroup-super_administrator
 |    |    /ManageIQ/Infrastructure/VM/Provisioning/StateMachines/VMProvision_vm/template  ($evm.parent)
@@ -120,8 +120,7 @@
 |    |    |    /Configuration/OpenShift/Parameters/default
 |    |    |    /Investigative_Debugging/Discovery/ObjectWalker/object_walker  ($evm.object)
 |    |    |    |    /Investigative_Debugging/Discovery/ObjectWalker/configuration
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The stored attributes of any object in the workspace can be retrieved from a running Ansible playbook method, which can also save attributes and values back to the root object.</p>
 
@@ -133,18 +132,17 @@
 <h4 id="listing-workspace-objects">Listing Workspace Objects</h4>
 <p>The <code class="highlighter-rouge">get_object_names</code> function retrieves the names of the objects currently loaded into the workspace, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the full list of objects/instances in the workspace (get_object_names)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the full list of objects/instances in the workspace (get_object_names)
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_object_names: yes
   register: workspace_object_names
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Get the full list of objects/instances in the workspace (get_object_names)] ***
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Get the full list of objects/instances in the workspace (get_object_names)] ***
 ok: [localhost]
 
 TASK [debug] *******************************************************************
@@ -155,23 +153,21 @@ u'/pemcg/Stuff/StateMachines/Methods/state1',
 u'/Configuration/OpenShift/Parameters/default',
 u'/pemcg/stuff/statemachines/threestate/manageiq-automate-test']”
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><br /></p>
 <h4 id="accessing-workspace-object-attributes">Accessing Workspace Object Attributes</h4>
 <p>An Ansible playbook method can also access any attribute defined in any other object/instance in the workspace. This makes it possible to access attributes saved into <code class="highlighter-rouge">$evm.root</code> by a prior Ruby method, or even defined in a configuration domain as long as the configuration domain instance has been loaded into the workspace. This can be done either from a relationship in an existing workspace instance schema, or using <code class="highlighter-rouge">$evm.instantiate</code> from a prior Ruby method.</p>
 
 <p>There are seven functions in the <code class="highlighter-rouge">manageiq-automate</code> role that deal with object attributes. These are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>get_object_attribute_names
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get_object_attribute_names
 attribute_exists
 get_attribute
 get_decrypted_attribute
 set_attribute
 set_attributes
 set_encrypted_attribute
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Their use is illustrated as follows:</p>
 
@@ -180,32 +176,30 @@ set_encrypted_attribute
 
 <p>This example lists the queryable attributes in the configuration domain <code class="highlighter-rouge">/Configuration/OpenShift/Parameters/default</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the full list of configuration domain attribute names (get_object_attribute_names)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the full list of configuration domain attribute names (get_object_attribute_names)
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_object_attribute_names:
       object: "/Configuration/OpenShift/Parameters/default"
   register: configuration_domain_attribute_names
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Get the full list of configuration domain attribute names (get_object_attribute_names)] ***
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Get the full list of configuration domain attribute names (get_object_attribute_names)] ***
 ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     "msg": "Result:[u'auth_type', u'infra_vm_memory', u'lb_host', u'container_storage', u'openshift_vers', u'master_vm_memory', u'ipam_network', u'nfs_registry_mountpoint', u'::miq::parent', u'app_vm_memory', u'addr_mode', u'deployment_type', u'byo_lb', u'rhel_subscription_pass', u'customization_template', u'ldap_user', u'byo_nfs', u'rhel_subscription_pool', u'app_dns_prefix', u'nfs_registry_host', u'console_port', u'openshift_hosted_metrics_deploy', u'provider_vlan', u'openshift_sdn']"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /></p>
 <h5 id="attribute_exists">attribute_exists</h5>
 <p>Rather than list all readable attributes of a loaded workspace object, it is possible to just query whether a single attribute is present using the <code class="highlighter-rouge">attribute_exists</code> function, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Check if an object/instance attribute exists (attribute_exists)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Check if an object/instance attribute exists (attribute_exists)
   manageiq_automate:
     workspace: "{{ workspace }}"
     attribute_exists:
@@ -213,25 +207,23 @@ ok: [localhost] =&gt; {
       attribute: "rhel_subscription_pool"
   register: attribute_exists
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Check if an object/instance attribute exists (attribute_exists)] *********
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Check if an object/instance attribute exists (attribute_exists)] *********
 ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     "msg": "Result:True"
 }   
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><br /></p>
 <h5 id="get_attribute">get_attribute</h5>
 <p>The <code class="highlighter-rouge">get_attribute</code> function allows the playbook to read an attribute from an object. This example shows the playbook reading the value of the <code class="highlighter-rouge">rhel_subscription_pool</code> attribute from the configuration domain instance:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain instance (get_attribute)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain instance (get_attribute)
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_attribute:
@@ -239,24 +231,22 @@ ok: [localhost] =&gt; {
       attribute: "rhel_subscription_pool"
   register: rhel_subscription_pool
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The output is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Get the "rhel_subscription_pool" attribute from a configuration domain instance (get_attribute)] ***
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Get the "rhel_subscription_pool" attribute from a configuration domain instance (get_attribute)] ***
 ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     "msg": "Result:Red Hat OpenShift Container Platform, Premium*"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The previous example read an attribute statically defined in a configuration domain instance. This next example uses the same function to read a more dynamic attribute that has been saved as <code class="highlighter-rouge">$evm.root[‘ipam_password’]</code> by a prior Ruby task in the workflow:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the value of the "ipam_passwd" attribute defined by a prior Ruby method (get_attribute)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the value of the "ipam_passwd" attribute defined by a prior Ruby method (get_attribute)
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_attribute:
@@ -264,14 +254,13 @@ ok: [localhost] =&gt; {
       attribute: "ipam_passwd"
   register: ipam_password
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /></p>
 <h5 id="get_decrypted_attribute">get_decrypted_attribute</h5>
 <p>If an attribute of type “password” has been stored in an instance then it can be accessed and decrypted using the <code class="highlighter-rouge">get_decrypted_attribute</code> function, for example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain instance (get_decrypted_attribute)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain instance (get_decrypted_attribute)
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_decrypted_attribute:
@@ -279,34 +268,31 @@ ok: [localhost] =&gt; {
       attribute: "ldap_user_password"
   register: ldap_user_password
 - debug: msg="Result:"
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>The output is as follows:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>TASK [Get the "ldap_user_password" encrypted attribute from a configuration domain instance (get_decrypted_attribute)] ***
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TASK [Get the "ldap_user_password" encrypted attribute from a configuration domain instance (get_decrypted_attribute)] ***
 ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] =&gt; {
     "msg": "Result:{u'attribute': u'ldap_user_password', u'object': u'/Configuration/OpenShift/Parameters/default', u'value': u'secret_ldap_password'}"
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Attributes can also be written back into workspace objects (usually the root object) using the <code class="highlighter-rouge">set_attribute</code>, <code class="highlighter-rouge">set_attributes</code> and <code class="highlighter-rouge">set_encrypted_attribute</code> functions, as follows. Attributes written in this way are readable by a subsequent Ruby method in the workflow as <code class="highlighter-rouge">$evm.root[‘&lt;attribute_name&gt;’]</code>.</p>
 
 <h5 id="set_attribute">set_attribute</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Set a "domain_name" root attribute (set_attribute)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Set a "domain_name" root attribute (set_attribute)
   manageiq_automate:
     workspace: "{{ workspace }}"
     set_attribute:
       object: "root"
       attribute: "domain_name"
       value:  "company.org"
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><br /></p>
 <h5 id="set_attributes">set_attributes</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Set several IPAM-related root attributes (set_attributes)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Set several IPAM-related root attributes (set_attributes)
   manageiq_automate:
     workspace: "{{ workspace }}"
     set_attributes:
@@ -315,23 +301,21 @@ ok: [localhost] =&gt; {
         ipam_ip_address: "192.168.1.23"
         ipam_netmask: "255.255.255.0"
         ipam_gateway: "192.168.1.254"
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><br /></p>
 <h5 id="set_encrypted_attribute">set_encrypted_attribute</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>- name: Encrypt a "root_passwd" object attribute (set_encrypted_attribute)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Encrypt a "root_passwd" object attribute (set_encrypted_attribute)
   manageiq_automate:
     workspace: "{{ workspace }}"
     set_encrypted_attribute:
       object: root
       attribute: "root_passwd"
       value: "very_very_secret"
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><br />
 The following code snippet in a Ruby method called after the Ansible playbook method in the workflow will access and log the saved attributes, as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$evm.log(:info, "ip_address from Ansible = #{$evm.root['ipam_ip_address']}")
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$evm.log(:info, "ip_address from Ansible = #{$evm.root['ipam_ip_address']}")
 $evm.log(:info, "netmask from Ansible = #{$evm.root['ipam_netmask']}")
 $evm.log(:info, "gateway from Ansible = #{$evm.root['ipam_gateway']}")
 $evm.log(:info, "root_passwd from Ansible = #{$evm.root.decrypt('root_passwd')}")
@@ -340,13 +324,12 @@ $evm.log(:info, "root_passwd from Ansible = #{$evm.root.decrypt('root_passwd')}"
 ...&lt;AEMethod state3&gt; netmask from Ansible = 255.255.255.0
 ...&lt;AEMethod state3&gt; gateway from Ansible = 192.168.1.254
 ...&lt;AEMethod state3&gt; root_passwd from Ansible = very_very_secret
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="updating-the-options-hash-during-vm-provisioning">Updating the Options Hash during VM Provisioning</h3>
 <p>The manageiq-vmdb role can be used to update the provisioning task’s options hash when a playbook method is run from the VM Provision state machine. The API path to the task is passed into the playbook automatically as the extra_var <code> "{{ manageiq.request_task  }}"  </code>, and this can be used with an <code class="highlighter-rouge">edit</code> action and an <code class="highlighter-rouge">options</code> data payload, as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  roles:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  roles:
   - manageiq-core.manageiq-vmdb
 
   tasks:   
@@ -360,8 +343,7 @@ $evm.log(:info, "root_passwd from Ansible = #{$evm.root.decrypt('root_passwd')}"
           ip_addr: "{{ ip_addr }}"
           subnet_mask: "{{ netmask }}"
           gateway: "{{ gateway }}"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="summary">Summary</h2>
 <p>In Part three of this series, we have looked at how an embedded Ansible playbook can participate in a ManageIQ automation workflow that is made up of several Ruby and Ansible playbook methods.</p>
