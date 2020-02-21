@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/triage_process">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/guides/triage_process">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li class="active">
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+</nav>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<ul class="menu menu-toplevel" id="guides_menu">
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Architecture
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">
+      Capacity And Utilization Collection Explanation
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/enterprise">
+      Enterprise
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/source_code_layout">
+      Source Code Layout
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Developer Setup
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/plugins">
+      Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/minimal_mode">
+      Minimal Mode
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/running_test_suites">
+      Running Test Suites
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/developer_setup/debugging">
+      Interactive debugging
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      External Auth
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth.html">
+      Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/configuration">
+      Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/external_auth/installation">
+      Installation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      User Interface
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/patterns">
+      UI Patterns
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/plugins">
+      UI Plugins
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/register_react_component">
+      Shared React Component API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/ui/report_data_api">
+      Report Data API
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li class="menu-parent">
+    
+    <a href="#">
+      Providers
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_overview">
+      Providers Overview
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/architecture/providers_database_architecture.html">
+      Providers Database Architecture
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/amazon_aws_config">
+      Amazon AWS Config
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/containers">
+      Containers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openshift">
+      Openshift
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/guides/providers/openstack_infra_provider">
+      Openstack Infra Provider
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/provisioning/windows_imaging">
+      Windows Imaging
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/coding_style_and_standards">
+      Coding Style And Standards
+    </a>
+    
+    
+  </li>
+
+  
+  
+  
+  <li>
+    
+    <a href="/docs/guides/i18n">
+      I18n
+    </a>
+    
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc dev_doc">
+      
+
+      <div class="doc-content">
+        
+        <h1 id="issue-and-pr-lifecycle-and-triage-process">Issue and PR Lifecycle and Triage Process</h1>
+
+<p>The community holds meetings regularly to triage issues and pull requests across the ManageIQ organization’s repositories. Attendees include code owners and mergers for the repositories, but all are invited to attend.<em>This is not a meeting to assign when work will be done.</em></p>
+
+<p>Triage meetings are divided into two groups General and API/UI.</p>
+<ul>
+  <li><a href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NWNjbGw2dDgzOGluZDJrb3QzanFobW9vNmNfMjAyMDAyMTNUMTgzMDAwWiBjb250YWN0QG1hbmFnZWlxLm9yZw&amp;tmsrc=contact%40manageiq.org&amp;scp=ALL">Core/Provider triage meetings</a> are usually held weekly and include provider and core repositories</li>
+  <li><a href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NzIxc28ycGtpcnJqcThobjhiMjh2NGQ5N3FfMjAyMDAyMTRUMTQzMDAwWiBjb250YWN0QG1hbmFnZWlxLm9yZw&amp;tmsrc=contact%40manageiq.org&amp;scp=ALL">API/UI triage meetings</a> are also held weekly and include the UI and API repos.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Triage Category</th>
+      <th>Core/Provider Link</th>
+      <th>UI/API Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unassigned issues</td>
+      <td><a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+archived%3Afalse+-label%3A%22help+wanted%22+no%3Aassignee+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageiq%2Fbugzilla_mirror+-repo%3AManageiq%2Fpolisher+-repo%3AManageiq%2Fwrapanapi+-repo%3AManageiq%2Fmanageiq-ui-classic+-repo%3AManageiq%2Fmanageiq-performance+or+-repo%3AManageiq%2Fmanageiq-api+or+-repo%3AManageIQ%2Fui-components+or+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Freact-ui-components+org%3AManageIQ+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageiq%2Fmanageiq-ui-service+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fintegration_tests+user%3AManageIQ+sort%3Acreated-desc+">Core/Provider unassigned issues</a></td>
+      <td><a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+-label%3A%22help+wanted%22+repo%3AManageiq%2Fmanageiq-ui-classic+repo%3AManageiq%2Fmanageiq-api+repo%3AManageIQ%2Fui-components+repo%3AManageIQ%2Freact-ui-components+repo%3AManageiq%2Fmanageiq-ui-service+is%3Aopen+no%3Aassignee+">UI/API unassigned issues</a></td>
+    </tr>
+    <tr>
+      <td>Assigned issues without scope label</td>
+      <td><a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+archived%3Afalse+-label%3Atest+-label%3Aperformance+-label%3Abug+-label%3Aenhancement+-label%3Adocumentation+-label%3Arefactoring+-label%3Acleanup+-label%3A%22technical+debt%22+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageiq%2Fbugzilla_mirror+-repo%3AManageiq%2Fpolisher+-repo%3AManageiq%2Fwrapanapi+-repo%3AManageiq%2Fmanageiq-ui-classic+-repo%3AManageiq%2Fmanageiq-performance+or+-repo%3AManageiq%2Fmanageiq-api+or+-repo%3AManageIQ%2Fui-components+or+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Freact-ui-components+org%3AManageIQ+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageiq%2Fmanageiq-ui-service+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fintegration_tests+user%3AManageIQ+sort%3Acreated-desc+">Core/Provider issues without scope label</a></td>
+      <td><a href="https://github.com/issues?page=1&amp;q=is%3Aissue+-label%3A%22help+wanted%22+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Abug+-label%3Aenhancement+repo%3AManageiq%2Fmanageiq-ui-classic+repo%3AManageiq%2Fmanageiq-api+repo%3AManageIQ%2Fui-components+repo%3AManageIQ%2Freact-ui-components+repo%3AManageiq%2Fmanageiq-ui-service+is%3Aopen&amp;utf8=%E2%9C%93">UI/API issues without scope label</a></td>
+    </tr>
+    <tr>
+      <td>Stale issues</td>
+      <td><a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+label%3Astale+archived%3Afalse+user%3AManageIQ+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageiq%2Fbugzilla_mirror+-repo%3AManageiq%2Fpolisher+-repo%3AManageiq%2Fwrapanapi+-repo%3AManageiq%2Fmanageiq-ui-classic+-repo%3AManageiq%2Fmanageiq-performance+-repo%3AManageiq%2Fmanageiq-api+-repo%3AManageIQ%2Fui-components+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Freact-ui-components+org%3AManageIQ+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageiq%2Fmanageiq-ui-service+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fintegration_tests+">Core/Provider stale issues</a></td>
+      <td><a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+label%3Astale+repo%3AManageiq%2Fmanageiq-ui-classic+repo%3AManageiq%2Fmanageiq-api+repo%3AManageIQ%2Fui-components+repo%3AManageIQ%2Freact-ui-components+repo%3AManageiq%2Fmanageiq-ui-service+is%3Aopen+">UI/API stale issues</a></td>
+    </tr>
+    <tr>
+      <td>Unassigned pull requests</td>
+      <td><a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Apr+archived%3Afalse+-label%3A%22help+wanted%22+no%3Aassignee+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageiq%2Fbugzilla_mirror+-repo%3AManageiq%2Fpolisher+-repo%3AManageiq%2Fwrapanapi+-repo%3AManageiq%2Fmanageiq-ui-classic+-repo%3AManageiq%2Fmanageiq-performance+or+-repo%3AManageiq%2Fmanageiq-api+or+-repo%3AManageIQ%2Fui-components+or+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Freact-ui-components+org%3AManageIQ+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageiq%2Fmanageiq-ui-service+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fintegration_tests+user%3AManageIQ+sort%3Acreated-desc+">Core/Provider unassigned pull requests</a></td>
+      <td><a href="https://github.com/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+is%3Aopen+-label%3A%22help+wanted%22+repo%3AManageiq%2Fmanageiq-ui-classic+repo%3AManageiq%2Fmanageiq-api+repo%3AManageIQ%2Fui-components+repo%3AManageIQ%2Freact-ui-components+repo%3AManageiq%2Fmanageiq-ui-service+is%3Aopen+no%3Aassignee+">UI/API unassigned pull requests</a></td>
+    </tr>
+    <tr>
+      <td>Assigned pull requests without scope label</td>
+      <td><a href="https://github.com/pulls?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Apr+archived%3Afalse+-label%3Atest+-label%3Aperformance+-label%3Abug+-label%3Aenhancement+-label%3Adocumentation+-label%3Arefactoring+-label%3Acleanup+-label%3A%22technical+debt%22+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageiq%2Fbugzilla_mirror+-repo%3AManageiq%2Fpolisher+-repo%3AManageiq%2Fwrapanapi+-repo%3AManageiq%2Fmanageiq-ui-classic+-repo%3AManageiq%2Fmanageiq-performance+or+-repo%3AManageiq%2Fmanageiq-api+or+-repo%3AManageIQ%2Fui-components+or+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Freact-ui-components+org%3AManageIQ+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageiq%2Fmanageiq-ui-service+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+user%3AManageIQ+">Core/Provider assigned pull requests without scope label</a></td>
+      <td><a href="https://github.com/issues?page=2&amp;q=is%3Apr+-label%3A%22help+wanted%22+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Abug+-label%3Aenhancement+repo%3AManageiq%2Fmanageiq-ui-classic+repo%3AManageiq%2Fmanageiq-api+repo%3AManageIQ%2Fui-components+repo%3AManageIQ%2Freact-ui-components+repo%3AManageiq%2Fmanageiq-ui-service+is%3Aopen&amp;utf8=%E2%9C%93">UI/API assigned pull requests without scope label</a></td>
+    </tr>
+    <tr>
+      <td>Stale pull requests</td>
+      <td><a href="https://github.com/pulls?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Apr+label%3Astale+archived%3Afalse+user%3AManageIQ+">Core/Provider stale pull requests</a></td>
+      <td><a href="https://github.com/pulls?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Apr+label%3Astale+archived%3Afalse+user%3AManageIQ+">UI/API stale pull requests</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="issue-triage">Issue Triage</h2>
+<ul>
+  <li>Triage unassigned issues
+    <ul>
+      <li>Assign the issue.  There are three possible scenarios.
+        <ul>
+          <li>Assign someone to at least get in on the radar.  This <em>does not</em> mean that the assignee is expected to start work on the issue.</li>
+          <li>Apply the <code class="highlighter-rouge">help wanted</code> label.  This means that while the issue is valid, the team does not have plans to work on it in the near future.</li>
+          <li>Do not assign to anyone and revisit the issue.  In other words, we want to be sure that the issue does not get ignored in perpetuity.</li>
+        </ul>
+      </li>
+      <li>Close invalid issues with a comment and/or label as to why it has been closed.</li>
+    </ul>
+  </li>
+  <li>Review issues with assignee, but no scope label.
+    <ul>
+      <li>Apply <a href="https://www.manageiq.org/docs/guides/labels">scope labels</a>.</li>
+    </ul>
+  </li>
+  <li>Review <code class="highlighter-rouge">stale</code> issues
+    <ul>
+      <li><code class="highlighter-rouge">Bug</code> label
+        <ul>
+          <li>If the bug is stale, but not verified, will decide during triage if it should be closed.</li>
+          <li>If the bug is not reproducible, comment back to the opener of the issue for more info. If there is no response, then close after it goes stale.</li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">Question</code> label
+        <ul>
+          <li>Should not go stale.</li>
+          <li>Can either be answered and closed OR converted to another scope label such as <code class="highlighter-rouge">enhancement</code> or <code class="highlighter-rouge">bug</code> with appropriate renaming of the issue title.</li>
+        </ul>
+      </li>
+      <li>All other scope labels
+        <ul>
+          <li>Should never go stale, either pin or close.</li>
+          <li>If the item is considered reasonable, the issue should be labeled <code class="highlighter-rouge">pinned</code> to prevent the stale label from being applied.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="pull-request-triage">Pull Request Triage</h2>
+<ul>
+  <li>Review unassigned pull requests.
+    <ul>
+      <li>Apply <a href="https://www.manageiq.org/docs/guides/labels">scope labels</a></li>
+      <li>Assign the pull request.  There are three possible outcomes.
+        <ul>
+          <li>Assign someone to at least get in on the radar.  This <em>does not</em> mean that the assignee is expected to start work on the issue.</li>
+          <li>Apply the <code class="highlighter-rouge">help wanted</code> label.  This means that while the issue is valid, the team does not have plans to work on it in the near future.</li>
+          <li>Do not assign to anyone and revisit the issue.  In other words, we want to be sure that the issue does not get ignored in perpetuity.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Review assigned PRs with no scope label.
+    <ul>
+      <li>Apply <a href="https://www.manageiq.org/docs/guides/labels">scope labels</a>.</li>
+    </ul>
+  </li>
+  <li>Review <code class="highlighter-rouge">stale</code> PRs.
+    <ul>
+      <li>Bump via @mention after 1 month of no activity</li>
+      <li>Apply stale label after 3 month of no activity</li>
+      <li>After turns stale and 3 months, close the PR.</li>
+      <li>Stale and unmergeable PRs are closed automatically.</li>
+    </ul>
+  </li>
+</ul>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>
