@@ -613,10 +613,14 @@ initdb <span class="nt">--auth</span> trust <span class="nt">--username</span> r
 
 <h2 id="install-nvm-and-javascript-build-utilities">Install nvm and JavaScript build utilities</h2>
 
-<p>Yarn, Gulp and Webpack are required to compile JavaScript assets. NodeJS version 10.16.x is required. If your distribution doesn’t ship NodeJS 10.x, you can install <a href="https://github.com/nvm-sh/nvm">nvm</a> and follow the setup steps (you will need to restart your shell in order to source the nvm initialization environment). Then install <code class="highlighter-rouge">yarn</code>, <code class="highlighter-rouge">gulp-cli</code> and <code class="highlighter-rouge">webpack</code>.</p>
+<p>Yarn and NodeJS version 10 or newer are required. If your distribution doesn’t ship NodeJS 10.x, you can install <a href="https://github.com/nvm-sh/nvm">nvm</a> and follow the setup steps (you will need to restart your shell in order to source the nvm initialization environment).</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install 10
-npm install <span class="nt">-g</span> yarn gulp-cli webpack
+</code></pre></div></div>
+
+<p>Then install <code class="highlighter-rouge">yarn</code> - you can find the recommended way for your platform at https://classic.yarnpkg.com/en/docs/install, or, if that fails, via npm.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">-g</span> yarn
 </code></pre></div></div>
 
 <h2 id="install-ruby-and-bundler">Install Ruby and Bundler</h2>
