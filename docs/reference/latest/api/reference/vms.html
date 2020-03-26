@@ -1503,10 +1503,10 @@
       <div class="doc-content">
         
         <div class="sect1">
-<h2 id="vm-management"><a class="anchor" href="#vm-management"></a>Vm Management</h2>
+<h2 id="vm-management"><a class="anchor" href="#vm-management"></a>Virtual Machine Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Management of Virtual Machines adds support of the following actions:</p>
+<p>Management of virtual machines adds support of the following actions:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1522,59 +1522,63 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starts a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starts a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stop</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stops a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stops a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">suspend</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Suspends a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suspends a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">refresh</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refreshes a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refreshes a virtual machine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">retire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retires a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resets a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resets a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reboot_guest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reboots guest in VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reboots guest in virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">shutdown_guest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shuts down guest in VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shuts down guest in virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scans a VM (Perform SmartState Analysis)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scans a virtual machine (Perform SmartState Analysis)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set_miq_server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the server of a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the server of a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set_owner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the owner of a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the owner of a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add_event</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Adding an Event to a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adding an event to a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add_lifecycle_event</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add a Lifecycle Event to a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a life cycle event to a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Edits a VM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits a virtual machine</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a VM in the Appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a virtual machine in the appliance</p></td>
 </tr>
 </tbody>
 </table>
@@ -1597,6 +1601,9 @@
 </li>
 <li>
 <p><a href="#refresh-vm">Refreshing a VM</a></p>
+</li>
+<li>
+<p><a href="#retire-vm">Retiring a VM</a></p>
 </li>
 <li>
 <p><a href="#reset-vm">Resets a VM</a></p>
@@ -1631,9 +1638,9 @@
 </ul>
 </div>
 <div class="sect2">
-<h3 id="targeting-vms"><a class="anchor" href="#targeting-vms"></a>Targeting VMs</h3>
+<h3 id="targeting-vms"><a class="anchor" href="#targeting-vms"></a>Targeting Virtual Machines</h3>
 <div class="paragraph">
-<p>These actions can be triggered on individual vm resources:</p>
+<p>These actions can be triggered on individual virtual machine resources:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1641,7 +1648,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>As simply as POSTing the following action to a VM.</p>
+<p>As simply as POSTing the following action to a virtual machine.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1672,9 +1679,9 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="querying-vms"><a class="anchor" href="#querying-vms"></a>Querying VMs</h3>
+<h3 id="querying-vms"><a class="anchor" href="#querying-vms"></a>Querying Virtual Machines</h3>
 <div class="paragraph">
-<p>Virtual Machines are queried via the primary collection URL:</p>
+<p>Virtual machines are queried via the primary collection URL:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1711,7 +1718,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Or querying and individual vm</p>
+<p>Or querying an individual virtual machine</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1720,7 +1727,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="start-vm"><a class="anchor" href="#start-vm"></a>Starting a VM</h3>
+<h3 id="start-vm"><a class="anchor" href="#start-vm"></a>Starting a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1730,7 +1737,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="stop-vm"><a class="anchor" href="#stop-vm"></a>Stopping a VM</h3>
+<h3 id="stop-vm"><a class="anchor" href="#stop-vm"></a>Stopping a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1740,7 +1747,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="suspend-vm"><a class="anchor" href="#suspend-vm"></a>Suspending a VM</h3>
+<h3 id="suspend-vm"><a class="anchor" href="#suspend-vm"></a>Suspending a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1750,7 +1757,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="refresh-vm"><a class="anchor" href="#refresh-vm"></a>Refreshing a VM</h3>
+<h3 id="refresh-vm"><a class="anchor" href="#refresh-vm"></a>Refreshing a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1760,7 +1767,17 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reset-vm"><a class="anchor" href="#reset-vm"></a>Resetting a VM</h3>
+<h3 id="retire-vm"><a class="anchor" href="#retire-vm"></a>Retiring a Virtual Machine</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">request_retire</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reset-vm"><a class="anchor" href="#reset-vm"></a>Resetting a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1770,7 +1787,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reboot-guest-vm"><a class="anchor" href="#reboot-guest-vm"></a>Rebooting guest in VM</h3>
+<h3 id="reboot-guest-vm"><a class="anchor" href="#reboot-guest-vm"></a>Rebooting guest in Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1780,7 +1797,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="shutdown-guest-vm"><a class="anchor" href="#shutdown-guest-vm"></a>Shuts down guest in VM</h3>
+<h3 id="shutdown-guest-vm"><a class="anchor" href="#shutdown-guest-vm"></a>Shutting Down Guest in a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1790,7 +1807,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="scan-vm"><a class="anchor" href="#scan-vm"></a>Scanning a VM</h3>
+<h3 id="scan-vm"><a class="anchor" href="#scan-vm"></a>Scanning a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1800,7 +1817,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-miq-server-vm"><a class="anchor" href="#set-miq-server-vm"></a>Setting Server of a VM</h3>
+<h3 id="set-miq-server-vm"><a class="anchor" href="#set-miq-server-vm"></a>Setting Server of a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1822,7 +1839,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>To remove the Server from the VM, pass in an empty reference as follows:</p>
+<p>To remove the server from the virtual machine, pass in an empty reference as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1836,7 +1853,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-owner-vm"><a class="anchor" href="#set-owner-vm"></a>Setting Owner of a VM</h3>
+<h3 id="set-owner-vm"><a class="anchor" href="#set-owner-vm"></a>Setting Owner of a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1849,7 +1866,7 @@ as well as the following subcollections:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-event-vm"><a class="anchor" href="#add-event-vm"></a>Adding an Event to a VM</h3>
+<h3 id="add-event-vm"><a class="anchor" href="#add-event-vm"></a>Adding an Event to a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1876,7 +1893,7 @@ event_time above is optional. If skipped, current time will be used.
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-lifecycle-event-vm"><a class="anchor" href="#add-lifecycle-event-vm"></a>Adding a Lifecycle Event to a VM</h3>
+<h3 id="add-lifecycle-event-vm"><a class="anchor" href="#add-lifecycle-event-vm"></a>Adding a Lifecycle Event to a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -1892,9 +1909,9 @@ event_time above is optional. If skipped, current time will be used.
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-vm"><a class="anchor" href="#edit-vm"></a>Editing a VM</h3>
+<h3 id="edit-vm"><a class="anchor" href="#edit-vm"></a>Editing a Virtual Machine</h3>
 <div class="paragraph">
-<p>Basic information of VMs can be edited. This includes the following:</p>
+<p>Basic information of virtual machines can be edited. This includes the following:</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <colgroup>
@@ -1927,7 +1944,7 @@ event_time above is optional. If skipped, current time will be used.
 </tbody>
 </table>
 <div class="paragraph">
-<p>VM resources can be edited as follows:</p>
+<p>Virtual machine resources can be edited as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1953,7 +1970,7 @@ event_time above is optional. If skipped, current time will be used.
 </div>
 </div>
 <div class="paragraph">
-<p>VMs can also be edited in Bulk as follows:</p>
+<p>Virtual machines can also be edited in bulk as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1983,7 +2000,7 @@ event_time above is optional. If skipped, current time will be used.
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-vm"><a class="anchor" href="#delete-vm"></a>Deleting a VM</h3>
+<h3 id="delete-vm"><a class="anchor" href="#delete-vm"></a>Deleting a Virtual Machine</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
@@ -2000,7 +2017,7 @@ event_time above is optional. If skipped, current time will be used.
 </div>
 </div>
 <div class="paragraph">
-<p>Additional VM Management examples can be found on the main REST API Examples section.</p>
+<p>See the main REST API examples section for additional virtual machine management examples.</p>
 </div>
 </div>
 </div>
