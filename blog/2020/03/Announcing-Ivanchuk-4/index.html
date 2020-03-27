@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ManageIQ - ManageIQ Blog</title>
-  <meta name="description" content="">
+  <title>ManageIQ - Announcing Ivanchuk-4</title>
+  <meta name="description" content="We’ve just built Ivanchuk-4. This release contains bug fixes, UI tweaks, and stabilization.Here are just a few of the things added since the Ivanchuk-4 release:">
   <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
   
   <link type="text/css" rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://manageiq.org/blog/page27/">
+  <link rel="canonical" href="http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-4/">
   <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
 
   <link href="/assets/images/favicon.ico" rel="shortcut icon">
@@ -57,9 +57,9 @@
 </header>
 
 
-    <main data-url="/blog/page27/">
+    <main data-url="/blog/2020/03/Announcing-Ivanchuk-4/">
       <div class="blog">
-  <div class="container blog_container">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-10">
         <header class="blog_header">
@@ -69,283 +69,73 @@
         </header>
       </div>
     </div>
-    <div class="row">  
+    <div class="row"> 
       <div class="col-xs-12 col-sm-10 blog_main">
-        
-        <article class="post_excerpt">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
           <header class="post-header">
-            <h1><a href="/blog/2014/06/third-tenet-of-open-source/">The Third Tenet of Open Source</a></h1>
+            <h1 class="page-title" itemprop="name headline">Announcing Ivanchuk-4</h1>
+
             <div class="post-meta">
-              <time datetime="2014-06-18T16:30:00+00:00" itemprop="datePublished">
-                Jun 18, 2014
+              <time datetime="2020-03-26T19:12:13+00:00" itemprop="datePublished">
+                Mar 26, 2020
               </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  mfeifer
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/releases">releases</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/announcements">announcements</a>
+                </li>
+                
+              </ul>
             </div>
           </header>
-          <div class="post-content">
-            <p>Here’s a great <a href="http://tentenet.net/2014/06/19/the-third-tenet-of-open-source-open-source-requires-commitment-welcome-manageiq/">introduction written by Bryan Che</a>, a Red Hat cloud strategy guy, on why we released ManageIQ as an open source project, as well as a look at the cloud management landscape. Cloud management is currently a nice car with four flat tires, and all four of them with different sizes, colors, and recommended pressure.</p>
 
+          <div class="post-content" itemprop="articleBody">
+            <p>We’ve just built Ivanchuk-4. This release contains bug fixes, UI tweaks, and stabilization.
+Here are just a few of the things added since the Ivanchuk-4 release:</p>
+
+<h3 id="added">Added</h3>
+<ul>
+  <li>[V2V] Remove removing_snapshots state <a href="https://github.com/ManageIQ/manageiq/pull/19374">(#19374)</a></li>
+  <li>[V2V] Pin InfraConversionJob to first server where it runs <a href="https://github.com/ManageIQ/manageiq/pull/19416">(#19416)</a></li>
+  <li>[V2V] Add VM validation for warm migration eligibility and updated specs to deal with warm migration <a href="https://github.com/ManageIQ/manageiq/pull/19401">(#19401)</a></li>
+  <li>Use a single query to get count of active VMs and Hosts <a href="https://github.com/ManageIQ/manageiq/pull/19835">(#19835)</a></li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+<ul>
+  <li>[V2V] Remove handover from shutdown_vm transition <a href="https://github.com/ManageIQ/manageiq/pull/19371">(#19371)</a></li>
+  <li>[V2V] Extend InfraConversionJob timeout <a href="https://github.com/ManageIQ/manageiq/pull/19373">(#19373)</a></li>
+  <li>[V2V] Fix progress percentage calculation <a href="https://github.com/ManageIQ/manageiq/pull/19375">(#19375)</a></li>
+</ul>
+
+<p>You can download the Ivanchuk-4 release <a href="http://manageiq.org/download/">here</a>.</p>
+
+<p>Here is the changelog:
+<a href="https://github.com/ManageIQ/manageiq/blob/ivanchuk/CHANGELOG.md">Ivanchuk-4</a></p>
+
+<p>For questions or support,
+<a href="http://talk.manageiq.org/">join in on the talk page</a>.</p>
 
           </div>
         </article>
-        
-        <article class="post_excerpt">
-          <header class="post-header">
-            <h1><a href="/blog/2014/06/manageiq-is-here/">ManageIQ is here!</a></h1>
-            <div class="post-meta">
-              <time datetime="2014-06-18T14:55:00+00:00" itemprop="datePublished">
-                Jun 18, 2014
-              </time>
-            </div>
-          </header>
-          <div class="post-content">
-            <p>The wait is over—ManageIQ is now open source!</p>
-
-
-          </div>
-        </article>
-        
-        <article class="post_excerpt">
-          <header class="post-header">
-            <h1><a href="/blog/2014/05/openstack-summit-roundup/">OpenStack Summit Roundup</a></h1>
-            <div class="post-meta">
-              <time datetime="2014-05-13T14:20:00+00:00" itemprop="datePublished">
-                May 13, 2014
-              </time>
-            </div>
-          </header>
-          <div class="post-content">
-            <p>As I mentioned in the <a href="/blog/2014/05/welcome-to-the-manageiq-community/">previous blog post</a>,
-it’s a great day to be in the cloud. Yesterday marked our announcement
-at the OpenStack Summit, and the reaction was pretty swift and positive.
-There is pent-up demand for software that lets others take control of
-their clouds and virtualization environments.</p>
-
-
-          </div>
-        </article>
-        
-        <article class="post_excerpt">
-          <header class="post-header">
-            <h1><a href="/blog/2014/05/welcome-to-the-manageiq-community/">Welcome to the ManageIQ Community!</a></h1>
-            <div class="post-meta">
-              <time datetime="2014-05-12T09:05:00+00:00" itemprop="datePublished">
-                May 12, 2014
-              </time>
-            </div>
-          </header>
-          <div class="post-content">
-            <p>We are gearing up for an open source release in the coming weeks, and
-you’re probably curious what all the fuss is about. What you’ll find
-here is some introductory information and ways to sign up for news and,
-eventually, pre-release code as we get closer to the project launch.
-<a href="http://www.redhat.com/about/news/press-archive/2014/5/red-hat-announces-manageiq-community-for-open-source-cloud-management">Read Red Hat’s press release</a>
-– it will give you the background information you need.</p>
-
-
-          </div>
-        </article>
-        
-        <nav class="pagination-container">
-  <ul class="pagination">
-    <li>
-      
-        <a href="/blog/page26/" class="previous">&laquo;</a>
-      
-    </li>
-    
-      
-        <li>
-          <a href="/blog/">1</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page2/">2</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page3/">3</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page4/">4</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page5/">5</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page6/">6</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page7/">7</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page8/">8</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page9/">9</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page10/">10</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page11/">11</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page12/">12</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page13/">13</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page14/">14</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page15/">15</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page16/">16</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page17/">17</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page18/">18</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page19/">19</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page20/">20</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page21/">21</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page22/">22</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page23/">23</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page24/">24</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page25/">25</a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/blog/page26/">26</a>
-        </li>
-      
-    
-      
-        <li class="active">
-          <a href="#">27</a>
-        </li>
-      
-    
-    <li>
-      
-        <span class="next ">&raquo;</span>
-      
-    </li>
-  </ul>
-</nav>
-
-<nav class="pager-container">
-  <ul class="pager">
-    
-    <li class="previous">
-      <a href="/blog/page26/">
-        <span aria-hidden="true">&larr;</span> Newer
-      </a>
-    </li>
-    
-
-    
-    <li class="next disabled">
-      <a href="javascript:;">
-        Older <span aria-hidden="true">&rarr;</span>
-      </a>
-    </li>
-    
-  </ul>
-</nav>
-
       </div>
+
       <div class="col-xs-12 col-sm-2 blog_side">
-        <div class="blog_side-group">
+          <div class="blog_side-group">
   <h3 class="blog_side-heading">
     Categories
   </h3>
@@ -475,6 +265,7 @@ eventually, pre-release code as we get closer to the project launch.
 </div>
 
       </div>
+
     </div>
   </div>
 </div>
