@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Apr 2020 10:47:26 +0000</pubDate>
-    <lastBuildDate>Thu, 02 Apr 2020 10:47:26 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Apr 2020 14:31:40 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Apr 2020 14:31:40 +0000</lastBuildDate>
     <generator>Jekyll v3.6.3</generator>
+    
+      <item>
+        <title>Announcing Jansa Alpha Release</title>
+        <description>&lt;p&gt;The first alpha release of ManageIQ Jansa is here!  It has a bunch of interesting new stuff that you can see in the &lt;a href=&quot;https://github.com/orgs/ManageIQ/projects/13#column-7337345&quot;&gt;roadmap&lt;/a&gt;. There are 2 major changes that I want to draw your attention to.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 31 Mar 2020 19:12:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Ivanchuk-4</title>
@@ -150,22 +166,6 @@ CloudForms and Red Hat Ansible Automation Platform.&lt;/p&gt;
         <category>announcements</category>
         
         <category>collaboration</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ManageIQ Ivanchuk GA announcement</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/assets/images/blog/Ivanchuk_GA_release.png&quot;&gt;&lt;img src=&quot;/assets/images/blog/Ivanchuk_GA_release.png&quot; alt=&quot;ManageIQ Ivanchuk release&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
-        <link>http://manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
         
         
       </item>
