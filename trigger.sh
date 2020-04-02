@@ -36,4 +36,4 @@ curl -s -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token $TRAVIS_TOKEN" \
   -d @/tmp/post.json \
-  https://api.travis-ci.org/repo/ManageIQ%2Fmanageiq.github.io/requests
+  https://api.travis-ci.com/repo/ManageIQ%2Fmanageiq.github.io/requests
