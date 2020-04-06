@@ -4633,6 +4633,30 @@ main img {
   max-width: 100%;
   height: auto; }
 
+.gsc-control-cse {
+  padding: 0 !important; }
+  .gsc-control-cse td {
+    padding: 0 5px 0 0 !important; }
+  .gsc-control-cse table tr:nth-child(odd) td {
+    background-color: transparent !important; }
+
+table.gsc-input {
+  background-color: transparent;
+  font-size: 9px !important;
+  height: 28px !important;
+  margin: 2px 0 0 5px !important; }
+
+.gsst_a .gscb_a {
+  color: #292e33 !important; }
+
+.gsc-search-button-v2 {
+  background: none !important;
+  border: none !important;
+  padding: 6px !important; }
+  .gsc-search-button-v2 svg {
+    width: 16px !important;
+    height: 16px !important; }
+
 .menu {
   padding: 0;
   margin-bottom: 0; }
