@@ -768,7 +768,7 @@ Then automagic should work.</p>
 <div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> <span class="k">if</span> <span class="vi">@showtype</span> <span class="o">==</span> <span class="s2">"performance"</span>
     <span class="p">=</span> <span class="n">render</span><span class="p">(</span><span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">"layouts/performance"</span><span class="p">)</span>
     <span class="nd">:javascript
-</span>      <span class="kd">var</span> <span class="nx">miq_after_onload</span> <span class="o">=</span> <span class="s2">"miqAsyncAjax('</span><span class="si">#{</span><span class="n">url_for</span><span class="p">(</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="vi">@ajax_action</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@record</span><span class="p">)</span><span class="si">}</span><span class="s2">');"</span>
+</span>      <span class="kd">var</span> <span class="nx">miq_after_onload</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">miqAsyncAjax('</span><span class="si">#{</span><span class="n">url_for</span><span class="p">(</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="vi">@ajax_action</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@record</span><span class="p">)</span><span class="si">}</span><span class="s2">');</span><span class="dl">"</span>
 </code></pre></div></div>
 
 <ul>
@@ -776,10 +776,10 @@ Then automagic should work.</p>
   <li>adding to <code class="highlighter-rouge">db/fixtures/miq_product_features.yml</code> (<code class="highlighter-rouge">X</code> is the entity name)</li>
 </ul>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">:name</span><span class="pi">:</span> <span class="s">Utilization</span>
-    <span class="s">:description</span><span class="pi">:</span> <span class="s">Show Capacity &amp; Utilization data of X</span>
-    <span class="s">:feature_type</span><span class="pi">:</span> <span class="s">view</span>
-    <span class="s">:identifier</span><span class="pi">:</span> <span class="s">X_perf</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">:name: Utilization</span>
+    <span class="s">:description: Show Capacity &amp; Utilization data of X</span>
+    <span class="s">:feature_type: view</span>
+    <span class="s">:identifier: X_perf</span>
 </code></pre></div></div>
 
 <ul>

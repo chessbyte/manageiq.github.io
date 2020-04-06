@@ -478,12 +478,12 @@
 
 <p>The structure of JSON object used to describe the service dialogs is as follows:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'content'</span><span class="p">:</span> <span class="p">[{</span>
-  <span class="s1">'dialog_tabs'</span><span class="p">:</span> <span class="p">[{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">:</span> <span class="p">[{</span>
+  <span class="dl">'</span><span class="s1">dialog_tabs</span><span class="dl">'</span><span class="p">:</span> <span class="p">[{</span>
     <span class="p">...</span>
-    <span class="s1">'dialog_groups'</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="dl">'</span><span class="s1">dialog_groups</span><span class="dl">'</span><span class="p">:</span> <span class="p">[{</span>
       <span class="p">...</span>
-      <span class="s1">'dialog_fields'</span><span class="p">:</span> <span class="p">[...],</span>
+      <span class="dl">'</span><span class="s1">dialog_fields</span><span class="dl">'</span><span class="p">:</span> <span class="p">[...],</span>
     <span class="p">}],</span>
   <span class="p">}],</span>
 <span class="p">}],</span>
@@ -504,9 +504,9 @@
 
 <p>function <code class="highlighter-rouge">addTab</code> creates a new empty tab, pushes it to the array with the other tabs, and updates <code class="highlighter-rouge">activeTab</code> to the new tab.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="nl">description</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
-  <span class="nx">display</span><span class="p">:</span> <span class="s1">'edit'</span><span class="p">,</span>
-  <span class="nx">label</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
+  <span class="nl">description</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">New tab </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
+  <span class="nx">display</span><span class="p">:</span> <span class="dl">'</span><span class="s1">edit</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">label</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">New tab </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
   <span class="nx">position</span><span class="p">:</span> <span class="nx">nextIndex</span><span class="p">,</span>
   <span class="nx">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">dialog_groups</span><span class="p">:</span> <span class="p">[],</span>
@@ -1015,19 +1015,19 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
 <p>Service Dialogs are serialized together from four database tables - <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog.rb">dialog</a>, <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog_tab.rb">dialog tab</a>, <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog_group.rb">dialog group</a>, and <a href="https://github.com/ManageIQ/manageiq/blob/master/app/models/dialog_field.rb">dialog fields</a>. The data are serialized into a single object, before being passed to the Dialog Editor.</p>
 
 <p>The data are loaded by <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/assets/javascripts/services/dialog_editor_http_service.js">Dialog Editor HTTP service</a> from API by the request:</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/api/service_dialogs/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'?attributes=content,buttons,label'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/service_dialogs/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">?attributes=content,buttons,label</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 <p>or in case of a new Dialog, an empty dialog structure, defined  in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L23-L35">Dialog Editor controller</a> is used:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dialogInitContent</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'content'</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="s1">'dialog_tabs'</span><span class="p">:</span> <span class="p">[{</span>
-      <span class="s1">'label'</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New tab'</span><span class="p">),</span>
-      <span class="s1">'position'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s1">'dialog_groups'</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s1">'label'</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'New section'</span><span class="p">),</span>
-        <span class="s1">'position'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s1">'dialog_fields'</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="dl">'</span><span class="s1">dialog_tabs</span><span class="dl">'</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">New tab</span><span class="dl">'</span><span class="p">),</span>
+      <span class="dl">'</span><span class="s1">position</span><span class="dl">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">dialog_groups</span><span class="dl">'</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">New section</span><span class="dl">'</span><span class="p">),</span>
+        <span class="dl">'</span><span class="s1">position</span><span class="dl">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">dialog_fields</span><span class="dl">'</span><span class="p">:</span> <span class="p">[],</span>
       <span class="p">}],</span>
     <span class="p">}],</span>
   <span class="p">}],</span>
@@ -1050,7 +1050,7 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
 
 <p>After, the Dialog is saved by calling:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/api/service_dialogs'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="na">action</span><span class="p">:</span> <span class="nx">action</span><span class="p">,</span> <span class="na">resource</span><span class="p">:</span> <span class="nx">data</span> <span class="p">},</span> <span class="p">{</span> <span class="na">skipErrors</span><span class="p">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">]</span> <span class="p">});</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">API</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/service_dialogs</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="na">action</span><span class="p">:</span> <span class="nx">action</span><span class="p">,</span> <span class="na">resource</span><span class="p">:</span> <span class="nx">data</span> <span class="p">},</span> <span class="p">{</span> <span class="na">skipErrors</span><span class="p">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">]</span> <span class="p">});</span>
 </code></pre></div></div>
 
 <h2 id="demo">Demo</h2>

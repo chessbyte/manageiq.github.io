@@ -475,17 +475,17 @@ provided) as another alternative.</p>
 
 <p>Get openshift-ansible:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git clone https://github.com/openshift/openshift-ansible.git
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git clone https://github.com/openshift/openshift-ansible.git
 </code></pre></div></div>
 
 <p>Generate an ssh key if needed:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ssh-keygen
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh-keygen
 </code></pre></div></div>
 
 <p>Configure ssh key authentication to all the machines:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ssh-copy-id root@hostname
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh-copy-id root@hostname
 </code></pre></div></div>
 
 <p>The inventory file describes all the nodes and masters in the cluster. A simple
@@ -513,7 +513,7 @@ OpenShift.  A more detailed example can be found in
 logging use <code class="highlighter-rouge">openshift_hosted_metrics_deploy=True</code> and
 <code class="highlighter-rouge">openshift_hosted_logging_deploy=True</code></p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ansible-playbook playbooks/byo/config.yml <span class="nt">-i</span> path/to/inventory/file
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ansible-playbook playbooks/byo/config.yml <span class="nt">-i</span> path/to/inventory/file
 </code></pre></div></div>
 
 <h3 id="running-with-minishift">Running with minishift</h3>
@@ -540,16 +540,16 @@ regardless of the hypervisor).</p>
   <li>
     <p>Download and enable the manageiq addon for minishift:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> mkdir <span class="nt">-p</span> ~/minishift/addons
-<span class="gp">$</span> git clone https://gist.github.com/e2fac8be87ea0e9f429b6f5d75e02176 ~/minishift/addons/manageiq
-<span class="gp">$</span> minishift addons install <span class="nt">--force</span> ~/minishift/addons/manageiq
-<span class="gp">$</span> minishift addons <span class="nb">enable </span>manageiq
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/minishift/addons
+<span class="gp">$</span><span class="w"> </span>git clone https://gist.github.com/e2fac8be87ea0e9f429b6f5d75e02176 ~/minishift/addons/manageiq
+<span class="gp">$</span><span class="w"> </span>minishift addons <span class="nb">install</span> <span class="nt">--force</span> ~/minishift/addons/manageiq
+<span class="gp">$</span><span class="w"> </span>minishift addons <span class="nb">enable </span>manageiq
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Start minishift:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> minishift start <span class="nt">--vm-driver</span> virtualbox <span class="nt">--openshift-version</span> <span class="s2">"v3.6.1"</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>minishift start <span class="nt">--vm-driver</span> virtualbox <span class="nt">--openshift-version</span> <span class="s2">"v3.6.1"</span>
 </code></pre></div>    </div>
 
     <p>You might want to add <code class="highlighter-rouge">--metrics --memory 5G</code>.  As of this writing that only supports hawkular and doesn’t work on 3.7.0.</p>
@@ -559,33 +559,33 @@ regardless of the hypervisor).</p>
   <li>
     <p>Grab the minishift IP:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> minishift ip
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>minishift ip
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add <code class="highlighter-rouge">oc</code> and/or <code class="highlighter-rouge">docker</code> to your PATH, configured to the cluster (auto-detects correct shell):</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">eval</span> <span class="k">$(</span>minishift oc-env<span class="k">)</span>
-<span class="gp">$</span> <span class="nb">eval</span> <span class="k">$(</span>minishift docker-env<span class="k">)</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">eval</span> <span class="si">$(</span>minishift oc-env<span class="si">)</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">eval</span> <span class="si">$(</span>minishift docker-env<span class="si">)</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Grab the token to access openshift through <code class="highlighter-rouge">manageiq</code>:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> oc login <span class="nt">-u</span> system:admin
-<span class="gp">$</span> oc sa get-token <span class="nt">-n</span> management-infra management-admin
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>oc login <span class="nt">-u</span> system:admin
+<span class="gp">$</span><span class="w"> </span>oc sa get-token <span class="nt">-n</span> management-infra management-admin
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Configure a provider in ManageIQ, filling in your token and IP where
 appropriate:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> bin/rails c
-<span class="gp">irb&gt;</span> token <span class="o">=</span> <span class="s1">'&lt;&lt;YOUR_TOKEN_FROM_ABOVE_HERE&gt;&gt;'</span>
-<span class="gp">irb&gt;</span> host  <span class="o">=</span> <span class="s1">'&lt;&lt;YOUR_IP_FROM_ABOVE_HERE&gt;&gt;'</span>
-<span class="gp">irb&gt;</span> os <span class="o">=</span> ManageIQ::Providers::Openshift::ContainerManager
-<span class="gp">irb&gt;</span> os.create<span class="o">(</span>:name <span class="o">=&gt;</span> <span class="s2">"Minishift"</span>, :hostname <span class="o">=&gt;</span> host, :port <span class="o">=&gt;</span> 8443, :ipaddress <span class="o">=&gt;</span> host, :zone <span class="o">=&gt;</span> Zone.first, :storage_profiles <span class="o">=&gt;</span> <span class="o">[]</span>, :security_protocol <span class="o">=&gt;</span> <span class="s2">"ssl-without-validation"</span><span class="o">)</span>
-<span class="gp">irb&gt;</span> os.last.update_authentication<span class="o">(</span>:bearer <span class="o">=&gt;</span> <span class="o">{</span>:auth_key <span class="o">=&gt;</span> token, :save <span class="o">=&gt;</span> <span class="nb">true</span><span class="o">})</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>bin/rails c
+<span class="gp">irb&gt;</span><span class="w"> </span>token <span class="o">=</span> <span class="s1">'&lt;&lt;YOUR_TOKEN_FROM_ABOVE_HERE&gt;&gt;'</span>
+<span class="gp">irb&gt;</span><span class="w"> </span>host  <span class="o">=</span> <span class="s1">'&lt;&lt;YOUR_IP_FROM_ABOVE_HERE&gt;&gt;'</span>
+<span class="gp">irb&gt;</span><span class="w"> </span>os <span class="o">=</span> ManageIQ::Providers::Openshift::ContainerManager
+<span class="gp">irb&gt;</span><span class="w"> </span>os.create<span class="o">(</span>:name <span class="o">=&gt;</span> <span class="s2">"Minishift"</span>, :hostname <span class="o">=&gt;</span> host, :port <span class="o">=&gt;</span> 8443, :ipaddress <span class="o">=&gt;</span> host, :zone <span class="o">=&gt;</span> Zone.first, :storage_profiles <span class="o">=&gt;</span> <span class="o">[]</span>, :security_protocol <span class="o">=&gt;</span> <span class="s2">"ssl-without-validation"</span><span class="o">)</span>
+<span class="gp">irb&gt;</span><span class="w"> </span>os.last.update_authentication<span class="o">(</span>:bearer <span class="o">=&gt;</span> <span class="o">{</span>:auth_key <span class="o">=&gt;</span> token, :save <span class="o">=&gt;</span> <span class="nb">true</span><span class="o">})</span>
 </code></pre></div>    </div>
 
     <p>Or through the UI if you prefer.</p>

@@ -461,18 +461,18 @@
 <h3 id="deploying-kubernetes-locally-with-hacklocal-up-clustersh">Deploying Kubernetes locally with <a href="https://github.com/kubernetes/kubernetes/blob/master/hack/local-up-cluster.sh">hack/local-up-cluster.sh</a></h3>
 <p>Clone the core kubernetes repo:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/k8s.io/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/k8s.io/
 <span class="nb">cd</span> <span class="k">${</span><span class="nv">GOPATH</span><span class="k">}</span>/src/k8s.io/
 git clone https://github.com/kubernetes/kubernetes/
 </code></pre></div></div>
 
 <p>Build binaries &amp; launch a single node cluster running on localhost, <strong>with privileged containers enabled (required for running SSA scans)</strong>:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>kubernetes
-<span class="nb">sudo </span>env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh
+<span class="nb">sudo env </span><span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh
 </code></pre></div></div>
 
 <p>Note, to skip re-building binaries in the future, run like so:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>env <span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh <span class="nt">-o</span> _output/bin/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo env </span><span class="nv">ALLOW_PRIVILEGED</span><span class="o">=</span><span class="nb">true </span>hack/local-up-cluster.sh <span class="nt">-o</span> _output/bin/
 </code></pre></div></div>
 
 <h3 id="deploying-kubernetes-manually">Deploying Kubernetes Manually</h3>
@@ -505,7 +505,7 @@ git clone https://github.com/kubernetes/kubernetes/
 </code></pre></div>    </div>
   </li>
   <li>Retrieve the serviceaccount token for <code class="highlighter-rouge">management-admin</code> (this will be the auth token ManageIQ uses):
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl describe secret <span class="nt">-n</span> management-infra <span class="k">$(</span>kubectl get secrets <span class="nt">-n</span> management-infra | <span class="nb">grep </span>management-admin | cut <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s1">' '</span><span class="k">)</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s1">'^token'</span> | cut <span class="nt">-f2</span> <span class="nt">-d</span><span class="s1">':'</span> | tr <span class="nt">-d</span> <span class="s1">'\t'</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl describe secret <span class="nt">-n</span> management-infra <span class="si">$(</span>kubectl get secrets <span class="nt">-n</span> management-infra | <span class="nb">grep </span>management-admin | <span class="nb">cut</span> <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s1">' '</span><span class="si">)</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s1">'^token'</span> | <span class="nb">cut</span> <span class="nt">-f2</span> <span class="nt">-d</span><span class="s1">':'</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s1">'\t'</span>
 </code></pre></div>    </div>
   </li>
 </ol>

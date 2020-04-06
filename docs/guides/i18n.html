@@ -618,12 +618,12 @@ then substituted with the context of the <code class="highlighter-rouge">substit
   <li><strong>Don’t use dynamic content inside <code class="highlighter-rouge">__()</code></strong>. For example, the following javascript code won’t be collected correctly by <code class="highlighter-rouge">gulp gettext-extract</code>.</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="s2">"My name is %s."</span><span class="p">,</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="dl">"</span><span class="s2">My name is %s.</span><span class="dl">"</span><span class="p">,</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
 </code></pre></div></div>
 
 <p>The above should correctly be:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s2">"My name is %s."</span><span class="p">),</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="dl">"</span><span class="s2">My name is %s.</span><span class="dl">"</span><span class="p">),</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
 </code></pre></div></div>
 
 <ul>
@@ -647,22 +647,22 @@ then substituted with the context of the <code class="highlighter-rouge">substit
   <li><strong>Avoid concatenating English strings.</strong> For example, a javascript code like:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"create"</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">verb</span> <span class="o">=</span> <span class="s2">"created"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">create</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">verb</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">created</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">verb</span> <span class="o">=</span> <span class="s2">"updated"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">verb</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">updated</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">message</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s2">"Item was %s"</span><span class="p">),</span> <span class="nx">verb</span><span class="p">);</span>
+<span class="nx">message</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item was %s</span><span class="dl">"</span><span class="p">),</span> <span class="nx">verb</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>would contain mixed languages when shown in non-English locale.</p>
 
 <p>Correctly, the code should read:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"create"</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="s2">"Item was created"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">create</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item was created</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="s2">"Item was updated"</span><span class="p">);</span>
+  <span class="nx">message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item was updated</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span>
 
 </code></pre></div></div>
@@ -943,8 +943,8 @@ Vmdb::Gettext::Domains.add_domain<span class="o">(</span><span class="s1">'Manag
 </ul>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/plugin/root
-<span class="nv">$ </span>mkdir ./locale
-<span class="nv">$ </span><span class="k">for </span>locale <span class="k">in </span>en, ...<span class="p">;</span> <span class="k">do </span>mkdir ./locale/<span class="nv">$locale</span><span class="p">;</span> <span class="k">done</span>
+<span class="nv">$ </span><span class="nb">mkdir</span> ./locale
+<span class="nv">$ </span><span class="k">for </span>locale <span class="k">in </span>en, ...<span class="p">;</span> <span class="k">do </span><span class="nb">mkdir</span> ./locale/<span class="nv">$locale</span><span class="p">;</span> <span class="k">done</span>
 <span class="nv">$ </span><span class="nb">cd</span> /path/to/your/manageiq/root
 <span class="nv">$ </span>rake locale:plugin:find[YourPlugin]
 </code></pre></div></div>

@@ -575,7 +575,7 @@ sudo yum install epel-release
 <p>CentOS 7 ships PostgreSQL 9.x. In order to use PostgreSQL 10.x, you will need to <a href="https://www.softwarecollections.org/en/docs/">enable Software Collections</a> and install <code class="highlighter-rouge">rh-postgresql10</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> autoremove postgresql-devel
-<span class="nb">sudo </span>yum <span class="nt">-y</span> install rh-postgresql10 rh-postgresql10-postgresql-syspaths rh-postgresql10-postgresql-devel rh-postgresql10-postgresql-server-syspaths
+<span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>rh-postgresql10 rh-postgresql10-postgresql-syspaths rh-postgresql10-postgresql-devel rh-postgresql10-postgresql-server-syspaths
 </code></pre></div></div>
 
 <hr />
@@ -595,7 +595,7 @@ sudo yum install epel-release
 
 <p>On macOS, configure a cluster using <code class="highlighter-rouge">initdb</code> directly.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> /usr/local/var/postgres
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-rf</span> /usr/local/var/postgres
 initdb <span class="nt">--auth</span> trust <span class="nt">--username</span> root <span class="nt">--encoding</span> UTF-8 <span class="nt">--locale</span> C /usr/local/var/postgres
 </code></pre></div></div>
 
@@ -615,12 +615,12 @@ initdb <span class="nt">--auth</span> trust <span class="nt">--username</span> r
 
 <p>Yarn and NodeJS version 10 or newer are required. If your distribution doesn’t ship NodeJS 10.x, you can install <a href="https://github.com/nvm-sh/nvm">nvm</a> and follow the setup steps (you will need to restart your shell in order to source the nvm initialization environment).</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install 10
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm <span class="nb">install </span>10
 </code></pre></div></div>
 
 <p>Then install <code class="highlighter-rouge">yarn</code> - you can find the recommended way for your platform at https://classic.yarnpkg.com/en/docs/install, or, if that fails, via npm.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">-g</span> yarn
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> yarn
 </code></pre></div></div>
 
 <h2 id="install-ruby-and-bundler">Install Ruby and Bundler</h2>

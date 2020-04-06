@@ -469,8 +469,8 @@
 
 <p>Example of how to send data to GTL:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'SOME_ACTION_NAME'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SOME_ACTION_NAME</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -483,8 +483,8 @@
 <h5 id="select_item"><code class="highlighter-rouge">select_item</code></h5>
 <p>Action which selects item based on its id. Data should be array with first attribut ID of item and second <code class="highlighter-rouge">true|false</code> to select|deselect item.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'select_item'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">select_item</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -492,8 +492,8 @@
 <h5 id="click_item"><code class="highlighter-rouge">click_item</code></h5>
 <p>Action to click on item and take you to detail page of such item. Data should be array with one attribute ID.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'click_item'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">click_item</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -501,8 +501,8 @@
 <h5 id="select_all"><code class="highlighter-rouge">select_all</code></h5>
 <p>Action to select all items on screen. Data should be array with one attribute <code class="highlighter-rouge">true|false</code> to select|deselect all items.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'select_all'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">select_all</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="kc">true</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -510,8 +510,8 @@
 <h5 id="go_to_page"><code class="highlighter-rouge">go_to_page</code></h5>
 <p>To navigate to specific page call this action. Data should be array with one attribute, page number.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'go_to_page'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">go_to_page</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -519,64 +519,64 @@
 <h5 id="last_page"><code class="highlighter-rouge">last_page</code></h5>
 <p>This action will lead you to last page, no need to send any data.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'last_page'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">last_page</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="first_page"><code class="highlighter-rouge">first_page</code></h5>
 <p>Action which is oposite of <code class="highlighter-rouge">last_page</code>, it will take you to first page. Again no data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'first_page'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">first_page</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="previous_page"><code class="highlighter-rouge">previous_page</code></h5>
 <p>To navigate to previous page call action <code class="highlighter-rouge">previous_page</code>, no data required.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'previous_page'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">previous_page</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="next_page"><code class="highlighter-rouge">next_page</code></h5>
 <p>This action is oposite of <code class="highlighter-rouge">previous_page</code> and it will take you to next page. No data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'next_page'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">next_page</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="get_current_page"><code class="highlighter-rouge">get_current_page</code></h5>
 <p>This action will store into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> page number on which you currently are. No data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'get_current_page'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get_current_page</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="get_pages_amount"><code class="highlighter-rouge">get_pages_amount</code></h5>
 <p>Action which stores into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> number of pages, no data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'get_pages_amount'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get_pages_amount</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="get_items_per_page"><code class="highlighter-rouge">get_items_per_page</code></h5>
 <p>This actions stores into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> number of items per page, no data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'get_items_per_page'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get_items_per_page</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="set_items_per_page"><code class="highlighter-rouge">set_items_per_page</code></h5>
 <p>To change how many items should be visible per page call this function. Data should be number of items per page, please use <code class="highlighter-rouge">5</code>, <code class="highlighter-rouge">10</code>, <code class="highlighter-rouge">20</code>, <code class="highlighter-rouge">50</code>, <code class="highlighter-rouge">100</code> or <code class="highlighter-rouge">1000</code> as items per page.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'set_items_per_page'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">set_items_per_page</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -584,8 +584,8 @@
 <h5 id="set_sorting"><code class="highlighter-rouge">set_sorting</code></h5>
 <p>To change sorting order call this function as object it requires array with object containing column id and if isAscending.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'set_sorting'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">set_sorting</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[{</span><span class="na">sortBy</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">isAscending</span><span class="p">:</span> <span class="kc">true</span><span class="p">}]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -593,42 +593,42 @@
 <h5 id="get_sorting"><code class="highlighter-rouge">get_sorting</code></h5>
 <p>To retrieve object how data are sorted call this action and it will store into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> desired information, no data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'get_sorting'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get_sorting</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="get_all_items"><code class="highlighter-rouge">get_all_items</code></h5>
 <p>Action which will store into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> all items on screen, no data needed.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'get_all_items'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get_all_items</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="get_item"><code class="highlighter-rouge">get_item</code></h5>
 <p>This action is for retrieving one item into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code>, data should be array with one item which is either ID (number) or name (string). If item is not present on screen no data will be returned.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'get_item'</span><span class="p">,</span>
-    <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="s1">'aaaop3322'</span><span class="p">]</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get_item</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">aaaop3322</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="query"><code class="highlighter-rouge">query</code></h5>
 <p>For some really sophisticated filtering over items call this action which will then stores the results into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code>. This action can take multiple data over which to query and it can then return multiple items which are found.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'query'</span><span class="p">,</span>
-    <span class="na">data</span><span class="p">:</span> <span class="p">[{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'cfmear01'</span><span class="p">,</span> <span class="na">datastore</span><span class="p">:</span> <span class="s1">'some-data-store'</span><span class="p">}]</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">query</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">[{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cfmear01</span><span class="dl">'</span><span class="p">,</span> <span class="na">datastore</span><span class="p">:</span> <span class="dl">'</span><span class="s1">some-data-store</span><span class="dl">'</span><span class="p">}]</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h5 id="is_displayed"><code class="highlighter-rouge">is_displayed</code></h5>
 <p>This action will store into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> if item is visible. Data should be id or name of item.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'is_displayed'</span><span class="p">,</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">is_displayed</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -636,8 +636,8 @@
 <h5 id="pagination_range"><code class="highlighter-rouge">pagination_range</code></h5>
 <p>This action will store into <code class="highlighter-rouge">ManageIQ.qe.gtl.result</code> object which will contain information about pagination - <code class="highlighter-rouge">total</code>, <code class="highlighter-rouge">start</code>, <code class="highlighter-rouge">end</code>, <code class="highlighter-rouge">pageCount</code>. No data required.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sendDataWithRx</span><span class="p">({</span>
-    <span class="na">controller</span><span class="p">:</span> <span class="s1">'reportDataController'</span><span class="p">,</span>
-    <span class="na">action</span><span class="p">:</span> <span class="s1">'pagination_range'</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reportDataController</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">pagination_range</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 

@@ -110,7 +110,7 @@ it’s still around in the libraries we use.</p>
 
 <p>Note, I even filtered out some of the results below:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-E</span> <span class="s2">"</span><span class="se">\b</span><span class="s2">Timeout.timeout</span><span class="se">\b</span><span class="s2">"</span> /Users/joerafaniello/.gem/ruby/2.4.2/gems
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-E</span> <span class="s2">"</span><span class="se">\b</span><span class="s2">Timeout.timeout</span><span class="se">\b</span><span class="s2">"</span> /Users/joerafaniello/.gem/ruby/2.4.2/gems
 <span class="go">ruby_parser-3.10.1/lib/ruby_parser_extras.rb:                                     Timeout.timeout time do
 capybara-2.5.0/lib/capybara/server.rb:                                            Timeout.timeout(60) { @server_thread.join(0.1) until responsive? }
 dalli-2.7.6/lib/dalli/socket.rb:                                                  Timeout.timeout(options[:socket_timeout]) do
@@ -140,7 +140,7 @@ snmp-1.2.0/lib/snmp/manager.rb:                                                 
 vcr-3.0.3/lib/vcr/util/internet_connection.rb:                                    Timeout.timeout(timeout) do
 webmock-2.3.2/spec/support/network_connection.rb:                                 Timeout.timeout(timeout) do
 
-</span><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-E</span> <span class="s2">"</span><span class="se">\b</span><span class="s2">Timeout::timeout</span><span class="se">\b</span><span class="s2">"</span> /Users/joerafaniello/.gem/ruby/2.4.2/gems
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-E</span> <span class="s2">"</span><span class="se">\b</span><span class="s2">Timeout::timeout</span><span class="se">\b</span><span class="s2">"</span> /Users/joerafaniello/.gem/ruby/2.4.2/gems
 <span class="go">open4-1.3.4/lib/open4.rb:                                                         Timeout::timeout(timeout) do
 </span></code></pre></div></div>
 
@@ -190,7 +190,7 @@ a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workar
 
 <span class="mi">20</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
   <span class="k">begin</span>
-    <span class="no">Timeout</span><span class="p">.</span><span class="nf">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Timeout</span><span class="p">.</span><span class="nf">timeout</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">)</span> <span class="k">do</span>
       <span class="kp">loop</span> <span class="k">do</span>
         <span class="k">begin</span>
           <span class="s2">"result"</span>
@@ -239,12 +239,12 @@ not something we want to troubleshoot at 5pm on a Friday.</p>
 
 <p>It’s ok, there aren’t many places that define finalizers:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">grep</span> <span class="nt">-r</span> define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
 <span class="go">lib/ruby/2.4.0/cgi/session.rb:                                         ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
 lib/ruby/2.4.0/drb/timeridconv.rb:                                     ObjectSpace.define_finalizer(Object.new) {on_gc}
 lib/ruby/2.4.0/tempfile.rb:                                            ObjectSpace.define_finalizer(self, Remover.new(@tmpfile))
 
-</span><span class="gp">$</span> <span class="nb">grep</span> <span class="nt">-r</span> define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">grep</span> <span class="nt">-r</span> define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
 <span class="go">actionview-5.0.6/lib/action_view/template.rb:                          ObjectSpace.define_finalizer(self, Finalizer[method_name, mod])
 concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(me, self.class.thread_finalizer(array))
 concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))

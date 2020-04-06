@@ -2,14 +2,13 @@
 <html>
 
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ManageIQ - API Contributor's Guide</title>
+  <title>ManageIQ - API Contributor&#39;s Guide</title>
   <meta name="description" content="The API has been growing quickly thanks to our many contributors. In an effort to help new contributors get up to speed quickly, it was about time for a blog...">
-  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
   
   <link type="text/css" rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://manageiq.org/blog/2017/10/api-contributors-guide/">
@@ -111,9 +110,9 @@
           <div class="post-content" itemprop="articleBody">
             <p>The API has been growing quickly thanks to our many contributors. In an effort to help new contributors get up to speed quickly, it was about time for a blog post to explain the process of adding in a new collection and subcollection, as well as provide some examples for commonly asked questions.</p>
 
-<p>The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/config/api.yml">api.yml</a> is where a lot of the magic <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png" height="20" width="20" align="absmiddle"> happens. The best way to explain it is through an example, so let’s walk through adding in a new collection and subcollection.</p>
+<p>The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/config/api.yml">api.yml</a> is where a lot of the magic <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> happens. The best way to explain it is through an example, so let’s walk through adding in a new collection and subcollection.</p>
 
-<p>We’ll keep the example generic through the creation of a <code class="highlighter-rouge">Coffee</code> API. Because who doesn’t need more <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20" align="absmiddle"> in their life?</p>
+<p>We’ll keep the example generic through the creation of a <code class="highlighter-rouge">Coffee</code> API. Because who doesn’t need more <img class="emoji" title=":coffee:" alt=":coffee:" src="https://github.githubassets.com/images/icons/emoji/unicode/2615.png" height="20" width="20"> in their life?</p>
 
 <h2 id="defining-a-new-collection-with-basic-crud">Defining a new collection with basic CRUD</h2>
 <p>The new <code class="highlighter-rouge">Coffee</code> collection will need to be defined under <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/config/api.yml#L37">collections</a> in the <code class="highlighter-rouge">api.yml</code>. Note that all of the collections are in alphabetical order. 
@@ -220,7 +219,7 @@ DELETE /api/coffee/:c_id
   end 
 end 
 </code></pre></div></div>
-<p>Because the <code class="highlighter-rouge">CoffeesController</code> inherits from the <code class="highlighter-rouge">BaseController</code>, a lot of what has been defined in the <code class="highlighter-rouge">api.yml</code> will already work <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png" height="20" width="20" align="absmiddle">. The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api/base_controller.rb">Base Controller</a> holds the action methods (<code class="highlighter-rouge">#show</code>, <code class="highlighter-rouge">#index</code>, <code class="highlighter-rouge">#update</code>, <code class="highlighter-rouge">#destroy</code>) that will be called if they are not overridden in the <code class="highlighter-rouge">CoffeesController</code>.</p>
+<p>Because the <code class="highlighter-rouge">CoffeesController</code> inherits from the <code class="highlighter-rouge">BaseController</code>, a lot of what has been defined in the <code class="highlighter-rouge">api.yml</code> will already work <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20">. The <a href="https://github.com/ManageIQ/manageiq-api/blob/4811ec9fcea2424a585560a761e05d56c53535f8/app/controllers/api/base_controller.rb">Base Controller</a> holds the action methods (<code class="highlighter-rouge">#show</code>, <code class="highlighter-rouge">#index</code>, <code class="highlighter-rouge">#update</code>, <code class="highlighter-rouge">#destroy</code>) that will be called if they are not overridden in the <code class="highlighter-rouge">CoffeesController</code>.</p>
 <h2 id="custom-resource-actions">Custom Resource Actions</h2>
 <p>Once basic CRUD is established, what good is seeing a coffee if you can’t order one? A custom resource action is the solution for that. In traditional REST, this would be solved via <code class="highlighter-rouge">POST /api/coffee/:c_id/order</code>. We instead use actions, <code class="highlighter-rouge">POST /api/coffee/:c_id { "action": "order" }</code></p>
 
@@ -359,7 +358,7 @@ GET /api/coffee/:c_id/donuts/:s_id
 POST /api/coffee/:c_id/donuts/:s_id { "action": "delete" }
 </code></pre></div></div>
 
-<p>And just like that, our API now serves both <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20" align="absmiddle"> and donuts!</p>
+<p>And just like that, our API now serves both <img class="emoji" title=":coffee:" alt=":coffee:" src="https://github.githubassets.com/images/icons/emoji/unicode/2615.png" height="20" width="20"> and donuts!</p>
 
 <h2 id="creating-a-pr">Creating a PR</h2>
 <p>Small PRs are always easier to review, and this example would be broken down into two PRs - the Coffee CRUD PR and a Donuts subcollection PR. Examples in the PR description help reviewers to understand what was added, and also helps the users to get up to speed quickly! 

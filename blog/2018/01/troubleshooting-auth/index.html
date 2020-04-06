@@ -388,9 +388,9 @@ Be sure to include the “h” flag, as indicated below when generating the tar 
 
 <p>These shell commands shows how to generate the tar ball and verify it’s contents:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">cd</span> /var/www/miq/vmdb
-<span class="gp">$</span> <span class="nb">tar </span>cvfzh my_log_files.tar.gz log
-<span class="gp">$</span> <span class="nb">tar </span>ztvf my_log_files.tar.gz
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> /var/www/miq/vmdb
+<span class="gp">$</span><span class="w"> </span><span class="nb">tar </span>cvfzh my_log_files.tar.gz log
+<span class="gp">$</span><span class="w"> </span><span class="nb">tar </span>ztvf my_log_files.tar.gz
 </code></pre></div></div>
 
 <h2 id="capturing-authentication-data-from-manageiq-db">Capturing Authentication Data From ManageIQ DB</h2>
@@ -403,7 +403,7 @@ the authentication configuration settings, group and user information from the d
   <li>
     <p>This shell command can be used to query the database for the <strong><em>authentication settings</em></strong>:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /var/www/miq/vmdb/bin/rails runner <span class="s1">'puts Settings.authentication'</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>/var/www/miq/vmdb/bin/rails runner <span class="s1">'puts Settings.authentication'</span>
 </code></pre></div>    </div>
   </li>
   <li>
@@ -413,7 +413,7 @@ the authentication configuration settings, group and user information from the d
     <p>The groups returned from the IdP for users expected to be authenticated on ManageIQ must match at least one
 group reported by this command. If not one must be manually added using the ManageIQ UI.</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /var/www/miq/vmdb/bin/rails runner <span class="s1">'puts MiqGroup.pluck(:description)'</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>/var/www/miq/vmdb/bin/rails runner <span class="s1">'puts MiqGroup.pluck(:description)'</span>
 </code></pre></div>    </div>
   </li>
   <li>
@@ -422,7 +422,7 @@ group reported by this command. If not one must be manually added using the Mana
   <li>
     <p>ManageIQ will auto create authenticated and authorized users if <strong>Get User Groups</strong> from the IdP is configured on the ManageIQ Authentication page.</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /var/www/miq/vmdb/bin/rails runner <span class="s1">'puts User.pluck(:userid)'</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>/var/www/miq/vmdb/bin/rails runner <span class="s1">'puts User.pluck(:userid)'</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -440,15 +440,15 @@ group reported by this command. If not one must be manually added using the Mana
   <li>
     <p>Step 1. Get the certs from the OpenLdap Serve if using secure LDAP<strong>S</strong> <em>These commands may vary depending on how the certs are managed on the LDAP server.</em></p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> #</span> Remove any old certs
-<span class="gp">$</span> rm /etc/openldap/certs/&amp;ast<span class="p">;</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> #</span><span class="w"> </span>Remove any old certs
+<span class="gp">$</span><span class="w"> </span><span class="nb">rm</span> /etc/openldap/certs/&amp;ast<span class="p">;</span>
 <span class="go">
-</span><span class="gp"> #</span> Copy the certs from the LDAP server:
-<span class="gp">$</span> scp root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
-<span class="gp">$</span> scp root@ldaphost.example.com:/etc/pki/tls/certs/server&amp;ast<span class="p">;</span>.pem /etc/openldap/certs/
+</span><span class="gp"> #</span><span class="w"> </span>Copy the certs from the LDAP server:
+<span class="gp">$</span><span class="w"> </span>scp root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
+<span class="gp">$</span><span class="w"> </span>scp root@ldaphost.example.com:/etc/pki/tls/certs/server&amp;ast<span class="p">;</span>.pem /etc/openldap/certs/
 <span class="go">
-</span><span class="gp"> #</span> Rehash the certs
-<span class="gp">$</span> /usr/sbin/cacertdir_rehash /etc/openldap/certs/
+</span><span class="gp"> #</span><span class="w"> </span>Rehash the certs
+<span class="gp">$</span><span class="w"> </span>/usr/sbin/cacertdir_rehash /etc/openldap/certs/
 </code></pre></div>    </div>
   </li>
   <li>
@@ -467,8 +467,8 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
   <li>
     <p>Step 3. Verify the cert with openssl and LDAP configuration with openssl. For example:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> openssl s_client <span class="nt">-connect</span> ldaphost.example.com:636 <span class="nt">-CAfile</span> /etc/openldap/certs/cacert.pem
-<span class="gp">$</span> openssl s_client <span class="nt">-showcerts</span> <span class="nt">-connect</span> ldaphost.example.com:636
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>openssl s_client <span class="nt">-connect</span> ldaphost.example.com:636 <span class="nt">-CAfile</span> /etc/openldap/certs/cacert.pem
+<span class="gp">$</span><span class="w"> </span>openssl s_client <span class="nt">-showcerts</span> <span class="nt">-connect</span> ldaphost.example.com:636
 </code></pre></div>    </div>
   </li>
   <li>
@@ -498,7 +498,7 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 
     <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port with a binddn and password</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>  <span class="nt">-D</span> <span class="s2">"cn=Manager,dc=example,dc=com"</span> <span class="nt">-w</span> password
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>  <span class="nt">-D</span> <span class="s2">"cn=Manager,dc=example,dc=com"</span> <span class="nt">-w</span> password
 </code></pre></div>    </div>
   </li>
   <li>
@@ -506,7 +506,7 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 
     <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port but do not specify binddn or password will result in a TLS exchange.</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
 </code></pre></div>    </div>
   </li>
   <li>
@@ -514,7 +514,7 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 
     <p>Specify <code class="highlighter-rouge">ldaps</code> protocol and port will result in SSL exchange.</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldaps://ldaphost.example.com:636  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldaps://ldaphost.example.com:636  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
 </code></pre></div>    </div>
 
     <p>The <code class="highlighter-rouge">-d</code> flag can be used to produce debugging information.</p>
@@ -541,7 +541,7 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 <p>This <strong><em>dbus-send / GetUserAttr</em></strong> command can be used to confirm all of the user attributes used
 by ManageIQ authentication are correctly provided by the underlying technology.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> dbus-send <span class="se">\</span>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>dbus-send <span class="se">\</span>
   <span class="nt">--print-reply</span> <span class="se">\</span>
   <span class="nt">--system</span> <span class="se">\</span>
   <span class="nt">--dest</span><span class="o">=</span>org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr <span class="se">\</span>
@@ -552,7 +552,7 @@ by ManageIQ authentication are correctly provided by the underlying technology.<
 
 <p><code class="highlighter-rouge">Note:</code> The <strong><em>domainname</em></strong> attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span> <span class="nv">dest</span><span class="o">=</span>:1.48 <span class="nv">reply_serial</span><span class="o">=</span>2
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span><span class="w"> </span><span class="nv">dest</span><span class="o">=</span>:1.48 <span class="nv">reply_serial</span><span class="o">=</span>2
 <span class="go">   array [
       dict entry(
          string "mail"
@@ -591,7 +591,7 @@ by ManageIQ authentication are correctly provided by the underlying technology.<
 
 <p>This <strong><em>dbus-send / GetUserGroups</em></strong> command can be used to confirm all of the user’s groups are correctly provided by the underlying technology.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> dbus-send <span class="se">\</span>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>dbus-send <span class="se">\</span>
   <span class="nt">--print-reply</span> <span class="se">\</span>
   <span class="nt">--system</span> <span class="se">\</span>
   <span class="nt">--dest</span><span class="o">=</span>org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserGroups <span class="se">\</span>
@@ -600,7 +600,7 @@ by ManageIQ authentication are correctly provided by the underlying technology.<
 
 <p>The output from the above <strong><em>dbus-send / GetUserAttr</em></strong> command should look similar to the following:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span> <span class="nv">dest</span><span class="o">=</span>:1.189 <span class="nv">reply_serial</span><span class="o">=</span>2
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span><span class="w"> </span><span class="nv">dest</span><span class="o">=</span>:1.189 <span class="nv">reply_serial</span><span class="o">=</span>2
 <span class="go">   array [
       string "evmgroup-super_administrator"
       string "gs-group"
@@ -627,21 +627,21 @@ do not succeed the SSSD configuration can be diagnosed by doing the following:</
 
     <p>If it does not restart there could be errors in the <code class="highlighter-rouge">/etd/sssd/sssd.conf</code> file that need to be addressed.</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> systemctl restart sssd.service
-<span class="gp">$</span> systemctl status sssd.service
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>systemctl restart sssd.service
+<span class="gp">$</span><span class="w"> </span>systemctl status sssd.service
 </code></pre></div>    </div>
   </li>
   <li>
     <p><code class="highlighter-rouge">Note:</code> If updates are done to the  <strong><em>/etc/sssd/sssd.conf</em></strong> file and not immediately seen when authenticating,
  then clean the SSSD cache as follows and restart the service:</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> sss_cache <span class="nt">-E</span>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>sss_cache <span class="nt">-E</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>tail the sssd log files</p>
 
-    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> tail <span class="nt">-f</span> /var/log/sssd/&amp;ast<span class="p">;</span>.log
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">tail</span> <span class="nt">-f</span> /var/log/sssd/&amp;ast<span class="p">;</span>.log
 </code></pre></div>    </div>
   </li>
   <li>

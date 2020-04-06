@@ -272,9 +272,9 @@ be autoloaded.  With that, we tried running a high number of invocations of
 that method in a row, and watched the <code class="highlighter-rouge">/proc/&lt;PID&gt;/smaps</code> to see if the
 <code class="highlighter-rouge">[heap]</code> section grew.  It looked something like this**:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> gdb <span class="nt">-p</span> <span class="o">[</span>PID_OF_THE_MIQ_SERVER_PROCESS]
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>gdb <span class="nt">-p</span> <span class="o">[</span>PID_OF_THE_MIQ_SERVER_PROCESS]
 <span class="go">(gdb) p rb_eval_string("GC.start")
-</span><span class="gp">(gdb) p rb_eval_string("500.times { MiqServer.my_server.sync_workers;</span> GC.start <span class="o">}</span><span class="s2">")
+</span><span class="gp">(gdb) p rb_eval_string("500.times { MiqServer.my_server.sync_workers;</span><span class="w"> </span>GC.start <span class="o">}</span><span class="s2">")
 </span></code></pre></div></div>
 
 <p>Nothing.  Not even a budge.  Well shoot… there goes that theory.</p>

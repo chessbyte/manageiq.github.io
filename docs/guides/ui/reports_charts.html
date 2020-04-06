@@ -472,8 +472,8 @@ stored under <code class="highlighter-rouge">product/charts/</code>.</p>
 
 <p>This is an example report w/o a chart:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- 
-</span>dims: 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- 
+dims: 
 created_on: 2008-08-11 22:29:55.101908 Z
 title: "Registered VMs by Free Space"
 conditions: !ruby/object:MiqExpression 
@@ -487,13 +487,13 @@ menu_name: "Registered VMs by Free Space"
 rpt_group: Custom
 priority: 231
 col_order: 
-<span class="gd">- name
+- name
 - host.name
 - hardware.disk_capacity
 - hardware.disk_free_space
 - v_pct_free_disk_space
 - v_pct_used_disk_space
-</span>timeline: 
+timeline: 
 id: 81
 file_mtime: 
 categories: 
@@ -509,21 +509,21 @@ include:
     - name
 db: Vm
 cols: 
-<span class="gd">- name
+- name
 - v_pct_free_disk_space
 - v_pct_used_disk_space
-</span>template_type: report
+template_type: report
 group: 
 sortby: 
-<span class="gd">- hardware.disk_free_space
-</span>headers: 
-<span class="gd">- VM Name
+- hardware.disk_free_space
+headers: 
+- VM Name
 - Host Name
 - Total Disk
 - Free Disk
 - Pct Free Disk
 - Pct Used Disk
-</span></code></pre></div></div>
+</code></pre></div></div>
 
 <p>Some important attributes:</p>
 <ul>

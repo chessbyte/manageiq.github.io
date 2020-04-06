@@ -493,7 +493,7 @@ directory. This way you can easily search across the core <em>and</em> plugin co
 <p>You still have to change into the plugin root directory to run the tests - running <code class="highlighter-rouge">rspec</code> from the ManageIQ root will
 not pickup your plugin code, but the core code. This is a drawback which can lead to some confusion.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /path/to/manageiq <span class="p">;</span> mkdir plugins
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /path/to/manageiq <span class="p">;</span> <span class="nb">mkdir </span>plugins
 git clone git@github.com:JoeSmith/manageiq-providers-amazon.git plugins/manageiq-providers-amazon
 git clone git@github.com:JoeSmith/manageiq-content.git plugins/manageiq-content
 git clone git@github.com:JoeSmith/manageiq-ui-classic.git plugins/manageiq-ui-classic
@@ -528,8 +528,8 @@ feature that requires database migrations.</p>
 bin/setup
 <span class="c"># == Cloning manageiq sample app ==</span>
 <span class="c"># Cloning into 'spec/manageiq'...</span>
-bundle install
-bundle <span class="nb">exec </span>rake spec:setup
+bundle <span class="nb">install
+</span>bundle <span class="nb">exec </span>rake spec:setup
 <span class="c"># ** Preparing database</span>
 <span class="c"># Dropped database 'vmdb_test'</span>
 <span class="c"># Created database 'vmdb_test'</span>
@@ -553,9 +553,9 @@ cross repository dependencies, which can be handled from the plugin side or from
 you checked out in the core repo.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># remove current sample app</span>
-rm <span class="nt">-rf</span> spec/manageiq 
+<span class="nb">rm</span> <span class="nt">-rf</span> spec/manageiq 
 <span class="c"># create a symlink</span>
-ln <span class="nt">-s</span> /path/to/manageiq spec/manageiq
+<span class="nb">ln</span> <span class="nt">-s</span> /path/to/manageiq spec/manageiq
 </code></pre></div></div>
 
 <h4 id="dependency-on-a-local-gem">Dependency on a local gem</h4>
@@ -586,7 +586,7 @@ the feature branch into a new branch in the plugin repository.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get all commit shas that are not yet in master - or just look at https://github.com/ManageIQ/manageiq/pull/&lt;id&gt;</span>
 <span class="nb">cd</span> /path/to/manageiq
 git checkout feature_branch
-git log <span class="k">$(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="k">)</span> <span class="nt">--not</span> refs/heads/master
+git log <span class="si">$(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="si">)</span> <span class="nt">--not</span> refs/heads/master
 
 <span class="c"># add ManageIQ as a remote in your plugin</span>
 <span class="nb">cd</span> /path/to/manageiq-providers-amazon
