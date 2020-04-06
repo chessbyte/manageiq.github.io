@@ -1593,8 +1593,8 @@ To help alleviate this the payload can be passed to cURL using the <strong>--dat
 <div class="paragraph">
 <p>The JSON returned is formated in the examples using <strong>python -m json.tool</strong></p>
 </div>
-<div class="sect3">
-<h4 id="curl-example1"><a class="anchor" href="#curl-example1"></a>Example 1: A simple <strong>GET</strong> with cURL</h4>
+<div class="sect2">
+<h3 id="curl-example1"><a class="anchor" href="#curl-example1"></a>Example 1: A simple <strong>GET</strong> with cURL</h3>
 <div class="paragraph">
 <p>Get the collection <strong>groups</strong></p>
 </div>
@@ -1603,8 +1603,8 @@ To help alleviate this the payload can be passed to cURL using the <strong>--dat
 <pre>curl --user admin:smartvm --insecure --request GET https://192.0.2.0/api/groups | python -m json.tool</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="example-1-result"><a class="anchor" href="#example-1-result"></a>Example 1: Result</h5>
+<div class="sect3">
+<h4 id="example-1-result"><a class="anchor" href="#example-1-result"></a>Example 1: Result</h4>
 <div class="paragraph">
 <p>Result truncated and showing only the returned <strong>resources</strong>.</p>
 </div>
@@ -1626,7 +1626,6 @@ To help alleviate this the payload can be passed to cURL using the <strong>--dat
     ],
     ...
 }</pre>
-</div>
 </div>
 </div>
 </div>
@@ -1661,8 +1660,9 @@ To help alleviate this the payload can be passed to cURL using the <strong>--dat
      --request POST https://192.0.2.0/api/groups/23 | python -m json.tool</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="example-2-result"><a class="anchor" href="#example-2-result"></a>Example 2: Result</h5>
+</div>
+<div class="sect3">
+<h4 id="example-2-result"><a class="anchor" href="#example-2-result"></a>Example 2: Result</h4>
 <div class="listingblock">
 <div class="content">
 <pre>{
@@ -1676,7 +1676,6 @@ To help alleviate this the payload can be passed to cURL using the <strong>--dat
     "tenant_id": "2",
     "updated_on": "2019-06-19T19:15:51Z"
 }</pre>
-</div>
 </div>
 </div>
 </div>
@@ -1697,8 +1696,9 @@ To help alleviate this the payload can be passed to cURL using the <strong>--dat
      --data "filter[]=miq_user_role_name='*user*'" | python -m json.tool</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="example-3-result"><a class="anchor" href="#example-3-result"></a>Example 3: Result</h5>
+</div>
+<div class="sect3">
+<h4 id="example-3-result"><a class="anchor" href="#example-3-result"></a>Example 3: Result</h4>
 <div class="paragraph">
 <p>Result truncated and showing only the returned <strong>resources</strong>.</p>
 </div>

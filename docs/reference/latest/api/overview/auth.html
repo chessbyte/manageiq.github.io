@@ -1568,9 +1568,6 @@ API call.</p>
 </div>
 <div class="sect3">
 <h4 id="requesting-an-authentication-token"><a class="anchor" href="#requesting-an-authentication-token"></a>Requesting an authentication token</h4>
-<div id="request" class="paragraph">
-<p>Request:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="sh">$ curl --user username:password
@@ -1578,7 +1575,7 @@ API call.</p>
         http://localhost:3000/api/auth</code></pre>
 </div>
 </div>
-<div id="response" class="paragraph">
+<div class="paragraph">
 <p>Response for the Authentication Token Request:</p>
 </div>
 <div class="listingblock">
@@ -1629,9 +1626,6 @@ where the token is needed for sessions that time-out much later.</p>
 <p>For such environments, it is possible to request a REST API token to leverage the administrative UI
 session timeout.  This is requested with the <strong>requester_type</strong> parameter witih the value <strong>ui</strong> as follows:</p>
 </div>
-<div id="request" class="paragraph">
-<p>Request:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="sh">$ curl --user username:password
@@ -1639,7 +1633,7 @@ session timeout.  This is requested with the <strong>requester_type</strong> par
         http://localhost:3000/api/auth?requester_type=ui</code></pre>
 </div>
 </div>
-<div id="response" class="paragraph">
+<div class="paragraph">
 <p>Response for the Authentication Token Request:</p>
 </div>
 <div class="listingblock">
@@ -1662,9 +1656,6 @@ Content-Type: application/json
 token upon logout. This is made available via the DELETE HTTP method on the token authenticated /api/auth
 as follows:</p>
 </div>
-<div id="request" class="paragraph">
-<p>Request:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="sh">$ curl -i -X DELETE -H &quot;Accept: application/json&quot;
@@ -1672,7 +1663,7 @@ as follows:</p>
        http://localhost:3000/api/auth</code></pre>
 </div>
 </div>
-<div id="response" class="paragraph">
+<div class="paragraph">
 <p>Response for the token DELETE request:</p>
 </div>
 <div class="listingblock">

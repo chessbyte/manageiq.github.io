@@ -530,32 +530,45 @@
 </ul>
 </li>
 <li><a href="#catalogs-services">5. Catalogs and Services</a>
+<ul class="sectlevel2">
+<li><a href="#generic-objects">5.1. Generic Objects</a>
 <ul class="sectlevel3">
-<li><a href="#generic-objects">5.1. Generic Objects</a></li>
-<li><a href="#service-dialogs">5.2. Service Dialogs</a></li>
-<li><a href="#methods">5.3. Methods</a></li>
-<li><a href="#catalogs">5.4. Catalogs</a>
-<ul class="sectlevel3">
-<li><a href="#creating-a-catalog-bundle">5.4.1. Creating a Catalog Bundle</a></li>
-<li><a href="#copying-a-catalog-bundle">5.4.2. Copying a Catalog Bundle</a></li>
-<li><a href="#creating-a-catalog-item">5.4.3. Creating a Catalog Item</a></li>
-<li><a href="#copying-a-catalog-item">5.4.4. Copying a Catalog Item</a></li>
-<li><a href="#creating-a-generic-catalog-item">5.4.5. Creating a Generic Catalog Item</a></li>
-<li><a href="#create-playbook-service-catalog-item">5.4.6. Creating an Ansible Playbook Service Catalog Item</a></li>
-<li><a href="#create-tower-catalog-item">5.4.7. Creating an Ansible Tower Service Catalog Item</a></li>
-<li><a href="#create-amazon-catalog-item">5.4.8. Creating an Amazon Service Catalog Item</a></li>
-<li><a href="#create-azure-catalog-item">5.4.9. Creating an Azure Service Catalog Item</a></li>
-<li><a href="#create-container-template-catalog-item">5.4.10. Creating an OpenShift Template Catalog Item</a></li>
-<li><a href="#create-orchestration-catalog-item">5.4.11. Creating an Orchestration Catalog Item</a></li>
-<li><a href="#provisioning-a-service">5.4.12. Provisioning a Service</a></li>
+<li><a href="#view-generic-objects">5.1.1. Viewing Generic Objects Classes</a></li>
+<li><a href="#create-generic-objects">5.1.2. Creating Generic Objects Classes</a></li>
+<li><a href="#edit-generic-objects">5.1.3. Editing Generic Object Classes</a></li>
+<li><a href="#remove-generic-objects">5.1.4. Removing Generic Objects Classes</a></li>
+<li><a href="#export-generic-objects">5.1.5. Exporting Generic Objects</a></li>
+<li><a href="#import-generic-objects">5.1.6. Importing Generic Objects</a></li>
 </ul>
 </li>
-<li><a href="#orchestration-stack">5.5. Orchestration Stacks</a>
+<li><a href="#service-dialogs">5.2. Service Dialogs</a>
 <ul class="sectlevel3">
-<li><a href="#adding-orchestration-template">5.5.1. Creating an Orchestration Template</a></li>
-<li><a href="#editing-orchestration-templates">5.5.2. Editing Orchestration Templates</a></li>
-<li><a href="#copying-orchestration-templates">5.5.3. Copying Orchestration Templates</a></li>
-<li><a href="#deleting-orchestration-templates">5.5.4. Deleting Orchestration Templates</a></li>
+<li><a href="#adding-a-service-dialog-using-editor">5.2.1. Adding a Service Dialog</a></li>
+<li><a href="#methods">5.2.2. Methods</a></li>
+</ul>
+</li>
+<li><a href="#catalogs">5.3. Catalogs</a>
+<ul class="sectlevel3">
+<li><a href="#creating-a-catalog-bundle">5.3.1. Creating a Catalog Bundle</a></li>
+<li><a href="#copying-a-catalog-bundle">5.3.2. Copying a Catalog Bundle</a></li>
+<li><a href="#creating-a-catalog-item">5.3.3. Creating a Catalog Item</a></li>
+<li><a href="#copying-a-catalog-item">5.3.4. Copying a Catalog Item</a></li>
+<li><a href="#creating-a-generic-catalog-item">5.3.5. Creating a Generic Catalog Item</a></li>
+<li><a href="#create-playbook-service-catalog-item">5.3.6. Creating an Ansible Playbook Service Catalog Item</a></li>
+<li><a href="#create-tower-catalog-item">5.3.7. Creating an Ansible Tower Service Catalog Item</a></li>
+<li><a href="#create-amazon-catalog-item">5.3.8. Creating an Amazon Service Catalog Item</a></li>
+<li><a href="#create-azure-catalog-item">5.3.9. Creating an Azure Service Catalog Item</a></li>
+<li><a href="#create-container-template-catalog-item">5.3.10. Creating an OpenShift Template Catalog Item</a></li>
+<li><a href="#create-orchestration-catalog-item">5.3.11. Creating an Orchestration Catalog Item</a></li>
+<li><a href="#provisioning-a-service">5.3.12. Provisioning a Service</a></li>
+</ul>
+</li>
+<li><a href="#orchestration-stack">5.4. Orchestration Stacks</a>
+<ul class="sectlevel3">
+<li><a href="#adding-orchestration-template">5.4.1. Creating an Orchestration Template</a></li>
+<li><a href="#editing-orchestration-templates">5.4.2. Editing Orchestration Templates</a></li>
+<li><a href="#copying-orchestration-templates">5.4.3. Copying Orchestration Templates</a></li>
+<li><a href="#deleting-orchestration-templates">5.4.4. Deleting Orchestration Templates</a></li>
 </ul>
 </li>
 </ul>
@@ -3214,16 +3227,16 @@ When the result is "retry", it sets:
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="generic-objects"><a class="anchor" href="#generic-objects"></a>5.1. Generic Objects</h4>
+<div class="sect2">
+<h3 id="generic-objects"><a class="anchor" href="#generic-objects"></a>5.1. Generic Objects</h3>
 <div class="paragraph">
 <p>Generic Objects are object-like entities, defined at runtime, that have unique names and user-defined attributes and relationships. Residing in the Automate Engine datastore, generic objects are designed to manage objects other than those related to private infrastructure, and public or private cloud providers.</p>
 </div>
 <div class="paragraph">
 <p>Using automate requests, services and catalog items, generic objects can be directly accessed or passed, during any step, as a parameter to a service state machine. As a result, generic objects can be used to quickly add the capability to provision and collect data on resources not supported by ManageIQ.</p>
 </div>
-<div class="sect4">
-<h5 id="view-generic-objects"><a class="anchor" href="#view-generic-objects"></a>Viewing Generic Objects Classes</h5>
+<div class="sect3">
+<h4 id="view-generic-objects"><a class="anchor" href="#view-generic-objects"></a>5.1.1. Viewing Generic Objects Classes</h4>
 <div class="paragraph">
 <p>View a list of generic objects and click through to see detailed summary information for each object.</p>
 </div>
@@ -3238,8 +3251,8 @@ When the result is "retry", it sets:
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="create-generic-objects"><a class="anchor" href="#create-generic-objects"></a>Creating Generic Objects Classes</h5>
+<div class="sect3">
+<h4 id="create-generic-objects"><a class="anchor" href="#create-generic-objects"></a>5.1.2. Creating Generic Objects Classes</h4>
 <div class="paragraph">
 <p>Model a new resource by creating a generic object class and adding it to your ManageIQ inventory. Each generic object class can have attributes, associations, and methods. Once created, generic object classes are visible to users of the Self Service user interface at the resource level.</p>
 </div>
@@ -3272,8 +3285,8 @@ When the result is "retry", it sets:
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="edit-generic-objects"><a class="anchor" href="#edit-generic-objects"></a>Editing Generic Object Classes</h5>
+<div class="sect3">
+<h4 id="edit-generic-objects"><a class="anchor" href="#edit-generic-objects"></a>5.1.3. Editing Generic Object Classes</h4>
 <div class="paragraph">
 <p>Edit existing generic object classes using the following steps:</p>
 </div>
@@ -3297,8 +3310,8 @@ When the result is "retry", it sets:
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="remove-generic-objects"><a class="anchor" href="#remove-generic-objects"></a>Removing Generic Objects Classes</h5>
+<div class="sect3">
+<h4 id="remove-generic-objects"><a class="anchor" href="#remove-generic-objects"></a>5.1.4. Removing Generic Objects Classes</h4>
 <div class="paragraph">
 <p>Remove generic object classes from your inventory using the following steps:</p>
 </div>
@@ -3319,8 +3332,8 @@ When the result is "retry", it sets:
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="export-generic-objects"><a class="anchor" href="#export-generic-objects"></a>Exporting Generic Objects</h5>
+<div class="sect3">
+<h4 id="export-generic-objects"><a class="anchor" href="#export-generic-objects"></a>5.1.5. Exporting Generic Objects</h4>
 <div class="paragraph">
 <p>Export generic objects from ManageIQ to create a shared library.</p>
 </div>
@@ -3365,8 +3378,8 @@ When the result is "retry", it sets:
 <p>Locate the exported yaml file containing the generic object properties in the temporary folder.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="import-generic-objects"><a class="anchor" href="#import-generic-objects"></a>Importing Generic Objects</h5>
+<div class="sect3">
+<h4 id="import-generic-objects"><a class="anchor" href="#import-generic-objects"></a>5.1.6. Importing Generic Objects</h4>
 <div class="paragraph">
 <p>Import generic objects to ManageIQ from a shared library.</p>
 </div>
@@ -3417,13 +3430,13 @@ When the result is "retry", it sets:
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="service-dialogs"><a class="anchor" href="#service-dialogs"></a>5.2. Service Dialogs</h4>
+<div class="sect2">
+<h3 id="service-dialogs"><a class="anchor" href="#service-dialogs"></a>5.2. Service Dialogs</h3>
 <div class="paragraph">
 <p>When provisioning a service, input will be needed from the requester. Service dialogs are used to take input from the user. This input is connected to a method in the Automate model that defines how the user&#8217;s input is translated into the provision request. Before creating a service dialog, be sure to plan what items you need the user to input.</p>
 </div>
-<div class="sect4">
-<h5 id="adding-a-service-dialog-using-editor"><a class="anchor" href="#adding-a-service-dialog-using-editor"></a>Adding a Service Dialog</h5>
+<div class="sect3">
+<h4 id="adding-a-service-dialog-using-editor"><a class="anchor" href="#adding-a-service-dialog-using-editor"></a>5.2.1. Adding a Service Dialog</h4>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -3642,7 +3655,6 @@ When the result is "retry", it sets:
 <div class="paragraph">
 <p>The service dialog is now created, and added to the <strong>Service Dialogs</strong> accordion.</p>
 </div>
-</div>
 <div class="sect4">
 <h5 id="creating-a-service-dialog-from-container-template"><a class="anchor" href="#creating-a-service-dialog-from-container-template"></a>Creating a Service Dialog from a Container Template</h5>
 <div class="paragraph">
@@ -3714,7 +3726,7 @@ When the result is "retry", it sets:
 </div>
 </div>
 <div class="sect3">
-<h4 id="methods"><a class="anchor" href="#methods"></a>5.3. Methods</h4>
+<h4 id="methods"><a class="anchor" href="#methods"></a>5.2.2. Methods</h4>
 <div class="sect4">
 <h5 id="creating-a-method-to-associate-with-the-dialog"><a class="anchor" href="#creating-a-method-to-associate-with-the-dialog"></a>Creating a Method to Associate with the Dialog</h5>
 <div class="paragraph">
@@ -4007,8 +4019,9 @@ exit MIQ_OK</pre>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="catalogs"><a class="anchor" href="#catalogs"></a>5.4. Catalogs</h3>
+<h3 id="catalogs"><a class="anchor" href="#catalogs"></a>5.3. Catalogs</h3>
 <div class="paragraph">
 <p>Catalogs are used to create groups of virtual machines or instances for provisioning. For example, a complete package of a database server, desktop with specialized software already on it, and a firewall. You will need to complete the following steps to create and provision a service catalog.</p>
 </div>
@@ -4052,7 +4065,7 @@ exit MIQ_OK</pre>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="creating-a-catalog-bundle"><a class="anchor" href="#creating-a-catalog-bundle"></a>5.4.1. Creating a Catalog Bundle</h4>
+<h4 id="creating-a-catalog-bundle"><a class="anchor" href="#creating-a-catalog-bundle"></a>5.3.1. Creating a Catalog Bundle</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4112,7 +4125,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copying-a-catalog-bundle"><a class="anchor" href="#copying-a-catalog-bundle"></a>5.4.2. Copying a Catalog Bundle</h4>
+<h4 id="copying-a-catalog-bundle"><a class="anchor" href="#copying-a-catalog-bundle"></a>5.3.2. Copying a Catalog Bundle</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4140,7 +4153,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="creating-a-catalog-item"><a class="anchor" href="#creating-a-catalog-item"></a>5.4.3. Creating a Catalog Item</h4>
+<h4 id="creating-a-catalog-item"><a class="anchor" href="#creating-a-catalog-item"></a>5.3.3. Creating a Catalog Item</h4>
 <div class="paragraph">
 <p>Create a catalog item for each virtual machine or cloud instance that will be part of the service.</p>
 </div>
@@ -4220,7 +4233,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="copying-a-catalog-item"><a class="anchor" href="#copying-a-catalog-item"></a>5.4.4. Copying a Catalog Item</h4>
+<h4 id="copying-a-catalog-item"><a class="anchor" href="#copying-a-catalog-item"></a>5.3.4. Copying a Catalog Item</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -4262,7 +4275,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="creating-a-generic-catalog-item"><a class="anchor" href="#creating-a-generic-catalog-item"></a>5.4.5. Creating a Generic Catalog Item</h4>
+<h4 id="creating-a-generic-catalog-item"><a class="anchor" href="#creating-a-generic-catalog-item"></a>5.3.5. Creating a Generic Catalog Item</h4>
 <div class="paragraph">
 <p>Create generic catalog items for services non-specific to virtualization or cloud environments. This catalog item type can serve a wide array of needs, from creating a vLAN across a network to accessing virtual machine IP addresses and adding them to a load balancer pool.</p>
 </div>
@@ -4339,7 +4352,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-playbook-service-catalog-item"><a class="anchor" href="#create-playbook-service-catalog-item"></a>5.4.6. Creating an Ansible Playbook Service Catalog Item</h4>
+<h4 id="create-playbook-service-catalog-item"><a class="anchor" href="#create-playbook-service-catalog-item"></a>5.3.6. Creating an Ansible Playbook Service Catalog Item</h4>
 <div class="paragraph">
 <p>Create a catalog item that uses an Ansible Playbook to back it.</p>
 </div>
@@ -4474,7 +4487,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-tower-catalog-item"><a class="anchor" href="#create-tower-catalog-item"></a>5.4.7. Creating an Ansible Tower Service Catalog Item</h4>
+<h4 id="create-tower-catalog-item"><a class="anchor" href="#create-tower-catalog-item"></a>5.3.7. Creating an Ansible Tower Service Catalog Item</h4>
 <div class="paragraph">
 <p>Create a service catalog item from an Ansible Tower template you can use to execute an Ansible Tower playbook in ManageIQ.</p>
 </div>
@@ -4569,7 +4582,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-amazon-catalog-item"><a class="anchor" href="#create-amazon-catalog-item"></a>5.4.8. Creating an Amazon Service Catalog Item</h4>
+<h4 id="create-amazon-catalog-item"><a class="anchor" href="#create-amazon-catalog-item"></a>5.3.8. Creating an Amazon Service Catalog Item</h4>
 <div class="paragraph">
 <p>Use the following procedure to create an Amazon catalog item. Once created, the catalog item and service dialog combine with all of the options in the provisioning dialog. Users can then order Red Hat Enterprise Linux instances from the <strong>Service Catalog</strong> in the ManageIQ Service user interface.</p>
 </div>
@@ -4626,7 +4639,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-azure-catalog-item"><a class="anchor" href="#create-azure-catalog-item"></a>5.4.9. Creating an Azure Service Catalog Item</h4>
+<h4 id="create-azure-catalog-item"><a class="anchor" href="#create-azure-catalog-item"></a>5.3.9. Creating an Azure Service Catalog Item</h4>
 <div class="paragraph">
 <p>Use the following procedure to create an Azure catalog item.</p>
 </div>
@@ -4683,7 +4696,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-container-template-catalog-item"><a class="anchor" href="#create-container-template-catalog-item"></a>5.4.10. Creating an OpenShift Template Catalog Item</h4>
+<h4 id="create-container-template-catalog-item"><a class="anchor" href="#create-container-template-catalog-item"></a>5.3.10. Creating an OpenShift Template Catalog Item</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -4734,7 +4747,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-orchestration-catalog-item"><a class="anchor" href="#create-orchestration-catalog-item"></a>5.4.11. Creating an Orchestration Catalog Item</h4>
+<h4 id="create-orchestration-catalog-item"><a class="anchor" href="#create-orchestration-catalog-item"></a>5.3.11. Creating an Orchestration Catalog Item</h4>
 <div class="paragraph">
 <p>Use the following procedure to create an Orchestration catalog item.</p>
 </div>
@@ -4778,7 +4791,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="provisioning-a-service"><a class="anchor" href="#provisioning-a-service"></a>5.4.12. Provisioning a Service</h4>
+<h4 id="provisioning-a-service"><a class="anchor" href="#provisioning-a-service"></a>5.3.12. Provisioning a Service</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4798,7 +4811,7 @@ exit MIQ_OK</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="orchestration-stack"><a class="anchor" href="#orchestration-stack"></a>5.5. Orchestration Stacks</h3>
+<h3 id="orchestration-stack"><a class="anchor" href="#orchestration-stack"></a>5.4. Orchestration Stacks</h3>
 <div class="paragraph">
 <p>Cloud orchestration is a service that allows you to create, update, and manage cloud resources and their software components as a single unit and then deploy them in an automated, repeatable way through a template.
 Templates use a human-readable syntax and can be defined in text files, thereby allowing users to check them into version control. Templates allow you to easily deploy and reconfigure infrastructure for applications within your cloud. A user can author the stack templates, or can upload them from other sources.</p>
@@ -4834,7 +4847,7 @@ Templates use a human-readable syntax and can be defined in text files, thereby 
 </table>
 </div>
 <div class="sect3">
-<h4 id="adding-orchestration-template"><a class="anchor" href="#adding-orchestration-template"></a>5.5.1. Creating an Orchestration Template</h4>
+<h4 id="adding-orchestration-template"><a class="anchor" href="#adding-orchestration-template"></a>5.4.1. Creating an Orchestration Template</h4>
 <div class="paragraph">
 <p>Complete the following procedure to add an orchestration template.</p>
 </div>
@@ -4865,7 +4878,7 @@ Templates use a human-readable syntax and can be defined in text files, thereby 
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-orchestration-templates"><a class="anchor" href="#editing-orchestration-templates"></a>5.5.2. Editing Orchestration Templates</h4>
+<h4 id="editing-orchestration-templates"><a class="anchor" href="#editing-orchestration-templates"></a>5.4.2. Editing Orchestration Templates</h4>
 <div class="paragraph">
 <p>Complete the following procedure to edit orchestration templates.</p>
 </div>
@@ -4904,7 +4917,7 @@ Templates use a human-readable syntax and can be defined in text files, thereby 
 </div>
 </div>
 <div class="sect3">
-<h4 id="copying-orchestration-templates"><a class="anchor" href="#copying-orchestration-templates"></a>5.5.3. Copying Orchestration Templates</h4>
+<h4 id="copying-orchestration-templates"><a class="anchor" href="#copying-orchestration-templates"></a>5.4.3. Copying Orchestration Templates</h4>
 <div class="paragraph">
 <p>Complete the following procedure to copy an orchestration template to create a new template.</p>
 </div>
@@ -4940,7 +4953,7 @@ Templates use a human-readable syntax and can be defined in text files, thereby 
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-orchestration-templates"><a class="anchor" href="#deleting-orchestration-templates"></a>5.5.4. Deleting Orchestration Templates</h4>
+<h4 id="deleting-orchestration-templates"><a class="anchor" href="#deleting-orchestration-templates"></a>5.4.4. Deleting Orchestration Templates</h4>
 <div class="paragraph">
 <p>Complete the following procedure to delete orchestration templates.</p>
 </div>

@@ -1281,8 +1281,8 @@ By default, the zone is set to <strong>default</strong>.</p>
 </li>
 </ol>
 </div>
-<div class="sect5">
-<h6 id="non-admin-vcenter-hosts"><a class="anchor" href="#non-admin-vcenter-hosts"></a>Using a Non-Administrator Account for vCenter Hosts</h6>
+<div class="sect4">
+<h5 id="non-admin-vcenter-hosts"><a class="anchor" href="#non-admin-vcenter-hosts"></a>Using a Non-Administrator Account for vCenter Hosts</h5>
 <div class="paragraph">
 <p>After adding a VMware vCenter infrastructure provider, you must authenticate its hosts to enable full functionality. You can use administrator credentials, or create another user assigned to a role created for ManageIQ. See the <a href="https://www.vmware.com/support/pubs/vsphere-esxi-vcenter-server-pubs.html">VMware documentation</a> for instructions on how to create a role.</p>
 </div>
@@ -2814,8 +2814,8 @@ known as the inventory.</p>
 <div class="paragraph">
 <p>This section is intended to complement the existing documentation on Ansible playbooks and guide administrators through optimizing playbooks for use with ManageIQ.</p>
 </div>
-<div class="sect5">
-<h6 id="installing-ansible-roles"><a class="anchor" href="#installing-ansible-roles"></a>Installing Roles on an Embedded Ansible Appliance</h6>
+<div class="sect4">
+<h5 id="installing-ansible-roles"><a class="anchor" href="#installing-ansible-roles"></a>Installing Roles on an Embedded Ansible Appliance</h5>
 <div class="paragraph">
 <p>Roles are ways of automatically loading certain variable files, tasks, and handlers based on a known file structure. Grouping content by roles also allows easy sharing of roles with other users.
 Install roles on a ManageIQ appliance with the Embedded Ansible server role activated to optimize playbooks.</p>
@@ -2833,8 +2833,8 @@ Install roles on a ManageIQ appliance with the Embedded Ansible server role acti
 <p>ManageIQ will automatically install the role once it sees the <code>requirements.yml</code> file in the playbook.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="ansible-service-linking"><a class="anchor" href="#ansible-service-linking"></a>Ansible Service Linking</h6>
+<div class="sect4">
+<h5 id="ansible-service-linking"><a class="anchor" href="#ansible-service-linking"></a>Ansible Service Linking</h5>
 <div class="paragraph">
 <p>ManageIQ provides a module allowing inventoried resources such as virtual machines created using Ansible playbooks to link back to the services used to generate them. During service ordering of a playbook the <code>add_provider_vms</code> module will allow the playbook to connect back to the worker appliance and identify the provider resources it was responsible for generating. Once linked, the newly generated resources are available to ManageIQ&#8217;s life cycle management features.</p>
 </div>
@@ -2851,8 +2851,8 @@ Install roles on a ManageIQ appliance with the Embedded Ansible server role acti
 </li>
 </ol>
 </div>
-<div class="sect6">
-<h7 id="example-linking-a-virtual-machine-to-a-service"><a class="anchor" href="#example-linking-a-virtual-machine-to-a-service"></a>Example: Linking a virtual machine to a service</h7>
+<div class="sect5">
+<h6 id="example-linking-a-virtual-machine-to-a-service"><a class="anchor" href="#example-linking-a-virtual-machine-to-a-service"></a>Example: Linking a virtual machine to a service</h6>
 <div class="paragraph">
 <p>In the following playbook task examples, a virtual machine is deployed to Amazon EC2 and linked back to the service. Examples are provided for linking the resource to its service by both an <em>href slug</em> and as an object.</p>
 </div>
@@ -2929,7 +2929,6 @@ Install roles on a ManageIQ appliance with the Embedded Ansible server role acti
 </div>
 </li>
 </ol>
-</div>
 </div>
 </div>
 <div class="sect5">
@@ -3010,6 +3009,7 @@ Install roles on a ManageIQ appliance with the Embedded Ansible server role acti
         workspace: "{{ workspace }}"
         set_retry:
           interval: "{{ interval }}"</pre>
+</div>
 </div>
 </div>
 </div>
