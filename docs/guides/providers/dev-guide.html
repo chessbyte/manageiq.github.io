@@ -485,7 +485,7 @@ natural to split the task to the MVC layers.</p>
 
 <h2 id="developer-setup">Developer Setup</h2>
 <p>Not to reinvent the wheel we recommend going to the
-<a href="https://github.com/ManageIQ/guides/blob/master/developer_setup">developer setup</a> page and do all the
+<a href="https://github.com/ManageIQ/guides/blob/master/developer_setup.md">developer setup</a> page and do all the
 necessary steps. After this, you should be able to run the MiQ web application with typing <code class="highlighter-rouge">rails server</code> (shortly <code class="highlighter-rouge">rails s</code>)
 or even <code class="highlighter-rouge">bundle exec rails server</code> which makes sure it is running in context of the current bundle (more info
 <a href="http://stackoverflow.com/a/6588708/1594980">here</a>). Running this command will start the Puma server that is
@@ -530,7 +530,7 @@ a way to scaffold them using for instance:</p>
 
 <h2 id="view-layer">View Layer</h2>
 <p>For more comprehensive and more general guide we recommend going
-<a href="https://github.com/ManageIQ/guides/blob/master/ui/patterns">here</a>. The MiQ application spans multiple repositories
+<a href="https://github.com/ManageIQ/guides/blob/master/ui/patterns.md">here</a>. The MiQ application spans multiple repositories
 the core (including models) is hosted <a href="https://github.com/ManageIQ/manageiq/">here</a> and the majority of the UI is
 stored in the
 <a href="https://github.com/ManageIQ/manageiq-ui-classic">ui repo</a> (contains also all the controllers). Some angular
@@ -584,7 +584,7 @@ Angular controllers are stored in <code class="highlighter-rouge">app/assets/jav
 
 <h4 id="rxjs">RxJS</h4>
 <p>The RxJS library is used in a simple way as a message bus so one can send events –<code class="highlighter-rouge">sendDataWithRx()</code>
-and subscribe to a <a href="https://github.com/ReactiveX/rxjs/blob/master/doc/subject">Rx subject</a>
+and subscribe to a <a href="https://github.com/ReactiveX/rxjs/blob/master/doc/subject.md">Rx subject</a>
 –<code class="highlighter-rouge">ManageIQ.angular.rxSubject.subscribe(event =&gt; {..})</code>.</p>
 
 <h3 id="topology-graph">Topology Graph</h3>
@@ -710,7 +710,7 @@ What’s interesting here is that you can actually alter the running Rails appli
 <p>The methods like <code class="highlighter-rouge">.create</code>, <code class="highlighter-rouge">.all</code>, <code class="highlighter-rouge">.find</code> are actually not defined on the models, but comes from the ActiveRecord (~ORM) framework.</p>
 
 <h2 id="code-style">Code Style</h2>
-<p>For up to date coding standards consult this <a href="https://github.com/ManageIQ/guides/blob/master/coding_style_and_standards">guide</a>.
+<p>For up to date coding standards consult this <a href="https://github.com/ManageIQ/guides/blob/master/coding_style_and_standards.md">guide</a>.
 The travis build is set that it checks what rules are violated and reports it in the PR comment. If you want to run it locally, just
 type in: <code class="highlighter-rouge">rubocop</code> and/or <code class="highlighter-rouge">haml-lint</code> (if necessary, install those ruby gems).</p>
 
