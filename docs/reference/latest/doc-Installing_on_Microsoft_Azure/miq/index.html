@@ -549,9 +549,8 @@
 <li><a href="#obtaining-the-appliance">1.1. Obtaining the ManageIQ Virtual Appliance</a></li>
 <li><a href="#uploading-the-appliance-to-microsoft-azure">1.2. Uploading and Provisioning the ManageIQ Virtual Appliance in Microsoft Azure</a>
 <ul class="sectlevel3">
-<li><a href="#converting-aligning-cfme-appliance-image">1.2.1. Converting and Aligning the ManageIQ Virtual Appliance Image</a></li>
-<li><a href="#uploading-the-appliance-using-azure-powershell-script">1.2.2. Using the Azure PowerShell Script</a></li>
-<li><a href="#uploading-the-appliance-using-azure-cli">1.2.3. Using the Azure Command-Line Interface</a></li>
+<li><a href="#uploading-the-appliance-using-azure-powershell-script">1.2.1. Using the Azure PowerShell Script</a></li>
+<li><a href="#uploading-the-appliance-using-azure-cli">1.2.2. Using the Azure Command-Line Interface</a></li>
 </ul>
 </li>
 </ul>
@@ -657,140 +656,8 @@
 </li>
 </ul>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Azure requires that the uploaded Virtual Hard Disk (VHD) files are in a fixed format. The ManageIQ virtual appliance image VHD file is dynamic by default. Currently, the Azure Powershell script and Azure CLI do not automatically convert the dynamic VHD file to fixed during upload. To upload using either method, the ManageIQ virtual appliance image VHD file must be first converted from dynamic to fixed, and properly aligned to the nearest 1 MB boundary. Once converted and properly aligned, you can then upload the appliance virtual image VHD file using either the Azure PowerShell or Azure CLI method.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
-<h4 id="converting-aligning-cfme-appliance-image"><a class="anchor" href="#converting-aligning-cfme-appliance-image"></a>1.2.1. Converting and Aligning the ManageIQ Virtual Appliance Image</h4>
-<div class="paragraph">
-<p>Complete the following procedure to ensure the ManageIQ dynamic .vhd file is properly aligned to the nearest 1 MB boundary, and is in a fixed-size VHD format.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Convert the dynamic VHD file you downloaded in <a href="#obtaining-the-appliance">Obtaining the ManageIQ Virtual Appliance</a> to RAW format.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ qemu-img convert -f vpc -O raw &lt;image-name.vhd&gt; &lt;image-name.raw&gt;
-
-Example:
-
-$ qemu-img convert -f vpc -O raw example.vhd rexample.raw</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Copy and paste the script below into a new bash shell script file, for example, <code>aligned-size.sh</code>. Change <em>rawdisk="image-name"</em> to the image name for your file. This script will calculate the rounded file size to the nearest 1 MB boundary.</p>
-<div class="listingblock">
-<div class="content">
-<pre>#!/bin/bash
-rawdisk="example.raw"
-MB=$((1024 * 1024))
-size=$(qemu-img info -f raw --output json "$rawdisk" | gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
-rounded_size=$((($size/$MB + 1) * $MB))
-echo "rounded size = $rounded_size"
-export rounded_size</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Run the shell script. The file name <code>aligned-size.sh</code> is used in this example.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ sh aligned-size.sh
-
-rounded size = 34361835520</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Resize the virtual appliance image using the rounded size.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ qemu-img resize -f raw &lt;image-name.raw&gt; &lt;rounded_size&gt;
-
-Example:
-
-$ qemu-img resize -f raw example.raw 34361835520
-
-Image resized.</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Convert the appliance image to a fixed-size VHD file.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ qemu-img convert -f raw -o subformat=fixed -O vpc &lt;image-name.raw&gt; &lt;image-name.vhd&gt;
-
-Example:
-
-qemu-img convert -f raw -o subformat=fixed -O vpc example.raw example.vhd</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Get the virtual size for the VHD file.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ qemu-img info --output=json -f vpc &lt;path-to-image&gt;
-
-Example:
-
-$ qemu-img info --output=json -f vpc example.vhd
-
-{
-  "virtual-size": 34361835520,
-  "filename": "example.vhd",
-  "cluster-size": 2097152,
-  "format": "vpc",
-  "actual-size": 2133401600,
-  "dirty-flag": false
-}</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Divide the virtual-size value by 1024, twice. If the result is a whole number, the VHD file is aligned properly. The example below shows that the file is properly aligned.</p>
-<div class="listingblock">
-<div class="content">
-<pre>34361835520 / 1024 / 1024 = 32770</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>qemu-img version 1.5.3 is used in this procedure. Check the qemu-img version using the command: <code>yum info qemu-img</code>. If the version is 2.2.1 or later, add the option <em>force_size</em> in the conversion command, for example, <em>subformat=fixed,force_size</em>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The ManageIQ Azure virtual appliance image is ready for uploading and provisioning in Microsoft Azure.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="uploading-the-appliance-using-azure-powershell-script"><a class="anchor" href="#uploading-the-appliance-using-azure-powershell-script"></a>1.2.2. Using the Azure PowerShell Script</h4>
+<h4 id="uploading-the-appliance-using-azure-powershell-script"><a class="anchor" href="#uploading-the-appliance-using-azure-powershell-script"></a>1.2.1. Using the Azure PowerShell Script</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -941,7 +808,7 @@ New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $Vir
 </div>
 </div>
 <div class="sect3">
-<h4 id="uploading-the-appliance-using-azure-cli"><a class="anchor" href="#uploading-the-appliance-using-azure-cli"></a>1.2.3. Using the Azure Command-Line Interface</h4>
+<h4 id="uploading-the-appliance-using-azure-cli"><a class="anchor" href="#uploading-the-appliance-using-azure-cli"></a>1.2.2. Using the Azure Command-Line Interface</h4>
 <div class="paragraph">
 <p>Complete the following steps to upload and provision the ManageIQ virtual appliance using the Azure CLI.</p>
 </div>
