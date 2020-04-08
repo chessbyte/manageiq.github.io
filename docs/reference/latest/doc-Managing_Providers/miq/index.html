@@ -679,7 +679,11 @@
 <li><a href="#storage_managers">7. Storage Managers</a>
 <ul class="sectlevel2">
 <li><a href="#amazon-elastic-block-store-managers">7.1. Amazon Elastic Block Store Managers</a></li>
-<li><a href="#openstack-block-storage-managers">7.2. OpenStack Block Storage Managers</a></li>
+<li><a href="#openstack-block-storage-managers">7.2. OpenStack Block Storage Managers</a>
+<ul class="sectlevel3">
+<li><a href="#openstack-block-storage-manager-targeted-refresh">7.2.1. OpenStack Block Storage Manager Targeted Refresh</a></li>
+</ul>
+</li>
 <li><a href="#openstack-object-storage-managers">7.3. OpenStack Object Storage Managers</a>
 <ul class="sectlevel3">
 <li><a href="#viewing_swift_object_stores">7.3.1. Viewing Object Stores</a></li>
@@ -6030,6 +6034,17 @@ Each has its own color.</p>
 </div>
 <div class="paragraph">
 <p>To use OpenStack Block Storage as a storage manager, you must first add an OpenStack cloud provider to your ManageIQ appliance and enable events. The Block Storage service will be automatically discovered by ManageIQ and added to the <strong>Storage Managers</strong> list in ManageIQ. See <a href="#adding_openstack_cloud_providers">Adding OpenStack Providers</a> for instructions on adding a cloud provider and enabling events.</p>
+</div>
+<div class="sect3">
+<h4 id="openstack-block-storage-manager-targeted-refresh"><a class="anchor" href="#openstack-block-storage-manager-targeted-refresh"></a>7.2.1. OpenStack Block Storage Manager Targeted Refresh</h4>
+<div class="paragraph">
+<p>ManageIQ supports targeted refresh
+of OpenStack Block Storage (Cinder) volumes. This functionality automatically pulls down
+new inventory data for an object when ManageIQ receives an event from the
+OpenStack provider. For example, if ManageIQ receives a <code>volume.update.end</code>
+event from Cinder, instead of refreshing the entire inventory, it performs a targeted refresh of the
+volume referenced in the event.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
