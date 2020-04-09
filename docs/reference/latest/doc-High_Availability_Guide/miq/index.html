@@ -526,9 +526,10 @@
 </li>
 <li><a href="#database_failover">3. Configuring Database Failover</a>
 <ul class="sectlevel2">
-<li><a href="#failover_monitor">3.1. Configuring the Failover Monitor</a></li>
-<li><a href="#failover_testing">3.2. Testing Database Failover</a></li>
-<li><a href="#reintroducing_the_failed_node">3.3. Reintroducing the Failed Node</a></li>
+<li><a href="#failover-configuration-settings">3.1. Failover Configuration Settings</a></li>
+<li><a href="#failover_monitor">3.2. Configuring the Failover Monitor</a></li>
+<li><a href="#failover_testing">3.3. Testing Database Failover</a></li>
+<li><a href="#reintroducing_the_failed_node">3.4. Reintroducing the Failed Node</a></li>
 </ul>
 </li>
 <li><a href="#configuring_HAProxy">4. Configuring the HAProxy Load Balancer</a>
@@ -1212,7 +1213,61 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="failover_monitor"><a class="anchor" href="#failover_monitor"></a>3.1. Configuring the Failover Monitor</h3>
+<h3 id="failover-configuration-settings"><a class="anchor" href="#failover-configuration-settings"></a>3.1. Failover Configuration Settings</h3>
+<div class="paragraph">
+<p>Configuration settings are located in <code>/var/www/miq/config/ha_admin.yml</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default settings</strong>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>failover_attempts</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of times the <code>failover_monitor</code> will attempt to failover after discovering the connection to the current database is no longer active.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>db_check_frequency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">300s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sleep interval in the monitor loop, it defines how frequently the connection to the database is checked.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>failover_check_frequency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sleep interval between attempting to failover additional times.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>failover_attempts</code> and <code>failover_check_frequency</code> determine the time limit for the cluster to elect a new primary. To produce quicker failovers, reduce the value for <code>failover_check_frequency</code> and increase the value for <code>failover_attempts</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="failover_monitor"><a class="anchor" href="#failover_monitor"></a>3.2. Configuring the Failover Monitor</h3>
 <div class="paragraph">
 <p>Configure the failover monitor only on the non-database ManageIQ appliances  with the following steps:</p>
 </div>
@@ -1228,7 +1283,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="failover_testing"><a class="anchor" href="#failover_testing"></a>3.2. Testing Database Failover</h3>
+<h3 id="failover_testing"><a class="anchor" href="#failover_testing"></a>3.3. Testing Database Failover</h3>
 <div class="paragraph">
 <p>Test that failover is working correctly between your databases with the following steps:</p>
 </div>
@@ -1285,7 +1340,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="reintroducing_the_failed_node"><a class="anchor" href="#reintroducing_the_failed_node"></a>3.3. Reintroducing the Failed Node</h3>
+<h3 id="reintroducing_the_failed_node"><a class="anchor" href="#reintroducing_the_failed_node"></a>3.4. Reintroducing the Failed Node</h3>
 <div class="paragraph">
 <p>Manual steps are required to reintroduce the failed primary database node back into the cluster as a standby. This allows for greater control over the configuration, and to diagnose the failure.</p>
 </div>
