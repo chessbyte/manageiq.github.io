@@ -583,15 +583,17 @@ access to the Appliance UI as well as the REST API.</p>
 <h2 id="enabling-nm"><a class="anchor" href="#enabling-nm"></a>Enabling Network Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is an <strong>optional</strong> step for allowing realm to discover the Active Directory domain. If not enabled, one
+<p>By default, the appliance is configured with Network Manager enabled. Having Network Manager enabled allows
+the <strong>realm</strong> command to discover the available Active Directory domains that can be joined. If not enabled, one
 can still join an AD domain if known by the domain name.</p>
+</div>
+<div class="paragraph">
+<p>If the appliance has Network Manager disabled, it can be enabled as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre># systemctl enable NetworkManager
-# systemctl start NetworkManager
-# sed -i '/^NM_CONTROLLED=.*/d;$aNM_CONTROLLED=yes' /etc/sysconfig/network-scripts/ifcfg-eth0
-# systemctl restart network</pre>
+# systemctl start NetworkManager</pre>
 </div>
 </div>
 </div>

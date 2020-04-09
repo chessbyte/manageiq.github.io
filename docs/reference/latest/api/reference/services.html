@@ -2084,6 +2084,9 @@ page for a list of available attributes when creating Services.</p>
 <li>
 <p><a href="#service-add-provider-vms">Adding Provider VMs to Services</a></p>
 </li>
+<li>
+<p><a href="#service-queue-chargeback-report">Requesting a Chargeback Report for a Service</a></p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -2324,6 +2327,46 @@ back to the service.</p>
     ]
   }
 }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="service-queue-chargeback-report"><a class="anchor" href="#service-queue-chargeback-report"></a>Requesting a Chargeback Report for a Service</h4>
+<div class="paragraph">
+<p>This action will request a chargeback report for the service.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/services/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">queue_chargeback_report</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The queue_chargeback_report action will return an action response which includes the task reference as shown here:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Queued chargeback report generation for Service id:1 name:'test_service1'</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">39</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/39</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The task_href can be queried and upon completion of the task, the chargeback report for the service can be
+queried as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?attributes=chargeback_report</pre>
 </div>
 </div>
 </div>
