@@ -532,7 +532,7 @@ logging use <code class="highlighter-rouge">openshift_hosted_metrics_deploy=True
 
 <p>For a simple single host setup for working with the openshift provider locally,
 you can use <a href="https://github.com/minishift/minishift"><code class="highlighter-rouge">minishift</code></a> to run a
-local openshift instance.</p>
+local openshift 3.x instance.</p>
 
 <h4 id="requirements">Requirements</h4>
 
@@ -604,6 +604,79 @@ appropriate:</p>
   </li>
 </ol>
 
+<h3 id="running-with-codeready-containers">Running with CodeReady Containers</h3>
+
+<p>If you want to develop with an OpenShift 4 provider, CodeReady Containers (CRC)
+is a great option.  It provides all of benefits as minishift (a simple single
+vm openshift on your development machine) but is an OpenShift v4 cluster.</p>
+
+<h4 id="requirements-1">Requirements</h4>
+
+<ul>
+  <li><a href="https://github.com/code-ready/crc"><code class="highlighter-rouge">CodeReady Containers</code></a> (<a href="https://code-ready.github.io/crc/#installation_gsg">Installation Instructions</a>)</li>
+  <li>A compatible <a href="https://code-ready.github.io/crc/#minimum-system-requirements-operating-system_gsg">Operating System</a> and the <a href="https://code-ready.github.io/crc/#required-software-packages_gsg">Required software packages</a></li>
+</ul>
+
+<h4 id="quickstart-1">Quickstart</h4>
+
+<ol>
+  <li>
+    <p><a href="https://cloud.redhat.com/openshift/install/crc/installer-provisioned">Download</a> ane extract the latest release of CRC</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> tar xfJ crc-linux-amd64.tar.xz
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the crc binary to a location on your PATH</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> sudo cp crc-linux-1.8.0-amd64/crc /usr/local/bin
+ which crc
+ /usr/local/bin/crc
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Setup and start CRC (it will ask for an image pull secret which you can get from <a href="https://cloud.redhat.com/openshift/install/crc/installer-provisioned">cloud.redhat.com</a>)</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> crc setup
+ INFO Checking if oc binary is cached
+</span><span class="c"> ...
+</span><span class="go">
+ Setup is complete, you can now run 'crc start' to start the OpenShift cluster
+ crc start
+</span><span class="c"> ...
+</span><span class="go"> ? Image pull secret [? for help]
+</span></code></pre></div>    </div>
+  </li>
+  <li>Login to the cluster with <code class="highlighter-rouge">oc</code>, the command will be printed when <code class="highlighter-rouge">crc start</code> finishes or you can call <code class="highlighter-rouge">crc console --credentials</code>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> crc console --credentials
+ oc login -u kubeadmin -p KUBEADMING_PASSWORD https://api.crc.testing:6443
+</span></code></pre></div>    </div>
+  </li>
+  <li>Now you can setup the management-infra/management-admin service account for use with ManageIQ
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> git clone https://gist.github.com/e2fac8be87ea0e9f429b6f5d75e02176 /tmp/manageiq_crc
+ oc adm new-project management-infra --description="Management-Infrastructure"
+ oc create serviceaccount management-admin -n management-infra
+ oc create -f /tmp/manageiq_crc/management-infra-admin-cluster-role.json
+ oc policy add-role-to-user -n management-infra admin -z management-admin
+ oc policy add-role-to-user -n management-infra management-infra-admin -z management-admin
+ oc adm policy add-cluster-role-to-user cluster-reader system:serviceaccount:management-infra:management-admin
+ oc adm policy add-scc-to-user privileged system:serviceaccount:management-infra:management-admin
+ oc adm policy add-cluster-role-to-user system:image-puller system:serviceaccount:management-infra:inspector-admin
+ oc adm policy add-scc-to-user privileged system:serviceaccount:management-infra:inspector-admin
+ oc adm policy add-cluster-role-to-user self-provisioner system:serviceaccount:management-infra:management-admin
+</span></code></pre></div>    </div>
+  </li>
+  <li>Grab the console IP address and token to acess CRC through <code class="highlighter-rouge">ManageIQ</code>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> cluster_ip=$</span><span class="o">(</span>crc ip<span class="o">)</span>
+<span class="gp"> service_account_token=$</span><span class="o">(</span>oc sa get-token <span class="nt">-n</span> management-infra management-admin<span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Configure a provider in ManageIQ
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> rails r "ManageIQ::Providers::Openshift::ContainerManager.create!(:name =&gt;</span><span class="w"> </span><span class="s1">'CRC'</span>, :hostname <span class="o">=&gt;</span> <span class="s1">'$cluster_ip'</span>, :port <span class="o">=&gt;</span> 6443, :zone <span class="o">=&gt;</span> Zone.visible.first, :security_protocol <span class="o">=&gt;</span> <span class="s1">'ssl-without-validation'</span><span class="o">)</span>.update_authentication<span class="o">(</span>:bearer <span class="o">=&gt;</span> <span class="o">{</span>:auth_key <span class="o">=&gt;</span> <span class="s1">'$service_account_token'</span><span class="o">})</span><span class="s2">"
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
 <h3 id="automated-script-to-record-new-vcr">Automated script to record new VCR</h3>
 
 <p>https://github.com/ManageIQ/manageiq-providers-openshift/pull/75 added a script that creates things from template, records 1st vcr, deletes some things, records 2nd.</p>
@@ -612,8 +685,8 @@ appropriate:</p>
 
 <ul>
   <li>
-    <p>Easiest to use script with minishift.<br />
-Have <code class="highlighter-rouge">minishift</code> in your PATH.
+    <p>Easiest to use script with minishift/crc.<br />
+Have <code class="highlighter-rouge">minishift</code> or <code class="highlighter-rouge">crc</code> in your PATH.
 As described above, including manageiq addon.  Don’t need <code class="highlighter-rouge">--metrics</code>.</p>
   </li>
   <li>
