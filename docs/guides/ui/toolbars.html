@@ -486,7 +486,7 @@ based on a number of controller instance variables.</p>
 
 <p>Toolbars are defined under <code class="highlighter-rouge">app/helpers/application_helper/toolbar/</code>. Each is a class of it’s own and it’s content is described by a simple DSL.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">VmCloudsCenter</span> <span class="o">&lt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">Basic</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationHelper::Toolbar::VmCloudsCenter</span> <span class="o">&lt;</span> <span class="no">ApplicationHelper</span><span class="o">::</span><span class="no">Toolbar</span><span class="o">::</span><span class="no">Basic</span>
   <span class="n">button_group</span><span class="p">(</span><span class="s1">'instance_vmdb'</span><span class="p">,</span> <span class="p">[</span>
     <span class="nb">select</span><span class="p">(</span>
       <span class="ss">:instance_vmdb_choice</span><span class="p">,</span>
