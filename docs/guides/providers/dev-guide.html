@@ -484,7 +484,7 @@ ManageIQ provider. Because the ManageIQ is a web application written in the Ruby
 natural to split the task to the MVC layers.</p>
 
 <h2 id="developer-setup">Developer Setup</h2>
-<p>Not to reinvent the wheel we recommend going to the
+<p>So as not to reinvent the wheel we recommend going to the
 <a href="https://github.com/ManageIQ/guides/blob/master/developer_setup.md">developer setup</a> page and do all the
 necessary steps. After this, you should be able to run the MiQ web application with typing <code class="highlighter-rouge">rails server</code> (shortly <code class="highlighter-rouge">rails s</code>)
 or even <code class="highlighter-rouge">bundle exec rails server</code> which makes sure it is running in context of the current bundle (more info
@@ -494,13 +494,13 @@ listening on http://localhost:3000. The default credentials for the dev setup ar
 <h2 id="data-flow">Data Flow</h2>
 <p>Managers are responsible to feed the data into MiQ DB during the refresh operation. In the MiQ terminology it’s
 feeding the MiQ inventory. This operation can be triggered explicitly from UI but it’s also done automatically
-each 15 minutes. Provider is also capable of running operations.</p>
+each 15 minutes. Each provider is also capable of running operations.</p>
 
-<p>After the Developer Setup step you should be able to run the UI server. This wont however spawn the worker thread
+<p>After the Developer Setup step you should be able to run the UI server. This, however, won’t spawn the worker thread
 that is responsible for doing the refresh operation on providers. If you need to do also the refresh on providers,
 We recommend running <code class="highlighter-rouge">rails console</code> (or <code class="highlighter-rouge">rails c</code>) in a new terminal window and typing in <code class="highlighter-rouge">simulate_queue_worker</code>. This command in the
 rails console will do the work if you click in UI on the refresh button. If you want to run the refresh
-directly from the rails console, you may want to do that by</p>
+directly from the rails console, you may want to do that with</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reload!</span><span class="p">;</span> <span class="no">EmsRefresh</span><span class="p">.</span><span class="nf">refresh</span><span class="p">(</span><span class="no">ExtManagementSystem</span><span class="p">.</span><span class="nf">last</span><span class="p">)</span>
 </code></pre></div></div>
@@ -508,10 +508,10 @@ directly from the rails console, you may want to do that by</p>
 <p>The <code class="highlighter-rouge">reload!</code> in the command is not necessary if you didn’t modify the code.</p>
 
 <h2 id="model-layer">Model Layer</h2>
-<p>When adding new features or writing new providers, the first step is usually to map the entities and relations by to the
-models MiQ, in order to be able to store the data from any external provider. We need to have the db tables prepared for it.</p>
+<p>When adding new features or writing new providers, the first step is usually to map the entities and relations by
+model to the MiQ database, in order to be able to store the data from any external provider. We need to have the database tables prepared for it.</p>
 
-<p>In Rails most often each entity has its own table in database. To manage the DB changes there is a support mechanism
+<p>In Rails most often each entity has its own table in the database. To manage the DB changes there is a support mechanism
 called migrations. Migrations allow easily migrate from one version of schema to an older one or upgrade to a new
 one. So the migration scripts basically contain the described change to the schema including the creation of a new
 table. They are stored in <a href="https://github.com/ManageIQ/manageiq-schema/tree/master/db/migrate">here</a> and each migration
@@ -521,7 +521,7 @@ a way to scaffold them using for instance:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails generate migration AddColumnNameToTableName column:string
 </code></pre></div></div>
 
-<p>This command should generate the properly named file with following content:</p>
+<p>This command should generate the properly named file with the following content:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddColumnToTable</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">5.0</span><span class="p">]</span> <span class="k">def</span> <span class="nf">change</span> <span class="n">add_column</span> <span class="ss">:table_name</span><span class="p">,</span> <span class="ss">:column_name</span><span class="p">,</span> <span class="ss">:string</span> <span class="k">end</span> <span class="k">end</span>
 </code></pre></div></div>
@@ -530,18 +530,18 @@ a way to scaffold them using for instance:</p>
 
 <h2 id="view-layer">View Layer</h2>
 <p>For more comprehensive and more general guide we recommend going
-<a href="https://github.com/ManageIQ/guides/blob/master/ui/patterns.md">here</a>. The MiQ application spans multiple repositories
+<a href="https://github.com/ManageIQ/guides/blob/master/ui/patterns.md">here</a>. The MiQ application spans multiple repositories:
 the core (including models) is hosted <a href="https://github.com/ManageIQ/manageiq/">here</a> and the majority of the UI is
 stored in the
 <a href="https://github.com/ManageIQ/manageiq-ui-classic">ui repo</a> (contains also all the controllers). Some angular
-components are in <a href="https://github.com/ManageIQ/ui-components">components repo</a> and also some providers have been factored
+components are in <a href="https://github.com/ManageIQ/ui-components">components repo</a> and also the providers have been refactored
 out into their own repositories. 
-It’s important to keep it mind, that when implementing a new feature that changes the backend and has also the frontend,
+It’s important to keep in mind that when implementing a new feature that changes the backend and also the frontend,
  multiple repositories need to be addressed.</p>
 
 <h3 id="haml">HAML</h3>
 <p>Haml is the templating mechanism used across ManageIQ. It provides a way to write the HTML code in a yaml-like language
-without the need of writing the tons of nested divs. It’s pretty simple format and for instance this piece of haml code</p>
+without the need of writing the tons of nested divs. Its format is pretty simple, for instance this piece of haml code:</p>
 
 <div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#content</span>
   <span class="nc">.left.column</span>
@@ -568,11 +568,11 @@ without the need of writing the tons of nested divs. It’s pretty simple format
 some <a href="https://html2haml.herokuapp.com/">conversion tools</a> for that.</p>
 
 <h3 id="partials">Partials</h3>
-<p>Some pieces of UI that are used in many places can be extracted into so called partials and reused from multiple
-contexts. Partial is a HAML file whose name starts with the underscore. So for instance one can create a file called
+<p>Some pieces of the UI that are used in many places can be extracted into so-called partials and reused from multiple
+contexts. A partial is a HAML file whose name starts with the underscore. So for instance, one can create a file called
 <code class="highlighter-rouge">_sidebar.haml</code> and reuse this by calling <code class="highlighter-rouge">render :partial =&gt; sidebar</code>. Partials can also have a “slots for data”
 that are passed to the render method or one can call normal ruby methods from it similarly as in the normal HAML
-files. This way we can customize them easily. More comprehensive (and 100% better) description is
+files. This way we can customize them easily. A more comprehensive (and 100% better) description is
 <a href="http://guides.rubyonrails.org/layouts_and_rendering.html#partial-layouts">here</a>.</p>
 
 <h3 id="angular">Angular</h3>
@@ -595,7 +595,7 @@ and subscribe to a <a href="https://github.com/ReactiveX/rxjs/blob/master/doc/su
 <p>While the model and most of the business logic is in the <code class="highlighter-rouge">manageiq/manageiq</code> repository, the controller+view is in <code class="highlighter-rouge">manageiq/manageiq-ui-classic</code> repo.</p>
 
 <h3 id="router">Router</h3>
-<p>In Rails apps, all the possible actions must be whitelisted in the router configuration. In case of MiQ the router is
+<p>In Rails apps, all the possible actions must be whitelisted in the router configuration. In the case of MiQ, the router is
 <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/036735fcd678430376402f7d81f7d0d7e5c69e5b/config/routes.rb">here</a>.
 Most common actions are:</p>
 
@@ -619,9 +619,9 @@ Again, the naming is absolutely crucial here, because everything should auto-mag
 
 <h2 id="gluing-everything-together">Gluing Everything Together</h2>
 <p>Unfortunately, there is no easy way here. Due to some legacy code, often, it is necessary to add the entity
-name to some long list of other entity names to achieve a simple task. Best way to struggle with it,
-is using the debugger and trying to figure out, why it’s not working as it should (somewhere in the chain there must be a check,
-if the current entity name is in some list). Or to look to some existent PRs that were adding similar features and check what files
+name to some long list of other entity names to achieve a simple task. The best way to struggle with it
+is using the debugger and trying to figure out why it’s not working as it should (somewhere in the chain there must be a check,
+if the current entity name is in some list). Another approach is to look to some existent PRs that were adding similar features and check what files
 need to be modified.</p>
 
 <h3 id="places-that-needs-attention">Places that needs attention</h3>
@@ -669,7 +669,7 @@ need to be modified.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres vmdb_development
 </code></pre></div></div>
-<p>The command should open the Postgres client on the dev db. Btw. by default the development environment is active, this can be changed
+<p>The command should open the Postgres client on the dev db. By default the development environment is active, this can be changed
 by <code class="highlighter-rouge">rails s -e production</code>.</p>
 
 <p>Even better option is to inspect the db with:</p>
@@ -688,15 +688,15 @@ We suggest adding this line to <code class="highlighter-rouge">Gemfile.dev.rb</c
 <p>Then after running <code class="highlighter-rouge">bundle install</code>, you should be all set. Now, adding the breakpoint means writing <code class="highlighter-rouge">binding.pry</code> somewhere in the code.
 Once the ruby executes the code with this line, it stops the execution and opens a REPL where Ruby code can be inspected and executed.</p>
 
-<p>TIP: This works also for the HAML files. But instead of using just <code class="highlighter-rouge">binding.pry</code>, use <code class="highlighter-rouge">- binding.pry</code> (+ respect the indentation of the file)</p>
+<p>TIP: This works also for the HAML files. But instead of using just <code class="highlighter-rouge">binding.pry</code>, use <code class="highlighter-rouge">- binding.pry</code> (and respect the indentation of the file).</p>
 
 <h3 id="console">Console</h3>
-<p>Other way of debugging is just printing the variables to the console by <code class="highlighter-rouge">puts foo</code>. Object can have the <code class="highlighter-rouge">.to_s</code> method that
+<p>Another way of debugging is just printing the variables to the console by <code class="highlighter-rouge">puts foo</code>. Object can have the <code class="highlighter-rouge">.to_s</code> method that
 is responsible for printing the object (equivalent to <code class="highlighter-rouge">.toString()</code> method in Java), if the <code class="highlighter-rouge">.to_s</code> method is not implemented,
-you can use the in <code class="highlighter-rouge">.inspect</code> method that provides the info about the object.</p>
+you can use the <code class="highlighter-rouge">.inspect</code> method that provides the info about the object.</p>
 
 <h2 id="rails-console">Rails Console</h2>
-<p>In Rails apps, you can use the so called rails console by typing the <code class="highlighter-rouge">rails console</code> or <code class="highlighter-rouge">rails c</code> to the command line
+<p>In Rails apps, you can use rails console by typing the <code class="highlighter-rouge">rails console</code> or <code class="highlighter-rouge">rails c</code> to the command line
 (being in the root of the repo). This opens the REPL Ruby console, where you can type in Ruby code and it evaluates it.
 What’s interesting here is that you can actually alter the running Rails application by:</p>
 
@@ -710,8 +710,8 @@ What’s interesting here is that you can actually alter the running Rails appli
 <p>The methods like <code class="highlighter-rouge">.create</code>, <code class="highlighter-rouge">.all</code>, <code class="highlighter-rouge">.find</code> are actually not defined on the models, but comes from the ActiveRecord (~ORM) framework.</p>
 
 <h2 id="code-style">Code Style</h2>
-<p>For up to date coding standards consult this <a href="https://github.com/ManageIQ/guides/blob/master/coding_style_and_standards.md">guide</a>.
-The travis build is set that it checks what rules are violated and reports it in the PR comment. If you want to run it locally, just
+<p>For up-to-date coding standards, consult this <a href="https://github.com/ManageIQ/guides/blob/master/coding_style_and_standards.md">guide</a>.
+The travis build is set to check what rules are violated and report those in the PR comment. If you want to run it locally, just
 type in: <code class="highlighter-rouge">rubocop</code> and/or <code class="highlighter-rouge">haml-lint</code> (if necessary, install those ruby gems).</p>
 
 <p>There is also a bash helper script called <a href="https://github.com/zeari/miq-helpers/blob/master/murphy.sh"><code class="highlighter-rouge">murphy.sh</code></a>
@@ -720,11 +720,11 @@ It is similar to the <code class="highlighter-rouge">rubocop-git</code> gem.</p>
 
 <h1 id="common-tasks">Common Tasks</h1>
 <p>Rather than trying to describe each part separately as before, here we would like to focus on some common tasks and provide a link to
-PRs/commits that did that in the past.</p>
+PRs/commits that did so in the past.</p>
 
 <h2 id="creating-new-models-and-migrations">Creating new Models and Migrations</h2>
-<p>As mentioned above, there is a scaffolding helper for creating the migrations. The db knows its current version, so
-if there is a new migration that hasn’t been applied, it will apply it when running <code class="highlighter-rouge">rake db:migrate</code>. In case, there was
+<p>As mentioned above, there is a scaffolding helper for creating the migrations. The database knows its current version, so
+if there is a new migration that hasn’t been applied, it will get applied when running <code class="highlighter-rouge">rake db:migrate</code>. In case there was
 anything wrong with the migration, one can go back and undo it by <code class="highlighter-rouge">rake db:rollback</code>, change the migration file and try again.</p>
 
 <p><a href="http://edgeguides.rubyonrails.org/active_record_migrations.html">documentation</a></p>
@@ -739,14 +739,14 @@ If you are able to achieve that structure in the <code class="highlighter-rouge"
 <h3 id="defining-inventory">Defining Inventory</h3>
 
 <p>Providers which use graph refresh consists of Collector, Persister and Parser classes.
-When the Collector loads data from external provider, the Persister defines the inventory structure based on InventoryCollection objects. 
-Inventory is then saved to VMDB (app database). Each inventory collection is mapped to an ActiveRecord model.
+When the Collector loads data from an external provider, the Persister defines the inventory structure based on InventoryCollection objects. 
+Inventory is then saved to the VMDB (app database). Each inventory collection is mapped to an ActiveRecord model.
 Parser maps data collected from the provider to the common format defined by the ActiveRecord model.</p>
 
-<p>Persister’s InventoryCollection definition is described <a href="persister/inventory_collections">there</a>.</p>
+<p>THe persister InventoryCollection definition is described <a href="persister/inventory_collections">here</a>.</p>
 
-<h2 id="registering-the-features-in-for-rbac">Registering the Features in for RBAC</h2>
-<p>If everything is as it should be, but you still can’t see anything in the UI, this may be the purpose. MiQ has the RBAC model
+<h2 id="registering-the-features-for-rbac">Registering the Features for RBAC</h2>
+<p>If everything is as it should be but you still can’t see anything in the UI, permissions may be the reason. MiQ has the RBAC model
 that checks if the user in the current role is able to access the feature. This is described in the yaml file called <code class="highlighter-rouge">miq_product_features.yml</code>.</p>
 
 <p>When adding the new entity, it is also necessary add the record
@@ -763,11 +763,11 @@ registered (for instance if it wants to participate in the GTL views).</p>
 <p>As for the missing toolbar, adding the plural of the entity name for list and singular for the detail page to this file
 <code class="highlighter-rouge">/app/helpers/application_helper/toolbar/Xs_center.rb</code> is needed + register itself here:
 <code class="highlighter-rouge">/app/helpers/application_helper/toolbar_chooser.rb:439</code> (2 places in that file, 1 for singular and 1 for plural).
-Then automagic should work.</p>
+Then it automagically should work.</p>
 
 <h2 id="exposing-the-live-metrics-for-entity">Exposing the Live Metrics for Entity</h2>
 
-<p>If the metric graphs should be displayed for your entity, you need to do following:</p>
+<p>If the metric graphs should be displayed for your entity, you need to do the following:</p>
 
 <ul>
   <li><code class="highlighter-rouge">app/controllers/application_controller/performance.rb</code>,</li>
