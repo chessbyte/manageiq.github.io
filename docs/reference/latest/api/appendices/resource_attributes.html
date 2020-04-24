@@ -2355,11 +2355,116 @@ attributes for each type, send the <em>OPTIONS /api/authentications</em> request
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hash that contains the <strong>belongsto</strong> and <strong>managed</strong> arrays of filters to assign to the group.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hash that contains the <strong>belongsto</strong> and <strong>managed</strong> arrays of filters to assign to the group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter_expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hash representing the expression used for filtering by Tag</p></td>
 </tr>
 </tbody>
 </table>
+<div class="sect4">
+<h5 id="filters-hash"><a class="anchor" href="#filters-hash"></a>Filters hash:</h5>
+<div class="paragraph">
+<p>The <code>filters</code> hash can include the following keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>belongsto</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Array of tags representing the following types of objects:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>VMs &amp; Templates</p>
+</li>
+<li>
+<p>Clusters, Datastores, Hosts, Managers &amp; Providers</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>managed</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Array of tag arrays representing:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>My Company Tags</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>"filters" : {
+  "managed" : [
+    ["/managed/location/ny"],
+    ["/managed/environment/prod"]
+  ],
+  "belongsto" : [
+    "/belongsto/ExtManagementSystem|dev-vc60/EmsFolder|Datacenters/EmsFolder|dev-vc60-DC/EmsFolder|vm/EmsFolder|Alberto-Dev,
+    "/belongsto/ExtManagementSystem|dev-vc60/EmsFolder|Datacenters/EmsFolder|dev-vc60-DC/EmsFolder|host/EmsCluster|dev-vc60-cluster"
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, company tags can be represented with an expression via the <em>filter_expression</em> instead of the <em>managed</em>
+tag array in the <em>filters</em> element as follows:</p>
+</div>
+<div class="paragraph">
+<p>Example with Tags based on expression:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>"filters" : {
+  "managed" : null,
+  "belongsto" : [
+    "/belongsto/ExtManagementSystem|dev-vc60/EmsFolder|Datacenters/EmsFolder|dev-vc60-DC/EmsFolder|vm/EmsFolder|Alberto-Dev,
+    "/belongsto/ExtManagementSystem|dev-vc60/EmsFolder|Datacenters/EmsFolder|dev-vc60-DC/EmsFolder|host/EmsCluster|dev-vc60-cluster"
+  ]
+},
+"filter_expression" : {
+  "exp": {
+    "and": [
+      {
+        "CONTAINS": {
+          "tag": "managed-location",
+          "value": "ny"
+        }
+      },
+      {
+        "CONTAINS": {
+          "tag": "managed-environment",
+          "value": "prod"
+        }
+      }
+    ]
+  }
+}</code></pre>
+</div>
+</div>
 <hr>
+</div>
 </div>
 </div>
 <div class="sect2">
