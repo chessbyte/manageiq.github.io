@@ -670,10 +670,9 @@
 <li><a href="#adding_openshift_provider">6.3. Adding an OpenShift Container Platform Provider</a></li>
 <li><a href="#tagging-containers-providers">6.4. Tagging Containers Providers</a></li>
 <li><a href="#removing-containers-providers">6.5. Removing Containers Providers</a></li>
-<li><a href="#pausing-resuming-containers-providers">6.6. Pausing / Resuming Containers Providers</a></li>
-<li><a href="#editing-a-containers-provider">6.7. Editing a Containers Provider</a></li>
-<li><a href="#hiding-environment-variables-for-containers-providers">6.8. Hiding Environment Variables for Containers Providers</a></li>
-<li><a href="#viewing-a-containers-providers-timeline">6.9. Viewing a Containers Provider&#8217;s Timeline</a></li>
+<li><a href="#editing-a-containers-provider">6.6. Editing a Containers Provider</a></li>
+<li><a href="#hiding-environment-variables-for-containers-providers">6.7. Hiding Environment Variables for Containers Providers</a></li>
+<li><a href="#viewing-a-containers-providers-timeline">6.8. Viewing a Containers Provider&#8217;s Timeline</a></li>
 </ul>
 </li>
 <li><a href="#storage_managers">7. Storage Managers</a>
@@ -5632,72 +5631,7 @@ eyJhbGciOiJSUzI1NiI...</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="pausing-resuming-containers-providers"><a class="anchor" href="#pausing-resuming-containers-providers"></a>6.6. Pausing / Resuming Containers Providers</h3>
-<div class="paragraph">
-<p>In ManageIQ, you can pause and resume containers providers. This allows users to add a number of potentially resource-intensive providers, then pause and resume those that are not required at a given time. Additionally, when performing maintenance on a provider, you can pause the provider to prevent ManageIQ from connecting to it, to avoid generating log errors or collecting partial data.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>While the provider is paused no data will be collected from it. This may cause gaps in inventory, metrics and events.</p>
-</li>
-<li>
-<p>Also, the provider itself is not turned off when paused, but only temporarily disables the link between ManageIQ and the provider. Resuming the provider re-enables the link between ManageIQ and the provider.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To pause a containers provider:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Navigate to <span class="menuseq"><b class="menu">Compute</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Containers</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Providers</b></span>.</p>
-</li>
-<li>
-<p>Click the containers provider that you want to pause.</p>
-</li>
-<li>
-<p>Click  <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AQSBwYMj6N13gAAAoJJREFUOMvFVMtLlFEUv4/vMaOD2EYdDZ3RfExDxOT0F/QcDEEIIiKKcNEiiSjIhdZQWZSLWthCWswi2khJRPawInohlM6omAZpOE7Z+IBP5nNo7vfde78Wt8aZSYKYRWd17vndc37n3HPOhalUCuQhkmVZefn/BUMIIYQAAJTSf+DHGDHGVUU5f+nqXCxmGMbNG912ux0hxDnP5cg5Qwhv3+lL6DrC+P2HYU1b0bSVxaVlCOHd/ge6vgohzLqfTCYznS9e6Z74OMUo8/t94ciYuF1WWqLa1Gg0xjgL9fY4HI71+Wejc+HIGAAASzgyOp6mii8sRqMxAACC6PXbocwUkJUhblfV6ZMn0phpmqvJ5I+MBns3NzQFdnPO0y5r/JTS2dnot/l5cVRVNdjZ/mygP9TbU+12CePi0nIs9jVFyFrJuq4L7fK16yORUVmSxDsfOXQwsHengDRt5djxNrvNBgAwDGNDcXHoVg+lLKv/siypiiJ0xnhZWUkacjpLGWNCVxRFURUAYG79nvo6h6NQ5CbLUjgyhjEW0PDIqAhtWRYxSEW5kzEmIJhIJH5NkoRlWZmc+tQR7BLPsWfXjm2+rfH4Qt+9+4QQAMAWr6frwjlCiGEYufNnmpQxPvB48Hc46cXLV08Gn2OMxRQDAMYnJr/H44UFBev3f3rmy5t3Q5kWWZbTzmLAHj56mmnJ6n+N23XmVBtjzFNfF+xsFzlzzluam1qPHjZN0+tpOLC/JV28ZVlZ+8cta3ujL9hxtqG+1qbaioqKCCGUUn+jz+2qqqzcWO125exb7v4xxmo31TDGiUGa9wU+T8+YJq0od1JKXVWVf+4f1DTtf/4/COQnPwF17GQn0g5VggAAAABJRU5ErkJggg==" alt="Configuration"></span> (<strong>Configuration</strong>), and then  <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAWCAIAAABYAbuYAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAAXZJREFUOMtjvPL2FwNtABMDzcAwM/rLp4////2jvtHv376d1t60ZsEcSkxnwSq6ftG8929ev3/zmoGBISQhhZGJiYGB4f7NG2/fvDKxtiPSaOas8lpMUWVNresXzn//9vX5k0fv377R0je8f/vGgkl9V86e5uXjk1FQgij7////h7dvGZkYWVhYMQ1hxJWuP314P6ur7e3rlwwMDOq6+vdu3vj96ydEKiA63tzBmYGB4dShA+sXz+MTEKjsnkRCNPIJCKaVVQmLijMwMNy8fBFiLiMjIwMDw4alC08e2MvAwPD503sGBoZPHz6QnPiQTYcEemhSOrLp//+THo1ops/u6XDw9Da2toM4fNXcGf///9+wdKG4lDQevYzElCH///+HOBYCLpw8DjEdLtI+exHJrobaz8gIseDEgb0f379jYGCQkJF9/vgROekaK/j25fOmZYsozTJYARsnp4i45Kf379DEJWRkyQ/r0UJ1sBvN8uoLraIRADcSoXrOFt+RAAAAAElFTkSuQmCC" alt="Pause this Containers Provider"></span> (<strong>Pause this Containers Provider</strong>).</p>
-</li>
-<li>
-<p>Click <strong>OK</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>To resume a paused containers provider:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Navigate to <span class="menuseq"><b class="menu">Compute</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Containers</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Providers</b></span>.</p>
-</li>
-<li>
-<p>Click the paused containers provider that you want to resume.</p>
-</li>
-<li>
-<p>Click  <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AQSBwYMj6N13gAAAoJJREFUOMvFVMtLlFEUv4/vMaOD2EYdDZ3RfExDxOT0F/QcDEEIIiKKcNEiiSjIhdZQWZSLWthCWswi2khJRPawInohlM6omAZpOE7Z+IBP5nNo7vfde78Wt8aZSYKYRWd17vndc37n3HPOhalUCuQhkmVZefn/BUMIIYQAAJTSf+DHGDHGVUU5f+nqXCxmGMbNG912ux0hxDnP5cg5Qwhv3+lL6DrC+P2HYU1b0bSVxaVlCOHd/ge6vgohzLqfTCYznS9e6Z74OMUo8/t94ciYuF1WWqLa1Gg0xjgL9fY4HI71+Wejc+HIGAAASzgyOp6mii8sRqMxAACC6PXbocwUkJUhblfV6ZMn0phpmqvJ5I+MBns3NzQFdnPO0y5r/JTS2dnot/l5cVRVNdjZ/mygP9TbU+12CePi0nIs9jVFyFrJuq4L7fK16yORUVmSxDsfOXQwsHengDRt5djxNrvNBgAwDGNDcXHoVg+lLKv/siypiiJ0xnhZWUkacjpLGWNCVxRFURUAYG79nvo6h6NQ5CbLUjgyhjEW0PDIqAhtWRYxSEW5kzEmIJhIJH5NkoRlWZmc+tQR7BLPsWfXjm2+rfH4Qt+9+4QQAMAWr6frwjlCiGEYufNnmpQxPvB48Hc46cXLV08Gn2OMxRQDAMYnJr/H44UFBev3f3rmy5t3Q5kWWZbTzmLAHj56mmnJ6n+N23XmVBtjzFNfF+xsFzlzzluam1qPHjZN0+tpOLC/JV28ZVlZ+8cta3ujL9hxtqG+1qbaioqKCCGUUn+jz+2qqqzcWO125exb7v4xxmo31TDGiUGa9wU+T8+YJq0od1JKXVWVf+4f1DTtf/4/COQnPwF17GQn0g5VggAAAABJRU5ErkJggg==" alt="Configuration"></span> (<strong>Configuration</strong>), and then  <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAATCAIAAADu5eFvAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAAq5JREFUOMutVM1LVFEUP+fe+96bGcfxg6BWRWHSByS6CExrkZVuqoW0SCzcBBK5qH8ghFy36JPAPgyRnHBcBGJFkNIi7MM0lWlRhPpSSxptxvdmfPfeFnccn4/pRdBd3cu553d/5/x+9+D4jzT818UQ0ScspQQARFSbvEtFczjM/0F1TyUQQj2vSwAphBDCTesviG6OtrXCOXcHEVHTdMrYP3BUV5GQZCIxGItm0naufBXaXr7r4NGGdDpNKfVDzFFTR4L4c3HhaSwajkSEEEzTQAIgZmz7y6d43fEGy+J+iLkS1tpHJEBhSWlVdS13HCnl/Jy5msmoVuiBgJTg10eFkuOIhGRs2wgGi4tLL11pJwQm3k12XbuatixQsnDucQvJC6cQGWML32YHY9G5mWnG2PKS/er58PWO9uXlBKW0IByWG1X2cnTDIaKmafOmGXt4b+Ltm/j42Nm2iwuzMz13bhKCuhGqqq6ljD3rf0wI8ViVeYzqhuvr6oyPjRrB4Pc580bHZRCSc0fXjZq6+vrGU486bwkpHcfx+J+4Oa7B6fOm2fegc/LD+0CoYNPmLYRQO5WyrJSuGQeO1J9sblpJJiORkmAoFCkqluIPymSth2hOf+3vvj81NmoYxu6KysaWcwO9Pa+HXmi6UVN37ETzmV+JVDAU3n/ocGGkaFtZuW0LQuh6rR8XM2onhGCMraRSvXdvjwwPhQsjeyoqm863UUL5qvOkt5sy1tjSklxKMU0DACREY8zh3CP3OqKUEpFwvjoy/HIg2rNz777TrRdAyQUQCBhSQNq2CKWIKGXWPFnDun7hOiIASCkIZYI7n+NTW3eUUaYBgEoQQgCA+hju/DzDZSPHrNyMMSViVkdEcI0M/wHI8o45N1w2P1eULxwAMI8/3TNC7X1mbd71G3afkPRONQeRAAAAAElFTkSuQmCC" alt="Resume this Containers Provider"></span> (<strong>Resume this Containers Provider</strong>).</p>
-</li>
-<li>
-<p>Click <strong>OK</strong>.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-containers-provider"><a class="anchor" href="#editing-a-containers-provider"></a>6.7. Editing a Containers Provider</h3>
+<h3 id="editing-a-containers-provider"><a class="anchor" href="#editing-a-containers-provider"></a>6.6. Editing a Containers Provider</h3>
 <div class="paragraph">
 <p>Edit information about a provider such as the name, hostname, IP address or port, and credentials as required. If you have just upgraded your ManageIQ environment from an older version, edit the provider to specify the authentication method the provider uses to connect to ManageIQ.</p>
 </div>
@@ -5880,7 +5814,7 @@ eyJhbGciOiJSUzI1NiI...</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="hiding-environment-variables-for-containers-providers"><a class="anchor" href="#hiding-environment-variables-for-containers-providers"></a>6.8. Hiding Environment Variables for Containers Providers</h3>
+<h3 id="hiding-environment-variables-for-containers-providers"><a class="anchor" href="#hiding-environment-variables-for-containers-providers"></a>6.7. Hiding Environment Variables for Containers Providers</h3>
 <div class="paragraph">
 <p>You can restrict users from viewing container provider environment variables by configuring user roles.</p>
 </div>
@@ -5946,7 +5880,7 @@ eyJhbGciOiJSUzI1NiI...</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-a-containers-providers-timeline"><a class="anchor" href="#viewing-a-containers-providers-timeline"></a>6.9. Viewing a Containers Provider&#8217;s Timeline</h3>
+<h3 id="viewing-a-containers-providers-timeline"><a class="anchor" href="#viewing-a-containers-providers-timeline"></a>6.8. Viewing a Containers Provider&#8217;s Timeline</h3>
 <div class="paragraph">
 <p>View the timeline of events for instances registered to a containers provider.</p>
 </div>
