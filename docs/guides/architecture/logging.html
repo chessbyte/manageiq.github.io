@@ -12,7 +12,7 @@
   <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
   
   <link type="text/css" rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://manageiq.org/docs/guides/architecture/index">
+  <link rel="canonical" href="http://manageiq.org/docs/guides/architecture/logging">
   <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
 
   <link href="/assets/images/favicon.ico" rel="shortcut icon">
@@ -58,7 +58,7 @@
 </header>
 
 
-    <main data-url="/docs/guides/architecture/index">
+    <main data-url="/docs/guides/architecture/logging">
       <nav class="doc_tabs">
   <ul>
   <li>
@@ -468,37 +468,68 @@
 
       <div class="doc-content">
         
-        <ul>
-  
-  <li>
-    <a href="/docs/guides/architecture/capacity_and_utilization_collection_explanation">Capacity And Utilization Collection Explanation</a>
-  </li>
-  
-  <li>
-    <a href="/docs/guides/architecture/enterprise">Enterprise</a>
-  </li>
-  
-  <li>
-    <a href="/docs/guides/architecture/logging">Logging</a>
-  </li>
-  
-  <li>
-    <a href="/docs/guides/architecture/providers_database_architecture">Providers Database Architecture</a>
-  </li>
-  
-  <li>
-    <a href="/docs/guides/architecture/providers_overview">Providers Overview</a>
-  </li>
-  
-  <li>
-    <a href="/docs/guides/architecture/rbac">Rbac</a>
-  </li>
-  
-  <li>
-    <a href="/docs/guides/architecture/source_code_layout">Source Code Layout</a>
-  </li>
-  
+        <h2 id="logging">Logging</h2>
+
+<p>ManageIQ uses the standard Ruby <a href="https://ruby-doc.org/stdlib-2.6.6/libdoc/logger/rdoc/Logger.html">Logger</a>
+interface, with a custom formatter that is mostly just minor changes from the
+default formatter.  Additionally, we use a logger abstraction library, called
+<a href="github.com/ManageIQ/manageiq-loggers">manageiq-loggers</a> in order to support
+multiple log targets and formats.</p>
+
+<p>An example log message looks like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2020-01-01T12:34:56.789012 #12345:6789abcdef01]  INFO -- : MIQ(Class#method) Example message
+</code></pre></div></div>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">[----]</code> is a placeholder for future use</li>
+  <li><code class="highlighter-rouge">I</code> is the single character form of the log level (e.g. <code class="highlighter-rouge">I</code> == <code class="highlighter-rouge">INFO</code>)</li>
+  <li><code class="highlighter-rouge">2020-01-01T12:34:56.789012</code> is the timestamp of the message in ISO8601 format</li>
+  <li><code class="highlighter-rouge">12345</code> is the process ID (PID)</li>
+  <li><code class="highlighter-rouge">6789abcdef01</code> is the Ruby thread ID (TID) in hexadecimal</li>
+  <li><code class="highlighter-rouge">INFO</code> is the log level (can also be <code class="highlighter-rouge">DEBUG</code>, <code class="highlighter-rouge">WARN</code>, <code class="highlighter-rouge">ERROR</code>, <code class="highlighter-rouge">FATAL</code>)</li>
+  <li><code class="highlighter-rouge">MIQ(Class#method)</code> is an optional location in the code where the message was logged</li>
+  <li><code class="highlighter-rouge">Example message</code> is the logged message</li>
 </ul>
+
+<h3 id="container-log-format">Container log format</h3>
+
+<p>In container deployments, ManageIQ also broadcasts logs to STDOUT in structured
+JSON format, so that it can be consumed by a cluster-level log aggregator.  For,
+example OpenShift has a feature called cluster logging, which consumes STDOUT and
+feeds those lines to ElasticSearch as part of an EFK stack (ElasticSearch /
+Fluentd / Kibana). However, because it is simple JSON, the output could be
+consumed by any log aggregator, such as Splunk, if it were so configured.</p>
+
+<p>An example log message looks like the following:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@timestamp"</span><span class="p">:</span><span class="s2">"2020-01-01T12:34:56.789012"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pid"</span><span class="p">:</span><span class="mi">12345</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tid"</span><span class="p">:</span><span class="s2">"6789abcdef01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"level"</span><span class="p">:</span><span class="s2">"info"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"MIQ(Class#method) Example message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>NOTE: The JSON is broken apart here for demonstration, but in STDOUT will appear
+as a single line.</p>
+
+<h3 id="development">Development</h3>
+
+<p>In development, a number of log objects are available, with <code class="highlighter-rouge">$log</code> being the
+primary log object.  There are a number of separate log objects created for
+various purposes, particularly for provider clients.  The Rails logger is also
+available via <code class="highlighter-rouge">$rails_log</code> (or the standard <code class="highlighter-rouge">Rails.logger</code>). See
+<a href="https://github.com/ManageIQ/manageiq/blob/master/lib/vmdb/loggers.rb">lib/vmdb/loggers.rb</a>
+for the complete list of loggers.</p>
+
+<p>Additionally, if the <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/vmdb/logging.rb"><code class="highlighter-rouge">Vmdb::Logging</code></a>
+module is mixed into a class, then the _log method is available.  This method will
+automatically prefix the code location to the message, and so is the most preferred
+way to do logging.</p>
 
       </div>
     </article>
