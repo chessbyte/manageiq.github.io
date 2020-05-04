@@ -1547,24 +1547,77 @@
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 62.5%;">
+<col style="width: 18.1818%;">
+<col style="width: 18.1818%;">
+<col style="width: 63.6364%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">API Version</th>
-<th class="tableblock halign-left valign-top">Entry Points</th>
-<th class="tableblock halign-left valign-top">Published</th>
+<th class="tableblock halign-left valign-top">API Version &amp; Entrypoints</th>
+<th class="tableblock halign-left valign-top">Published Release</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3.0.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api, /api/v3.0.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">January 2018</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>4.2.0</strong></p>
+<p class="tableblock">/api, /api/v4.2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">June 2020</p>
+<p class="tableblock"><em>Jansa</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Added support for Configured Systems,
+Creating Providers via DDF,
+Requesting compliance checks,
+Added pagination, ordering and filtering of report result sets,
+Added support for Tag filtering by expression in Groups</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>4.1.0</strong></p>
+<p class="tableblock">/api, /api/v4.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">September 2019</p>
+<p class="tableblock"><em>Ivanchuk</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Added support for CRUD of Firmware Registries,
+Added CD-ROMs and Disks subcollection for VMs,
+Provisioning of Physical Servers,
+API authentication via OpenID-Connect,
+Automation Domains,
+Pluggable API Support,
+Pxe Servers,
+Widget Content Generation,
+Policy Profiles,
+Added Compliance subcollection to VMs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>4.0.0</strong></p>
+<p class="tableblock">/api, /api/v4.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">January 2019</p>
+<p class="tableblock"><em>Hammer</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Added support for Conversion Hosts,
+Updates of Transformation Mappings,
+Cloud Volume Types,
+Bulk Tagging of Users,
+Configuration Scripts,
+Accessing Event Streams of Physical Resources,
+Physical Storage, Racks, and Chassis,
+Physical Switches and related Power actions,
+Support Queued Retirement for VMs and Services,
+Password updates for Providers,
+Tagging of Availability Zones, Cloud Networks, Cloud Subnets, Flavors, Network Routers, and Security Groups,
+CRUD for Templates,
+Lans and Network Subcollection for Hosts and Providers,
+Folders subcollection on providers (#338)
+Pause and Resume actions to Providers,
+Chargeback Reports for Services,
+Settings support for Servers and Regions,
+Switches, Container Volumes, Container Templates,
+Container Images, Container Groups and Cloud Object Store Containers,
+Added Transformation Mapping Support,
+Support Enabling and Disabling Conversion Hosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3.0.0</strong></p>
+<p class="tableblock">/api, /api/v3.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">January 2018</p>
+<p class="tableblock"><em>Gaprindashvili</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Settings Management,
 CRUD of Custom Button Sets,
 CRUD of Custom Buttons,
@@ -1609,12 +1662,13 @@ Support multi-manager Provider refreshes,
 Refreshing Authentications,
 Refreshing Configuration Script Sources,
 Enable edits for Automation and Provision Requests,
-Assigning and Unassining Policies from Policy Profiles</p></td>
+Assigning and Unassigning Policies from Policy Profiles</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.4.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api, /api/v2.4.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">June 2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.4.0</strong></p>
+<p class="tableblock">/api, /api/v2.4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">June 2017</p>
+<p class="tableblock"><em>fine</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CRUD on actions,
 Creating and accessing alert actions of alert resources,
 CRUD on Alert Definitions,
@@ -1644,9 +1698,10 @@ Bulk assignment of Tags on Vms,
 Creating, Querying and Deleting Snapshots of Instances</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.3.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api, /api/v2.3.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">December 2016</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.3.0</strong></p>
+<p class="tableblock">/api, /api/v2.3.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">December 2016</p>
+<p class="tableblock"><em>Euwe</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Automate Collection,
 Automate Domains Collection, Automate Domain refresh_from_source,
 Collection OPTIONS and metadata,
@@ -1667,9 +1722,10 @@ Service Create action,
 CRUD on Orchestration Templates</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.2.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api, /api/v2.2.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">June 2016</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.2.0</strong></p>
+<p class="tableblock">/api, /api/v2.2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">June 2016</p>
+<p class="tableblock"><em>Darga</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CRUD on Groups,
 CRUD on Users,
 Updating a Host password,
@@ -1685,9 +1741,10 @@ Exposing read-only subset of Settings,
 Shopping Carts</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.1.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api, /api/v2.1.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">November 2015</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.1.0</strong></p>
+<p class="tableblock">/api, /api/v2.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">November 2015</p>
+<p class="tableblock"><em>Capablanca</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CRUD on Tenants,
 CRUD on Categories and Tags,
 CRUD on User Roles,
@@ -1705,9 +1762,10 @@ Service dialogs, Provision dialogs,
 Reports, Chargebacks, Rates, Categories, Tags</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api, /api/v2.0.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">May 2015</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0.0</strong></p>
+<p class="tableblock">/api, /api/v2.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">May 2015</p>
+<p class="tableblock"><em>Botvinnik</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Parity with SOAP API,
 Support for Providers CRUD &amp; Refresh action,
 VM Control Management,
@@ -1719,15 +1777,16 @@ Improved Action Result responses,
 Expanded Primary collections</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api/v1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">October 2014</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1</strong></p>
+<p class="tableblock">/api, /api/v1.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">October 2014</p>
+<p class="tableblock"><em>Anand</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CVE-2014-7814 Fix,
 sqlfilter replaced with new filter[] parameter</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.0</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/api/v1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.0</strong></p>
+<p class="tableblock">/api, /api/v1.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">August 2014</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Foundation,
 Collections, Resources and Subcollections,
