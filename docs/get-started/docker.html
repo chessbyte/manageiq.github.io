@@ -259,19 +259,19 @@ is available).</p>
 
 <p>If you are on Linux, make sure the Docker service is running:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service docker start
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>systemctl start docker
 </code></pre></div></div>
 
 <h3 id="step-1-download-and-deploy-the-appliance">Step 1: Download and deploy the appliance</h3>
 
 <p>Pull the ManageIQ docker image:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker pull manageiq/manageiq:ivanchuk-4
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker pull manageiq/manageiq:ivanchuk-4
 </code></pre></div></div>
 
 <h3 id="step-2-run-the-container">Step 2: Run the container</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8443:443 manageiq/manageiq:ivanchuk-4
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8443:443 manageiq/manageiq:ivanchuk-4
 </code></pre></div></div>
 
 <p>ManageIQ is now up and running.</p>
