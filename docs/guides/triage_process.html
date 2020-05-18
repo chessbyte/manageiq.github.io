@@ -468,131 +468,94 @@
 
       <div class="doc-content">
         
-        <h1 id="issue-and-pr-lifecycle-and-triage-process">Issue and PR Lifecycle and Triage Process</h1>
+        <h1 id="triage-process">Triage Process</h1>
 
-<p>The community holds meetings regularly to triage issues and pull requests across the ManageIQ organization’s repositories. Attendees include code owners and mergers for the repositories, but all are invited to attend.<em>This is not a meeting to assign when work will be done.</em></p>
+<p>The ManageIQ core team holds regular meetings to triage issues and pull requests across the ManageIQ organization’s repositories. <em>This is not a meeting to assign when work will be done.</em></p>
 
-<p>Triage meetings are divided into two groups Core/Provider and API/UI.</p>
+<h2 id="topics">Topics</h2>
+
 <ul>
-  <li><a href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NWNjbGw2dDgzOGluZDJrb3QzanFobW9vNmNfMjAyMDAyMTNUMTgzMDAwWiBjb250YWN0QG1hbmFnZWlxLm9yZw&amp;tmsrc=contact%40manageiq.org&amp;scp=ALL">Core/Provider triage meetings</a> are usually held weekly and include provider and core repositories</li>
-  <li><a href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NzIxc28ycGtpcnJqcThobjhiMjh2NGQ5N3FfMjAyMDAyMTRUMTQzMDAwWiBjb250YWN0QG1hbmFnZWlxLm9yZw&amp;tmsrc=contact%40manageiq.org&amp;scp=ALL">API/UI triage meetings</a> are also held weekly and include the UI and API repos.</li>
+  <li>Issues
+    <ul>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+no%3Aassignee+-label%3A%22help+wanted%22+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">Unassigned issues</a></li>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+-label%3Abug+-label%3A%22bug%2Fsporadic+test+failure%22+-label%3Acleanup+-label%3Adeveloper+-label%3Adocumentation+-label%3Aenhancement+-label%3Aperformance+-label%3Aredesign+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Atest+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">Issues without scope label</a></li>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+label%3Astale+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">Stale issues</a></li>
+    </ul>
+  </li>
+  <li>PRs
+    <ul>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+-label%3Awip+no%3Aassignee+-label%3A%22help+wanted%22+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">Unassigned PRs</a></li>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+-label%3Awip+-label%3Abug+-label%3A%22bug%2Fsporadic+test+failure%22+-label%3Acleanup+-label%3Adeveloper+-label%3Adocumentation+-label%3Aenhancement+-label%3Aperformance+-label%3Aredesign+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Atest+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">PRs without scope label</a></li>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+label%3Astale+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">Stale PRs</a></li>
+    </ul>
+  </li>
+  <li>Backports
+    <ul>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Amerged+is%3Apr+label%3Ajansa%2Fyes%3F+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs">Backport requests</a></li>
+    </ul>
+  </li>
 </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Triage Category</th>
-      <th>Core/Provider</th>
-      <th>UI/API</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Unassigned issues</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+no%3Aassignee+-label%3A%22help+wanted%22+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider unassigned issues</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+no%3Aassignee+-label%3A%22help+wanted%22+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API unassigned issues</a></td>
-    </tr>
-    <tr>
-      <td>Issues without scope label</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+-label%3Abug+-label%3A%22bug%2Fsporadic+test+failure%22+-label%3Acleanup+-label%3Adeveloper+-label%3Adocumentation+-label%3Aenhancement+-label%3Aperformance+-label%3Aredesign+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Atest+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider issues without scope label</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+-label%3Abug+-label%3A%22bug%2Fsporadic+test+failure%22+-label%3Acleanup+-label%3Adeveloper+-label%3Adocumentation+-label%3Aenhancement+-label%3Aperformance+-label%3Aredesign+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Atest+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API issues without scope label</a></td>
-    </tr>
-    <tr>
-      <td>Stale issues</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+label%3Astale+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider stale issues</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Aissue+is%3Aopen+label%3Astale+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API stale issues</a></td>
-    </tr>
-    <tr>
-      <td>Unassigned PRs</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+-label%3Awip+no%3Aassignee+-label%3A%22help+wanted%22+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider unassigned PRs</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+-label%3Awip+no%3Aassignee+-label%3A%22help+wanted%22+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API unassigned PRs</a></td>
-    </tr>
-    <tr>
-      <td>PRs without scope label</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+-label%3Awip+-label%3Abug+-label%3A%22bug%2Fsporadic+test+failure%22+-label%3Acleanup+-label%3Adeveloper+-label%3Adocumentation+-label%3Aenhancement+-label%3Aperformance+-label%3Aredesign+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Atest+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider PRs without scope label</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+-label%3Awip+-label%3Abug+-label%3A%22bug%2Fsporadic+test+failure%22+-label%3Acleanup+-label%3Adeveloper+-label%3Adocumentation+-label%3Aenhancement+-label%3Aperformance+-label%3Aredesign+-label%3Arefactoring+-label%3A%22technical+debt%22+-label%3Atest+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API PRs without scope label</a></td>
-    </tr>
-    <tr>
-      <td>Stale PRs</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+label%3Astale+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider stale PRs</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Apr+is%3Aopen+label%3Astale+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API stale PRs</a></td>
-    </tr>
-    <tr>
-      <td>Backport requests</td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Amerged+is%3Apr+label%3Ajansa%2Fyes%3F+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs+-repo%3AManageIQ%2Fmanageiq_docs+-repo%3AManageIQ%2Fmanageiq-api+-repo%3AManageIQ%2Fmanageiq-ui-classic+-repo%3AManageIQ%2Fmanageiq-ui-service+-repo%3AManageIQ%2Freact-ui-components+-repo%3AManageIQ%2Fui-components">Core/Provider backport requests</a></td>
-      <td><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Amerged+is%3Apr+label%3Ajansa%2Fyes%3F+repo%3AManageIQ%2Fmanageiq-api+repo%3AManageIQ%2Fmanageiq-ui-classic+repo%3AManageIQ%2Fmanageiq-ui-service+repo%3AManageIQ%2Freact-ui-components+repo%3AManageIQ%2Fui-components">UI/API backport requests</a></td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="actions">Actions</h2>
 
-<h2 id="issue-triage">Issue Triage</h2>
 <ul>
-  <li>Triage unassigned issues
+  <li>Unassigned issues (and PRs)
     <ul>
-      <li>Assign the issue.  There are three possible scenarios.
+      <li>If they have a <code class="highlighter-rouge">question</code> label
         <ul>
-          <li>Assign someone to at least get in on the radar.  This <em>does not</em> mean that the assignee is expected to start work on the issue.</li>
+          <li>Answer the question and close OR convert to another scope label such as <code class="highlighter-rouge">enhancement</code> or <code class="highlighter-rouge">bug</code> with appropriate renaming of the issue title.</li>
+          <li>Request more feedback and change the <code class="highlighter-rouge">question</code> label to <code class="highlighter-rouge">feedback requested</code>.</li>
+        </ul>
+      </li>
+      <li>If they have a <code class="highlighter-rouge">feedback requested</code> label
+        <ul>
+          <li>If the author has responded, treat it like a <code class="highlighter-rouge">question</code> label, otherwise defer to next triage.</li>
+        </ul>
+      </li>
+      <li>If invalid, close with a comment and/or label describing the reason.</li>
+      <li>Assign the issue
+        <ul>
+          <li>Assign someone to make them aware of the issue.  This <em>does not</em> mean that the assignee is expected to start work on the issue.</li>
           <li>Apply the <code class="highlighter-rouge">help wanted</code> label.  This means that while the issue is valid, the team does not have plans to work on it in the near future.</li>
-          <li>Do not assign to anyone and revisit the issue.  In other words, we want to be sure that the issue does not get ignored in perpetuity.</li>
-        </ul>
-      </li>
-      <li>Close invalid issues with a comment and/or label as to why it has been closed.</li>
-    </ul>
-  </li>
-  <li>Review issues with assignee, but no scope label.
-    <ul>
-      <li>Apply <a href="https://www.manageiq.org/docs/guides/labels">scope labels</a>.</li>
-    </ul>
-  </li>
-  <li>Review <code class="highlighter-rouge">stale</code> issues
-    <ul>
-      <li><code class="highlighter-rouge">bug</code> label
-        <ul>
-          <li>If the bug is stale, but not verified, will decide during triage if it should be closed.</li>
-          <li>If the bug is not reproducible, comment back to the opener of the issue for more info. If there is no response, then close after it goes stale.</li>
-        </ul>
-      </li>
-      <li><code class="highlighter-rouge">question</code> label
-        <ul>
-          <li>Should not go stale.</li>
-          <li>Can either be answered and closed OR converted to another scope label such as <code class="highlighter-rouge">enhancement</code> or <code class="highlighter-rouge">bug</code> with appropriate renaming of the issue title.</li>
-        </ul>
-      </li>
-      <li>All other scope labels
-        <ul>
-          <li>Should never go stale, either pin or close.</li>
-          <li>If the item is considered reasonable, the issue should be labeled <code class="highlighter-rouge">pinned</code> to prevent the stale label from being applied.</li>
         </ul>
       </li>
     </ul>
   </li>
-</ul>
-
-<h2 id="pull-request-triage">Pull Request Triage</h2>
-<ul>
-  <li>Review unassigned pull requests.
+  <li>Issues (and PRs) without scope label
     <ul>
       <li>Apply <a href="https://www.manageiq.org/docs/guides/labels">scope labels</a></li>
-      <li>Assign the pull request.  There are three possible outcomes.
+    </ul>
+  </li>
+  <li>Stale issues
+    <ul>
+      <li>If they have a <code class="highlighter-rouge">bug</code> label
         <ul>
-          <li>Assign someone to at least get in on the radar.  This <em>does not</em> mean that the assignee is expected to start work on the issue.</li>
-          <li>Apply the <code class="highlighter-rouge">help wanted</code> label.  This means that while the issue is valid, the team does not have plans to work on it in the near future.</li>
-          <li>Do not assign to anyone and revisit the issue.  In other words, we want to be sure that the issue does not get ignored in perpetuity.</li>
+          <li>and the bug is <code class="highlighter-rouge">verified</code>, decide if it should be closed, otherwise request the author to retest on a newer version.</li>
+          <li>and the bug is not <code class="highlighter-rouge">verified</code>, comment back to the opener of the issue for more info.  If there is no response, then close after it goes stale again.</li>
+        </ul>
+      </li>
+      <li>Other
+        <ul>
+          <li>If the issue should be kept, label it <code class="highlighter-rouge">pinned</code> to prevent the <code class="highlighter-rouge">stale</code> label from being applied, otherwise close</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>Review assigned PRs with no scope label.
+  <li>Stale PRs
     <ul>
-      <li>Apply <a href="https://www.manageiq.org/docs/guides/labels">scope labels</a>.</li>
+      <li>Stale and unmergeable PRs are closed automatically</li>
+      <li>@mention the author after 1 month of inactivity</li>
+      <li>Close the PR after 3 months of inactivity</li>
     </ul>
   </li>
-  <li>Review <code class="highlighter-rouge">stale</code> PRs.
+  <li>Backport requests
     <ul>
-      <li>Bump via @mention after 1 month of no activity</li>
-      <li>Apply stale label after 3 month of no activity</li>
-      <li>After turns stale and 3 months, close the PR.</li>
-      <li>Stale and unmergeable PRs are closed automatically.</li>
+      <li>Review <code class="highlighter-rouge">&lt;release&gt;/yes?</code> labels.
+        <ul>
+          <li>If accepted for backport, change to <code class="highlighter-rouge">&lt;release&gt;/yes</code></li>
+          <li>If not accepted for backport, change to <code class="highlighter-rouge">&lt;release&gt;/no</code></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
