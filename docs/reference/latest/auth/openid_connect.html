@@ -540,7 +540,7 @@ module and should work with other OIDC Identity Providers.</p>
 <p>The current implementation only secures the Appliance&#8217;s Web administrative UI with OIDC.</p>
 </div>
 <div class="paragraph">
-<p><strong>Note:</strong> The REST API and Self-Service UI do not currently support OIDC.</p>
+<p><strong>Note:</strong> The Self-Service UI does not currently support OIDC.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -548,13 +548,16 @@ module and should work with other OIDC Identity Providers.</p>
 <p><a href="#requirements">Requirements</a></p>
 </li>
 <li>
+<p><a href="#configuring-keycloak">Configuring Keycloak</a></p>
+</li>
+<li>
+<p><a href="#oidc-assertions">OIDC Assertions</a></p>
+</li>
+<li>
 <p><a href="#apache-configuration">Apache Configuration</a></p>
 </li>
 <li>
 <p><a href="#oidc-configuration">OIDC Configuration</a></p>
-</li>
-<li>
-<p><a href="#oidc-assertions">OIDC Assertions</a></p>
 </li>
 <li>
 <p><a href="#configuring-the-administrative-ui">Configuring the Administrative UI</a></p>
@@ -585,100 +588,11 @@ module and should work with other OIDC Identity Providers.</p>
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="apache-configuration"><a class="anchor" href="#apache-configuration"></a>Apache Configuration</h3>
-<div class="paragraph">
-<p>Copy the Apache OIDC template configuration files:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
-# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user-openidc.conf \
-    /etc/httpd/conf.d/
-# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth-openidc.conf.erb \
-    /etc/httpd/conf.d/manageiq-external-auth-openidc.conf</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="oidc-configuration"><a class="anchor" href="#oidc-configuration"></a>OIDC Configuration</h3>
-<div class="paragraph">
-<p>The Apache <em>/etc/httpd/conf.d/manageiq-external-auth-openidc.conf</em> configuration files must be updated
-with installation specific values:</p>
-</div>
-<div class="paragraph">
-<p>The defaults in the <em>manageiq-external-auth-oidc.conf</em> file are:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LogLevel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">warn</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCCryptoPassphrase</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sp-cookie</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCOAuthRemoteUserClaim</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Installation specific values must be specified in the <em>manageiq-external-auth-oidc.conf</em> file for the following
-parameters, where the <em>parameter</em> including the &lt;%= &#8230;&#8203; %&gt; anchors
-need to be replaced with the appropriate values:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ServerName</p>
-<p class="tableblock">and</p>
-<p class="tableblock">OIDCRedirectURI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">miq_appliance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FQDN of the appliance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCProviderMetadataURL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_provider_metadata_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Provider URL,
-i.e. <a href="http://&lt;keycloak_server&gt;:8080/auth/realms/miq/.well-known/openid-configuration" class="bare">http://&lt;keycloak_server&gt;:8080/auth/realms/miq/.well-known/openid-configuration</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCClientID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_client_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Client ID</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCClientSecret</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_client_secret</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Client Secret</p></td>
-</tr>
-</tbody>
-</table>
+<div class="sect1">
+<h2 id="configuring-keycloak"><a class="anchor" href="#configuring-keycloak"></a>Configuring Keycloak</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>For KeyCloak, a Realm can be created for one or more Appliances with individual Clients
 defined one per Appliance where the Client ID identifies the individual appliance,
@@ -743,14 +657,6 @@ e.g. the appliance hostname.</p>
 from the Keycloak Client&#8217;s <em>Credentials / Secret</em> value. To generate a new client secret,
 First set the <em>Credentials / Client Authenticator</em> to <em>Client Id and Secret</em>
 . Then <em>Regenerate Secret</em> button.</p>
-</div>
-<div class="paragraph">
-<p>Finally, restart Apache on the appliance as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code># systemctl restart httpd</code></pre>
-</div>
 </div>
 <div class="sect3">
 <h4 id="oidc-assertions"><a class="anchor" href="#oidc-assertions"></a>OIDC Assertions</h4>
@@ -943,6 +849,146 @@ Mappers.</p>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="apache-configuration"><a class="anchor" href="#apache-configuration"></a>Apache Configuration</h3>
+<div class="paragraph">
+<p>Copy the Apache OIDC template configuration files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user-openidc.conf \
+    /etc/httpd/conf.d/
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth-openidc.conf.erb \
+    /etc/httpd/conf.d/manageiq-external-auth-openidc.conf</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-configuration"><a class="anchor" href="#oidc-configuration"></a>OIDC Configuration</h3>
+<div class="paragraph">
+<p>The Apache <em>/etc/httpd/conf.d/manageiq-external-auth-openidc.conf</em> configuration files must be updated
+with installation specific values:</p>
+</div>
+<div class="paragraph">
+<p>The defaults in the <em>manageiq-external-auth-oidc.conf</em> file are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LogLevel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">warn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCCryptoPassphrase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sp-cookie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCOAuthRemoteUserClaim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Installation specific values must be specified in the <em>manageiq-external-auth-oidc.conf</em> file for the following
+parameters, where the <em>parameter</em> including the &lt;%= &#8230;&#8203; %&gt; anchors
+need to be replaced with the appropriate values:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ServerName</p>
+<p class="tableblock">and</p>
+<p class="tableblock">OIDCRedirectURI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">miq_appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FQDN of the appliance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCProviderMetadataURL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_provider_metadata_url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Provider URL,
+i.e. <a href="http://&lt;keycloak_server&gt;:8080/auth/realms/miq/.well-known/openid-configuration" class="bare">http://&lt;keycloak_server&gt;:8080/auth/realms/miq/.well-known/openid-configuration</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCClientID</p>
+<p class="tableblock">and</p>
+<p class="tableblock">OIDCOAuthClientID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_client_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Client ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCClientSecret</p>
+<p class="tableblock">end</p>
+<p class="tableblock">OIDCOAuthClientSecret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_client_secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Client Secret</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCOAuthIntrospectionEndpoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oidc_introspection_endpoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The OpenID-Connect Introspection Endpoint</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Optional parameters can be appended to the end fo the configuration file to avoid SSL verification. These can
+be used when a valid SSL server certificate is not available for communicating with the OpenID Provider.</p>
+</div>
+<div class="paragraph">
+<p><strong>NOTE: Using these parameters is insecure and should only be used in a development environment.</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCSSLValidateServer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCOAuthSSLValidateServer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Off</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Finally, restart Apache on the appliance as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># systemctl restart httpd</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1088,14 +1134,25 @@ the appliance to Database Authentication.</p>
                         --oidc-url
                         --oidc-client-id
                         --oidc-client-secret
-                        [--oidc-enable-sso]</code></pre>
+                        [--oidc-introspection-endpoint]
+                        [--oidc-enable-sso]
+                        [--oidc-insecure]</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>When the <code>--oidc-introspection-endpoint</code> is not specified, an attempt will be made to
+fetch the introspection endpoint by querying the OpenID-Connect Provider URL.</p>
 </div>
 <div class="paragraph">
 <p>When the <code>--oidc-client-host</code> is not specified, the configured appliance host
 is used for the ServerName and OpenID-Connect Redirect URI in the
 OpenID-Connect Apache configuration file. The <code>--oidc-client-host</code> is
 usually the externally reachable FQDN of the appliance.</p>
+</div>
+<div class="paragraph">
+<p>When <code>--oidc-insecure</code> is specified no SSL verification will be done when attempting
+to fetch the introspection endpoint and SSL verification will be disabled using parameters
+<code>OIDCSSLValidateServer</code> and <code>OIDCOAuthSSLValidateServer</code> as described above.</p>
 </div>
 <div class="paragraph">
 <p>Configuring OpenID-Connect requires the following parameters:</p>
