@@ -470,298 +470,83 @@
         
         <h2 id="forms">Forms</h2>
 
-<p>This attempts to document the state of forms in ui-classic, including all the stages of conversion, from pure rails to Angular.</p>
+<p>The recommended way of writing ManageIQ UI forms is using <a href="https://data-driven-forms.org/">Data Driven Forms</a>.</p>
 
-<p>Each stage’s description should contain:</p>
+<p>Historically, ManageIQ UI still has rails forms and angular forms, for information about those, please see <a href="https://github.com/ManageIQ/manageiq-ui-classic/wiki/Forms-%28kinds%29">the wiki</a>.</p>
 
-<ul>
-  <li>the main characteristics of such a form with pointers where to look</li>
-  <li>the list of actions involved during the form’s lifecycle</li>
-  <li>a code example of a minimal form with
-    <ul>
-      <li>one text input validated for length</li>
-      <li>one select, the choice in which updates a useless message div</li>
-      <li>the default form buttons</li>
-    </ul>
-  </li>
-  <li>a recommended migration path</li>
-</ul>
+<hr />
 
-<h3 id="stage-1---the-rails-way">Stage 1 - the Rails way</h3>
+<p>ManageIQ UI imports data driven forms and exposes a <code class="highlighter-rouge">@@ddf</code> webpack alias for both local and plugin imports.</p>
 
-<h4 id="characteristics">characteristics</h4>
+<p>For data driven form specific details, please consult <a href="https://data-driven-forms.org/">ddf documentation</a>.</p>
 
-<ul>
-  <li>the whole form is rendered in Rails</li>
-  <li>each input field’s <code class="highlighter-rouge">value</code> attribute is pre-filled with the existing object’s data if editing</li>
-  <li>form data is stored server-side, in <code class="highlighter-rouge">session[:edit]</code> (which becomes <code class="highlighter-rouge">@edit</code>)</li>
-  <li>each change triggers a POST request to <code class="highlighter-rouge">form_field_changed</code> (sometimes prefixed), which updates the session
-    <ul>
-      <li>on the client side, this happens via the <code class="highlighter-rouge">miq_observe</code> jQuery plugin (<code class="highlighter-rouge">data-miq_observe</code>)</li>
-      <li><em>except</em> for new selects, where we use the js function <code class="highlighter-rouge">miqSelectPickerEvent</code>, right after <code class="highlighter-rouge">miqInitSelectPicker</code></li>
-      <li>these also handle re-rendering the form buttons (<code class="highlighter-rouge">buttons_on</code> vs. <code class="highlighter-rouge">buttons_off</code> via <code class="highlighter-rouge">javascript_show</code> and <code class="highlighter-rouge">javascript_hide</code> ruby-side) when the form becomes submittable (<em>some</em> validation, but usually just compares <code class="highlighter-rouge">@edit[:new]</code> to <code class="highlighter-rouge">@edit[:current]</code> to see if something <code class="highlighter-rouge">changed</code>)</li>
-      <li>such change requests may re-render the form or parts of it (eg. a select’s value change triggers an additional fieldset to be added)</li>
-    </ul>
-  </li>
-  <li>submitting a form triggers a POST request to <code class="highlighter-rouge">create</code> or <code class="highlighter-rouge">update</code>, but submits just the button name, no data
-    <ul>
-      <li>some validation usually happens here, and can render a flash message ruby-side (<code class="highlighter-rouge">add_flash</code> &amp; <code class="highlighter-rouge">render_flash</code>)</li>
-      <li>success usually triggers a redirect to <code class="highlighter-rouge">show_list</code>/<code class="highlighter-rouge">explorer</code> in response, but sometimes also <code class="highlighter-rouge">replace_right_cell</code></li>
-    </ul>
-  </li>
-  <li><em>some</em> forms also use tabs, tab change also propagates to the server and replaces the current tab with a new one</li>
-</ul>
+<p>For an example of a data driven form used in a ManageIQ plugin, see <a href="https://github.com/ManageIQ/manageiq-providers-redfish/pull/107">ManageIQ/manageiq-providers-redfish#107</a>.</p>
 
-<h4 id="actions">actions</h4>
+<h3 id="minimal-example">Minimal example</h3>
 
-<p>Many of these action names will be prefixed with an entity type or a form name in real code (especially in explorer controllers with multiple entities) but not all of them. This is also true for the names of haml partials. In some rarer cases, suffixes or infixes are used instead (all of <code class="highlighter-rouge">foo_form_field_changed</code>, <code class="highlighter-rouge">form_field_changed_foo</code>, <code class="highlighter-rouge">form_foo_field_changed</code>, <code class="highlighter-rouge">form_field_changed</code> and <code class="highlighter-rouge">foo_field_changed</code> exist).</p>
+<p><code class="highlighter-rouge">MiqFormRenderer</code> is our wrapper around DDF with our custom components and implicitly translated button labels.
+For more information see the <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/javascript/forms/data-driven-form.jsx">component definition</a>.</p>
 
-<p>For simplicity, I’m omitting any such afixes and using a <code class="highlighter-rouge">foo_</code> prefix when complete omission would be confusing.</p>
+<p><code class="highlighter-rouge">componentTypes</code> (<a href="https://github.com/data-driven-forms/react-forms/blob/master/packages/react-form-renderer/src/files/component-types.js">list</a>)
+and <code class="highlighter-rouge">validatorTypes</code> (<a href="https://github.com/data-driven-forms/react-forms/blob/master/packages/react-form-renderer/src/files/validator-types.js">list</a>)
+are a set of constants provided by DDF for creating a schema.</p>
+
+<p>A DDF form consists of 2 parts:</p>
 
 <ul>
-  <li>open a new/edit form - prefixed with entity type, <code class="highlighter-rouge">new</code> or <code class="highlighter-rouge">edit</code>
-    <ul>
-      <li>calls <code class="highlighter-rouge">set_form_vars</code>
-        <ul>
-          <li>loads data from db</li>
-          <li>populates <code class="highlighter-rouge">@edit</code></li>
-        </ul>
-      </li>
-      <li>renders the form (<code class="highlighter-rouge">app/views/foo/_form.html.haml</code>)</li>
-    </ul>
-  </li>
-  <li>change a field - <code class="highlighter-rouge">form_field_changed</code>
-    <ul>
-      <li>calls <code class="highlighter-rouge">get_form_vars</code>
-        <ul>
-          <li>loads <code class="highlighter-rouge">@edit</code> from session</li>
-          <li>updates from <code class="highlighter-rouge">params</code></li>
-        </ul>
-      </li>
-      <li>checks for changes</li>
-      <li>updates form buttons (enabled/disabled)</li>
-      <li>renders any partils</li>
-    </ul>
-  </li>
-  <li>save - <code class="highlighter-rouge">create</code> or <code class="highlighter-rouge">update</code>
-    <ul>
-      <li>calls <code class="highlighter-rouge">set_record_vars</code>
-        <ul>
-          <li>updates the actual record from session</li>
-        </ul>
-      </li>
-      <li>form validations</li>
-      <li>flash message on fail</li>
-      <li>actually creates/updates the model on success</li>
-      <li>redirects elsewhere</li>
-    </ul>
-  </li>
-  <li>cancel &amp; reset - handled by the same <code class="highlighter-rouge">create</code> or <code class="highlighter-rouge">update</code></li>
+  <li>schema - essentially an array of field definitions, possibly dynamically generated (forms with conditional fields, etc.)</li>
+  <li>a react component using the schema, MiqFormRenderer, and a backend (API) endpoint to talk to the server</li>
 </ul>
 
-<h4 id="code">code</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PropTypes</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">prop-types</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">MiqFormRenderer</span><span class="p">,</span> <span class="p">{</span> <span class="nx">componentTypes</span><span class="p">,</span> <span class="nx">validatorTypes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@@ddf</span><span class="dl">'</span><span class="p">;</span>
 
-<h5 id="appcontrollersfoo_controllerrb">app/controllers/foo_controller.rb</h5>
+<span class="kd">const</span> <span class="nx">createSchema</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">showDescription</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// a static, required input with validation</span>
+    <span class="p">{</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">componentTypes</span><span class="p">.</span><span class="nx">TEXT_FIELD</span><span class="p">,</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">label</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">Name</span><span class="dl">'</span><span class="p">),</span>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo_new</span>
-  <span class="n">assert_privileges</span><span class="p">(</span><span class="s1">'foo_new'</span><span class="p">)</span>
-  <span class="vi">@record</span> <span class="o">=</span> <span class="no">Model</span><span class="p">.</span><span class="nf">new</span>
-  <span class="n">foo_new_edit</span>
-<span class="k">end</span>
+      <span class="na">isRequired</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">validate</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="nx">validatorTypes</span><span class="p">.</span><span class="nx">REQUIRED</span><span class="p">,</span>
+        <span class="na">message</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">Required</span><span class="dl">'</span><span class="p">),</span>
+      <span class="p">}],</span>
+    <span class="p">},</span>
 
-<span class="k">def</span> <span class="nf">foo_edit</span>
-  <span class="n">assert_privileges</span><span class="p">(</span><span class="s1">'foo_edit'</span><span class="p">)</span>
-  <span class="vi">@record</span> <span class="o">=</span> <span class="n">find_record_with_rbac</span><span class="p">(</span><span class="no">Model</span><span class="p">,</span> <span class="n">from_cid</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]))</span>
-  <span class="n">foo_new_edit</span>
-<span class="k">end</span>
+    <span class="c1">// dynamic textarea</span>
+    <span class="nx">showDescription</span> <span class="o">&amp;&amp;</span> <span class="p">{</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">componentTypes</span><span class="p">.</span><span class="nx">TEXTAREA_FIELD</span><span class="p">,</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">description</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">label</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">Description</span><span class="dl">'</span><span class="p">),</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">});</span>
 
-<span class="k">def</span> <span class="nf">foo_new_edit</span>
-  <span class="n">set_form_vars</span>
-  <span class="vi">@in_a_form</span> <span class="o">=</span> <span class="kp">true</span>
-  <span class="n">session</span><span class="p">[</span><span class="ss">:changed</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@changed</span> <span class="o">=</span> <span class="kp">false</span>
-  <span class="n">replace_right_cell</span>
-<span class="k">end</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">MyForm</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">initialValues</span><span class="p">,</span> <span class="nx">onSubmit</span><span class="p">,</span> <span class="nx">onCancel</span><span class="p">,</span> <span class="nx">showDescription</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">MiqFormRenderer</span>
+    <span class="nx">initialValues</span><span class="o">=</span><span class="p">{</span> <span class="nx">initialValues</span> <span class="p">}</span>
+    <span class="nx">schema</span><span class="o">=</span><span class="p">{</span> <span class="nx">createSchema</span><span class="p">({</span> <span class="nx">showDescription</span> <span class="p">})</span> <span class="p">}</span>
+    <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span> <span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">}</span>
+    <span class="nx">onCancel</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">onCancel</span><span class="p">()</span> <span class="p">}</span>
+  <span class="sr">/</span><span class="err">&gt;
+</span><span class="p">);</span>
 
-<span class="k">def</span> <span class="nf">set_form_vars</span>
-  <span class="vi">@edit</span> <span class="o">=</span> <span class="p">{}</span>
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@record</span><span class="p">.</span><span class="nf">id</span>
-
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:current</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@record</span><span class="p">.</span><span class="nf">name</span>
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:choice</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@record</span><span class="p">.</span><span class="nf">choice</span>
-
-  <span class="vi">@choices</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"bar"</span><span class="p">,</span> <span class="s2">"Bar"</span><span class="p">],</span> <span class="p">[</span><span class="s2">"baz"</span><span class="p">,</span> <span class="s2">"Baz"</span><span class="p">]]</span>
-
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:current</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy_hash</span><span class="p">(</span><span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">])</span>
-<span class="k">end</span>
-
-
-<span class="k">def</span> <span class="nf">form_field_changed</span>
-  <span class="k">return</span> <span class="k">unless</span> <span class="n">load_edit</span><span class="p">(</span><span class="s2">"foo_edit__</span><span class="si">#{</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-  <span class="n">get_form_vars</span>
-
-  <span class="n">session</span><span class="p">[</span><span class="ss">:changed</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@changed</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">]</span> <span class="o">!=</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:current</span><span class="p">])</span>
-
-  <span class="n">render</span> <span class="ss">:update</span> <span class="k">do</span> <span class="o">|</span><span class="n">page</span><span class="o">|</span>
-    <span class="n">page</span> <span class="o">&lt;&lt;</span> <span class="n">javascript_prologue</span>
-    <span class="n">page</span><span class="p">.</span><span class="nf">replace_html</span><span class="p">(</span><span class="s1">'dynamic_div'</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">"dynamic"</span><span class="p">])</span> <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="ss">:choice</span><span class="p">]</span>
-    <span class="n">page</span> <span class="o">&lt;&lt;</span> <span class="n">javascript_for_miq_button_visibility</span><span class="p">(</span><span class="n">changed</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">get_form_vars</span>
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span>
-  <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:choice</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:choice</span><span class="p">]</span> <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="ss">:choice</span><span class="p">]</span>
-<span class="k">end</span>
-
-
-<span class="k">def</span> <span class="nf">foo_create</span>
-  <span class="n">assert_privileges</span><span class="p">(</span><span class="s1">'foo_new'</span><span class="p">)</span>
-  <span class="vi">@record</span> <span class="o">=</span> <span class="no">Model</span><span class="p">.</span><span class="nf">new</span>
-  <span class="n">create_update</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">foo_update</span>
-  <span class="n">assert_privileges</span><span class="p">(</span><span class="s1">'foo_edit'</span><span class="p">)</span>
-  <span class="vi">@record</span> <span class="o">=</span> <span class="n">find_record_with_rbac</span><span class="p">(</span><span class="no">Model</span><span class="p">,</span> <span class="n">from_cid</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]))</span>
-  <span class="n">create_update</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">create_update</span>
-  <span class="k">return</span> <span class="k">unless</span> <span class="n">load_edit</span><span class="p">(</span><span class="s2">"foo_edit__</span><span class="si">#{</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-  <span class="k">case</span> <span class="n">params</span><span class="p">[</span><span class="ss">:button</span><span class="p">]</span>
-  <span class="k">when</span> <span class="s1">'cancel'</span>
-    <span class="n">add_flash</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">"Cancelled"</span><span class="p">))</span>
-    <span class="vi">@record</span> <span class="o">=</span> <span class="kp">nil</span>
-    <span class="n">replace_right_cell</span>
-
-  <span class="k">when</span> <span class="s1">'add'</span><span class="p">,</span> <span class="s1">'save'</span>
-    <span class="n">validate</span>
-    <span class="n">set_record_vars</span>
-
-    <span class="k">if</span> <span class="vi">@flash_array</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">&amp;&amp;</span> <span class="vi">@record</span><span class="p">.</span><span class="nf">save</span>
-      <span class="n">add_flash</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s1">'Saved'</span><span class="p">))</span>
-      <span class="vi">@edit</span> <span class="o">=</span> <span class="kp">nil</span>
-      <span class="n">replace_right_cell</span>
-    <span class="k">else</span>
-      <span class="n">javascript_flash</span>
-    <span class="k">end</span>
-
-  <span class="k">when</span> <span class="s1">'reset'</span><span class="p">,</span> <span class="kp">nil</span>
-    <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="ss">:button</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'reset'</span>
-      <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy_hash</span><span class="p">(</span><span class="vi">@edit</span><span class="p">[</span><span class="ss">:current</span><span class="p">])</span>
-      <span class="n">add_flash</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s1">'All changes have been reset'</span><span class="p">))</span>
-    <span class="k">end</span>
-
-    <span class="n">replace_right_cell</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">set_record_vars</span>
-  <span class="vi">@record</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span>
-  <span class="vi">@record</span><span class="p">[</span><span class="ss">:choice</span><span class="p">]</span> <span class="o">=</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:choice</span><span class="p">]</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">validate</span>
-  <span class="n">add_flash</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">"Name must be shorter than 16 characters"</span><span class="p">),</span> <span class="ss">:error</span><span class="p">)</span> <span class="k">if</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:name</span><span class="p">].</span><span class="nf">length</span> <span class="o">&gt;=</span> <span class="mi">16</span>
-
-  <span class="n">add_flash</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">"A choice is required"</span><span class="p">),</span> <span class="ss">:error</span><span class="p">)</span> <span class="k">unless</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:choice</span><span class="p">]</span>
-<span class="k">end</span>
+<span class="nx">MyForm</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">initialValues</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">shape</span><span class="p">({</span>
+    <span class="na">name</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+  <span class="p">}),</span>
+  <span class="na">onSubmit</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+  <span class="na">onCancel</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+  <span class="na">showDescription</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+<span class="p">};</span>
 </code></pre></div></div>
 
-<h5 id="appviewsfoo_formhtmlhaml">app/views/foo/_form.html.haml</h5>
-
-<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> <span class="n">url</span> <span class="o">=</span> <span class="n">url_for_only_path</span><span class="p">(</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s2">"form_field_changed"</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@record</span><span class="p">.</span><span class="nf">id</span> <span class="o">||</span> <span class="s2">"new"</span><span class="p">)</span>
-
-<span class="nf">#form_div</span>
-  <span class="p">=</span> <span class="n">render</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">"layouts/flash_msg"</span>
-
-  <span class="nt">%h3</span>
-    <span class="p">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">"Foo"</span><span class="p">)</span>
-
-  <span class="nc">.form-horizontal</span>
-    <span class="nc">.form-group</span>
-      <span class="nt">%label</span><span class="nc">.col-md-2.control-label</span>
-        <span class="p">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">'Name'</span><span class="p">)</span>
-      <span class="nc">.col.md-8</span>
-        <span class="p">=</span> <span class="n">text_field_tag</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span>
-                         <span class="vi">@edit</span><span class="p">[</span><span class="ss">:new</span><span class="p">][</span><span class="ss">:name</span><span class="p">],</span>
-                         <span class="ss">:class</span>             <span class="o">=&gt;</span> <span class="s1">'form-control'</span><span class="p">,</span>
-                         <span class="s1">'data-miq_observe'</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:url</span> <span class="o">=&gt;</span> <span class="n">url</span><span class="p">}.</span><span class="nf">to_json</span><span class="p">)</span>
-
-    <span class="nc">.form-group</span>
-      <span class="nt">%label</span><span class="nc">.col-md-2.control-label</span>
-        <span class="p">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">'Choice'</span><span class="p">)</span>
-      <span class="nc">.col.md-8</span>
-        <span class="p">=</span> <span class="n">select_tag</span><span class="p">(</span><span class="s1">'choice'</span><span class="p">,</span>
-                     <span class="n">options_for_select</span><span class="p">([[</span><span class="s2">"&lt;</span><span class="si">#{</span><span class="n">_</span><span class="p">(</span><span class="s1">'Choose'</span><span class="p">)</span><span class="si">}</span><span class="s2">&gt;"</span><span class="p">,</span> <span class="kp">nil</span><span class="p">]]</span> <span class="o">+</span> <span class="vi">@choices</span><span class="p">),</span>
-                     <span class="s2">"data-miq_sparkle_on"</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
-                     <span class="ss">:class</span>                <span class="o">=&gt;</span> <span class="s2">"selectpicker"</span><span class="p">)</span>
-        <span class="nd">:javascript
-</span>          <span class="nx">miqInitSelectPicker</span><span class="p">();</span>
-          <span class="nx">miqSelectPickerEvent</span><span class="p">(</span><span class="dl">'</span><span class="s1">choice</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="dl">'</span><span class="p">)</span>
-
-    <span class="nf">#dynamic_div</span>
-      <span class="p">=</span> <span class="n">render</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">"dynamic"</span>
-</code></pre></div></div>
-
-<h5 id="appviewsfoo_dynamichtmlhaml">app/views/foo/_dynamic.html.haml</h5>
-
-<div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> <span class="k">if</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:current</span><span class="p">][</span><span class="ss">:choice</span><span class="p">]</span> <span class="o">===</span> <span class="s2">"foo"</span>
-  <span class="p">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">"This could be a few more inputs"</span><span class="p">)</span>
-
-<span class="p">-</span> <span class="k">if</span> <span class="vi">@edit</span><span class="p">[</span><span class="ss">:current</span><span class="p">][</span><span class="ss">:choice</span><span class="p">]</span> <span class="o">===</span> <span class="s2">"bar"</span>
-  <span class="p">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">"Or just a harmless message"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h4 id="migration">migration</h4>
-
-<p>A recommended migration from here is to go to the newest version which already exists:</p>
-
-<ul>
-  <li>don’t want to reimplement the wheel together with the migration</li>
-  <li>but this involves a rewrite of most of actual code involved (ruby to js) so it does not make sense to rewrite to the oldest angular form</li>
-</ul>
-
-<p>The idea is to:</p>
-
-<ul>
-  <li>stop the view from having anything to do with actual form state:
-    <ul>
-      <li>it should render to the full html of all the bits of the form that can exist
-        <ul>
-          <li>the view should live under <code class="highlighter-rouge">app/views/static/</code> - rendered server-side, with i18n, but without any form state</li>
-        </ul>
-      </li>
-      <li>conditional visibility should be achived via Angular directives</li>
-    </ul>
-  </li>
-  <li>provide a data-only JSON endpoint to query for the object’s data
-    <ul>
-      <li>unless such already exists in the API or is not special enough not to try to implement there instead (these are often needed, but always create tech debt)</li>
-    </ul>
-  </li>
-  <li>write an angular component which:
-    <ul>
-      <li>takes an id parameter (empty when new)</li>
-      <li>queries the server for the data (if editing)
-        <ul>
-          <li>later this will be done in the router</li>
-        </ul>
-      </li>
-      <li>keeps all the form state in it’s model object</li>
-      <li>does all the validation that makes sense</li>
-      <li>submits that object on save</li>
-      <li>doesn’t talk to the server unless it has to</li>
-    </ul>
-  </li>
-  <li>replace the original view with the use of such a component, with any necessary options coming from server-side</li>
-  <li>handle only the initial rendering, data, and submit/cancel ruby side</li>
-</ul>
-
+<p>you would also need a <code class="highlighter-rouge">ManageIQ.component.addReact('forms.MyForm', MyForm);</code> in <code class="highlighter-rouge">component-definitions-common.js</code>.</p>
 
       </div>
     </article>
