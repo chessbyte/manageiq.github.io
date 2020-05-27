@@ -1568,6 +1568,9 @@ and report results is through the following collections:</p>
 <p><a href="#running-reports">Running Reports</a></p>
 </li>
 <li>
+<p><a href="#requesting-result-downloads">Requesting Report Result Downloads</a></p>
+</li>
+<li>
 <p><a href="#importing-reports">Importing Reports</a></p>
 </li>
 </ul>
@@ -1900,6 +1903,164 @@ as follows:</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="requesting-result-downloads"><a class="anchor" href="#requesting-result-downloads"></a>Requesting Report Result Downloads</h3>
+<div class="paragraph">
+<p>Requesting a <strong>txt</strong>, <strong>csv</strong> or <strong>pdf</strong> download of the report results can be done
+via the <strong>request_download</strong> action requiring the desired <em>result_type</em> as
+follows:</p>
+</div>
+<div class="sect3">
+<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/results/22</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;request_download&quot;,
+  &quot;result_type&quot; : &quot;csv&quot;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This triggers an async request of the report and returns an action response
+as follows:</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Requesting a download of a csv report for Result id:22 name:VMware VM Summary&quot;,
+  &quot;task_id&quot;: &quot;46&quot;,
+  &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;,
+  &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/46/task_results&quot;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The task can simply be queried for a <em>Finished</em> state and the results then
+fetched via the <em>task_results_href</em> provided above.</p>
+</div>
+<div class="paragraph">
+<p>Querying for the task completion:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/tasks/46</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;,
+  &quot;id&quot;: &quot;46&quot;,
+  &quot;name&quot;: &quot;Generate Report result [csv]: 'VMware VM Summary'&quot;,
+  &quot;state&quot;: &quot;Finished&quot;,
+  &quot;status&quot;: &quot;Ok&quot;,
+  &quot;message&quot;: &quot;Generate Report result [csv]&quot;,
+  &quot;userid&quot;: &quot;admin&quot;,
+  &quot;created_on&quot;: &quot;2020-05-06T17:15:29Z&quot;,
+  &quot;updated_on&quot;: &quot;2020-05-06T17:15:30Z&quot;,
+  &quot;pct_complete&quot;: null,
+  &quot;context_data&quot;: {
+    &quot;result_id&quot;: &quot;22&quot;,
+    &quot;result_type&quot;: &quot;csv&quot;,
+    &quot;session_id&quot;: &quot;1cae5e9c-9b3e-4ee1-a286-bc2a0131233d-7f4bc905&quot;
+  },
+  &quot;results&quot;: null,
+  &quot;miq_server_id&quot;: &quot;3&quot;,
+  &quot;identifier&quot;: null,
+  &quot;started_on&quot;: &quot;2020-05-06T17:15:30Z&quot;,
+  &quot;zone&quot;: null,
+  &quot;actions&quot;: [
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;method&quot;: &quot;post&quot;,
+      &quot;href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;
+    },
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;method&quot;: &quot;delete&quot;,
+      &quot;href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the results can be fetched as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/tasks/46/task_results</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will return the report with the appropriately typed <strong>Content-Type</strong>,
+<em>application/txt</em>, <em>application/csv</em>, or <em>application/pdf</em> as per the
+requested download.</p>
+</div>
+<div class="paragraph">
+<p>With a <strong>request_download</strong> action targeted at the collection level, one can
+also request the download for multiple report results as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/results</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;request_download&quot;,
+  &quot;resources&quot; : [
+      { &quot;id&quot; : &quot;15&quot;, &quot;result_type&quot; : &quot;txt&quot; },
+      { &quot;id&quot; : &quot;17&quot;, &quot;result_type&quot; : &quot;txt&quot; },
+      { &quot;id&quot; : &quot;22&quot;, &quot;result_type&quot; : &quot;csv&quot; }
+   ]
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;results&quot; : [
+    {
+      &quot;success&quot;: true,
+      &quot;message&quot;: &quot;Requesting a download of a txt report for Result id:15 name:VMware VM Summary&quot;,
+      &quot;task_id&quot;: &quot;54&quot;,
+      &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/54&quot;,
+      &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/54/task_results&quot;
+    },
+    {
+      &quot;success&quot;: true,
+      &quot;message&quot;: &quot;Requesting a download of a txt report for Result id:17 name:VMware VM Summary&quot;,
+      &quot;task_id&quot;: &quot;55&quot;,
+      &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/55&quot;,
+      &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/55/task_results&quot;
+    },
+    {
+      &quot;success&quot;: true,
+      &quot;message&quot;: &quot;Requesting a download of a txt report for Result id:22 name:VMware VM Summary&quot;,
+      &quot;task_id&quot;: &quot;56&quot;,
+      &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/56&quot;,
+      &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/56/task_results&quot;
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Each can then be individually queried and downloaded upon completion.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="importing-reports"><a class="anchor" href="#importing-reports"></a>Importing Reports</h3>
 <div class="paragraph">
 <p>Importing reports to the system can be done by posting an <strong>import</strong> action to the
@@ -1925,7 +2086,7 @@ reports collection as follows:</p>
 <p>Here&#8217;s an example:</p>
 </div>
 <div class="sect3">
-<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
+<h4 id="request-3"><a class="anchor" href="#request-3"></a>Request:</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="data">POST /api/reports</code></pre>
@@ -1952,7 +2113,7 @@ reports collection as follows:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
+<h4 id="response-3"><a class="anchor" href="#response-3"></a>Response:</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="data">{
