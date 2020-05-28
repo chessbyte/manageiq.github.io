@@ -1927,7 +1927,7 @@ attributes for each type, send the <em>OPTIONS /api/authentications</em> request
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">chargeback_rate_id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to parent Chargeback</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to parent Chargeback. <code>&lt;chargeback_rate&gt;</code> can be used instead.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">group</p></td>
@@ -1938,6 +1938,11 @@ attributes for each type, send the <em>OPTIONS /api/authentications</em> request
 <td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The input value for calculation, i.e. <strong>allocated</strong>, <strong>used</strong>, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chargeback_tiers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array of hashes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each tier is represented by hash `{"start": 0.0, "finish": 'infinity', "fixed_rate": 2.0, "variable_rate": 0.0}]</p></td>
 </tr>
 </tbody>
 </table>
@@ -1987,6 +1992,26 @@ attributes for each type, send the <em>OPTIONS /api/authentications</em> request
 <td class="tableblock halign-left valign-top"><p class="tableblock">per_unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Measured per unit, i.e. <strong>megabytes</strong>, <strong>gigabytes</strong>, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chargeback_rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code> or <code>href</code> from <code>api/chargebacks</code> collection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detail_measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code> or <code>href</code> from <code>api/measure</code> collection. Details of related measure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detail_currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code> or <code>href</code> from <code>api/currencies</code> collection. Details of related currency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chargeable_field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code> or <code>href</code> from <code>api/chargeable_fields</code> collection. Record representing metric. Contains equivalent columns: <code>metric, group, source</code></p></td>
 </tr>
 </tbody>
 </table>
