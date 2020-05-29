@@ -9,7 +9,7 @@ The files in `master` are generated from a number of repos, so changes are not m
 If you'd like to make changes to manageiq.org, please do so here:
 
 - Main site - https://github.com/ManageIQ/manageiq.org
-- User Reference - https://github.com/ManageIQ/manageiq_docs
+- User Reference - https://github.com/ManageIQ/manageiq-documentation
 - Developer Guides - https://github.com/ManageIQ/guides
 
 ## Build
