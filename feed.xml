@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jun 2020 12:57:54 +0000</pubDate>
-    <lastBuildDate>Thu, 04 Jun 2020 12:57:54 +0000</lastBuildDate>
+    <pubDate>Thu, 04 Jun 2020 16:20:31 +0000</pubDate>
+    <lastBuildDate>Thu, 04 Jun 2020 16:20:31 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Announcing Jansa Beta Release</title>
+        <description>&lt;p&gt;The first beta release of ManageIQ Jansa is here!  It has a bunch of interesting new stuff that you can see in the &lt;a href=&quot;https://github.com/orgs/ManageIQ/projects/13#column-7337345&quot;&gt;roadmap&lt;/a&gt;. When we announced &lt;a href=&quot;https://www.manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/&quot;&gt;Jansa Alpha&lt;/a&gt;, we highlighted Podification and VMware VimBroker Removal.  Today, I want to draw your attention to other enhancements included in the Jansa Beta release.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 02 Jun 2020 19:12:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/06/Announcing-Jansa-Beta/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/06/Announcing-Jansa-Beta/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Jansa Alpha Release</title>
@@ -144,28 +160,6 @@ Here are just a few of the things added since the Ivanchuk GA release:&lt;/p&gt;
         <category>releases</category>
         
         <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Introducing New Cloud Provider: Microsoft Azure Stack</title>
-        <description>&lt;p&gt;With the release of &lt;a href=&quot;https://www.manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/&quot;&gt;ManageIQ
-Ivanchuk&lt;/a&gt;,
-we are introducing new integrated provider: &lt;a href=&quot;https://azure.microsoft.com/en-us/overview/azure-stack/&quot;&gt;Microsoft Azure
-Stack&lt;/a&gt;. Integration
-was developed by &lt;a href=&quot;https://steampunk.si/&quot;&gt;XLAB Steampunk&lt;/a&gt;, a trusted Red Hat
-partner specialized in integrating third-party technologies with Red Hat
-CloudForms and Red Hat Ansible Automation Platform.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 10 Dec 2019 10:30:00 +0000</pubDate>
-        <link>http://manageiq.org/blog/2019/12/introducing-new-provider-microsoft-azure-stack/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2019/12/introducing-new-provider-microsoft-azure-stack/</guid>
-        
-        <category>announcements</category>
-        
-        <category>collaboration</category>
         
         
       </item>
