@@ -5,9 +5,26 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Jun 2020 13:05:16 +0000</pubDate>
-    <lastBuildDate>Wed, 17 Jun 2020 13:05:16 +0000</lastBuildDate>
+    <pubDate>Wed, 17 Jun 2020 13:15:12 +0000</pubDate>
+    <lastBuildDate>Wed, 17 Jun 2020 13:15:12 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Announcing Ivanchuk-5</title>
+        <description>&lt;p&gt;We have built Ivanchuk-5. This release contains bug fixes, UI tweaks, and stabilization.
+Here are just some of the things added since the Ivanchuk-4 release:&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 11 Jun 2020 19:12:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/06/Announcing-Ivanchuk-5/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/06/Announcing-Ivanchuk-5/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Jansa Beta Release</title>
@@ -143,23 +160,6 @@ Here are just a few of the things added since the Ivanchuk-2 release:&lt;/p&gt;
         <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-1-Built-In-Roles/</guid>
         
         <category>tutorials</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Announcing Ivanchuk-2</title>
-        <description>&lt;p&gt;We’ve just built Ivanchuk-2. This release contains bug fixes, UI tweaks, and stabilization.
-Here are just a few of the things added since the Ivanchuk GA release:&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 13 Dec 2019 19:12:13 +0000</pubDate>
-        <link>http://manageiq.org/blog/2019/12/Announcing-Ivanchuk-2/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2019/12/Announcing-Ivanchuk-2/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
         
         
       </item>
