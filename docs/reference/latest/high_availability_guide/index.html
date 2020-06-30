@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/latest/high_availability_guide/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/latest/high_availability_guide/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Latest
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_latest>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/reference/latest/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+            <span class="active" >
+              <a href="/docs/reference/latest/high_availability_guide/index.html">
+                Latest
+              </a>
+            </span>
+            
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#high-availability-guide">High Availability Guide</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#environment-overview">Environment Overview</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#installing-the-appliances">Installing the Appliances</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#installing-the-primary-database-only-appliance">Installing the Primary Database-Only Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#installing-the-first-manageiq-appliance">Installing the First ManageIQ Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-the-primary-database-only-appliance">Configuring the Primary Database-Only Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#installing-the-standby-database-only-appliance">Installing the Standby Database-Only Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-the-standby-database-only-appliance">Configuring the Standby Database-Only Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#installing-additional-manageiq-appliances">Installing Additional ManageIQ Appliances</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#configuring-database-failover">Configuring Database Failover</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#failover-configuration-settings">Failover Configuration Settings</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-the-failover-monitor">Configuring the Failover Monitor</a></li>
+<li class="toc-entry toc-h3"><a href="#testing-database-failover">Testing Database Failover</a></li>
+<li class="toc-entry toc-h3"><a href="#reintroducing-the-failed-node">Reintroducing the Failed Node</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#configuring-the-haproxy-load-balancer">Configuring the HAProxy Load Balancer</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#verifying-the-haproxy-configuration">Verifying the HAProxy Configuration</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#scaling-a-highly-available-manageiq-environment">Scaling a Highly Available ManageIQ Environment</a></li>
+<li class="toc-entry toc-h2"><a href="#updating-a-highly-available-manageiq-environment">Updating a Highly Available ManageIQ Environment</a></li>
+<li class="toc-entry toc-h2"><a href="#updating-hostnames-on-database-only-appliances">Updating Hostnames on Database-Only Appliances</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#preparing-to-update-appliance-hostnames">Preparing to Update Appliance Hostnames</a></li>
+<li class="toc-entry toc-h3"><a href="#updating-the-primary-database-only-appliance-hostname">Updating the Primary Database-Only Appliance Hostname</a></li>
+<li class="toc-entry toc-h3"><a href="#updating-the-standby-database-only-appliance-hostname">Updating the Standby Database-Only Appliance Hostname</a></li>
+<li class="toc-entry toc-h3"><a href="#re-configuring-high-availability-on-database-only-appliances">Re-configuring High Availability on Database-Only Appliances</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#configuring-the-primary-database-only-appliance-1">Configuring the Primary Database-Only Appliance</a></li>
+<li class="toc-entry toc-h4"><a href="#configuring-the-standby-database-only-appliance-1">Configuring the Standby Database-Only Appliance</a></li>
+<li class="toc-entry toc-h4"><a href="#restarting-services">Restarting Services</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="high-availability-guide">
+<a class="anchor" href="#high-availability-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>High Availability Guide</h1>
+
+<h2 id="environment-overview">
+<a class="anchor" href="#environment-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Environment Overview</h2>
+
+<p>This guide describes how to configure and manage database high
+availability in a ManageIQ environment. This configuration allows
+for disaster mitigation: a failure in the primary database does not
+result in downtime, as the standby database takes over the failed
+database’s processes. This is made possible by database replication
+between two or more database servers. In ManageIQ, these
+servers are <em>database-only ManageIQ appliances</em> which do
+not have <code class="language-plaintext highlighter-rouge">evmserverd</code> processes enabled. This is configured from the
+<code class="language-plaintext highlighter-rouge">appliance_console</code> menu at the time of deployment.</p>
+
+<p>This guide describes two types of appliances used in high availability:</p>
+
+<ul>
+  <li>
+    <p><em>Database-only ManageIQ appliances</em>, which do not have
+<code class="language-plaintext highlighter-rouge">evmserverd</code> processes enabled or a user interface.</p>
+  </li>
+  <li>
+    <p><em>Non-database ManageIQ appliances</em>, which are standard
+appliances containing a user interface and which have <code class="language-plaintext highlighter-rouge">evmserverd</code>
+processes enabled.</p>
+  </li>
+</ul>
+
+<p>In this configuration, a failover monitor daemon is configured and
+running on each non-database ManageIQ appliance. The
+failover monitor watches the <code class="language-plaintext highlighter-rouge">repmgr</code> metadata about the database-only
+appliances present in the cluster. When the primary database-only
+appliance goes down, the non-database ManageIQ appliances
+start polling each of the configured standby database-only appliances to
+monitor which one comes up as the new primary. The promotion is
+orchestrated either by <code class="language-plaintext highlighter-rouge">repmgrd</code> on the database-only appliances or is
+done manually. When the non-database ManageIQ appliances
+find that a standby has been promoted, ManageIQ
+reconfigures the setup by writing the new IP address in the
+<code class="language-plaintext highlighter-rouge">database.yml</code> file to point to the new primary.</p>
+
+<div class="note">
+
+Manual steps are required to reintroduce the failed database node back
+as the standby server. See [???](#reintroducing_the_failed_node).
+
+</div>
+
+<p>Note, this procedure also does not provide scalability or a multi-master
+database setup. While a ManageIQ environment is comprised
+of an engine tier and a database tier, this configuration affects only
+the database tier and does not provide load balancing for the
+appliances.</p>
+
+<h3 id="requirements">
+<a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<p>For a high availability ManageIQ environment, you need a
+virtualization host containing at minimum four virtual machines with
+ManageIQ installed, consisting of:</p>
+
+<ul>
+  <li>
+    <p>One virtual machine for the primary external database containing a
+minimum of 4GB dedicated disk space</p>
+  </li>
+  <li>
+    <p>One virtual machine for the standby external database containing a
+minimum of 4GB dedicated disk space</p>
+  </li>
+  <li>
+    <p>Two virtual machines for the non-database ManageIQ
+appliances</p>
+  </li>
+</ul>
+
+<p>The database-only appliances should reside on a highly reliable local
+network in the same location.</p>
+
+<div class="important">
+
+It is essential to use the same ManageIQ appliance template
+version to install each virtual machine in this environment.
+
+</div>
+
+<p>Correct time synchronization is required before installing the cluster.
+After installing the appliances, configure time synchronization on all
+appliances using <code class="language-plaintext highlighter-rouge">chronyd</code>.</p>
+
+<h2 id="installing-the-appliances">
+<a class="anchor" href="#installing-the-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Appliances</h2>
+
+<p>This chapter outlines the steps for installing and configuring the
+ManageIQ components needed for high availability: a database
+cluster comprised of primary and standby database-only appliances, and
+two (at minimum) non-database ManageIQ appliances.</p>
+
+<h3 id="installing-the-primary-database-only-appliance">
+<a class="anchor" href="#installing-the-primary-database-only-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Primary Database-Only Appliance</h3>
+
+<p>The primary database-only appliance functions as an external database to
+the non-database ManageIQ appliances.</p>
+
+<ol>
+  <li>
+    <p>Deploy a ManageIQ appliance with an extra (and
+unpartitioned) disk for the database at a size appropriate for your
+deployment. For recommendations on disk space, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/deployment_planning_guide/introduction#database-requirements">Database
+Requirements</a>
+in the <em>Deployment Planning Guide</em>.</p>
+  </li>
+  <li>
+    <p>Configure time synchronization on the appliance by editing
+<code class="language-plaintext highlighter-rouge">/etc/chrony.conf</code> with valid NTP server information.</p>
+  </li>
+  <li>
+    <p>From your host environment, open the appliance and configure the
+network:</p>
+
+    <ol>
+      <li>
+        <p>Log in to the appliance and run the <code class="language-plaintext highlighter-rouge">appliance_console</code> command
+to access the appliance console menu.</p>
+      </li>
+      <li>
+        <p>Configure networking as desired by selecting the <strong>Set DHCP
+Network Configuration</strong> or <strong>Set Static Network Configuration</strong>
+option.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Resynchronize time information across the appliances:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl enable chronyd.service
+# systemctl start chronyd.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In the appliance console, configure the following:</p>
+
+    <ol>
+      <li>
+        <p>Configure the hostname by selecting <strong>Set Hostname</strong>.</p>
+      </li>
+      <li>
+        <p>Select <strong>Configure Database</strong>.</p>
+      </li>
+      <li>
+        <p>Select <strong>Create key</strong> to create the encryption key. You can
+create a new key, or use an existing key on your system by
+selecting <strong>Fetch key from remote machine</strong> and following the
+prompts.</p>
+      </li>
+      <li>
+        <p>Select <strong>Create Internal Database</strong>.</p>
+      </li>
+      <li>
+        <p>Select the database disk. ManageIQ then activates
+the configuration.</p>
+      </li>
+      <li>
+        <p>For <strong>Should this appliance run as a standalone database
+server?</strong>, select <code class="language-plaintext highlighter-rouge">y</code>. Selecting this option configures this
+appliance as a database-only appliance, and therefore the
+MIQ application and <code class="language-plaintext highlighter-rouge">evmserverd</code> processes
+will not run. This is required in highly available database
+deployments.</p>
+
+        <div class="warning">
+
+This configuration is not reversible.
+
+</div>
+      </li>
+      <li>
+        <p>Create the database password.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<div class="note">
+
+Do not create a region at this stage in the procedure.
+
+</div>
+
+<p>You have now created the empty database.</p>
+
+<p>You can check the configuration on the appliance console details screen.
+If configured successfully, <strong>Local Database Server</strong> shows as <code class="language-plaintext highlighter-rouge">running
+(primary)</code>.</p>
+
+<p>Running the <code class="language-plaintext highlighter-rouge">psql vmdb_production</code> command also provides information
+about the database.</p>
+
+<h3 id="installing-the-first-manageiq-appliance">
+<a class="anchor" href="#installing-the-first-manageiq-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the First ManageIQ Appliance</h3>
+
+<p>Install and configure a ManageIQ appliance to point to the
+primary database server. You can then create a database region and
+configure the primary database. This appliance does not serve as a
+database server.</p>
+
+<p>After installing and configuring an empty database-only appliance in
+<a href="#installation_primary_db">Installing the Primary Database-Only
+Appliance</a>, the steps in this section create
+the database schema used by ManageIQ on the primary
+database-only appliance, and populate the database with the initial
+data.</p>
+
+<div class="important">
+
+Region metadata is required to configure the primary database-only
+appliance as a primary node in the replication cluster. This must be
+configured from the ManageIQ appliance before the primary
+and secondary database-only appliances can be configured.
+
+</div>
+
+<ol>
+  <li>
+    <p>Deploy a ManageIQ appliance. There is no requirement
+for an extra disk on this appliance.</p>
+  </li>
+  <li>
+    <p>Configure time synchronization on the appliance by editing
+<code class="language-plaintext highlighter-rouge">/etc/chrony.conf</code> with valid NTP server information.</p>
+  </li>
+  <li>
+    <p>From your host environment, open the appliance and configure the
+network:</p>
+
+    <ol>
+      <li>
+        <p>Log in to the appliance and run the <code class="language-plaintext highlighter-rouge">appliance_console</code> command
+to access the appliance console menu.</p>
+      </li>
+      <li>
+        <p>Configure networking as desired by selecting the <strong>Set DHCP
+Network Configuration</strong> or <strong>Set Static Network Configuration</strong>
+option.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Re-synchronize time information across the appliances:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl enable chronyd.service
+# systemctl start chronyd.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In the appliance console, configure the following:</p>
+
+    <ol>
+      <li>
+        <p>Configure the hostname by selecting <strong>Set Hostname</strong>.</p>
+      </li>
+      <li>
+        <p>Select <strong>Configure Database</strong>.</p>
+      </li>
+      <li>
+        <p>Configure this appliance to use the encryption key from the
+primary database-only appliance:</p>
+
+        <ol>
+          <li>
+            <p>For <strong>Encryption Key</strong>, select <strong>Fetch key from remote
+machine</strong>.</p>
+          </li>
+          <li>
+            <p>Enter the hostname for the primary database-only appliance
+you previously configured containing the encryption key.</p>
+          </li>
+          <li>
+            <p>Enter the primary database-only appliance’s username.</p>
+          </li>
+          <li>
+            <p>Enter the primary database-only appliance’s password.</p>
+          </li>
+          <li>
+            <p>Enter the path of the remote encryption key. (For example,
+<code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/certs/v2_key</code>.)</p>
+
+            <div class="important">
+
+All appliances in the same region must use the same v2 key.
+
+</div>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>Configure the database:</p>
+
+        <ol>
+          <li>
+            <p>Select <strong>Create Region in External Database</strong>, since the
+database is external to the appliances.</p>
+
+            <div class="important">
+
+Creating a database region will destroy any existing data
+and cannot be undone.
+
+</div>
+          </li>
+          <li>
+            <p>Assign a unique database region number.</p>
+          </li>
+          <li>
+            <p>Enter the port number.</p>
+          </li>
+          <li>
+            <p>For <strong>Are you sure you want to continue?</strong> Select <code class="language-plaintext highlighter-rouge">y</code>.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>Enter the primary database-only appliance’s name and access
+details:</p>
+
+        <ol>
+          <li>
+            <p>Enter the hostname for the primary database-only appliance.</p>
+          </li>
+          <li>
+            <p>Enter a name to identify the database.</p>
+          </li>
+          <li>
+            <p>Enter the primary database-only appliance’s username.</p>
+          </li>
+          <li>
+            <p>Enter a password for the database and confirm the password.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>This initializes the database, which takes a few minutes.</p>
+
+<p>You can check the configuration on the appliance console details screen.
+When configured successfully, <strong>MIQ Server</strong> will
+show as <code class="language-plaintext highlighter-rouge">running</code>, and <strong>MIQ Database</strong> will show
+the hostname of the primary database-only appliance.</p>
+
+<h3 id="configuring-the-primary-database-only-appliance">
+<a class="anchor" href="#configuring-the-primary-database-only-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Primary Database-Only Appliance</h3>
+
+<p>On the primary database-only appliance you created in <a href="#installation_primary_db">Installing the
+Primary Database-Only Appliance</a>, initialize
+the nodes in the database cluster to configure the database replication.
+Run these steps from the appliance console:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, select <strong>Configure Database
+Replication</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Server as Primary</strong>.</p>
+  </li>
+  <li>
+    <p>Set a unique identifier number for the server and enter the database
+name and credentials:</p>
+
+    <ol>
+      <li>
+        <p>Select a number to uniquely identify the node in the replication
+cluster.</p>
+      </li>
+      <li>
+        <p>Enter the name of the database you configured previously.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database username.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database password and confirm the password.</p>
+      </li>
+      <li>
+        <p>Enter the primary database-only appliance hostname or IP
+address.</p>
+
+        <div class="note">
+
+The hostname must be visible to all appliances that communicate
+with this database, including the non-database
+ManageIQ appliances and any global region
+databases.
+
+</div>
+      </li>
+      <li>
+        <p>Confirm that the replication server configuration details are
+correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>This configures database replication in the cluster.</p>
+
+<h3 id="installing-the-standby-database-only-appliance">
+<a class="anchor" href="#installing-the-standby-database-only-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Standby Database-Only Appliance</h3>
+
+<p>The standby database-only appliance is a copy of the primary
+database-only appliance and takes over the role of primary database in
+case of failure.</p>
+
+<p>Follow these steps to create a new standby appliance, or to add another
+standby appliance to the cluster.</p>
+
+<ol>
+  <li>
+    <p>Deploy a ManageIQ appliance with an extra (and
+unpartitioned) disk for the database that is the same size as the
+primary database-only appliance, as it will contain the same data.
+For recommendations on disk space, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/deployment_planning_guide/introduction#database-requirements">Database
+Requirements</a>
+in the <em>Deployment Planning Guide</em>.</p>
+  </li>
+  <li>
+    <p>Configure time synchronization on the appliance by editing
+<code class="language-plaintext highlighter-rouge">/etc/chrony.conf</code> with valid NTP server information.</p>
+  </li>
+  <li>
+    <p>From your host environment, open the appliance and configure the
+network:</p>
+
+    <ol>
+      <li>
+        <p>Log in to the appliance and run the <code class="language-plaintext highlighter-rouge">appliance_console</code> command
+to access the appliance console menu.</p>
+      </li>
+      <li>
+        <p>Configure networking as desired by selecting the <strong>Set DHCP
+Network Configuration</strong> or <strong>Set Static Network Configuration</strong>
+option.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Re-synchronize time information across the appliances:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl enable chronyd.service
+# systemctl start chronyd.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In the appliance console, configure the hostname by selecting <strong>Set
+Hostname</strong>.</p>
+  </li>
+</ol>
+
+<p>You can now configure this appliance as a standby database-only
+appliance in the cluster.</p>
+
+<h3 id="configuring-the-standby-database-only-appliance">
+<a class="anchor" href="#configuring-the-standby-database-only-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Standby Database-Only Appliance</h3>
+
+<p>The steps to configure the standby database-only appliance are similar
+to that of the primary database-only appliance, in that they prepare the
+appliance to be database-only, but as the standby.</p>
+
+<p>On the standby database-only appliance, configure the following from the
+appliance console:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, select <strong>Configure Database
+Replication</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Server as Standby</strong>.</p>
+  </li>
+  <li>
+    <p>Select the database disk. ManageIQ then activates the
+configuration.</p>
+  </li>
+  <li>
+    <p>Set a unique identifier number for the standby server and enter the
+database name and credentials:</p>
+
+    <ol>
+      <li>
+        <p>Select a number to uniquely identify the node in the replication
+cluster.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database name.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database username.</p>
+      </li>
+      <li>
+        <p>Enter and confirm the cluster database password.</p>
+      </li>
+      <li>
+        <p>Enter the primary database-only appliance hostname or IP
+address.</p>
+      </li>
+      <li>
+        <p>Enter the standby database-only appliance hostname or IP
+address.</p>
+
+        <div class="note">
+
+The hostname must be visible to all appliances that communicate
+with this database, including the engine appliances and any
+global region databases.
+
+</div>
+      </li>
+      <li>
+        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic
+failover.</p>
+      </li>
+      <li>
+        <p>Confirm that the replication standby server configuration
+details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>The standby server will then run an initial synchronization with the
+primary database, and start locally in standby mode. This takes a few
+minutes.</p>
+
+<p>Verify the configuration on the appliance console details screen for the
+standby server. When configured successfully, <strong>Local Database Server</strong>
+shows as <code class="language-plaintext highlighter-rouge">running (standby)</code>.</p>
+
+<h3 id="installing-additional-manageiq-appliances">
+<a class="anchor" href="#installing-additional-manageiq-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Additional ManageIQ Appliances</h3>
+
+<p>Install a second virtual machine with a ManageIQ appliance
+and any additional appliances in the region using the following steps:</p>
+
+<ol>
+  <li>
+    <p>Deploy a ManageIQ appliance. There is no requirement
+for an extra disk on this appliance.</p>
+  </li>
+  <li>
+    <p>Configure time synchronization on the appliance by editing
+<code class="language-plaintext highlighter-rouge">/etc/chrony.conf</code> with valid NTP server information.</p>
+  </li>
+  <li>
+    <p>From your host environment, open the appliance and configure the
+network:</p>
+
+    <ol>
+      <li>
+        <p>Log in to the appliance and run the <code class="language-plaintext highlighter-rouge">appliance_console</code> command
+to access the appliance console menu.</p>
+      </li>
+      <li>
+        <p>Configure networking as desired by selecting the <strong>Set DHCP
+Network Configuration</strong> or <strong>Set Static Network Configuration</strong>
+option.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Re-synchronize time information across the appliances:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl enable chronyd.service
+# systemctl start chronyd.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In the appliance console, configure the following:</p>
+
+    <ol>
+      <li>
+        <p>Configure the hostname by selecting <strong>Set Hostname</strong>.</p>
+      </li>
+      <li>
+        <p>Select <strong>Configure Database</strong>.</p>
+      </li>
+      <li>
+        <p>Configure this appliance to use the encryption key from the
+primary database-only appliance:</p>
+
+        <ol>
+          <li>
+            <p>For <strong>Encryption Key</strong>, select <strong>Fetch key from remote
+machine</strong>.</p>
+          </li>
+          <li>
+            <p>Enter the hostname for the primary database-only appliance
+you previously configured containing the encryption key.</p>
+          </li>
+          <li>
+            <p>Enter the port number.</p>
+          </li>
+          <li>
+            <p>Enter the primary database-only appliance’s username.</p>
+          </li>
+          <li>
+            <p>Enter the primary database-only appliance’s password.</p>
+          </li>
+          <li>
+            <p>Enter the path of the remote encryption key. (For example,
+<code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/certs/v2_key</code>.)</p>
+          </li>
+          <li>
+            <p>Select <strong>Join Region in External Database</strong> from the
+appliance console menu.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>Enter the primary database-only appliance’s name and access
+details:</p>
+
+        <ol>
+          <li>
+            <p>Enter the hostname for the primary database-only appliance.</p>
+          </li>
+          <li>
+            <p>Enter a name to identify the database.</p>
+          </li>
+          <li>
+            <p>Enter the primary database-only appliance’s username.</p>
+          </li>
+          <li>
+            <p>Enter a password for the database and confirm the password.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>This configuration takes a few minutes to process.</p>
+
+<p>You can check the configuration on the appliance console details screen.
+When configured successfully, <strong>MIQ Server</strong> will
+show as <code class="language-plaintext highlighter-rouge">running</code>, and <strong>MIQ Database</strong> will show
+the hostname of the primary database-only appliance.</p>
+
+<h2 id="configuring-database-failover">
+<a class="anchor" href="#configuring-database-failover" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Database Failover</h2>
+
+<p>The failover monitor daemon must run on all of the non-database
+ManageIQ appliances to check for failures. In case of a
+database failure, it modifies the database configuration accordingly.</p>
+
+<div class="important">
+
+This configuration is crucial for high availability to work in your
+environment. If the database failover monitor is not configured,
+non-database ManageIQ appliances will not react to the
+failover event and will not be reconfigured against the new primary
+database host.
+
+</div>
+
+<h3 id="failover-configuration-settings">
+<a class="anchor" href="#failover-configuration-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Failover Configuration Settings</h3>
+
+<p>Configuration settings are located in
+<code class="language-plaintext highlighter-rouge">/var/www/miq/config/ha_admin.yml</code>.</p>
+
+<p><strong>Default settings</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">failover_attempts</code></td>
+      <td>10</td>
+      <td>The number of times the <code class="language-plaintext highlighter-rouge">failover_monitor</code> will attempt to failover after discovering the connection to the current database is no longer active.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">db_check_frequency</code></td>
+      <td>300s</td>
+      <td>The sleep interval in the monitor loop, it defines how frequently the connection to the database is checked.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">failover_check_frequency</code></td>
+      <td>60s</td>
+      <td>The sleep interval between attempting to failover additional times.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+
+`failover_attempts` and `failover_check_frequency` determine the time
+limit for the cluster to elect a new primary. To produce quicker
+failovers, reduce the value for `failover_check_frequency` and increase
+the value for `failover_attempts`.
+
+</div>
+
+<h3 id="configuring-the-failover-monitor">
+<a class="anchor" href="#configuring-the-failover-monitor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Failover Monitor</h3>
+
+<p>Configure the failover monitor only on the non-database
+ManageIQ appliances with the following steps:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, select <strong>Configure Application
+Database Failover Monitor</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Start Database Failover Monitor</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="testing-database-failover">
+<a class="anchor" href="#testing-database-failover" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing Database Failover</h3>
+
+<p>Test that failover is working correctly between your databases with the
+following steps:</p>
+
+<ol>
+  <li>
+    <p>Simulate a failure by stopping the database on the primary server:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl stop postgresql.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To check the status of the database, run:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl status postgresql.service
+</code></pre></div>    </div>
+
+    <div class="note">
+
+You can check the status of the simulated failure by viewing the
+most recent `evm.log` log on the engine appliances.
+
+</div>
+  </li>
+  <li>
+    <p>Check the appliance console summary screen for the primary database.
+If configured correctly, the <strong>MIQ Database</strong>
+value in the appliance console summary should have switched from the
+hostname of the old primary database to the hostname of the new
+primary on all ManageIQ appliances.</p>
+  </li>
+</ol>
+
+<div class="important">
+
+Upon database server failover, the standby server becomes the primary.
+However, the failed node cannot switch to standby automatically and must
+be manually configured. Data replication from the new primary to the
+failed and recovered node does not happen by default, so the failed node
+must be reintroduced into the configuration.
+
+</div>
+
+<h3 id="reintroducing-the-failed-node">
+<a class="anchor" href="#reintroducing-the-failed-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reintroducing the Failed Node</h3>
+
+<p>Manual steps are required to reintroduce the failed primary database
+node back into the cluster as a standby. This allows for greater control
+over the configuration, and to diagnose the failure.</p>
+
+<p>To reintroduce the failed node, reinitialize the standby database. On
+the standby database-only appliance, configure the following:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, select <strong>Configure Database
+Replication</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Server as Standby</strong>.</p>
+  </li>
+  <li>
+    <p>Select <code class="language-plaintext highlighter-rouge">y</code> to remove all previous data from the server and configure
+it as a new standby database.</p>
+  </li>
+  <li>
+    <p>Set a unique identifier number for the standby server and enter the
+database name and credentials:</p>
+
+    <ol>
+      <li>
+        <p>Select a number to uniquely identify the node in the replication
+cluster. This number can be the same as the node’s original
+identification number.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database name.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database username.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database password.</p>
+      </li>
+      <li>
+        <p>Enter the new primary database-only appliance hostname or IP
+address.</p>
+      </li>
+      <li>
+        <p>Enter the new standby database-only appliance hostname or IP
+address.</p>
+
+        <div class="note">
+
+The hostname must be visible to all appliances that communicate
+with this database, including the engine appliances and any
+global region databases.
+
+</div>
+      </li>
+      <li>
+        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic
+failover.</p>
+
+        <div class="note">
+
+If re-using the node’s identification number, select `y` to
+overwrite the existing node ID (this cannot be undone).
+Additionally, select `y` to overwrite and reconfigure the
+replication settings in `/etc/repmgr.conf` when prompted.
+
+</div>
+      </li>
+      <li>
+        <p>Confirm that the replication standby server configuration
+details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>The standby server will then run an initial synchronization with the
+primary database, and start locally in standby mode.</p>
+
+<p>Verify the configuration on the appliance console details screen for the
+standby server. When configured successfully, <strong>Local Database Server</strong>
+shows as <code class="language-plaintext highlighter-rouge">running (standby)</code>.</p>
+
+<p>Your ManageIQ environment is now re-configured for high
+availability.</p>
+
+<h2 id="configuring-the-haproxy-load-balancer">
+<a class="anchor" href="#configuring-the-haproxy-load-balancer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the HAProxy Load Balancer</h2>
+
+<p>After configuring the appliances as described in <a href="#installation">???</a>,
+configure a load balancer to direct traffic to the non-database
+ManageIQ appliances.</p>
+
+<p>The following steps highlight the configuration requirements for the
+load balancer, which in this case is HAProxy. The load balancer is
+assigned a virtual IP address for the ManageIQ user
+interface and is pointed to one of the many non-database
+ManageIQ appliances behind the load balancer in a round
+robin fashion.</p>
+
+<p>Additionally, to avoid the HAProxy server being a single point of
+failure, two redundant HAProxy servers are configured in active-passive
+mode. The failover is orchestrated by using the <code class="language-plaintext highlighter-rouge">keepalived</code> daemon.
+<code class="language-plaintext highlighter-rouge">keepalived</code> monitors the health of the active load balancer and in case
+of a failure, the virtual IP is failed over to the passive load
+balancer, which then becomes active. The virtual IP is configured
+by`keepalived`.</p>
+
+<p>The virtual IP is the single IP address that is used as the point of
+access to the ManageIQ appliance user interfaces and is
+configured in the HAProxy configuration along with a load balancer
+profile. When an end user accesses the virtual IP, it directs traffic to
+the appropriate ManageIQ appliance based on the configured
+HAProxy policy.</p>
+
+<div class="note">
+
+Additional configuration is required to run HAProxy on Red Hat OpenStack
+Platform. See the [OpenStack Networking
+Guide](https://access.redhat.com/documentation/en/red-hat-openstack-platform/10/single/networking-guide/)
+for more information.
+
+</div>
+
+<p>This configuration uses two HAProxy servers and a virtual IP (configured
+by <code class="language-plaintext highlighter-rouge">keepalived</code>). The following example procedure uses the following IP
+addresses and names; substitute values for your environment as needed:</p>
+
+<ul>
+  <li>
+    <p>HAProxy1: 10.19.137.131 (cf-hap1.example.com)</p>
+  </li>
+  <li>
+    <p>HAProxy2: 10.19.137.132 (cf-hap2.example.com)</p>
+  </li>
+  <li>
+    <p>Virtual IP (to be configured by <code class="language-plaintext highlighter-rouge">keepalived</code>): 10.19.137.135
+(cf-ha.example.com)</p>
+  </li>
+  <li>
+    <p>MIQ Appliance 1: 10.19.137.130
+(cfme1.example.com)</p>
+  </li>
+  <li>
+    <p>MIQ Appliance 2: 10.19.137.129
+(cfme2.example.com)</p>
+  </li>
+</ul>
+
+<p>The following diagram shows the HAProxy configuration in this procedure:
+<img src="../images/cloudforms_ha_architecture_431939_0917_ece-01.png" alt="cloudforms ha architecture 431939 0917 ece
+01"></p>
+
+<p>To configure HAProxy load balancing:</p>
+
+<ol>
+  <li>
+    <p>Install two servers (virtual or physical) running Red Hat Enterprise
+Linux 7.2 or above, to be used as the HAProxy servers.</p>
+  </li>
+  <li>
+    <p>Configure subscriptions on both HAProxy servers (<code class="language-plaintext highlighter-rouge">cf-hap1</code> and
+<code class="language-plaintext highlighter-rouge">cf-hap2</code>) so that the <code class="language-plaintext highlighter-rouge">rhel-7-server-rpms</code> repository is enabled:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# subscription-manager repos --list-enabled
++-------------------------------------------+
+Available Repositories in /etc/yum.repos.d/redhat.repo
++-------------------------------------------+
+Repo Name:   Red Hat Enterprise Linux Server 7 Server (RPMs)
+
+Repo ID:     rhel-7-server-rpms
+
+Repo URL: https://cdn.redhat.com/content/dist/rhel/server/7/$release/$basearch/os
+Enabled: 1
+
+[root@cf-hap2 ~]# subscription-manager repos --list-enabled
++-------------------------------------------+
+Available Repositories in /etc/yum.repos.d/redhat.repo
++-------------------------------------------+
+Repo Name:   Red Hat Enterprise Linux Server 7 Server (RPMs)
+
+Repo ID:     rhel-7-server-rpms
+
+Repo URL: https://cdn.redhat.com/content/dist/rhel/server/7/$release/$basearch/os
+Enabled: 1
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Configure the firewall on both HAProxy servers.</p>
+
+    <ol>
+      <li>
+        <p>On the <code class="language-plaintext highlighter-rouge">cf-hap1</code> server, run the following:</p>
+
+        <div class="note">
+
+`keepalived` uses VRRP (Virtual Redundancy Router Protocol) to
+monitor the servers and determine which node is the master and
+which node is the backup. VRRP communication between routers
+uses multicast IPv4 address 224.0.0.18 and IP protocol number
+112.
+
+</div>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# firewall-cmd --permanent  --add-port=80/tcp --add-port=443/tcp --add-port=8443/tcp &amp;&amp; firewall-cmd --reload
+
+[root@cf-hap1 ~]# firewall-cmd --direct --permanent --add-rule ipv4 filter INPUT 0 \ --in-interface eth0 --destination 224.0.0.18 --protocol vrrp -j ACCEPT
+
+[root@cf-hap1 ~]#firewall-cmd --direct --permanent --add-rule ipv4 filter OUTPUT 0 \ --out-interface eth0 --destination 224.0.0.18 --protocol vrrp -j ACCEPT
+
+[root@cf-hap1 ~]# firewall-cmd --reload
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>On the <code class="language-plaintext highlighter-rouge">cf-hap2</code> server, repeat the same commands by running the
+following:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# firewall-cmd --permanent  --add-port=80/tcp --add-port=443/tcp --add-port=8443/tcp &amp;&amp; firewall-cmd --reload
+
+[root@cf-hap2 ~]# firewall-cmd --direct --permanent --add-rule ipv4 filter INPUT 0 \ --in-interface eth0 --destination 224.0.0.18 --protocol vrrp -j ACCEPT
+
+[root@cf-hap2 ~]# firewall-cmd --direct --permanent --add-rule ipv4 filter OUTPUT 0 \ --out-interface eth0 --destination 224.0.0.18 --protocol vrrp -j ACCEPT
+
+[root@cf-hap2 ~]# firewall-cmd --reload
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Install and configure <code class="language-plaintext highlighter-rouge">keepalived</code> on both servers.</p>
+
+    <ol>
+      <li>
+        <p>On the <code class="language-plaintext highlighter-rouge">cf-hap1</code> server, run the following:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# yum install keepalived -y
+
+[root@cf-hap1 ~]# cat /etc/keepalived/keepalived.conf
+vrrp_script chk_haproxy {
+script "killall -0 haproxy" # check the haproxy process
+interval 2 # every 2 seconds
+weight 2 # add 2 points if OK
+}
+vrrp_instance VI_1 {
+interface eth0             # interface to monitor
+state MASTER             # MASTER on haproxy1, BACKUP on haproxy2
+virtual_router_id 51
+priority 101             # 101 on haproxy1, 100 on haproxy2
+virtual_ipaddress {
+10.19.137.135/21 # virtual ip address
+}
+track_script {
+chk_haproxy
+}
+}
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>On the <code class="language-plaintext highlighter-rouge">cf-hap2</code> server, run the following:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# yum install keepalived -y
+
+[root@cf-hap2 ~]# cat /etc/keepalived/keepalived.conf
+vrrp_script chk_haproxy {
+script "killall -0 haproxy" # check the haproxy process
+interval 2 # every 2 seconds
+weight 2 # add 2 points if OK
+}
+vrrp_instance VI_1 {
+interface eth0             # interface to monitor
+state BACKUP             # MASTER on haproxy1, BACKUP on haproxy2
+virtual_router_id 51
+priority 100             # 101 on haproxy1, 100 on haproxy2
+virtual_ipaddress {
+10.19.137.135/21 # virtual ip address
+}
+track_script {
+chk_haproxy
+}
+}
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>On both servers, configure IP forwarding and non-local binding
+by appending the following to the <code class="language-plaintext highlighter-rouge">sysctl.conf</code> file. In order
+for the <code class="language-plaintext highlighter-rouge">keepalived</code> service to forward network packets properly
+to the real servers, each router node must have IP forwarding
+turned on in the kernel. On the <code class="language-plaintext highlighter-rouge">cf-hap1</code> server, run the
+following:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# cat /etc/sysctl.conf
+# System default settings live in /usr/lib/sysctl.d/00-system.conf.
+# To override those settings, enter new settings here, or in an /etc/sysctl.d/&lt;name&gt;.conf file
+#
+# For more information, see sysctl.conf(5) and sysctl.d(5).
+net.ipv4.ip_forward = 1
+net.ipv4.ip_nonlocal_bind = 1
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>On the <code class="language-plaintext highlighter-rouge">cf-hap2</code> server, run the following:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# cat /etc/sysctl.conf
+# System default settings live in /usr/lib/sysctl.d/00-system.conf.
+# To override those settings, enter new settings here, or in an /etc/sysctl.d/&lt;name&gt;.conf file
+#
+# For more information, see sysctl.conf(5) and sysctl.d(5).
+net.ipv4.ip_forward = 1
+net.ipv4.ip_nonlocal_bind = 1
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Verify that the <code class="language-plaintext highlighter-rouge">sysctl.conf</code> settings were saved on each
+server:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# sysctl -p
+net.ipv4.ip_forward = 1
+net.ipv4.ip_nonlocal_bind = 1
+
+[root@cf-hap2 ~]# sysctl -p
+net.ipv4.ip_forward = 1
+net.ipv4.ip_nonlocal_bind = 1
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Install HAProxy on both servers:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# yum install haproxy -y
+
+[root@cf-hap2 ~]# yum install haproxy -y
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Configure the appropriate IPs for load balancing on the <code class="language-plaintext highlighter-rouge">cf-hap1</code>
+server as follows:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# cat /etc/haproxy/haproxy.cfg
+global
+    log                 127.0.0.1 local0
+    chroot              /var/lib/haproxy
+    pidfile             /var/run/haproxy.pid
+    maxconn         4000
+    user                haproxy
+    group               haproxy
+    daemon
+defaults
+    mode                        http
+    log                         global
+    option                      httplog
+    option                      dontlognull
+    option             http-server-close
+    option     forwardfor       except 127.0.0.0/8
+    option                      redispatch
+    retries                     3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client              1m
+    timeout server          1m
+    timeout http-keep-alive     10s
+    timeout check           10s
+# ManageIQ Management UI URL
+listen apache
+  bind 10.19.137.135:80
+  mode tcp
+  balance source
+  server cfme1 10.19.137.130:80 check inter 1s
+  server cfme2 10.19.137.129:80  check inter 1s
+#
+listen apache-443
+  bind 10.19.137.135:443
+  mode tcp
+  balance source
+  server cfme1 10.19.137.130:443 check inter 1s
+  server cfme2 10.19.137.129:443  check inter 1s
+#
+listen apache-8443
+  bind 10.19.137.135:8443
+  mode tcp
+  balance source
+  server cfme1 10.19.137.130:8443 check inter 1s
+  server cfme2 10.19.137.129:8443  check inter 1s
+</code></pre></div>    </div>
+
+    <div class="note">
+
+  - The virtual IP in this configuration is 10.19.137.135
+    (cf-haproxy.example.com).
+
+  - The IP of MIQ Appliance 1 is 10.19.137.130
+    (cfme1.example.com).
+
+  - The IP of MIQ Appliance 2 is 10.19.137.129
+    (cfme2.example.com).
+
+</div>
+  </li>
+  <li>
+    <p>Configure the appropriate IPs for load balancing on the <code class="language-plaintext highlighter-rouge">cf-hap2</code>
+server as well:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# cat /etc/haproxy/haproxy.cfg
+global
+    log                 127.0.0.1 local0
+    chroot              /var/lib/haproxy
+    pidfile             /var/run/haproxy.pid
+    maxconn         4000
+    user                haproxy
+    group               haproxy
+    daemon
+defaults
+    mode                        http
+    log                         global
+    option                      httplog
+    option                      dontlognull
+    option             http-server-close
+    option     forwardfor       except 127.0.0.0/8
+    option                      redispatch
+    retries                     3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client              1m
+    timeout server          1m
+    timeout http-keep-alive     10s
+    timeout check           10s
+# ManageIQ Management UI URL
+listen apache
+  bind 10.19.137.135:80
+  mode tcp
+  balance source
+  server cfme1 10.19.137.130:80 check inter 1s
+  server cfme2 10.19.137.129:80  check inter 1s
+#
+listen apache-443
+  bind 10.19.137.135:443
+  mode tcp
+  balance source
+  server cfme1 10.19.137.130:443 check inter 1s
+  server cfme2 10.19.137.129:443  check inter 1s
+#
+listen apache-8443
+  bind 10.19.137.135:8443
+  mode tcp
+  balance source
+  server cfme1 10.19.137.130:8443 check inter 1s
+  server cfme2 10.19.137.129:8443  check inter 1s
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>On each server, start the <code class="language-plaintext highlighter-rouge">keepalived</code> and <code class="language-plaintext highlighter-rouge">haproxy</code> services:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>[root@cf-hap1~]# systemctl enable keepalived
+[root@cf-hap1~]# systemctl start keepalived
+[root@cf-hap1~]# systemctl enable haproxy
+[root@cf-hap1~]# systemctl start haproxy
+
+[root@cf-hap2~]# systemctl enable keepalived
+[root@cf-hap2~]# systemctl start keepalived
+[root@cf-hap2~]# systemctl enable haproxy
+[root@cf-hap2~]# systemctl start haproxy
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="verifying-the-haproxy-configuration">
+<a class="anchor" href="#verifying-the-haproxy-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verifying the HAProxy Configuration</h3>
+
+<p>Verify the HAProxy configuration by inspecting the following:</p>
+
+<p>On the master node (<code class="language-plaintext highlighter-rouge">cf-hap1</code>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# ip addr show dev eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:01:a4:ac:32:4e brd ff:ff:ff:ff:ff:ff
+    inet 10.19.137.131/21 brd 10.19.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 10.19.137.135/21 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 2620:52:0:1388:201:a4ff:feac:324e/64 scope global mngtmpaddr dynamic
+       valid_lft 2591800sec preferred_lft 604600sec
+    inet6 fe80::201:a4ff:feac:324e/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre></div></div>
+
+<p>On the backup node (<code class="language-plaintext highlighter-rouge">cf-hap2</code>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# ip addr show dev eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:01:a4:ac:33:a6 brd ff:ff:ff:ff:ff:ff
+    inet 10.19.137.132/21 brd 10.19.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 2620:52:0:1388:201:a4ff:feac:33a6/64 scope global noprefixroute dynamic
+       valid_lft 2591982sec preferred_lft 604782sec
+    inet6 fe80::201:a4ff:feac:33a6/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre></div></div>
+
+<p>Notice the virtual IP 10.19.137.135 has been started by <code class="language-plaintext highlighter-rouge">keepalived</code>
+(VRRP).</p>
+
+<p>Simulate a failure on the master node:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# systemctl stop keepalived
+</code></pre></div></div>
+
+<p>Notice the virtual IP failover on the master node (<code class="language-plaintext highlighter-rouge">cf-hap1</code>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# ip addr show dev eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:01:a4:ac:32:4e brd ff:ff:ff:ff:ff:ff
+    inet 10.19.137.131/21 brd 10.19.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 2620:52:0:1388:201:a4ff:feac:324e/64 scope global mngtmpaddr dynamic
+       valid_lft 2591800sec preferred_lft 604600sec
+    inet6 fe80::201:a4ff:feac:324e/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre></div></div>
+
+<p>The backup node (<code class="language-plaintext highlighter-rouge">cf-hap2</code>) shows the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# ip addr show dev eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:01:a4:ac:33:a6 brd ff:ff:ff:ff:ff:ff
+    inet 10.19.137.132/21 brd 10.19.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 10.19.137.135/21 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 2620:52:0:1388:201:a4ff:feac:33a6/64 scope global noprefixroute dynamic
+       valid_lft 2591982sec preferred_lft 604782sec
+    inet6 fe80::201:a4ff:feac:33a6/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre></div></div>
+
+<p>Your environment is now configured for high availability.</p>
+
+<div class="important">
+
+The following additional configuration in the ManageIQ user
+interface worker appliances and the load balancer are recommended for
+improved performance in worker appliances:
+
+  - For each ManageIQ appliance behind the load balancer,
+    change the `session_store` setting to `sql` in the appliance’s
+    advanced settings.
+
+  - Configure sticky sessions in the load balancer.
+
+  - Configure the load balancer to test for appliance connectivity using
+    the `https://appliance_name/ping` URL.
+
+</div>
+
+<h2 id="scaling-a-highly-available-manageiq-environment">
+<a class="anchor" href="#scaling-a-highly-available-manageiq-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scaling a Highly Available ManageIQ Environment</h2>
+
+<p>After creating high availability for the database tier and the user
+interface tier, the rest of the infrastructure should be sized
+appropriately for the roles and the environments that they manage. These
+roles and tiers use built-in high availability mechanisms like primary,
+secondary, and tertiary failover.</p>
+
+<p>You can configure additional worker appliances as needed using the steps
+in <a href="#installation_appliances_addl">???</a>, and then assign zones and
+server roles. The non-database ManageIQ appliances and
+roles can be configured in any order.</p>
+
+<p>The following diagram shows an example of a highly available database
+configuration that contains worker appliances, providers, and the
+HAProxy load balancer configured in <a href="#configuring_HAProxy">???</a>.</p>
+
+<p>The worker appliances in the diagram are labeled by server role (<strong>User
+Interface</strong>, <strong>Management</strong>, and <strong>Database Ops</strong>) and corresponding
+zone to show how a highly available environment might be scaled with
+server roles and zones.</p>
+
+<p><img src="../images/cloudforms_ha_architecture_431939_0917_ece-02.png" alt="cloudforms ha architecture 431939 0917 ece
+02"></p>
+
+<p>See
+<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/general_configuration/#regions">Regions</a>
+and
+<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/general_configuration/#servers">Servers</a>
+in <em>General Configuration</em> for more information on configuring servers
+and roles.</p>
+
+<p>See <a href="https://access.redhat.com/documentation/en-us/reference_architectures/2017/html/deploying_cloudforms_at_scale/">Deploying CloudForms at
+Scale</a>
+for further recommendations on scaling your ManageIQ
+environment.</p>
+
+<h2 id="updating-a-highly-available-manageiq-environment">
+<a class="anchor" href="#updating-a-highly-available-manageiq-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating a Highly Available ManageIQ Environment</h2>
+
+<p>Applying software package minor updates (referred to as <em>errata</em>) to
+appliances in a high availability environment must be performed in a
+specific order to avoid migrating your databases to the next major
+ManageIQ version.</p>
+
+<p><strong>Prerequisites.</strong></p>
+
+<p>Ensure each appliance is registered to Red Hat Subscription Manager and
+subscribed to the update channels required by ManageIQ in
+order to access updates.</p>
+
+<p>To verify if your appliance is registered and subscribed to the correct
+update channels, run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># yum repolist
+</code></pre></div></div>
+
+<p>Appliances must be subscribed to the following channels:</p>
+
+<ul>
+  <li>
+    <p>{product-repo_cfme}</p>
+  </li>
+  <li>
+    <p>{product-repo_ansible}</p>
+  </li>
+  <li>
+    <p>{product-repo_extras}</p>
+  </li>
+  <li>
+    <p>{product-repo_optional}</p>
+  </li>
+  <li>
+    <p>{product-repo_server}</p>
+  </li>
+</ul>
+
+<p>If any appliance shows it is not registered or is missing a subscription
+to any of these channels, see <em>Registering and Updating ManageIQ</em>
+in <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/general_configuration/">General
+Configuration</a>
+to register and subscribe the appliance.</p>
+
+<p><strong>Updating the Appliances.</strong></p>
+
+<p>Follow this procedure to update appliances in your environment without
+migrating the database to the next major version of
+ManageIQ. Note the appliance to perform each step on: some
+steps are to be performed only on the database-only appliances, and
+other steps only on the non-database ManageIQ appliances,
+while some steps apply to all appliances.</p>
+
+<ol>
+  <li>
+    <p>Power off the non-database ManageIQ appliances.</p>
+  </li>
+  <li>
+    <p>Power off the database-only appliances.</p>
+  </li>
+  <li>
+    <p>Back up each appliance:</p>
+
+    <ol>
+      <li>
+        <p>Back up the database of your appliance. Take a snapshot if
+possible.</p>
+      </li>
+      <li>
+        <p>Back up the following files for disaster recovery, noting which
+appliance each comes from:</p>
+
+        <ul>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/GUID</code></p>
+          </li>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/REGION</code></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Note the hostnames and IP addresses of each appliance. This
+information is available on the summary screen of the appliance
+console.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Start each database-only appliance.</p>
+  </li>
+  <li>
+    <p>Start each non-database ManageIQ appliance again, and
+stop <code class="language-plaintext highlighter-rouge">evmserverd</code> on each just after boot:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl stop evmserverd
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Apply updates by running the following on each appliance:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># yum update
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>On one of the non-database ManageIQ appliances, apply
+any database schema updates included in the errata, and reset the
+Red Hat and ManageIQ automation domains:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># vmdb
+# rake db:migrate
+# rake evm:automate:reset
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Power off the non-database ManageIQ appliances.</p>
+  </li>
+  <li>
+    <p>Reboot the database-only appliances.</p>
+  </li>
+  <li>
+    <p>Wait five minutes, then start the non-database
+ManageIQ appliances again.</p>
+  </li>
+</ol>
+
+<p>The appliances in your high availability environment are now up to date.</p>
+
+<h2 id="updating-hostnames-on-database-only-appliances">
+<a class="anchor" href="#updating-hostnames-on-database-only-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating Hostnames on Database-Only Appliances</h2>
+
+<p>When updating the hostnames of database-only appliances in a cluster,
+you must also re-configure high availability on the primary and standby
+database-only appliances.</p>
+
+<h3 id="preparing-to-update-appliance-hostnames">
+<a class="anchor" href="#preparing-to-update-appliance-hostnames" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing to Update Appliance Hostnames</h3>
+
+<p>Before updating the hostnames of your appliances, complete the
+following:</p>
+
+<ol>
+  <li>
+    <p>Note the hostnames of the active database (primary) appliance and
+the standby database appliances in the appliance console.</p>
+
+    <p>You can verify this from the appliance summary screen of a
+database-only appliance, where the status for <strong>Local Database
+Server</strong> shows <em>primary</em> or <em>standby</em>, for example:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>...
+Local Database Server:   running (primary)
+...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>On the non-database ManageIQ appliances, stop the
+failover monitor:</p>
+
+    <ol>
+      <li>
+        <p>In the appliance console menu, select <strong>Configure Application
+Database Failover Monitor</strong>.</p>
+      </li>
+      <li>
+        <p>Select <strong>Stop Database Failover Monitor</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>On the <em>standby</em> database-only appliances, stop the <code class="language-plaintext highlighter-rouge">postgresql</code>
+database service:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl stop postgresql.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Stop <code class="language-plaintext highlighter-rouge">evmserverd</code> on each non-database ManageIQ
+appliance:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl stop evmserverd
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="updating-the-primary-database-only-appliance-hostname">
+<a class="anchor" href="#updating-the-primary-database-only-appliance-hostname" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the Primary Database-Only Appliance Hostname</h3>
+
+<p>Run the following steps on your primary database-only appliance:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, configure the new hostname or IP
+address from the <strong>Configure Network</strong> option.</p>
+  </li>
+  <li>
+    <p>Restart the appliance.</p>
+  </li>
+  <li>
+    <p>Update the <code class="language-plaintext highlighter-rouge">host</code> key to the primary database appliance’s new
+hostname in <code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/config/database.yml</code>.</p>
+  </li>
+</ol>
+
+<h3 id="updating-the-standby-database-only-appliance-hostname">
+<a class="anchor" href="#updating-the-standby-database-only-appliance-hostname" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the Standby Database-Only Appliance Hostname</h3>
+
+<p>Run the following steps on your standby database-only appliances:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, configure the new hostname or IP
+address from the <strong>Configure Network</strong> option.</p>
+  </li>
+  <li>
+    <p>Restart the appliance.</p>
+  </li>
+  <li>
+    <p>Update the <code class="language-plaintext highlighter-rouge">host</code> key to the standby database appliance’s new
+hostname in <code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/config/database.yml</code>.</p>
+  </li>
+</ol>
+
+<p>Repeat these steps on any additional standby database-only appliances.</p>
+
+<div class="important">
+
+Your primary and standby appliances must be reachable to each other by
+their hostnames. If all appliances are on the same network and are
+resolvable, no additional updates are needed. If your appliances exist
+on different networks, edit the `/etc/hosts` file on each database
+appliance to include entries for the IP address and hostname of each
+other database appliance in the cluster.
+
+</div>
+
+<p>Proceed to re-configure high availability on the primary and standby
+database-only appliances.</p>
+
+<h3 id="re-configuring-high-availability-on-database-only-appliances">
+<a class="anchor" href="#re-configuring-high-availability-on-database-only-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Re-configuring High Availability on Database-Only Appliances</h3>
+
+<p>Re-configure replication on the database-only appliances, and restart
+services on your cluster.</p>
+
+<h4 id="configuring-the-primary-database-only-appliance-1">
+<a class="anchor" href="#configuring-the-primary-database-only-appliance-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Primary Database-Only Appliance</h4>
+
+<p>On the primary database-only appliance, initialize the nodes in the
+database cluster to re-configure the database replication:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, select <strong>Configure Database
+Replication</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Server as Primary</strong>.</p>
+  </li>
+  <li>
+    <p>Set a unique identifier number for the server and enter the database
+name and credentials:</p>
+
+    <ol>
+      <li>
+        <p>Select a number to uniquely identify the node in the replication
+cluster.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database name.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database username.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database password and confirm the password.</p>
+      </li>
+      <li>
+        <p>Enter the new primary database-only appliance hostname or IP
+address.</p>
+
+        <div class="note">
+
+The hostname or IP address must be visible to all appliances
+that communicate with this database, including the non-database
+ManageIQ appliances and any global region
+databases.
+
+</div>
+      </li>
+      <li>
+        <p>Confirm that the replication server configuration details are
+correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h4 id="configuring-the-standby-database-only-appliance-1">
+<a class="anchor" href="#configuring-the-standby-database-only-appliance-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Standby Database-Only Appliance</h4>
+
+<p>The steps to re-configure the standby database-only appliances are
+similar to that of the primary database-only appliance, in that they
+prepare the appliance to be database-only, but as the standby.</p>
+
+<p>On the standby database-only appliances, configure the following:</p>
+
+<ol>
+  <li>
+    <p>In the appliance console menu, select <strong>Configure Database
+Replication</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Server as Standby</strong>.</p>
+  </li>
+  <li>
+    <p>Select the database disk. ManageIQ then activates the
+configuration.</p>
+  </li>
+  <li>
+    <p>Set a unique identifier number for the standby server and enter the
+database name and credentials:</p>
+
+    <ol>
+      <li>
+        <p>Select a number to uniquely identify the node in the replication
+cluster.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database name.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database username.</p>
+      </li>
+      <li>
+        <p>Enter the cluster database password.</p>
+      </li>
+      <li>
+        <p>Enter the new primary database-only appliance hostname or IP
+address.</p>
+      </li>
+      <li>
+        <p>Enter the new standby database-only appliance hostname or IP
+address.</p>
+
+        <div class="note">
+
+The hostname or IP address must be visible to all appliances
+that communicate with this database, including the engine
+appliances and any global region databases.
+
+</div>
+      </li>
+      <li>
+        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic
+failover.</p>
+      </li>
+      <li>
+        <p>Confirm that the replication standby server configuration
+details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.
+The standby server will then run an initial synchronization with
+the primary database, and start locally in standby mode.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Verify the configuration on the appliance console details screen for
+the standby server. When configured successfully, <strong>Local Database
+Server</strong> shows as <code class="language-plaintext highlighter-rouge">running (standby)</code>.</p>
+  </li>
+</ol>
+
+<p>Repeat these steps on any additional standby database-only appliances.</p>
+
+<div class="important">
+
+If you are using non-dedicated database appliances, also stop
+`evmserverd` on those appliances before changing their hostnames, and
+reconfigure `database.yml` before restarting.
+
+</div>
+
+<h4 id="restarting-services">
+<a class="anchor" href="#restarting-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restarting Services</h4>
+
+<ol>
+  <li>
+    <p>Start <code class="language-plaintext highlighter-rouge">evmserverd</code> on each non-database ManageIQ
+appliance:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># systemctl start evmserverd
+</code></pre></div>    </div>
+
+    <p>After <code class="language-plaintext highlighter-rouge">evmserverd</code> has started successfully, all appliances will be
+able connect to the database.</p>
+  </li>
+  <li>
+    <p>Restart the failover monitor on the non-database
+ManageIQ appliances:</p>
+
+    <ol>
+      <li>
+        <p>In the appliance console menu, select <strong>Configure Application
+Database Failover Monitor</strong>.</p>
+      </li>
+      <li>
+        <p>Select <strong>Start Database Failover Monitor</strong>.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<div class="note">
+
+You can view a summary of the updated appliances by running `repmgr
+cluster show` on one of the database appliances.
+
+</div>
+
+<p>Your ManageIQ environment is now re-configured for high
+availability.</p>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

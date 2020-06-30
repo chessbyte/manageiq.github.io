@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/latest/integration_with_openshift_container_platform/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/latest/integration_with_openshift_container_platform/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Latest
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_latest>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#integration-with-openshift-container-platform">Integration with OpenShift Container Platform</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#overview">Overview</a></li>
+<li class="toc-entry toc-h2"><a href="#prerequisites">Prerequisites</a></li>
+<li class="toc-entry toc-h2"><a href="#enabling-openshift-container-platform-metrics">Enabling OpenShift Container Platform Metrics</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-the-required-service-accounts">Configuring the Required Service Accounts</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-metrics-components">Configuring Metrics Components</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#deploying-the-metrics-components">Deploying the Metrics Components</a></li>
+<li class="toc-entry toc-h3"><a href="#applying-the-hawkular-metrics-settings-to-openshift-container-platform">Applying the Hawkular Metrics Settings to OpenShift Container Platform</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#retrieving-the-openshift-container-platform-management-token">Retrieving the OpenShift Container Platform Management Token</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-manageiq">Configuring ManageIQ</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-manageiq-capacity-and-utilization">Configuring ManageIQ Capacity and Utilization</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#enabling-smartstate-analysis">Enabling SmartState Analysis</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#adding-openshift-container-platform-as-a-container-provider">Adding OpenShift Container Platform as a Container Provider</a></li>
+<li class="toc-entry toc-h2"><a href="#container-image-scanning">Container Image Scanning</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-image-scanning">Configuring Image Scanning</a></li>
+<li class="toc-entry toc-h2"><a href="#scheduling-a-recurring-scan">Scheduling A Recurring Scan</a></li>
+<li class="toc-entry toc-h2"><a href="#working-with-images">Working with Images</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#viewing-results">Viewing Results</a></li>
+<li class="toc-entry toc-h3"><a href="#manual-scanning">Manual Scanning</a></li>
+<li class="toc-entry toc-h3"><a href="#evaluating-compliance">Evaluating Compliance</a></li>
+<li class="toc-entry toc-h3"><a href="#generating-a-report-on-images">Generating a Report on Images</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#openscap-policy-profile">OpenSCAP Policy Profile</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#customizing-the-scanning-policy-profile">Customizing the Scanning Policy Profile</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#controlling-openshift-pod-execution">Controlling OpenShift Pod Execution</a></li>
+<li class="toc-entry toc-h2"><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul><h1 id="integration-with-openshift-container-platform">
+<a class="anchor" href="#integration-with-openshift-container-platform" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integration with OpenShift Container Platform</h1>
+
+<h2 id="overview">
+<a class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>This guide walks you through adding a Red Hat OpenShift Container
+Platform cluster to a ManageIQ container provider catalog. This
+deployment focuses on enabling the OpenShift Container Platform cluster
+metrics plug-in, so that ManageIQ can collect information
+from an OpenShift Container Platform cluster upon integration.</p>
+
+<p>Each procedure in this guide is covered in greater detail in the
+<a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/">ManageIQ</a>
+and <a href="https://access.redhat.com/documentation/en/openshift-container-platform/">OpenShift Container
+Platform</a>
+product documentation. However, links to the corresponding sections are
+provided for more detail.</p>
+
+<p>The following sections will describe the required configuration for both
+products prior to integration.</p>
+
+<h2 id="prerequisites">
+<a class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<p>This guide assumes that you have:</p>
+
+<ul>
+  <li>
+    <p><a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/">Already deployed ManageIQ on your chosen
+platform</a></p>
+  </li>
+  <li>
+    <p><a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/">Already deployed OpenShift Container
+Platform</a></p>
+  </li>
+</ul>
+
+<p>When enabling metrics on OpenShift Container Platform, you can store
+your metrics data on <em>persistent</em> or <em>non-persistent</em> storage. To use
+persistent storage, you need to provision a persistent volume
+specifically for this purpose before <a href="#ocp-metrics-storage">configuring the metrics
+components</a>. See <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#architecture-additional-concepts-storage">Persistent
+Volumes</a>
+in the OpenShift Container Platform <em>Architecture</em> documentation for
+more information.</p>
+
+<h2 id="enabling-openshift-container-platform-metrics">
+<a class="anchor" href="#enabling-openshift-container-platform-metrics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling OpenShift Container Platform Metrics</h2>
+
+<p>In order for ManageIQ to collect OpenShift Container
+Platform node, pod, and container, you must first enable <em>cluster
+metrics</em> for your OpenShift cluster. This involves running the OpenShift
+Metrics services inside your cluster. If cluster metrics are already
+enabled on OpenShift, skip this section and proceed to
+<a href="#Obtaining_OpenShift_Management_Token">???</a>.</p>
+
+<div class="note">
+
+This section is an abridged version of a more detailed chapter, namely
+[Enabling Cluster
+Metrics](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics)
+from the OpenShift Container Platform *Installation and Configuration*
+documentation. Refer to that chapter for more information.
+
+</div>
+
+<h2 id="configuring-the-required-service-accounts">
+<a class="anchor" href="#configuring-the-required-service-accounts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Required Service Accounts</h2>
+
+<p>Cluster metrics requires the following service accounts:</p>
+
+<ul>
+  <li>
+    <p><strong>metrics-deployer</strong></p>
+  </li>
+  <li>
+    <p><strong>heapster</strong></p>
+  </li>
+</ul>
+
+<div class="important">
+
+If you deployed OpenShift using `openshift-ansible-3.0.20`, then the
+service account and roles required for enabling metrics will already be
+installed. You can skip this section and go to [Configuring Metrics
+Components](#ocp-metrics-storage).
+
+</div>
+
+<p>To create these accounts:</p>
+
+<ol>
+  <li>
+    <p>Log in as an administrator to any node within the OpenShift
+Container Platform cluster.</p>
+  </li>
+  <li>
+    <p>Open a terminal.</p>
+  </li>
+  <li>
+    <p>Switch to the <strong>openshift-infra</strong> project:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oc project openshift-infra
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a service account for the Metrics Deployer named
+<strong>metrics-deployer</strong>:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oc create -f - &lt;&lt;API
+  apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: metrics-deployer
+  secrets:
+  - name: metrics-deployer
+  API
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>As described in <a href="#ocp-metrics-storage">Configuring Metrics
+Components</a>, the Metrics Deployer uses the
+<strong>metrics-deployer</strong> service account. Configure the
+<strong>metrics-deployer</strong> account to have <strong>edit</strong> permissions in the
+<strong>openshift-infra</strong> project:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oadm policy add-role-to-user \
+    edit system:serviceaccount:openshift-infra:metrics-deployer
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The <strong>heapster</strong> account will be automatically created in <a href="#ocp-metrics-deploy">Deploying
+the Metrics Components</a>. However, pre-emptively
+grant it <strong>cluster-reader</strong> permission to the <strong>openshift-infra</strong>
+project:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oadm policy add-cluster-role-to-user \
+    cluster-reader system:serviceaccount:openshift-infra:heapster
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="configuring-metrics-components">
+<a class="anchor" href="#configuring-metrics-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Metrics Components</h2>
+
+<p>The Metrics Deployer installs and configures the components required for
+OpenShift Container Platform metrics. By default, the Metrics Deployer
+uses <em>self-signed certificates</em> to secure communication between
+components. This document assumes that you will use this default. For
+information on alternative secure communication configurations, see
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-using-secrets">Using
+Secrets</a>
+from the OpenShift Container Platform <em>Installation and Configuration</em>
+documentation.</p>
+
+<div class="note">
+
+This section is an abridged version of a more detailed chapter, namely
+[Metrics Data
+Storage](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-data-storage)
+in the OpenShift Container Platform *Installation and Configuration*
+documentation. Refer to that chapter for more information on how to
+deploy the metrics plug-in using persistent and non-persistent storage.
+
+</div>
+
+<h3 id="deploying-the-metrics-components">
+<a class="anchor" href="#deploying-the-metrics-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying the Metrics Components</h3>
+
+<p>OpenShift Container Platform uses <em>Hawkular Metrics</em> as its metrics
+engine. The Metrics Deployer will install the Hawkular Metrics service;
+however, you need to provide the external hostname so that
+ManageIQ can reach the Hawkular Metrics service. The base
+configuration of the Metrics Deployer is defined in the
+<code class="language-plaintext highlighter-rouge">/usr/share/openshift/examples/infrastructure-templates/enterprise/metrics-deployer.yaml</code>
+file.</p>
+
+<p>Before deploying OpenShift metrics, choose a storage option, then log in
+as an administrator to any node within the OpenShift Container Platform
+cluster. From there, open a terminal and run the corresponding command:</p>
+
+<ul>
+  <li>
+    <p>Deploying with persistent storage
+With <em>persistent storage</em>, OpenShift metrics will be stored on a
+persistent volume. This offers metrics data protection by allowing
+it to survive a pod recreation or restart. OpenShift metrics
+requires a specifically configured persistent volume; see
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#persistent-volumes">Persistent
+Volumes</a>
+in the OpenShift Container Platform <em>Architecture</em> documentation.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oc new-app \
+    -f /usr/share/openshift/examples/infrastructure-templates/enterprise/metrics-deployer.yaml \
+    -p HAWKULAR_METRICS_HOSTNAME=HAWKULARHOST
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Deploying with non-persistent storage
+With <em>non-persistent storage</em>, any stored metrics will be deleted
+when the pod is deleted. While it is much easier to run cluster
+metrics with non-persistent data, it does come with the risk of
+permanent data loss. So, while you no longer need to provision and
+configure a volume to store metric data, this does not offer the
+same protection as persistent storage.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oc new-app \
+    -f /usr/share/openshift/examples/infrastructure-templates/enterprise/metrics-deployer.yaml \
+    -p HAWKULAR_METRICS_HOSTNAME=HAWKULARHOST \
+    -p USE_PERSISTENT_STORAGE=false
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>For either command, replace <em>HAWKULARHOST</em> with the external hostname
+that ManageIQ will use to reach the Hawkular Metrics
+service. <em>HAWKULARHOST</em> must be a fully-qualified domain name.</p>
+
+<p>Either storage method deploys the required metrics components and
+creates the necessary service accounts. In particular, the metrics
+components will be configured to also use the specified <em>HAWKULARHOST</em>
+as its public endpoint.</p>
+
+<h3 id="applying-the-hawkular-metrics-settings-to-openshift-container-platform">
+<a class="anchor" href="#applying-the-hawkular-metrics-settings-to-openshift-container-platform" aria-hidden="true"><span class="octicon octicon-link"></span></a>Applying the Hawkular Metrics Settings to OpenShift Container Platform</h3>
+
+<p>After deploying the metrics components, configure OpenShift Container
+Platform to use them:</p>
+
+<ol>
+  <li>
+    <p>Open the OpenShift Master Configuration file at
+<code class="language-plaintext highlighter-rouge">/etc/origin/master/master-config.yaml</code>. Add the
+<strong>metricsPublicURL</strong> parameter to the <strong>assetConfig</strong> section,
+specifying the <em>HAWKULARHOST</em> you specified in <a href="#ocp-metrics-deploy">Deploying the
+Metrics Components</a>:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>assetConfig:
+    ...
+    metricsPublicURL: "https://HAWKULARHOST/hawkular/metrics"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart your OpenShift Container Platform master host:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ sudo systemctl restart atomic-openshift-master
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="retrieving-the-openshift-container-platform-management-token">
+<a class="anchor" href="#retrieving-the-openshift-container-platform-management-token" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieving the OpenShift Container Platform Management Token</h2>
+
+<p>After enabling cluster metrics on your OpenShift Container Platform
+deployment, retrieve the <em>management token</em> while you are still logged
+in to the OpenShift Container Platform host. This will be required later
+in <a href="#integration">???</a>.</p>
+
+<ul>
+  <li>For OpenShift Container Platform 3.3 or later
+Provide the token needed to add an OpenShift Container Platform 3.3
+(or later) provider.</li>
+</ul>
+
+<p>Run the following to obtain the token needed to add an OpenShift
+Container Platform 3.3 (or later) provider:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># oc sa get-token -n management-infra management-admin
+eyJhbGciOiJSUzI1NiI...
+</code></pre></div></div>
+
+<ul>
+  <li>For OpenShift Enterprise 3.2
+Provide the token needed to add an OpenShift Enterprise 3.2
+provider.</li>
+</ul>
+
+<p>Run the following to obtain the token needed to add an OpenShift
+Enterprise 3.2 provider:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># oc sa get-token -n management-infra management-admin
+eyJhbGciOiJSUzI1NiI...
+</code></pre></div></div>
+
+<ul>
+  <li>For OpenShift Enterprise 3.1
+Provide the token needed to add an OpenShift Enterprise 3.1
+provider.</li>
+</ul>
+
+<p>Run the following to obtain the token needed to add an OpenShift
+Enterprise 3.1 provider:</p>
+
+<ol>
+  <li>
+    <p>Obtain the <code class="language-plaintext highlighter-rouge">management</code> service account token name:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># oc describe sa -n management-infra management-admin
+...
+Tokens:  management-admin-token-0f3fh
+         management-admin-token-q7a87
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Select and describe one of the tokens to retrieve the full token
+output, replacing <code class="language-plaintext highlighter-rouge">management-admin-token-0f3fh</code> with the name of
+your token:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># oc describe secret -n management-infra management-admin-token-0f3fh
+...
+Data
+====
+token:  eyJhbGciOiJSUzI1NiI...
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="configuring-manageiq">
+<a class="anchor" href="#configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ</h2>
+
+<p>Configuring ManageIQ involves two steps:</p>
+
+<ol>
+  <li>
+    <p><a href="#cf-caputils">Configuring ManageIQ Capacity and
+Utilization</a>, and</p>
+  </li>
+  <li>
+    <p><a href="#cf-smartproxy">???</a></p>
+  </li>
+</ol>
+
+<p>These steps are required to allow ManageIQ to collect
+metrics from OpenShift Container Platform (<a href="#ocp-metrics">???</a>) and use
+them to perform a SmartState analysis. You can choose different servers
+to perform either function; the following sections assume that you will.</p>
+
+<h2 id="configuring-manageiq-capacity-and-utilization">
+<a class="anchor" href="#configuring-manageiq-capacity-and-utilization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ Capacity and Utilization</h2>
+
+<p>For metrics collection to work properly, you also need to configure
+ManageIQ to allow for all three <strong>Capacity &amp; Utilization</strong> server
+roles, which are available from the settings menu under
+menu:Configuration[Server &gt; Server Control].</p>
+
+<p>To enable these server roles:</p>
+
+<ol>
+  <li>
+    <p>Click <strong>Configuration</strong>, then select the server to configure from
+menu:Settings[Zone] in the accordion menu on the left.</p>
+  </li>
+  <li>
+    <p>Navigate to the <strong>Server Roles</strong> list in the menu:Server[Server
+Control] section. From there, set the required capacity and
+utilization roles to <strong>ON</strong>, namely:</p>
+
+    <ol>
+      <li>
+        <p><strong>Capacity &amp; Utilization Coordinator</strong></p>
+      </li>
+      <li>
+        <p><strong>Capacity &amp; Utilization Data Collector</strong></p>
+      </li>
+      <li>
+        <p><strong>Capacity &amp; Utilization Data Processor</strong></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>Data collection is enabled immediately. However, the first collection
+begins 5 minutes after the server is started, and every 10 minutes after
+that. Therefore, the longest the collection takes after enabling the
+Capacity &amp; Utilization Collector role is 10 minutes. The first
+collection from a particular provider may take a few minutes since
+ManageIQ is gathering data points going one month back in time.</p>
+
+<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/deployment_planning_guide/#capacity-and-utilization-collection">Capacity and Utilization
+Collection</a>
+in the <em>Deployment Planning Guide</em>.</p>
+
+<h3 id="enabling-smartstate-analysis">
+<a class="anchor" href="#enabling-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling SmartState Analysis</h3>
+
+<p>After enabling the required server roles, enable SmartState analysis.
+See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/support_matrix/#smart_state_analysis_support">Smart State Analysis
+Support</a>
+from the Support Matrix and <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#running-a-smartstate-analysis">Running a SmartState
+Analysis</a>
+in the <em>Managing Providers</em> guide for more information.</p>
+
+<p>Enabling SmartState analysis is similar to <a href="#cf-caputils">???</a>, in that
+the procedure also involves enabling server roles on a specific server.
+To do so:</p>
+
+<ol>
+  <li>
+    <p>Click i*Configuration*.</p>
+  </li>
+  <li>
+    <p>Select the server to configure from menu:Settings[Zone] in the
+left pane of the appliance.</p>
+  </li>
+  <li>
+    <p>Navigate to the <strong>Server Roles</strong> list in the menu:Server[Server
+Control] section. From there, set the appropriate SmartState roles
+to <strong>ON</strong>. Namely:</p>
+
+    <ol>
+      <li>
+        <p><strong>SmartProxy</strong></p>
+      </li>
+      <li>
+        <p><strong>SmartState Analysis</strong></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="adding-openshift-container-platform-as-a-container-provider">
+<a class="anchor" href="#adding-openshift-container-platform-as-a-container-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding OpenShift Container Platform as a Container Provider</h2>
+
+<p>At this point, you should now be ready to add your OpenShift cluster to
+ManageIQ as a container provider. To do so, prepare the token you
+retrieved in <a href="#Obtaining_OpenShift_Management_Token">???</a> and follow the
+procedure below:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Containers &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1862.png" alt="Add a New Containers Provider"> (<strong>Add a
+New Containers Provider</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> for the provider.</p>
+  </li>
+  <li>
+    <p>From the <strong>Type</strong> list, select <strong>OpenShift Container Platform</strong>.</p>
+  </li>
+  <li>
+    <p>Enter the appropriate <strong>Zone</strong> for the provider. If you do not
+specify a zone, it is set to <code class="language-plaintext highlighter-rouge">default</code>.</p>
+  </li>
+  <li>
+    <p>From the <strong>Alerts</strong> list, select <strong>Prometheus</strong> to enable external
+alerts. Selecting <strong>Prometheus</strong> adds an <strong>Alerts</strong> tab to the lower
+pane to configure the Prometheus service. Alerts are disabled by
+default.</p>
+  </li>
+  <li>
+    <p>From the <strong>Metrics</strong> list, select <strong>Hawkular</strong> or <strong>Prometheus</strong> to
+collect capacity and utilization data, or leave as <strong>Disabled</strong>.
+Selecting <strong>Prometheus</strong> or <strong>Hawkular</strong> adds a <strong>Metrics</strong> tab to
+the lower pane for further configuration. Metrics are disabled by
+default.</p>
+  </li>
+  <li>
+    <p>In the <strong>Default</strong> tab, configure the following for the OpenShift
+provider:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the provider:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option.</p>
+          </li>
+          <li>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
+self-signed certificate. For this option, copy your
+provider’s CA certificate to the <strong>Trusted CA
+Certificates</strong> box in PEM format.</p>
+
+            <div class="note">
+
+You can obtain your OpenShift Container Platform provider’s
+CA certificate for all endpoints (default, metrics, alerts)
+from `/etc/origin/master/ca.crt`. Paste the output (a block
+of text starting with `-----BEGIN CERTIFICATE-----`) into
+the **Trusted CA Certificates** field.
+
+</div>
+          </li>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely (not recommended).</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
+provider.</p>
+
+        <div class="important">
+
+The **Hostname** must use a unique fully qualified domain name.
+
+</div>
+      </li>
+      <li>
+        <p>Enter the <strong>API Port</strong> of the provider. The default port is
+<code class="language-plaintext highlighter-rouge">8443</code>.</p>
+      </li>
+      <li>
+        <p>Enter a token for your provider in the <strong>Token</strong> box.</p>
+
+        <div class="note">
+
+To obtain a token for your provider, run the `oc get secret`
+command on your provider; see [Obtaining an OpenShift Container
+Platform Management
+Token](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#Obtaining_OpenShift_Container_Platform_Management_Token).
+
+For example:
+
+\# oc get secret --namespace management-infra
+management-admin-token-8ixxs --template='' | base64 --decode
+
+</div>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
+to the OpenShift Container Platform provider.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>For the <strong>Prometheus</strong> alerts service, add the Prometheus alerts
+endpoint in the <strong>Alerts</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the service:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option.</p>
+          </li>
+          <li>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
+self-signed certificate. For this option, copy your
+provider’s CA certificate to the <strong>Trusted CA
+Certificates</strong> box in PEM format.</p>
+          </li>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely using SSL. (Not recommended)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) or alert
+<strong>Route</strong>.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>API Port</strong> if your Prometheus provider uses a
+non-standard port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can
+connect to the alerts service.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>If you selected a metrics service, configure the service details in
+the <strong>Metrics</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the service:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option.</p>
+          </li>
+          <li>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
+self-signed certificate. For this option, copy your
+provider’s CA certificate to the <strong>Trusted CA
+Certificates</strong> box in PEM format.</p>
+
+            <div class="note">
+
+In OpenShift, the default deployment of the router generates
+certificates during installation, which can be used with the
+**SSL trusting custom CA** option. Connecting a Hawkular
+endpoint with this option requires the CA certificate that
+the cluster uses for service certificates, which is stored
+in `/etc/origin/master/service-signer.crt` on the first
+master in a cluster.
+
+</div>
+          </li>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely using SSL. (Not recommended)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
+provider, or use the <strong>Detect</strong> button to find the hostname.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>API Port</strong> if your Hawkular or Prometheus provider
+uses a non-standard port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
+to the metrics endpoint.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Advanced</strong> tab to add image inspector settings for
+scanning container images on your provider using OpenSCAP.</p>
+
+    <div class="note">
+
+  - These settings control downloading the image inspector container
+    image from the registry and obtaining the Common Vulnerabilities
+    and Exposures (CVE) information (for effective scanning) via a
+    proxy.
+
+  - CVE URL that ManageIQ requires to be open for
+    OpenSCAP scanning:
+    &lt;https://www.redhat.com/security/data/metrics/ds/&gt;. This
+    information is based on the source code of OpenSCAP.
+
+</div>
+
+    <ol>
+      <li>
+        <p>Enter the proxy information for the provider in either <strong>HTTP</strong>,
+<strong>HTTPS</strong>, or <strong>NO Proxy</strong> depending on your environment.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Image-Inspector Repository</strong> information. For
+example, <code class="language-plaintext highlighter-rouge">openshift3/image-inspector</code>.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Image-Inspector Registry</strong> information. For example,
+<code class="language-plaintext highlighter-rouge">registry.access.redhat.com</code>.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Image-Inspector Tag</strong> value. A tag is a mark used to
+differentiate images in a repository, typically by the
+application version stored in the image.</p>
+      </li>
+      <li>
+        <p>Enter <code class="language-plaintext highlighter-rouge">https://www.redhat.com/security/data/metrics/ds/</code> in
+<strong>CVE location</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+You can also set global default image-inspector settings for all
+OpenShift providers in the advanced settings menu by editing the values
+under `ems_kubernetes`, instead of setting this for each provider.
+
+For example:
+
+    :image_inspector_registry: registry.access.redhat.com
+    :image_inspector_repository: openshift3/image-inspector
+
+</div>
+
+<h2 id="container-image-scanning">
+<a class="anchor" href="#container-image-scanning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Container Image Scanning</h2>
+
+<h2 id="configuring-image-scanning">
+<a class="anchor" href="#configuring-image-scanning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Image Scanning</h2>
+
+<p>ManageIQ manages vulnerability scanning of container images. When
+an OpenShift provider is added, OpenShift images from the internal
+registry are discovered. To enable image scanning, perform the following
+configuration steps:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Containers &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Select the checkboxes of the OpenShift providers on which to enable
+scanning.</p>
+  </li>
+  <li>
+    <p>From the <strong>Policy</strong> pull-down menu, click <strong>Manage Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Select the <strong>OpenSCAP profile</strong> checkbox.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>This action will trigger a SmartState analysis, or scan, of all images
+referenced by the OpenShift provider. The initial scan may take several
+hours to complete, depending on the number and size of images. The scan
+occurs in the OpenShift provider, which ManageIQ receives
+and records in the database. OpenShift limits the number of scanning
+pods; only three images can be scanned simultaneously.</p>
+
+<h2 id="scheduling-a-recurring-scan">
+<a class="anchor" href="#scheduling-a-recurring-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scheduling A Recurring Scan</h2>
+
+<p>Software vulnerability databases are updated frequently. To apply these
+updates, a rescan is required. To schedule a recurring scan of container
+images:</p>
+
+<p><img src="../images/:schedule_openscap_scan.png" alt=":schedule openscap scan"></p>
+
+<ol>
+  <li>
+    <p>Click <img src="../images/config-gear.png" alt="config gear"> (<strong>Configuration</strong>).</p>
+  </li>
+  <li>
+    <p>From menu:Settings[Zones] in the left pane of the appliance,
+select <strong>Schedules</strong>.</p>
+  </li>
+  <li>
+    <p>From the drop-down menu, click menu:Configuration[Add a new
+Schedule].</p>
+  </li>
+  <li>
+    <p>Type an arbitrary <strong>Name</strong>.</p>
+  </li>
+  <li>
+    <p>Type an arbitrary <strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>Ensure the <strong>Active</strong> checkbox is selected.</p>
+  </li>
+  <li>
+    <p>In <strong>Action</strong>, select <strong>Container Image Analysis</strong>.</p>
+  </li>
+  <li>
+    <p>In <strong>Filter</strong>, select <strong>All Container Images for Containers
+Provider</strong>, <strong>OpenShift</strong>.</p>
+  </li>
+  <li>
+    <p>In <strong>Run</strong>, set the schedule as desired.</p>
+  </li>
+  <li>
+    <p>Set the <strong>Time Zone</strong>, <strong>Starting Date</strong>, and <strong>Starting Time</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="working-with-images">
+<a class="anchor" href="#working-with-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working with Images</h2>
+
+<h3 id="viewing-results">
+<a class="anchor" href="#viewing-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing Results</h3>
+
+<p>Image scanning results are displayed in each image summary page.</p>
+
+<ol>
+  <li>
+    <p>Select menu:Compute[Containers &gt; Container Images].</p>
+  </li>
+  <li>
+    <p>Click the desired image.</p>
+  </li>
+</ol>
+
+<p>For an OpenSCAP HTML report, locate the <strong>Configuration</strong> section and
+select <strong>OpenSCAP HTML</strong>.</p>
+
+<p><img src="../images/:container_configuration.png" alt=":container configuration"></p>
+
+<p>For compliance and scanning history information, locate the
+<strong>Compliance</strong> section and note the <strong>Status</strong> field or select
+<strong>Available</strong> from the <strong>History</strong> field.</p>
+
+<p><img src="../images/:container_scan_history.png" alt=":container scan history"></p>
+
+<h3 id="manual-scanning">
+<a class="anchor" href="#manual-scanning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manual Scanning</h3>
+
+<p>SmartState analysis scanning may be initiated manually for images. From
+an image summary page, select menu:Configuration[Perform SmartState
+Analysis]. Refreshing the image page will reflect the latest scan
+results and compliance history.</p>
+
+<h3 id="evaluating-compliance">
+<a class="anchor" href="#evaluating-compliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evaluating Compliance</h3>
+
+<p>If the image scan policy has been updated since the last scan,
+compliance conditions may be re-evaluated. From an image summary page,
+select menu:Policy[Check Compliance of Last Known Configuration].
+Refreshing the image page will reflect the latest compliance history.</p>
+
+<h3 id="generating-a-report-on-images">
+<a class="anchor" href="#generating-a-report-on-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generating a Report on Images</h3>
+
+<p>You can output the results of an OpenSCAP scan of images to a report for an overview of the security risk level of images. The **Images by Failed OpenSCAP Rule Results are included with ManageIQ and shows whether the image passed or failed OpenSCAP policy criteria, and the security risk.</p>
+
+<p><strong>Note</strong>: You can also create a copy of this report and edit it to contain additional information, such as the project name where the image is used to produce more useful results. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/monitoring_alerts_and_reporting/index.html#editing-a-report">Editing a Report</a> and <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/monitoring_alerts_and_reporting/index.html#reportable-fields-in-ibm-cloud-pak-for-multicloud-management---infrastructure-management">Reportable Fields in ManageIQ</a>
+in <em>Monitoring, Alerts, and Reporting</em> for instructions on customizing reports.</p>
+
+<p>Steps to create a report to show image compliance:</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Overview &gt; Reports</strong>.</p>
+  </li>
+  <li>
+    <p>Click the menu: <strong>Reports &gt; All Reports</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Browse to menu: <strong>Configuration Management &gt; Containers &gt; Images by Failed OpenSCAP Rule Results</strong> to run a report that shows which images failed the OpenSCAP compliance.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/play_arrow.png" alt="play arrow"> <strong>Queue</strong>.</p>
+  </li>
+  <li>
+    <p>The report generation is placed in the queue and its status shows in the reports page.</p>
+
+    <p><img src="../images/failedimagescan.png" alt="failedimagescan"></p>
+  </li>
+  <li>
+    <p>Click <img src="../images/reload.png" alt="reload"> <strong>(Refresh this page)</strong> to update the status.</p>
+  </li>
+  <li>
+    <p>Browse to the <strong>Saved Reports</strong> accordion, and click the report when it completes.</p>
+  </li>
+  <li>
+    <p>Click the report download buttons for the type of export you want. The report is automatically named with the type of report and date.</p>
+
+    <ul>
+      <li>
+        <p>Click <img src="../images/textimage.png" alt="textimage"> <strong>Download this report in text format</strong> to download as text.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/textimage.png" alt="textimage"> <strong>Download this report in CSV format</strong> to download as a comma-separated file.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/2134.png" alt="2134"> <strong>Download this report in PDF format</strong> to download as PDF.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="openscap-policy-profile">
+<a class="anchor" href="#openscap-policy-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>OpenSCAP Policy Profile</h2>
+
+<p>ManageIQ is pre-configured with a default scanning policy
+profile. This includes conditions to scan and identify compliance, as
+well as annotate compliance failure. SmartState analysis is performed
+when new images are added to OpenShift.</p>
+
+<h3 id="customizing-the-scanning-policy-profile">
+<a class="anchor" href="#customizing-the-scanning-policy-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing the Scanning Policy Profile</h3>
+
+<p>The built-in OpenSCAP policy profile cannot be edited. However, you can assign <em>edited</em> copies of these policies to a new policy profile. This provides you the ability to create a customized version of the built-in OpenSCAP policy profile.</p>
+
+<p>To do so, you must first copy the policy that you want to customize:</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Control &gt; Explorer</strong>.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Policies</strong> accordion, select <strong>Container Image Compliance Policies</strong>, and click <strong>OpenSCAP</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"><strong>Configuration</strong>, and an option to copy the policy appears; for example,
+ <img src="../images/1859.png" alt="image"><strong>Copy this Container Image Policy</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong> to confirm.</p>
+  </li>
+</ol>
+
+<p>The new policy is created with a prefix of <strong>Copy of</strong> in its description, and it can be viewed in the Policies accordion.</p>
+
+<p><img src="../images/1860-cppolicy.png" alt="image"></p>
+
+<p>You can now edit the copied policy. After editing copied policies, you can add them to a new policy profile. For instructions on how to edit policies, create a new policy profile, and add policies to it, see the <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/policies_and_profiles_guide/index.html">Policies and Profiles</a> guide. Once you have a customized policy profile, you can assign it to a containers provider.</p>
+
+<h2 id="controlling-openshift-pod-execution">
+<a class="anchor" href="#controlling-openshift-pod-execution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controlling OpenShift Pod Execution</h2>
+
+<p>Through the default policy profile, non-compliant images receive the
+control policy action <strong>Mark as Non-Compliant</strong>. This action annotates
+the <strong>image</strong> object (not to be confused with the <strong>imagestream</strong>
+object) with <em>images.openshift.io/deny-execution=true</em>. This annotation
+may be used to prevent nodes from running non-compliant images.</p>
+
+<h2 id="reference">
+<a class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h2>
+
+<p>More information about OpenSCAP, see visit the <a href="https://www.open-scap.org/">OpenSCAP web
+site</a>.</p>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

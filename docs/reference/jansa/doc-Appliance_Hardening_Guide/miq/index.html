@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/jansa/doc-Appliance_Hardening_Guide/miq/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/jansa/doc-Appliance_Hardening_Guide/miq/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Jansa
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_jansa>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Installing_on_Google_Compute_Engine/miq/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Installing_on_Microsoft_Azure/miq/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Installing_on_Red_Hat_Enterprise_Linux_OpenStack_Platform/miq/index.html">
+      Red Hat Enterprise Linux OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Installing_on_Red_Hat_Virtualization/miq/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Monitoring_Alerts_and_Reporting/miq/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Policies_and_Profiles_Guide/miq/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Managing_Infrastructure_and_Inventory/miq/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Managing_Providers/miq/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Provisioning_Virtual_Machines_and_Hosts/miq/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Scripting_Actions/miq/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Integration_with_AWS_CloudFormation_and_OpenStack_Heat/miq/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Integration_with_ServiceNow/miq/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-REST_API/miq/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/doc-Methods_Available_for_Automation/miq/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="legacy-doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+        </div>
+        
+        <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_chap_red_hat_cloudforms_security_guide_introduction_to_securing_red_hat_cloudforms">Introduction to Hardening ManageIQ</a></li>
+<li><a href="#ssh-security">1. SSH Security</a>
+<ul class="sectlevel2">
+<li><a href="#_chap_red_hat_cloudforms_security_guide_setting_the_root_password_on_the_appliance">1.1. Setting the Root Password on the Appliance</a></li>
+<li><a href="#_chap_red_hat_cloudforms_security_guide_setting_ssh_keys">1.2. Setting SSH Keys on the Appliance</a></li>
+</ul>
+</li>
+<li><a href="#appliance-security">2. Appliance Security</a>
+<ul class="sectlevel2">
+<li><a href="#_chap_red_hat_cloudforms_security_guide_setting_the_password_for_the_administrative_user">2.1. Setting the Password for the Administrative User</a></li>
+<li><a href="#_chap_red_hat_cloudforms_security_guide_hbac">2.2. Configuring Host-Based Access Control Rules on your IPA Server</a></li>
+</ul>
+</li>
+<li><a href="#server-security">3. Server Security</a>
+<ul class="sectlevel2">
+<li><a href="#_chap_red_hat_cloudforms_security_guide_firewall">3.1. Configuring Firewall Ports</a></li>
+<li><a href="#_chap_red_hat_cloudforms_security_guide_ssl_certs">3.2. Generating SSL Certificates for Your Appliance and Database</a>
+<ul class="sectlevel3">
+<li><a href="#creating-a-certificate-signing-request">3.2.1. Creating a Certificate Signing Request</a></li>
+<li><a href="#creating-a-self-signed-certificate">3.2.2. Creating a Self-signed Certificate</a></li>
+<li><a href="#_enabling_the_appliance_to_use_your_certificate">3.2.3. Enabling Your Certificate</a></li>
+</ul>
+</li>
+<li><a href="#_chap_red_hat_cloudforms_security_guide_creating_keys">3.3. Creating Custom Encryption Keys</a></li>
+<li><a href="#_chap_red_hat_cloudforms_security_guide_scap">3.4. Applying SCAP Standards</a></li>
+</ul>
+</li>
+<li><a href="#database-security">4. Database Security</a>
+<ul class="sectlevel2">
+<li><a href="#_chap_red_hat_cloudforms_security_guide_setting_the_password_for_the_database_appliance">4.1. Restricting Hosts Access to the Database</a></li>
+<li><a href="#_chap_red_hat_cloudforms_security_guide_setting_ssl_for_the_database_appliance">4.2. Configuring the Database to use SSL</a>
+<ul class="sectlevel3">
+<li><a href="#hardening-tls-protocol-version">4.2.1. Hardening TLS Protocol Version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_chap_red_hat_cloudforms_security_guide_introduction_to_securing_red_hat_cloudforms"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_introduction_to_securing_red_hat_cloudforms"></a>Introduction to Hardening ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The ManageIQ appliance is distributed as a virtual machine image, which provides users with a simple installation process.
+The appliance also contains a set of factory default settings that can expose appliances to vulnerabilities if left unset.
+This guide provides a set of procedures to enhance security on your ManageIQ appliance.
+This ensures your appliance has enhanced protection against any unwarranted intrusion.</p>
+</div>
+<div class="paragraph">
+<p>It is recommended to perform these steps immediately after installing all appliances in your infrastructure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ssh-security"><a class="anchor" href="#ssh-security"></a>1. SSH Security</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_setting_the_root_password_on_the_appliance"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_setting_the_root_password_on_the_appliance"></a>1.1. Setting the Root Password on the Appliance</h3>
+<div class="paragraph">
+<p>The ManageIQ appliance is a virtual machine image that runs on a Red Hat Enterprise Linux-based operating system.
+This means users can access the base operating system through SSH.
+This is why it is advisable to change the default password.
+Continuing to use the default password leaves the appliance vulnerable to any user attempting to gain root access.</p>
+</div>
+<div class="paragraph">
+<p>Changing the <code>root</code> password on the appliance 'uses' <code>the</code> same process as changing any user password on a Linux-based system.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Access your appliance through SSH as the <code>root</code> user:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[user@localhost ~]$ ssh root@10.1.1.205</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Substitute <code>10.1.1.205</code> with the address of your appliance.</p>
+</div>
+</li>
+<li>
+<p>Enter the <code>passwd</code> command, which changes the password for the current user:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ ~]# passwd</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enter and Confirm and new password for the <code>root</code> user.</p>
+<div class="listingblock">
+<div class="content">
+<pre>Changing password for user root.
+New password: ************
+Confirm password: ************</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Log out of the appliance.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The ManageIQ appliance now has a non-default <code>root</code> password.
+This prevents unauthorized access to your appliance through SSH.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_setting_ssh_keys"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_setting_ssh_keys"></a>1.2. Setting SSH Keys on the Appliance</h3>
+<div class="paragraph">
+<p>Another recommended practice is to use SSH keys to access the appliance from a single machine.
+An SSH key provides access from one machine to another through the SSH protocol.
+The following procedure shows how to create an SSH key on your local machine and add it to the appliance.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check the <code>.ssh/</code> directory in your home directory for any existing key pairs:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[user@localhost ~]$ ls ~/.ssh/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A key pair usually consists of two files.
+One file is the private key, which stays on your local machine, and the other is the public key, which you copy to another machine.
+But files are named the same except the public key ends with a <code>.pub</code> extension.</p>
+</div>
+<div class="paragraph">
+<p>If a key pair already exists, you can use this key pair.
+Otherwise, use the next few steps to create your own.</p>
+</div>
+</li>
+<li>
+<p>On your local machine, start the key pair generation process using the <code>ssh-keygen</code> command:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[user@localhost ~]$ ssh-keygen -t rsa</pre>
+</div>
+</div>
+</li>
+<li>
+<p>A prompt asks for the file and location to store these keys:</p>
+<div class="listingblock">
+<div class="content">
+<pre>Enter file in which to save the key (/home/user/.ssh/id_rsa):</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Accept the default path if you do not have a <code>id_rsa</code> key pair.</p>
+</div>
+</li>
+<li>
+<p>Another prompt asks for a passphrase:</p>
+<div class="listingblock">
+<div class="content">
+<pre>Enter passphrase (empty for no passphrase):</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This encrypts the key pair with a password.
+This protects the key pair if it ever falls into the wrong hands.
+Alternatively, you can leave the passphrase empty, which provides an automatic login between your local machine and the remote machine.</p>
+</div>
+</li>
+<li>
+<p>The <code>ssh-keygen</code> command generates two files:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The private key - the default is <em class="path">/home/user/.ssh/id_rsa</em></p>
+</li>
+<li>
+<p>The public key - the default is <em class="path">/home/user/.ssh/id_rsa.pub</em></p>
+<div class="paragraph">
+<p>Copy the public key to the appliance using the <code>ssh-copy-id</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[user@localhost ~]$ ssh-copy-id ~/.ssh/id_rsa.pub root@10.1.1.205</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command copies the public key to the appliance.
+You might receive a prompt for the password of the root user on the appliance.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Test the SSH key authentication:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[user@localhost ~]$ ssh root@10.1.1.205</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This authenticates using the SSH key pair.
+If you entered a passphrase for the key, the command prompts you for the passphrase.</p>
+</div>
+</li>
+<li>
+<p>As an additional security measure, edit the <code>/etc/ssh/sshd_config</code> on the appliance and modify the following parameter:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PermitRootLogin without-password</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This forces the <code>root</code> user account to use certificates instead of passwords for SSH login.
+This means only your local system can access the appliance.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The appliance now restricts access to only a single machine using the SSH key.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appliance-security"><a class="anchor" href="#appliance-security"></a>2. Appliance Security</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_setting_the_password_for_the_administrative_user"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_setting_the_password_for_the_administrative_user"></a>2.1. Setting the Password for the Administrative User</h3>
+<div class="paragraph">
+<p>ManageIQ uses a unique <code>admin</code> user to control all functions in the web-based user interface.
+After installing the appliance, change the default password of the <code>admin</code> to restrict administrative access to the appliance&#8217;s UI.</p>
+</div>
+<div class="paragraph">
+<p>Changing the <code>admin</code> password uses the same process as changing any standard user in the appliance.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Access the appliance through your web browser and log in.</p>
+</li>
+<li>
+<p>Click <span class="image"><img src="data:image/png;base64,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" alt="config gear"></span> (<strong>Configuration</strong>).</p>
+</li>
+<li>
+<p>In the accordion tree on the left, click on <strong>Access Control</strong>, then select the <strong>Administrator</strong> under the <strong>Users</strong> section.
+This displays the details for the <code>admin</code> user.</p>
+</li>
+<li>
+<p>On the details page, select <span class="menuseq"><b class="menu">Configuration</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Edit this user</b></span> from the toolbar.</p>
+</li>
+<li>
+<p>Enter a new password in the <strong>Change Password / Confirm Password</strong> fields.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> at the bottom of the page.</p>
+</li>
+<li>
+<p>Log out of the user interface.</p>
+</li>
+<li>
+<p>Test your new password by logging into the user interface. Additionally, test your new password in the appliance console.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The ManageIQ appliance now has a non-default <code>admin</code> password. This restricts access to your appliance&#8217;s administrative functions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_hbac"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_hbac"></a>2.2. Configuring Host-Based Access Control Rules on your IPA Server</h3>
+<div class="paragraph">
+<p>ManageIQ provides support for external authentication using an IPA server.
+However, there are certain recommendations to enhance security to your appliance, such as creating a specific user group and host group that can access the appliance authentication service.</p>
+</div>
+<div class="paragraph">
+<p>Run the following steps on your IPA server:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a user group and restrict access to only the ManageIQ users:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ipa ~]# ipa group-add manageiq_users --desc="manageiq Users"
+[root@ipa ~]# ipa group-add-member manageiq_users --users=testuser1,testuser2</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a host group and restrict access to your appliance hosts:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ipa ~]# ipa hostgroup-add manageiq_hosts --desc "ManageIQ hosts"
+[root@ipa ~]# ipa hostgroup-add-member manageiq_hosts --hosts=appliance1.example.com,appliance2.example.com</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add rules to allow the host group and user group access to the ManageIQ HTTP service:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ipa ~]# ipa hbacrule-add manageiq_access --srchostcat=all
+[root@ipa ~]# ipa hbacrule-add-service manageiq_access --hbacsvcs httpd-auth
+[root@ipa ~]# ipa hbacrule-add-user manageiq_access --groups manageiq_users
+[root@ipa ~]# ipa hbacrule-add-host manageiq_access --hostgroups manageiq_hosts</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove the default rule on your IPA server to allow access to all:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ipa ~]# ipa hbacrule-disable allow_all</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This ensures only users in the <code>manageiq_users</code> group can access the authentication service (<code>http-auth</code>) on the appliances in the <code>manageiq_hosts</code> host group.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="server-security"><a class="anchor" href="#server-security"></a>3. Server Security</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_firewall"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_firewall"></a>3.1. Configuring Firewall Ports</h3>
+<div class="paragraph">
+<p>A new appliance starts with a few standard ports open:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>22 for SSH communication</p>
+</li>
+<li>
+<p>80 for HTTP access to the appliance</p>
+</li>
+<li>
+<p>443 for HTTPS access to the appliance</p>
+</li>
+<li>
+<p>5432 for the appliance database</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You might need to restrict or open access to certain services on your appliance in the future.
+In such situations, use the following method:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>firewalld</code> to enable a service or port, specifying the zone in use.
+For example, to open the LDAP port:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ ~]# firewall-cmd --zone=manageiq --permanent --add-port=389/tcp</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following table lists the appliance&#8217;s main services and their respective ports.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator (Internet Browser)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (User Interface)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access to CFME appliance User Interface</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator (Internet Browser)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (User Interface)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redirect Web Browser to HTTPS service (443)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Catalog or other integration through Web Service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (Web Service)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access to CFME appliance Web Service</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2049</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2049</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Embedded NFS VM scanning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (User Interface)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Virtual Machine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">903</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Remote Console (if using MKS plug-in)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (User Interface)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Virtual Machine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5900-5999</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Remote Console (if using VNC)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (any role)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance running the VMDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL Named Pipes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5432</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance connectivity to the CFME Database (PostgreSQL)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME Subordinate Region VMDB appliance (Database Operations)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME Master Region VMDB appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL Named Pipes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5432</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regional VMDB node replication up to Master VMDB node (PostgreSQL only)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME Subordinate Region VMDB appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME Master Region VMDB appliance (Web Services and/or User Interface)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL Named Pipes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5432</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subscription validation (PostgreSQL only)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance(Authentication through LDAP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP Server (AD or other)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">389</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP integration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (Authentication through LDAPs)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP Server (AD or other)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAPs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">636</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAPS integration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Agent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (Notifier)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP (UDP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">161</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Polling</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (Notifier)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP (TCP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">162</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Trap Send</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (Notifier)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mail server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNMP Trap Send</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (any role)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NTP Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NTP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">123</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time Source</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME SmartProxy installed on VMware ESX Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1139</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication with SmartProxy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Lookups</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following tables detail the ports used by ManageIQ to communicate with providers.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Red Hat Enterprise Virtualization Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (SmartProxy)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEV-M Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API communications to RHEV-M environment (Inventory, Operations, SmartProxy)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (C&amp;U)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEV-M Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5432</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEV-M History Database (Database connectivity not enabled by default). See <a href="https://access.redhat.com/site/solutions/63277">How to access the RHEV-M Postgres DB from a remote machine</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEV-H Hosts or RHEL Hypervisors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH connections.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEV-H Hosts or RHEL Hypervisors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DirectLUN</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direct LUN hook must be installed and enabled for embedded VM scanning on FC or iSCSI storage devices. Not a tcp/udp connection.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Red Hat OpenStack Platform Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (Keystone)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5000</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authentication and Service Entry Point</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (Nova)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8774</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compute Resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (C&amp;U)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (Ceilometer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8777</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics for Capacity and Utilization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (Glance)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9292</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authentication and Service Entry Point</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (AMQP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMQP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5672</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Events Integration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (Neutron)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9696</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Networking</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHOS (Cinder)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8776</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block Storage</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. OpenShift Container Platform Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME Appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift Master Node(s) (or Load Balancer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8443 or 443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required for communication to the OpenShift API. Dependent on OpenShift configuration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME Appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift Infrastructure Node(s) (or Load Balancer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics and logging</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. VMware vSphere Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance(Management System Inventory, Management System Operations, C &amp; U Data Collection, SmartProxy)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vCenter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance running any of these roles will initiate communication with vCenter on this port</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (SmartProxy)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ESX, ESXi Host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (SmartProxy)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ESX Hosts (if analyzing VMs through host)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOAP over HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">902</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to hosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance (SmartProxy)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vCenter (if analyzing VMs through VC)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOAP over HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">902</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to vCenters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance(SmartProxy)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ESX Hosts (not needed for ESXi)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance console access (ssh) to ESX hosts</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. SCVMM Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper-V Host (VMM agent)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WinRM/RPC/NetBIOS/SMB (over TCP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80/135/139/445</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to Host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper-V Host (file transfer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS (using BITS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to Host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Guest Agent (file transfer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS (using BITS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to VM Guest Agent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VMware ESX 3.0/3.5 Host (file transfer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SFTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to ESX Host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VMware ESXi Host (file transfer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH/HTTPS (using BITS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to ESX Host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WSUS Server (data channel)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80/443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to Server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQL Server database (remote)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1433</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance connectivity to the Database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Load Balancer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Load balancer config provider</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80/443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper-V host in untrusted domain or perimeter network (File Transfer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance connectivity to the host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper-V Host (file transfer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BITS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communication from CFME appliance to Host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VMware Web Services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WCF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Azure Ports Used by ManageIQ</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Initiator (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Receiver (CFME Role if applicable)</th>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">TCP Port</th>
+<th class="tableblock halign-left valign-top">UDP Port</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQL Management (*.database.windows.net)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1433</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance connectivity to the Database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload into Storage (*.blob.core.windows.net)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP/HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80/443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Bus Relay HTTP Mode (*.servicebus.windows.net)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SB over HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Bus Pubsub over REST (*.servicebus.windows.net)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFME appliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Control (*.accesscontrol.windows.net)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+To provide your ManageIQ infrastructure with an extra layer of security, use a network layer firewall to restrict port access.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_ssl_certs"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_ssl_certs"></a>3.2. Generating SSL Certificates for Your Appliance and Database</h3>
+<div class="paragraph">
+<p>It is important to enhance the security of SSL communication of your appliances, which, depending on your setup, may include your database appliance.
+The appliance image ships with a default SSL certificate.
+It is recommended to replace this certificate with your own certificate, either signed by a trusted Certificate Authority (CA) or self-signed.</p>
+</div>
+<div class="sect3">
+<h4 id="creating-a-certificate-signing-request"><a class="anchor" href="#creating-a-certificate-signing-request"></a>3.2.1. Creating a Certificate Signing Request</h4>
+<div class="paragraph">
+<p>The first step is to determine the host name of your appliance or database appliance by running the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ hostname</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next step is to create a Certificate Signing Request (CSR) using the <code>openssl</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ ~]# openssl req -new -newkey rsa:2048 -out appliance.csr -keyout appliance.key</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command generates a 2048-bit RSA private key and asks for a passphrase for the key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Generating a 2048 bit RSA private key
+..................+++
+...........................+++
+writing new private key to 'appliance.key'
+Enter PEM pass phrase: **********
+Verifying - Enter PEM pass phrase: **********</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command then provides a questionnaire requesting certain details for the key.
+Fill out this questionnaire.
+Use the output of the <code>hostname</code> command to specify the <code>Common Name</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Country Name (2 letter code) [XX]:US
+State or Province Name (full name) []:North Carolina
+Locality Name (eg, city) [Default City]:Raleigh
+Organization Name (eg, company) [Default Company Ltd]:ManageIQ
+Organizational Unit Name (eg, section) []:Customer Content Services
+Common Name (eg, your name or your server's hostname) []:$(hostname)
+Email Address []:example@example.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Running the command produces two files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>appliance.key</code> - The private key</p>
+</li>
+<li>
+<p><code>appliance.csr</code> - The Certificate Signing Request (CSR)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>At this stage, you would send the CSR to a trusted Certificate Authority (CA) and in return they would send you a signed certificate.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-self-signed-certificate"><a class="anchor" href="#creating-a-self-signed-certificate"></a>3.2.2. Creating a Self-signed Certificate</h4>
+<div class="paragraph">
+<p>As an alternative to obtaining a signed certificate, you can use the <code>appliance.key</code> and <code>appliance.csr</code> files to create a self-signed certificate by running the following <code>openssl</code> commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ ~]# openssl rsa -in appliance.key -out server.cer.key
+[root@ ~]# openssl x509 -in appliance.csr -out server.cer -req -signkey server.cer.key -days 3650</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This produces two files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>server.cer.key</code> - The private key for your signed certificate</p>
+</li>
+<li>
+<p><code>server.cer</code> - The self-signed certificate</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enabling_the_appliance_to_use_your_certificate"><a class="anchor" href="#_enabling_the_appliance_to_use_your_certificate"></a>3.2.3. Enabling Your Certificate</h4>
+<div class="paragraph">
+<p>Despite whether you used a trusted CA or self-signed the certificate, you should now have your own certificate for your appliance.</p>
+</div>
+<div class="paragraph">
+<p>Copy the certificate and key files to the certificate directory on the appliance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ ~]# cp ~/server.cer.key /var/www/miq/vmdb/certs/server.cer.key
+[root@ ~]# cp ~/server.cer /var/www/miq/vmdb/certs/server.cer</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the certificate and key files have been copied, restart the appliance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@ ~]# systemctl restart evmserverd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The appliance now uses your own certificate.</p>
+</div>
+<div class="paragraph">
+<p>If your environment consists of multiple appliances connecting to a single database appliance, you can use your certificate and key files to set up SSL for the database connection.
+For more information, see <a href="#_chap_red_hat_cloudforms_security_guide_setting_ssl_for_the_database_appliance">Configuring the Database to use SSL</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Updates from the Red Hat Content Delivery Network might overwrite these certificate and key files.
+Make sure to copy your own certificate and key files to the certificate directory after performing an update to your appliance.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See also the following article for information on replacing SSL certificates in ManageIQ : <a href="https://access.redhat.com/articles/449033" class="bare">https://access.redhat.com/articles/449033</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_creating_keys"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_creating_keys"></a>3.3. Creating Custom Encryption Keys</h3>
+<div class="paragraph">
+<p>To avoid storing passwords in plain text, ManageIQ appliances use an encryption key to encode and decode passwords.
+Each appliance stores the key in the <code>/var/www/miq/vmdb/certs/v2_key</code>. Changing the encryption key is recommended during setting up new ManageIQ appliances only.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Red Hat does not recommend changing the encryption key for an existing appliance as the ability to decrypt the password will be lost, affecting all stored passwords in ManageIQ.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To generate a new encryption key:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the console of your master appliance as the <code>root</code> user.</p>
+</li>
+<li>
+<p>Run the <code>appliance_console</code> command. The ManageIQ appliance information screen appears.</p>
+</li>
+<li>
+<p>Press any key to view the appliance menu.</p>
+</li>
+<li>
+<p>Select <strong>Generate Custom Encryption Key</strong>.</p>
+</li>
+<li>
+<p>A prompt asks if for confirmation to overwrite the existing key.
+Enter <code>Y</code>.</p>
+</li>
+<li>
+<p>Enter <code>1</code> for <code>1) Create key</code>.</p>
+</li>
+<li>
+<p>The appliance generates the new key.
+Press any key to complete this procedure.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This completes the procedure for generating the new key.
+If you have external ManageIQ appliances, you must share this key to ensure your whole ManageIQ infrastructure is using consistent encryption.
+Failure to use the same key results in encryption and decryption problems.</p>
+</div>
+<div class="paragraph">
+<p>To copy an encryption key:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the console of an external appliance as the <code>root</code> user.</p>
+</li>
+<li>
+<p>Run the <code>appliance_console</code> command. The ManageIQ appliance information screen appears.</p>
+</li>
+<li>
+<p>Press any key to view the appliance menu.</p>
+</li>
+<li>
+<p>Select <strong>Generate Custom Encryption Key</strong>.</p>
+</li>
+<li>
+<p>A prompt asks if for confirmation to overwrite the existing key.
+Enter <code>Y</code>.</p>
+</li>
+<li>
+<p>Select <code>Fetch key from remote machine</code>.</p>
+</li>
+<li>
+<p>Enter the hostname or IP address of the master appliance.</p>
+</li>
+<li>
+<p>Enter the username for SSH access to the master appliance.
+Use the default <code>root</code> user.</p>
+</li>
+<li>
+<p>Enter the password for SSH access to the master appliance.</p>
+</li>
+<li>
+<p>Enter the location of the remote key.
+Accept the default as <code>/var/www/miq/vmdb/certs/v2_key</code>.</p>
+</li>
+<li>
+<p>The appliance copies the new key from the remote server.
+Press any key to complete this procedure.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After distributing the new key, all appliances require an update to the database configuration.
+For all appliances, log in as the <code>root</code> user and run the following commands replacing <code>dbpassword</code> with your database password:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@{productname_short_l} ~]# fix_auth --databaseyml --hostname localhost --password dbpassword
+[root@{productname_short_l} ~]# systemctl restart evmserverd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This completes the new encryption key generation for your ManageIQ infrastructure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_scap"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_scap"></a>3.4. Applying SCAP Standards</h3>
+<div class="paragraph">
+<p>The Security Content Automation Protocol (SCAP) is a set of standards to assist
+with vulnerability management and policy compliance. ManageIQ provides a
+set of SCAP standards to apply to your appliance. View these SCAP rules in the
+<code>/var/www/miq/vmdb/productization/appliance_console/config/scap_rules.yml</code> file.</p>
+</div>
+<div class="paragraph">
+<p>To apply the SCAP standards to your appliance&#8217;s server:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the appliance as the <code>root</code> user.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console</code> command. The ManageIQ Appliance summary screen displays.</p>
+</li>
+<li>
+<p>Press <code>Enter</code> to manually configure settings.</p>
+</li>
+<li>
+<p>Select <code>Harden Appliance Using SCAP Configuration</code>.</p>
+</li>
+<li>
+<p>The appliance console displays the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre>Harden Appliance Using SCAP Configuration
+
+Locking down the appliance for SCAP...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The appliance applies the SCAP settings from the <code>scap_rules.yml</code> file.</p>
+</div>
+</li>
+<li>
+<p>When complete, press any key to return to the summary screen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The appliance now meets the SCAP standards set in the <code>scap_rules.yml</code> file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="database-security"><a class="anchor" href="#database-security"></a>4. Database Security</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_setting_the_password_for_the_database_appliance"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_setting_the_password_for_the_database_appliance"></a>4.1. Restricting Hosts Access to the Database</h3>
+<div class="paragraph">
+<p>Strengthening the host-based authentication (HBA) settings on a database appliance helps with preventing unauthorized access from external hosts.
+The HBA settings restrict access to an IP address range so that only hosts within that range have access.</p>
+</div>
+<div class="paragraph">
+<p>Restricting access to the database requires modifications to the <code>/var/lib/pgsql/data/pg_hba.conf</code> file.
+This file contains a text-based table with some initial settings:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># TYPE    DATABASE USER  ADDRESS       METHOD
+local     all      all                 peer map=usermap
+host      all      all   all           md5
+#hostssl  all      all   all           md5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This format for this table uses the following header columns:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">TYPE</dt>
+<dd>
+<p>This defines the access type, either local access from the database host (<code>local</code>), remote access from an external host regardless of encryption (<code>host</code>), external access with encryption (<code>hostssl</code>), or external access without encryption (<code>nohostssl</code>).</p>
+</dd>
+<dt class="hdlist1">DATABASE</dt>
+<dd>
+<p>The name of the database the host can access.
+Use <code>all</code> for all databases.</p>
+</dd>
+<dt class="hdlist1">USER</dt>
+<dd>
+<p>The name of the user the host can use to access the database.
+Use <code>all</code> for all users.</p>
+</dd>
+<dt class="hdlist1">ADDRESS</dt>
+<dd>
+<p>The IP address of the host or address range of hosts with access to the database.
+This can either be:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A single address:</p>
+<div class="listingblock">
+<div class="content">
+<pre>host    all      all   192.168.1.10           md5</pre>
+</div>
+</div>
+</li>
+<li>
+<p>An address range using a CIDR mask:</p>
+<div class="listingblock">
+<div class="content">
+<pre>host    all      all   192.168.1.0/24           md5</pre>
+</div>
+</div>
+</li>
+<li>
+<p>An address range using a separate subnet mask value</p>
+<div class="listingblock">
+<div class="content">
+<pre>host    all      all   192.168.1.0  255.255.255.0            md5</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>ADDRESS</code> is not required for <code>local</code> connections.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">METHOD</dt>
+<dd>
+<p>The authentication method, which includes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>trust</code> - Allow the connection unconditionally. This method allows anyone that can connect to the PostgreSQL database server to login as any PostgreSQL user they wish, without the need for a password or any other authentication.</p>
+</li>
+<li>
+<p><code>reject</code> - Reject the connection unconditionally. This is useful for "filtering out" certain hosts from a group, for example a <code>reject</code> line could block a specific host from connecting, while a later line allows the remaining hosts in a specific network to connect.</p>
+</li>
+<li>
+<p><code>md5</code> - Require the client to supply an MD5-encrypted password for authentication.</p>
+</li>
+<li>
+<p><code>password</code> - Require the client to supply an unencrypted password for authentication. Since the password is sent in clear text over the network, this should not be used on untrusted networks.</p>
+</li>
+<li>
+<p><code>ident</code> - Obtain the operating system user name of the client by contacting the ident server on the client and check if it matches the requested database user name. Ident authentication can only be used on TCP/IP connections. When specified for local connections, peer authentication will be used instead.</p>
+</li>
+<li>
+<p><code>peer</code> - Obtain the client&#8217;s operating system user name from the operating system and check if it matches the requested database user name. This is only available for local connections.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Using a combination of these options, you create a series of rules that govern which hosts can access your database and which hosts are denied.
+For example, you might change the default HBA rules to only allow remote access to the ManageIQ  database (<code>vmdb_production</code>) from hosts in a certain subnet.
+The modified HBA table would looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># TYPE  DATABASE          USER  ADDRESS         METHOD
+local   all               all                   peer map=usermap
+host    vmdb_production   all   192.168.1.0/24  md5
+#hostssl all              all   all             md5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These restrictions help when structuring your ManageIQ appliances in relationships.
+For example, use these database restrictions to grant access only between a master database appliance in one region and appliances connecting from a separate region.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chap_red_hat_cloudforms_security_guide_setting_ssl_for_the_database_appliance"><a class="anchor" href="#_chap_red_hat_cloudforms_security_guide_setting_ssl_for_the_database_appliance"></a>4.2. Configuring the Database to use SSL</h3>
+<div class="paragraph">
+<p>ManageIQ initially connects to the database through an unencrypted communication.
+If using multiple appliances connecting to a single database appliance, you can set up the database connection to use SSL.
+An SSL connection encrypts the communication between the ManageIQ and the database.</p>
+</div>
+<div class="paragraph">
+<p>The procedures in this section use the SSL certificate and key files listed below.
+These files can be found on your main ManageIQ database appliance.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The appliance image ships with a default SSL certificate and it is recommended to change this certificate.
+You can use a certificate signed by a trusted CA or, alternatively, generate a self-signed certificate.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#_chap_red_hat_cloudforms_security_guide_ssl_certs">Generating SSL Certificates for Your Appliance and Database</a> for more information on generating an SSL certificate.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/var/www/miq/vmdb/certs/server.cer</code> - Signed or self-signed certificate for the database appliance.</p>
+</li>
+<li>
+<p><code>/var/www/miq/vmdb/certs/server.cer.key</code> - Private key for server certificate.</p>
+</li>
+<li>
+<p><code>/var/www/miq/vmdb/certs/root.crt</code> - The root CA certificate used to sign the CA certificate for the ManageIQ database.
+You can either use a self-signed certificate or a certificate signed by a trusted CA to generate your root certificate.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is also recommended to stop all ManageIQ services before configuring the database to use SSL.</p>
+</div>
+<div class="paragraph">
+<p>To configure SSL on the database appliance:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in as <code>root</code> to the appliance where the database resides.</p>
+</li>
+<li>
+<p>Stop the <code>evmserverd</code> and <code>postgresql</code> services:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@appliance2 ~]# systemctl stop evmserverd
+[root@appliance2 ~]# systemctl stop postgresql.service</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the server key file in the correct location and set the ownership and permissions for it:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@appliance2 ~]# install -m 600 -o postgres -g postgres \
+/var/www/miq/vmdb/certs/server.cer.key /var/www/miq/vmdb/certs/postgres.key</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the server certificate file in the correct location and set the ownership and permissions for it:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@appliance2 ~]# install -m 644 -o postgres -g postgres \
+/var/www/miq/vmdb/certs/server.cer /var/www/miq/vmdb/certs/postgres.crt</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the database appliance certificate file as the root certificate in the correct location and set the ownership and permissions for it.</p>
+<div class="paragraph">
+<p>If you are using a self-signed certificate, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@appliance2 ~]# install -m 644 -o postgres -g postgres /var/www/miq/vmdb/certs/server.cer /var/www/miq/vmdb/certs/root.crt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are using a third-party certificate, edit this command to install your root certificate.</p>
+</div>
+</li>
+<li>
+<p>Make sure that the security context is set correctly for the files in <code>/var/www/miq/certs</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@appliance2 ~]# restorecon -R -v /var/www/miq/vmdb/certs</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open the <code>/var/lib/pgsql/data/postgresql.conf</code> file and uncomment and edit the <code>ssl</code> option:</p>
+<div class="listingblock">
+<div class="content">
+<pre>ssl=on</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the same file, locate the options <code>ssl_cert_file</code>, <code>ssl_key_file</code>, and <code>ssl_ca_file</code> that specify the location of SSL certificates and edit them so that they are uncommented and point to the correct certificate files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>ssl_cert_file = '/var/www/miq/vmdb/certs/postgres.crt'  # (change requires restart)
+ssl_key_file  = '/var/www/miq/vmdb/certs/postgres.key'  # (change requires restart)
+ssl_ca_file   = '/var/www/miq/vmdb/certs/root.crt'      # (change requires restart)</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open the <code>/var/lib/pgsql/data/pg_hba.conf</code> file and locate the two lines that contain the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>host      all      all   all           md5
+#hostssl  all      all   all           md5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Modify the two lines to comment the <code>host</code> entry and uncomment the <code>hostssl</code> entry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>#host     all      all   all           md5
+hostssl   all      all   all           md5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This changes the incoming communication protocol to use SSL and refuse any unencrypted PostgreSQL connections.</p>
+</div>
+</li>
+<li>
+<p>Start the <code>postgresql</code> and <code>evmserverd</code> services so that the changes take effect:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@manageiq1 ~]# systemctl start postgresql.service
+[root@manageiq1 ~]# systemctl start evmserverd</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The database appliance now only accepts connections from connecting appliances using SSL.
+The following procedure sets up connecting appliances to communicate to the database using SSL. Use this procedure for each connecting appliance:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in as <code>root</code> to the connecting appliance.</p>
+</li>
+<li>
+<p>Create the <code>.postgresql</code> directory in your <code>root</code> user home directory.</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@manageiq2 ~]# mkdir /root/.postgresql</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The PostgreSQL client library, which ManageIQ also uses, looks to this directory for custom configuration files.</p>
+</div>
+</li>
+<li>
+<p>Copy the root certificate file from the database appliance to the <code>/root/.postgresql</code> directory on the connecting appliance:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@manageiq2 ~]# scp root@[database_appliance_fqdn]:/var/www/miq/vmdb/certs/root.crt /root/.postgresql/root.crt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>[database_appliance_fqdn]</code> is the fully qualified domain name of the database appliance.</p>
+</div>
+</li>
+<li>
+<p>Test the connection between the connecting appliance and the database appliance using the <code>psql</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@localhost ~]# psql -h [database_appliance_fqdn] -d vmdb_production
+Password: ********
+psql (9.2.8)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+
+vmdb_production=#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>psql</code> displays information about the SSL connection, which indicates that the configuration succeeded.
+Enter <code>\q</code> to leave <code>psql</code>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Complete this procedure for each external appliance.
+This enhances the security of all database transactions in your ManageIQ infrastructure.</p>
+</div>
+<div class="sect3">
+<h4 id="hardening-tls-protocol-version"><a class="anchor" href="#hardening-tls-protocol-version"></a>4.2.1. Hardening TLS Protocol Version</h4>
+<div class="paragraph">
+<p>After configuring the database to use SSL, protocol TLS version 1.2 is used as default. The older versions of this protocol (TLS 1.0 and 1.1) are still available for clients to choose. You can disable older versions by inserting the following lines into <code>/var/lib/pgsql/data/postgresql.conf</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ssl_ciphers = 'TLSv1.2:!aNULL'
+ssl_prefer_server_ciphers=true</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

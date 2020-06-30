@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/latest/installing_on_microsoft_azure/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/latest/installing_on_microsoft_azure/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Latest
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_latest>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/reference/latest/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+            <span class="active" >
+              <a href="/docs/reference/latest/installing_on_microsoft_azure/index.html">
+                Latest
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/jansa/doc-Installing_on_Microsoft_Azure/miq/index.html">
+                Jansa
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/ivanchuk/doc-Installing_on_Microsoft_Azure/miq/index.html">
+                Ivanchuk
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/hammer/doc-Installing_on_Microsoft_Azure/miq/index.html">
+                Hammer
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/gaprindashvili/doc-Installing_on_Microsoft_Azure/miq/index.html">
+                Gaprindashvili
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/fine/doc-Installing_on_Microsoft_Azure/miq/index.html">
+                Fine
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/euwe/doc-Installing_on_Microsoft_Azure/miq/index.html">
+                Euwe
+              </a>
+            </span>
+            
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#installing-red-hat-cloudforms-on-microsoft-azure">Installing Red Hat CloudForms on Microsoft Azure</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#installing-manageiq">Installing ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#obtaining-the-manageiq-virtual-appliance">Obtaining the ManageIQ Virtual Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#uploading-and-provisioning-the-manageiq-virtual-appliance-in-microsoft-azure">Uploading and Provisioning the ManageIQ Virtual Appliance in Microsoft Azure</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#using-the-azure-powershell-script">Using the Azure PowerShell Script</a></li>
+<li class="toc-entry toc-h4"><a href="#using-the-azure-command-line-interface">Using the Azure Command-Line Interface</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#installing-the-azure-command-line-interface">Installing the Azure Command-Line Interface</a></li>
+<li class="toc-entry toc-h5"><a href="#creating-resources-for-the-appliance-in-microsoft-azure-using-the-azure-command-line-interface">Creating Resources for the Appliance in Microsoft Azure Using the Azure Command-Line Interface</a></li>
+<li class="toc-entry toc-h5"><a href="#uploading-and-provisioning-the-manageiq-virtual-appliance-using-the-azure-command-line-interface">Uploading and Provisioning the ManageIQ Virtual Appliance Using the Azure Command-Line Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="installing-red-hat-cloudforms-on-microsoft-azure">
+<a class="anchor" href="#installing-red-hat-cloudforms-on-microsoft-azure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Red Hat CloudForms on Microsoft Azure</h1>
+
+<h2 id="installing-manageiq">
+<a class="anchor" href="#installing-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing ManageIQ</h2>
+
+<p>Installing ManageIQ consists of the following steps:</p>
+
+<ol>
+  <li>
+    <p>Downloading the appliance for your environment as a virtual machine
+image template.</p>
+  </li>
+  <li>
+    <p>Setting up a virtual machine based on the appliance.</p>
+  </li>
+  <li>
+    <p>Configuring the ManageIQ appliance.</p>
+  </li>
+</ol>
+
+<p>After you have completed all the procedures in this guide, you will have
+a working environment on which additional customizations and
+configurations can be performed.</p>
+
+<h3 id="obtaining-the-manageiq-virtual-appliance">
+<a class="anchor" href="#obtaining-the-manageiq-virtual-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtaining the ManageIQ Virtual Appliance</h3>
+
+<h3 id="uploading-and-provisioning-the-manageiq-virtual-appliance-in-microsoft-azure">
+<a class="anchor" href="#uploading-and-provisioning-the-manageiq-virtual-appliance-in-microsoft-azure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uploading and Provisioning the ManageIQ Virtual Appliance in Microsoft Azure</h3>
+
+<p>You can upload and provision the appliance in an Azure environment using
+the following two methods:</p>
+
+<ul>
+  <li>
+    <p>Using the Azure PowerShell script</p>
+  </li>
+  <li>
+    <p>Using the Azure Command-Line Interface (Azure CLI)</p>
+  </li>
+</ul>
+
+<p>To upload the ManageIQ appliance file in Microsoft Azure, ensure
+the following requirements are met:</p>
+
+<ul>
+  <li>
+    <p>Approximately 2 GB of space for each VHD image; 44+ GB of space, 12
+GB RAM, and 4 VCPUs for the ManageIQ appliance.</p>
+  </li>
+  <li>
+    <p><a href="https://azure.microsoft.com/en-us/free/">Microsoft Azure Account</a>.</p>
+  </li>
+  <li>
+    <p>Administrator access to the Azure portal.</p>
+  </li>
+  <li>
+    <p>Depending on your infrastructure, allow time for the upload.</p>
+  </li>
+</ul>
+
+<h4 id="using-the-azure-powershell-script">
+<a class="anchor" href="#using-the-azure-powershell-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Azure PowerShell Script</h4>
+
+<div class="note">
+
+Make sure Azure Resource Manager cmdlets are available; see [Azure
+Resource Manager
+Cmdlets](https://msdn.microsoft.com/en-us/library/mt125356.aspx) for the
+latest installation information.
+
+</div>
+
+<ol>
+  <li>
+    <p>Log in to <strong>Azure Resource Manager</strong> using the cmdlet:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>## Customize for Your Environment
+$SubscriptionName = "my subscription"
+
+Login-AzureRmAccount
+Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+</code></pre></div>    </div>
+
+    <p>When prompted, enter your user name and password for the Azure
+Portal.</p>
+  </li>
+  <li>
+    <p>Upload the VHD file to a storage account. As shown in the example
+script below, you will first create a <strong>Resource Group</strong> through the
+Portal UI or PowerShell. Additionally, create the storage container
+defined in “BlobDestinationContainer” in advance.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Example Script:
+
+## Customize for Your Environment
+$SubscriptionName = "my subscription"
+
+$ResourceGroupName = "test"
+$StorageAccountName = "test"
+
+$BlobNameSource = "example.vhd"
+$BlobSourceContainer = "templates"
+$LocalImagePath = "C:\tmp\$BlobNameSource"
+
+##
+
+# Upload VHD to a "templates" directory. You can pass a few arguments, such as `NumberOfUploaderThreads 8`. The default number of uploader threads is `8`. See https://msdn.microsoft.com/en-us/library/mt603554.aspx
+
+Add-AzureRmVhd -ResourceGroupName $ResourceGroupName -Destination https://$StorageAccountName.blob.core.windows.net/$BlobSourceContainer/$BlobNameSource -LocalFilePath $LocalImagePath -NumberOfUploaderThreads 8
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a virtual machine. Then, define your VM and VHD name, your
+system/deployment name and size. Next, you will set the appropriate
+Storage, Network and Configuration options for your environment.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Example Script:
+
+## Customize for Your Environment
+
+$BlobNameDest = "example.vhd"
+$BlobDestinationContainer = "vhds"
+$VMName = "example"
+$DeploySize= "Standard_A3"
+$vmUserName = "user1"
+
+$InterfaceName = "test-nic"
+$VNetName = "test-vnet"
+$PublicIPName = "test-public-ip"
+
+$SSHKey = &lt;your ssh public key&gt;
+
+##
+
+$StorageAccount = Get-AzureRmStorageAccount -ResourceGroup $ResourceGroupName -Name $StorageAccountName
+
+$SourceImageUri = "https://$StorageAccountName.blob.core.windows.net/templates/$BlobNameSource"
+$Location = $StorageAccount.Location
+$OSDiskName = $VMName
+
+# Network
+$Subnet1Name = "default"
+$VNetAddressPrefix = "10.1.0.0/16"
+$VNetSubnetAddressPrefix = "10.1.0.0/24"
+$PIp = New-AzureRmPublicIpAddress -Name $PublicIPName -ResourceGroupName $ResourceGroupName -Location $Location -AllocationMethod Dynamic -Force
+$SubnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name $Subnet1Name -AddressPrefix $VNetSubnetAddressPrefix
+$VNet = New-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName -Location $Location -AddressPrefix $VNetAddressPrefix -Subnet $SubnetConfig -Force
+$Interface = New-AzureRmNetworkInterface -Name $InterfaceName -ResourceGroupName $ResourceGroupName -Location $Location -SubnetId $VNet.Subnets[0].Id -PublicIpAddressId $PIp.Id -Force
+
+# Specify the VM Name and Size
+$VirtualMachine = New-AzureRmVMConfig -VMName $VMName -VMSize $DeploySize
+
+# Add User
+$cred = Get-Credential -UserName $VMUserName -Message "Setting user credential - use blank password"
+$VirtualMachine = Set-AzureRmVMOperatingSystem -VM $VirtualMachine -Linux -ComputerName $VMName -Credential $cred
+
+# Add NIC
+$VirtualMachine = Add-AzureRmVMNetworkInterface -VM $VirtualMachine -Id $Interface.Id
+
+# Add Disk
+$OSDiskUri = $StorageAccount.PrimaryEndpoints.Blob.ToString() + $BlobDestinationContainer + "/" + $BlobNameDest
+
+$VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -Name $OSDiskName -VhdUri $OSDiskUri -CreateOption fromImage -SourceImageUri $SourceImageUri -Linux
+
+# Set SSH key
+Add-AzureRmVMSshPublicKey -VM $VirtualMachine -Path “/home/$VMUserName/.ssh/authorized_keys” -KeyData $SSHKey
+
+# Create the VM
+New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine
+</code></pre></div>    </div>
+
+    <div class="note">
+
+These are the procedural steps as of the time of writing. For more
+information, see the following Azure documentation.
+
+  - &lt;https://azure.microsoft.com/en-us/documentation/articles/powershell-azure-resource-manager&gt;
+
+The steps covered in the following article are for a Windows
+machine, however, most of the items are common between Windows and
+Linux.
+
+  - &lt;https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-create-powershell&gt;
+
+</div>
+  </li>
+</ol>
+
+<h4 id="using-the-azure-command-line-interface">
+<a class="anchor" href="#using-the-azure-command-line-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Azure Command-Line Interface</h4>
+
+<p>Complete the following steps to upload and provision the
+ManageIQ virtual appliance using the Azure CLI.</p>
+
+<h5 id="installing-the-azure-command-line-interface">
+<a class="anchor" href="#installing-the-azure-command-line-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Azure Command-Line Interface</h5>
+
+<div class="note">
+
+For a complete Azure CLI 2.0 command reference, see [Azure CLI 2.0:
+Command reference -
+az](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
+
+</div>
+
+<ol>
+  <li>
+    <p>Import the Microsoft repository key.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a local Azure CLI repository entry.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" &gt; /etc/yum.repos.d/azure-cli.repo'
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update the yum package index.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ yum check-update
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install the Azure CLI.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ sudo yum install azure-cli
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Log in to Azure.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az login
+
+Example:
+
+To sign in, use a web browser to open the page https://aka.ms/devicelogin and enter the code GJP8Y33XY to authenticate.
+
+[
+  {
+    "cloudName": "AzureCloud",
+    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "isDefault": true,
+    "name": "Demo Azure account",
+    "state": "Enabled",
+    "tenantId": "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "user": {
+      "name": "clouduser",
+      "type": "user"
+    }
+  }
+]
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h5 id="creating-resources-for-the-appliance-in-microsoft-azure-using-the-azure-command-line-interface">
+<a class="anchor" href="#creating-resources-for-the-appliance-in-microsoft-azure-using-the-azure-command-line-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Resources for the Appliance in Microsoft Azure Using the Azure Command-Line Interface</h5>
+
+<p>Complete the following steps to create resources in Microsoft Azure
+using the Azure CLI.</p>
+
+<div class="note">
+
+  - If you already have resources you can use, you can skip this section
+    and go directly to [Uploading and Provisioning the
+    ManageIQ Virtual Appliance Using the Azure
+    Command-Line
+    Interface](#uploading-provisioning-appliance-using-azure-cli).
+
+  - For a complete Azure CLI 2.0 command reference, see [Azure CLI 2.0:
+    Command reference -
+    az](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
+
+</div>
+
+<ol>
+  <li>
+    <p>Create a resource group in an Azure region.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az group create --name &lt;resource-group&gt; --location &lt;azure-region&gt;
+
+Example:
+
+[clouduser@localhost]$ az group create --name azrhelclirsgrp --location southcentralus
+{
+  "id": "/subscriptions//resourceGroups/azrhelclirsgrp",
+  "location": "southcentralus",
+  "managedBy": null,
+  "name": "azrhelclirsgrp",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a storage account; see <a href="#storage-sku-types">SKU type
+descriptions</a>.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az storage account create -l &lt;azure-region&gt; -n &lt;storage-account-name&gt; -g &lt;resource-group --sku &lt;sku_type&gt;
+
+Example:
+
+[clouduser@localhost]$ az storage account create -l southcentralus -n azrhelclistact -g azrhelclirsgrp --sku Standard_LRS
+{
+  "accessTier": null,
+  "creationTime": "2017-04-05T19:10:29.855470+00:00",
+  "customDomain": null,
+  "encryption": null,
+  "id": "/subscriptions//resourceGroups/azrhelclirsgrp/providers/Microsoft.Storage/storageAccounts/azrhelclistact",
+  "kind": "Storage",
+  "lastGeoFailoverTime": null,
+  "location": "southcentralus",
+  "name": "azrhelclistact",
+  "primaryEndpoints": {
+    "blob": "https://azrhelclistact.blob.core.windows.net/",
+    "file": "https://azrhelclistact.file.core.windows.net/",
+    "queue": "https://azrhelclistact.queue.core.windows.net/",
+    "table": "https://azrhelclistact.table.core.windows.net/"
+},
+"primaryLocation": "southcentralus",
+"provisioningState": "Succeeded",
+"resourceGroup": "azrhelclirsgrp",
+"secondaryEndpoints": null,
+"secondaryLocation": null,
+"sku": {
+  "name": "Standard_LRS",
+  "tier": "Standard"
+},
+"statusOfPrimary": "available",
+"statusOfSecondary": null,
+"tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Get the storage account connection string.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az storage account show-connection-string -n &lt;storage-account-name&gt; -g &lt;resource-group&gt;
+
+Example:
+
+[clouduser@localhost]$ az storage account show-connection-string -n azrhelclistact -g azrhelclirsgrp
+{
+  "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Export the connection string. Copy the connection string and paste
+it into the following command. This connects your system to the
+storage account.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ export AZURE_STORAGE_CONNECTION_STRING="&lt;storage-connection-string&gt;"
+
+Example:
+
+[clouduser@localhost]$ export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create the storage container.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az storage container create -n &lt;container-name&gt;
+
+Example:
+
+[clouduser@localhost]$ az storage container create -n azrhelclistcont
+{
+  "created": true
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a virtual network.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az network vnet create -g &lt;resource group&gt; --name &lt;vnet-name&gt; --subnet-name &lt;subnet-name&gt;
+
+Example:
+
+[clouduser@localhost]$ az network vnet create --resource-group azrhelclirsgrp --name azrhelclivnet1 --subnet-name azrhelclisubnet1
+{
+  "newVNet": {
+    "addressSpace": {
+      "addressPrefixes": [
+      "10.0.0.0/16"
+      ]
+  },
+  "dhcpOptions": {
+    "dnsServers": []
+  },
+  "etag": "W/\"\"",
+  "id": "/subscriptions//resourceGroups/azrhelclirsgrp/providers/Microsoft.Network/virtualNetworks/azrhelclivnet1",
+  "location": "southcentralus",
+  "name": "azrhelclivnet1",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "azrhelclirsgrp",
+  "resourceGuid": "0f25efee-e2a6-4abe-a4e9-817061ee1e79",
+  "subnets": [
+    {
+      "addressPrefix": "10.0.0.0/24",
+      "etag": "W/\"\"",
+      "id": "/subscriptions//resourceGroups/azrhelclirsgrp/providers/Microsoft.Network/virtualNetworks/azrhelclivnet1/subnets/azrhelclisubnet1",
+      "ipConfigurations": null,
+      "name": "azrhelclisubnet1",
+      "networkSecurityGroup": null,
+      "provisioningState": "Succeeded",
+      "resourceGroup": "azrhelclirsgrp",
+      "resourceNavigationLinks": null,
+      "routeTable": null
+    }
+  ],
+  "tags": {},
+  "type": "Microsoft.Network/virtualNetworks",
+  "virtualNetworkPeerings": null
+  }
+}
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h5 id="uploading-and-provisioning-the-manageiq-virtual-appliance-using-the-azure-command-line-interface">
+<a class="anchor" href="#uploading-and-provisioning-the-manageiq-virtual-appliance-using-the-azure-command-line-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uploading and Provisioning the ManageIQ Virtual Appliance Using the Azure Command-Line Interface</h5>
+
+<p>You can now upload and provision the appliance in an Azure environment
+using the Azure Command-Line Interface (Azure CLI).</p>
+
+<ol>
+  <li>
+    <p>Upload the image to the storage container. It may take several
+minutes. Note: Enter <code class="language-plaintext highlighter-rouge">az storage container list</code> to get the list of
+storage containers.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az storage blob upload --account-name &lt;storage-account-name&gt; --container-name &lt;container-name&gt; --type page --file &lt;path-to-vhd&gt; --name &lt;image-name&gt;.vhd
+
+Example:
+
+$ az storage blob upload --account-name azrhelclistact --container-name azrhelclistcont --type page --file example.vhd --name example.vhd
+
+Finished[#############################################################]  100.0000%
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Get the URL for the uploaded VHD file using the following command.
+You will need to use this URL in the next step.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az storage blob url -c &lt;container-name&gt; -n &lt;image-name&gt;.vhd
+
+Example:
+
+$ az storage blob url -c azrhelclistcont -n example.vhd
+
+"https://azrhelclistact.blob.core.windows.net/azrhelclistcont/example.vhd"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a reusable image from a blob and then use a managed disk.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Example:
+
+$ az image create -n &lt;image-name&gt; -g &lt;miq-appliance-group&gt; --os-type &lt;linux&gt; --source &lt;https://miqstorageaccount.blob.core.windows.net/miqstoragecontainer/example.vhd&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create the virtual machine. Note that the following command uses
+<code class="language-plaintext highlighter-rouge">--generate-ssh-keys</code>. In this example, the private/public key pair
+<code class="language-plaintext highlighter-rouge">/home/clouduser/.ssh/id_rsa</code> and <code class="language-plaintext highlighter-rouge">/home/clouduser/.ssh/id_rsa.pub</code>
+are created.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az vm create --resource-group &lt;resource-group&gt; --location &lt;azure-region&gt; --use-unmanaged-disk --name &lt;vm-name&gt; --storage-account &lt;storage-account-name&gt; --os-type linux --admin-username &lt;administrator-name&gt; --generate-ssh-keys --image &lt;URL&gt;
+
+Example:
+
+az vm create --resource-group azrhelclirsgrp --location southcentralus --use-unmanaged-disk --name miq-appliance-1 --storage-account azrhelclistact --os-type linux --admin-username clouduser --generate-ssh-keys --image https://azrhelclistact.blob.core.windows.net/azrhelclistcont/example.vhd
+
+{
+  "fqdns": "",
+  "id": "/subscriptions//resourceGroups/azrhelclirsgrp/providers/Microsoft.Compute/virtualMachines/miq-appliance-1",
+  "location": "southcentralus",
+  "macAddress": "00-0X-XX-XX-XX-XX",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "12.84.121.147",
+  "resourceGroup": "azrhelclirsgrp"
+}
+</code></pre></div>    </div>
+
+    <p>Make a note of the public IP address. You will need this to log in
+to the virtual machine in the next step.</p>
+  </li>
+  <li>
+    <p>Start an SSH session and log in to the appliance.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ ssh -i &lt;path-to-ssh-key&gt; &lt;admin-username@public-IP-address&gt;
+
+Example:
+
+$ ssh  -i /home/clouduser/.ssh/id_rsa clouduser@12.84.121.147
+The authenticity of host '12.84.121.147' can't be established.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '12.84.121.147' (ECDSA) to the list of known hosts.
+
+Welcome to the Appliance Console
+
+For a menu, please type: appliance_console
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter <code class="language-plaintext highlighter-rouge">sudo appliance_console</code> at the prompt. The summary screen
+appears.</p>
+  </li>
+</ol>
+
+<p>You have successfully provisioned a ManageIQ virtual
+appliance in Microsoft Azure.</p>
+
+<div class="note">
+
+The exported storage connection string does not persist after a system
+reboot. If any of the commands in the above steps fail, export the
+storage connection string again using the following commands:
+
+1.  Get the storage account connection string.
+
+        $ az storage account show-connection-string -n <storage-account-name> -g <resource-group>
+
+        Example:
+
+        $ az storage account show-connection-string -n azrhelclistact -g azrhelclirsgrp
+        {
+          "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+        }
+
+2.  Export the connection string. Copy the connection string and paste
+    it into the following command. This connects your system to the
+    storage account.
+
+        $ export AZURE_STORAGE_CONNECTION_STRING="<storage-connection-string>"
+
+        Example:
+
+        $ export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+
+&lt;/div&gt;
+
+  - You will need to create a data disk for the database; see
+    &lt;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/add-disk&gt;
+    for information about how to add a persistent disk to store your
+    data.
+
+  - See [Database
+    Requirements](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/deployment_planning_guide/#database-requirements)
+    for some general guidelines for your database requirements.
+
+  - For information about Azure ports used by ManageIQ,
+    see
+    &lt;https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/appliance_hardening_guide/#chap_red_hat_cloudforms_security_guide_firewall&gt;.
+
+
+## Enabling ManageIQ User Interface Access
+
+To access the ManageIQ virtual appliance user interface, you need
+to enable access over ports `80` and `443` to the virtual machine. You
+can do this using the CLI or from within the Azure portal.
+
+  - To enable a port using the CLI, enter `az vm open-port --port
+    <port-number> --resource-group <resource-group> --name <vm-name>`.
+
+  - To enable a port using the Microsoft Azure portal, open the
+    properties for the resource group where the appliance is located,
+    click on **Network Security Group**, and add HTTP and HTTPS access.
+
+
+## Configuring ManageIQ
+
+After installing ManageIQ and running it for the first
+time, you must perform some basic configuration. To configure
+ManageIQ, you must at a minimum:
+
+1.  Add a disk to the infrastructure hosting your appliance.
+
+2.  Configure the database.
+
+Configure the ManageIQ appliance using the internal
+appliance console.
+
+### Accessing the Appliance Console
+
+1.  Start the appliance and open a terminal console.
+
+2.  Enter the `appliance_console` command. The ManageIQ appliance
+    summary screen displays.
+
+3.  Press `Enter` to manually configure settings.
+
+4.  Press the number for the item you want to change, and press `Enter`.
+    The options for your selection are displayed.
+
+5.  Follow the prompts to make the changes.
+
+6.  Press `Enter` to accept a setting where applicable.
+
+<div class="note">
+
+The ManageIQ appliance console automatically logs out
+after five minutes of inactivity.
+
+</div>
+
+### Configuring a Database
+
+ManageIQ uses a database to store information about the
+environment. Before using ManageIQ, configure the database
+options for it; ManageIQ provides the following two
+options for database configuration:
+
+  - Install an internal PostgreSQL database to the appliance
+
+  - Configure the appliance to use an external PostgreSQL database
+
+#### Configuring an Internal Database
+
+<div class="important">
+
+Before installing an internal database, add a disk to the infrastructure
+hosting your appliance. See the documentation specific to your
+infrastructure for instructions for adding a disk. As a storage disk
+usually cannot be added while a virtual machine is running, Red Hat
+recommends adding the disk before starting the appliance.
+ManageIQ only supports installing of an internal VMDB on blank
+disks; installation will fail if the disks are not blank.
+
+</div>
+
+1.  Start the appliance and open a terminal console.
+
+2.  Enter the `appliance_console` command. The ManageIQ appliance
+    summary screen displays.
+
+3.  Press **Enter** to manually configure settings.
+
+4.  Select **Configure Database** from the menu.
+
+5.  You are prompted to create or fetch an encryption key.
+
+      - If this is the first ManageIQ appliance, choose **Create
+        key**.
+
+      - If this is not the first ManageIQ appliance, choose
+        **Fetch key from remote machine** to fetch the key from the
+        first appliance. For worker and multi-region setups, use this
+        option to copy key from another appliance.
+
+        <div class="note">
+
+        All ManageIQ appliances in a multi-region
+        deployment must use the same key.
+
+        </div>
+
+6.  Choose **Create Internal Database** for the database location.
+
+7.  Choose a disk for the database. This can be either a disk you
+    attached previously, or a partition on the current disk.
+
+    <div class="important">
+
+    Red Hat recommends using a separate disk for the database.
+
+    </div>
+
+    If there is an unpartitioned disk attached to the virtual machine,
+    the dialog will show options similar to the following:
+
+        1) /dev/vdb: 20480
+        2) Don't partition the disk
+
+      - Enter **1** to choose `/dev/vdb` for the database location. This
+        option creates a logical volume using this device and mounts the
+        volume to the appliance in a location appropriate for storing
+        the database. The default location is `/var/lib/pgsql`, which
+        can be found in the environment variable
+        `$APPLIANCE_PG_MOUNT_POINT`.
+
+      - Enter **2** to continue without partitioning the disk. A second
+        prompt will confirm this choice. Selecting this option results
+        in using the root filesystem for the data directory (not advised
+        in most cases).
+
+8.  Enter **Y** or **N** for **Should this appliance run as a standalone
+    database server?**
+
+      - Select **Y** to configure the appliance as a database-only
+        appliance. As a result, the appliance is configured as a basic
+        PostgreSQL server, without a user interface.
+
+      - Select **N** to configure the appliance with the full
+        administrative user interface.
+
+9.  When prompted, enter a unique number to create a new region.
+
+    <div class="important">
+
+    Creating a new region destroys any existing data on the chosen
+    database.
+
+    </div>
+
+10. Create and confirm a password for the database.
+
+ManageIQ then configures the internal database. This takes a few
+minutes. After the database is created and initialized, you can log in
+to ManageIQ.
+
+
+#### Configuring an External Database
+
+Based on your setup, you will choose to configure the appliance to use
+an external PostgreSQL database. For example, we can only have one
+database in a single region. However, a region can be segmented into
+multiple zones, such as database zone, user interface zone, and
+reporting zone, where each zone provides a specific function. The
+appliances in these zones must be configured to use an external
+database.
+
+The `postgresql.conf` file used with ManageIQ databases requires
+specific settings for correct operation. For example, it must correctly
+reclaim table space, control session timeouts, and format the PostgreSQL
+server log for improved system support. Due to these requirements, Red
+Hat recommends that external ManageIQ databases use a
+`postgresql.conf` file based on the standard file used by the
+ManageIQ appliance.
+
+Ensure you configure the settings in the `postgresql.conf` to suit your
+system. For example, customize the `shared_buffers` setting according to
+the amount of real storage available in the external system hosting the
+PostgreSQL instance. In addition, depending on the aggregate number of
+appliances expected to connect to the PostgreSQL instance, it may be
+necessary to alter the `max_connections` setting.
+
+<div class="note">
+
+  - ManageIQ requires PostgreSQL version 9.5.
+
+  - Because the `postgresql.conf` file controls the operation of all
+    databases managed by a single instance of PostgreSQL, do not mix
+    ManageIQ databases with other types of databases in a single
+    PostgreSQL instance.
+
+</div>
+
+1.  Start the appliance and open a terminal console.
+
+2.  Enter the `appliance_console` command. The ManageIQ appliance
+    summary screen displays.
+
+3.  Press **Enter** to manually configure settings.
+
+4.  Select **Configure Database** from the menu.
+
+5.  You are prompted to create or fetch a security key.
+
+      - If this is the first ManageIQ appliance, choose **Create
+        key**.
+
+      - If this is not the first ManageIQ appliance, choose
+        **Fetch key from remote machine** to fetch the key from the
+        first appliance.
+
+        <div class="note">
+
+        All ManageIQ appliances in a multi-region
+        deployment must use the same key.
+
+        </div>
+
+6.  Choose **Create Region in External Database** for the database
+    location.
+
+7.  Enter the database hostname or IP address when prompted.
+
+8.  Enter the database name or leave blank for the default
+    (`vmdb_production`).
+
+9.  Enter the database username or leave blank for the default (`root`).
+
+10. Enter the chosen database user’s password.
+
+11. Confirm the configuration if prompted.
+
+ManageIQ will then configure the external database.
+
+### Configuring a Worker Appliance
+
+You can use multiple appliances to facilitate horizontal scaling, as
+well as for dividing up work by roles. Accordingly, configure an
+appliance to handle work for one or many roles, with workers within the
+appliance carrying out the duties for which they are configured. You can
+configure a worker appliance through the terminal. The following steps
+demonstrate how to join a worker appliance to an appliance that already
+has a region configured with a database.
+
+1.  Start the appliance and open a terminal console.
+
+2.  Enter the `appliance_console` command. The ManageIQ appliance
+    summary screen displays.
+
+3.  Press **Enter** to manually configure settings.
+
+4.  Select **Configure Database** from the menu.
+
+5.  You are prompted to create or fetch a security key. Since this is
+    not the first ManageIQ appliance, choose **2) Fetch key from
+    remote machine**. For worker and multi-region setups, use this
+    option to copy the security key from another appliance.
+
+    <div class="note">
+
+    All ManageIQ appliances in a multi-region deployment
+    must use the same key.
+
+    </div>
+
+6.  Choose **Join Region in External Database** for the database
+    location.
+
+7.  Enter the database hostname or IP address when prompted.
+
+8.  Enter the port number or leave blank for the default (`5432`).
+
+9.  Enter the database name or leave blank for the default
+    (`vmdb_production`).
+
+10. Enter the database username or leave blank for the default (`root`).
+
+11. Enter the chosen database user’s password.
+
+12. Confirm the configuration if prompted.
+
+
+## Logging In After Installing ManageIQ
+
+Once ManageIQ is installed, you can log in and perform
+administration tasks.
+
+Log in to ManageIQ for the first time after installing by:
+
+1.  Navigate to the URL for the login screen. (&lt;https://xx.xx.xx.xx&gt; on
+    the virtual machine instance)
+
+2.  Enter the default credentials (Username: **admin** | Password:
+    **smartvm**) for the initial login.
+
+3.  Click **Login**.
+
+
+### Changing the Default Login Password
+
+Change your password to ensure more private and secure access to
+ManageIQ.
+
+1.  Navigate to the URL for the login screen. (&lt;https://xx.xx.xx.xx&gt; on
+    the virtual machine instance)
+
+2.  Click **Update Password** beneath the **Username** and **Password**
+    text fields.
+
+3.  Enter your current **Username** and **Password** in the text fields.
+
+4.  Input a new password in the **New Password** field.
+
+5.  Repeat your new password in the **Verify Password** field.
+
+6.  Click **Login**.
+
+
+# Appendix
+
+# Appliance Console Command-Line Interface (CLI)
+
+Currently, the `appliance_console_cli` feature is a subset of the full functionality of the `appliance_console` itself, and covers functions most likely to be scripted by using the command-line interface (CLI).
+
+1.  After starting the ManageIQ appliance, log in with a user name of `root` and the default password of `smartvm`. This displays the Bash prompt for the root user.
+
+2.  Enter the `appliance_console_cli` or `appliance_console_cli --help` command to see a list of options available with the command, or simply enter `appliance_console_cli --option <argument>` directly to use a specific option.
+
+#### Database Configuration Options
+
+|                  |                                                                                            | 
+| ---------------- | ------------------------------------------------------------------------------------------ |
+| Option           | Description                                                                                |
+| --region (-r)    | region number (create a new region in the database - requires database credentials passed) |
+| --internal (-i)  | internal database (create a database on the current appliance)                             |
+| --dbdisk         | database disk device path (for configuring an internal database)                           |
+| --hostname (-h)  | database hostname                                                                          |
+| --port           | database port (defaults to `5432`)                                                         |
+| --username (-U)  | database username (defaults to `root`)                                                     |
+| --password (-p)  | database password                                                                          |
+| --dbname (-d)    | database name (defaults to `vmdb_production`)                                              |
+
+{: caption="Table 1. Database Configuration Options" caption-side="top"}
+
+#### v2_key Options
+
+|                   |                                                            |
+| ----------------- | ---------------------------------------------------------- |
+| Option            | Description                                                |
+| --key (-k)        | create a new v2_key                                        |
+| --fetch-key (-K)  | fetch the v2_key from the given host                       |
+| --force-key (-f)  | create or fetch the key even if one exists                 |
+| --sshlogin        | ssh username for fetching the v2_key (defaults to `root`)  |
+| --sshpassword     | ssh password for fetching the v2_key                       |
+
+{: caption="Table 2. v2_key Options" caption-side="top"}
+
+#### IPA Server Options
+
+|                       |                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------------------ |
+| Option                | Description                                                                                      |
+| --host (-H)           | set the appliance hostname to the given name                                                     |
+| --ipaserver (-e)      | IPA server FQDN                                                                                  |
+| --ipaprincipal (-n)   | IPA server principal (default: `admin`)                                                          |
+| --ipapassword (-w)    | IPA server password                                                                              |
+| --ipadomain (-o)      | IPA server domain (optional). Will be based on the appliance domain name if not specified.       |
+| --iparealm (-l)       | IPA server realm (optional). Will be based on the domain name of the ipaserver if not specified. |
+| --uninstall-ipa (-u)  | uninstall IPA client                                                                             |
+
+{: caption="Table 3. IPA Server Options" caption-side="top"}
+
+**Note**:
+
+  - In order to configure authentication through an IPA server, in addition to using **Configure External Authentication (httpd)** in the `appliance_console`, external authentication can be optionally configured via the `appliance_console_cli` (command-line interface).
+
+  - Specifying **--host** will update the hostname of the appliance. If this step was already performed via the `appliance_console` and the necessary updates that are made to `/etc/hosts` if DNS is not properly configured, the **--host** option can be omitted.
+
+#### Certificate Options
+
+|                              |                                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| Option                       | Description                                                                     |
+| --ca (-c)                    | CA name used for certmonger (default: `ipa`)                                    |
+| --postgres-client-cert (-g)  | install certs for postgres client                                               |
+| --postgres-server-cert       | install certs for postgres server                                               |
+| --http-cert                  | install certs for http server (to create certs/httpd* values for a unique key)  |
+| --extauth-opts (-x)          | external authentication options                                                 |
+
+{: caption="Table 4. Certificate Options" caption-side="top"}
+
+**Note**: The certificate options augment the functionality of the `certmonger` tool and enable creating a certificate signing request (CSR), and specifying `certmonger` the directories to store the keys.
+
+#### Other Options
+
+|                 |                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------- |
+| Option          | Description                                                                         |
+| --logdisk (-l)  | log disk path                                                                       |
+| --tmpdisk       | initialize the given device for temp storage (volume mounted at `/var/www/miq_tmp`) |
+| --verbose (-v)  | print more debugging info                                                           |
+
+{: caption="Table 5. Other Options" caption-side="top"}
+
+**Example Usage.**
+
+    $ ssh root@appliance.test.company.com
+
+To create a new database locally on the server by using `/dev/sdb`:
+
+    # appliance_console_cli --internal --dbdisk /dev/sdb --region 0 --password smartvm
+
+To copy the v2_key from a host *some.example.com* to local machine:
+
+    # appliance_console_cli --fetch-key some.example.com --sshlogin root --sshpassword smartvm
+
+You could combine the two to join a region where *db.example.com* is the appliance hosting the database:
+
+    # appliance_console_cli --fetch-key db.example.com --sshlogin root --sshpassword smartvm --hostname db.example.com --password mydatabasepassword
+
+To configure external authentication:
+
+    # appliance_console_cli --host appliance.test.company.com
+                            --ipaserver ipaserver.test.company.com
+                            --ipadomain test.company.com
+                            --iparealm TEST.COMPANY.COM
+                            --ipaprincipal admin
+                            --ipapassword smartvm1
+
+To uninstall external authentication:
+
+    # appliance_console_cli  --uninstall-ipa
+
+
+# Storage SKU Types
+
+| SKU Type        | Description                                                                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Standard\_LRS   | Locally Redundant Storage: Synchronous copies of data are created within a single data center.                                                                     |
+| Standard\_GRS   | Geographically Redundant Storage: Same as Standard\_LRS with additional asynchronous copies stored in a secondary data center in a separate geographical location. |
+| Standard\_RAGRS | Read-Access Geographically Redundant Storage: Same as Standard\_GRS with additional read access to the secondary data center.                                      |
+| Standard\_ZRS   | Zone Redundant Storage: For block blobs only. Stores three copies of data across multiple data centers within the region or across regions.                        |
+| Premium\_LRS    | Premium Locally Redundant Storage: Same as Standard\_LRS, but uses Premium Storage disks.                                                                          |
+
+Storage SKU types
+
+</argument></vm-name></resource-group></port-number></storage-connection-string></resource-group></storage-account-name>
+</div>
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

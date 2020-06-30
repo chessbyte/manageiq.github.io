@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/latest/installing_on_scvmm/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/latest/installing_on_scvmm/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Latest
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_latest>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/reference/latest/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+            <span class="active" >
+              <a href="/docs/reference/latest/installing_on_scvmm/index.html">
+                Latest
+              </a>
+            </span>
+            
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#installing-red-hat-cloudforms-on-microsoft-scvmm">Installing Red Hat CloudForms on Microsoft SCVMM</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#installing-manageiq">Installing ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#obtaining-the-appliance">Obtaining the Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#deploying-the-appliance">Deploying the Appliance</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#configuring-manageiq">Configuring ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#accessing-the-appliance-console">Accessing the Appliance Console</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-a-database">Configuring a Database</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#configuring-an-internal-database">Configuring an Internal Database</a></li>
+<li class="toc-entry toc-h4"><a href="#configuring-an-external-database">Configuring an External Database</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#configuring-a-worker-appliance">Configuring a Worker Appliance</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#logging-in-after-installing-manageiq">Logging In After Installing ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#changing-the-default-login-password">Changing the Default Login Password</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#appendix">Appendix</a></li>
+<li class="toc-entry toc-h1"><a href="#appliance-console-command-line-interface-cli">Appliance Console Command-Line Interface (CLI)</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#database-configuration-options">Database Configuration Options</a></li>
+<li class="toc-entry toc-h4"><a href="#v2_key-options">v2_key Options</a></li>
+<li class="toc-entry toc-h4"><a href="#ipa-server-options">IPA Server Options</a></li>
+<li class="toc-entry toc-h4"><a href="#certificate-options">Certificate Options</a></li>
+<li class="toc-entry toc-h4"><a href="#other-options">Other Options</a></li>
+</ul>
+</li>
+</ul><h1 id="installing-red-hat-cloudforms-on-microsoft-scvmm">
+<a class="anchor" href="#installing-red-hat-cloudforms-on-microsoft-scvmm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Red Hat CloudForms on Microsoft SCVMM</h1>
+
+<h2 id="installing-manageiq">
+<a class="anchor" href="#installing-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing ManageIQ</h2>
+
+<p>Installing ManageIQ consists of the following steps:</p>
+
+<ol>
+  <li>
+    <p>Downloading the VHD image to your SCVMM Library.</p>
+  </li>
+  <li>
+    <p>Creating a blank VHD to be used for the database disk.</p>
+  </li>
+  <li>
+    <p>Running a PowerShell script to create a deployable template for the
+ManageIQ appliance.</p>
+  </li>
+  <li>
+    <p>Configuring the ManageIQ appliance.</p>
+  </li>
+</ol>
+
+<p>After you have completed all the procedures in this guide, you will have
+a working environment on which you can perform additional customizations
+and configurations.</p>
+
+<p><strong>Requirements.</strong></p>
+
+<p>Uploading the ManageIQ appliance file to SCVMM requires:</p>
+
+<ul>
+  <li>
+    <p>A Microsoft System Center Virtual Machine Manager environment with
+at least one Hyper-V node.</p>
+  </li>
+  <li>
+    <p>44 GB of storage space.</p>
+  </li>
+  <li>
+    <p>12 GB RAM.</p>
+  </li>
+  <li>
+    <p>4 vCPUs.</p>
+  </li>
+  <li>
+    <p>An Admin privileged account for the SCVMM environment</p>
+  </li>
+</ul>
+
+<h3 id="obtaining-the-appliance">
+<a class="anchor" href="#obtaining-the-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtaining the Appliance</h3>
+
+<h3 id="deploying-the-appliance">
+<a class="anchor" href="#deploying-the-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying the Appliance</h3>
+
+<p>Create a blank VHD to be used for the database disk and add it to your
+SCVMM Library, create a template for the ManageIQ
+appliance, then deploy a virtual machine to run the appliance.</p>
+
+<ol>
+  <li>
+    <p>Create a blank VHD to be used for the database disk and add it to
+your SCVMM Library. Run this command on a node containing Hyper-V.</p>
+
+    <p>For example, on a node with Hyper-V installed you can create a 20GB
+blank VHD with the following PowerShell command:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>PS C:\Users\Administrator.MS01&gt; New-VHD -Path 'C:\path\to\my\newvdisk.vhdx' -SizeBytes 20gb -Dynamic
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the blank VHD disk to the SCVMM Library.</p>
+  </li>
+  <li>
+    <p>In a PowerShell terminal, run <code class="language-plaintext highlighter-rouge">'Refresh-LibraryShare'</code> to refresh
+the library:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>PS C:\Users\Administrator.MS01&gt; 'Refresh-LibraryShare'
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the following PowerShell script to create a deployable template
+for the ManageIQ appliance, substituting values for
+your environment:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$networkName = "yourNetwork"
+$templateName = "myNewCFMETemplate"
+$templateOwner = "ownerUsername"
+$memorySizeMb = 12288
+$cpuCount = 4
+$srcPath = "C:\path\to\vhd\in\Library"
+$dbDiskSrcPath = "C:\path\to\db\vhd\in\Library"
+$templateOsType = "Red Hat Enterprise Linux 7 (64 bit)"
+$scvmmFqdn = "fqdn.of.scvmm.com"
+
+$JobGroupId01 = [Guid]::NewGuid().ToString()
+$LogicalNet = Get-SCLogicalNetwork -Name $networkName
+New-SCVirtualNetworkAdapter -JobGroup $JobGroupID01 -MACAddressType Dynamic
+    -LogicalNetwork $LogicalNet -Synthetic
+New-SCVirtualSCSIAdapter -JobGroup $JobGroupID01 -AdapterID 6 -Shared $False
+New-SCHardwareProfile -Name $templateName -Owner $templateOwner
+    -Description 'Temp profile used to create a VM Template' -MemoryMB
+$memorySize
+    -CPUCount $cpuCount -JobGroup $JobGroupID01
+$JobGroupId02 = [Guid]::NewGuid().ToString()
+$VHD = Get-SCVirtualHardDisk | where  | where 
+New-SCVirtualDiskDrive -IDE -Bus 0 -LUN 0 -JobGroup $JobGroupID02
+-VirtualHardDisk $VHD
+$DBVHD = Get-SCVirtualHardDisk | where 
+New-SCVirtualDiskDrive -IDE -Bus 1 -LUN 0 -JobGroup $JobGroupID02
+-VirtualHardDisk $DBVHD
+$HWProfile = Get-SCHardwareProfile | where 
+$OS = Get-SCOperatingSystem | where 
+New-SCVMTemplate -Name $templateName -Owner $templateOwner -HardwareProfile
+$HWProfile `
+    -JobGroup $JobGroupID02 -RunAsynchronously -Generation 1 -NoCustomization
+Remove-HardwareProfile -HardwareProfile $templateName
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Deploy a virtual machine to a host group from the created template.</p>
+
+    <p>Run the following PowerShell script, substituting values for your
+environment:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$tpl = Get-SCVMTemplate -Name $templateName -VMMServer $scvmmServer
+$vm_hg = Get-SCVMHostGroup -Name $hostGroup -VMMServer $scvmmServer
+$vmc = New-SCVMConfiguration -VMTemplate $tpl -Name $vmName -VMHostGroup $vm_hg
+Update-SCVMConfiguration -VMConfiguration $vmc
+New-SCVirtualMachine -Name $vmName -VMConfiguration $vmc
+</code></pre></div>    </div>
+
+    <div class="note">
+
+Substitute these values in your PowerShell script:
+
+  - $hostGroup = "NAME\_OF\_HOST\_GROUP\_TO\_DEPLOY\_TO"
+
+  - $scvmmServer = "NAME\_OF\_YOUR\_SCVMM\_SERVER"
+
+  - $templateName = "NAME\_OF\_CFME\_TEMPLATE"
+
+  - $vmName = "NAME\_OF\_YOUR\_NEW\_VM"
+
+</div>
+  </li>
+</ol>
+
+<p>Your SCVMM environment now contains a running ManageIQ
+appliance which you can configure.</p>
+
+<h2 id="configuring-manageiq">
+<a class="anchor" href="#configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ</h2>
+
+<p>After installing ManageIQ and running it for the first
+time, you must perform some basic configuration. To configure
+ManageIQ, you must at a minimum:</p>
+
+<ol>
+  <li>
+    <p>Add a disk to the infrastructure hosting your appliance.</p>
+  </li>
+  <li>
+    <p>Configure the database.</p>
+  </li>
+</ol>
+
+<p>Configure the ManageIQ appliance using the internal
+appliance console.</p>
+
+<h3 id="accessing-the-appliance-console">
+<a class="anchor" href="#accessing-the-appliance-console" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessing the Appliance Console</h3>
+
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <code class="language-plaintext highlighter-rouge">Enter</code> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Press the number for the item you want to change, and press <code class="language-plaintext highlighter-rouge">Enter</code>.
+The options for your selection are displayed.</p>
+  </li>
+  <li>
+    <p>Follow the prompts to make the changes.</p>
+  </li>
+  <li>
+    <p>Press <code class="language-plaintext highlighter-rouge">Enter</code> to accept a setting where applicable.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+The ManageIQ appliance console automatically logs out
+after five minutes of inactivity.
+
+</div>
+
+<h3 id="configuring-a-database">
+<a class="anchor" href="#configuring-a-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring a Database</h3>
+
+<p>ManageIQ uses a database to store information about the
+environment. Before using ManageIQ, configure the database
+options for it; ManageIQ provides the following two
+options for database configuration:</p>
+
+<ul>
+  <li>
+    <p>Install an internal PostgreSQL database to the appliance</p>
+  </li>
+  <li>
+    <p>Configure the appliance to use an external PostgreSQL database</p>
+  </li>
+</ul>
+
+<h4 id="configuring-an-internal-database">
+<a class="anchor" href="#configuring-an-internal-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring an Internal Database</h4>
+
+<div class="important">
+
+Before installing an internal database, add a disk to the infrastructure
+hosting your appliance. See the documentation specific to your
+infrastructure for instructions for adding a disk. As a storage disk
+usually cannot be added while a virtual machine is running, Red Hat
+recommends adding the disk before starting the appliance.
+ManageIQ only supports installing of an internal VMDB on blank
+disks; installation will fail if the disks are not blank.
+
+</div>
+
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch an encryption key.</p>
+
+    <ul>
+      <li>
+        <p>If this is the first ManageIQ appliance, choose <strong>Create
+key</strong>.</p>
+      </li>
+      <li>
+        <p>If this is not the first ManageIQ appliance, choose
+<strong>Fetch key from remote machine</strong> to fetch the key from the
+first appliance. For worker and multi-region setups, use this
+option to copy key from another appliance.</p>
+
+        <div class="note">
+
+All ManageIQ appliances in a multi-region
+deployment must use the same key.
+
+</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Choose <strong>Create Internal Database</strong> for the database location.</p>
+  </li>
+  <li>
+    <p>Choose a disk for the database. This can be either a disk you
+attached previously, or a partition on the current disk.</p>
+
+    <div class="important">
+
+Red Hat recommends using a separate disk for the database.
+
+</div>
+
+    <p>If there is an unpartitioned disk attached to the virtual machine,
+the dialog will show options similar to the following:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>1) /dev/vdb: 20480
+2) Don't partition the disk
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Enter <strong>1</strong> to choose <code class="language-plaintext highlighter-rouge">/dev/vdb</code> for the database location. This
+option creates a logical volume using this device and mounts the
+volume to the appliance in a location appropriate for storing
+the database. The default location is <code class="language-plaintext highlighter-rouge">/var/lib/pgsql</code>, which
+can be found in the environment variable
+<code class="language-plaintext highlighter-rouge">$APPLIANCE_PG_MOUNT_POINT</code>.</p>
+      </li>
+      <li>
+        <p>Enter <strong>2</strong> to continue without partitioning the disk. A second
+prompt will confirm this choice. Selecting this option results
+in using the root filesystem for the data directory (not advised
+in most cases).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Enter <strong>Y</strong> or <strong>N</strong> for <strong>Should this appliance run as a standalone
+database server?</strong></p>
+
+    <ul>
+      <li>
+        <p>Select <strong>Y</strong> to configure the appliance as a database-only
+appliance. As a result, the appliance is configured as a basic
+PostgreSQL server, without a user interface.</p>
+      </li>
+      <li>
+        <p>Select <strong>N</strong> to configure the appliance with the full
+administrative user interface.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When prompted, enter a unique number to create a new region.</p>
+
+    <div class="important">
+
+Creating a new region destroys any existing data on the chosen
+database.
+
+</div>
+  </li>
+  <li>
+    <p>Create and confirm a password for the database.</p>
+  </li>
+</ol>
+
+<p>ManageIQ then configures the internal database. This takes a few
+minutes. After the database is created and initialized, you can log in
+to ManageIQ.</p>
+
+<h4 id="configuring-an-external-database">
+<a class="anchor" href="#configuring-an-external-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring an External Database</h4>
+
+<p>Based on your setup, you will choose to configure the appliance to use
+an external PostgreSQL database. For example, we can only have one
+database in a single region. However, a region can be segmented into
+multiple zones, such as database zone, user interface zone, and
+reporting zone, where each zone provides a specific function. The
+appliances in these zones must be configured to use an external
+database.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">postgresql.conf</code> file used with ManageIQ databases requires
+specific settings for correct operation. For example, it must correctly
+reclaim table space, control session timeouts, and format the PostgreSQL
+server log for improved system support. Due to these requirements, Red
+Hat recommends that external ManageIQ databases use a
+<code class="language-plaintext highlighter-rouge">postgresql.conf</code> file based on the standard file used by the
+ManageIQ appliance.</p>
+
+<p>Ensure you configure the settings in the <code class="language-plaintext highlighter-rouge">postgresql.conf</code> to suit your
+system. For example, customize the <code class="language-plaintext highlighter-rouge">shared_buffers</code> setting according to
+the amount of real storage available in the external system hosting the
+PostgreSQL instance. In addition, depending on the aggregate number of
+appliances expected to connect to the PostgreSQL instance, it may be
+necessary to alter the <code class="language-plaintext highlighter-rouge">max_connections</code> setting.</p>
+
+<div class="note">
+
+  - ManageIQ requires PostgreSQL version 9.5.
+
+  - Because the `postgresql.conf` file controls the operation of all
+    databases managed by a single instance of PostgreSQL, do not mix
+    ManageIQ databases with other types of databases in a single
+    PostgreSQL instance.
+
+</div>
+
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch a security key.</p>
+
+    <ul>
+      <li>
+        <p>If this is the first ManageIQ appliance, choose <strong>Create
+key</strong>.</p>
+      </li>
+      <li>
+        <p>If this is not the first ManageIQ appliance, choose
+<strong>Fetch key from remote machine</strong> to fetch the key from the
+first appliance.</p>
+
+        <div class="note">
+
+All ManageIQ appliances in a multi-region
+deployment must use the same key.
+
+</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Choose <strong>Create Region in External Database</strong> for the database
+location.</p>
+  </li>
+  <li>
+    <p>Enter the database hostname or IP address when prompted.</p>
+  </li>
+  <li>
+    <p>Enter the database name or leave blank for the default
+(<code class="language-plaintext highlighter-rouge">vmdb_production</code>).</p>
+  </li>
+  <li>
+    <p>Enter the database username or leave blank for the default (<code class="language-plaintext highlighter-rouge">root</code>).</p>
+  </li>
+  <li>
+    <p>Enter the chosen database user’s password.</p>
+  </li>
+  <li>
+    <p>Confirm the configuration if prompted.</p>
+  </li>
+</ol>
+
+<p>ManageIQ will then configure the external database.</p>
+
+<h3 id="configuring-a-worker-appliance">
+<a class="anchor" href="#configuring-a-worker-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring a Worker Appliance</h3>
+
+<p>You can use multiple appliances to facilitate horizontal scaling, as
+well as for dividing up work by roles. Accordingly, configure an
+appliance to handle work for one or many roles, with workers within the
+appliance carrying out the duties for which they are configured. You can
+configure a worker appliance through the terminal. The following steps
+demonstrate how to join a worker appliance to an appliance that already
+has a region configured with a database.</p>
+
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch a security key. Since this is
+not the first ManageIQ appliance, choose <strong>2) Fetch key from
+remote machine</strong>. For worker and multi-region setups, use this
+option to copy the security key from another appliance.</p>
+
+    <div class="note">
+
+All ManageIQ appliances in a multi-region deployment
+must use the same key.
+
+</div>
+  </li>
+  <li>
+    <p>Choose <strong>Join Region in External Database</strong> for the database
+location.</p>
+  </li>
+  <li>
+    <p>Enter the database hostname or IP address when prompted.</p>
+  </li>
+  <li>
+    <p>Enter the port number or leave blank for the default (<code class="language-plaintext highlighter-rouge">5432</code>).</p>
+  </li>
+  <li>
+    <p>Enter the database name or leave blank for the default
+(<code class="language-plaintext highlighter-rouge">vmdb_production</code>).</p>
+  </li>
+  <li>
+    <p>Enter the database username or leave blank for the default (<code class="language-plaintext highlighter-rouge">root</code>).</p>
+  </li>
+  <li>
+    <p>Enter the chosen database user’s password.</p>
+  </li>
+  <li>
+    <p>Confirm the configuration if prompted.</p>
+  </li>
+</ol>
+
+<h2 id="logging-in-after-installing-manageiq">
+<a class="anchor" href="#logging-in-after-installing-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging In After Installing ManageIQ</h2>
+
+<p>Once ManageIQ is installed, you can log in and perform
+administration tasks.</p>
+
+<p>Log in to ManageIQ for the first time after installing by:</p>
+
+<ol>
+  <li>
+    <p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx">https://xx.xx.xx.xx</a> on
+the virtual machine instance)</p>
+  </li>
+  <li>
+    <p>Enter the default credentials (Username: <strong>admin</strong> | Password:
+<strong>smartvm</strong>) for the initial login.</p>
+  </li>
+  <li>
+    <p>Click <strong>Login</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="changing-the-default-login-password">
+<a class="anchor" href="#changing-the-default-login-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing the Default Login Password</h3>
+
+<p>Change your password to ensure more private and secure access to
+ManageIQ.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx">https://xx.xx.xx.xx</a> on
+the virtual machine instance)</p>
+  </li>
+  <li>
+    <p>Click <strong>Update Password</strong> beneath the <strong>Username</strong> and <strong>Password</strong>
+text fields.</p>
+  </li>
+  <li>
+    <p>Enter your current <strong>Username</strong> and <strong>Password</strong> in the text fields.</p>
+  </li>
+  <li>
+    <p>Input a new password in the <strong>New Password</strong> field.</p>
+  </li>
+  <li>
+    <p>Repeat your new password in the <strong>Verify Password</strong> field.</p>
+  </li>
+  <li>
+    <p>Click <strong>Login</strong>.</p>
+  </li>
+</ol>
+
+<h1 id="appendix">
+<a class="anchor" href="#appendix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix</h1>
+
+<h1 id="appliance-console-command-line-interface-cli">
+<a class="anchor" href="#appliance-console-command-line-interface-cli" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appliance Console Command-Line Interface (CLI)</h1>
+
+<p>Currently, the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> feature is a subset of the full functionality of the <code class="language-plaintext highlighter-rouge">appliance_console</code> itself, and covers functions most likely to be scripted by using the command-line interface (CLI).</p>
+
+<ol>
+  <li>
+    <p>After starting the ManageIQ appliance, log in with a user name of <code class="language-plaintext highlighter-rouge">root</code> and the default password of <code class="language-plaintext highlighter-rouge">smartvm</code>. This displays the Bash prompt for the root user.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> or <code class="language-plaintext highlighter-rouge">appliance_console_cli --help</code> command to see a list of options available with the command, or simply enter <code class="language-plaintext highlighter-rouge">appliance_console_cli --option &lt;argument&gt;</code> directly to use a specific option.</p>
+  </li>
+</ol>
+
+<h4 id="database-configuration-options">
+<a class="anchor" href="#database-configuration-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database Configuration Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–region (-r)</td>
+      <td>region number (create a new region in the database - requires database credentials passed)</td>
+    </tr>
+    <tr>
+      <td>–internal (-i)</td>
+      <td>internal database (create a database on the current appliance)</td>
+    </tr>
+    <tr>
+      <td>–dbdisk</td>
+      <td>database disk device path (for configuring an internal database)</td>
+    </tr>
+    <tr>
+      <td>–hostname (-h)</td>
+      <td>database hostname</td>
+    </tr>
+    <tr>
+      <td>–port</td>
+      <td>database port (defaults to <code class="language-plaintext highlighter-rouge">5432</code>)</td>
+    </tr>
+    <tr>
+      <td>–username (-U)</td>
+      <td>database username (defaults to <code class="language-plaintext highlighter-rouge">root</code>)</td>
+    </tr>
+    <tr>
+      <td>–password (-p)</td>
+      <td>database password</td>
+    </tr>
+    <tr>
+      <td>–dbname (-d)</td>
+      <td>database name (defaults to <code class="language-plaintext highlighter-rouge">vmdb_production</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 caption="Table 1. Database Configuration Options" caption-side="top" id="v2_key-options">
+<a class="anchor" href="#v2_key-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>v2_key Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–key (-k)</td>
+      <td>create a new v2_key</td>
+    </tr>
+    <tr>
+      <td>–fetch-key (-K)</td>
+      <td>fetch the v2_key from the given host</td>
+    </tr>
+    <tr>
+      <td>–force-key (-f)</td>
+      <td>create or fetch the key even if one exists</td>
+    </tr>
+    <tr>
+      <td>–sshlogin</td>
+      <td>ssh username for fetching the v2_key (defaults to <code class="language-plaintext highlighter-rouge">root</code>)</td>
+    </tr>
+    <tr>
+      <td>–sshpassword</td>
+      <td>ssh password for fetching the v2_key</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 caption="Table 2. v2_key Options" caption-side="top" id="ipa-server-options">
+<a class="anchor" href="#ipa-server-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPA Server Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–host (-H)</td>
+      <td>set the appliance hostname to the given name</td>
+    </tr>
+    <tr>
+      <td>–ipaserver (-e)</td>
+      <td>IPA server FQDN</td>
+    </tr>
+    <tr>
+      <td>–ipaprincipal (-n)</td>
+      <td>IPA server principal (default: <code class="language-plaintext highlighter-rouge">admin</code>)</td>
+    </tr>
+    <tr>
+      <td>–ipapassword (-w)</td>
+      <td>IPA server password</td>
+    </tr>
+    <tr>
+      <td>–ipadomain (-o)</td>
+      <td>IPA server domain (optional). Will be based on the appliance domain name if not specified.</td>
+    </tr>
+    <tr>
+      <td>–iparealm (-l)</td>
+      <td>IPA server realm (optional). Will be based on the domain name of the ipaserver if not specified.</td>
+    </tr>
+    <tr>
+      <td>–uninstall-ipa (-u)</td>
+      <td>uninstall IPA client</td>
+    </tr>
+  </tbody>
+</table>
+
+<p caption="Table 3. IPA Server Options" caption-side="top"><strong>Note</strong>:</p>
+
+<ul>
+  <li>
+    <p>In order to configure authentication through an IPA server, in addition to using <strong>Configure External Authentication (httpd)</strong> in the <code class="language-plaintext highlighter-rouge">appliance_console</code>, external authentication can be optionally configured via the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> (command-line interface).</p>
+  </li>
+  <li>
+    <p>Specifying <strong>–host</strong> will update the hostname of the appliance. If this step was already performed via the <code class="language-plaintext highlighter-rouge">appliance_console</code> and the necessary updates that are made to <code class="language-plaintext highlighter-rouge">/etc/hosts</code> if DNS is not properly configured, the <strong>–host</strong> option can be omitted.</p>
+  </li>
+</ul>
+
+<h4 id="certificate-options">
+<a class="anchor" href="#certificate-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certificate Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–ca (-c)</td>
+      <td>CA name used for certmonger (default: <code class="language-plaintext highlighter-rouge">ipa</code>)</td>
+    </tr>
+    <tr>
+      <td>–postgres-client-cert (-g)</td>
+      <td>install certs for postgres client</td>
+    </tr>
+    <tr>
+      <td>–postgres-server-cert</td>
+      <td>install certs for postgres server</td>
+    </tr>
+    <tr>
+      <td>–http-cert</td>
+      <td>install certs for http server (to create certs/httpd* values for a unique key)</td>
+    </tr>
+    <tr>
+      <td>–extauth-opts (-x)</td>
+      <td>external authentication options</td>
+    </tr>
+  </tbody>
+</table>
+
+<p caption="Table 4. Certificate Options" caption-side="top"><strong>Note</strong>: The certificate options augment the functionality of the <code class="language-plaintext highlighter-rouge">certmonger</code> tool and enable creating a certificate signing request (CSR), and specifying <code class="language-plaintext highlighter-rouge">certmonger</code> the directories to store the keys.</p>
+
+<h4 id="other-options">
+<a class="anchor" href="#other-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–logdisk (-l)</td>
+      <td>log disk path</td>
+    </tr>
+    <tr>
+      <td>–tmpdisk</td>
+      <td>initialize the given device for temp storage (volume mounted at <code class="language-plaintext highlighter-rouge">/var/www/miq_tmp</code>)</td>
+    </tr>
+    <tr>
+      <td>–verbose (-v)</td>
+      <td>print more debugging info</td>
+    </tr>
+  </tbody>
+</table>
+
+<p caption="Table 5. Other Options" caption-side="top"><strong>Example Usage.</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh root@appliance.test.company.com
+</code></pre></div></div>
+
+<p>To create a new database locally on the server by using <code class="language-plaintext highlighter-rouge">/dev/sdb</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --internal --dbdisk /dev/sdb --region 0 --password smartvm
+</code></pre></div></div>
+
+<p>To copy the v2_key from a host <em>some.example.com</em> to local machine:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --fetch-key some.example.com --sshlogin root --sshpassword smartvm
+</code></pre></div></div>
+
+<p>You could combine the two to join a region where <em>db.example.com</em> is the appliance hosting the database:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --fetch-key db.example.com --sshlogin root --sshpassword smartvm --hostname db.example.com --password mydatabasepassword
+</code></pre></div></div>
+
+<p>To configure external authentication:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --host appliance.test.company.com
+                        --ipaserver ipaserver.test.company.com
+                        --ipadomain test.company.com
+                        --iparealm TEST.COMPANY.COM
+                        --ipaprincipal admin
+                        --ipapassword smartvm1
+</code></pre></div></div>
+
+<p>To uninstall external authentication:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli  --uninstall-ipa
+</code></pre></div></div>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

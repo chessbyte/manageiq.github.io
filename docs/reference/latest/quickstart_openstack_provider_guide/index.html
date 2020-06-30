@@ -1,0 +1,4117 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/latest/quickstart_openstack_provider_guide/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/latest/quickstart_openstack_provider_guide/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Latest
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_latest>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/latest/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#quickstart-guide-for-cloudforms-with-red-hat-openstack-platform">QuickStart Guide for CloudForms with Red Hat OpenStack Platform</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#introduction-to-manageiq">Introduction to ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#architecture">Architecture</a></li>
+<li class="toc-entry toc-h3"><a href="#requirements">Requirements</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#virtual-hardware-requirements">Virtual Hardware Requirements</a></li>
+<li class="toc-entry toc-h4"><a href="#database-requirements">Database Requirements</a></li>
+<li class="toc-entry toc-h4"><a href="#browser-requirements">Browser Requirements</a></li>
+<li class="toc-entry toc-h4"><a href="#additional-requirements">Additional Requirements</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#terminology">Terminology</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#key-manageiq-features-for-openstack-cloud-providers">Key ManageIQ Features for OpenStack Cloud Providers</a></li>
+<li class="toc-entry toc-h2"><a href="#installing-and-configuring-manageiq">Installing and Configuring ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#obtaining-and-installing-the-manageiq-appliance">Obtaining and Installing the ManageIQ Appliance</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-manageiq">Configuring ManageIQ</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-general-appliance-settings">Configuring General Appliance Settings</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-a-database-for-manageiq">Configuring a Database for ManageIQ</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-general-manageiq-settings">Configuring General ManageIQ Settings</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-manageiq-metrics-for-smartstate-analysis">Configuring ManageIQ Metrics for SmartState Analysis</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#configuring-manageiq-capacity-and-utilization">Configuring ManageIQ Capacity and Utilization</a></li>
+<li class="toc-entry toc-h4"><a href="#enabling-smartstate-analysis">Enabling SmartState Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#adding-an-openstack-infrastructure-provider">Adding an OpenStack Infrastructure Provider</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#configuring-the-undercloud-to-store-events">Configuring the Undercloud to Store Events</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#adding-an-openstack-cloud-provider">Adding an OpenStack Cloud Provider</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#performing-a-smartstate-analysis">Performing a SmartState Analysis</a></li>
+<li class="toc-entry toc-h2"><a href="#using-the-topology-widget">Using the Topology Widget</a></li>
+<li class="toc-entry toc-h2"><a href="#managing-policies">Managing Policies</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#creating-a-host-compliance-policy">Creating a Host Compliance Policy</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-virtual-machine-control-policy">Creating a Virtual Machine Control Policy</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#managing-instances">Managing Instances</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#provisioning-an-openstack-instance-from-an-image">Provisioning an OpenStack Instance from an Image</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#managing-storage">Managing Storage</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#managing-block-storage">Managing Block Storage</a></li>
+<li class="toc-entry toc-h3"><a href="#managing-object-storage">Managing Object Storage</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#catalogs-and-services">Catalogs and Services</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#creating-a-service-dialog">Creating a Service Dialog</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-catalog">Creating a Catalog</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#creating-a-catalog-item">Creating a Catalog Item</a></li>
+<li class="toc-entry toc-h4"><a href="#ordering-a-catalog-item">Ordering a Catalog Item</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#reports">Reports</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#generating-a-single-report">Generating a Single Report</a></li>
+<li class="toc-entry toc-h3"><a href="#scheduling-a-report">Scheduling a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#viewing-reports">Viewing Reports</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#chargeback">Chargeback</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#creating-chargeback-rates">Creating Chargeback Rates</a></li>
+<li class="toc-entry toc-h3"><a href="#assigning-chargeback-rates">Assigning Chargeback Rates</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-chargeback-report">Creating a Chargeback Report</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#using-a-self-signed-ca-certificate">Using a Self-Signed CA Certificate</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#customizing-provisioning-dialogs">Customizing Provisioning Dialogs</a></li>
+<li class="toc-entry toc-h1"><a href="#creating-custom-buttons-for-cloud-tenants">Creating Custom Buttons for Cloud Tenants</a></li>
+<li class="toc-entry toc-h1"><a href="#creating-a-custom-button-group">Creating a Custom Button Group</a></li>
+<li class="toc-entry toc-h1"><a href="#creating-a-custom-button">Creating a Custom Button</a></li>
+<li class="toc-entry toc-h1"><a href="#managing-keypairs">Managing Keypairs</a></li>
+</ul><h1 id="quickstart-guide-for-cloudforms-with-red-hat-openstack-platform">
+<a class="anchor" href="#quickstart-guide-for-cloudforms-with-red-hat-openstack-platform" aria-hidden="true"><span class="octicon octicon-link"></span></a>QuickStart Guide for CloudForms with Red Hat OpenStack Platform</h1>
+
+<h2 id="introduction-to-manageiq">
+<a class="anchor" href="#introduction-to-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction to ManageIQ</h2>
+
+<p>ManageIQ delivers the insight, control, and automation that
+enterprises need to address the challenges of managing virtual
+environments. This technology enables enterprises with existing virtual
+infrastructures to improve visibility and control, and those starting
+virtualization deployments to build and operate a well-managed virtual
+infrastructure.</p>
+
+<p>ManageIQ provides the following feature sets:</p>
+
+<ul>
+  <li>
+    <p>Insight: Discovery, Monitoring, Utilization, Performance, Reporting,
+Analytic, Chargeback, and Trending.</p>
+  </li>
+  <li>
+    <p>Control: Security, Compliance, Alerting, and Policy-Based Resource,
+and Configuration Enforcement.</p>
+  </li>
+  <li>
+    <p>Automate: IT Process, Task and Event, Provisioning, and Workload
+Management and Orchestration.</p>
+  </li>
+  <li>
+    <p>Integrate: Systems Management, Tools and Processes, Event Consoles,
+Configuration Management Database (CMDB), Role-based Administration
+(RBA), and Web Services.</p>
+  </li>
+</ul>
+
+<h3 id="architecture">
+<a class="anchor" href="#architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Architecture</h3>
+
+<p>The diagram below describes the capabilities of ManageIQ. Its
+features are designed to work together to provide robust management and
+maintenance of your virtual infrastructure. <img src="../images/1845.png" alt="1845"></p>
+
+<p>The architecture comprises the following components:</p>
+
+<ul>
+  <li>
+    <p>The ManageIQ appliance (appliance) which is supplied as a
+secure, high-performance, preconfigured virtual machine. It provides
+support for HTTPS communications.</p>
+  </li>
+  <li>
+    <p>The ManageIQ Server (Server) resides on the appliance. It is
+the software layer that communicates between the SmartProxy and the
+Virtual Management Database. It includes support for HTTPS
+communications.</p>
+  </li>
+  <li>
+    <p>The Virtual Management Database (VMDB) resides either on the
+appliance or another computer accessible to the appliance. It is the
+definitive source of intelligence collected about your Virtual
+Infrastructure. It also holds status information regarding appliance
+tasks.</p>
+  </li>
+  <li>
+    <p>The ManageIQ Console (Console) is the Web interface used to
+view and control the Server and appliance. It is consumed through
+Web 2.0 mash-ups and web services (WS Management) interfaces.</p>
+  </li>
+  <li>
+    <p>The SmartProxy can reside on the appliance or on an ESX Server. If
+not embedded in the Server, the SmartProxy can be deployed from the
+appliance. A SmartProxy agent must configured in each storage
+location, and must be visible to the appliance. The SmartProxy acts
+on behalf of the appliance communicating with it over HTTPS on
+standard port 443.</p>
+  </li>
+</ul>
+
+<h3 id="requirements">
+<a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<p>To use ManageIQ, certain virtual hardware, database, and browser
+requirements must be met in your environment.</p>
+
+<h4 id="virtual-hardware-requirements">
+<a class="anchor" href="#virtual-hardware-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual Hardware Requirements</h4>
+
+<p>The ManageIQ appliance requires the following virtual hardware at
+minimum:</p>
+
+<ul>
+  <li>
+    <p>4 VCPUs</p>
+  </li>
+  <li>
+    <p>12 GB RAM</p>
+  </li>
+  <li>
+    <p>44 GB HDD + optional database disk</p>
+  </li>
+</ul>
+
+<h4 id="database-requirements">
+<a class="anchor" href="#database-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database Requirements</h4>
+
+<p>Red Hat recommends allocating the virtual machine disk fully at the time
+of creation. Three main factors affect the size of your database over
+time:</p>
+
+<ul>
+  <li>
+    <p>Virtual Machine Count: the most important factor in the calculation
+of virtual machine database (VMDB) size over time.</p>
+  </li>
+  <li>
+    <p>Host Count: the number of hosts associated with the provider.</p>
+  </li>
+  <li>
+    <p>Storage Count: the number of individual storage elements as seen
+from the perspective of the provider or host. It is not the total
+number of virtual disks for all virtual machines.</p>
+  </li>
+</ul>
+
+<p>Use the following table as a guideline to calculate minimum requirements
+for your database:</p>
+
+<p><img src="../images/5780.png" alt="5780"></p>
+
+<div class="note">
+
+When enabling capacity and utilization for metrics gathering over a
+period of time, it is recommended that the VMDB size scale accordingly.
+Evaluate the number of instances in your provider inventory and storage
+duration requirements to plan for increased VMDB sizing requirements.
+
+</div>
+
+<p>Use the following information to plan for your increased VMDB needs when
+working with metrics gathering:</p>
+
+<ul>
+  <li>
+    <p>Realtime metrics data are stored for 4 hours.</p>
+  </li>
+  <li>
+    <p>Rollup metrics data are stored for 6 months.</p>
+  </li>
+</ul>
+
+<p><strong>Example</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><strong>Minute</strong></td>
+      <td><strong>Hour</strong></td>
+      <td><strong>Day</strong></td>
+    </tr>
+    <tr>
+      <td><strong>OpenStack Provider Instance</strong></td>
+      <td>
+<strong>3</strong> Realtime Metrics</td>
+      <td>
+<strong>181</strong> (3 records * 60 minutes = 180 Realtime Metrics + 1 hourly Rollup Metric)</td>
+      <td>
+<strong>4,345</strong> (3 records * 60 minutes * 24 hours =4320 Realtime Metrics + 1 daily Rollup Metric)</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Metrics data storage times can be configured by editing the Advanced
+Settings.</li>
+</ul>
+
+<h4 id="browser-requirements">
+<a class="anchor" href="#browser-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser Requirements</h4>
+
+<p>To use ManageIQ, the following browser requirements must be met:</p>
+
+<ul>
+  <li>
+    <p>One of the following web browsers:</p>
+
+    <ul>
+      <li>
+        <p>Google Chrome</p>
+      </li>
+      <li>
+        <p>Mozilla Firefox</p>
+      </li>
+      <li>
+        <p>Safari</p>
+      </li>
+      <li>
+        <p>Internet Explorer 10 or higher</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="additional-requirements">
+<a class="anchor" href="#additional-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional Requirements</h4>
+
+<p>Additionally, the following must be configured to use ManageIQ:</p>
+
+<ul>
+  <li>
+    <p>The ManageIQ appliance must already be installed and
+activated in your enterprise environment.</p>
+  </li>
+  <li>
+    <p>The SmartProxy must have visibility into the virtual machines and
+cloud instances that you want to control.</p>
+  </li>
+  <li>
+    <p>For more information, see
+<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.2/html-single/general_configuration/#smartproxies">SmartProxies</a>
+in the ManageIQ <em>General Configuration</em> guide.</p>
+  </li>
+</ul>
+
+<h3 id="terminology">
+<a class="anchor" href="#terminology" aria-hidden="true"><span class="octicon octicon-link"></span></a>Terminology</h3>
+
+<p>The following terms are used throughout the documentation. Review them
+before proceeding.</p>
+
+<ul>
+  <li>
+    <p>Account Role
+The level of access a user has to different parts and functions of
+the ManageIQ console. There are a variety of Account Roles,
+which can be assigned to users to restrict or allow access to parts
+of the console and virtual infrastructure.</p>
+  </li>
+  <li>
+    <p>Action
+An execution that is performed after a condition is evaluated.</p>
+  </li>
+  <li>
+    <p>Alert
+ManageIQ alerts notify administrators and monitoring systems
+of critical configuration changes and threshold limits in the
+virtual environment. The notification can take the form of either an
+email or an SNMP trap.</p>
+  </li>
+  <li>
+    <p>Analysis Profile
+A customized scan of hosts, virtual machines, or instances. You can
+collect information from categories, files, event logs, and registry
+entries.</p>
+  </li>
+  <li>
+    <p>Cloud
+A pool of on-demand and highly available computing resources. The
+usage of these resources are scaled depending on the user
+requirements and metered for cost.</p>
+  </li>
+  <li>
+    <p>ManageIQ Appliance
+A virtual machine where the virtual management database (VMDB) and
+ManageIQ reside.</p>
+  </li>
+  <li>
+    <p>ManageIQ Console
+A web-based interface into the ManageIQ appliance.</p>
+  </li>
+  <li>
+    <p>ManageIQ Role
+A designation assigned to a ManageIQ server that defines what
+a ManageIQ server can do.</p>
+  </li>
+  <li>
+    <p>ManageIQ Server
+The application that runs on the ManageIQ appliance and
+communicates with the SmartProxy and the VMDB.</p>
+  </li>
+  <li>
+    <p>Cluster
+Hosts that are grouped together to provide high availability and
+load balancing.</p>
+  </li>
+  <li>
+    <p>Condition
+A control policy test triggered by an event, which determines a
+subsequent action.</p>
+  </li>
+  <li>
+    <p>Discovery
+Process run by the ManageIQ server which finds virtual
+machine and cloud providers.</p>
+  </li>
+  <li>
+    <p>Drift
+The comparison of a virtual machine, instance, host, cluster to
+itself at different points in time.</p>
+  </li>
+  <li>
+    <p>Event
+A trigger to check a condition.</p>
+  </li>
+  <li>
+    <p>Event Monitor
+Software on the ManageIQ appliance which monitors external
+providers for events and sends them to the ManageIQ server.</p>
+  </li>
+  <li>
+    <p>Host
+A computer running a hypervisor, capable of hosting and monitoring
+virtual machines. Supported hypervisors include RHV-H, VMware ESX
+hosts, Windows Hyper-V hosts.</p>
+  </li>
+  <li>
+    <p>Instance/Cloud Instance
+A on-demand virtual machine based upon a predefined image and uses a
+scalable set of hardware resources such as CPU, memory, networking
+interfaces.</p>
+  </li>
+  <li>
+    <p>Managed/Registered VM
+A virtual machine that is connected to a host and exists in the
+VMDB. Also, a template that is connected to a provider and exists in
+the VMDB. Note that templates cannot be connected to a host.</p>
+  </li>
+  <li>
+    <p>Managed/Unregistered VM
+A virtual machine or template that resides on a repository or is no
+longer connected to a provider or host and exists in the VMDB. A
+virtual machine that was previously considered registered may become
+unregistered if the virtual machine was removed from provider
+inventory.</p>
+  </li>
+  <li>
+    <p>Provider
+An external management system that ManageIQ integrates
+in order to collect data and perform operations.</p>
+  </li>
+  <li>
+    <p>Policy
+A combination of an event, a condition, and an action used to manage
+a virtual machine.</p>
+  </li>
+  <li>
+    <p>Policy Profile
+A set of policies.</p>
+  </li>
+  <li>
+    <p>Refresh
+A process run by the ManageIQ server which checks for
+relationships of the provider or host to other resources, such as
+storage locations, repositories, virtual machines, or instances. It
+also checks the power states of those resources.</p>
+  </li>
+  <li>
+    <p>Regions
+A region is the collection of zones that share the same database for
+reporting and charting. A master region may be added to synchronize
+multiple VMDBs into one VMDB for higher-level reporting, providing a
+“single pane of glass” view.</p>
+  </li>
+  <li>
+    <p>Resource
+A host, provider, instance, virtual machine, repository, or
+datastore.</p>
+  </li>
+  <li>
+    <p>Resource Pool
+A group of virtual machines across which CPU and memory resources
+are allocated.</p>
+  </li>
+  <li>
+    <p>Repository
+A place on a datastore resource which contains virtual machines.</p>
+  </li>
+  <li>
+    <p>SmartProxy
+The SmartProxy is a software agent that acts on behalf of the
+ManageIQ appliance to perform actions on hosts, providers,
+storage and virtual machines.</p>
+  </li>
+</ul>
+
+<p>-
+    The SmartProxy can be configured to reside on the ManageIQ
+    appliance or on an ESX server version. The SmartProxy can be
+    deployed from the ManageIQ appliance, and provides visibility
+    to the VMFS storage. Each storage location must have a SmartProxy
+    with visibility to it. The SmartProxy acts on behalf of the
+    ManageIQ appliance. If the SmartProxy is not embedded in the
+    ManageIQ server, it communicates with the ManageIQ
+    appliance over HTTPS on standard port 443.</p>
+
+<ul>
+  <li>
+    <p>SmartState Analysis
+Process run by the SmartProxy which collects the details of a
+virtual machine or instance. Such details include accounts, drivers,
+network information, hardware, and security patches. This process is
+also run by the ManageIQ server on hosts and clusters. The
+data is stored in the VMDB.</p>
+  </li>
+  <li>
+    <p>SmartTags
+Descriptors that allow you to create a customized, searchable index
+for the resources in your clouds and infrastructure.</p>
+  </li>
+  <li>
+    <p>Storage Location
+A device, such as a VMware datastore, where digital information
+resides that is connected to a resource.</p>
+  </li>
+  <li>
+    <p>Tags
+Descriptive terms defined by a ManageIQ user or the system
+used to categorize a resource.</p>
+  </li>
+  <li>
+    <p>Template
+A template is a copy of a preconfigured virtual machine, designed to
+capture installed software and software configurations, as well as
+the hardware configuration, of the original virtual machine.</p>
+  </li>
+  <li>
+    <p>Unmanaged Virtual Machine
+Files discovered on a datastore that do not have a virtual machine
+associated with them in the VMDB. These files may be registered to a
+provider that the ManageIQ server does not have configuration
+information on. Possible causes may be that the provider has not
+been discovered or that the provider has been discovered, but no
+security credentials have been provided.</p>
+  </li>
+  <li>
+    <p>Virtual Machine
+A software implementation of a system that functions similar to a
+physical machine. Virtual machines utilize the hardware
+infrastructure of a physical host, or a set of physical hosts, to
+provide a scalable and on-demand method of system provisioning.</p>
+  </li>
+  <li>
+    <p>Virtual Management Database (VMDB)
+Database used by the ManageIQ appliance to store information
+about your resources, users, and anything else required to manage
+your virtual enterprise.</p>
+  </li>
+  <li>
+    <p>Virtual Thumbnail
+An image in the web interface representing a resource, such as a
+provider or a virtual machine, showing the resource’s properties at
+a glance. Each virtual thumbnail is divided into quadrants, which
+provide information about the resource, such as its software and
+power state.</p>
+  </li>
+  <li>
+    <p>Worker Appliance
+A ManageIQ appliance dedicated to a role other than
+user interface or database.</p>
+  </li>
+  <li>
+    <p>Zones
+ManageIQ Infrastructure can be organized into zones to
+configure failover and to isolate traffic. Zones can be created
+based on your environment. Zones can be based on geographic
+location, network location, or function. When first started, new
+servers are put into the default zone.</p>
+  </li>
+</ul>
+
+<h2 id="key-manageiq-features-for-openstack-cloud-providers">
+<a class="anchor" href="#key-manageiq-features-for-openstack-cloud-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key ManageIQ Features for OpenStack Cloud Providers</h2>
+
+<p>ManageIQ provides several interface features specific to
+OpenStack cloud providers:</p>
+
+<ul>
+  <li>
+    <p>The ManageIQ <strong>Topology</strong> widget (<a href="#using-the-topology-widget">Using the Topology
+Widget</a>) provides an interactive
+visualization of the OpenStack cloud.</p>
+  </li>
+  <li>
+    <p>ManageIQ provides a user interface for managing
+OpenStack storage resources (<a href="#storage_managers">Managing Storage</a>).</p>
+  </li>
+  <li>
+    <p><em>Custom buttons</em>, which allows you to provide automation for
+specific actions to OpenStack tenants
+(<a href="#custom-button-tenants">appendix_title</a>).</p>
+  </li>
+</ul>
+
+<p>When adding an OpenStack cloud provider, you can also:</p>
+
+<ul>
+  <li>
+    <p>Enable <em>tenant mapping</em>. This creates a one-to-one association
+between tenants in ManageIQ and OpenStack.</p>
+  </li>
+  <li>
+    <p>Connect to OpenStack through the Keystone V3 API. This API enables
+multiple OpenStack identity domains. Domains are high-level
+containers for projects, users, and groups. Users of different
+domains can be represented in different authentication back ends.</p>
+  </li>
+</ul>
+
+<p>For information about tenant mapping and the Keystone V3 API, see
+<a href="#add-openstack-oc">Adding an OpenStack Cloud Provider</a>.</p>
+
+<h2 id="installing-and-configuring-manageiq">
+<a class="anchor" href="#installing-and-configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing and Configuring ManageIQ</h2>
+
+<p>ManageIQ can be installed on a number of virtualization
+platforms, such as <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.0/installing-cloudforms-on-vmware-vsphere/installing-cloudforms-on-vmware-vsphere">VMware
+vSphere</a>,
+and <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.0/installing-cloudforms-on-red-hat-enterprise-virtualization/installing-cloudforms-on-red-hat-enterprise-virtualization">Red Hat Enterprise
+Virtualization</a>.
+This chapter describes how to install and configure ManageIQ on
+<em>Red Hat OpenStack Platform</em>.</p>
+
+<h3 id="obtaining-and-installing-the-manageiq-appliance">
+<a class="anchor" href="#obtaining-and-installing-the-manageiq-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtaining and Installing the ManageIQ Appliance</h3>
+
+<p>First, download the appliance from the Red Hat Customer Portal:</p>
+
+<ol>
+  <li>
+    <p>Go to <a href="https://access.redhat.com">access.redhat.com</a> and log in to
+the Red Hat Customer Portal using your customer account details.</p>
+  </li>
+  <li>
+    <p>Click <strong>Downloads</strong> in the menu bar.</p>
+  </li>
+  <li>
+    <p>Click <strong>A-Z</strong> to sort the product downloads alphabetically.</p>
+  </li>
+  <li>
+    <p>Click <strong>Red Hat CloudForms</strong> to access the product download page.</p>
+  </li>
+  <li>
+    <p>Select <strong>Red Hat CloudForms Beta</strong> from the <strong>Product Variant:</strong>
+dropdown list.</p>
+  </li>
+  <li>
+    <p>From the list of installers and images, click the <strong>Download Now</strong>
+link for <strong>CFME OpenStack Virtual Appliance</strong>.</p>
+  </li>
+</ol>
+
+<p>Afterwards, upload or install the appliance image as a virtual machine
+or instance on a supported virtualization environment or cloud provider.
+See the <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/?category=installation%2520and%2520upgrade&amp;version=4.7">Installation and
+Upgrade</a>
+section for information on different supported <em>ManageIQ</em>
+deployment methods.</p>
+
+<p>Whichever deployment method you choose, ensure that <em>ManageIQ</em> is
+configured with connectivity to the OpenStack management network.</p>
+
+<div class="tip">
+
+See [Uploading the Appliance on
+OpenStack](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/installing-red-hat-cloudforms-on-red-hat-enterprise-linux-openstack-platform/#uploading-the-appliance-on-openstack)
+for instructions on deploying *ManageIQ* as an instance on the
+overcloud.
+
+</div>
+
+<h3 id="configuring-manageiq">
+<a class="anchor" href="#configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ</h3>
+
+<p>After deploying the appliance, log in with the root password <code class="language-plaintext highlighter-rouge">smartvm</code>.
+If you deployed the appliance as a virtual machine, you can log in
+through <code class="language-plaintext highlighter-rouge">virsh</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@kvm-host ~]# virsh console my-cfme
+Connected to domain my-cfme
+...
+Welcome to the CFME Virtual Appliance.
+
+You can browse to http://localhost.localdomain/
+
+Red Hat Enterprise Linux Server 7.2 (Maipo)
+Kernel 3.10.0-327.36.1.el7.x86_64 on an x86_64
+localhost login: root
+Password:
+Last login: Thu Oct 13 23:03:53 on tty2
+Welcome to the Appliance Console
+
+For a menu, please type: appliance_console
+[root@localhost ~]#
+</code></pre></div></div>
+
+<h3 id="configuring-general-appliance-settings">
+<a class="anchor" href="#configuring-general-appliance-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring General Appliance Settings</h3>
+
+<p>After logging in, you can use the following menu items for advanced
+configuration of the appliance:</p>
+
+<table>
+<caption>Appliance Console Advanced Settings</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>Option</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Configure Network</strong></p></td>
+<td>
+<p>Provides options for configuring the network for your ManageIQ appliance. The appliance is initially configured as a DHCP client with bridged networking.</p>
+<p>You can use DHCP to obtain the IP address and network configuration for your ManageIQ appliance, or use an IPv4 or IPv6 static network configuration by providing specific IP address and network settings.</p>
+<p>This menu also provides options to test the network configuration to check that name resolution is working correctly, and to set the appliance’s host name.</p>
+<div class="important">
+<p>A valid fully qualified hostname for the ManageIQ appliance is required for SmartState analysis to work correctly.</p>
+</div>
+</td>
+</tr>
+<tr class="odd">
+<td><p><strong>Restore Database from Backup</strong></p></td>
+<td><p>Restore the Virtual Management Database (VMDB) from a previous backup.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Configure Database</strong></p></td>
+<td><p>Configure the VMDB. Use this option to configure the database for the appliance after installing and running it for the first time.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Configure Database Replication</strong></p></td>
+<td><p>Configure a primary or standby server for VMDB replication.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Configure Database Maintenance</strong></p></td>
+<td><p>Configure the VMDB maintenance schedule.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Logfile Configuration</strong></p></td>
+<td><p>Provides options for configuring a new logfile disk volume, and changing the saved logrotate count.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Configure Application Database Failover Monitor</strong></p></td>
+<td><p>Start or stop VMDB failover monitoring.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Extend Temporary Storage</strong></p></td>
+<td><p>Add temporary storage to the appliance. The appliance formats an unpartitioned disk attached to the appliance host and mounts it at <code>/var/www/miq_tmp</code>. The appliance uses this temporary storage directory to perform certain image download functions.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Configure External Authentication (httpd)</strong></p></td>
+<td><p>Configure authentication through an IPA server.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Update External Authentication Options</strong></p></td>
+<td><p>Enable or disable external authentication methods: single sign-on, SAML, and local login. For example, if the current state is <code>Enabled</code>, the prompt indicates the option should be <code>Disabled</code>.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Generate Custom Encryption Key</strong></p></td>
+<td><p>Regenerate the encryption key used to encode plain text password.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Harden Appliance Using SCAP Configuration</strong></p></td>
+<td><p>Apply Security Content Automation Protocol (SCAP) standards to the appliance. You can view these SCAP rules in the <code>/var/www/miq/lib/appliance_console/config/scap_rules.yml</code> file.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Stop EVM Server Processes</strong></p></td>
+<td><p>Stop all server processes. You may need to do this to perform maintenance.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Start EVM Server Processes</strong></p></td>
+<td><p>Start the server. You may need to do this after performing maintenance.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Restart Appliance</strong></p></td>
+<td><p>Restart the ManageIQ appliance. You can either restart the appliance and clear the logs or just restart the appliance.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Shut Down Appliance</strong></p></td>
+<td><p>Power down the appliance and exit all processes.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Summary Information</strong></p></td>
+<td><p>Go back to the network summary screen for the ManageIQ appliance.</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Quit</strong></p></td>
+<td><p>Leave the ManageIQ appliance console.</p></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="configuring-a-database-for-manageiq">
+<a class="anchor" href="#configuring-a-database-for-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring a Database for ManageIQ</h3>
+
+<p>ManageIQ supports the use of an internal or external database.
+The following instructions are suitable for configuring an <em>internal</em>
+database. For instructions on how to configure an external database
+instead, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.1/single/installing-red-hat-cloudforms-on-red-hat-enterprise-linux-openstack-platform#configuring_an_external_database">Configuring an External
+Database</a>.</p>
+
+<div class="important">
+
+Before installing an internal database, add a disk to the infrastructure
+hosting your appliance. See the documentation specific to your
+infrastructure for instructions for adding a disk. As a storage disk
+usually cannot be added while a virtual machine is running, Red Hat
+recommends adding the disk before starting the appliance.
+ManageIQ only supports installing of an internal VMDB on blank
+disks; installation will fail if the disks are not blank.
+
+</div>
+
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch an encryption key.</p>
+
+    <ul>
+      <li>
+        <p>If this is the first ManageIQ appliance, choose <strong>Create
+key</strong>.</p>
+      </li>
+      <li>
+        <p>If this is not the first ManageIQ appliance, choose
+<strong>Fetch key from remote machine</strong> to fetch the key from the
+first appliance. For worker and multi-region setups, use this
+option to copy key from another appliance.</p>
+
+        <div class="note">
+
+All ManageIQ appliances in a multi-region
+deployment must use the same key.
+
+</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Choose <strong>Create Internal Database</strong> for the database location.</p>
+  </li>
+  <li>
+    <p>Choose a disk for the database. This can be either a disk you
+attached previously, or a partition on the current disk.</p>
+
+    <div class="important">
+
+Red Hat recommends using a separate disk for the database.
+
+</div>
+
+    <p>If there is an unpartitioned disk attached to the virtual machine,
+the dialog will show options similar to the following:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>1) /dev/vdb: 20480
+2) Don't partition the disk
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Enter <strong>1</strong> to choose <code class="language-plaintext highlighter-rouge">/dev/vdb</code> for the database location. This
+option creates a logical volume using this device and mounts the
+volume to the appliance in a location appropriate for storing
+the database. The default location is <code class="language-plaintext highlighter-rouge">/var/lib/pgsql</code>, which
+can be found in the environment variable
+<code class="language-plaintext highlighter-rouge">$APPLIANCE_PG_MOUNT_POINT</code>.</p>
+      </li>
+      <li>
+        <p>Enter <strong>2</strong> to continue without partitioning the disk. A second
+prompt will confirm this choice. Selecting this option results
+in using the root filesystem for the data directory (not advised
+in most cases).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Enter <strong>Y</strong> or <strong>N</strong> for <strong>Should this appliance run as a standalone
+database server?</strong></p>
+
+    <ul>
+      <li>
+        <p>Select <strong>Y</strong> to configure the appliance as a database-only
+appliance. As a result, the appliance is configured as a basic
+PostgreSQL server, without a user interface.</p>
+      </li>
+      <li>
+        <p>Select <strong>N</strong> to configure the appliance with the full
+administrative user interface.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When prompted, enter a unique number to create a new region.</p>
+
+    <div class="important">
+
+Creating a new region destroys any existing data on the chosen
+database.
+
+</div>
+  </li>
+  <li>
+    <p>Create and confirm a password for the database.</p>
+  </li>
+</ol>
+
+<p>ManageIQ then configures the internal database. This takes a few
+minutes. After the database is created and initialized, you can log in
+to ManageIQ.</p>
+
+<h3 id="configuring-general-manageiq-settings">
+<a class="anchor" href="#configuring-general-manageiq-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring General ManageIQ Settings</h3>
+
+<p>After configuring the general settings for the appliance and creating a
+database for it, you can now launch ManageIQ. To do this, use the
+<strong>Start EVM Server Processes</strong> option from the appliance console
+(<a href="#configuring_general_appliance_settings">Configuring General Appliance
+Settings</a>). Once you launch
+ManageIQ, note the <strong>Hostname</strong> and <strong>IP Address</strong> displayed on
+the appliance console screen.</p>
+
+<p>Open the ManageIQ web-based user interface by accessing either
+<strong>Hostname</strong> and <strong>IP Address</strong> on a web browser. At the login screen,
+use the following credentials:</p>
+
+<ul>
+  <li>
+    <p>Username: <strong>admin</strong></p>
+  </li>
+  <li>
+    <p>Password: <strong>smartvm</strong></p>
+  </li>
+</ul>
+
+<div class="note">
+
+You can also change the password of the **admin** account from the login
+screen. To do so, click the **Update Password** link.
+
+</div>
+
+<p>You can access and configure most ManageIQ settings through the
+<strong>Configuration</strong> menu. You can access this menu through <strong>Administrator
+| EVM</strong> &gt; <strong>Configuration</strong>.</p>
+
+<p>The options under the <img src="../images/config-gear.png" alt="Configuration">
+<strong>Configuration</strong> menu allow you to configure global options for your
+ManageIQ environment, view diagnostic information, and view
+analytics on the servers in the environment. The menu displays the
+ManageIQ environment at the enterprise, zone, and server levels.</p>
+
+<p>There are four main areas:</p>
+
+<ul>
+  <li>
+    <p><strong>Settings</strong></p>
+
+    <p>This menu allows you to configure global settings for your
+ManageIQ infrastructure. You can also create analysis
+profiles and schedules for these profiles.</p>
+  </li>
+  <li>
+    <p><strong>Access Control</strong></p>
+
+    <p>This menu contains options for configuring users, groups, roles, and
+tenants.</p>
+  </li>
+  <li>
+    <p><strong>Diagnostics</strong></p>
+
+    <p>This menu displays the status of your servers and their roles and
+provides access to logs.</p>
+  </li>
+  <li>
+    <p><strong>Database</strong></p>
+
+    <p>specify the location of your Virtual Machine Database (VMDB) and its
+login credentials.</p>
+  </li>
+</ul>
+
+<h3 id="configuring-manageiq-metrics-for-smartstate-analysis">
+<a class="anchor" href="#configuring-manageiq-metrics-for-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ Metrics for SmartState Analysis</h3>
+
+<p>You can also configure ManageIQ to perform a <em>SmartState
+Analysis</em>. This type of analysis collects details such as accounts,
+drivers, network information, hardware, and security patches on assets
+managed by the OpenStack provider. Enabling SmartState Analysis involves
+two steps:</p>
+
+<ol>
+  <li>
+    <p><a href="#cf-caputils">Configuring ManageIQ Capacity and
+Utilization</a>, and</p>
+  </li>
+  <li>
+    <p><a href="#cf-smartproxy">Enabling SmartState Analysis</a></p>
+  </li>
+</ol>
+
+<p>These steps are required to allow ManageIQ to collect
+metrics from OpenStack and use them to perform a SmartState analysis.
+You can choose different servers to perform either function; the
+following sections assume that you will.</p>
+
+<h4 id="configuring-manageiq-capacity-and-utilization">
+<a class="anchor" href="#configuring-manageiq-capacity-and-utilization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ Capacity and Utilization</h4>
+
+<p>For metrics collection to work properly, you also need to configure
+ManageIQ to allow for all three <strong>Capacity &amp; Utilization</strong> server
+roles, which are available from the settings menu under
+menu:Configuration[Server &gt; Server Control].</p>
+
+<p>To enable these server roles:</p>
+
+<ol>
+  <li>
+    <p>Click <strong>Configuration</strong>, then select the server to configure from
+menu:Settings[Zone] in the accordion menu on the left.</p>
+  </li>
+  <li>
+    <p>Navigate to the <strong>Server Roles</strong> list in the menu:Server[Server
+Control] section. From there, set the required capacity and
+utilization roles to <strong>ON</strong>, namely:</p>
+
+    <ol>
+      <li>
+        <p><strong>Capacity &amp; Utilization Coordinator</strong></p>
+      </li>
+      <li>
+        <p><strong>Capacity &amp; Utilization Data Collector</strong></p>
+      </li>
+      <li>
+        <p><strong>Capacity &amp; Utilization Data Processor</strong></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>Data collection is enabled immediately. However, the first collection
+begins 5 minutes after the server is started, and every 10 minutes after
+that. Therefore, the longest the collection takes after enabling the
+Capacity &amp; Utilization Collector role is 10 minutes. The first
+collection from a particular provider may take a few minutes since
+ManageIQ is gathering data points going one month back in time.</p>
+
+<p>For more information, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.1/deployment-planning-guide/#capacity_and_utilization_collection">Capacity and Utilization
+Collection</a>
+from the <em>Deployment Planning Guide</em>.</p>
+
+<h4 id="enabling-smartstate-analysis">
+<a class="anchor" href="#enabling-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling SmartState Analysis</h4>
+
+<p>After enabling the required server roles, enable SmartState analysis.
+See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/support_matrix/#smart_state_analysis_support">Smart State Analysis
+Support</a>
+from the Support Matrix and <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#running-a-smartstate-analysis">Running a SmartState
+Analysis</a>
+in the <em>Managing Providers</em> guide for more information.</p>
+
+<p>Enabling SmartState analysis is similar to <a href="#cf-caputils">???</a>, in that
+the procedure also involves enabling server roles on a specific server.
+To do so:</p>
+
+<ol>
+  <li>
+    <p>Click i*Configuration*.</p>
+  </li>
+  <li>
+    <p>Select the server to configure from menu:Settings[Zone] in the
+left pane of the appliance.</p>
+  </li>
+  <li>
+    <p>Navigate to the <strong>Server Roles</strong> list in the menu:Server[Server
+Control] section. From there, set the appropriate SmartState roles
+to <strong>ON</strong>. Namely:</p>
+
+    <ol>
+      <li>
+        <p><strong>SmartProxy</strong></p>
+      </li>
+      <li>
+        <p><strong>SmartState Analysis</strong></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="adding-an-openstack-infrastructure-provider">
+<a class="anchor" href="#adding-an-openstack-infrastructure-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an OpenStack Infrastructure Provider</h2>
+
+<p>After initial installation and creation of a ManageIQ
+environment, add an OpenStack infrastructure provider to the appliance.
+ManageIQ supports operating with the OpenStack <code class="language-plaintext highlighter-rouge">admin</code> tenant.
+When creating an OpenStack infrastructure provider in ManageIQ,
+select the OpenStack infrastructure provider’s <code class="language-plaintext highlighter-rouge">admin</code> user because it
+is the default administrator of the OpenStack <code class="language-plaintext highlighter-rouge">admin</code> tenant. When using
+the <code class="language-plaintext highlighter-rouge">admin</code> credentials, a user in ManageIQ provisions into the
+<code class="language-plaintext highlighter-rouge">admin</code> tenant, and sees images, networks, and instances that are
+associated with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.</p>
+
+<div class="note">
+
+  - You can set whether ManageIQ should use the Telemetry service
+    or Advanced Message Queueing Protocol (AMQP) for event monitoring.
+    If you choose Telemetry, you should first configure the
+    **ceilometer** service on the undercloud to store events. See
+    [???](#openstack-events-uc) for instructions. For more information,
+    see [OpenStack Telemetry
+    (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry)
+    in the Red Hat OpenStack Platform *Architecture Guide*.
+
+  - To authenticate the provider using a self-signed Certificate
+    Authority (CA), configure the ManageIQ appliance to
+    trust the certificate using the steps in [???](#app-self_signed_CA)
+    before adding the provider.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Infrastructure &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1862.png" alt="Add a New Infrastructure Provider"> (<strong>Add
+a New Infrastructure Provider</strong>).</p>
+  </li>
+  <li>
+    <p>Enter the <strong>Name</strong> of the provider to add. The <strong>Name</strong> is how the
+device is labeled in the console.</p>
+  </li>
+  <li>
+    <p>Select <strong>OpenStack Platform Director</strong> from the <strong>Type</strong> list.</p>
+  </li>
+  <li>
+    <p>Select the <strong>API Version</strong> of your OpenStack provider’s Keystone
+service from the list. The default is <code class="language-plaintext highlighter-rouge">Keystone v2</code>.</p>
+
+    <div class="note">
+
+  - With Keystone API v3, domains are used to determine administrative
+boundaries of service entities in OpenStack. Domains allow you to
+group users together for various purposes, such as setting
+domain-specific configuration or security options. For more
+information, see [OpenStack Identity
+(keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
+in the Red Hat OpenStack Platform *Architecture Guide*.
+
+</div>
+  </li>
+</ol>
+<ul>
+  <li>
+    <p>The provider you are creating will be able to see projects for the
+given domain only. To see projects for other domains, add it as
+another cloud provider. For more information on domain management in
+OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/users_and_identity_management_guide/#Domains">Domain
+Management</a>
+in the Red Hat OpenStack Platform <em>Users and Identity Management
+Guide</em>.</p>
+
+    <p>&lt;/div&gt;</p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the
+zone is set to <strong>default</strong>.</p>
+
+    <div class="note">
+
+For more information, see the definition of host aggregates and
+availability zones in [OpenStack Compute
+(nova)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute)
+in the Red Hat OpenStack Platform *Architecture Guide*.
+
+</div>
+  </li>
+  <li>
+    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and
+authentication details of your OpenStack provider:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the provider:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely using SSL.</p>
+          </li>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option. This is the recommended authentication
+method.</p>
+          </li>
+          <li>
+            <p><strong>Non-SSL</strong>: Connect to the provider insecurely using only
+HTTP protocol, without SSL.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Host Name or IP address(IPv4 or IPv6)</strong> of the
+provider. If your provider is an undercloud, use its hostname
+(see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Setting_the_Hostname_for_the_System">Setting the Hostname for the
+System</a>
+in Red Hat OpenStack Platform <em>Director Installation and Usage</em>
+for more details)</p>
+      </li>
+      <li>
+        <p>In <strong>API Port</strong>, set the public port used by the OpenStack
+Keystone service. By default, OpenStack uses port 5000 for
+non-SSL security protocol. For SSL, API port is 13000 by
+default.</p>
+      </li>
+      <li>
+        <p>In the <strong>Username</strong> field, enter the name of an OpenStack user
+with privileged access (for example, <strong>admin</strong>). Then, provide
+its corresponding password in the <strong>Password</strong> and <strong>Confirm
+Password</strong> fields.</p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm ManageIQ can connect to the
+OpenStack provider.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Next, configure how ManageIQ should receive events from the
+OpenStack provider. Click the <strong>Events</strong> tab in the <strong>Endpoints</strong>
+section to start.</p>
+
+    <ul>
+      <li>
+        <p>To use the Telemetry service of the OpenStack provider, select
+<strong>Ceilometer</strong>. Before you do so, the provider must first be
+configured accordingly. See <a href="#openstack-events-uc">???</a> for
+details.</p>
+      </li>
+      <li>
+        <p>If you prefer to use the AMQP Messaging bus instead, select
+<strong>AMQP</strong>. When you do: In <strong>Hostname (or IPv4 or IPv6 address)</strong>
+(of the <strong>Events</strong> tab, under <strong>Endpoints</strong>), enter the public
+IP or fully qualified domain name of the AMQP host.</p>
+
+        <ul>
+          <li>
+            <p>In the <strong>API Port</strong>, set the public port used by AMQP. By
+default, OpenStack uses port 5672 for this.</p>
+          </li>
+          <li>
+            <p>In the <strong>Username</strong> field, enter the name of an OpenStack
+user with privileged access (for example, <strong>admin</strong>). Then,
+provide its corresponding password in the <strong>Password</strong>
+field.</p>
+          </li>
+          <li>
+            <p>Click <strong>Validate</strong> to confirm the credentials.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>You can also configure SSH access to all hosts managed by the
+OpenStack infrastructure provider. To do so, click on the <strong>RSA key
+pair</strong> tab in the <strong>Endpoints</strong> section.</p>
+
+    <ol>
+      <li>
+        <p>From there, enter the <strong>Username</strong> of an account with privileged
+access.</p>
+      </li>
+      <li>
+        <p>If you selected <strong>SSL</strong> in <strong>Endpoints &gt; Default &gt; Security
+Protocol</strong> earlier, use the <strong>Browse</strong> button to find and set a
+private key.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> after configuring the infrastructure provider.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+ManageIQ requires that the `adminURL` endpoint for all OpenStack
+services be on a non-private network. Accordingly, assign the adminURL
+endpoint an IP address of something other than `192.168.x.x`. The
+`adminURL` endpoint must be accessible to the ManageIQ appliance
+that is responsible for collecting inventory and gathering metrics from
+the OpenStack environment. Additionally, all the Keystone endpoints must
+be accessible, otherwise refresh will fail.
+
+</div>
+
+<h3 id="configuring-the-undercloud-to-store-events">
+<a class="anchor" href="#configuring-the-undercloud-to-store-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Undercloud to Store Events</h3>
+
+<p>To allow ManageIQ to receive events from a Red Hat OpenStack
+Platform environment, you must configure the <strong>notification_driver</strong>
+option for the Compute service and Orchestration service in that
+environment. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#chap-Installing_the_Undercloud">Installing the
+Undercloud</a>
+and <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Configuring_the_Director">Configuring the
+Director</a>
+in Red Hat OpenStack Platform <em>Director Installation and Usage</em> for
+related details.</p>
+
+<h2 id="adding-an-openstack-cloud-provider">
+<a class="anchor" href="#adding-an-openstack-cloud-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an OpenStack Cloud Provider</h2>
+
+<p>ManageIQ supports operating with the OpenStack <code class="language-plaintext highlighter-rouge">admin</code> tenant.
+When creating an OpenStack provider in ManageIQ, select the
+OpenStack provider’s <code class="language-plaintext highlighter-rouge">admin</code> user because it is the default
+administrator of the OpenStack <code class="language-plaintext highlighter-rouge">admin</code> tenant. When using the <code class="language-plaintext highlighter-rouge">admin</code>
+credentials, a user in ManageIQ provisions into the <code class="language-plaintext highlighter-rouge">admin</code>
+tenant, and sees images, networks, and instances that are associated
+with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.</p>
+
+<div class="note">
+
+In OpenStack, you must add `admin` as a member of all tenants that users
+want to access and use in ManageIQ.
+
+See [Cloud
+Tenants](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/5.0-beta/html-single/managing_infrastructure_and_inventory/index#tenants)
+in *Managing Infrastructure and Inventory* for information on working
+with OpenStack tenants (projects) in ManageIQ.
+
+</div>
+
+<p>When adding an OpenStack cloud or infrastructure provider, enable
+<em>tenant mapping</em> in ManageIQ to map any existing tenants
+from that provider.</p>
+
+<p>This means ManageIQ will create new cloud tenants to match
+each existing OpenStack tenant; each new cloud tenant and its
+corresponding OpenStack tenant will have identical resource assignments
+(including user and role synchronization) with the exception of quotas.
+Tenant quotas are not synchronized between ManageIQ and
+OpenStack, and are available for reporting purposes only. You can manage
+quotas in ManageIQ but this will not affect the quotas
+created in OpenStack.</p>
+
+<p>During a provider refresh, ManageIQ will also check for
+any changes to the tenant list in OpenStack. ManageIQ will
+create new cloud tenants to match any new tenants, and delete any cloud
+tenants whose corresponding OpenStack tenants no longer exist.
+ManageIQ will also replicate any changes to OpenStack
+tenants to their corresponding cloud tenants.</p>
+
+<p>If you leave tenant mapping disabled, ManageIQ will not
+create cloud tenants or tenant object hierarchy from OpenStack.</p>
+
+<div class="note">
+
+You can set whether ManageIQ should use the Telemetry service or
+Advanced Message Queueing Protocol (AMQP) for event monitoring. If you
+choose Telemetry, you should first configure the **ceilometer** service
+on the overcloud to store events. See [???](#openstack-events-oc) for
+instructions.
+
+For more information, see [OpenStack Telemetry
+(ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry)
+in the Red Hat OpenStack Platform *Architecture Guide*.
+
+</div>
+
+<div class="note">
+
+To authenticate the provider using a self-signed Certificate Authority
+(CA), configure the ManageIQ appliance to trust the
+certificate using the steps in [???](#app-self_signed_CA) before adding
+the provider.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
+<img src="../images/1862.png" alt="1862"> (<strong>Add a New Cloud Provider</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> for the provider.</p>
+  </li>
+  <li>
+    <p>From the <strong>Type</strong> list, select <strong>OpenStack</strong>.</p>
+  </li>
+  <li>
+    <p>Select the appropriate <strong>API Version</strong> from the list. The default is
+<code class="language-plaintext highlighter-rouge">Keystone v2</code>.</p>
+
+    <p>If you select <code class="language-plaintext highlighter-rouge">Keystone v3</code>, enter the <code class="language-plaintext highlighter-rouge">Keystone V3 Domain ID</code> that
+ManageIQ should use. This is the domain of the user account
+you will be specifying later in the <strong>Default</strong> tab. If domains are
+not configured in the provider, enter <strong>default</strong>.</p>
+
+    <div class="note">
+
+Keystone API v3 is required to create cloud tenants on OpenStack
+cloud providers.
+
+</div>
+
+    <div class="note">
+
+  - With Keystone API v3, domains are used to determine administrative
+boundaries of service entities in OpenStack. Domains allow you to
+group users together for various purposes, such as setting
+domain-specific configuration or security options. For more
+information, see [OpenStack Identity
+(keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
+in the Red Hat OpenStack Platform *Architecture Guide*.
+
+</div>
+  </li>
+</ol>
+<ul>
+  <li>
+    <p>The provider you are creating will be able to see projects for the
+given domain only. To see projects for other domains, add it as
+another cloud provider. For more information on domain management in
+OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/users_and_identity_management_guide/#Domains">Domain
+Management</a>
+in the Red Hat OpenStack Platform <em>Users and Identity Management
+Guide</em>.</p>
+
+    <p>&lt;/div&gt;</p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>Enter a region number in <strong>Region</strong>.</p>
+  </li>
+  <li>
+    <p>Enter the appropriate <strong>Zone</strong> for the provider. If you do not
+specify a zone, it is set to <code class="language-plaintext highlighter-rouge">default</code>.</p>
+  </li>
+  <li>
+    <p>(Optional) Enable tenant mapping by toggling the <strong>Tenant Mapping
+Enabled</strong> option to <strong>Yes</strong>. This synchronizes resources and users
+between the OpenStack cloud provider and ManageIQ. By
+default, tenant mapping is disabled.</p>
+  </li>
+  <li>
+    <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the
+zone is set to <strong>default</strong>.</p>
+
+    <div class="note">
+
+For more information, see the definition of host aggregates and
+availability zones in [OpenStack Compute
+(nova)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute)
+in the Red Hat OpenStack Platform *Architecture Guide*.
+
+</div>
+  </li>
+  <li>
+    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and
+authentication details of your OpenStack provider:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the provider:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely using SSL.</p>
+          </li>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option. This is the recommended authentication
+method.</p>
+          </li>
+          <li>
+            <p><strong>Non-SSL</strong>: Connect to the provider insecurely using only
+HTTP protocol, without SSL.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>In <strong>Hostname (or IPv4 or IPv6 address)</strong>, enter the public IP
+or fully qualified domain name of the OpenStack Keystone
+service.</p>
+
+        <div class="note">
+
+The hostname required here is also the **OS\_AUTH\_URL** value
+in the **\~/overcloudrc** file generated by the director (see
+[Accessing the
+Overcloud](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Accessing_the_Overcloud)
+in Red Hat OpenStack Platform *Director Installation and
+Usage*), or the **\~/keystonerc\_admin** file generated by
+Packstack (see [Evaluating OpenStack: Single-Node
+Deployment](https://access.redhat.com/articles/1127153)).
+
+</div>
+      </li>
+      <li>
+        <p>In <strong>API Port</strong>, set the public port used by the OpenStack
+Keystone service. By default, OpenStack uses port 5000 for
+non-SSL security protocol. For SSL, API port is 13000 by
+default.</p>
+      </li>
+      <li>
+        <p>In the <strong>Username</strong> field, enter the name of a user in the
+OpenStack environment.</p>
+
+        <div class="important">
+
+In environments that use Keystone v3 authentication, the user
+must have the **admin** role for the relevant domain.
+
+</div>
+      </li>
+      <li>
+        <p>In the <strong>Password</strong> field, enter the password for the user.</p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm ManageIQ can connect to the
+OpenStack provider.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Next, configure how ManageIQ should receive events from the
+OpenStack provider. Click the <strong>Events</strong> tab in the <strong>Endpoints</strong>
+section to start.</p>
+
+    <ul>
+      <li>
+        <p>To use the Telemetry service of the OpenStack provider, select
+<strong>Ceilometer</strong>. Before you do so, the provider must first be
+configured accordingly. See <a href="#openstack-events-oc">???</a> for
+details.</p>
+      </li>
+      <li>
+        <p>If you prefer to use the AMQP Messaging bus instead, or eventing
+is not enabled on Ceilometer, select <strong>AMQP</strong> and configure the
+following:</p>
+
+        <ol>
+          <li>
+            <p>Select a <strong>Security Protocol</strong> method.</p>
+          </li>
+          <li>
+            <p>In <strong>Hostname (or IPv4 or IPv6 address)</strong> (of the <strong>Events</strong>
+tab, under <strong>Endpoints</strong>), enter the public IP or fully
+qualified domain name of the AMQP host.</p>
+          </li>
+          <li>
+            <p>In the <strong>API Port</strong>, set the public port used by AMQP. By
+default, OpenStack uses port 5672 for this.</p>
+          </li>
+          <li>
+            <p>In the <strong>Username</strong> field, enter the name of an OpenStack
+user with privileged access (for example, <strong>admin</strong>). Then,
+provide its corresponding password in the <strong>Password</strong>
+field.</p>
+          </li>
+          <li>
+            <p>Click <strong>Validate</strong> to confirm the credentials.</p>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> after configuring the cloud provider.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+  - To collect inventory and metrics from an OpenStack environment, the
+    ManageIQ appliance requires that the adminURL endpoint for
+    the OpenStack environment be on a non-private network. Hence, the
+    OpenStack adminURL endpoint should be assigned an IP address other
+    than `192.168.x.x`. Additionally, all the Keystone endpoints must be
+    accessible, otherwise refresh will fail.
+
+  - Collecting capacity and utilization data from an OpenStack cloud
+    provider requires selecting the **Collect for All Clusters** option
+    under **Configuration**, in the settings menu. For information, see
+    [Capacity and Utilization
+    Collections](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/general_configuration/#capacity-and-utilization-collections)
+    in the *General Configuration Guide*.
+
+</div>
+
+<h3 id="configuring-the-overcloud-to-store-events">
+<a class="anchor" href="#configuring-the-overcloud-to-store-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Overcloud to Store Events</h3>
+
+<p>By default, the Telemetry service does not store events emitted by other
+services in a Red Hat OpenStack Platform environment. The following
+procedure outlines how to enable the Telemetry service on your OpenStack
+cloud provider to store such events. This ensures that events are
+exposed to ManageIQ when a Red Hat OpenStack Platform environment
+is added as a cloud provider.</p>
+
+<ol>
+  <li>
+    <p>Log in to the undercloud host.</p>
+  </li>
+  <li>
+    <p>Create an environment file called <em>ceilometer.yaml</em>, and add the
+following contents:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>parameter_defaults:
+  CeilometerStoreEvents: true
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Please see the below <strong>NOTE</strong>.</p>
+  </li>
+</ol>
+
+<p>If your OpenStack cloud provider was not deployed through the
+undercloud, you can also set this manually. To do so:</p>
+
+<ol>
+  <li>
+    <p>Log in to your Controller node.</p>
+  </li>
+  <li>
+    <p>Edit <em>/etc/ceilometer/ceilometer.conf</em>, and specify the following
+option:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>store_events = True
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<div class="note">
+
+Passing the newly created environment file to the overcloud deployment
+is environment specific and requires executing commands in particular
+order depending on use of variables. For further information please see
+[*Director Installation and
+Usage*](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/director_installation_and_usage/)
+in the Red Hat OpenStack Platform documentation.
+
+</div>
+
+<h2 id="performing-a-smartstate-analysis">
+<a class="anchor" href="#performing-a-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performing a SmartState Analysis</h2>
+
+<p>Red Hat CloudForms can analyze a cloud Instance or infrastructure host
+to collect metadata such as user accounts, applications, software
+patches, and other internal information. This key CloudForms feature is
+called SmartState Analysis. SmartState analysis can be initiated
+manually or automatically using Control Policies.</p>
+
+<p>To manually initiate SmartState analysis on an instance:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Instances].</p>
+  </li>
+  <li>
+    <p>Click on an instance in the <strong>All Instances by Provider</strong> nsection.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), and then
+<img src="../images/1942.png" alt="1942"> (<strong>Perform SmartState Analysis</strong>). A
+pop-up window will appear to confirm the action.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>. The SmartState analysis will be initiated for the
+selected instance.</p>
+  </li>
+</ol>
+
+<p>To manually initiate SmartState analysis on an Infrastructure host:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Infrastructure &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Select a node in the <strong>Nodes</strong> section.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), and then
+<img src="../images/1942.png" alt="1942"> (<strong>Perform SmartState Analysis</strong>). A
+pop-up window will appear to confirm the action.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>. The SmartState analysis will be initiated for the
+selected node.</p>
+  </li>
+</ol>
+
+<h2 id="using-the-topology-widget">
+<a class="anchor" href="#using-the-topology-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Topology Widget</h2>
+
+<p>The <strong>Topology</strong> widget is an interactive topology graph, showing the
+status and relationships between the different resources and entities of
+the OpenStack providers that ManageIQ has access to.</p>
+
+<ul>
+  <li>The topology graph includes instances, nodes, and other cloud
+resources within the overall OpenStack cloud provider environment.
+    <ul>
+      <li>Each entity in the graph displays a color indication of its status.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Hovering over any individual graph element will display a summary of
+details for the individual element.</p>
+  </li>
+  <li>
+    <p>Double-click the entities in the graph to navigate to their summary
+pages.</p>
+  </li>
+  <li>
+    <p>It is possible to drag elements to reposition the graph.</p>
+  </li>
+  <li>
+    <p>Click the legend at the top of the graph to show or hide entities.</p>
+  </li>
+  <li>Click <strong>Display Names</strong> on the right-hand side of the page to show
+or hide entity names.</li>
+</ul>
+
+<p>To view an OpenStack provider through the <strong>Topology</strong> widget:</p>
+
+<ol>
+  <li>
+    <p>Navigate to <span class="menuchoice">Compute &gt; Cloud &gt;
+Providers</span>.</p>
+  </li>
+  <li>
+    <p>Click the desired OpenStack cloud provider for viewing the provider
+summary.</p>
+  </li>
+  <li>
+    <p>On the provider summary page, click <strong>Topology</strong> in the <strong>Overview</strong>
+box on the right-hand side of the page.</p>
+  </li>
+</ol>
+
+<h2 id="managing-policies">
+<a class="anchor" href="#managing-policies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Policies</h2>
+
+<p>Policies are used to manage your virtual environment. There are two
+types of policies available: compliance and control. Compliance policies
+are used to harden your virtual infrastructure, making sure that your
+security requirements are adhered to. Control policies are used to check
+for a specific condition and perform an action based on the outcome. For
+example:</p>
+
+<ul>
+  <li>
+    <p>Prevent virtual machines from running without an administrator
+account.</p>
+  </li>
+  <li>
+    <p>Prevent virtual machines from starting if certain patches are not
+applied.</p>
+  </li>
+  <li>
+    <p>Configure the behavior of a production virtual machine to only start
+if it is running on a production host.</p>
+  </li>
+  <li>
+    <p>Force a SmartState Analysis when a host is added or removed from a
+cluster.</p>
+  </li>
+</ul>
+
+<p>ManageIQ policies are associated with cloud instances
+using virtual machine analysis profiles. These are the steps required to
+create a custom virtual machine analysis profile, and assigning it to a
+cloud instance for use with SmartState analysis, via a control policy.</p>
+
+<div class="note">
+
+For more detailed information about ManageIQ policies, see
+[Assigning a Custom Analysis Profile to a Virtual
+Machine](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/assigning-a-custom-analysis-profile-to-a-virtual-machine/)
+and [Policies and Profiles
+Guide](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/policies-and-profiles-guide/).
+
+</div>
+
+<p>The following subsections demonstrate how to create host compliance and
+instance control policies.</p>
+
+<h3 id="creating-a-host-compliance-policy">
+<a class="anchor" href="#creating-a-host-compliance-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Host Compliance Policy</h3>
+
+<p>The following procedure describes how to create a compliance policy that
+checks whether firewalls are enabled on infrastructure provider nodes.
+Nodes with disabled firewalls are marked <em>non-compliant</em>.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Policies</strong> accordion, and click <strong>Compliance
+Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Host Compliance Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Host/Node Compliance
+Policy</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Description</strong> for the policy.</p>
+
+    <p><img src="../images/1935.png" alt="image"></p>
+  </li>
+  <li>
+    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even
+when assigned to a resource.</p>
+  </li>
+  <li>
+    <p>Add <strong>Host / Node.Firewall Rules : Active CONTAINS “true”</strong> to the
+<em>scope</em> of the policy . To do so:</p>
+
+    <ol>
+      <li>
+        <p>In drop-down below the <strong>Scope</strong> section, choose <strong>Field</strong>. When
+you do, a new drop-down will appear below it; from there, select
+<strong>Host/Node.Firewall.Rules: Active</strong>.</p>
+      </li>
+      <li>
+        <p>A new drop-down will appear; from there, select <strong>true</strong>.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="image"> (<strong>Commit expression element
+changes</strong>) to add the scope.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>In the <strong>Notes</strong> area, add a detailed explanation of the policy.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>. The policy will be added and listed under <strong>Host
+Compliance Policies</strong> in the <strong>Policies</strong> accordion.</p>
+  </li>
+</ol>
+
+<p>Next, create a <em>policy profile</em> and assign this new compliance policy to
+it:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Policy Profiles</strong> accordion, then click
+<img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Policy Profile</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Information</strong> area, type in a unique description for
+the policy profile.</p>
+
+    <p><img src="../images/1931.png" alt="image"></p>
+  </li>
+  <li>
+    <p>From <strong>Available Policies</strong> in the <strong>Policy Selection</strong> area select
+all the policies you need to apply to this policy profile. Use the
+<code class="language-plaintext highlighter-rouge">Ctrl</code> key to select multiple policies.</p>
+
+    <p><img src="../images/1930.png" alt="image"></p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1876.png" alt="image"> to add the <strong>Policies</strong>.</p>
+
+    <p><img src="../images/1929.png" alt="image"></p>
+  </li>
+  <li>
+    <p>Add to the <strong>Notes</strong> area if required.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>At this point, you can now add the new policy profile to the
+infrastructure provider hosts:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Infrastructure &gt; Providers], verify the
+provider you need to assign the policy profiles to.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1941.png" alt="image"> (<strong>Policy</strong>), and then click
+<img src="../images/1851.png" alt="image">(<strong>Manage Policies</strong>).</p>
+  </li>
+  <li>
+    <p>From the <strong>Select Policy Profiles</strong> area, you can click on the
+triangle next to a desired policy profile to expand it and see its
+member policies.</p>
+  </li>
+  <li>
+    <p>Check the policy profiles you require to apply to the provider. It
+turns blue to show its assignment state has changed.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-virtual-machine-control-policy">
+<a class="anchor" href="#creating-a-virtual-machine-control-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Virtual Machine Control Policy</h3>
+
+<p>The process of creating a <em>control policy</em> is similar to that of a
+compliance policy. A control policy is driven by events after certain
+conditions are met. The following control policy will start a SmartState
+analysis on an instance every 24 hours:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Policies</strong> accordion, and click <strong>Control Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Vm Control Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a New VM and Instance Control
+Policy</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Description</strong>. This will be the name given to your VM
+control policy.</p>
+  </li>
+  <li>
+    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even
+when assigned to a resource.</p>
+  </li>
+  <li>
+    <p>Add <strong>VM and Instance : Last Analysis Time IS “Yesterday”</strong> to the
+scope of the policy. To do so:</p>
+
+    <ol>
+      <li>
+        <p>In drop-down below the <strong>Scope</strong> section, choose <strong>Field</strong>. When
+you do, a new drop-down will appear below it; from there, select
+<strong>VM and Instance : Last Analysis Time</strong>.</p>
+      </li>
+      <li>
+        <p>A new drop-down will appear; from there, select <strong>true</strong>.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="image"> (<strong>Commit expression element
+changes</strong>) to add the scope.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>. The policy is added and listed under <strong>Vm Control
+Policies</strong> in the <strong>Policies</strong> accordion.</p>
+  </li>
+</ol>
+
+<p>You can now associate events, conditions, and actions to this control
+policy. To do so:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Policies</strong> accordion, and select the control policy you
+just created.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>),
+<img src="../images/1851.png" alt="image"> (<strong>Edit this Policy’s Condition
+assignments</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>VM Operation</strong> section, select <strong>VM Power On</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>. The <strong>VM Power On</strong> event should appear under your
+policy.</p>
+  </li>
+</ol>
+
+<p>You can now associate an action to the <strong>VM Power On</strong> event. To do so:</p>
+
+<ol>
+  <li>
+    <p>Select the <strong>VM Power On</strong> event.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit Actions for this Policy Event</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Order of Actions if ALL Conditions are True</strong> section,
+select <strong>Generate Log Message</strong> and <strong>Initiate SmartState Analysis
+for VM</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>Next, create a policy profile and assign this new control policy to it:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Policy Profiles</strong> accordion, then click
+<img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Policy Profile</strong>).</p>
+  </li>
+  <li>
+    <p>Enter <code class="language-plaintext highlighter-rouge">Most Recent SmartState</code> in the <strong>Description</strong> field.</p>
+  </li>
+  <li>
+    <p>In the <strong>Policy Selection</strong> area, choose the control policy you
+created earlier. This should have <strong>VM and Instance Control</strong> in its
+name. Add this policy to the <strong>Profile Policies</strong> box.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>At this point, you should now be able to add the policy profile to the
+cloud providers.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Cloud &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Select the overcloud you added in <a href="#add-openstack-oc">???</a>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1941.png" alt="image"> (<strong>Policy</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Manage Policies</strong>).</p>
+  </li>
+  <li>
+    <p>Under <strong>Select Policy Profiles</strong>, select <strong>Most Recent SmartState</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="managing-instances">
+<a class="anchor" href="#managing-instances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Instances</h2>
+
+<p>Cloud instance provisioning goes through three phases:</p>
+
+<ol>
+  <li>
+    <p>Request: This includes ownership information, tags, virtual hardware
+requirements, the operating system, and any customization required.
+See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/#provisioning-requests">Provisioning
+Requests</a>
+from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/">Provisioning Virtual Machines and
+Hosts</a>
+guide for more details.</p>
+  </li>
+  <li>
+    <p>Approval: Provisioning requests are then approved or denied. This
+phase can happen automatically or manually. See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/#provisioning-request-approval-methods">Provisioning
+Request Approval
+Methods</a>
+from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/">Provisioning Virtual Machines and
+Hosts</a>
+guide for more details.</p>
+  </li>
+  <li>
+    <p>Provision: Approved provisioning requests are executed. See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/#working-with-provisioning-requests">Working
+with Provisioning
+Requests</a>
+from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/">Provisioning Virtual Machines and
+Hosts</a>
+guide for more details.</p>
+  </li>
+</ol>
+
+<h3 id="provisioning-an-openstack-instance-from-an-image">
+<a class="anchor" href="#provisioning-an-openstack-instance-from-an-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provisioning an OpenStack Instance from an Image</h3>
+
+<p>Create a request to provision Red Hat OpenStack Platform cloud instances
+from images, volumes, and volume snapshots using ManageIQ. Only
+bootable volumes not in use will be available.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Instances].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2007.png" alt="2007">(<strong>Lifecycle</strong>), then click
+<img src="../images/1862.png" alt="1862">(<strong>Provision Instances</strong>).</p>
+  </li>
+  <li>
+    <p>Select an OpenStack image, volume or volume snapshot from the list
+presented. These files must be available on your OpenStack provider.</p>
+  </li>
+  <li>
+    <p>Click <strong>Continue</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Request</strong> tab, enter information about this provisioning
+request. In <strong>Request Information</strong>, type in at least an email
+address. This email is used to send the requester status emails
+during the provisioning process for items such as auto-approval,
+quota, provision complete, retirement, request pending approval, and
+request denied. The other information is optional. If the
+ManageIQ Server is configured to use LDAP, you can use the
+<strong>Look Up</strong> button to populate the other fields based on the email
+address.</p>
+
+    <div class="note">
+
+Parameters with a \* next to the label are required to submit the
+provisioning request. To change the required parameters, see
+[???](#provisioning-dialogs-customizing).
+
+</div>
+  </li>
+  <li>
+    <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the
+provisioned instance.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Catalog</strong> tab for basic instance options.</p>
+
+    <ol>
+      <li>
+        <p>To change the source file to use as a basis for the instance,
+select it from the list of images, volumes, or volume snapshots.</p>
+      </li>
+      <li>
+        <p>Select the <strong>Number of Instances</strong> to provision.</p>
+      </li>
+      <li>
+        <p>Type a <strong>Instance Name</strong> and <strong>Instance Description</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Environment</strong> tab to select the instance’s <strong>Cloud
+Tenant</strong>, <strong>Availabilty Zones</strong>, <strong>Cloud Network</strong>, <strong>Security
+Groups</strong>, and <strong>Public IP Address</strong>. If no specific Cloud Tenant is
+required, select the <strong>Choose Automatically</strong> checkbox.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Properties</strong> tab to set provider options such as flavors
+and security settings.</p>
+
+    <ol>
+      <li>
+        <p>Select a flavor from the <strong>Instance Type</strong> list.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Guest Access Key Pair</strong> for access to the instance.
+For more information about key pairs, see
+<a href="#provision-keypairs">???</a>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Volumes</strong> tab to provision any volumes with the
+instance. Volumes are useful for augmenting ephemeral storage of
+instances with persistent, general-purpose block storage:</p>
+
+    <ol>
+      <li>
+        <p>Fill in the <strong>Volume Name</strong> and <strong>Size (gigabytes)</strong> fields.</p>
+      </li>
+      <li>
+        <p>If you want the volume to be deleted once the instance
+terminates (thereby making it non-persistent), check <strong>Delete on
+Instance Terminate</strong>.</p>
+      </li>
+      <li>
+        <p>To provision and add multiple volumes to the instance, click
+<strong>Add Volume</strong>. Doing so will add new fields you can fill in.</p>
+
+        <p>For more information about persistent storage in OpenStack, see
+the Red Hat OpenStack Platform <em>Storage Guide</em>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Customize</strong> tab to set additional instance options.</p>
+
+    <ol>
+      <li>
+        <p>Under <strong>Credentials</strong>, enter a <strong>Root Password</strong> for the
+<strong>root</strong> user access to the instance.</p>
+      </li>
+      <li>
+        <p>Enter a <strong>IP Address Information</strong> for the instance. Leave as
+<strong>DHCP</strong> for automatic IP assignment from the provider.</p>
+      </li>
+      <li>
+        <p>Enter any <strong>DNS</strong> information for the instance if necessary.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Customize Template</strong> for additional instance
+configuration. Select from the Cloud-Init scripts stored on your
+appliance.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Schedule</strong> tab to set the provisioning and retirement
+date and time.</p>
+
+    <ol>
+      <li>
+        <p>In <strong>Schedule Info</strong>, choose whether the provisioning begins
+upon approval, or at a specific time. If you select
+<strong>Schedule</strong>, you will be prompted to enter a date and time.</p>
+      </li>
+      <li>
+        <p>In <strong>Lifespan</strong>, select whether to power on the instances after
+they are created, and whether to set a retirement date. If you
+select a retirement period, you will be prompted for when to
+receive a retirement warning.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Submit</strong>.</p>
+  </li>
+</ol>
+
+<p>The provisioning request is sent for approval. For the provisioning to
+begin, a user with the admin, approver, or super admin account role must
+approve the request. The admin and super admin roles can also edit,
+delete, and deny the requests. You will be able to see all provisioning
+requests where you are either the requester or the approver.</p>
+
+<p>After submission, the appliance assigns each provision request a
+<strong>Request ID</strong>. If an error occurs during the approval or provisioning
+process, use this ID to locate the request in the appliance logs. The
+Request ID consists of the region associated with the request followed
+by the request number. As regions define a range of one trillion
+database IDs, this number can be several digits long.</p>
+
+<p><strong>Request ID Format</strong></p>
+
+<p>Request 99 in region 123 results in Request ID 123000000000099.</p>
+
+<h2 id="managing-storage">
+<a class="anchor" href="#managing-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Storage</h2>
+
+<p>Two types of storage managers are currently available to
+ManageIQ: OpenStack Block Storage (<code class="language-plaintext highlighter-rouge">openstack-cinder</code>) and
+OpenStack Object Storage (<code class="language-plaintext highlighter-rouge">openstack-swift</code>). OpenStack Block Storage
+provisions and manages block storage, whereas OpenStack Object Storage
+manages object storage within the cloud. These storage managers are
+discovered automatically by ManageIQ after adding an OpenStack
+cloud provider.</p>
+
+<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#storage_managers">Storage
+Managers</a>
+from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/">Managing
+Providers</a>
+guide.</p>
+
+<h3 id="managing-block-storage">
+<a class="anchor" href="#managing-block-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Block Storage</h3>
+
+<p>The OpenStack Block Storage service (<code class="language-plaintext highlighter-rouge">openstack-cinder</code>) provides and
+manages persistent block storage resources that OpenStack infrastructure
+instances can consume. ManageIQ provides an interface for
+managing these resources (volumes, volume backups, and volume
+snapshots).</p>
+
+<p>To create a volume:</p>
+
+<div class="important">
+
+After creating a volume, only the volume name can be edited.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1862.png" alt="1862"> (<strong>Add a new Cloud Volume</strong>).</p>
+  </li>
+  <li>
+    <p>Select the OpenStack Block Storage manager from the <strong>Storage
+Manager</strong> list.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Volume Name</strong>.</p>
+  </li>
+  <li>
+    <p>Enter the size of the volume in gigabytes (GB).</p>
+  </li>
+  <li>
+    <p>Under <strong>Placement</strong>, select the cloud tenant to attach it to.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The volume appears in the list of volumes after it has been provisioned.</p>
+
+<p>To attach a volume to an instance (for example, one created through
+<a href="#provisioning-an-openstack-instance-from-an-image">Provisioning an OpenStack Instance from an
+Image</a>):</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Select the volume to attach.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/volume-icon.png" alt="Attach selected Cloud Volume to an
+Instance"> (<strong>Attach selected Cloud Volume
+to an Instance</strong>) to open the <strong>Attach Cloud Volume</strong> screen.</p>
+  </li>
+  <li>
+    <p>Select an instance from the list.</p>
+  </li>
+  <li>
+    <p>Optionally, enter a <strong>Device Mountpoint</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Attach</strong>.</p>
+  </li>
+</ol>
+
+<p>To view a timeline of storage manager events:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Storage Managers].</p>
+  </li>
+  <li>
+    <p>Select your OpenStack Cinder manager to go to the Cinder manager’s
+summary page.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1994.png" alt="Monitoring"> (<strong>Monitoring</strong>), and then
+<img src="../images/1995.png" alt="Timelines"> (<strong>Timelines</strong>) to view the events
+timeline for the manager.</p>
+  </li>
+  <li>
+    <p>A timeline of either management events or policy events can be
+viewed.</p>
+
+    <ol>
+      <li>
+        <p>To view management events, select <strong>Management Events</strong>.</p>
+      </li>
+      <li>
+        <p>Specify the type of event to view.</p>
+      </li>
+      <li>
+        <p>Specify the timeline for the events to view.</p>
+      </li>
+      <li>
+        <p>Click <strong>Apply</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>To view policy events, select <strong>Policy Events</strong>.</p>
+
+    <ol>
+      <li>
+        <p>Specify if you want to view successful events, failed events, or
+both.</p>
+      </li>
+      <li>
+        <p>Specify the timeline for the events to view.</p>
+      </li>
+      <li>
+        <p>Click <strong>Apply</strong>.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>To back up a volume:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Click the volume you want to back up to open the volume’s summary
+page.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/volume-icon.png" alt="Create a Backup of this Cloud
+Volume"> (<strong>Create a Backup of this Cloud
+Volume</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a name for the backup in <strong>Backup Name</strong>.</p>
+  </li>
+  <li>
+    <p>(Optional) Select <strong>Incremental?</strong> to take an incremental backup of
+the volume instead of a full backup.</p>
+
+    <div class="note">
+
+You can take an incremental backup of a volume if you have at least
+one existing full backup of the volume. An incremental volume saves
+resources by capturing only changes made to the volume since its
+last backup. See [Create an Incremental Volume
+Backup](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-create-volume-backup-incremental)
+in the *Storage Guide* for more information.
+
+</div>
+  </li>
+  <li>
+    <p>(Optional) Select <strong>Force?</strong> to allow backup of a volume attached to
+an instance.</p>
+
+    <div class="note">
+
+Selecting the **Force** option will back up the volume whether its
+status is *available* or *in-use*. Backing up an *in-use* volume
+ensures data is crash-consistent.
+
+</div>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>View a volume’s backups by clicking <strong>Cloud Volume Backups</strong> on the
+volume’s summary page.</p>
+
+<div class="note">
+
+See [Back Up and Restore a
+Volume](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-volumes-advanced-backup)
+in the *Storage Guide* for more information about backups.
+
+</div>
+
+<p>To take a volume snapshot:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Click the volume to snapshot to open the volume’s summary page.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/volume-icon.png" alt="Create a Snapshot of this Cloud
+Volume"> (<strong>Create a Snapshot of this Cloud
+Volume</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a name for the snapshot in <strong>Snapshot Name</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>Click <strong>Cloud Volume Snapshots</strong> on the summary page of a volume to view
+the snapshots for that volume.</p>
+
+<div class="note">
+
+See [Create, Use, or Delete Volume
+Snapshots](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/storage_guide/#section-create-clone-delete-vol-snapshots)
+in the *Storage Guide* for more information about snapshots.
+
+</div>
+
+<p>For more information about available options for block storage resources
+in ManageIQ, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#openstack_block_storage_managers">OpenStack Block Storage
+Managers</a>
+(from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/">Managing
+Providers</a>
+guide).</p>
+
+<h3 id="managing-object-storage">
+<a class="anchor" href="#managing-object-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Object Storage</h3>
+
+<p>The OpenStack Object Storage (<code class="language-plaintext highlighter-rouge">openstack-swift</code>) service provides cloud
+object storage. The object store summary page shows details including
+the object store’s size, parent cloud, storage manager, cloud tenant,
+and the number of cloud objects on the object store.</p>
+
+<p>To view the summary page of an object store:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Object Stores] to display a list of
+object store containers.</p>
+  </li>
+  <li>
+    <p>Click a container to open a summary page for that object store
+container.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cloud Objects</strong> to view a list of object stores in the
+object store container.</p>
+  </li>
+  <li>
+    <p>Click an object store from the list to view the object store’s
+summary page.</p>
+  </li>
+</ol>
+
+<h2 id="catalogs-and-services">
+<a class="anchor" href="#catalogs-and-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Catalogs and Services</h2>
+
+<p>In <a href="#provisioning-an-openstack-instance-from-an-image">???</a>, you
+provisioned instance manually by entering values in provisioning dialogs
+such as name, size, image, CPUs, etc. <em>Catalogs</em> are used to create
+groups of instances for provisioning. ManageIQ enables
+users to provision instances via a single <strong>Order</strong> button.</p>
+
+<p>Creating a <em>service catalog</em> involves:</p>
+
+<ol>
+  <li>
+    <p>Creating a <strong>Service Dialog</strong>. This is a UI interface element that
+allows users to interact with the service (for example, a drop-down
+list).</p>
+  </li>
+  <li>
+    <p>Creating a <strong>Catalog Item</strong> for each instance that will be part of
+the service.</p>
+  </li>
+  <li>
+    <p>Creating a <em>method</em> for the <strong>Service Dialog</strong>. This method defines
+what each option means to each individual cloud instances for the
+service. This method is called from a service provisioning instance
+in the <strong>Automate</strong> model.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+For more information about catalogs and services, see [Catalogs and
+Services](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/provisioning-virtual-machines-and-hosts/#catalogs-services)
+from the [Provisioning Virtual Machines and
+Hosts](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/)
+guide.
+
+</div>
+
+<h3 id="creating-a-service-dialog">
+<a class="anchor" href="#creating-a-service-dialog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Service Dialog</h3>
+
+<p>When provisioning a service, input will be needed from the requester.
+<strong>Service Dialogs</strong> are used to take input from the user. This input is
+connected to a method in the <strong>Automate</strong> model that defines how user
+input is translated into the provision request. Before creating a
+<strong>Service Dialog</strong>, be sure to plan what items you need the user to
+input.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Service Dialogs</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), and then
+<img src="../images/1862.png" alt="1862">(<strong>Add a new Dialog</strong>).</p>
+  </li>
+  <li>
+    <p>In <strong>Dialog Information</strong>, enter a <strong>Label</strong> and <strong>Description</strong>.
+Check the boxes for the buttons you want available at the bottom of
+the dialog form. The description will appear as hover text.</p>
+
+    <p>As you enter the <strong>Label</strong> of the dialog, it should appear in the
+<strong>Dialog</strong> pane on the left.</p>
+
+    <ol>
+      <li>
+        <p>Click <img src="../images/1862.png" alt="1862">(<strong>Add</strong>), then
+<img src="../images/1862.png" alt="1862">(<strong>Add a New Tab to this Dialog</strong>).</p>
+      </li>
+      <li>
+        <p>Enter a <strong>Label</strong> and <strong>Description</strong> for this tab.</p>
+
+        <p>As you enter the <strong>Label</strong> of the tab, it should appear in the
+<strong>Dialog</strong> pane on the left under the dialog you are creating.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1862.png" alt="1862">(<strong>Add</strong>), then
+<img src="../images/1862.png" alt="1862">(<strong>Add a New Box to this Tab</strong>).</p>
+      </li>
+      <li>
+        <p>Enter a <strong>Label</strong> and <strong>Description</strong> for this box.</p>
+
+        <p>As you enter the <strong>Label</strong> of the box, it should appear in the
+<strong>Dialog</strong> pane on the left under the tab you are creating.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Add an element to this box. Elements are controls that accept input.</p>
+
+    <ol>
+      <li>
+        <p>Click <img src="../images/1862.png" alt="1862">(<strong>Add</strong>), then
+<img src="../images/1862.png" alt="1862">(<strong>Add a New Element to this Box</strong>).</p>
+      </li>
+      <li>
+        <p>Enter a <strong>Label</strong>, <strong>Name</strong>, and <strong>Description</strong> for this
+element.</p>
+
+        <div class="important">
+
+**Name** must use only alphanumeric characters and underscores
+without spaces. It is also used to retrieve the value of this
+element in the method used with the dialog and must start with
+**dialog\_service\_type**
+
+</div>
+      </li>
+      <li>
+        <p>Select a <strong>Type</strong> for an element type. All <strong>Type</strong> options have
+a <strong>Required</strong> and <strong>Default Value</strong> field. Check <strong>Required</strong>
+or set <strong>Required</strong> to <strong>true</strong> if the element is required to
+proceed. You can also specify a default value. The rest of the
+options presented are based on which type of element you select.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Element Types</th>
+              <th>Additional Info</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Check Box</td>
+              <td>Check <strong>Default Value</strong> if you want this check box checked by default.</td>
+            </tr>
+            <tr>
+              <td>Date Control</td>
+              <td>Use <strong>Date Control</strong> to create a field where users can select a date. If you want users to be able to select a date and time, use the <strong>Date/Time Control</strong> option.</td>
+            </tr>
+            <tr>
+              <td>Date/Time Control</td>
+              <td>Use <strong>Date/Time Control</strong> to create a field where users can select a date and time. Only one <strong>Date Control</strong> or <strong>Date/Time Control</strong> element can be present in a dialog.</td>
+            </tr>
+            <tr>
+              <td>Drop Down Dynamic List</td>
+              <td>Use <strong>Drop Down Dynamic List</strong> if you want the list options to be created using automate methods. Use <strong>Entry Point (NS/Cls/Inst)</strong> to select an automate instance. Check <strong>Show Refresh Button</strong> to allow users to refresh the list options manually.</td>
+            </tr>
+            <tr>
+              <td>Radio Button</td>
+              <td>This element type serves the same purpose as <strong>Drop Down List</strong> but displays options using radio buttons.</td>
+            </tr>
+            <tr>
+              <td>Tag Control</td>
+              <td>Select a <strong>Category</strong> of tags you want assigned to the virtual machines associated with this service dialog. Check <strong>Single Select</strong> if only one tag can be selected.</td>
+            </tr>
+            <tr>
+              <td>Text Area Box</td>
+              <td>Provides text area for users to enter some text. You can also leave a message to users by typing in the <strong>Default Value</strong> field or leave it as blank.</td>
+            </tr>
+            <tr>
+              <td>Text Box</td>
+              <td>This element type serves the same purpose as <strong>Text Area Box</strong> with the option to check <strong>Protected</strong> so the text is shown as asterisks (*), instead of plain text.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Continue adding the dialog items you need. You can switch between
+dialogs, tabs, boxes, and elements by selecting their respective
+labels from the <strong>Dialog</strong> pane on the left.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>. Your dialog should appear in the <strong>Service Dialogs</strong>
+accordion.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-catalog">
+<a class="anchor" href="#creating-a-catalog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Catalog</h3>
+
+<p>A catalog is a way to organize or categorize catalog items and bundles.
+Before you can associate a catalog item into a catalog, create an empty
+catalog first:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Services[Catalogs].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Catalogs</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), and then
+<img src="../images/1862.png" alt="1862">(<strong>Add a New Catalog</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> and <strong>Description</strong>, leaving everything else blank.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="creating-a-catalog-item">
+<a class="anchor" href="#creating-a-catalog-item" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Catalog Item</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Services[Catalogs].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Catalog Items</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), and then
+<img src="../images/1862.png" alt="1862">(<strong>Add a New Catalog Item</strong>).</p>
+  </li>
+  <li>
+    <p>Select <strong>OpenStack</strong> from the <strong>Catalog Item Type</strong> drop-down.</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Info</strong> subtab:</p>
+
+    <ol>
+      <li>
+        <p>Type a <strong>Name/Description</strong>.</p>
+      </li>
+      <li>
+        <p>Check <strong>Display in Catalog</strong> to edit <strong>Catalog</strong>, <strong>Dialog</strong>,
+and <strong>Entry Point(NS/Cls/Inst)</strong> options.</p>
+
+        <ol>
+          <li>
+            <p><strong>Provisioning Entry Point (Domain/NS/Cls/Inst)</strong> requires
+you to select an Automate instance to run upon provisioning.
+Navigate to <strong>ManageIQ/Service/Provisioning/State‐
+Machines/ServiceProvision_Template/CatalogItemInitialization</strong>
+and click <strong>Apply</strong>.</p>
+          </li>
+          <li>
+            <p><strong>Retirement Entry Point (Domain/NS/Cls/Inst)</strong> requires you
+to select an Automate instance to run upon retirement.
+Navigate to <strong>ManageIQ/Service/Provisioning/State‐
+Machines/ServiceProvision_Template/CatalogItemTermination</strong>
+and click <strong>Apply</strong>.</p>
+
+            <div class="note">
+
+The entry point must be a State Machine since the
+**Provisioning Entry Point** list is filtered to only show
+State Machine class instances. No other entry points will be
+available from the **Provisioning Entry Point** field.
+
+You can only choose from the catalogs and dialogs you have
+already created. If you haven’t done so, leave the values
+blank and edit later.
+
+</div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>In the <strong>Details</strong> subtab, write a <strong>Long Description</strong> for the
+catalog item.</p>
+  </li>
+  <li>
+    <p>In the <strong>Request Info</strong> subtab, select provisioning options that
+apply to the provider chosen.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="ordering-a-catalog-item">
+<a class="anchor" href="#ordering-a-catalog-item" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ordering a Catalog Item</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Services[Catalogs].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Service Catalogs</strong> accordion, and select the service to
+provision.</p>
+  </li>
+  <li>
+    <p>Click <strong>Order</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="reports">
+<a class="anchor" href="#reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reports</h2>
+
+<p>ManageIQ provides a large group of default reports organized into
+categories. Each category has its own set of subfolders. These reports
+have been constructed to help you view the most commonly requested and
+significant data.</p>
+
+<p>The categories of predefined reports available on ManageIQ are:</p>
+
+<ul>
+  <li>
+    <p><strong>Configuration Management</strong>: hardware, application, network,
+service, user account, operating system, and snapshot information
+for all of your items.</p>
+  </li>
+  <li>
+    <p><strong>Migration Readiness</strong>: information related to items required to
+migrate a virtual machine.</p>
+  </li>
+  <li>
+    <p><strong>Operations</strong>: free space on registered and unregistered virtual
+machines, power states for virtual machines, and SmartState analysis
+status.</p>
+
+    <p>This category also provides reports relating to the operation of
+ManageIQ, such as user IDs and snapshots taken by
+ManageIQ.</p>
+  </li>
+  <li>
+    <p><strong>VM Sprawl</strong>: usage information and disk waste.</p>
+  </li>
+  <li>
+    <p><strong>Relationships</strong>: virtual machine, folder, and cluster
+relationships.</p>
+  </li>
+  <li>
+    <p><strong>Events</strong>: operations and configuration management events.</p>
+  </li>
+  <li>
+    <p><strong>Performance by Asset Type</strong>: performance of your virtual
+infrastructure.</p>
+
+    <p>You must be capturing capacity and utilization data to get this
+information.</p>
+  </li>
+  <li>
+    <p><strong>Running Processes</strong>: information on processes running on a virtual
+machine.</p>
+
+    <p>You must have domain credentials entered for the zone to collect the
+information for these reports, and the virtual machine must have
+been analyzed at least once.</p>
+  </li>
+  <li>
+    <p><strong>Trending</strong>: projections of datastore capacity, along with host CPU
+and memory use.</p>
+  </li>
+  <li>
+    <p><strong>Tenants</strong>: quotas report aggregated by each tenant that shows
+quota name, total quota, in use, allocated, and available. The
+report currently lists all tenants and there is no nesting
+information available by parent and child tenants.</p>
+  </li>
+  <li>
+    <p><strong>Provisioning</strong>: provisioning activity based on the approver,
+datastore, requester, and virtual machine.</p>
+  </li>
+</ul>
+
+<p>For more detailed information on managing reports, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/monitoring-alerts-and-reporting/">Monitoring,
+Alerts, and
+Reporting</a>.</p>
+
+<h3 id="generating-a-single-report">
+<a class="anchor" href="#generating-a-single-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generating a Single Report</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports]</p>
+  </li>
+  <li>
+    <p>Click the <strong>Reports</strong> accordion and select the report you want to
+view.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Queue</strong>).</p>
+  </li>
+  <li>
+    <p>The report generation is placed on the queue and its status shows in
+the reports page.</p>
+
+    <p><img src="../images/2274.png" alt="2274"></p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2106.png" alt="2106"> <strong>(Reload current display)</strong> to
+update the status.</p>
+  </li>
+  <li>
+    <p>When a report has finished generating, click on its row to view it.</p>
+  </li>
+</ol>
+
+<h3 id="scheduling-a-report">
+<a class="anchor" href="#scheduling-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scheduling a Report</h3>
+
+<p>You can view historical data by creating reports on a scheduled basis.
+In addition, scheduled reports can be emailed directly to users:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports]</p>
+  </li>
+  <li>
+    <p>Click the <strong>Reports</strong> accordion and select the report you want to
+view.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then <strong>Add a
+new Schedule</strong>.</p>
+  </li>
+  <li>
+    <p>Fill in the <strong>Basic Information</strong> section.</p>
+  </li>
+  <li>
+    <p>Configure the <strong>Report Selection</strong>.</p>
+  </li>
+  <li>
+    <p>Configure the report’s schedule and frequency in the <strong>Timer</strong>
+section.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="viewing-reports">
+<a class="anchor" href="#viewing-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing Reports</h3>
+
+<p>Once you have created a schedule for a report, you can view it at any
+time after the first scheduled time has occurred.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Saved Reports</strong> accordion or the <strong>Reports</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click on the instance of the report you want to view.</p>
+  </li>
+</ol>
+
+<h2 id="chargeback">
+<a class="anchor" href="#chargeback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chargeback</h2>
+
+<p>The <em>chargeback</em> feature allows you to calculate monetary virtual
+machine charges based on owner or company tag. To use this feature you
+must be collecting capacity and utilization data. For information on
+server control settings and capacity &amp; utilization collection settings,
+see <a href="#cf-caputils">???</a>.</p>
+
+<h3 id="creating-chargeback-rates">
+<a class="anchor" href="#creating-chargeback-rates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Chargeback Rates</h3>
+
+<p>ManageIQ allows you to create your own set of computing and
+storage costs to use for billing.</p>
+
+<p>Chargeback rates can be configured at a single rate or in tiers, where
+one rate is assigned to one usage range, and another rate is assigned to
+a different usage range. You can also assign fixed and variable rates
+per tier if desired.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Chargeback].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Rates</strong> accordion and select <strong>Compute</strong> to create a CPU
+chargeback rate.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong> and
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Chargeback Rate)</strong>.</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Description</strong> for the chargeback rate.</p>
+  </li>
+  <li>
+    <p>Select <strong>Currency</strong> and fill in the <strong>Rate Details</strong>.</p>
+
+    <p><img src="../images/chargeback-rate-details.png" alt="chargeback rate details"></p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="assigning-chargeback-rates">
+<a class="anchor" href="#assigning-chargeback-rates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning Chargeback Rates</h3>
+
+<p>After assigning a chargeback rate, assign it to a cloud provider.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Chargeback].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Assignments</strong> accordion, and click either <strong>Compute</strong> or
+<strong>Storage</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Info</strong> area, select <strong>Selected Cloud/Infrastrcture
+Providers</strong>.</p>
+  </li>
+  <li>
+    <p>Select the chargeback rate you created in <a href="#_to_create_chargeback_rates">Creating Chargeback
+Rates</a>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-chargeback-report">
+<a class="anchor" href="#creating-a-chargeback-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Chargeback Report</h3>
+
+<p>ManageIQ allows you to create chargeback reports to monitor costs
+you charged.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Reports</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"><strong>(Configuration)</strong>,
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Report)</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Columns</strong> tab, fill out the <strong>Basic Report Info</strong> area.</p>
+
+    <ul>
+      <li>
+        <p>Type a unique name in <strong>Menu Name</strong> for how you want the report
+described in the menu list.</p>
+      </li>
+      <li>
+        <p>Type the <strong>Title</strong> to display on the report.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Add fields in the <strong>Configure Report Columns</strong> area.</p>
+
+    <ul>
+      <li>
+        <p>From the <strong>Base the report on</strong> list, select <strong>Chargebacks</strong>.</p>
+      </li>
+      <li>
+        <p>Select the fields to include in the report from the <strong>Available
+Fields</strong> list, then click <img src="../images/2289.png" alt="2289"> <strong>(Move
+selected fields down)</strong>. In addition to the fields, you can also
+select any tags that you have created and assigned.</p>
+      </li>
+      <li>
+        <p>Change the order of the fields in the report by clicking
+<img src="../images/2290.png" alt="2290"> <strong>(Move selected fields up)</strong> or
+<img src="../images/2289.png" alt="2289"> <strong>(Move selected fields down)]</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Formatting</strong> tab to set the size of paper for a PDF and
+column header format.</p>
+
+    <ul>
+      <li>
+        <p>From the <strong>PDF Output</strong> area, select the page size from the
+<strong>Page Size</strong> list.</p>
+      </li>
+      <li>
+        <p>From <strong>Specify Column Headers and Formats</strong>, type the text to
+display for each field. For each numeric field, you can also set
+the numeric format.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Filter</strong> tab to set filters for the data displayed in
+the report.</p>
+
+    <ul>
+      <li>
+        <p>From <strong>Chargeback Filters</strong>, select how you want the costs to
+show, the tag category, the tag, and how you want the items
+grouped.</p>
+      </li>
+      <li>
+        <p>From <strong>Chargeback Interval</strong>, select the time interval. You must
+have a full interval worth of data in order to select an option
+other than <strong>Partial</strong> in the <strong>Daily Ending With</strong> list.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Preview</strong> tab, and then <strong>Load</strong> to see what the report
+will look like.</p>
+  </li>
+  <li>
+    <p>When you are satisfied that you have the report that you want, click
+<strong>Add</strong> to create the new report.</p>
+  </li>
+</ol>
+
+<p>The new report is created. To make the report accessible from the
+<strong>Report</strong> menu, you must add it to a report menu.</p>
+
+<h2 id="using-a-self-signed-ca-certificate">
+<a class="anchor" href="#using-a-self-signed-ca-certificate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using a Self-Signed CA Certificate</h2>
+
+<p>Adding a self-signed Certificate Authority (CA) certificate for SSL authentication requires more configuration on OpenStack Platform and Microsoft System Center Virtual Machine Manager (SCVMM) providers.</p>
+
+<p><strong>Note</strong>: This procedure is not required for OpenShift Container Platform, Red Hat Virtualization, or middleware manager providers, which have the option to select <strong>SSL trusting custom CA</strong> as a <strong>Security Protocol</strong> in the user interface. These steps are needed only for providers without this option in the user interface.</p>
+
+<p>Before adding the provider, configure the following:</p>
+
+<ol>
+  <li>
+    <p>Copy your provider’s CA certificate in PEM format to <code class="language-plaintext highlighter-rouge">/etc/pki/ca-trust/source/anchors/</code> on your ManageIQ appliance.</p>
+  </li>
+  <li>
+    <p>Update the trust settings on the appliance:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> # update-ca-trust
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart the EVM processes on the server:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> # rake evm:restart
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>The CA certificate is added to the appliance, and you can add the provider to ManageIQ.</p>
+
+<h1 id="customizing-provisioning-dialogs">
+<a class="anchor" href="#customizing-provisioning-dialogs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Provisioning Dialogs</h1>
+
+<p>The default set of provisioning dialogs shows all possible options.
+However, ManageIQ also provides the ability to customize which
+tabs and fields are shown. You can decide what fields are required to
+submit the provisioning request or set default values.</p>
+
+<p>For each type of provisioning, there is a dialog that can be created to
+adjust what options are presented. While samples are provided containing
+all possible fields for provisioning, you can remove what fields are
+shown but cannot add new fields or tabs.</p>
+
+<p>Edit the dialogs to:</p>
+
+<ol>
+  <li>
+    <p>Hide or show provisioning tabs.</p>
+  </li>
+  <li>
+    <p>Hide or show fields. If you hide an attribute, the default will be
+used, unless you specify otherwise.</p>
+  </li>
+  <li>
+    <p>Set default values for a field.</p>
+  </li>
+  <li>
+    <p>Specify if a field is required to submit the request.</p>
+  </li>
+  <li>
+    <p>Create custom dialogs for specific users.</p>
+  </li>
+</ol>
+
+<h1 id="creating-custom-buttons-for-cloud-tenants">
+<a class="anchor" href="#creating-custom-buttons-for-cloud-tenants" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Custom Buttons for Cloud Tenants</h1>
+
+<p>ManageIQ also allows you to create <em>custom buttons</em> for
+cloud tenants. This is useful for providing shortcuts to functionalities
+and features frequently used by specific tenants.</p>
+
+<div class="note">
+
+This capability is made possible through the *Automate* model. See
+[Understanding the Automate
+Model](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/#understanding-the-automate-model)
+from the [Scripting Actions in
+CloudForms](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/)
+guide for more details.
+
+</div>
+
+<p>The following subsections summarize the two main steps for creating a
+custom button for cloud tenants.</p>
+
+<h1 id="creating-a-custom-button-group">
+<a class="anchor" href="#creating-a-custom-button-group" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Button Group</h1>
+
+<p>A <em>button group</em> is a label for a collection of buttons under an <em>object
+type</em>. To create a button group:</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Automation &gt; Automate &gt; Customization</strong>.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Buttons</strong> accordion.</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Types</strong> tree, select the type of object you want to create the button group for.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"><strong>Configuration</strong>, <img src="../images/1862.png" alt="image"><strong>Add a new Button Group</strong>.</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Button Group Text</strong> and <strong>Button Group Hover Text</strong>, and select the <strong>Button Group Image</strong> that you want to use.</p>
+  </li>
+  <li>
+    <p>If custom buttons have already been created, assign them to the button group. If not, see <a href="#create-a-custom-button">???</a> to create custom buttons.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The button group will show in the <strong>Cloud Tenant</strong> object type. When it
+does, create a custom button for any tenant within the OpenStack Cloud
+(see <a href="#create-a-custom-button">Creating a Custom Button</a>).</p>
+
+<h1 id="creating-a-custom-button">
+<a class="anchor" href="#creating-a-custom-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Button</h1>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Buttons</strong> accordion.</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Types</strong> tree, select the type of object you want
+to create the button for.</p>
+  </li>
+  <li>
+    <p>Click <strong>Unassigned Buttons</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>).</p>
+
+    <div class="note">
+
+If ![image](../images/1862.png) (**Add a new Button**) is not
+available, that means you have not created a button group for that
+object. To continue, create a button group first. See
+[???](#create-custom-button-group)
+
+</div>
+  </li>
+  <li>
+    <p>Under the <strong>Options</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Select the <strong>Button</strong> type from the list.</p>
+      </li>
+      <li>
+        <p>Enter button <strong>Text</strong> and <strong>Hover Text</strong>, and select the
+<strong>Icon</strong> and <strong>Icon Color</strong> to use.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Dialog</strong> if applicable.</p>
+      </li>
+      <li>
+        <p>Check <strong>Open URL</strong> to open a browser window for the custom URL
+returned when the button is executed.</p>
+      </li>
+      <li>
+        <p>Choose a <strong>Display For</strong> option for the button.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Submit</strong> parameter to choose how to submit objects to
+automate. Selecting <em>Submit All</em> will pass all objects at once
+when the button is executed, while choosing <em>One by one</em> will
+run execute the button action each time per object.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Under the <strong>Advanced</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Set button <strong>Enablement</strong>. Click <strong>Define Expression</strong> to access
+the expression editor tool. Enter <strong>Disabled Button Text</strong> to
+display when the custom button is disabled.</p>
+      </li>
+      <li>
+        <p>Use <strong>Visibility</strong> to determine button appearance based on a
+custom expression. Click <strong>Define Expression</strong> to access the
+expression editor tool.</p>
+
+        <div class="note">
+
+For more about setting visibility and enablement for a custom
+button, see [???](#filtering-actions-custom-buttons).
+
+</div>
+      </li>
+      <li>
+        <p>In <strong>Object Details</strong>, select <strong>Request</strong> from the
+<code class="language-plaintext highlighter-rouge">/System/Process/</code> dropdown. By default, the message is
+<code class="language-plaintext highlighter-rouge">create</code>. Do not change it.</p>
+      </li>
+      <li>
+        <p>Enter a <strong>Request</strong> name for the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code>
+instance.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Attribute/Value Pairs</strong> fields if applicable.</p>
+      </li>
+      <li>
+        <p>Set <strong>Role Access</strong>. Selecting <em>&lt;By Role&gt;</em> will display
+available roles. Check applicable roles.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> when you have confirmed that the button accomplishes
+the task you want.</p>
+  </li>
+</ol>
+
+<p>The button will show in the object type you added the button to. See
+<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/#invoking-automate">Invoking
+Automate</a>
+from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/">Scripting Actions in
+CloudForms</a>
+guide for more in-depth coverage.</p>
+
+<h1 id="managing-keypairs">
+<a class="anchor" href="#managing-keypairs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Keypairs</h1>
+
+<p>Key pairs allow you to manage SSH access between a user and provisioned
+instance. For more information about key pairs in OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/instances_and_images_guide/ch-manage_instances#section-manage-keypair">Manage
+Key
+Pairs</a>
+in the <em>Instances and Images Guide</em>.</p>
+
+<p>To manage key pairs, navigate to menu:Compute[Clouds &gt; Key Pairs].
+From there, you can view a list of available key pairs. Click on a key
+pair to view its details.</p>
+
+<p>To create a new key pair:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Key Pairs].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>),
+<img src="../images/2345.png" alt="2345">(<strong>Add a new Key Pair</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> for the key pair.</p>
+  </li>
+  <li>
+    <p>If you want to use a public key, copy its contents into the <strong>Public
+Key (optional)</strong> field.</p>
+  </li>
+  <li>
+    <p>Select which cloud provider on which to create the key pair. The key
+pair will then be available for use by instances in that provider.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>
