@@ -561,91 +561,51 @@
 <h2 id="environment-overview">
 <a class="anchor" href="#environment-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Environment Overview</h2>
 
-<p>This guide describes how to configure and manage database high
-availability in a ManageIQ environment. This configuration allows
-for disaster mitigation: a failure in the primary database does not
-result in downtime, as the standby database takes over the failed
-database’s processes. This is made possible by database replication
-between two or more database servers. In ManageIQ, these
-servers are <em>database-only ManageIQ appliances</em> which do
-not have <code class="language-plaintext highlighter-rouge">evmserverd</code> processes enabled. This is configured from the
-<code class="language-plaintext highlighter-rouge">appliance_console</code> menu at the time of deployment.</p>
+<p>Learn how to configure and manage database high availability in a ManageIQ environment. This configuration allows for disaster mitigation: a failure in the primary database does not result in downtime, as the standby database takes over the failed database’s processes. This is made possible by database replication between two or more database servers. In ManageIQ, these servers are <em>database-only ManageIQ appliances</em>, which do not have <code class="language-plaintext highlighter-rouge">evmserverd</code> processes that are enabled. This is configured from the <code class="language-plaintext highlighter-rouge">appliance_console</code> menu at the time of deployment.</p>
 
-<p>This guide describes two types of appliances used in high availability:</p>
+<p>Two types of appliances that are used in high availability:</p>
 
 <ul>
   <li>
-    <p><em>Database-only ManageIQ appliances</em>, which do not have
-<code class="language-plaintext highlighter-rouge">evmserverd</code> processes enabled or a user interface.</p>
+    <p><em>Database-only ManageIQ appliances</em>, which do not have <code class="language-plaintext highlighter-rouge">evmserverd</code> processes that are enabled or a user interface.</p>
   </li>
   <li>
-    <p><em>Non-database ManageIQ appliances</em>, which are standard
-appliances containing a user interface and which have <code class="language-plaintext highlighter-rouge">evmserverd</code>
-processes enabled.</p>
+    <p><em>Non-database ManageIQ appliances</em>, which are standard appliances that contain a user interface and which have <code class="language-plaintext highlighter-rouge">evmserverd</code> processes that are enabled.</p>
   </li>
 </ul>
 
-<p>In this configuration, a failover monitor daemon is configured and
-running on each non-database ManageIQ appliance. The
-failover monitor watches the <code class="language-plaintext highlighter-rouge">repmgr</code> metadata about the database-only
-appliances present in the cluster. When the primary database-only
-appliance goes down, the non-database ManageIQ appliances
-start polling each of the configured standby database-only appliances to
-monitor which one comes up as the new primary. The promotion is
-orchestrated either by <code class="language-plaintext highlighter-rouge">repmgrd</code> on the database-only appliances or is
-done manually. When the non-database ManageIQ appliances
-find that a standby has been promoted, ManageIQ
-reconfigures the setup by writing the new IP address in the
-<code class="language-plaintext highlighter-rouge">database.yml</code> file to point to the new primary.</p>
+<p>In this configuration, a failover monitor daemon is configured and running on each non-database ManageIQ appliance. The failover monitor watches the <code class="language-plaintext highlighter-rouge">repmgr</code> metadata about the database-only appliances present in the cluster. When the primary database-only appliance goes down, the non-database ManageIQ appliances start polling each of the configured standby database-only appliances to monitor which one comes up as the new primary. The promotion is orchestrated either by <code class="language-plaintext highlighter-rouge">repmgrd</code> on the database-only appliances or is done manually. When the non-database ManageIQ appliances find that a standby has been promoted, ManageIQ reconfigures the setup by writing the new IP address in the <code class="language-plaintext highlighter-rouge">database.yml</code> file to point to the new primary.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Manual steps are required to reintroduce the failed database node back
-as the standby server. See [???](#reintroducing_the_failed_node).
+<p>Manual steps are required to reintroduce the failed database node back as the standby server. See <a href="#reintroducing-the-failed-node">Reintroducing the Failed Node</a>.</p>
 
-</div>
-
-<p>Note, this procedure also does not provide scalability or a multi-master
-database setup. While a ManageIQ environment is comprised
-of an engine tier and a database tier, this configuration affects only
-the database tier and does not provide load balancing for the
-appliances.</p>
+<p>Note, this procedure also does not provide scalability or a multi-master database setup. While a ManageIQ environment is comprised of an engine tier and a database tier, this configuration affects only the database tier and does not provide load balancing for the appliances.</p>
 
 <h3 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
 
-<p>For a high availability ManageIQ environment, you need a
-virtualization host containing at minimum four virtual machines with
-ManageIQ installed, consisting of:</p>
+<p>For a high availability ManageIQ environment, you need a virtualization host containing at minimum four virtual machines with ManageIQ installed, consisting of:</p>
 
 <ul>
   <li>
-    <p>One virtual machine for the primary external database containing a
-minimum of 4GB dedicated disk space</p>
+    <p>One virtual machine for the primary external database containing a minimum of 4 GB dedicated disk space</p>
   </li>
   <li>
-    <p>One virtual machine for the standby external database containing a
-minimum of 4GB dedicated disk space</p>
+    <p>One virtual machine for the standby external database containing a minimum of 4 GB dedicated disk space</p>
   </li>
   <li>
-    <p>Two virtual machines for the non-database ManageIQ
-appliances</p>
+    <p>Two virtual machines for the non-database ManageIQ appliances</p>
   </li>
 </ul>
 
-<p>The database-only appliances should reside on a highly reliable local
-network in the same location.</p>
+<p>The database-only appliances must reside on a highly reliable local network in the same location.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-It is essential to use the same ManageIQ appliance template
-version to install each virtual machine in this environment.
+<p>It is essential to use the same ManageIQ appliance template version to install each virtual machine in this environment.</p>
 
-</div>
-
-<p>Correct time synchronization is required before installing the cluster.
-After installing the appliances, configure time synchronization on all
-appliances using <code class="language-plaintext highlighter-rouge">chronyd</code>.</p>
+<p>Correct time synchronization is required before installing the cluster. After installing the appliances, configure time synchronization on all appliances by using <code class="language-plaintext highlighter-rouge">chronyd</code>.</p>
 
 <h2 id="installing-the-appliances">
 <a class="anchor" href="#installing-the-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Appliances</h2>
@@ -1425,9 +1385,8 @@ availability.</p>
 <h2 id="configuring-the-haproxy-load-balancer">
 <a class="anchor" href="#configuring-the-haproxy-load-balancer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the HAProxy Load Balancer</h2>
 
-<p>After configuring the appliances as described in <a href="#installation">???</a>,
-configure a load balancer to direct traffic to the non-database
-ManageIQ appliances.</p>
+<p>After configuring the appliances as described in <a href="#installing-the-appliances">Installing the Appliances</a>,
+configure a load balancer to direct traffic to the non-database ManageIQ appliances.</p>
 
 <p>The following steps highlight the configuration requirements for the
 load balancer, which in this case is HAProxy. The load balancer is
@@ -1913,13 +1872,13 @@ roles and tiers use built-in high availability mechanisms like primary,
 secondary, and tertiary failover.</p>
 
 <p>You can configure additional worker appliances as needed using the steps
-in <a href="#installation_appliances_addl">???</a>, and then assign zones and
+in <a href="#installing-additional-manageiq-appliances">Installing Additional Appliances</a>, and then assign zones and
 server roles. The non-database ManageIQ appliances and
 roles can be configured in any order.</p>
 
 <p>The following diagram shows an example of a highly available database
 configuration that contains worker appliances, providers, and the
-HAProxy load balancer configured in <a href="#configuring_HAProxy">???</a>.</p>
+HAProxy load balancer configured in <a href="#configuring-the-haproxy-load-balancer">Configuring the HAProxy Load Balancer</a>.</p>
 
 <p>The worker appliances in the diagram are labeled by server role (<strong>User
 Interface</strong>, <strong>Management</strong>, and <strong>Database Ops</strong>) and corresponding

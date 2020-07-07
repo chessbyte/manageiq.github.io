@@ -557,8 +557,7 @@
 
 <ol>
   <li>
-    <p>Downloading the appliance for your environment as a virtual machine
-snapshot template.</p>
+    <p>Downloading the appliance for your environment as a virtual machine snapshot template.</p>
   </li>
   <li>
     <p>Setting up a virtual machine based on the appliance.</p>
@@ -568,9 +567,7 @@ snapshot template.</p>
   </li>
 </ol>
 
-<p>After you have completed all the procedures in this guide, you will have
-a working environment on which additional customizations and
-configurations can be performed.</p>
+<p>After you have completed all the procedures in this guide, you will have a working environment on which additional customizations and configurations can be performed.</p>
 
 <h3 id="obtaining-the-appliance">
 <a class="anchor" href="#obtaining-the-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtaining the appliance</h3>
@@ -578,8 +575,7 @@ configurations can be performed.</p>
 <h3 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
 
-<p>Below are the two sets of requirements for installing ManageIQ on
-Amazon EC2.</p>
+<p>Below are the two sets of requirements for installing ManageIQ on Amazon EC2.</p>
 
 <h3 id="manageiq-requirements">
 <a class="anchor" href="#manageiq-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>ManageIQ Requirements</h3>
@@ -601,176 +597,156 @@ Amazon EC2.</p>
 
 <ul>
   <li>
-    <p>An Amazon S3 bucket to store the disk image that will be imported to
-AWS as a snapshot.</p>
+    <p>An Amazon S3 bucket to store the disk image that will be imported to AWS as a snapshot.</p>
   </li>
   <li>
     <p>A VM import service role (IAM role) named <code class="language-plaintext highlighter-rouge">vmimport</code>.</p>
   </li>
 </ul>
 
-<p>For information on creating an Amazon S3 bucket and a VM Import Service
-Role, see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Amazon EC2
+<p>For information on creating an Amazon S3 bucket and a VM Import Service Role, see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Amazon EC2
 documentation</a>.</p>
 
 <h3 id="uploading-the-appliance-to-an-amazon-s3-bucket">
 <a class="anchor" href="#uploading-the-appliance-to-an-amazon-s3-bucket" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uploading the Appliance to an Amazon S3 Bucket</h3>
 
-<p>From your local file system, you can now upload the
-ManageIQ appliance VHD image obtained in <a href="#obtaining-the-appliance">Obtaining the
-appliance</a> to the Amazon S3 bucket, using your
-choice of tool.</p>
+<p>From your local file system, you can now upload the ManageIQ appliance VHD image obtained in <a href="#obtaining-the-appliance">Obtaining the appliance</a> to the Amazon S3 bucket, using your choice of tool, such as AWS client or directly upload the Appliance image from your S3 bucket on AWS Management Console.</p>
 
 <h3 id="configuring-amazon-ec2-to-import-the-appliance">
 <a class="anchor" href="#configuring-amazon-ec2-to-import-the-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Amazon EC2 to Import the Appliance</h3>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-These are the procedural steps as of the time of writing. For the latest
-information on importing a virtual machine as an image, see the [Amazon
-EC2
-documentation](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html).
-
-</div>
+<p>These are the procedural steps as of the time of writing. For the latest information on importing a virtual machine as an image, see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Amazon EC2 documentation</a>.</p>
 
 <ol>
   <li>
-    <p>Install the AWS client on the computer you want to interact with the
-AWS API from.</p>
+    <p>Install the AWS client on the computer you want to interact with the AWS API from.</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ pip install awscli
+<div class="highlight"><pre class="highlight"><code> $ pip install awscli
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Configure and download your AWS secret/access key by following the
-steps in the <a href="https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html">Managing Access Keys for Your AWS
-Account</a>
-documentation.</p>
+    <p>Configure and download your AWS secret/access key by following the steps in the <a href="https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html">Managing Access Keys for Your AWS Account</a> documentation.</p>
   </li>
   <li>
     <p>Configure the AWS client with your access/secret key. For example:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ aws configure
-AWS Access Key ID [******]: ACCESS_KEY
-AWS Secret Access Key [******]: SECRET_KEY
-Default region name [None]:
-Default output format [None]:
+<div class="highlight"><pre class="highlight"><code> $ aws configure
+ AWS Access Key ID [******]: ACCESS_KEY
+ AWS Secret Access Key [******]: SECRET_KEY
+ Default region name [None]:
+ Default output format [None]:
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create the <code class="language-plaintext highlighter-rouge">trust-policy.json</code> file for the <strong>vmimport</strong> role. For
-example:</p>
+    <p>Create the <code class="language-plaintext highlighter-rouge">trust-policy.json</code> file for the <strong>vmimport</strong> role. For example:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>{
+<div class="highlight"><pre class="highlight"><code> {
+    "Version": "2012-10-17",
+    "Statement": [
+       {
+          "Effect": "Allow",
+          "Principal": { "Service": "vmie.amazonaws.com" },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+             "StringEquals":{
+                "sts:Externalid": "vmimport"
+             }
+          }
+       }
+    ]
+ }
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create the <strong>vmimport</strong> role using the <code class="language-plaintext highlighter-rouge">trust-policy.json</code> file that you just created.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> $ aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
+</code></pre></div>    </div>
+
+    <p><strong>Note:</strong></p>
+
+    <p>This user must have permissions to create and modify IAM roles.</p>
+  </li>
+  <li>
+    <p>Create the <code class="language-plaintext highlighter-rouge">role-policy.json</code> file. Be sure to use the exact S3 bucket name. For example:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> {
    "Version": "2012-10-17",
-   "Statement": [
-      {
-         "Effect": "Allow",
-         "Principal": { "Service": "vmie.amazonaws.com" },
-         "Action": "sts:AssumeRole",
-         "Condition": {
-            "StringEquals":{
-               "sts:Externalid": "vmimport"
-            }
-         }
-      }
-   ]
-}
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:DeleteObject",
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:PutObject"
+      ],
+      "Resource": ["arn:aws:s3:::BUCKET_TO_UPLOAD_IMAGE","arn:aws:s3:::BUCKET_TO_UPLOAD_IMAGE/*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:PutRolePolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CancelConversionTask",
+        "ec2:CancelExportTask",
+        "ec2:CreateImage",
+        "ec2:CreateInstanceExportTask",
+        "ec2:CreateTags",
+        "ec2:DeleteTags",
+        "ec2:DescribeConversionTasks",
+        "ec2:DescribeExportTasks",
+        "ec2:DescribeExportImageTasks",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstances",
+        "ec2:DescribeTags",
+        "ec2:ExportImage",
+        "ec2:ImportInstance",
+        "ec2:ImportVolume",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances",
+        "ec2:ImportImage",
+        "ec2:ImportSnapshot",
+        "ec2:DescribeImportImageTasks",
+        "ec2:DescribeImportSnapshotTasks",
+        "ec2:CancelImportTask"
+      ],
+      "Resource": "*"
+    }
+  ]
+ }
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create the <strong>vmimport</strong> role using the <code class="language-plaintext highlighter-rouge">trust-policy.json</code> file that
-you just created.</p>
+    <p>Apply the <strong>vmimport</strong> role to the ManageIQ appliance image you uploaded to the S3 bucket.</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
-</code></pre></div>    </div>
-
-    <div class="note">
-
-This user must have permissions to create and modify IAM roles.
-
-</div>
-  </li>
-  <li>
-    <p>Create the <code class="language-plaintext highlighter-rouge">role-policy.json</code> file. Be sure to use the exact S3
-bucket name. For example:</p>
-
-    <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>{
-  "Version": "2012-10-17",
- "Statement": [
-   {
-     "Effect": "Allow",
-     "Action": [
-       "s3:ListAllMyBuckets"
-     ],
-     "Resource": "*"
-   },
-   {
-     "Effect": "Allow",
-     "Action": [
-       "s3:CreateBucket",
-       "s3:DeleteBucket",
-       "s3:DeleteObject",
-       "s3:GetBucketLocation",
-       "s3:GetObject",
-       "s3:ListBucket",
-       "s3:PutObject"
-     ],
-     "Resource": ["arn:aws:s3:::BUCKET_TO_UPLOAD_IMAGE","arn:aws:s3:::BUCKET_TO_UPLOAD_IMAGE/*"]
-   },
-   {
-     "Effect": "Allow",
-     "Action": [
-       "iam:CreateRole",
-       "iam:PutRolePolicy"
-     ],
-     "Resource": "*"
-   },
-   {
-     "Effect": "Allow",
-     "Action": [
-       "ec2:CancelConversionTask",
-       "ec2:CancelExportTask",
-       "ec2:CreateImage",
-       "ec2:CreateInstanceExportTask",
-       "ec2:CreateTags",
-       "ec2:DeleteTags",
-       "ec2:DescribeConversionTasks",
-       "ec2:DescribeExportTasks",
-       "ec2:DescribeExportImageTasks",
-       "ec2:DescribeInstanceAttribute",
-       "ec2:DescribeInstanceStatus",
-       "ec2:DescribeInstances",
-       "ec2:DescribeTags",
-       "ec2:ExportImage",
-       "ec2:ImportInstance",
-       "ec2:ImportVolume",
-       "ec2:StartInstances",
-       "ec2:StopInstances",
-       "ec2:TerminateInstances",
-       "ec2:ImportImage",
-       "ec2:ImportSnapshot",
-       "ec2:DescribeImportImageTasks",
-       "ec2:DescribeImportSnapshotTasks",
-       "ec2:CancelImportTask"
-     ],
-     "Resource": "*"
-   }
- ]
-}
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Apply the <strong>vmimport</strong> role to the ManageIQ appliance
-image you uploaded to the S3 bucket.</p>
-
-    <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
+<div class="highlight"><pre class="highlight"><code> $ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -785,49 +761,40 @@ image you uploaded to the S3 bucket.</p>
     <p>Create a containers.json file:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>{
-    "Description": " NAME OF IMPORTED SNAPSHOT IN AWS",
-    "Format": "vhd",
-    "UserBucket": {
-        "S3Bucket": "BUCKET WITH UPLOADED .VHD IMAGE",
-        "S3Key": "PATH OF .VHD IMAGE"
-    }
-}
+<div class="highlight"><pre class="highlight"><code> {
+     "Description": "NAME OF IMPORTED SNAPSHOT IN AWS",
+     "Format": "vhd",
+     "UserBucket": {
+         "S3Bucket": "BUCKET WITH UPLOADED .VHD IMAGE",
+         "S3Key": "PATH OF .VHD IMAGE"
+     }
+ }
 </code></pre></div>    </div>
 
     <p>See the <a href="//docs.aws.amazon.com">AWS documentation</a> on VM import and
-export requirements, such as image formats, instances, volume and
-file system types, and using regions.</p>
+ export requirements, such as image formats, instances, volume and
+ file system types, and using regions.</p>
   </li>
   <li>
-    <p>Use the AWS-CLI tools to import a disk as a snapshot. See the <a href="//docs.aws.amazon.com">AWS
-documentation</a> on using VM Import/Export to
-import a disk as a snapshot.</p>
+    <p>Use the AWS-CLI tools to import a disk as a snapshot. See the <a href="//docs.aws.amazon.com">AWS documentation</a> on using VM Import/Export to import a disk as a snapshot.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-You can either specify a region, or if not, ensure that the S3
-bucket is in the same region where you want to import the snapshot.
-
-</div>
+    <p>You can either specify a region, or if not, ensure that the S3 bucket is in the same region where you want to import the snapshot.</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ aws ec2 import-snapshot --disk-container file://containers.json
+<div class="highlight"><pre class="highlight"><code> $ aws ec2 import-snapshot --disk-container file://containers.json
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Check the progress of your snapshot import by running the following
-command:</p>
+    <p>Check the progress of your snapshot import by running the following command:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> $ aws ec2 describe-import-snapshot-tasks --import-task-ids SNAPSHOT_ID_GOT_FROM_RESPONSE
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Create an AMI from the snapshot. See the <a href="//docs.aws.amazon.com">AWS
-documentation</a> on using options with the
-following command to create and register a Linux AMI from a
-snapshot.</p>
+    <p>Create an AMI from the snapshot. See the <a href="//docs.aws.amazon.com">AWS documentation</a> on using options with the following command to create and register a Linux AMI from a snapshot.</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> $ aws ec2 register-image

@@ -512,29 +512,23 @@
 </ul><h1 id="assigning-a-custom-analysis-profile-to-a-virtual-machine">
 <a class="anchor" href="#assigning-a-custom-analysis-profile-to-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning a Custom Analysis Profile to a Virtual Machine</h1>
 
-<p>You can create and assign different analysis profiles for specific
-virtual machine configurations using the ManageIQ user interface.
-This document describes the steps required to create a custom virtual
-machine analysis profile, and assigning it to a virtual machine for use
-with SmartState analysis, via a control policy.</p>
+<p>You can create and assign different analysis profiles for specific virtual machine configurations using the ManageIQ user interface. This document describes the steps required to create a custom virtual machine analysis profile, and assigning it to a virtual machine for use with SmartState analysis, via a control policy.</p>
 
 <ol>
   <li>
-    <p>Creating a Virtual Machine Analysis Profile</p>
+    <p>Creating a Virtual Machine Analysis Profile.</p>
   </li>
   <li>
-    <p>Creating an Action to Assign the Virtual Machine Analysis Profile to
-Analysis Task</p>
+    <p>Creating an Action to Assign the Virtual Machine Analysis Profile to Analysis Task</p>
   </li>
   <li>
-    <p>Creating a Virtual Machine Control Policy</p>
+    <p>Creating a Virtual Machine Control Policy.</p>
   </li>
   <li>
-    <p>Creating a Policy Profile and Assigning the Virtual Machine Control
-Policy</p>
+    <p>Creating a Policy Profile and Assigning the Virtual Machine Control Policy.</p>
   </li>
   <li>
-    <p>Assigning the Policy Profile to a Virtual Machine</p>
+    <p>Assigning the Policy Profile to a Virtual Machine.</p>
   </li>
 </ol>
 
@@ -598,7 +592,7 @@ create custom actions using the ManageIQ user interface.</p>
 
 <p>Use this procedure to create a custom action by adding the <strong>Assign
 Profile to Analysis Task</strong> action type to the virtual machine analysis
-profile (created in <a href="#vm-analysis-profile">???</a>).</p>
+profile (created in <a href="#creating-a-virtual-machine-analysis-profile">Creating a Virtual Machine Analysis Profile</a>).</p>
 
 <p><img src="../images/create-custom-action.png" alt="image"></p>
 
@@ -641,17 +635,11 @@ create a virtual machine control policy in the next procedure.</p>
 <h2 id="creating-a-virtual-machine-control-policy">
 <a class="anchor" href="#creating-a-virtual-machine-control-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Virtual Machine Control Policy</h2>
 
-<p>You can create a control policy by combining an event, a condition, and
-an action. The procedure below describes how to create a virtual machine
-control policy to assign the newly-created action to the <strong>VM Analysis
-Start</strong> event. Optionally, you can use a scope expression that is tested
-immediately when the policy is triggered by an event. If the item is out
-of scope, then the policy will not continue on to the conditions, and
-the assigned action will not run.</p>
+<p>You can create a control policy by combining an event, a condition, and an action. The procedure below describes how to create a virtual machine control policy to assign the newly-created action to the <strong>VM Analysis Start</strong> event. Optionally, you can use a scope expression that is tested immediately when the policy is triggered by an event. If the item is out of scope, then the policy will not continue on to the conditions, and the assigned action will not run.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Control[Explorer].</p>
+    <p>Browse to menu: <strong>Control &gt; Explorer</strong>.</p>
   </li>
   <li>
     <p>Expand the <strong>Policies</strong> accordion, and click <strong>Control Policies</strong>.</p>
@@ -660,43 +648,32 @@ the assigned action will not run.</p>
     <p>Select <strong>Vm Control Policies</strong>.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="image"> (<strong>Add a New VM and Instance Control
-Policy</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1862.png" alt="image"> <strong>Add a New VM and Instance Control Policy</strong>.</p>
   </li>
   <li>
-    <p>Enter a <strong>Description</strong>. This will be the name given to your VM
-control policy.</p>
+    <p>Enter a <strong>Description</strong>. This will be the name given to your VM control policy.</p>
   </li>
   <li>
-    <p>Clear the <strong>Active</strong> box if you do not want this policy processed
-even when assigned to a resource.</p>
+    <p>Clear the <strong>Active</strong> box if you do not want this policy processed even when assigned to a resource.</p>
   </li>
   <li>
-    <p>Optional: Enter a <strong>Scope</strong> (you can also create a scope as part of
-a condition, or not use one at all). If the virtual machine is not
-included in the scope, the assigned action will not run.</p>
+    <p>Optional: Enter a <strong>Scope</strong> (you can also create a scope as part of a condition, or not use one at all). If the virtual machine is not included in the scope, the assigned action will not run.</p>
 
-    <p>You can use the drop-down list to create an expression for the
-<strong>Scope</strong>. Based on what you choose, different options appear. Click
-<img src="../images/1863.png" alt="image"> (<strong>Commit expression element changes</strong>)
-to add the scope.</p>
+    <ul>
+      <li>You can use the drop-down list to create an expression for the <strong>Scope</strong>. Based on what you choose, different options appear. Click <img src="../images/1863.png" alt="image"> <strong>Commit expression element changes</strong> to add the scope.</li>
+    </ul>
   </li>
   <li>
     <p>Enter <strong>Notes</strong> if required.</p>
   </li>
   <li>
-    <p>Click <strong>Add</strong>. The policy is added and listed under <strong>Vm Control
-Policies</strong> in the <strong>Policies</strong> accordion.</p>
+    <p>Click <strong>Add</strong>. The policy is added and listed under <strong>Vm Control Policies</strong> in the <strong>Policies</strong> accordion.</p>
   </li>
   <li>
-    <p>Select the newly-added VM control policy. You can now associate
-events, conditions, and actions with the policy.</p>
+    <p>Select the newly-added VM control policy. You can now associate events, conditions, and actions with the policy.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
-<img src="../images/1851.png" alt="image"> (<strong>Edit this Policy’s Event
-assignments</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1851.png" alt="image"> <strong>Edit this Policy’s Event assignments</strong>.</p>
   </li>
   <li>
     <p>Under <strong>VM Operation</strong>, set <strong>VM Analysis Start</strong> to <strong>Yes</strong>.</p>
@@ -708,44 +685,28 @@ assignments</strong>).</p>
     <p>Click the <strong>VM Analysis Start</strong> event to configure actions.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
-<img src="../images/1851.png" alt="image"> (<strong>Edit Actions for this Policy Event</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1851.png" alt="image"> <strong>Edit Actions for this Policy Event</strong>.</p>
   </li>
   <li>
-    <p>In <strong>Order of Actions if ALL Conditions are True</strong>, select the
-action created in <a href="#assign-profile-analysis-task-action">???</a> from
-the <strong>Available Actions</strong> list. This action will take place if the
-resources meet the conditions of the policy.</p>
+    <p>In <strong>Order of Actions if ALL Conditions are True</strong>, select the action created in <a href="#creating-an-action-to-assign-the-virtual-machine-analysis-profile-to-the-analysis-task">Creating an Action to Assign the Virtual Machine Analysis Profile to the Analysis Task</a> from the <strong>Available Actions</strong> list. This action will take place if the resources meet the conditions of the policy.</p>
 
     <p><img src="../images/edit-event.png" alt="image"></p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Each selected action can be executed synchronously or
-asynchronously; a synchronous action will not start until the
-previous synchronous action is completed, while an asynchronous
-action allows the next action to start whether or not the first
-action has completed. Also, at least one ManageIQ
-server in the ManageIQ zone must have the notifier
-server role enabled for the trap to be sent.
-
-</div>
+    <p>Each selected action can be executed synchronously or asynchronously; a synchronous action will not start until the
+previous synchronous action is completed, while an asynchronous action allows the next action to start whether or not the first action has completed. Also, at least one ManageIQ server in the ManageIQ zone must have the notifier server role enabled for the trap to be sent.</p>
   </li>
   <li>
-    <p>Click (<img src="../images/1876.png" alt="image">) which will move the action to
-<strong>Selected Actions</strong>. The selected action is set to (S) Synchronous
-by default. From <strong>Selected Actions</strong>, select the action, then:</p>
+    <p>Click (<img src="../images/1876.png" alt="image">) which will move the action to <strong>Selected Actions</strong>. The selected action is set to (S) Synchronous by default. From <strong>Selected Actions</strong>, select the action, then:</p>
 
     <ul>
       <li>
-        <p>Click <strong>A</strong> (Set selected Actions to Asynchronous) to make it
-asynchronous.</p>
+        <p>Click <strong>A</strong> (Set selected Actions to Asynchronous) to make it asynchronous.</p>
       </li>
       <li>
-        <p>Click <strong>S</strong> (Set selected Actions to Synchronous) to make it
-synchronous. If creating a synchronous action, use the up and
-down arrows to identify in what order you want the actions to
-run.</p>
+        <p>Click <strong>S</strong> (Set selected Actions to Synchronous) to make it synchronous. If creating a synchronous action, use the up and
+down arrows to identify in what order you want the actions to run.</p>
       </li>
     </ul>
   </li>
@@ -758,29 +719,23 @@ run.</p>
 <a class="anchor" href="#creating-a-policy-profile-and-assigning-the-virtual-machine-control-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Policy Profile and Assigning the Virtual Machine Control Policy</h2>
 
 <p>Add a new policy profile and assign the virtual machine control policy
-(created in <a href="#create-vm-control-policy">???</a>) to it.</p>
+(created in <a href="#create-vm-control-policy">Creating a Virtual Machine Control Policy</a>) to it.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Control[Explorer].</p>
+    <p>Browse to menu: <strong>Control &gt; Explorer</strong>.</p>
   </li>
   <li>
-    <p>Expand the <strong>Policy Profiles</strong> accordion, click
-<img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="image"> (<strong>Add a New Policy Profile</strong>).</p>
+    <p>Expand the <strong>Policy Profiles</strong> accordion, click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1862.png" alt="image"> <strong>Add a New Policy Profile</strong>.</p>
   </li>
   <li>
-    <p>In the <strong>Basic Information</strong> area, enter a <strong>Description</strong> for the
-policy profile.</p>
+    <p>In the <strong>Basic Information</strong> area, enter a <strong>Description</strong> for the policy profile.</p>
   </li>
   <li>
-    <p>Under <strong>Policy Selection</strong>, select the virtual machine control
-policy created in <a href="#create-vm-control-policy">???</a> from the
-<strong>Available Policies</strong> list.</p>
+    <p>Under <strong>Policy Selection</strong>, select the virtual machine control policy created in <a href="#create-vm-control-policy">Creating a Virtual Machine Control Policy</a> from the <strong>Available Policies</strong> list.</p>
   </li>
   <li>
-    <p>Click (<img src="../images/1876.png" alt="image">) to move the selected virtual
-machine control policy into this profile.</p>
+    <p>Click (<img src="../images/1876.png" alt="image">) to move the selected virtual machine control policy into this profile.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -790,51 +745,34 @@ machine control policy into this profile.</p>
 <h2 id="assigning-the-policy-profile-to-a-virtual-machine">
 <a class="anchor" href="#assigning-the-policy-profile-to-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning the Policy Profile to a Virtual Machine</h2>
 
-<p>Assign the policy profile you created in
-<a href="#create-policy-profile-assign-vm-control-policy">???</a> to a virtual
-machine, and initiate SmartState analysis.</p>
+<p>Assign the policy profile you created in <a href="#create-policy-profile-assign-vm-control-policy">Creating a Policy Profile and Assigning the Virtual Machine Control Policy</a> to a virtual machine, and initiate SmartState analysis.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Policy profiles can be specified at multiple levels. If you assign a
-policy profile to a provider (Amazon EC2 or OpenStack for example), the
-profile will apply to all hosts or virtual machines for that provider.
-
-</div>
+<p>Policy profiles can be specified at multiple levels. If you assign a policy profile to a provider (Amazon EC2 or OpenStack for example), the profile will apply to all hosts or virtual machines for that provider.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Compute[Clouds &gt; Instances] or
-menu:Compute[Infrastructure &gt; Virtual Machines]. Select the
-virtual machine or instance.</p>
+    <p>Browse to menu: <strong>Compute &gt; Clouds &gt; Instances</strong> or menu: <strong>Compute &gt; Infrastructure &gt; Virtual Machines</strong>. Select the virtual machine or instance.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1941.png" alt="image"> (<strong>Policy</strong>), then
-<img src="../images/1851.png" alt="image"> (<strong>Manage Policies</strong>).</p>
+    <p>Click <img src="../images/1941.png" alt="image"> <strong>Policy</strong>, then <img src="../images/1851.png" alt="image"> <strong>Manage Policies</strong>.</p>
   </li>
   <li>
-    <p>Under <strong>Select Policy Profiles</strong>, select the policy profile created
-in <a href="#create-policy-profile-assign-vm-control-policy">???</a>. It will
-turn blue to show the selection. Click the triangle next to the
-policy profile to see its member policies.</p>
+    <p>Under <strong>Select Policy Profiles</strong>, select the policy profile created in <a href="#create-policy-profile-assign-vm-control-policy">Creating a Policy Profile and Assigning the Virtual Machine Control Policy</a>. It will turn blue to show the selection. Click the triangle next to the policy profile to see its member policies.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
-<img src="../images/smartstate-icon.png" alt="image"> (<strong>Perform SmartState
-Analysis</strong>). A pop-up window appears to confirm the action.</p>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/smartstate-icon.png" alt="image"> <strong>Perform SmartState Analysis</strong>. A pop-up window appears to confirm the action.</p>
   </li>
   <li>
-    <p>Click <strong>OK</strong>. SmartState analysis is initiated for the selected
-virtual machine or instance from the ManageIQ
-database.</p>
+    <p>Click <strong>OK</strong>. SmartState analysis is initiated for the selected virtual machine or instance from the ManageIQ database.</p>
   </li>
 </ol>
 
-<p>SmartState analysis will now report back findings specified by the
-custom virtual machine analysis profile.</p>
+<p>SmartState analysis will now report back findings specified by the custom virtual machine analysis profile.</p>
 
 
 

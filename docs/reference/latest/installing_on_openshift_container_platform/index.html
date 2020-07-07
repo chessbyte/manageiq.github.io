@@ -1222,44 +1222,30 @@ cloudforms   cfme.apps.e2e.example.com  cloudforms:443-tcp   passthrough        
 <h2 id="configuring-external-authentication-to-manageiq">
 <a class="anchor" href="#configuring-external-authentication-to-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring External Authentication to ManageIQ</h2>
 
-<p>After installing ManageIQ, configure external
-authentication by updating the <code class="language-plaintext highlighter-rouge">httpd-auth-configs</code> configuration map on
-the <code class="language-plaintext highlighter-rouge">httpd</code> pod to include all necessary configuration files and
-certificates.</p>
+<p>After installing ManageIQ, configure external authentication by updating the <code class="language-plaintext highlighter-rouge">httpd-auth-configs</code> configuration map on the <code class="language-plaintext highlighter-rouge">httpd</code> pod to include all necessary configuration files and certificates.</p>
 
-<p>Upon startup, the <code class="language-plaintext highlighter-rouge">httpd</code> pod overlays its files with the ones specified
-in the <code class="language-plaintext highlighter-rouge">auth-configuration.conf</code> file in the configuration map. This is
-done by the <code class="language-plaintext highlighter-rouge">initialize-httpd-auth</code> service that runs before <code class="language-plaintext highlighter-rouge">httpd</code>.</p>
+<p>Upon startup, the <code class="language-plaintext highlighter-rouge">httpd</code> pod overlays its files with the ones specified in the <code class="language-plaintext highlighter-rouge">auth-configuration.conf</code> file in the configuration map. This is done by the <code class="language-plaintext highlighter-rouge">initialize-httpd-auth</code> service that runs before <code class="language-plaintext highlighter-rouge">httpd</code>.</p>
 
-<p>You can automatically generate an updated configuration map by running
-the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> tool in its own pod using the steps in
-<a href="#automatic-defining-configmap">Configuring External Authentication
-Automatically</a> (recommended).
-Alternatively, you can define the configuration map manually using the
-commands in <a href="#manually-defining-configmap">Defining the Configuration Map
-Manually</a>.</p>
+<p>You can automatically generate an updated configuration map by running the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> tool in its own pod using the steps in <a href="#automatic-defining-configmap">Configuring External Authentication Automatically</a> (recommended).
+Alternatively, you can define the configuration map manually using the commands in <a href="#manually-defining-configmap">Defining the Configuration Map Manually</a>.</p>
 
 <h3 id="configuring-external-authentication-automatically">
 <a class="anchor" href="#configuring-external-authentication-automatically" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring External Authentication Automatically</h3>
 
-<p>To automatically generate an <code class="language-plaintext highlighter-rouge">authconfig</code> map, run the
-<code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> tool with your desired parameters:</p>
+<p>To automatically generate an <code class="language-plaintext highlighter-rouge">authconfig</code> map, run the <code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> tool with your desired parameters:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ httpd_configmap_generator &lt;command_or_authentication_type&gt;
 </code></pre></div></div>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Run `httpd_configmap_generator --help` or see [???](#configmap-settings)
-for configuration map parameters.
-
-</div>
+<p>Run <code class="language-plaintext highlighter-rouge">httpd_configmap_generator --help</code> or see <a href="#configmap-settings">External Authentication Configuration Map Settings</a>
+for configuration map parameters.</p>
 
 <h4 id="supported-authentication-types">
 <a class="anchor" href="#supported-authentication-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Authentication Types</h4>
 
-<p>The following authentication types can be configured with the
-<code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> tool to configure external authentication.</p>
+<p>The following authentication types can be configured with the <code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> tool to configure external authentication.</p>
 
 <p>For usage, run:</p>
 
@@ -1302,10 +1288,7 @@ for configuration map parameters.
 <h4 id="updating-an-authconfig-map">
 <a class="anchor" href="#updating-an-authconfig-map" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating an <code class="language-plaintext highlighter-rouge">authconfig</code> Map</h4>
 
-<p>With the <code class="language-plaintext highlighter-rouge">update</code> subcommand, you can add file(s) to the configuration
-map to specify file ownership and permissions. The <code class="language-plaintext highlighter-rouge">--add-file</code> option
-can be specified multiple times (once per file) to add files to a
-configuration map.</p>
+<p>With the <code class="language-plaintext highlighter-rouge">update</code> subcommand, you can add file(s) to the configuration map to specify file ownership and permissions. The <code class="language-plaintext highlighter-rouge">--add-file</code> option can be specified multiple times (once per file) to add files to a configuration map.</p>
 
 <p>Supported file specifications for the <code class="language-plaintext highlighter-rouge">--add-file</code> option are:</p>
 
@@ -1315,13 +1298,11 @@ configuration map.</p>
 --add-file=file-url,target-file-path,file-permission
 </code></pre></div></div>
 
-<p>When entering file specifications, <code class="language-plaintext highlighter-rouge">file-url</code> is an HTTP URL and
-<code class="language-plaintext highlighter-rouge">file-permission</code> can be specified as <code class="language-plaintext highlighter-rouge">mode:owner:group</code>.</p>
+<p>When entering file specifications, <code class="language-plaintext highlighter-rouge">file-url</code> is an HTTP URL and <code class="language-plaintext highlighter-rouge">file-permission</code> can be specified as <code class="language-plaintext highlighter-rouge">mode:owner:group</code>.</p>
 
 <p><strong>Adding files by specifying paths.</strong></p>
 
-<p>The file ownership and permissions are based on the files specified. For
-example:</p>
+<p>The file ownership and permissions are based on the files specified. For example:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ httpd_configmap_generator update \
 --input=/tmp/original-auth-configmap.yaml                \
@@ -1339,8 +1320,7 @@ example:</p>
 --output=/tmp/updated-auth-configmap.yaml
 </code></pre></div></div>
 
-<p>The file ownership and permissions are based on the source files
-specified; in this case the ownership and permissions of the
+<p>The file ownership and permissions are based on the source files specified; in this case the ownership and permissions of the
 <code class="language-plaintext highlighter-rouge">/tmp/uploaded-cert1</code> and <code class="language-plaintext highlighter-rouge">/tmp/uploaded-cert2</code> files will be used.</p>
 
 <p><strong>Adding a target file with user-specified ownership and mode.</strong></p>
@@ -1359,15 +1339,12 @@ specified; in this case the ownership and permissions of the
 --output=/tmp/updated-auth-configmap.yaml
 </code></pre></div></div>
 
-<p>When downloading a file by URL, a target file path and file ownership
-and mode must be specified.</p>
+<p>When downloading a file by URL, a target file path and file ownership and mode must be specified.</p>
 
 <h4 id="exporting-a-file-from-an-authconfig-map">
 <a class="anchor" href="#exporting-a-file-from-an-authconfig-map" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exporting a File from an <code class="language-plaintext highlighter-rouge">authconfig</code> Map</h4>
 
-<p>With the <code class="language-plaintext highlighter-rouge">export</code> subcommand, you can export a file from the
-configuration map. For example, to extract the <code class="language-plaintext highlighter-rouge">sssd.conf</code> file from the
-<code class="language-plaintext highlighter-rouge">authconfig</code> map:</p>
+<p>With the <code class="language-plaintext highlighter-rouge">export</code> subcommand, you can export a file from the configuration map. For example, to extract the <code class="language-plaintext highlighter-rouge">sssd.conf</code> file from the <code class="language-plaintext highlighter-rouge">authconfig</code> map:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ httpd_configmap_generator export \
 --input=/tmp/external-ipa.yaml \
@@ -1378,34 +1355,23 @@ configuration map. For example, to extract the <code class="language-plaintext h
 <h4 id="building-the-httpd_configmap_generator-in-a-container">
 <a class="anchor" href="#building-the-httpd_configmap_generator-in-a-container" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building the <code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> in a Container</h4>
 
-<p>The <code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> is the container for configuring
-external authentication for the <code class="language-plaintext highlighter-rouge">httpd</code> auth pod. It is based on the
-auth <code class="language-plaintext highlighter-rouge">httpd</code> container and generates the <code class="language-plaintext highlighter-rouge">httpd</code> <code class="language-plaintext highlighter-rouge">authconfig</code> map needed
-to enable external authentication.</p>
+<p>The <code class="language-plaintext highlighter-rouge">httpd_configmap_generator</code> is the container for configuring external authentication for the <code class="language-plaintext highlighter-rouge">httpd</code> auth pod. It is based on the auth <code class="language-plaintext highlighter-rouge">httpd</code> container and generates the <code class="language-plaintext highlighter-rouge">httpd</code> <code class="language-plaintext highlighter-rouge">authconfig</code> map needed to enable external authentication.</p>
 
-<p>Two templates are required to run the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code>
-application (<code class="language-plaintext highlighter-rouge">httpd-configmap-generator-htmplate.yaml</code> and
-<code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin.yaml</code>), which are available from the <a href="https://access.redhat.com/containers/?tab=images&amp;platform=openshift#/registry.access.redhat.com/cloudforms46/cfme-httpd-configmap-generator">Red Hat
-Container
-Catalog</a>.</p>
+<p>Two templates are required to run the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> application (<code class="language-plaintext highlighter-rouge">httpd-configmap-generator-htmplate.yaml</code> and <code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin.yaml</code>), which are available from the <a href="https://access.redhat.com/containers/?tab=images&amp;platform=openshift#/registry.access.redhat.com/cloudforms46/cfme-httpd-configmap-generator">Red Hat Container Catalog</a>.</p>
 
 <h5 id="preparing-to-deploy-the-httpd-configmap-generator-application">
 <a class="anchor" href="#preparing-to-deploy-the-httpd-configmap-generator-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing to Deploy the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> Application</h5>
 
 <ol>
   <li>
-    <p>To obtain the latest <code class="language-plaintext highlighter-rouge">cfme-httpd-configmap-generator</code> image from the
-Red Hat Container Catalog, run:</p>
+    <p>To obtain the latest <code class="language-plaintext highlighter-rouge">cfme-httpd-configmap-generator</code> image from the Red Hat Container Catalog, run:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc import-image my-cloudforms46/cfme-httpd-configmap-generator --from=registry.access.redhat.com/cloudforms46/cfme-httpd-configmap-generator --confirm
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>The <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service account must be added to the
-<code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin</code> security context constraints (SCC) before the
-<code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> can run. To edit the SCC, log in to
-OpenShift as an admin user:</p>
+    <p>The <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service account must be added to the <code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin</code> security context constraints (SCC) before the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> can run. To edit the SCC, log in to OpenShift as an admin user:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc login -u &lt;user&gt; -p &lt;password&gt;
@@ -1419,16 +1385,14 @@ OpenShift as an admin user:</p>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service account to the
-<code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin</code> SCC:</p>
+    <p>Add the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service account to the <code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin</code> SCC:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc adm policy add-scc-to-user httpd-scc-sysadmin system:serviceaccount:&lt;your-namespace&gt;:httpd-configmap-generator
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Verify that the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service account is now
-included in the <code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin</code> SCC:</p>
+    <p>Verify that the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service account is now included in the <code class="language-plaintext highlighter-rouge">httpd-scc-sysadmin</code> SCC:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc describe scc httpd-scc-sysadmin | grep Users
@@ -1478,9 +1442,8 @@ httpd-configmap-generator-1-txc34   1/1       Running   0          1h
 <h5 id="getting-the-pod-name">
 <a class="anchor" href="#getting-the-pod-name" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting the Pod Name</h5>
 
-<p>To work with the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> script in the
-<code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> pod, it is necessary to get the pod name as
-below:</p>
+<p>To work with the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> script in the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> pod, it is necessary to get the pod name as
+follows:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ CONFIGMAP_GENERATOR_POD=`oc get pods | grep "httpd-configmap-generator" | cut -f1 -d" "`
 </code></pre></div></div>
@@ -1488,13 +1451,11 @@ below:</p>
 <h5 id="example-generating-an-authconfig-map-for-external-authentication-against-ipa">
 <a class="anchor" href="#example-generating-an-authconfig-map-for-external-authentication-against-ipa" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example: Generating an <code class="language-plaintext highlighter-rouge">authconfig</code> Map for External Authentication Against IPA</h5>
 
-<p>The following example shows how to generate a configuration map for
-external authentication using IPA.</p>
+<p>The following example shows how to generate a configuration map for external authentication using IPA.</p>
 
 <ol>
   <li>
-    <p>To generate an <code class="language-plaintext highlighter-rouge">authconfig</code> map for external authentication using
-IPA, run:</p>
+    <p>To generate an <code class="language-plaintext highlighter-rouge">authconfig</code> map for external authentication using IPA, run:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc rsh $CONFIGMAP_GENERATOR_POD -- bash -c httpd_configmap_generator ipa \
@@ -1507,12 +1468,9 @@ IPA, run:</p>
 -o /tmp/external-ipa.yaml
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-`--host` must be the DNS of the application exposing the `httpd`
-pod, for example ${APPLICATION\_DOMAIN}.
-
-</div>
+    <p><code class="language-plaintext highlighter-rouge">--host</code> must be the DNS of the application exposing the <code class="language-plaintext highlighter-rouge">httpd</code> pod, for example ${APPLICATION_DOMAIN}.</p>
   </li>
   <li>
     <p>Copy the new <code class="language-plaintext highlighter-rouge">authconfig</code> map back locally:</p>
@@ -1522,8 +1480,7 @@ pod, for example ${APPLICATION\_DOMAIN}.
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Apply the new configuration map to the <code class="language-plaintext highlighter-rouge">httpd</code> pod, and then
-redeploy it to take effect:</p>
+    <p>Apply the new configuration map to the <code class="language-plaintext highlighter-rouge">httpd</code> pod, and then redeploy it to take effect:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc replace configmaps httpd-auth-configs --filename ./external-ipa.yaml
@@ -1531,20 +1488,16 @@ redeploy it to take effect:</p>
   </li>
 </ol>
 
-<p>To generate a new <code class="language-plaintext highlighter-rouge">authconfig</code> map, redeploy the
-<code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> pod first to get a clean environment before
+<p>To generate a new <code class="language-plaintext highlighter-rouge">authconfig</code> map, redeploy the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> pod first to get a clean environment before
 running the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> tool.</p>
 
-<p>If additional configuration is needed, you can configure the
-configuration map manually using the steps in <a href="#manually-defining-configmap">Defining the
-Configuration Map Manually</a>. See
-<a href="#configmap-settings">???</a> for configuration map parameters.</p>
+<p>If additional configuration is needed, you can configure the configuration map manually using the steps in <a href="#manually-defining-configmap">Defining the
+Configuration Map Manually</a>. See <a href="#configmap-settings">External Authentication Configuration Map Settings</a> for configuration map parameters.</p>
 
 <h5 id="cleaning-up">
 <a class="anchor" href="#cleaning-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cleaning up</h5>
 
-<p>After generating an <code class="language-plaintext highlighter-rouge">authconfig</code> map, the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code>
-pod can be scaled down, or deleted if no longer needed.</p>
+<p>After generating an <code class="language-plaintext highlighter-rouge">authconfig</code> map, the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> pod can be scaled down, or deleted if no longer needed.</p>
 
 <p>To scale down the pod, run:</p>
 
@@ -1560,45 +1513,37 @@ $ oc delete pods -l app=httpd-configmap-generator
 <h3 id="defining-the-configuration-map-manually">
 <a class="anchor" href="#defining-the-configuration-map-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining the Configuration Map Manually</h3>
 
-<p>The <code class="language-plaintext highlighter-rouge">authconfig</code> map can be defined and customized in the <code class="language-plaintext highlighter-rouge">httpd</code> pod as
-follows:</p>
+<p>The <code class="language-plaintext highlighter-rouge">authconfig</code> map can be defined and customized in the <code class="language-plaintext highlighter-rouge">httpd</code> pod as follows:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ oc edit configmaps httpd-auth-configs
 </code></pre></div></div>
 
-<p>Alternatively, you can replace the <code class="language-plaintext highlighter-rouge">httpd-auth-configs</code> file with an
-externally generated and edited configuration file as follows:</p>
+<p>Alternatively, you can replace the <code class="language-plaintext highlighter-rouge">httpd-auth-configs</code> file with an externally generated and edited configuration file as follows:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ oc replace configmaps httpd-auth-configs --filename external-auth-configmap.yaml
 </code></pre></div></div>
 
-<p>After editing the configuration map, redeploy the <code class="language-plaintext highlighter-rouge">httpd</code> pod for the
-new authentication configuration to take effect.</p>
+<p>After editing the configuration map, redeploy the <code class="language-plaintext highlighter-rouge">httpd</code> pod for the new authentication configuration to take effect.</p>
 
 <h2 id="managing-manageiq-with-openshift">
 <a class="anchor" href="#managing-manageiq-with-openshift" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing ManageIQ with OpenShift</h2>
 
-<p>This section includes common tasks to manage your ManageIQ
-deployment from OpenShift.</p>
+<p>This section includes common tasks to manage your ManageIQ deployment from OpenShift.</p>
 
 <h3 id="configuring-custom-ssl-certificates-for-manageiq">
 <a class="anchor" href="#configuring-custom-ssl-certificates-for-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Custom SSL Certificates for ManageIQ</h3>
 
-<p>By default, the route that is deployed as part of the template uses edge
-termination and the certificates that OpenShift is installed with. It is
-possible to change this in the OpenShift UI with the following steps:</p>
+<p>By default, the route that is deployed as part of the template uses edge termination and the certificates that OpenShift is installed with. It is possible to change this in the OpenShift UI with the following steps:</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Applications[Routes].</p>
+    <p>Browse to menu: <strong>Applications &gt; Routes</strong>.</p>
   </li>
   <li>
-    <p>Click on the route named <strong>httpd</strong>, then select
-menu:Actions[Edit].</p>
+    <p>Click on the route named <strong>httpd</strong>, then select menu: <strong>Actions &gt; Edit</strong>.</p>
   </li>
   <li>
-    <p>Scroll down to the <strong>Certificates</strong> section. Here you can upload or
-paste the required certificate files.</p>
+    <p>Scroll down to the <strong>Certificates</strong> section. Here you can upload or paste the required certificate files.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -1608,17 +1553,11 @@ paste the required certificate files.</p>
 <h3 id="scaling-manageiq-appliances">
 <a class="anchor" href="#scaling-manageiq-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scaling ManageIQ Appliances</h3>
 
-<p>StatefulSets in OpenShift manage the deployment and scaling of a set of
-pods (in this case, ManageIQ appliances). StatefulSets
-ensure ordering that applications will come up by providing unique
-identities for pods.</p>
+<p>StatefulSets in OpenShift manage the deployment and scaling of a set of pods (in this case, ManageIQ appliances). StatefulSets ensure ordering that applications will come up by providing unique identities for pods.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-Each new replica (server) consumes a physical volume. Before scaling,
-ensure you have enough physical volumes available to scale.
-
-</div>
+<p>Each new replica (server) consumes a physical volume. Before scaling, ensure you have enough physical volumes available to scale.</p>
 
 <p>The following example shows scaling using StatefulSets:</p>
 
@@ -1634,99 +1573,84 @@ memcached-1-mzeer    1/1       Running   0          1h
 postgresql-1-dufgp   1/1       Running   0          1h
 </code></pre></div></div>
 
-<p>The newly created replicas will join the existing ManageIQ
-region. Each new pod is numbered in the order it is deployed, starting
-with 0 and increasing sequentially. For example, replicas in a
-StatefulSet will be numbered <em>cloudforms-0</em> <em>cloudforms-1</em>, and so on.</p>
+<p>The newly created replicas will join the existing ManageIQ region. Each new pod is numbered in the order it is deployed, starting with 0 and increasing sequentially. For example, replicas in a StatefulSet will be numbered <em>cloudforms-0</em> <em>cloudforms-1</em>, and so on.</p>
 
 <h3 id="creating-a-backup">
 <a class="anchor" href="#creating-a-backup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Backup</h3>
 
-<p>Create a persistent volume for backups using the PV backup template
-(<code class="language-plaintext highlighter-rouge">cfme-pv-backup-example.yaml</code>) in case you need to restore to a
-previous version.</p>
+<p>Create a persistent volume for backups using the PV backup template (<code class="language-plaintext highlighter-rouge">cfme-pv-backup-example.yaml</code>) in case you need to restore to a previous version.</p>
 
 <ol>
   <li>
     <p>Create the persistent volume for the backup:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc create -f cfme-pv-backup-example.yaml
+<div class="highlight"><pre class="highlight"><code> $ oc create -f cfme-pv-backup-example.yaml
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create the backup persistent volume claim (PVC):</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc create -f cfme-backup-pvc.yaml
+<div class="highlight"><pre class="highlight"><code> $ oc create -f cfme-backup-pvc.yaml
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the persistent volume claim was created:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc get pvc
+<div class="highlight"><pre class="highlight"><code> $ oc get pvc
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Back up secrets, such as database encryption keys and credentials.</p>
 
-    <div class="important">
+    <p><strong>Important:</strong></p>
 
-Be careful to back up secrets in a secure location.
-
-</div>
+    <p>Be careful to back up secrets in a secure location.</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc get secret -o yaml --export=true &gt; secrets.yaml
-$ oc get pvc -o yaml --export=true &gt; pvc.yaml
+<div class="highlight"><pre class="highlight"><code> $ oc get secret -o yaml --export=true &gt; secrets.yaml
+ $ oc get pvc -o yaml --export=true &gt; pvc.yaml
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Initiate the database backup:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc create -f cfme-backup-job.yaml
+<div class="highlight"><pre class="highlight"><code> $ oc create -f cfme-backup-job.yaml
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>This step creates a container, and connects to the database pod,
-<code class="language-plaintext highlighter-rouge">pg_basebackup</code>.</p>
+<p>This step creates a container, and connects to the database pod, <code class="language-plaintext highlighter-rouge">pg_basebackup</code>.</p>
 
 <h3 id="restoring-to-a-backup">
 <a class="anchor" href="#restoring-to-a-backup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restoring to a Backup</h3>
 
-<p>You can restore to a database backup created in <a href="#creating-backups">Creating a
-Backup</a> using the restore template,
+<p>You can restore to a database backup created in <a href="#creating-backups">Creating a Backup</a> using the restore template,
 <code class="language-plaintext highlighter-rouge">cfme-restore-job.yaml</code>.</p>
 
-<p>The restore job will look for <code class="language-plaintext highlighter-rouge">cfme-backup</code> and <code class="language-plaintext highlighter-rouge">cfme-postgresql</code> PVs by
-default, and the latest successful backup will be restored by default.
-If existing data is found on the <code class="language-plaintext highlighter-rouge">cfme-postgresql</code> volume, it will be
-renamed and left on the volume.</p>
+<p>The restore job will look for <code class="language-plaintext highlighter-rouge">cfme-backup</code> and <code class="language-plaintext highlighter-rouge">cfme-postgresql</code> PVs by default, and the latest successful backup will be restored by default. If existing data is found on the <code class="language-plaintext highlighter-rouge">cfme-postgresql</code> volume, it will be renamed and left on the volume.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-You must perform a database restore on an offline environment. All pods
-must be scaled down to 0, and not running.
-
-</div>
+<p>You must perform a database restore on an offline environment. All pods must be scaled down to 0, and not running.</p>
 
 <ol>
   <li>
     <p>Shut down all pods:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc scale dc --all --replicas=0
-$ oc scale statefulset --all --replicas=0
+<div class="highlight"><pre class="highlight"><code> $ oc scale dc --all --replicas=0
+ $ oc scale statefulset --all --replicas=0
 </code></pre></div>    </div>
   </li>
   <li>
     <p>To initiate the database restore, create the restore template:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc create -f cfme-restore-job.yaml
+<div class="highlight"><pre class="highlight"><code> $ oc create -f cfme-restore-job.yaml
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -1736,97 +1660,77 @@ $ oc scale statefulset --all --replicas=0
 <h3 id="updating-manageiq">
 <a class="anchor" href="#updating-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating ManageIQ</h3>
 
-<p>Apply package updates to your ManageIQ appliance from
-OpenShift Container Platform by deleting the pods and redeploying them
-using updated ManageIQ container images. To update your
-environment with a new template, follow the steps in <a href="#modified-template-update">Updating the
-ManageIQ Container Images and
-Template</a>.</p>
+<p>Apply package updates to your ManageIQ appliance from OpenShift Container Platform by deleting the pods and redeploying them using updated ManageIQ container images. To update your environment with a new template, follow the steps in <a href="#modified-template-update">Updating the ManageIQ Container Images and Template</a>.</p>
 
 <h4 id="updating-the-manageiq-container-images">
 <a class="anchor" href="#updating-the-manageiq-container-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the ManageIQ Container Images</h4>
 
-<p>To deploy new container images for ManageIQ, delete the
-pods, update the images, then redeploy the updated pods:</p>
+<p>To deploy new container images for ManageIQ, delete the pods, update the images, then redeploy the updated pods:</p>
 
 <ol>
   <li>
-    <p>Delete the pods by scaling the application StatefulSets to 0
-replicas:</p>
+    <p>Delete the pods by scaling the application StatefulSets to 0 replicas:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc scale statefulset cloudforms --replicas=0
-$ oc scale statefulset cloudforms-backend --replicas=0
+<div class="highlight"><pre class="highlight"><code> $ oc scale statefulset cloudforms --replicas=0
+ $ oc scale statefulset cloudforms-backend --replicas=0
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Patch in the new version of the images:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc patch statefulset cloudforms -p '{"spec": {"template": {"spec": {"containers": [{"name": "cloudforms", "image": "registry.redhat.io/cloudforms46/cfme-openshift-app-ui:&lt;new-version-tag&gt;"}]}}}}'
-$ oc patch statefulset cloudforms-backend -p '{"spec": {"template": {"spec": {"containers": [{"name": "cloudforms", "image": "registry.redhat.io/cloudforms46/cfme-openshift-app:&lt;new-version-tag&gt;"}]}}}}'
+<div class="highlight"><pre class="highlight"><code> $ oc patch statefulset cloudforms -p '{"spec": {"template": {"spec": {"containers": [{"name": "cloudforms", "image": "registry.redhat.io/cloudforms46/cfme-openshift-app-ui:&lt;new-version-tag&gt;"}]}}}}'
+ $ oc patch statefulset cloudforms-backend -p '{"spec": {"template": {"spec": {"containers": [{"name": "cloudforms", "image": "registry.redhat.io/cloudforms46/cfme-openshift-app:&lt;new-version-tag&gt;"}]}}}}'
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Scale the StatefulSets back to your previous values to redeploy the
-pods:</p>
+    <p>Scale the StatefulSets back to your previous values to redeploy the pods:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc scale statefulset cloudforms --replicas=&lt;old-value&gt;
-$ oc scale statefulset cloudforms-backend --replicas=&lt;old-value&gt;
+<div class="highlight"><pre class="highlight"><code> $ oc scale statefulset cloudforms --replicas=&lt;old-value&gt;
+ $ oc scale statefulset cloudforms-backend --replicas=&lt;old-value&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>Your ManageIQ environment is now updated to use the new
-container images.</p>
+<p>Your ManageIQ environment is now updated to use the new container images.</p>
 
 <h4 id="updating-the-manageiq-container-images-and-template">
 <a class="anchor" href="#updating-the-manageiq-container-images-and-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the ManageIQ Container Images and Template</h4>
 
-<p>To update a ManageIQ deployment with a new template,
-update the container images and the template using the following steps:</p>
+<p>To update a ManageIQ deployment with a new template, update the container images and the template using the following steps:</p>
 
 <ol>
   <li>
     <p>Back up secrets, such as database encryption keys and credentials:</p>
 
-    <div class="important">
+    <p><strong>Important:</strong></p>
 
-Be careful to back up secrets in a secure location.
-
-</div>
+    <p>Be careful to back up secrets in a secure location.</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc export secret cloudforms-secrets &gt; my_secrets.yml
+<div class="highlight"><pre class="highlight"><code> $ oc export secret cloudforms-secrets &gt; my_secrets.yml
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Delete the pods by scaling the application StatefulSets to 0
-replicas:</p>
+    <p>Delete the pods by scaling the application StatefulSets to 0 replicas:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc scale statefulset cloudforms --replicas=0
-$ oc scale statefulset cloudforms-backend --replicas=0
+<div class="highlight"><pre class="highlight"><code> $ oc scale statefulset cloudforms --replicas=0
+ $ oc scale statefulset cloudforms-backend --replicas=0
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Apply the changes to the project, specifying the template
-appropriate to your environment’s database configuration.</p>
+    <p>Apply the changes to the project, specifying the template appropriate to your environment’s database configuration.</p>
 
-    <div class="important">
+    <p><strong>Important:</strong></p>
 
-If you customized any parameters when originally deploying the
-application (parameters used with the `oc new-app` command in
-[???](#deploying-the-appliance)), you must set the same values in
-the `oc process` command here.
-
-</div>
+    <p>If you customized any parameters when originally deploying the application (parameters used with the <code class="language-plaintext highlighter-rouge">oc new-app</code> command in <a href="#deploying-the-appliance">Deploying the ManageIQ Appliance</a>), you must set the same values in the <code class="language-plaintext highlighter-rouge">oc process</code> command here.</p>
 
     <ul>
       <li>
-        <p>For environments using a database stored on a pod within the
-cluster (the default configuration), specify the
+        <p>For environments using a database stored on a pod within the cluster (the default configuration), specify the
 ManageIQ template:</p>
 
         <div class="language-plaintext highlighter-rouge">
@@ -1834,9 +1738,7 @@ ManageIQ template:</p>
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>For environments using a database external to the OpenShift
-cluster, specify the ManageIQ external database
-template:</p>
+        <p>For environments using a database external to the OpenShift cluster, specify the ManageIQ external database template:</p>
 
         <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc process -p APPLICATION_REPLICA_COUNT=0 -l app=cloudforms,template=cloudforms-ext-db -f cfme-template-ext-db.yaml | oc replace -f -
@@ -1845,24 +1747,21 @@ template:</p>
     </ul>
   </li>
   <li>
-    <p>Replace the secret with the <code class="language-plaintext highlighter-rouge">my_secrets.yml</code> file you created
-earlier:</p>
+    <p>Replace the secret with the <code class="language-plaintext highlighter-rouge">my_secrets.yml</code> file you created earlier:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc replace -f my_secrets.yml
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Redeploy the <code class="language-plaintext highlighter-rouge">postgresql</code> pod to ensure the password from the old
-secret is used:</p>
+    <p>Redeploy the <code class="language-plaintext highlighter-rouge">postgresql</code> pod to ensure the password from the old secret is used:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc rollout latest postgresql
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Scale the StatefulSets back to your previous values to redeploy the
-pods:</p>
+    <p>Scale the StatefulSets back to your previous values to redeploy the pods:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc scale statefulset cloudforms --replicas=&lt;old-value&gt;
@@ -1871,35 +1770,30 @@ $ oc scale statefulset cloudforms-backend --replicas=&lt;old-value&gt;
   </li>
 </ol>
 
-<p>Your ManageIQ environment is now updated to use the new
-template and container images.</p>
+<p>Your ManageIQ environment is now updated to use the new template and container images.</p>
 
 <h3 id="uninstalling-manageiq-from-a-project">
 <a class="anchor" href="#uninstalling-manageiq-from-a-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uninstalling ManageIQ from a Project</h3>
 
-<p>If no longer needed, you can uninstall the ManageIQ pod from your
-project. Note the following commands do not remove SCC permissions, or
-the project itself.</p>
+<p>If no longer needed, you can uninstall the ManageIQ pod from your project. Note the following commands do not remove SCC permissions, or the project itself.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-Use this procedure if only ManageIQ exists in the project.
-
-</div>
+<p>Use this procedure if only ManageIQ exists in the project.</p>
 
 <ol>
   <li>
     <p>Inside the project, run the following as a regular user:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc delete all --all
+<div class="highlight"><pre class="highlight"><code> $ oc delete all --all
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Wait approximately 30 seconds for the command to process, then run:</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>$ oc delete pvc --all
+<div class="highlight"><pre class="highlight"><code> $ oc delete pvc --all
 </code></pre></div>    </div>
   </li>
 </ol>
