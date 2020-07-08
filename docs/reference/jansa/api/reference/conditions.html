@@ -1540,202 +1540,164 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="conditions"><a class="anchor" href="#conditions"></a>Conditions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of conditions is provided via the following collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/conditions</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Full CRUD actions on conditions is available:</p>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#conditions">Conditions</a>
 <ul>
-<li>
-<p><a href="#querying-conditions">Querying Conditions</a></p>
-</li>
-<li>
-<p><a href="#creating-conditions">Creating Conditions</a></p>
-</li>
-<li>
-<p><a href="#editing-conditions">Editing Conditions</a></p>
-</li>
-<li>
-<p><a href="#deleting-conditions">Deleting Conditions</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#querying-conditions">Querying Conditions</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-conditions">Creating Conditions</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-conditions">Editing Conditions</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-conditions">Deleting Conditions</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="querying-conditions"><a class="anchor" href="#querying-conditions"></a>Querying Conditions</h3>
-<div class="paragraph">
+</li>
+</ul><h2 id="conditions">
+<a class="anchor" href="#conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditions</h2>
+
+<p>Management of conditions is provided via the following collection:</p>
+
+<pre><code class="language-data">/api/conditions
+</code></pre>
+
+<p>Full CRUD actions on conditions is available:</p>
+
+<ul>
+  <li>
+    <p><a href="#querying-conditions">Querying Conditions</a></p>
+  </li>
+  <li>
+    <p><a href="#creating-conditions">Creating Conditions</a></p>
+  </li>
+  <li>
+    <p><a href="#editing-conditions">Editing Conditions</a></p>
+  </li>
+  <li>
+    <p><a href="#deleting-conditions">Deleting Conditions</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-conditions">
+<a class="anchor" href="#querying-conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Conditions</h3>
+
 <p>Querying all conditions in the system is simply:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/conditions</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/conditions
+</code></pre></div></div>
+
 <p>Getting details on a specific Condition:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/conditions/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="creating-conditions"><a class="anchor" href="#creating-conditions"></a>Creating Conditions</h3>
-<div class="paragraph">
-<p>Conditions can be created via a POST to the conditions collection or via the <strong>create</strong> action
-signature which also allows creation of multiple conditions in a single request.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conditions</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_condition</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sample Condition</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>expression</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>=</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>field</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ExtManagementSystem.container_images-architecture</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">dsa</span><span style="color:#710">&quot;</span></span> } },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>towhat</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ExtManagementSystem</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>modifier</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">allow</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/conditions/:id
+</code></pre></div></div>
+
+<h3 id="creating-conditions">
+<a class="anchor" href="#creating-conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Conditions</h3>
+
+<p>Conditions can be created via a POST to the conditions collection or via
+the <strong>create</strong> action signature which also allows creation of multiple
+conditions in a single request.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conditions
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_condition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Condition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expression"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"="</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"field"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ExtManagementSystem.container_images-architecture"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dsa"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"towhat"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ExtManagementSystem"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"modifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or creating multiple conditions:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"condition_1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition 1"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"condition_2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition 2"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="note">
+
+Please refer to the [Resource
+Attributes](../appendices/resource_attributes.html#conditions) page for
+a list of available attributes when creating conditions.
+
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">condition_1</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Condition 1</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">condition_2</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Condition 2</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Please refer to the <a href="../appendices/resource_attributes.html#conditions">Resource Attributes</a>
-page for a list of available attributes when creating conditions.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-conditions"><a class="anchor" href="#editing-conditions"></a>Editing Conditions</h3>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conditions/:id</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Condition Description</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<h3 id="editing-conditions">
+<a class="anchor" href="#editing-conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing Conditions</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conditions/:id
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Condition Description"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or editing multiple conditions:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conditions</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/conditions/101</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Condition Description 1</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/conditions/102</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Condition Description 2</span><span style="color:#710">&quot;</span></span>
-    },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-conditions"><a class="anchor" href="#deleting-conditions"></a>Deleting Conditions</h3>
-<div class="paragraph">
-<p>Conditions can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conditions/101</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conditions
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/conditions/101"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Condition Description 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/conditions/102"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Condition Description 2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="deleting-conditions">
+<a class="anchor" href="#deleting-conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Conditions</h3>
+
+<p>Conditions can be deleted via either the <strong>delete</strong> POST action or via
+the DELETE HTTP method.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conditions/101
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or simply:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>DELETE /api/conditions/101</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/conditions/101
+</code></pre></div></div>
+
 <p>Deleting multiple conditions can be done as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conditions</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/conditions/101</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/conditions/102</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conditions
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/conditions/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/conditions/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

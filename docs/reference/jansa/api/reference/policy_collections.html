@@ -1540,312 +1540,268 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="policy-collections"><a class="anchor" href="#policy-collections"></a>Policy Collections</h2>
-<div class="sectionbody">
-<div class="paragraph">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#policy-collections">Policy Collections</a></li>
+<li class="toc-entry toc-h2"><a href="#policy-actions">Policy Actions</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#response">Response:</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#policy-conditions">Policy Conditions</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#response-1">Response:</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#policy-events">Policy Events</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#response-2">Response:</a></li>
+</ul>
+</li>
+</ul><h2 id="policy-collections">
+<a class="anchor" href="#policy-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Policy Collections</h2>
+
 <p>Primary Policy and Policy Profile collections:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/policies</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/policy_profiles</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">/api/policies
+</code></pre>
+
+<pre><code class="language-data">/api/policy_profiles
+</code></pre>
+
 <p>With Policy Profiles being sets of Policies with the ability to query
 policies of a specific policy profile via:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policy_profiles/:id?expand=policies</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policy_profiles/:id?expand=policies
+</code></pre></div></div>
+
 <p>Or just the subcollection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policy_profiles/:id/policies</pre>
-</div>
-</div>
-<div class="ulist">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policy_profiles/:id/policies
+</code></pre></div></div>
+
 <ul>
-<li>
-<p><a href="#policy-actions">Policy Actions</a></p>
-</li>
-<li>
-<p><a href="#policy-conditions">Policy Conditions</a></p>
-</li>
-<li>
-<p><a href="#policy-events">Policy Events</a></p>
-</li>
+  <li>
+    <p><a href="#policy-actions">Policy Actions</a></p>
+  </li>
+  <li>
+    <p><a href="#policy-conditions">Policy Conditions</a></p>
+  </li>
+  <li>
+    <p><a href="#policy-events">Policy Events</a></p>
+  </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="policy-actions"><a class="anchor" href="#policy-actions"></a>Policy Actions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Policy actions can be queried as a primary collection or as a subcollection
-of policies as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policy_actions</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/:id?expand=policy_actions</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<h2 id="policy-actions">
+<a class="anchor" href="#policy-actions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Policy Actions</h2>
+
+<p>Policy actions can be queried as a primary collection or as a
+subcollection of policies as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policy_actions
+
+GET /api/policies/:id?expand=policy_actions
+</code></pre></div></div>
+
 <p>or simply the subcollection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/:id/policy_actions</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this example, we&#8217;re expanding all policy actions</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policy_actions?expand=resources</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="response"><a class="anchor" href="#response"></a>Response:</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">policy_actions</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">33</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">33</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/policy_actions/1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">audit</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generate Audit Event</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d619567a-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>action_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-      }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/policy_actions/2</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">log</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generate log message</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d61c3be2-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>action_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-      }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/policy_actions/3</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">3</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">evm_event</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Show EVM Event on Timeline</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d61cb05e-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>action_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-      }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/policy_actions/4</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">4</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">script</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Execute an external script</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:05Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d61d225a-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>action_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-      }
-    },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="policy-conditions"><a class="anchor" href="#policy-conditions"></a>Policy Conditions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Policy conditions can be queried as a primary collection or as a subcollection
-of policies as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/conditions</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/:id?expand=conditions</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policies/:id/policy_actions
+</code></pre></div></div>
+
+<p>In this example, we’re expanding all policy actions</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policy_actions?expand=resources
+</code></pre></div></div>
+
+<h3 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy_actions"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subcount"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/policy_actions/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"audit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Generate Audit Event"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d619567a-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"action_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/policy_actions/2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"log"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Generate log message"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d61c3be2-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"action_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/policy_actions/3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evm_event"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Show EVM Event on Timeline"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d61cb05e-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"action_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/policy_actions/4"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"script"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Execute an external script"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:05Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d61d225a-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"action_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="policy-conditions">
+<a class="anchor" href="#policy-conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Policy Conditions</h2>
+
+<p>Policy conditions can be queried as a primary collection or as a
+subcollection of policies as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/conditions
+
+GET /api/policies/:id?expand=conditions
+</code></pre></div></div>
+
 <p>or simply the subcollection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/:id/conditions</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this example, we&#8217;re expanding the conditions of a policy:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/10?expand=conditions</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/policies/10</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">10</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">85dd1f68-ae53-11e4-9c45-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">web_server_policy</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-02-06T22:57:27Z</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-09T13:20:58Z</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>towhat</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">85dd1f68-ae53-11e4-9c45-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_by</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_by</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>active</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>mode</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">control</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>conditions</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/policies/10/conditions/1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fe75d0bc-860f-11e4-b12d-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Memory For Web Server</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>modifier</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">allow</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>expression</span><span style="color:#404">&quot;</span></span>: {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>exp</span><span style="color:#404">&quot;</span></span>: {
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>&gt;=</span><span style="color:#404">&quot;</span></span>: {
-            <span style="color:#606"><span style="color:#404">&quot;</span><span>field</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm-num_cpu</span><span style="color:#710">&quot;</span></span>,
-            <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2</span><span style="color:#710">&quot;</span></span>
-          }
-        },
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>context_type</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>towhat</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-12-17T17:13:17Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-02-08T15:16:16Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fe75d0bc-860f-11e4-b12d-b8e85646e742</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="policy-events"><a class="anchor" href="#policy-events"></a>Policy Events</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Policy events can be queried as a primary collection or as a subcollection
-of policies as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/events</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/:id?expand=events</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policies/:id/conditions
+</code></pre></div></div>
+
+<p>In this example, we’re expanding the conditions of a policy:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policies/10?expand=conditions
+</code></pre></div></div>
+
+<h3 id="response-1">
+<a class="anchor" href="#response-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/policies/10"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85dd1f68-ae53-11e4-9c45-b8e85646e742"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web_server_policy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-06T22:57:27Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-09T13:20:58Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"towhat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85dd1f68-ae53-11e4-9c45-b8e85646e742"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"control"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/policies/10/conditions/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe75d0bc-860f-11e4-b12d-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Memory For Web Server"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"modifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"expression"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"&gt;="</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vm-num_cpu"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"context_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"towhat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vm"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-17T17:13:17Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-08T15:16:16Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe75d0bc-860f-11e4-b12d-b8e85646e742"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="policy-events">
+<a class="anchor" href="#policy-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Policy Events</h2>
+
+<p>Policy events can be queried as a primary collection or as a
+subcollection of policies as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/events
+
+GET /api/policies/:id?expand=events
+</code></pre></div></div>
+
 <p>or simply the subcollection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/policies/:id/events</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this example, we&#8217;re expanding all policy events</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/events?expand=resources</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="response-3"><a class="anchor" href="#response-3"></a>Response:</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">events</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">121</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">121</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/events/1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">evm_server_start</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">EVM Server Start</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:11Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:11Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d9edd528-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>event_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Default</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/events/2</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">evm_server_stop</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">EVM Server Stop</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:11Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:11Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d9f44c00-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>event_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Default</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/events/3</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">3</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">evm_server_not_responding</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">EVM Server Not Responding</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:11Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:10:11Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d9f5dcaa-70e8-11e4-a5b4-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>event_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Default</span><span style="color:#710">&quot;</span></span>
-    },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/policies/:id/events
+</code></pre></div></div>
+
+<p>In this example, we’re expanding all policy events</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/events?expand=resources
+</code></pre></div></div>
+
+<h3 id="response-2">
+<a class="anchor" href="#response-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"events"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subcount"</span><span class="p">:</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/events/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evm_server_start"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVM Server Start"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d9edd528-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/events/2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evm_server_stop"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVM Server Stop"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d9f44c00-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/events/3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evm_server_not_responding"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVM Server Not Responding"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-20T19:10:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d9f5dcaa-70e8-11e4-a5b4-b8e85646e742"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

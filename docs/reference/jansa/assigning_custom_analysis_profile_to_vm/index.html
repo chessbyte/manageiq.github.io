@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/jansa/assigning_custom_analysis_profile_to_vm/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/jansa/assigning_custom_analysis_profile_to_vm/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Jansa
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_jansa>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#assigning-a-custom-analysis-profile-to-a-virtual-machine">Assigning a Custom Analysis Profile to a Virtual Machine</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#creating-a-virtual-machine-analysis-profile">Creating a Virtual Machine Analysis Profile</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-an-action-to-assign-the-virtual-machine-analysis-profile-to-the-analysis-task">Creating an Action to Assign the Virtual Machine Analysis Profile to the Analysis Task</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-a-virtual-machine-control-policy">Creating a Virtual Machine Control Policy</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-a-policy-profile-and-assigning-the-virtual-machine-control-policy">Creating a Policy Profile and Assigning the Virtual Machine Control Policy</a></li>
+<li class="toc-entry toc-h2"><a href="#assigning-the-policy-profile-to-a-virtual-machine">Assigning the Policy Profile to a Virtual Machine</a></li>
+</ul>
+</li>
+</ul><h1 id="assigning-a-custom-analysis-profile-to-a-virtual-machine">
+<a class="anchor" href="#assigning-a-custom-analysis-profile-to-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning a Custom Analysis Profile to a Virtual Machine</h1>
+
+<p>You can create and assign different analysis profiles for specific virtual machine configurations using the ManageIQ user interface. This document describes the steps required to create a custom virtual machine analysis profile, and assigning it to a virtual machine for use with SmartState analysis, via a control policy.</p>
+
+<ol>
+  <li>
+    <p>Creating a Virtual Machine Analysis Profile.</p>
+  </li>
+  <li>
+    <p>Creating an Action to Assign the Virtual Machine Analysis Profile to Analysis Task</p>
+  </li>
+  <li>
+    <p>Creating a Virtual Machine Control Policy.</p>
+  </li>
+  <li>
+    <p>Creating a Policy Profile and Assigning the Virtual Machine Control Policy.</p>
+  </li>
+  <li>
+    <p>Assigning the Policy Profile to a Virtual Machine.</p>
+  </li>
+</ol>
+
+<h2 id="creating-a-virtual-machine-analysis-profile">
+<a class="anchor" href="#creating-a-virtual-machine-analysis-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Virtual Machine Analysis Profile</h2>
+
+<ol>
+  <li>
+    <p>Log into the appliance as the <strong>admin</strong> user.</p>
+  </li>
+  <li>
+    <p>Click <strong>Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Settings</strong> accordion, then click <strong>Analysis Profiles</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add VM Analysis Profile</strong>).</p>
+  </li>
+  <li>
+    <p>In <strong>Basic Information</strong>, enter <strong>Name</strong> and <strong>Description</strong> for the
+analysis profile.</p>
+  </li>
+  <li>
+    <p>In the <strong>Category</strong> tab, select the categories you want to collect
+information for under <strong>Category Selection</strong>. The <strong>Category</strong> tab
+is available for virtual machine profiles only.</p>
+  </li>
+  <li>
+    <p>In the <strong>File</strong> tab, click <strong>&lt;New Entry&gt;</strong> and specify the file to
+be scanned and if you want to collect contents for, then click
+<strong>Save</strong>. Repeat the step for adding multiple file name entries.</p>
+  </li>
+  <li>
+    <p>In the <strong>Registry</strong> tab, enter the <strong>Registry Key</strong> and <strong>Registry
+Value</strong>, then click <strong>Save</strong>. To determine whether a registry key
+exists without providing a value, enter `  ` in *Registry
+Value&lt;/emphasis&gt;. The <strong>Registry</strong> tab is available for virtual
+machine profiles only.</p>
+  </li>
+  <li>
+    <p>In the <strong>Event Log</strong> tab, specify the event log entries to collect.
+Enter a <strong>Filter Message</strong> to look for specific text in a message.
+Enter a <strong>Level</strong> (<em>info</em>, <em>warn</em> or <em>error</em>, for example) to
+specify the event level. Enter the <strong>Source</strong> for the event log
+entry and <strong># (Number) of Days</strong> to specify how far back to check.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="creating-an-action-to-assign-the-virtual-machine-analysis-profile-to-the-analysis-task">
+<a class="anchor" href="#creating-an-action-to-assign-the-virtual-machine-analysis-profile-to-the-analysis-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Action to Assign the Virtual Machine Analysis Profile to the Analysis Task</h2>
+
+<p>Actions are performed after the condition is evaluated. You can
+associate actions with specific events when you create a policy.
+ManageIQ provides a set of default actions, but you can also
+create custom actions using the ManageIQ user interface.</p>
+
+<p>Use this procedure to create a custom action by adding the <strong>Assign
+Profile to Analysis Task</strong> action type to the virtual machine analysis
+profile (created in <a href="#creating-a-virtual-machine-analysis-profile">Creating a Virtual Machine Analysis Profile</a>).</p>
+
+<p><img src="../images/create-custom-action.png" alt="image"></p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Actions</strong> accordion and click
+<img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Action</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Description</strong> for the new action. This will be the name
+given to your new action.</p>
+  </li>
+  <li>
+    <p>Select <strong>Assign Profile to Analysis Task</strong> from the <strong>Action Type</strong>
+list.</p>
+  </li>
+  <li>
+    <p>Select the newly-created virtual machine analysis profile from the
+<strong>Analysis Profiles</strong> list.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+You can only associate this action with an analysis start event.
+
+</div>
+
+<p>The action is created and added to the <strong>Available Actions</strong> list.
+Associate this action with the <strong>VM Analysis Start</strong> event when you
+create a virtual machine control policy in the next procedure.</p>
+
+<h2 id="creating-a-virtual-machine-control-policy">
+<a class="anchor" href="#creating-a-virtual-machine-control-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Virtual Machine Control Policy</h2>
+
+<p>You can create a control policy by combining an event, a condition, and an action. The procedure below describes how to create a virtual machine control policy to assign the newly-created action to the <strong>VM Analysis Start</strong> event. Optionally, you can use a scope expression that is tested immediately when the policy is triggered by an event. If the item is out of scope, then the policy will not continue on to the conditions, and the assigned action will not run.</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Control &gt; Explorer</strong>.</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Policies</strong> accordion, and click <strong>Control Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Vm Control Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1862.png" alt="image"> <strong>Add a New VM and Instance Control Policy</strong>.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Description</strong>. This will be the name given to your VM control policy.</p>
+  </li>
+  <li>
+    <p>Clear the <strong>Active</strong> box if you do not want this policy processed even when assigned to a resource.</p>
+  </li>
+  <li>
+    <p>Optional: Enter a <strong>Scope</strong> (you can also create a scope as part of a condition, or not use one at all). If the virtual machine is not included in the scope, the assigned action will not run.</p>
+
+    <ul>
+      <li>You can use the drop-down list to create an expression for the <strong>Scope</strong>. Based on what you choose, different options appear. Click <img src="../images/1863.png" alt="image"> <strong>Commit expression element changes</strong> to add the scope.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Enter <strong>Notes</strong> if required.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>. The policy is added and listed under <strong>Vm Control Policies</strong> in the <strong>Policies</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Select the newly-added VM control policy. You can now associate events, conditions, and actions with the policy.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1851.png" alt="image"> <strong>Edit this Policy’s Event assignments</strong>.</p>
+  </li>
+  <li>
+    <p>Under <strong>VM Operation</strong>, set <strong>VM Analysis Start</strong> to <strong>Yes</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+  <li>
+    <p>Click the <strong>VM Analysis Start</strong> event to configure actions.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1851.png" alt="image"> <strong>Edit Actions for this Policy Event</strong>.</p>
+  </li>
+  <li>
+    <p>In <strong>Order of Actions if ALL Conditions are True</strong>, select the action created in <a href="#creating-an-action-to-assign-the-virtual-machine-analysis-profile-to-the-analysis-task">Creating an Action to Assign the Virtual Machine Analysis Profile to the Analysis Task</a> from the <strong>Available Actions</strong> list. This action will take place if the resources meet the conditions of the policy.</p>
+
+    <p><img src="../images/edit-event.png" alt="image"></p>
+
+    <p><strong>Note:</strong></p>
+
+    <p>Each selected action can be executed synchronously or asynchronously; a synchronous action will not start until the
+previous synchronous action is completed, while an asynchronous action allows the next action to start whether or not the first action has completed. Also, at least one ManageIQ server in the ManageIQ zone must have the notifier server role enabled for the trap to be sent.</p>
+  </li>
+  <li>
+    <p>Click (<img src="../images/1876.png" alt="image">) which will move the action to <strong>Selected Actions</strong>. The selected action is set to (S) Synchronous by default. From <strong>Selected Actions</strong>, select the action, then:</p>
+
+    <ul>
+      <li>
+        <p>Click <strong>A</strong> (Set selected Actions to Asynchronous) to make it asynchronous.</p>
+      </li>
+      <li>
+        <p>Click <strong>S</strong> (Set selected Actions to Synchronous) to make it synchronous. If creating a synchronous action, use the up and
+down arrows to identify in what order you want the actions to run.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="creating-a-policy-profile-and-assigning-the-virtual-machine-control-policy">
+<a class="anchor" href="#creating-a-policy-profile-and-assigning-the-virtual-machine-control-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Policy Profile and Assigning the Virtual Machine Control Policy</h2>
+
+<p>Add a new policy profile and assign the virtual machine control policy
+(created in <a href="#create-vm-control-policy">Creating a Virtual Machine Control Policy</a>) to it.</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Control &gt; Explorer</strong>.</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Policy Profiles</strong> accordion, click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/1862.png" alt="image"> <strong>Add a New Policy Profile</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Information</strong> area, enter a <strong>Description</strong> for the policy profile.</p>
+  </li>
+  <li>
+    <p>Under <strong>Policy Selection</strong>, select the virtual machine control policy created in <a href="#create-vm-control-policy">Creating a Virtual Machine Control Policy</a> from the <strong>Available Policies</strong> list.</p>
+  </li>
+  <li>
+    <p>Click (<img src="../images/1876.png" alt="image">) to move the selected virtual machine control policy into this profile.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="assigning-the-policy-profile-to-a-virtual-machine">
+<a class="anchor" href="#assigning-the-policy-profile-to-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning the Policy Profile to a Virtual Machine</h2>
+
+<p>Assign the policy profile you created in <a href="#create-policy-profile-assign-vm-control-policy">Creating a Policy Profile and Assigning the Virtual Machine Control Policy</a> to a virtual machine, and initiate SmartState analysis.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>Policy profiles can be specified at multiple levels. If you assign a policy profile to a provider (Amazon EC2 or OpenStack for example), the profile will apply to all hosts or virtual machines for that provider.</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Compute &gt; Clouds &gt; Instances</strong> or menu: <strong>Compute &gt; Infrastructure &gt; Virtual Machines</strong>. Select the virtual machine or instance.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1941.png" alt="image"> <strong>Policy</strong>, then <img src="../images/1851.png" alt="image"> <strong>Manage Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Under <strong>Select Policy Profiles</strong>, select the policy profile created in <a href="#create-policy-profile-assign-vm-control-policy">Creating a Policy Profile and Assigning the Virtual Machine Control Policy</a>. It will turn blue to show the selection. Click the triangle next to the policy profile to see its member policies.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> <strong>Configuration</strong>, then <img src="../images/smartstate-icon.png" alt="image"> <strong>Perform SmartState Analysis</strong>. A pop-up window appears to confirm the action.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>. SmartState analysis is initiated for the selected virtual machine or instance from the ManageIQ database.</p>
+  </li>
+</ol>
+
+<p>SmartState analysis will now report back findings specified by the custom virtual machine analysis profile.</p>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

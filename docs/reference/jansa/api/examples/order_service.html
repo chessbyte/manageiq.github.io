@@ -1540,67 +1540,69 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect2">
-<h3 id="order-a-single-service-from-service-catalog-1"><a class="anchor" href="#order-a-single-service-from-service-catalog-1"></a>Order a single service from Service Catalog 1</h3>
-<div class="sect3">
-<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/service_catalogs/1/service_templates</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">order</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/service_templates/3</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>option_0_vm_target_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test-vm-0001</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>option_0_vm_target_hostname</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test-vm-0001</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#F00;background-color:#FAA">r</span><span style="color:#F00;background-color:#FAA">e</span><span style="color:#F00;background-color:#FAA">s</span><span style="color:#F00;background-color:#FAA">u</span><span style="color:#F00;background-color:#FAA">l</span><span style="color:#F00;background-color:#FAA">t</span><span style="color:#F00;background-color:#FAA">s</span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-07-02T19:28:12Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provisioning Service [aws-ubuntu-api] from [aws-ubuntu-api]</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>destination_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>destination_type</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>fulfilled_on</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">13</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service_Template_Provisioning - Request Created</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog</span><span style="color:#404">&quot;</span></span>: {
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_option_0_vm_target_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test-vm-0001</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_option_0_vm_target_hostname</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test-vm-0001</span><span style="color:#710">&quot;</span></span>
-        }
-    }
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">clone_to_service</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">6</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ServiceTemplate</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-07-02T19:28:12Z</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
+        <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#order-a-single-service-from-service-catalog-1">Order a single service from Service Catalog 1</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#request">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response">Response:</a></li>
+</ul>
+</li>
+</ul><h3 id="order-a-single-service-from-service-catalog-1">
+<a class="anchor" href="#order-a-single-service-from-service-catalog-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Order a single service from Service Catalog 1</h3>
+
+<h4 id="request">
+<a class="anchor" href="#request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/service_catalogs/1/service_templates
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/service_templates/3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option_0_vm_target_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test-vm-0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option_0_vm_target_hostname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test-vm-0001"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">results:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"approval_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending_approval"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-02T19:28:12Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provisioning Service [aws-ubuntu-api] from [aws-ubuntu-api]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"destination_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"destination_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fulfilled_on"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service_Template_Provisioning - Request Created"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dialog"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"dialog_option_0_vm_target_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test-vm-0001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dialog_option_0_vm_target_hostname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test-vm-0001"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"request_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clone_to_service"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requester_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requester_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administrator"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ServiceTemplate"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-02T19:28:12Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

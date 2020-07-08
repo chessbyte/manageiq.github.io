@@ -1540,235 +1540,235 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect2">
-<h3 id="trigger-multiple-automation-requests"><a class="anchor" href="#trigger-multiple-automation-requests"></a>Trigger multiple Automation Requests</h3>
-<div class="paragraph">
-<p><em>In the automation requests</em>:</p>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#trigger-multiple-automation-requests">Trigger multiple Automation Requests</a>
 <ul>
-<li>
-<p>version defaults to "1.1" if not specified.</p>
-</li>
-<li>
-<p>user_name defaults to the REST API authenticated user if not
-specified.</p>
-</li>
+<li class="toc-entry toc-h4"><a href="#request">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response">Response:</a></li>
 </ul>
-</div>
-<div class="sect3">
-<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/automation_requests</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>version</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1.1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>uri_parts</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>parameters</span><span style="color:#404">&quot;</span></span> : {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_1</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>var2</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">yyyyy</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>var3</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1024</span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>var4</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>var5</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">last value</span><span style="color:#710">&quot;</span></span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
-      }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>uri_parts</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>parameters</span><span style="color:#404">&quot;</span></span> : {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_2</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1024</span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">16384</span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
-      }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>uri_parts</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>parameters</span><span style="color:#404">&quot;</span></span> : {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_3</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2048</span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">16384</span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
-      }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>uri_parts</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>parameters</span><span style="color:#404">&quot;</span></span> : {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_4</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">4096</span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">16384</span>
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> :  {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
-      }
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">14</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/automation_requests/14</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Automation Task</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approved</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AutomationRequest</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">13</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">automation</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">13</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>attrs</span><span style="color:#404">&quot;</span></span>: {
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_1</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>var2</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">yyyyy</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>var3</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1024</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>var4</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>var5</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">last value</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab</span><span style="color:#710">&quot;</span></span>
-        }
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">15</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/automation_requests/15</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Automation Task</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approved</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AutomationRequest</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">automation</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>attrs</span><span style="color:#404">&quot;</span></span>: {
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_2</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1024</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">16384</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-        }
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">16</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/automation_requests/16</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Automation Task</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approved</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AutomationRequest</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">automation</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>attrs</span><span style="color:#404">&quot;</span></span>: {
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_3</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">2048</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">16384</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-        }
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">17</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/automation_requests/17</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Automation Task</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approved</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AutomationRequest</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-16T21:59:42Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">automation</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>class_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
-        <span style="color:#606"><span style="color:#404">&quot;</span><span>attrs</span><span style="color:#404">&quot;</span></span>: {
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test_4</span><span style="color:#710">&quot;</span></span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4096</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">16384</span>,
-          <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-        }
-      },
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
+</li>
+</ul><h3 id="trigger-multiple-automation-requests">
+<a class="anchor" href="#trigger-multiple-automation-requests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trigger multiple Automation Requests</h3>
+
+<p><em>In the automation requests</em>:</p>
+
+<ul>
+  <li>
+    <p>version defaults to “1.1” if not specified.</p>
+  </li>
+  <li>
+    <p>user_name defaults to the REST API authenticated user if not
+specified.</p>
+  </li>
+</ul>
+
+<h4 id="request">
+<a class="anchor" href="#request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/automation_requests
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uri_parts"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"vm_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test_1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"var2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyyy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"var3"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"var4"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"var5"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"last value"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"requester"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"user_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"auto_approve"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"uri_parts"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"vm_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test_2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vm_memory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memory_limit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"requester"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"auto_approve"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"uri_parts"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"vm_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test_3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vm_memory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memory_limit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"requester"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"auto_approve"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"uri_parts"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"vm_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test_4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vm_memory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memory_limit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"requester"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"auto_approve"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/automation_requests/14"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automation Task"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"approval_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutomationRequest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aab"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"automation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attrs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"vm_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"var2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyyy"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"var3"</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"var4"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"var5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"last value"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aab"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aab"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/automation_requests/15"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automation Task"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"approval_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutomationRequest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administrator"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"automation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attrs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"vm_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vm_memory"</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"memory_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/automation_requests/16"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automation Task"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"approval_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutomationRequest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administrator"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"automation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attrs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"vm_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vm_memory"</span><span class="p">:</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"memory_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/automation_requests/17"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automation Task"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"approval_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutomationRequest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T21:59:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requester_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administrator"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"automation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InspectME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attrs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"vm_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vm_memory"</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"memory_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

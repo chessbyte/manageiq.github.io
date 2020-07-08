@@ -1540,104 +1540,92 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="event-streams"><a class="anchor" href="#event-streams"></a>Event Streams</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Querying of Event Streams is made available via the following collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/event_streams</code></pre>
-</div>
-</div>
-<div class="paragraph">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#event-streams">Event Streams</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#filtering-by-event-type">Filtering by event type</a></li>
+<li class="toc-entry toc-h3"><a href="#filtering-by-timestamp">Filtering by timestamp</a></li>
+<li class="toc-entry toc-h3"><a href="#filtering-by-target-type">Filtering by target type</a></li>
+<li class="toc-entry toc-h3"><a href="#filtering-by-target-type-and-id">Filtering by target type and id</a></li>
+</ul>
+</li>
+</ul><h2 id="event-streams">
+<a class="anchor" href="#event-streams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Event Streams</h2>
+
+<p>Querying of Event Streams is made available via the following
+collection:</p>
+
+<pre><code class="language-data">/api/event_streams
+</code></pre>
+
 <p>Event Streams can be queried as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/event_streams
+</code></pre>
+
 <p>An individual Event Stream can also be fetched as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams/:id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/event_streams/:id
+</code></pre>
+
 <p>Relevant filter[] parameters when Event Streams are queried:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">event_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">event_type=vm_start, event_type=vm_stop</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp&gt;2017-01-03, timestamp&lt;2017-12-31</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">target_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">target_type=VmOrTemplate</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">target_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">target_id=11</p></td>
-</tr>
-</tbody>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>event_type</td>
+      <td>event_type=vm_start, event_type=vm_stop</td>
+    </tr>
+    <tr>
+      <td>timestamp</td>
+      <td>timestamp&gt;2017-01-03, timestamp&lt;2017-12-31</td>
+    </tr>
+    <tr>
+      <td>target_type</td>
+      <td>target_type=VmOrTemplate</td>
+    </tr>
+    <tr>
+      <td>target_id</td>
+      <td>target_id=11</td>
+    </tr>
+  </tbody>
 </table>
-<div class="sect2">
-<h3 id="filtering-by-event-type"><a class="anchor" href="#filtering-by-event-type"></a>Filtering by event type</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=event_type=vm_start</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="filtering-by-timestamp"><a class="anchor" href="#filtering-by-timestamp"></a>Filtering by timestamp</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=timestamp&gt;2017-01-03
-                      &amp;filter[]=timestamp&lt;2017-01-10</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="filtering-by-target-type"><a class="anchor" href="#filtering-by-target-type"></a>Filtering by target type</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=target_type=VmOrTemplate</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="filtering-by-target-type-and-id"><a class="anchor" href="#filtering-by-target-type-and-id"></a>Filtering by target type and id</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=target_type=VmOrTemplate
-                      &amp;filter[]=target_id=21</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<h3 id="filtering-by-event-type">
+<a class="anchor" href="#filtering-by-event-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filtering by event type</h3>
+
+<pre><code class="language-data">GET /api/event_streams?filter[]=event_type=vm_start
+</code></pre>
+
+<h3 id="filtering-by-timestamp">
+<a class="anchor" href="#filtering-by-timestamp" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filtering by timestamp</h3>
+
+<pre><code class="language-data">GET /api/event_streams?filter[]=timestamp&gt;2017-01-03
+                      &amp;filter[]=timestamp&lt;2017-01-10
+</code></pre>
+
+<h3 id="filtering-by-target-type">
+<a class="anchor" href="#filtering-by-target-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filtering by target type</h3>
+
+<pre><code class="language-data">GET /api/event_streams?filter[]=target_type=VmOrTemplate
+</code></pre>
+
+<h3 id="filtering-by-target-type-and-id">
+<a class="anchor" href="#filtering-by-target-type-and-id" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filtering by target type and id</h3>
+
+<pre><code class="language-data">GET /api/event_streams?filter[]=target_type=VmOrTemplate
+                      &amp;filter[]=target_id=21
+</code></pre>
+
+
       </div>
     </article>
   </div>

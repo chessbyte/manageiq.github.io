@@ -1540,55 +1540,60 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect2">
-<h3 id="start-a-vm"><a class="anchor" href="#start-a-vm"></a>Start a VM</h3>
-<div class="sect3">
-<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/vms/1921</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM id:1921 name:'aab_demo_vm' starting</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">610</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/610</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/1921</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="querying-task-progress"><a class="anchor" href="#querying-task-progress"></a>Querying task progress:</h3>
-<div class="sect3">
-<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/tasks/620</pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>{
+        <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#start-a-vm">Start a VM</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#request">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response">Response:</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#querying-task-progress">Querying task progress:</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#request-1">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response-1">Response:</a></li>
+</ul>
+</li>
+</ul><h3 id="start-a-vm">
+<a class="anchor" href="#start-a-vm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Start a VM</h3>
+
+<h4 id="request">
+<a class="anchor" href="#request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/vms/1921
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VM id:1921 name:'aab_demo_vm' starting"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"task_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"task_href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/tasks/610"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/1921"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="querying-task-progress">
+<a class="anchor" href="#querying-task-progress" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying task progress:</h3>
+
+<h4 id="request-1">
+<a class="anchor" href="#request-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/tasks/620
+</code></pre></div></div>
+
+<h4 id="response-1">
+<a class="anchor" href="#response-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "href": "http://localhost:3000/api/tasks/610",
   "id": "610",
   "name": "VM id:1921 name:'aab_demo_vm' starting",
@@ -1598,11 +1603,10 @@
   "userid": "admin",
   "created_on": "2015-05-05T15:58:08Z",
   "updated_on": "2015-05-05T15:58:08Z"
-}</pre>
-</div>
-</div>
-</div>
-</div>
+}
+</code></pre></div></div>
+
+
       </div>
     </article>
   </div>

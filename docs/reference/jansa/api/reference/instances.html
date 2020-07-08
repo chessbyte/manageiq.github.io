@@ -1540,262 +1540,236 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="instance-management"><a class="anchor" href="#instance-management"></a>Instance Management</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of instances adds support for the following actions:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Action</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starts an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stop</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stops an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">suspend</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Suspending an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pause</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pausing an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reboot_guest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rebooting Guest in an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resetting an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">shelve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shelving an Instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">terminate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Terminating an Instance</p></td>
-</tr>
-</tbody>
-</table>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#instance-management">Instance Management</a>
 <ul>
-<li>
-<p><a href="#targeting-instances">Targeting Instances</a></p>
-</li>
-<li>
-<p><a href="#querying-instances">Querying Instances</a></p>
-</li>
-<li>
-<p><a href="#start-instance">Starting an Instance</a></p>
-</li>
-<li>
-<p><a href="#stop-instance">Stopping an Instance</a></p>
-</li>
-<li>
-<p><a href="#suspend-instance">Suspending an Instance</a></p>
-</li>
-<li>
-<p><a href="#pause-instance">Pausing an Instance</a></p>
-</li>
-<li>
-<p><a href="#reboot-guest-instance">Rebooting Guest in an Instance</a></p>
-</li>
-<li>
-<p><a href="#reset-instance">Resetting an Instance</a></p>
-</li>
-<li>
-<p><a href="#shelve-instance">Shelving an Instance</a></p>
-</li>
-<li>
-<p><a href="#terminate-instance">Terminating an Instance</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#targeting-instances">Targeting Instances</a></li>
+<li class="toc-entry toc-h3"><a href="#querying-instances">Querying Instances</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#load-balancers">Load Balancers</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="targeting-instances"><a class="anchor" href="#targeting-instances"></a>Targeting Instances</h3>
-<div class="paragraph">
+</li>
+<li class="toc-entry toc-h3"><a href="#starting-an-instance">Starting an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#stopping-an-instance">Stopping an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#suspending-an-instance">Suspending an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#pausing-an-instance">Pausing an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#terminating-an-instance">Terminating an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#shelving-an-instance">Shelving an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#rebooting-guest-in-an-instance">Rebooting Guest in an Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#resetting-an-instance">Resetting an Instance</a></li>
+</ul>
+</li>
+</ul><h2 id="instance-management">
+<a class="anchor" href="#instance-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instance Management</h2>
+
+<p>Management of instances adds support for the following actions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>start</td>
+      <td>Starts an Instance</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>Stops an Instance</td>
+    </tr>
+    <tr>
+      <td>suspend</td>
+      <td>Suspending an Instance</td>
+    </tr>
+    <tr>
+      <td>pause</td>
+      <td>Pausing an Instance</td>
+    </tr>
+    <tr>
+      <td>reboot_guest</td>
+      <td>Rebooting Guest in an Instance</td>
+    </tr>
+    <tr>
+      <td>reset</td>
+      <td>Resetting an Instance</td>
+    </tr>
+    <tr>
+      <td>shelve</td>
+      <td>Shelving an Instance</td>
+    </tr>
+    <tr>
+      <td>terminate</td>
+      <td>Terminating an Instance</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p><a href="#targeting-instances">Targeting Instances</a></p>
+  </li>
+  <li>
+    <p><a href="#querying-instances">Querying Instances</a></p>
+  </li>
+  <li>
+    <p><a href="#start-instance">Starting an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#stop-instance">Stopping an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#suspend-instance">Suspending an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#pause-instance">Pausing an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#reboot-guest-instance">Rebooting Guest in an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#reset-instance">Resetting an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#shelve-instance">Shelving an Instance</a></p>
+  </li>
+  <li>
+    <p><a href="#terminate-instance">Terminating an Instance</a></p>
+  </li>
+</ul>
+
+<h3 id="targeting-instances">
+<a class="anchor" href="#targeting-instances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Targeting Instances</h3>
+
 <p>These actions can be triggered on individual instance resources:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/instances/:id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">/api/instances/:id
+</code></pre>
+
 <p>As simply as POSTing the following action to an instance.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Requests can also be made on multiple instances by targeting the primary collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/instances</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/instances/101</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/instances/102</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="querying-instances"><a class="anchor" href="#querying-instances"></a>Querying Instances</h3>
-<div class="paragraph">
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Requests can also be made on multiple instances by targeting the primary
+collection:</p>
+
+<pre><code class="language-data">/api/instances
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/instances/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/instances/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="querying-instances">
+<a class="anchor" href="#querying-instances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Instances</h3>
+
 <p>Instances are queried via the primary collection URL:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/instances</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">/api/instances
+</code></pre>
+
 <p>Filtering, sorting and paging as mentioned on the
 <a href="../overview/query.html">Querying</a> page.</p>
-</div>
-<div class="sect3">
-<h4 id="load-balancers"><a class="anchor" href="#load-balancers"></a>Load Balancers</h4>
-<div class="paragraph">
-<p>Load Balancers of an instance can be queried via the load_balancers subcollection as follows:</p>
-</div>
-<div class="paragraph">
+
+<h4 id="load-balancers">
+<a class="anchor" href="#load-balancers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Load Balancers</h4>
+
+<p>Load Balancers of an instance can be queried via the load_balancers
+subcollection as follows:</p>
+
 <p>Query all Load Balancers of an instance:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id/load_balancers</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/instances/:id/load_balancers
+</code></pre>
+
 <p>Query a specific Load Balancer of an instance:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id/load_balancers/:load_balancer_id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/instances/:id/load_balancers/:load_balancer_id
+</code></pre>
+
 <p>Or expanding the Load Balancers for the specific instance as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id?expand=load_balancers</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="start-instance"><a class="anchor" href="#start-instance"></a>Starting an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="stop-instance"><a class="anchor" href="#stop-instance"></a>Stopping an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">stop</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="suspend-instance"><a class="anchor" href="#suspend-instance"></a>Suspending an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">suspend</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="pause-instance"><a class="anchor" href="#pause-instance"></a>Pausing an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pause</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="terminate-instance"><a class="anchor" href="#terminate-instance"></a>Terminating an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">terminate</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="shelve-instance"><a class="anchor" href="#shelve-instance"></a>Shelving an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">shelve</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="reboot-guest-instance"><a class="anchor" href="#reboot-guest-instance"></a>Rebooting Guest in an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reboot-guest</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="reset-instance"><a class="anchor" href="#reset-instance"></a>Resetting an Instance</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reset</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<pre><code class="language-data">GET /api/instances/:id?expand=load_balancers
+</code></pre>
+
+<h3 id="starting-an-instance">
+<a class="anchor" href="#starting-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Starting an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="stopping-an-instance">
+<a class="anchor" href="#stopping-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stopping an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"stop"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="suspending-an-instance">
+<a class="anchor" href="#suspending-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Suspending an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"suspend"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="pausing-an-instance">
+<a class="anchor" href="#pausing-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pausing an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pause"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="terminating-an-instance">
+<a class="anchor" href="#terminating-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Terminating an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"terminate"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="shelving-an-instance">
+<a class="anchor" href="#shelving-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shelving an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"shelve"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="rebooting-guest-in-an-instance">
+<a class="anchor" href="#rebooting-guest-in-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rebooting Guest in an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reboot-guest"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="resetting-an-instance">
+<a class="anchor" href="#resetting-an-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resetting an Instance</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reset"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

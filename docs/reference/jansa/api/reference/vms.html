@@ -1540,528 +1540,472 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="vm-management"><a class="anchor" href="#vm-management"></a>Virtual Machine Management</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of virtual machines adds support of the following actions:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Action</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starts a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stop</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stops a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">suspend</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Suspends a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refresh</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refreshes a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">request_retire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retires a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resets a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reboot_guest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reboots guest in virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">shutdown_guest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shuts down guest in virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scans a virtual machine (Perform SmartState Analysis)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_miq_server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the server of a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_owner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the owner of a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add_event</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Adding an event to a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add_lifecycle_event</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add a life cycle event to a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Edits a virtual machine</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a virtual machine in the appliance</p></td>
-</tr>
-</tbody>
-</table>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#virtual-machine-management">Virtual Machine Management</a>
 <ul>
-<li>
-<p><a href="#targeting-vms">Targeting VMs</a></p>
-</li>
-<li>
-<p><a href="#querying-vms">Querying VMs</a></p>
-</li>
-<li>
-<p><a href="#start-vm">Starting a VM</a></p>
-</li>
-<li>
-<p><a href="#stop-vm">Stopping a VM</a></p>
-</li>
-<li>
-<p><a href="#suspend-vm">Suspending a VM</a></p>
-</li>
-<li>
-<p><a href="#refresh-vm">Refreshing a VM</a></p>
-</li>
-<li>
-<p><a href="#retire-vm">Retiring a VM</a></p>
-</li>
-<li>
-<p><a href="#reset-vm">Resets a VM</a></p>
-</li>
-<li>
-<p><a href="#reboot-guest-vm">Reboots guest in VM</a></p>
-</li>
-<li>
-<p><a href="#shutdown-guest-vm">Shuts down guest in VM</a></p>
-</li>
-<li>
-<p><a href="#scan-vm">Scanning a VM</a></p>
-</li>
-<li>
-<p><a href="#set-miq-server-vm">Setting Server of a VM</a></p>
-</li>
-<li>
-<p><a href="#set-owner-vm">Setting Owner of a VM</a></p>
-</li>
-<li>
-<p><a href="#add-event-vm">Adding an Event to a VM</a></p>
-</li>
-<li>
-<p><a href="#add-lifecycle-event-vm">Adding a Lifecycle Event to a VM</a></p>
-</li>
-<li>
-<p><a href="#edit-vm">Editing a VM</a></p>
-</li>
-<li>
-<p><a href="#delete-vm">Deleting a VM</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#targeting-virtual-machines">Targeting Virtual Machines</a></li>
+<li class="toc-entry toc-h3"><a href="#querying-virtual-machines">Querying Virtual Machines</a></li>
+<li class="toc-entry toc-h3"><a href="#starting-a-virtual-machine">Starting a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#stopping-a-virtual-machine">Stopping a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#suspending-a-virtual-machine">Suspending a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#refreshing-a-virtual-machine">Refreshing a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#retiring-a-virtual-machine">Retiring a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#resetting-a-virtual-machine">Resetting a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#rebooting-guest-in-virtual-machine">Rebooting guest in Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#shutting-down-guest-in-a-virtual-machine">Shutting Down Guest in a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#scanning-a-virtual-machine">Scanning a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#setting-server-of-a-virtual-machine">Setting Server of a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#setting-owner-of-a-virtual-machine">Setting Owner of a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#adding-an-event-to-a-virtual-machine">Adding an Event to a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#adding-a-lifecycle-event-to-a-virtual-machine">Adding a Lifecycle Event to a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-a-virtual-machine">Editing a Virtual Machine</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-a-virtual-machine">Deleting a Virtual Machine</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="targeting-vms"><a class="anchor" href="#targeting-vms"></a>Targeting Virtual Machines</h3>
-<div class="paragraph">
+</li>
+</ul><h2 id="virtual-machine-management">
+<a class="anchor" href="#virtual-machine-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual Machine Management</h2>
+
+<p>Management of virtual machines adds support of the following actions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>start</td>
+      <td>Starts a virtual machine</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>Stops a virtual machine</td>
+    </tr>
+    <tr>
+      <td>suspend</td>
+      <td>Suspends a virtual machine</td>
+    </tr>
+    <tr>
+      <td>refresh</td>
+      <td>Refreshes a virtual machine</td>
+    </tr>
+    <tr>
+      <td>request_retire</td>
+      <td>Retires a virtual machine</td>
+    </tr>
+    <tr>
+      <td>reset</td>
+      <td>Resets a virtual machine</td>
+    </tr>
+    <tr>
+      <td>reboot_guest</td>
+      <td>Reboots guest in virtual machine</td>
+    </tr>
+    <tr>
+      <td>shutdown_guest</td>
+      <td>Shuts down guest in virtual machine</td>
+    </tr>
+    <tr>
+      <td>scan</td>
+      <td>Scans a virtual machine (Perform SmartState Analysis)</td>
+    </tr>
+    <tr>
+      <td>set_miq_server</td>
+      <td>Sets the server of a virtual machine</td>
+    </tr>
+    <tr>
+      <td>set_owner</td>
+      <td>Sets the owner of a virtual machine</td>
+    </tr>
+    <tr>
+      <td>add_event</td>
+      <td>Adding an event to a virtual machine</td>
+    </tr>
+    <tr>
+      <td>add_lifecycle_event</td>
+      <td>Add a life cycle event to a virtual machine</td>
+    </tr>
+    <tr>
+      <td>edit</td>
+      <td>Edits a virtual machine</td>
+    </tr>
+    <tr>
+      <td>delete</td>
+      <td>Deletes a virtual machine in the appliance</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p><a href="#targeting-vms">Targeting VMs</a></p>
+  </li>
+  <li>
+    <p><a href="#querying-vms">Querying VMs</a></p>
+  </li>
+  <li>
+    <p><a href="#start-vm">Starting a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#stop-vm">Stopping a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#suspend-vm">Suspending a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#refresh-vm">Refreshing a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#retire-vm">Retiring a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#reset-vm">Resets a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#reboot-guest-vm">Reboots guest in VM</a></p>
+  </li>
+  <li>
+    <p><a href="#shutdown-guest-vm">Shuts down guest in VM</a></p>
+  </li>
+  <li>
+    <p><a href="#scan-vm">Scanning a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#set-miq-server-vm">Setting Server of a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#set-owner-vm">Setting Owner of a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#add-event-vm">Adding an Event to a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#add-lifecycle-event-vm">Adding a Lifecycle Event to a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#edit-vm">Editing a VM</a></p>
+  </li>
+  <li>
+    <p><a href="#delete-vm">Deleting a VM</a></p>
+  </li>
+</ul>
+
+<h3 id="targeting-virtual-machines">
+<a class="anchor" href="#targeting-virtual-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Targeting Virtual Machines</h3>
+
 <p>These actions can be triggered on individual virtual machine resources:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/vms/:id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">/api/vms/:id
+</code></pre>
+
 <p>As simply as POSTing the following action to a virtual machine.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Requests can also be made on multiple vms by targetting the primary collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/vms</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/12</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="querying-vms"><a class="anchor" href="#querying-vms"></a>Querying Virtual Machines</h3>
-<div class="paragraph">
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Requests can also be made on multiple vms by targetting the primary
+collection:</p>
+
+<pre><code class="language-data">/api/vms
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/11"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/12"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="querying-virtual-machines">
+<a class="anchor" href="#querying-virtual-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Virtual Machines</h3>
+
 <p>Virtual machines are queried via the primary collection URL:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/vms</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">/api/vms
+</code></pre>
+
 <p>Filtering, sorting and paging as mentioned on the
 <a href="../overview/query.html">Querying</a> page.</p>
-</div>
-<div class="paragraph">
-<p>When querying vms, expanding the resources themselves
-as well as the following subcollections:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accounts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">software</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/vms?expand=resources,accounts,software</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or querying an individual virtual machine</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/vms/:id?expand=accounts,software</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="start-vm"><a class="anchor" href="#start-vm"></a>Starting a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="stop-vm"><a class="anchor" href="#stop-vm"></a>Stopping a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">stop</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="suspend-vm"><a class="anchor" href="#suspend-vm"></a>Suspending a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">suspend</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="refresh-vm"><a class="anchor" href="#refresh-vm"></a>Refreshing a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">refresh</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="retire-vm"><a class="anchor" href="#retire-vm"></a>Retiring a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">request_retire</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="reset-vm"><a class="anchor" href="#reset-vm"></a>Resetting a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reset</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="reboot-guest-vm"><a class="anchor" href="#reboot-guest-vm"></a>Rebooting guest in Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reboot_guest</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="shutdown-guest-vm"><a class="anchor" href="#shutdown-guest-vm"></a>Shutting Down Guest in a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">shutdown_guest</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="scan-vm"><a class="anchor" href="#scan-vm"></a>Scanning a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">scan</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="set-miq-server-vm"><a class="anchor" href="#set-miq-server-vm"></a>Setting Server of a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">set_miq_server</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_server</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/servers/5</span><span style="color:#710">&quot;</span></span> }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">set_miq_server</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_server</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">6</span><span style="color:#710">&quot;</span></span> }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To remove the server from the virtual machine, pass in an empty reference as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">set_miq_server</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_server</span><span style="color:#404">&quot;</span></span> : {}
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="set-owner-vm"><a class="anchor" href="#set-owner-vm"></a>Setting Owner of a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">set_owner</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>owner</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="add-event-vm"><a class="anchor" href="#add-event-vm"></a>Adding an Event to a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_event</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>event_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>event_message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>event_time</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">UTC Time</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
+
+<p>When querying vms, expanding the resources themselves as well as the
+following subcollections:</p>
+
 <table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-event_time above is optional. If skipped, current time will be used.
-</td>
-</tr>
+  <thead>
+    <tr>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>accounts</td>
+    </tr>
+    <tr>
+      <td>software</td>
+    </tr>
+  </tbody>
 </table>
+
+<p>For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/vms?expand=resources,accounts,software
+</code></pre></div></div>
+
+<p>Or querying an individual virtual machine</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/vms/:id?expand=accounts,software
+</code></pre></div></div>
+
+<h3 id="starting-a-virtual-machine">
+<a class="anchor" href="#starting-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Starting a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="stopping-a-virtual-machine">
+<a class="anchor" href="#stopping-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stopping a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"stop"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="suspending-a-virtual-machine">
+<a class="anchor" href="#suspending-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Suspending a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"suspend"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="refreshing-a-virtual-machine">
+<a class="anchor" href="#refreshing-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="retiring-a-virtual-machine">
+<a class="anchor" href="#retiring-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retiring a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"request_retire"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="resetting-a-virtual-machine">
+<a class="anchor" href="#resetting-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resetting a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reset"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="rebooting-guest-in-virtual-machine">
+<a class="anchor" href="#rebooting-guest-in-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rebooting guest in Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reboot_guest"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="shutting-down-guest-in-a-virtual-machine">
+<a class="anchor" href="#shutting-down-guest-in-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shutting Down Guest in a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"shutdown_guest"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="scanning-a-virtual-machine">
+<a class="anchor" href="#scanning-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scanning a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"scan"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="setting-server-of-a-virtual-machine">
+<a class="anchor" href="#setting-server-of-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Server of a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"set_miq_server"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"miq_server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/servers/5"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"set_miq_server"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"miq_server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To remove the server from the virtual machine, pass in an empty
+reference as follows:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"set_miq_server"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"miq_server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="setting-owner-of-a-virtual-machine">
+<a class="anchor" href="#setting-owner-of-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Owner of a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"set_owner"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="adding-an-event-to-a-virtual-machine">
+<a class="anchor" href="#adding-an-event-to-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an Event to a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"add_event"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event_message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC Time"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="note">
+
+event\_time above is optional. If skipped, current time will be used.
+
 </div>
-</div>
-<div class="sect2">
-<h3 id="add-lifecycle-event-vm"><a class="anchor" href="#add-lifecycle-event-vm"></a>Adding a Lifecycle Event to a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_lifecycle_event</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>event</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>created_by</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="edit-vm"><a class="anchor" href="#edit-vm"></a>Editing a Virtual Machine</h3>
-<div class="paragraph">
-<p>Basic information of virtual machines can be edited. This includes the following:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">VM Info</th>
-<th class="tableblock halign-left valign-top">Attribute</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">custom attributes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">custom_1 &#8230;&#8203; custom_9</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">parent resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">parent_resource - resource href reference</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">child resources</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">child_resources - array of resource href references</p></td>
-</tr>
-</tbody>
+
+<h3 id="adding-a-lifecycle-event-to-a-virtual-machine">
+<a class="anchor" href="#adding-a-lifecycle-event-to-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a Lifecycle Event to a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"add_lifecycle_event"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="editing-a-virtual-machine">
+<a class="anchor" href="#editing-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Virtual Machine</h3>
+
+<p>Basic information of virtual machines can be edited. This includes the
+following:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>VM Info</th>
+      <th>Attribute</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>description</td>
+      <td>description</td>
+    </tr>
+    <tr>
+      <td>custom attributes</td>
+      <td>custom_1 …​ custom_9</td>
+    </tr>
+    <tr>
+      <td>parent resource</td>
+      <td>parent_resource - resource href reference</td>
+    </tr>
+    <tr>
+      <td>child resources</td>
+      <td>child_resources - array of resource href references</td>
+    </tr>
+  </tbody>
 </table>
-<div class="paragraph">
+
 <p>Virtual machine resources can be edited as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated VM Description</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>custom_1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_attribute_1</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>parent_resource</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>child_resources</span><span style="color:#404">&quot;</span></span> : [
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/101</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/102</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/103</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/104</span><span style="color:#710">&quot;</span></span> }
-    ]
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/vms/:id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated VM Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"custom_1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_attribute_1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/11"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"child_resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/103"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/104"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>Virtual machines can also be edited in bulk as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>custom_9</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vm_class_a</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/12</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>custom_9</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vm_class_a</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/13</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>custom_9</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vm_class_a</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="delete-vm"><a class="anchor" href="#delete-vm"></a>Deleting a Virtual Machine</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/vms
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/11"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"custom_9"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"vm_class_a"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/12"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"custom_9"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"vm_class_a"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/13"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"custom_9"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"vm_class_a"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="deleting-a-virtual-machine">
+<a class="anchor" href="#deleting-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Virtual Machine</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>Or simply doing the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>DELETE /api/vms/:id</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>See the main REST API examples section for additional virtual machine management examples.</p>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/vms/:id
+</code></pre></div></div>
+
+<p>See the main REST API examples section for additional virtual machine
+management examples.</p>
+
+
       </div>
     </article>
   </div>

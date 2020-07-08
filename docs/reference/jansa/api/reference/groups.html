@@ -1540,225 +1540,178 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="group-management"><a class="anchor" href="#group-management"></a>Group Management</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of User Groups is provided via the following collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/groups</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Full CRUD actions on groups is available:</p>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#group-management">Group Management</a>
 <ul>
-<li>
-<p><a href="#querying-groups">Querying Groups</a></p>
-</li>
-<li>
-<p><a href="#creating-groups">Creating Groups</a></p>
-</li>
-<li>
-<p><a href="#editing-groups">Editing Groups</a></p>
-</li>
-<li>
-<p><a href="#deleting-groups">Deleting Groups</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#querying-groups">Querying Groups</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-groups">Creating Groups</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-groups">Editing Groups</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-groups">Deleting Groups</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="querying-groups"><a class="anchor" href="#querying-groups"></a>Querying Groups</h3>
-<div class="paragraph">
+</li>
+</ul><h2 id="group-management">
+<a class="anchor" href="#group-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Group Management</h2>
+
+<p>Management of User Groups is provided via the following collection:</p>
+
+<pre><code class="language-data">/api/groups
+</code></pre>
+
+<p>Full CRUD actions on groups is available:</p>
+
+<ul>
+  <li>
+    <p><a href="#querying-groups">Querying Groups</a></p>
+  </li>
+  <li>
+    <p><a href="#creating-groups">Creating Groups</a></p>
+  </li>
+  <li>
+    <p><a href="#editing-groups">Editing Groups</a></p>
+  </li>
+  <li>
+    <p><a href="#deleting-groups">Deleting Groups</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-groups">
+<a class="anchor" href="#querying-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Groups</h3>
+
 <p>Querying all groups in the system:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/groups</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/groups
+</code></pre></div></div>
+
 <p>Getting details on a specific group:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/groups/:id
+</code></pre></div></div>
+
+<h3 id="creating-groups">
+<a class="anchor" href="#creating-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Groups</h3>
+
+<p>Groups can be created via a POST to the groups collection or via the
+<strong>create</strong> action signature which also allows creation of multiple
+groups in a single request.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/groups
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_group"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"role"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"tenant"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/tenants/1"</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"filters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"belongsto"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"/managed/area/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/managed/area/2"</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"managed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="s2">"/managed/infra/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/managed/infra/2"</span><span class="w"> </span><span class="p">]]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="note">
+
+role can be specified via **name**, **href**, or **id**
+
+tenant can be specified via **href** or **id**
+
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/groups/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="creating-groups"><a class="anchor" href="#creating-groups"></a>Creating Groups</h3>
-<div class="paragraph">
-<p>Groups can be created via a POST to the groups collection or via the <strong>create</strong> action signature which also
-allows creation of multiple groups in a single request.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/groups</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_group</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>role</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2</span><span style="color:#710">&quot;</span></span> },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>tenant</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/1</span><span style="color:#710">&quot;</span></span> },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>filters</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>belongsto</span><span style="color:#404">&quot;</span></span> : [ <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/area/1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/area/2</span><span style="color:#710">&quot;</span></span> ],
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>managed</span><span style="color:#404">&quot;</span></span> : [[ <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/infra/1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/infra/2</span><span style="color:#710">&quot;</span></span> ]]
-  }
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>role can be specified via <strong>name</strong>, <strong>href</strong>, or <strong>id</strong></p>
-</div>
-<div class="paragraph">
-<p>tenant can be specified via <strong>href</strong> or <strong>id</strong></p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
+
 <p>or creating multiple groups:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_group1"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_group2"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="note">
+
+Please refer to the [Resource
+Attributes](../appendices/resource_attributes.html#groups) page for a
+list of available attributes when creating Groups.
+
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_group1</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_group2</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Please refer to the <a href="../appendices/resource_attributes.html#groups">Resource Attributes</a>
-page for a list of available attributes when creating Groups.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-groups"><a class="anchor" href="#editing-groups"></a>Editing Groups</h3>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/groups/:id</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_sample_group</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>filters</span><span style="color:#404">&quot;</span></span> : {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>belongsto</span><span style="color:#404">&quot;</span></span> : [ <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/area/1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/area/2</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/area/3</span><span style="color:#710">&quot;</span></span> ],
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>managed</span><span style="color:#404">&quot;</span></span> : [[ <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/infra/1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/infra/2</span><span style="color:#710">&quot;</span></span>], [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/managed/other/3</span><span style="color:#710">&quot;</span></span>]]
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<h3 id="editing-groups">
+<a class="anchor" href="#editing-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing Groups</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/groups/:id
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_sample_group"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"belongsto"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"/managed/area/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/managed/area/2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/managed/area/3"</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"managed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="s2">"/managed/infra/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/managed/infra/2"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"/managed/other/3"</span><span class="p">]]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or editing multiple groups:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/groups</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/groups/101</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_sample_group1</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/groups/102</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_sample_group2</span><span style="color:#710">&quot;</span></span>
-    },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-groups"><a class="anchor" href="#deleting-groups"></a>Deleting Groups</h3>
-<div class="paragraph">
-<p>groups can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/groups/101</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/groups
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/groups/101"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_sample_group1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/groups/102"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_sample_group2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="deleting-groups">
+<a class="anchor" href="#deleting-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Groups</h3>
+
+<p>groups can be deleted via either the <strong>delete</strong> POST action or via the
+DELETE HTTP method.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/groups/101
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or simply:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>DELETE /api/groups/101</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/groups/101
+</code></pre></div></div>
+
 <p>Deleting multiple groups can be done as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/groups</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/groups/101</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/groups/102</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/groups
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/groups/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/groups/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

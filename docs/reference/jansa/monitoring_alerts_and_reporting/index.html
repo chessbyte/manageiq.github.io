@@ -1,0 +1,5549 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/jansa/monitoring_alerts_and_reporting/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/jansa/monitoring_alerts_and_reporting/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Jansa
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_jansa>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/reference/jansa/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+            <span>
+              <a href="/docs/reference/latest/monitoring_alerts_and_reporting/index.html">
+                Latest
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span class="active" >
+              <a href="/docs/reference/jansa/monitoring_alerts_and_reporting/index.html">
+                Jansa
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/ivanchuk/doc-Monitoring_Alerts_and_Reporting/miq/index.html">
+                Ivanchuk
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/hammer/doc-Monitoring_Alerts_and_Reporting/miq/index.html">
+                Hammer
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/gaprindashvili/doc-Monitoring_Alerts_and_Reporting/miq/index.html">
+                Gaprindashvili
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/fine/doc-Monitoring_Alerts_and_Reporting/miq/index.html">
+                Fine
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/euwe/doc-Monitoring_Alerts_and_Reporting/miq/index.html">
+                Euwe
+              </a>
+            </span>
+            
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#monitoring-alerts-and-reporting">Monitoring, Alerts, and Reporting</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#overview-dashboard">Overview Dashboard</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#adding-a-widget">Adding a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#resetting-to-the-default-set-of-widgets">Resetting to the Default Set of Widgets</a></li>
+<li class="toc-entry toc-h3"><a href="#removing-a-widget">Removing a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#zooming-in-to-a-chart-widget">Zooming in to a Chart Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#opening-a-chart-or-report-widget-in-full-screen-view">Opening a Chart or Report Widget in Full Screen View</a></li>
+<li class="toc-entry toc-h3"><a href="#minimizing-or-maximizing-a-widget">Minimizing or Maximizing a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#downloading-a-report-widget-as-a-file">Downloading a Report Widget as a File</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#creating-dashboard-widgets">Creating Dashboard Widgets</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#creating-a-report-widget">Creating a Report Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-chart-widget">Creating a Chart Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-menu-widget">Creating a Menu Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-a-widget">Editing a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#copying-a-widget">Copying a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-a-widget">Deleting a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#importing-a-widget">Importing a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#exporting-a-widget">Exporting a Widget</a></li>
+<li class="toc-entry toc-h3"><a href="#generating-widget-content-immediately">Generating Widget Content Immediately</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#reports">Reports</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#running-reports">Running Reports</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#generating-a-single-report">Generating a Single Report</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#scheduling-a-report">Scheduling a Report</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#modifying-a-report-schedule">Modifying a Report Schedule</a></li>
+<li class="toc-entry toc-h4"><a href="#running-a-scheduled-report-immediately">Running a Scheduled Report Immediately</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#viewing-reports">Viewing Reports</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#changing-report-views">Changing Report Views</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#filtering-report-data">Filtering Report Data</a></li>
+<li class="toc-entry toc-h5"><a href="#sorting-reports-by-column">Sorting Reports by Column</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h4"><a href="#downloading-a-report">Downloading a Report</a></li>
+<li class="toc-entry toc-h4"><a href="#showing-a-report-in-full-screen">Showing a Report in Full Screen</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#adding-a-report">Adding a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#copying-a-report">Copying a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-a-report">Editing a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-a-report">Deleting a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#importing-a-report">Importing a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#exporting-a-report">Exporting a Report</a></li>
+<li class="toc-entry toc-h3"><a href="#managing-report-menus">Managing Report Menus</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#managing-report-menu-accordions">Managing Report Menu Accordions</a></li>
+<li class="toc-entry toc-h4"><a href="#managing-report-menu-folders">Managing Report Menu Folders</a></li>
+<li class="toc-entry toc-h4"><a href="#organizing-reports-in-report-menus">Organizing Reports in Report Menus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#chargeback">Chargeback</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#chargeback-rates">Chargeback Rates</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#memory-used-cost">Memory Used Cost</a></li>
+<li class="toc-entry toc-h4"><a href="#cpu-total-cost">CPU Total Cost</a></li>
+<li class="toc-entry toc-h4"><a href="#cpu-used-cost">CPU Used Cost</a></li>
+<li class="toc-entry toc-h4"><a href="#storage-allocated-cost">Storage Allocated Cost</a></li>
+<li class="toc-entry toc-h4"><a href="#storage-total-cost">Storage Total Cost</a></li>
+<li class="toc-entry toc-h4"><a href="#storage-used-cost">Storage Used Cost</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#creating-chargeback-rates">Creating Chargeback Rates</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#editing-a-chargeback-rate">Editing a Chargeback Rate</a></li>
+<li class="toc-entry toc-h4"><a href="#copying-a-chargeback-rate">Copying a Chargeback Rate</a></li>
+<li class="toc-entry toc-h4"><a href="#adding-a-chargeback-rate">Adding a Chargeback Rate</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#assigning-chargeback-rates">Assigning Chargeback Rates</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#configuring-chargeback-for-compute">Configuring Chargeback for Compute</a></li>
+<li class="toc-entry toc-h4"><a href="#configuring-chargeback-for-storage">Configuring Chargeback for Storage</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#creating-a-chargeback-report">Creating a Chargeback Report</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#optimization">Optimization</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#running-an-optimization-report">Running an Optimization Report</a></li>
+<li class="toc-entry toc-h3"><a href="#viewing-optimization-reports">Viewing Optimization Reports</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#alerts">Alerts</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#assigning-the-notifier-role">Assigning the Notifier Role</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-an-alert">Creating an Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-hardware-reconfigured-alert">Creating a Hardware Reconfigured Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-normal-operating-range-alert">Creating a Normal Operating Range Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-real-time-performance-alert">Creating a Real Time Performance Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-an-hourly-performance-alert">Creating an Hourly Performance Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-hostd-log-threshold-alert">Creating a hostd Log Threshold Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-vmware-alarm-alert">Creating a VMware Alarm Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-an-expression-alert">Creating an Expression Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#create-an-operational-alert">Create an Operational Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#operational-alert-types">Operational Alert Types</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-an-alert">Editing an Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#copying-an-alert">Copying an Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-an-alert">Deleting an Alert</a></li>
+<li class="toc-entry toc-h3"><a href="#evaluating-an-alert">Evaluating an Alert</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#alert-profiles">Alert Profiles</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#creating-alert-profiles">Creating Alert Profiles</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-an-alert-profile">Editing an Alert Profile</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-an-alert-profile">Deleting an Alert Profile</a></li>
+<li class="toc-entry toc-h3"><a href="#assigning-an-alert-profile">Assigning an Alert Profile</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#importing-and-exporting">Importing and Exporting</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#importing-and-exporting-policies-policy-profiles-and-alerts">Importing and Exporting Policies, Policy Profiles, and Alerts</a></li>
+<li class="toc-entry toc-h3"><a href="#exporting-a-policy-policy-profile-or-an-alert">Exporting a Policy, Policy Profile, or an Alert</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#openshift-prometheus-alerts">OpenShift Prometheus Alerts</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#configuring-prometheus-alerts-in-manageiq">Configuring Prometheus Alerts in ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#deploying-and-configuring-prometheus-on-openshift">Deploying and Configuring Prometheus on OpenShift</a></li>
+<li class="toc-entry toc-h4"><a href="#assigning-prometheus-alert-profiles-to-the-enterprise">Assigning Prometheus Alert Profiles to the Enterprise</a></li>
+<li class="toc-entry toc-h4"><a href="#adding-an-openshift-containers-provider-with-a-prometheus-alert-endpoint">Adding an OpenShift Containers Provider with a Prometheus Alert Endpoint</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#regular-expressions">Regular Expressions</a></li>
+<li class="toc-entry toc-h1"><a href="#reportable-fields-in-manageiq">Reportable Fields in ManageIQ</a></li>
+</ul><h1 id="monitoring-alerts-and-reporting">
+<a class="anchor" href="#monitoring-alerts-and-reporting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Monitoring, Alerts, and Reporting</h1>
+
+<h2 id="overview-dashboard">
+<a class="anchor" href="#overview-dashboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview Dashboard</h2>
+
+<p>Overview shows your virtual environment’s events, reports, and
+configurable alerts. This information supports better information
+technology decision making and predictions for future virtual machine
+management.</p>
+
+<p>When you log in to the console, it brings you directly to the <strong>Overview
+Dashboard</strong> page by default. The console uses widgets to organize this
+page, providing you with a default set of commonly used widgets. The
+configuration items on these widgets are clickable, allowing you to
+drill down directly to a referenced item.</p>
+
+<p>Customize this page to include charts and reports you specifically want
+to see as soon as you log in to the console. You can add, remove, move,
+minimize, zoom into, and maximize widgets. Only users with the proper
+access can create widgets.</p>
+
+<h3 id="adding-a-widget">
+<a class="anchor" href="#adding-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a Widget</h3>
+
+<p>You can add widgets to the dashboard to accommodate the information you
+want to see upon login.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2259.png" alt="2259"> <strong>(Add a Widget)</strong>.</p>
+  </li>
+  <li>
+    <p>Select the widget you want to add from the list.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+Only widgets that are not currently showing on the dashboard will appear
+in this list.
+
+</div>
+
+<h3 id="resetting-to-the-default-set-of-widgets">
+<a class="anchor" href="#resetting-to-the-default-set-of-widgets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resetting to the Default Set of Widgets</h3>
+
+<p>You can reset to default set of widgets according to your needs with the
+following steps:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1900.png" alt="1900"> <strong>(Reset Dashboard Widgets to the
+defaults)</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="removing-a-widget">
+<a class="anchor" href="#removing-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Removing a Widget</h3>
+
+<p>You can remove a widget when you no longer need the widget to be
+displayed in the dashboard.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>From the widget that you want to remove, click
+<img src="../images/2260.png" alt="2260"> <strong>(Remove from Dashboard)</strong> in the upper
+right corner of the widget.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<p>The widget is removed from the dashboard, but it is not deleted. It can
+be added again if needed.</p>
+
+<h3 id="zooming-in-to-a-chart-widget">
+<a class="anchor" href="#zooming-in-to-a-chart-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Zooming in to a Chart Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>From the chart widget that you want to enlarge, click
+<img src="../images/2261.png" alt="2261"> <strong>(Zoom in)</strong> in the upper right corner of
+the widget.</p>
+  </li>
+</ol>
+
+<p>The enlarged chart is opened in its own pop-up window. To close this
+window, click <img src="../images/226x.png" alt="226x"> <strong>(Close)</strong> in the upper right
+corner.</p>
+
+<h3 id="opening-a-chart-or-report-widget-in-full-screen-view">
+<a class="anchor" href="#opening-a-chart-or-report-widget-in-full-screen-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>Opening a Chart or Report Widget in Full Screen View</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>From the chart or report widget that you want to enlarge, click
+<img src="../images/fullscreenicon.png" alt="fullscreenicon"> <strong>(Full Screen view)</strong>
+in the upper right corner of the widget.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="minimizing-or-maximizing-a-widget">
+<a class="anchor" href="#minimizing-or-maximizing-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Minimizing or Maximizing a Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>From the chart or report widget that you want to maximize, click
+<img src="../images/2263.png" alt="2263"> <strong>(Minimize)</strong> or
+<img src="../images/2264.png" alt="2264"> <strong>(Full Screen)</strong> in the upper right
+corner of the widget.</p>
+  </li>
+</ol>
+
+<h3 id="downloading-a-report-widget-as-a-file">
+<a class="anchor" href="#downloading-a-report-widget-as-a-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloading a Report Widget as a File</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Dashboard].</p>
+  </li>
+  <li>
+    <p>From the chart or report widget that you want to download as a PDF,
+click <img src="../images/2134.png" alt="2134"> <strong>[(Download PDF)</strong> in the upper
+right corner of the widget.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="creating-dashboard-widgets">
+<a class="anchor" href="#creating-dashboard-widgets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Dashboard Widgets</h2>
+
+<h3 id="creating-a-report-widget">
+<a class="anchor" href="#creating-a-report-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Report Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Dashboard Widgets</strong> accordion, then choose the
+<strong>Reports</strong> folder.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, then click
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Widget)</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Information</strong> area, type in a <strong>Title</strong> and
+<strong>Description</strong>. By default the widget will be active as soon as you
+create it. To make it inactive, uncheck the <strong>Active</strong> box.</p>
+
+    <p><img src="../images/2265.png" alt="2265"></p>
+  </li>
+  <li>
+    <p>From the <strong>Report Options</strong> area, select the filters until you are
+at the report you want for this widget. Select up to four columns
+from that report. Finally, for <strong>Row Count</strong>, select the number of
+rows that you want displayed.</p>
+
+    <p><img src="../images/2266.png" alt="2266"></p>
+  </li>
+  <li>
+    <p>In the <strong>Timer</strong> area, click the <strong>Run</strong> drop down to specify how
+often you want the widget data to get updated. The options displayed
+will depend on which <strong>Run</strong> option you choose. Select <strong>Hourly</strong>,
+<strong>Daily</strong>, <strong>Weekly</strong>, or <strong>Monthly</strong>.</p>
+
+    <p><img src="../images/2267.png" alt="2267"></p>
+  </li>
+  <li>
+    <p>Select a <strong>Time Zone</strong>. Type or select a date to begin the schedule
+in <strong>Starting Date</strong>. Select a <strong>Starting Time</strong> based on a 24 hour
+clock in the selected time zone.</p>
+
+    <div class="note">
+
+If you change the time zone, you will need to reset the starting
+date and time.
+
+</div>
+  </li>
+  <li>
+    <p>In the <strong>Visibility</strong> area, select <strong>&lt;To All Users&gt;</strong>, so that all
+users can use this widget no matter what user role they are
+assigned. Select <strong>&lt;By Role&gt;</strong> to assign this widget to specific
+user roles. Select <strong>&lt;By Group&gt;</strong> to assign this widget to
+specific groups.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-chart-widget">
+<a class="anchor" href="#creating-a-chart-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Chart Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Dashboard Widgets</strong> accordion and click the <strong>Charts</strong>
+folder.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, then click
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Widget)</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Information</strong> area, type in a <strong>Title</strong> and
+<strong>Description</strong>. By default the widget will be active as soon as you
+create it. To make it inactive, uncheck the <strong>Active</strong> box.</p>
+  </li>
+  <li>
+    <p>From the <strong>Chart Report</strong> area, select a chart to display in the
+widget.</p>
+
+    <p><img src="../images/2269.png" alt="2269"></p>
+  </li>
+  <li>
+    <p>In the <strong>Timer</strong> area, click the <strong>Run</strong> drop down to specify how
+often you want the widget data to get updated. The options displayed
+will depend on which <strong>Run</strong> option you choose. Select <strong>Hourly</strong>,
+<strong>Daily</strong>, <strong>Weekly</strong>, or <strong>Monthly</strong>.</p>
+
+    <p><img src="../images/2270.png" alt="2270"></p>
+  </li>
+  <li>
+    <p>Select a <strong>Time Zone</strong>. Type or select a date to begin the schedule
+in <strong>Starting Date</strong>. Select a <strong>Starting Time</strong> based on a 24 hour
+clock in the selected time zone.</p>
+
+    <div class="note">
+
+If you change the time zone, you will need to reset the starting
+date and time.
+
+</div>
+  </li>
+  <li>
+    <p>In the <strong>Visibility</strong> area, select <strong>&lt;To All Users&gt;</strong>, so that all
+users can use this widget no matter what user role they are
+assigned. Select <strong>&lt;By Role&gt;</strong> to assign this widget to specific
+user roles. Select <strong>&lt;By Group&gt;</strong> to assign this widget to
+specific groups.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-menu-widget">
+<a class="anchor" href="#creating-a-menu-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Menu Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Dashboard Widgets</strong> accordion and click the <strong>Menus</strong>
+folder.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, then click
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Widget)</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Information</strong> area, type in a <strong>Title</strong> and
+<strong>Description</strong>. By default the widget will be active as soon as you
+create it. To make it inactive, uncheck the <strong>Active</strong> box.</p>
+
+    <p><img src="../images/2273.png" alt="2273"></p>
+  </li>
+  <li>
+    <p>In the <strong>Menu Shortcuts</strong> area, use the <strong>Add a Shortcut</strong> dropdown
+to select all the places in the console that you want to add to this
+widget.</p>
+  </li>
+  <li>
+    <p>In the <strong>Visibility</strong> area, select <strong>&lt;To All Users&gt;</strong>, so that all
+users can use this widget no matter what user role they are
+assigned. Select <strong>&lt;By Role&gt;</strong> to assign this widget to specific
+user roles. Select <strong>&lt;By Group&gt;</strong> to assign this widget to
+specific groups.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="editing-a-widget">
+<a class="anchor" href="#editing-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Dashboard Widgets</strong> accordion and select the widget you
+want to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, and then
+<img src="../images/1851.png" alt="1851"> <strong>(Edit this Widget)</strong>.</p>
+  </li>
+  <li>
+    <p>Make the required changes.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="copying-a-widget">
+<a class="anchor" href="#copying-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Widget</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Dashboard Widget</strong> accordion, and select the widget you
+want to copy.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, and then
+<img src="../images/1859.png" alt="1859"> <strong>(Copy this Widget)</strong>.</p>
+  </li>
+  <li>
+    <p>Type a unique name for the widget and edit its properties.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="deleting-a-widget">
+<a class="anchor" href="#deleting-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Widget</h3>
+
+<div class="note">
+
+Default widgets cannot be deleted, but they can be copied.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Dashboard Widget</strong> accordion and select the widget you
+want to delete.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, and then
+<img src="../images/1861.png" alt="1861"> <strong>(Delete this Widget from the
+Database)</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="importing-a-widget">
+<a class="anchor" href="#importing-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing a Widget</h3>
+
+<p>You can share widgets between appliances using the export and import
+features.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>In the <strong>Import/Export</strong> accordion, click <strong>Widgets</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Import</strong> area, click <strong>Browse</strong> to select an import file.</p>
+  </li>
+  <li>
+    <p>Click <strong>Upload</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="exporting-a-widget">
+<a class="anchor" href="#exporting-a-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exporting a Widget</h3>
+
+<p>You can share widgets between appliances using the export and import
+features.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>In the <strong>Import/Export</strong> accordion, click <strong>Widgets</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Export</strong> area, select the widgets that you want to export.</p>
+  </li>
+  <li>
+    <p>Click <strong>Export</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="generating-widget-content-immediately">
+<a class="anchor" href="#generating-widget-content-immediately" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generating Widget Content Immediately</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Dashboard Widgets</strong> accordion and select the widget you
+want to generate.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, and then
+<img src="../images/1847.png" alt="1847"> <strong>(Generate Widget Content now)</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<p>The content is generated immediately instead of waiting for the next
+scheduled update. Generation of widget content is shown under <strong>Tasks</strong>,
+accessed from the settings menu.</p>
+
+<h2 id="reports">
+<a class="anchor" href="#reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reports</h2>
+
+<p>Click the <strong>Reports</strong> accordion under menu:Overview[Reports] to see a
+list of reports available. These reports have been constructed to help
+you view the most commonly requested and significant data. From here,
+you can also create reports if you have appropriate access.
+ManageIQ provides a large group of default reports organized into
+categories. Each category has its own set of subfolders.</p>
+
+<ul>
+  <li>
+    <p><strong>Configuration Management</strong>: hardware, application, network,
+service, user account, operating system, and snapshot information
+for all of your items.</p>
+  </li>
+  <li>
+    <p><strong>Migration Readiness</strong>: information related to items required to
+migrate a virtual machine.</p>
+  </li>
+  <li>
+    <p><strong>Operations</strong>: free space on registered and unregistered virtual
+machines, power states for virtual machines, and SmartState analysis
+status.</p>
+
+    <p>This category also provides reports relating to the operation of
+ManageIQ, such as user IDs and snapshots taken by
+ManageIQ.</p>
+  </li>
+  <li>
+    <p><strong>VM Sprawl</strong>: usage information and disk waste.</p>
+  </li>
+  <li>
+    <p><strong>Relationships</strong>: virtual machine, folder, and cluster
+relationships.</p>
+  </li>
+  <li>
+    <p><strong>Events</strong>: operations and configuration management events.</p>
+  </li>
+  <li>
+    <p><strong>Performance by Asset Type</strong>: performance of your virtual
+infrastructure.</p>
+
+    <p>You must be capturing capacity and utilization data to get this
+information.</p>
+  </li>
+  <li>
+    <p><strong>Running Processes</strong>: information on processes running on a virtual
+machine.</p>
+
+    <p>You must have domain credentials entered for the zone to collect the
+information for these reports, and the virtual machine must have
+been analyzed at least once.</p>
+  </li>
+  <li>
+    <p><strong>Trending</strong>: projections of datastore capacity, along with host CPU
+and memory use.</p>
+  </li>
+  <li>
+    <p><strong>Tenants</strong>: quotas report aggregated by each tenant that shows
+quota name, total quota, in use, allocated, and available. The
+report currently lists all tenants and there is no nesting
+information available by parent and child tenants.</p>
+  </li>
+  <li>
+    <p><strong>Provisioning</strong>: provisioning activity based on the approver,
+datastore, requester, and virtual machine.</p>
+  </li>
+</ul>
+
+<p>For a complete list of reportable fields in ManageIQ, see
+<a href="#_appe_reportable_fields">???</a>.</p>
+
+<h3 id="running-reports">
+<a class="anchor" href="#running-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Reports</h3>
+
+<p>There are two different ways to generate a report: by scheduling the
+report, or running the report manually by clicking the report generation
+button on the <strong>Reports</strong> page. ManageIQ uses interactive report
+generation so that reports are placed on a queue. A visual indicator of
+the reports status is shown. All reports are automatically saved so that
+they can be downloaded and analyzed later.</p>
+
+<h4 id="generating-a-single-report">
+<a class="anchor" href="#generating-a-single-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generating a Single Report</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the menu:Reports[All Reports] accordion. Navigate to the
+report you want to view by selecting the appropriate folder.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Queue</strong>).</p>
+  </li>
+  <li>
+    <p>The report generation is placed on the queue and its status shows in
+the reports page.</p>
+
+    <p><img src="../images/2274.png" alt="2274"></p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2106.png" alt="2106"> <strong>(Reload current display)</strong> to
+update the status.</p>
+  </li>
+  <li>
+    <p>When a report has finished generating, click on its row to view it.</p>
+  </li>
+</ol>
+
+<h3 id="scheduling-a-report">
+<a class="anchor" href="#scheduling-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scheduling a Report</h3>
+
+<p>You can view historical data by creating reports on a scheduled basis.
+In addition, scheduled reports can be emailed directly to users.</p>
+
+<div class="note">
+
+You may need to disable, change the report filter, or change the
+frequency of a schedule. To do this, you will need to edit the schedule.
+
+</div>
+
+<p>There are two ways to schedule a report:</p>
+
+<p>Add a new Schedule through the <strong>Reports</strong> accordion:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Select a report from the <strong>Reports</strong> accordion and click
+<img src="../images/1847.png" alt="1847"> <strong>Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1862.png" alt="1862"> <strong>Add a New Schedule</strong> or click the
+Schedules accordion and click <img src="../images/1847.png" alt="1847">
+<strong>Configuration</strong> &gt; <img src="../images/1862.png" alt="1862"> <strong>Add a New
+Schedule</strong>.</p>
+  </li>
+</ol>
+
+<p>or</p>
+
+<p>Add a new Schedule through the <strong>Schedules</strong> accordion:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Schedules</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1862.png" alt="1862"> <strong>Add a New Schedule</strong>.</p>
+  </li>
+</ol>
+
+<p>Adding new Schedule details.</p>
+
+<ol>
+  <li>
+    <p>In the <strong>Basic Information</strong> area, type in a <strong>Name</strong> and
+<strong>Description</strong> for the schedule.</p>
+
+    <ul>
+      <li>By default, <strong>Active</strong> is checked to enable the scan.</li>
+    </ul>
+  </li>
+  <li>
+    <p>The <strong>Report Selection</strong> area is pre-populated if you added the
+schedule directly from the report. If you are adding from the
+schedule according, use the <strong>Filter</strong> drop downs to select the
+report that you want to schedule.</p>
+  </li>
+  <li>
+    <p>In the <strong>Timer</strong> area, click the <strong>Run</strong> drop down to specify how
+often you want the analysis to run. Your options after that will
+depend on which run option you choose.</p>
+
+    <ul>
+      <li>
+        <p>Click <strong>Once</strong> to have the analysis run just one time.</p>
+      </li>
+      <li>
+        <p>Click <strong>Daily</strong> to run the analysis on a daily basis. You will
+be prompted to select how many days you want between each
+analysis.</p>
+      </li>
+      <li>
+        <p>Click <strong>Hourly</strong> to run the analysis hourly. You will be
+prompted to select how many hours you want between each
+analysis.</p>
+      </li>
+      <li>
+        <p>Type or select a date to begin the schedule in <strong>Starting
+Date</strong>.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Starting Time</strong> based on a 24 hour clock in the
+ManageIQ appliance’s Time Zone.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Use the <strong>E-Mail after Running</strong> feature to send an email after the
+report has been generated to selected users. The email will include
+a link to the report.</p>
+
+    <ul>
+      <li>
+        <p>Check <strong>Send an E-mail</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>From (leave blank for default)</strong>, type in the sending
+email.</p>
+      </li>
+      <li>
+        <p>Use <strong>Add a User</strong>, to select a specific user. The user must
+have a valid email address entered under accounts.</p>
+      </li>
+      <li>
+        <p>Use <strong>Add (enter manually)</strong> to type in the address not
+registered to a User.</p>
+      </li>
+      <li>
+        <p>Then, click <img src="../images/1862.png" alt="1862"> <strong>(Add)</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>If you are sending an email after the report runs, then you can
+select further options under Email Options.</p>
+
+    <ul>
+      <li>
+        <p>Check <strong>Send if Report is Empty</strong> if you want an email even if
+no records exist in the report.</p>
+      </li>
+      <li>
+        <p>Next to Attachments, check if you would like the report attached
+as a <strong>Text</strong>, <strong>CSV</strong>, or <strong>PDF</strong> file.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+See
+&lt;https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/paged/general-configuration&gt;
+in the *General Configuration* guide, to learn how to verify the address
+and validate outgoing email settings.
+
+</div>
+
+<h4 id="modifying-a-report-schedule">
+<a class="anchor" href="#modifying-a-report-schedule" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modifying a Report Schedule</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports]</p>
+  </li>
+  <li>
+    <p>Click the <strong>Schedules</strong> accordion and select the schedule you want
+to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
+<img src="../images/1851.png" alt="1851"> (<strong>Edit this Schedule</strong>).</p>
+  </li>
+  <li>
+    <p>Make the required changes.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="running-a-scheduled-report-immediately">
+<a class="anchor" href="#running-a-scheduled-report-immediately" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running a Scheduled Report Immediately</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Schedules</strong> accordion and select the schedule you want
+to run.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
+<img src="../images/1847.png" alt="1847"> (<strong>Queue up this Schedule to run now</strong>).</p>
+  </li>
+</ol>
+
+<h3 id="viewing-reports">
+<a class="anchor" href="#viewing-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing Reports</h3>
+
+<p>Once you have run a report, you can view it at any time after the first
+scheduled time has occurred.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Saved Reports</strong> accordion or the <strong>Reports</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click on the instance of the report you want to view.</p>
+  </li>
+</ol>
+
+<h4 id="changing-report-views">
+<a class="anchor" href="#changing-report-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Report Views</h4>
+
+<p>After running a report, you can customize your view in several ways.</p>
+
+<p>Some reports can be viewed as charts as well as lists. This will depend
+on the type of data and on how the report has been created. Where
+applicable, you will see these additional buttons:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click a completed report to view. Click one of the following buttons
+for the view you want:</p>
+
+    <ul>
+      <li>
+        <p>Click <img src="../images/graph-view.png" alt="graph view">for <strong>Graph View</strong>.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/hybrid-view.png" alt="hybrid view">for <strong>Hybrid
+View</strong>.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/tabular-view.png" alt="tabular view">for <strong>Tabular
+View</strong>.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h5 id="filtering-report-data">
+<a class="anchor" href="#filtering-report-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filtering Report Data</h5>
+
+<p>To filter the report information you see, use the <img src="../images/data-view.png" alt="data
+view"> <strong>Data View</strong> button.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click a completed report to view.</p>
+  </li>
+  <li>
+    <p>Click the <img src="../images/data-view.png" alt="data view"> button for <strong>Data
+View</strong>, which opens the search field.</p>
+  </li>
+  <li>
+    <p>Select the criteria from the dropdown menu to filter by, and enter
+your search term.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to search.</p>
+  </li>
+</ol>
+
+<h5 id="sorting-reports-by-column">
+<a class="anchor" href="#sorting-reports-by-column" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sorting Reports by Column</h5>
+
+<p>In <img src="../images/tabular-view.png" alt="tabular view"> tabular and <img src="../images/hybrid-view.png" alt="hybrid
+view"> hybrid view, you can sort a list of
+reports by column.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports &gt; Saved Reports].</p>
+  </li>
+  <li>
+    <p>Click a report name to show a list of completed reports.</p>
+  </li>
+  <li>
+    <p>Click any blue column heading to sort the reports by the values in
+that column.</p>
+  </li>
+</ol>
+
+<h4 id="downloading-a-report">
+<a class="anchor" href="#downloading-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloading a Report</h4>
+
+<p>Download reports to analyze the data using other tools or to print the
+report.</p>
+
+<p>When you click on one of the supplied reports, you are presented with a
+group of buttons to download the report in one of three formats or to
+view the report in a full screen.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the report you want to view.</p>
+  </li>
+  <li>
+    <p>Click on the row for the instance of the report you want to
+download. If the report needs to be generated, see
+<a href="#running_reports">???</a>.</p>
+  </li>
+  <li>
+    <p>Click on the report download buttons for the type of export you
+want.</p>
+
+    <ul>
+      <li>
+        <p>Click <img src="../images/textimage.png" alt="textimage"> <strong>(Download this
+report in text format)</strong> to download as text.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/textimage.png" alt="textimage"> <strong>(Download this
+report in csv format)</strong> to download as a comma-separated file.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/2134.png" alt="2134"> <strong>(Download this report in PDF
+format)</strong> to download as PDF.</p>
+      </li>
+      <li>
+        <p>The report is automatically named with the type of report and
+date.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<div class="note">
+
+Edit and delete buttons are only visible to administrators and super
+administrators. Edit and delete functions are only available to
+customer-created reports. The ManageIQ pre-configured reports
+cannot be edited or deleted, but they can be copied.
+
+</div>
+
+<h4 id="showing-a-report-in-full-screen">
+<a class="anchor" href="#showing-a-report-in-full-screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Showing a Report in Full Screen</h4>
+
+<p>View the report in full screen to examine report details. From full
+screen, you can also print the chart that accompanies a report.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the menu:Reports[All Reports] accordion and select the
+report that you want to view.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Saved Reports</strong> tab and select a report.</p>
+  </li>
+  <li>
+    <p>On the <strong>Saved Report</strong> detail screen, click
+<img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), and click
+<img src="../images/2133.png" alt="2133"> (<strong>Show full screen Report</strong>).</p>
+  </li>
+</ol>
+
+<p>The report will appear in full screen view. Click back on your browser
+to return to the reports explorer.</p>
+
+<h3 id="adding-a-report">
+<a class="anchor" href="#adding-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a Report</h3>
+
+<p>Add reports if the default reports do not include what you need or you
+want to narrow the scope of a report. For example, you may want a report
+that shows only Windows virtual machines.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the menu:Reports[All Reports] accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>, then click
+<img src="../images/1862.png" alt="1862"> <strong>(Add a New Report)</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Columns</strong> tab, edit the <strong>Basic Report Info</strong> area.</p>
+
+    <p><img src="../images/2287.png" alt="2287"></p>
+
+    <ul>
+      <li>
+        <p>Type a unique name in <strong>Menu Name</strong> for how you want the report
+described in the menu list.</p>
+      </li>
+      <li>
+        <p>Type the <strong>Title</strong> you want displayed on the report in title.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Add fields in the <strong>Configure Report Columns</strong> area.</p>
+
+    <p><img src="../images/2288.png" alt="2288"></p>
+
+    <ul>
+      <li>
+        <p>Use the <strong>Base the report on</strong> table dropdown to choose a table
+to get fields from.</p>
+
+        <div class="note">
+
+If you change the report base or the interval, all selections
+below will be reset.
+
+</div>
+      </li>
+      <li>
+        <p>Select fields that you want in the report from <strong>Available
+Fields</strong>, and then click <img src="../images/2289.png" alt="2289"> <code class="language-plaintext highlighter-rouge">(Move
+selected fields down)</code>. In addition to the fields, you can also
+select any tags that you have created and assigned.</p>
+      </li>
+      <li>
+        <p>Change the order of the fields in the report by clicking
+<img src="../images/2290.png" alt="2290"> <code class="language-plaintext highlighter-rouge">(Move selected fields up)</code> or
+<img src="../images/2289.png" alt="2289"> <code class="language-plaintext highlighter-rouge">(Move selected fields down)</code>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Consolidation</strong> tab to consolidate and aggregate data
+points into maximum, minimum, average, and total. Specifically, this
+would be useful for analyzing performance data over a specific
+period of time.</p>
+
+    <div class="note">
+
+Please note that if you do this, you will not see individual
+records, but rather the calculation as a column header.
+
+</div>
+
+    <p><img src="../images/2291.png" alt="2291"></p>
+
+    <ul>
+      <li>
+        <p>Select the columns to group by.</p>
+
+        <p><img src="../images/2292.png" alt="2292"></p>
+      </li>
+      <li>
+        <p>For each numeric field selected in the report, you can click the
+dropdown under <strong>Calculations</strong>. Check the calculations you want
+to use.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Formatting</strong> tab to set the size of paper for a PDF
+and column header format.</p>
+
+    <ul>
+      <li>
+        <p>From the <strong>PDF Output</strong> area, select the page size from the
+dropdown.</p>
+
+        <p><img src="../images/2293.png" alt="2293"></p>
+      </li>
+      <li>
+        <p>From <strong>Specify Column Headers and Formats</strong>, type the text you
+want displayed for each field. For each numeric field, you can
+also set the numeric format.</p>
+
+        <p><img src="../images/2294.png" alt="2294"></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Styling</strong> tab to change the color of the text or the
+background for a row based on a condition.</p>
+
+    <p><img src="../images/2295.png" alt="2295"></p>
+
+    <ul>
+      <li>
+        <p>Use <strong>Style</strong> to select the format for the value. You can choose
+to change the text color or the background.</p>
+      </li>
+      <li>
+        <p>Use <strong>If</strong> to create a conditional statement for the style.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Filter</strong> tab to set filters for the data displayed in
+the report. There are two types of filters: the first is the
+<strong>Record Filter</strong> which is the primary filter of the main tables
+records, the second is also a <strong>Display Filter</strong>, which is a
+secondary filter of rows based on the fields of the child table.
+Click <img src="../images/1851.png" alt="1851"> in the appropriate area to use the
+expression editor to choose the appropriate options for your
+criteria. Based on what you choose, different options will show.</p>
+
+    <ul>
+      <li>
+        <p>Click <strong>Field</strong> to create criteria based on field values.</p>
+
+        <p><img src="../images/2296.png" alt="2296"></p>
+      </li>
+      <li>
+        <p>Click <strong>Count of</strong> to create criteria based on the count of
+something, such as the number of snapshots for a virtual
+machine, or the number of virtual machines on a host.</p>
+
+        <p><img src="../images/2297.png" alt="2297"></p>
+      </li>
+      <li>
+        <p>Click <strong>Tag</strong> to create criteria based on tags assigned to your
+resources. For example, you may want to check the power state of
+a virtual machine or see if it is tagged as production.</p>
+
+        <p><img src="../images/2298.png" alt="2298"></p>
+      </li>
+      <li>
+        <p>Click <strong>Registry</strong> to create criteria based on registry values.
+For example, you may want to check if DCOM is enabled on a
+Windows system. (Note that this applies only to Windows
+operating systems.)</p>
+
+        <p><img src="../images/2299.png" alt="2299"></p>
+      </li>
+      <li>
+        <p>Click <strong>Find</strong> to seek a particular value, and then check a
+property. For example, finding the <code class="language-plaintext highlighter-rouge">Admin</code> account and checking
+that it is enabled.</p>
+
+        <p><img src="../images/2300.png" alt="2300"></p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="1863"> <code class="language-plaintext highlighter-rouge">(Commit Expression Element
+Changes)</code> to add the expression.</p>
+
+        <div class="note">
+
+The filters that you apply will show at the bottom of the report
+so that you know which filters have been applied.
+
+</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Summary</strong> tab to select sort order, sort type,
+groupings, and group calculations for the report. <strong>Summary</strong> groups
+rows of data based on the sort breaks. You can only sort by fields
+that display in the report.</p>
+
+    <p><img src="../images/2301.png" alt="2301"></p>
+
+    <ul>
+      <li>
+        <p>Set the primary sort in <strong>Sort the Report by</strong>.</p>
+      </li>
+      <li>
+        <p>Set the next sorts in <strong>Within Above Field, Sort By</strong>.</p>
+      </li>
+      <li>
+        <p>Select the type of sort, ascending or descending, in <strong>Sort
+order</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Show Sort breaks</strong>, select <strong>Yes</strong> to show the sort breaks,
+<strong>Counts</strong> to show sort breaks with the count, or <strong>No</strong> for no
+sort breaks.</p>
+
+        <p><img src="../images/2302.png" alt="2302"></p>
+      </li>
+      <li>
+        <p>For any numeric field, you can select to show minimum, average,
+maximum, and total in the sort break.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Charts</strong> tab to create a chart for the report. This
+is not required.</p>
+
+    <p><img src="../images/chartsscreen.png" alt="chartsscreen"></p>
+
+    <ul>
+      <li>
+        <p>Use <strong>Choose a chart type</strong> to select a type of chart. Note that
+some charts may not produce the result you are looking for based
+on the types of fields in the report and its sort order.</p>
+      </li>
+      <li>
+        <p>If you only want to see the top values, select the number of top
+values from <strong>Top values to show</strong>.</p>
+      </li>
+      <li>
+        <p>If you want to see the total number of values that are not
+categorized or evaluated against others, check <strong>Sum ‘Other’
+values</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click on the <strong>Timeline</strong> tab to select a timeline for the report.
+You must have a field of time or date format to use this feature.</p>
+
+    <p><img src="../images/2304.png" alt="2304"></p>
+
+    <ul>
+      <li>
+        <p>Use <strong>Base Timeline on</strong> to select a column in date or time
+format for the report.</p>
+      </li>
+      <li>
+        <p>Select a unit of time for the first band in <strong>First band unit</strong>.</p>
+      </li>
+      <li>
+        <p>Select a unit of time for the second band in <strong>Second band
+unit</strong>.</p>
+      </li>
+      <li>
+        <p>Select a unit of time for the third band in <strong>Third band unit</strong>.</p>
+      </li>
+      <li>
+        <p>Select an <strong>Event to position at</strong>.</p>
+      </li>
+      <li>
+        <p>Select the range for the event to position from <strong>Show events
+from last</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Previews</strong> tab to see a sample of your report.</p>
+  </li>
+  <li>
+    <p>When you have the report that you want, click <strong>Add</strong> to create the
+new report.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+After the new report is created, to make the report accessible from the
+report menu, you must add it to a report menu.
+
+</div>
+
+<h3 id="copying-a-report">
+<a class="anchor" href="#copying-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Report</h3>
+
+<p>Use this feature to copy a report that is similar to one that you want
+to create. By copying a report, you only need to make minor edits
+instead of creating an entirely new report.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the menu:Reports[All Reports] accordion and select the
+report that you want to copy.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
+<img src="../images/1859.png" alt="1859"> (<strong>Copy this report</strong>).</p>
+  </li>
+  <li>
+    <p>On the Columns tab, edit the <strong>Basic Report Info</strong> area to include a
+new <strong>Menu Name</strong>. Each <strong>Menu Name</strong> must be unique.</p>
+  </li>
+  <li>
+    <p>Make any other changes you need. See “Adding a Report” for details
+on the changes you can make.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="editing-a-report">
+<a class="anchor" href="#editing-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Report</h3>
+
+<p>If you find that a report is not giving you the data that you need, you
+can edit it after it has been created. Note that only reports that you
+have created can be modified. Only administrators and super
+administrators of ManageIQ can add, copy, edit, and delete
+reports.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the menu:Reports[All Reports] accordion and select the
+report you want to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1851.png" alt="1851"> (<strong>Edit this Report</strong>).</p>
+  </li>
+  <li>
+    <p>Make any changes you need.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="deleting-a-report">
+<a class="anchor" href="#deleting-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Report</h3>
+
+<p>Delete reports when you find that they are no longer useful. Only
+administrators and super administrators of ManageIQ can add,
+copy, edit, and delete reports.</p>
+
+<div class="note">
+
+Please note that only customer-created reports can be deleted.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the menu:Reports[All Reports] accordion and select the
+report you want to delete.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1861.png" alt="1861"> (<strong>Delete this Report from the
+Database</strong>).</p>
+
+    <div class="note">
+
+The **Delete this report from the Database** option will only appear
+on reports you have created. Default reports cannot be deleted.
+
+</div>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="importing-a-report">
+<a class="anchor" href="#importing-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing a Report</h3>
+
+<p>Reports are stored in the VMDB; however, you can share customized
+reports among VMDBs. To do this use the export and import feature of
+reports.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Select <strong>Custom Reports</strong> from the <strong>Import/Export</strong> accordion.</p>
+  </li>
+  <li>
+    <p>In the <strong>Import</strong> area, click <strong>Browse</strong> to select an import file.</p>
+  </li>
+  <li>
+    <p>To overwrite an existing report with the same menu name, select
+<strong>Overwrite existing reports</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Upload</strong> to import the report to the <strong>Company-Custom</strong>
+folder.</p>
+  </li>
+</ol>
+
+<h3 id="exporting-a-report">
+<a class="anchor" href="#exporting-a-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exporting a Report</h3>
+
+<p>Reports are stored in the VMDB. Custom reports may be shared among
+VMDBs. Share your custom reports using the export and import features.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Select <strong>Custom Reports</strong> from the <strong>Import/Export</strong> accordion.</p>
+  </li>
+  <li>
+    <p>In the <strong>Export</strong> area, select the reports to export.</p>
+  </li>
+  <li>
+    <p>Click <strong>Export</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="managing-report-menus">
+<a class="anchor" href="#managing-report-menus" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Report Menus</h3>
+
+<p>By default, all account roles have the same reports available. If you
+have the super administrator or administrator role, you can customize
+the accordions, the folders within them, and the locations of your
+reports.</p>
+
+<div class="note">
+
+When you create your own report, the report is not automatically
+available. You must add it to a report menu.
+
+</div>
+
+<p>The report menu is a hierarchical structure that consists of the
+following components:</p>
+
+<ul>
+  <li>
+    <p>The top level, under which the accordions are shown. (Top level is
+only displayed when you are in the report menu editor.)</p>
+  </li>
+  <li>
+    <p>Accordions that are general categories for the reports. The defaults
+supplied are <strong>Configuration Management</strong>, <strong>Migration Readiness</strong>,
+<strong>Operations</strong>, <strong>VM Sprawl</strong>, <strong>Relationships</strong>, <strong>Events</strong>,
+<strong>Performance by Asset Type</strong>, <strong>Trending</strong>, <strong>Tenants</strong>,
+<strong>Provisioning</strong>, and <strong>Running Processes</strong>.</p>
+  </li>
+  <li>
+    <p>Folders that are used to further organize reports within an
+accordion. For example, under the <strong>Configuration Management</strong>,
+there are folders for virtual machines, hosts, and other virtual
+infrastructure components.</p>
+  </li>
+  <li>
+    <p>Reports that are stored directly in the folders.</p>
+  </li>
+</ul>
+
+<h4 id="managing-report-menu-accordions">
+<a class="anchor" href="#managing-report-menu-accordions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Report Menu Accordions</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Edit Report Menus</strong> folder.</p>
+  </li>
+  <li>
+    <p>Click the role whose menus you want to customize.</p>
+  </li>
+  <li>
+    <p>Click on <strong>Top Level</strong> to organize, add, and delete folders.</p>
+
+    <ul>
+      <li>
+        <p>Click <img src="../images/movetotop.png" alt="movetotop"> <strong>(Move selected
+folder to top)</strong> to move the folder to the top of the list.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/moveup.png" alt="moveup"> <strong>(Move selected folder
+up)</strong> to move the folder up.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/movedown.png" alt="movedown"> <strong>(Move selected folder
+down)</strong> to move the folder down.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/movetobottom.png" alt="movetobottom"> <strong>(Move selected
+folder to bottom)</strong> to move the folder to the bottom of the
+list.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/delete.png" alt="delete"> <strong>(Delete selected folder
+and its contents)</strong> to delete a folder.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/add.png" alt="add"> <strong>(Add folder to selected
+folder)</strong> to add an folder.</p>
+
+        <div class="note">
+
+If you are creating a new folder, **Top Level** must be selected
+under **Reports**. Be sure to select the folder you want to
+create a subfolder for on the left pane. To name the folder,
+double-click on **New Folder**, then click on **Top Level** in
+the **Reports** area.
+
+</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When you are finished adding folders, click <strong>Commit</strong>. To revert,
+click <strong>Discard</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>The new folder is added, and you can add folders in which to store
+reports to it. You can also organize the reports into folder that are
+meaningful to you.</p>
+
+<h4 id="managing-report-menu-folders">
+<a class="anchor" href="#managing-report-menu-folders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Report Menu Folders</h4>
+
+<ol>
+  <li>
+    <p>Log in to the console as a user who is assigned either the super
+administrator or administrator account role.</p>
+  </li>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Edit Report Menus</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click the role whose menus you want to customize.</p>
+  </li>
+  <li>
+    <p>Click on the accordion name you want to organize or add folders to.</p>
+
+    <ul>
+      <li>
+        <p>Click <img src="../images/movetotop.png" alt="movetotop"> <strong>(Move selected
+folder to top)</strong> to move the folder to the top of the list.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/moveup.png" alt="moveup"> <strong>(Move selected folder
+up)</strong> to move the folder up.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/movedown.png" alt="movedown"> <strong>(Move selected folder
+down)</strong> to move the folder down.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/movetobottom.png" alt="movetobottom"> <strong>(Move selected
+folder to bottom)</strong> to move the folder to the bottom of the
+list.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/delete.png" alt="delete"> <strong>(Delete selected folder
+and its contents)</strong> to delete an folder.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/add.png" alt="add"> <strong>(Add subfolder to selected
+folder)</strong> to add a folder. When creating a subfolder, be sure to
+select the folder that you want the subfolder to show under. To
+name the folder, double-click on <code class="language-plaintext highlighter-rouge">New Folder</code>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When you are finished making changes click <strong>Commit</strong>. To revert,
+click <strong>Discard</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+Only reports that are not already in another folder can be assigned.
+
+</div>
+
+<h4 id="organizing-reports-in-report-menus">
+<a class="anchor" href="#organizing-reports-in-report-menus" aria-hidden="true"><span class="octicon octicon-link"></span></a>Organizing Reports in Report Menus</h4>
+
+<ol>
+  <li>
+    <p>Log in to the console as a user who is assigned either the Super
+Administrator or Administrator Account Role.</p>
+  </li>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Edit Report Menus</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click the role whose menus you want to customize.</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Report</strong> accordion and menus using the triangles to the
+left of the item name until you are able to select the subfolder
+where you want to put reports.</p>
+  </li>
+  <li>
+    <p>Choose one of the following actions:</p>
+
+    <ul>
+      <li>
+        <p>To add a report, select a report from the <strong>Available Reports</strong>
+area on the right and click <img src="../images/moveleft.png" alt="moveleft">
+<strong>(Move selected reports left)</strong>.</p>
+      </li>
+      <li>
+        <p>To remove a report from a folder, select the report from the
+<strong>Selected Reports</strong> area and click
+<img src="../images/moveright.png" alt="moveright"> <strong>(Move selected reports
+right)</strong>.</p>
+      </li>
+      <li>
+        <p>To move a report to the top of the folder, select the report and
+click <img src="../images/movetotop.png" alt="movetotop"> <strong>(Move selected
+reports to top)</strong>.</p>
+      </li>
+      <li>
+        <p>To move a report up one place in the folder, select the report
+and click <img src="../images/moveup.png" alt="moveup"> <strong>(Move selected reports
+up)</strong>.</p>
+      </li>
+      <li>
+        <p>To move a report down one place in the folder, select the report
+and click <img src="../images/movedown.png" alt="movedown"> <strong>(Move selected
+reports down)</strong>.</p>
+      </li>
+      <li>
+        <p>To move a report to the bottom of the folder, select the report
+and click <img src="../images/movetobottom.png" alt="movetobottom"> <strong>(Move
+selected reports to bottom)</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When you are finished making changes click <strong>Commit</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>The changes are made. The next time a user with this Account Role logs
+in, the new report and menu structure will be displayed.</p>
+
+<h2 id="chargeback">
+<a class="anchor" href="#chargeback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chargeback</h2>
+
+<p>The chargeback feature allows you to calculate monetary virtual machine
+charges based on owner or company tag. To use this feature you must be
+collecting capacity and utilization data.</p>
+
+<h3 id="chargeback-rates">
+<a class="anchor" href="#chargeback-rates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chargeback Rates</h3>
+
+<p>ManageIQ provides a default set of rates for calculating
+chargeback costs, but you can create your own set of computing and
+storage costs by navigating to menu:Overview[Chargeback] and clicking
+the <strong>Rates</strong> accordion.</p>
+
+<p>You can configure chargeback rates for various resources by selecting
+either <strong>Compute</strong> or <strong>Storage</strong> in the <strong>Rates</strong> accordion.
+<strong>Compute</strong> sets chargeback rates for CPU, disk I/O, fixed compute cost,
+memory, and network I/O items, while <strong>Storage</strong> sets chargeback rates
+for fixed storage cost and disk storage.</p>
+
+<p>Chargeback costs are computed using a set formula based on hourly cost
+per unit and hourly usage.</p>
+
+<p>Chargeback can be calculated in the following currencies:</p>
+
+<ul>
+  <li>
+    <p>Australian dollar (AUD)</p>
+  </li>
+  <li>
+    <p>Brazilian real (BRL)</p>
+  </li>
+  <li>
+    <p>Swiss franc (CHF)</p>
+  </li>
+  <li>
+    <p>Chinese yuan renminbi (CNY)</p>
+  </li>
+  <li>
+    <p>Euro (EUR)</p>
+  </li>
+  <li>
+    <p>Pound sterling (GBP)</p>
+  </li>
+  <li>
+    <p>Indian rupee (INR)</p>
+  </li>
+  <li>
+    <p>Japanese yen (JPY)</p>
+  </li>
+  <li>
+    <p>South Korean won (KRW)</p>
+  </li>
+  <li>
+    <p>Mexican peso (MXN)</p>
+  </li>
+  <li>
+    <p>Norwegian krone (NOK)</p>
+  </li>
+  <li>
+    <p>Russian ruble (RUB)</p>
+  </li>
+  <li>
+    <p>Swedish krona (SEK)</p>
+  </li>
+  <li>
+    <p>Turkish lira (TRY)</p>
+  </li>
+  <li>
+    <p>United States dollar (USD)</p>
+  </li>
+  <li>
+    <p>South African rand (ZAR)</p>
+  </li>
+</ul>
+
+<p>Chargeback rates can be assigned at a single rate or by tiers, where
+rates are assigned in ranges depending on level of usage.</p>
+
+<p>Additionally, chargeback can be calculated at one fixed rate, or by a
+combination of fixed and variable rates per tier. Fixed rates are
+charged once per unit of time, and the variable rate is calculated by
+the level of usage multiplied by the number of resources used in a unit
+of time.</p>
+
+<h4 id="memory-used-cost">
+<a class="anchor" href="#memory-used-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Memory Used Cost</h4>
+
+<p>Calculating the Memory Used Cost in dollars ($) for a day can be
+expressed in the following ways:</p>
+
+<ul>
+  <li>
+    <p>Memory allocation per hour (in MB) * Hourly Allocation cost per
+megabyte * Number of Memory Allocation metrics available for the
+day</p>
+  </li>
+  <li>
+    <p>Sum of Memory allocation for the day (in MB) * Hourly Allocation
+cost per megabyte</p>
+  </li>
+  <li>
+    <p>Sum of Memory allocation for the day (in MB) * Daily Allocation
+cost per megabyte / 24</p>
+  </li>
+</ul>
+
+<p>Memory costs can be measured in B, KB, MB, GB, or TB.</p>
+
+<p>In a scenario where 9.29 GB of memory is used in a day with the
+chargeback rate set at one dollar ($1) per megabyte per day, the Memory
+Used Cost would be $396.42.</p>
+
+<ul>
+  <li>
+    <p>9.29 GB = 9514.08 MB</p>
+  </li>
+  <li>
+    <p>9514.08 MB * $1 (per MB per day) = $9514.08</p>
+  </li>
+  <li>
+    <p>$9514.08 / 24 = $396.42 Memory Used Cost</p>
+  </li>
+</ul>
+
+<h4 id="cpu-total-cost">
+<a class="anchor" href="#cpu-total-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>CPU Total Cost</h4>
+
+<p>The CPU Total Cost is defined as the number of virtual CPUs over the
+selected interval (hour, day, week, month). CPU costs can be measured in
+units of Hz, KHz, MHz, GHz, or THz, as specified when creating a
+chargeback rate.</p>
+
+<p>In a scenario where 16 CPUs are used in a day with the chargeback rate
+set at one dollar per CPU per day, the CPU Total Cost would be $16.</p>
+
+<ul>
+  <li>16 CPUs * $1 (per CPU per day) = $16 CPU Total Cost</li>
+</ul>
+
+<h4 id="cpu-used-cost">
+<a class="anchor" href="#cpu-used-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>CPU Used Cost</h4>
+
+<p>The CPU Used Cost is defined as the average CPU used in MHz over the
+selected rate interval (hour, day, week, month). CPU Used Cost is not
+supported for containers providers.</p>
+
+<p>In a scenario where 2.5 GHz is used in a day with the chargeback rate
+set at $0.01 per MHz per day, the CPU Used Cost would be $25.</p>
+
+<ul>
+  <li>
+    <p>2.5 GHz = 2500 MHz</p>
+  </li>
+  <li>
+    <p>2500 MHz * $0.01 (per MHz per day) = $25 CPU Used Cost</p>
+  </li>
+</ul>
+
+<h4 id="storage-allocated-cost">
+<a class="anchor" href="#storage-allocated-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Storage Allocated Cost</h4>
+
+<p>The Storage Allocated Cost is defined as the Allocated Disk Storage in
+bytes over the selected rate interval (hour, day, week, month). Storage
+costs can be measured in B, KB, MB, GB, or TB.</p>
+
+<p>In a scenario where 500 GB are used in a day with the chargeback rate
+set at $0.10 per GB per day, the Storage Allocated Cost would be $50.</p>
+
+<ul>
+  <li>
+    <p>536,870,912,000 bytes = 500 GB</p>
+  </li>
+  <li>
+    <p>500 GB * $0.10 (per GB per day) = $50 Storage Allocated Cost</p>
+  </li>
+</ul>
+
+<h4 id="storage-total-cost">
+<a class="anchor" href="#storage-total-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Storage Total Cost</h4>
+
+<p>The Storage Total Cost is defined as the Used Disk Storage in bytes over
+the selected rate interval (hour, day, week, month).</p>
+
+<p>In a scenario where 250 GB are used in a day with the chargeback rate
+set at $0.10 per GB per day, the Storage Total Cost would be $25.</p>
+
+<ul>
+  <li>
+    <p>268,435,456,000 bytes = 250 GB</p>
+  </li>
+  <li>
+    <p>250 GB * $0.10 (per GB per day) = $25 Storage Total Cost</p>
+  </li>
+</ul>
+
+<h4 id="storage-used-cost">
+<a class="anchor" href="#storage-used-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Storage Used Cost</h4>
+
+<p>The Storage Used Cost is defined as the Used Disk Storage in bytes over
+the selected rate interval (hour, day, week, month).</p>
+
+<p>In a scenario where 250 GB are used in a day with the chargeback rate
+set at $0.10 per GB per day, the Storage Used Cost would be $25.</p>
+
+<ul>
+  <li>
+    <p>268,435,456,000 bytes = 250 GB</p>
+  </li>
+  <li>
+    <p>250 GB * $0.10 (per GB per day) = $25 Storage Used Cost</p>
+  </li>
+</ul>
+
+<div class="note">
+
+The following chargeback rates are not supported for containers
+providers:
+
+  - Allocated CPU count
+
+  - Used CPU
+
+  - Used disk I/O
+
+  - Allocated memory
+
+</div>
+
+<h3 id="creating-chargeback-rates">
+<a class="anchor" href="#creating-chargeback-rates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Chargeback Rates</h3>
+
+<p>ManageIQ allows you to create your own set of computing and
+storage costs to use for billing.</p>
+
+<p>Chargeback rates can be configured at a single rate or in tiers, where
+one rate is assigned to one usage range, and another rate is assigned to
+a different usage range. You can also assign fixed and variable rates
+per tier if desired.</p>
+
+<p>There are three methods to create a chargeback rate: editing or copying
+an existing rate, or creating a new rate.</p>
+
+<h4 id="editing-a-chargeback-rate">
+<a class="anchor" href="#editing-a-chargeback-rate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Chargeback Rate</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Chargeback].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Rates</strong> accordion and select an existing rate from under
+<strong>Compute</strong> or <strong>Storage</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong> and
+<img src="../images/1851.png" alt="1851"> <strong>(Edit this Chargeback Rate)</strong>.</p>
+  </li>
+  <li>
+    <p>Edit the rate as desired.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong> at the bottom of the screen to save the chargeback
+rate.</p>
+  </li>
+</ol>
+
+<h4 id="copying-a-chargeback-rate">
+<a class="anchor" href="#copying-a-chargeback-rate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Chargeback Rate</h4>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Chargeback].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Rates</strong> accordion and select an existing rate from under
+<strong>Compute</strong> or <strong>Storage</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong> and
+<img src="../images/1859.png" alt="1859"> <strong>(Copy this Chargeback Rate)</strong>.</p>
+  </li>
+  <li>
+    <p>Edit the rate as desired.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> at the bottom of the screen to save the chargeback
+rate.</p>
+  </li>
+</ol>
+
+<h4 id="adding-a-chargeback-rate">
+<a class="anchor" href="#adding-a-chargeback-rate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a Chargeback Rate</h4>
+
+<p>The following example shows a scenario to create a new chargeback rate
+for allocated CPU usage in Euro per week measured by the following
+tiers, calculating both fixed and variable costs:</p>
+
+<ul>
+  <li>
+    <p>Tier 1: 0-2 CPU = 1 Euro fixed + 0.5 Euro variable</p>
+  </li>
+  <li>
+    <p>Tier 2: 2-4 CPU = 0.8 Euro fixed + 0.4 Euro variable</p>
+  </li>
+  <li>
+    <p>Tier 3: 4 CPU and above = 0.6 Euro fixed + 0.2 Euro variable</p>
+  </li>
+</ul>
+
+<p>To configure this rate:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Chargeback].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Rates</strong> accordion and select <strong>Compute</strong> to create a CPU
+chargeback rate.</p>
+
+    <ol>
+      <li>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong> and
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Chargeback Rate)</strong>.</li>
+    </ol>
+  </li>
+  <li>
+    <p>Type in a <strong>Description</strong> for the chargeback rate.</p>
+  </li>
+  <li>
+    <p>Select <strong>Euro</strong> for currency.</p>
+  </li>
+  <li>
+    <p>In <strong>Rate Details</strong>, select the time, and fill in the range and
+rates for each tier. Alternatively, a single chargeback rate can be
+configured by using only one tier. For this example, in <strong>Allocated
+CPU Count</strong>, configure:</p>
+
+    <ol>
+      <li>
+        <p>For tier 1, set:</p>
+
+        <ol>
+          <li>
+            <p>In <strong>Per Time</strong>, select <strong>Hourly</strong>.</p>
+          </li>
+          <li>
+            <p>In <strong>Range</strong>, specify the CPU range: <strong>Start</strong> remains as
+<code class="language-plaintext highlighter-rouge">0.0</code> and <strong>Finish</strong> is <code class="language-plaintext highlighter-rouge">2</code>.</p>
+          </li>
+          <li>
+            <p>In <strong>Rate</strong>, specify <code class="language-plaintext highlighter-rouge">1</code> for the <strong>Fixed</strong> rate, and <code class="language-plaintext highlighter-rouge">0.5</code>
+for the <strong>Variable</strong> rate.</p>
+          </li>
+          <li>
+            <p>Click <strong>Add</strong> under <strong>Actions</strong> to create a new, blank
+<strong>Allocated CPU Count</strong> line for tier 2.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>For tier 2, set:</p>
+
+        <ol>
+          <li>
+            <p>In the new line in <strong>Range</strong>, specify the CPU range:
+<strong>Start</strong> is <code class="language-plaintext highlighter-rouge">2</code> and <strong>Finish</strong> is <code class="language-plaintext highlighter-rouge">4</code>.</p>
+          </li>
+          <li>
+            <p>In <strong>Rate</strong>, specify <code class="language-plaintext highlighter-rouge">0.8</code> for the <strong>Fixed</strong> rate, and <code class="language-plaintext highlighter-rouge">0.4</code>
+for the <strong>Variable</strong> rate.</p>
+          </li>
+          <li>
+            <p>Click <strong>Add</strong> under <strong>Actions</strong> to create another new, blank
+<strong>Allocated CPU Count</strong> line for tier 3.</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>For tier 3, set:</p>
+
+        <ol>
+          <li>
+            <p>In the new line in <strong>Range</strong>, specify the CPU range:
+<strong>Start</strong> is <code class="language-plaintext highlighter-rouge">4</code> and leave <strong>Finish</strong> as <code class="language-plaintext highlighter-rouge">Infinity</code>.</p>
+          </li>
+          <li>
+            <p>In <strong>Rate</strong>, specify <code class="language-plaintext highlighter-rouge">0.6</code> for the <strong>Fixed</strong> rate, and <code class="language-plaintext highlighter-rouge">0.2</code>
+for <strong>Variable</strong>.</p>
+
+            <p><img src="../images/tiered_chargeback.png" alt="tiered chargeback"></p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> at the bottom of the screen to save the chargeback
+rate.</p>
+  </li>
+</ol>
+
+<p>The rate can now be assigned.</p>
+
+<h3 id="assigning-chargeback-rates">
+<a class="anchor" href="#assigning-chargeback-rates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning Chargeback Rates</h3>
+
+<p>ManageIQ allows you to assign chargeback rates by choosing from
+<strong>Compute</strong> and <strong>Storage</strong>. You can assign either a custom chargeback
+rate, or a default rate for Compute, Storage, or Container Images.</p>
+
+<div class="note">
+
+The **Default Container Image Rate** can be useful when applied to a
+containers provider with multiple images, where only some of the images
+have a chargeback rate assigned; the images without a custom rate will
+then use the default rate.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Chargeback].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Assignments</strong> accordion, and click either <strong>Compute</strong> or
+<strong>Storage</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="configuring-chargeback-for-compute">
+<a class="anchor" href="#configuring-chargeback-for-compute" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Chargeback for Compute</h4>
+
+<p>Use <strong>Compute</strong> to assign a compute chargeback rate. You can assign
+chargeback rates to <strong>The Enterprise</strong>, <strong>Selected Cloud/Infrastructure
+Providers</strong>, <strong>Selected Clusters/Deployment Roles</strong>, <strong>Selected
+Containers Providers</strong>, <strong>Tagged VMs and Instances</strong>, <strong>Tagged Images</strong>,
+<strong>Labeled Images</strong>, or <strong>Tenants</strong>.</p>
+
+<ol>
+  <li>
+    <p>From the <strong>Basic Info</strong> area, use the <strong>Assign To</strong> list to select a
+type of assignee to assign the rate set to.</p>
+  </li>
+  <li>
+    <p>For <strong>Tagged VMs and Instances</strong> and <strong>Tagged Images</strong> select a
+<strong>Tag Category</strong>.</p>
+  </li>
+  <li>
+    <p>For each item to set, select the chargeback rate to use. The options
+displayed vary based on the type you select.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="configuring-chargeback-for-storage">
+<a class="anchor" href="#configuring-chargeback-for-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Chargeback for Storage</h4>
+
+<p>Use <strong>Storage</strong> to assign a storage chargeback rate. You can assign
+chargeback rates to <strong>The Enterprise</strong>, <strong>Selected Datastores</strong>,
+<strong>Tagged Datastores</strong>, or <strong>Tenants</strong>.</p>
+
+<ol>
+  <li>
+    <p>From the <strong>Basic Info</strong> area, use the <strong>Assign To</strong> list to select a
+type of assignee to assign the rate set to.</p>
+  </li>
+  <li>
+    <p>For <strong>Tagged Datastores</strong> select a <strong>Tag Category</strong>.</p>
+  </li>
+  <li>
+    <p>For each item to set, select the chargeback rate to use. The options
+displayed vary based on the type you select.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>The rate is assigned. The next time you generate a chargeback report,
+these values will be used.</p>
+
+<div class="note">
+
+When viewing chargeback, there is a rate for a virtual machine for the
+number of the CPUs. The chargeback for this parameter is calculated
+based on when the virtual machine is running. If the virtual machine is
+not running, then it is not charged for CPU allocation.
+
+</div>
+
+<h3 id="creating-a-chargeback-report">
+<a class="anchor" href="#creating-a-chargeback-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Chargeback Report</h3>
+
+<p>ManageIQ allows you to create chargeback reports to monitor costs
+you charged.</p>
+
+<div class="note">
+
+When creating a chargeback report, the **Total Cost** is the complete
+cost for the chosen workload over the selected time frame. Total costs
+are calculated by adding the calculated costs for the amount used and
+the amount allocated for the time frame. When adding cost related
+columns to display on your report, be sure to select all rate assigned
+fields to present a comprehensive accounting of total costs.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Reports].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Reports</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"><strong>(Configuration)</strong>,
+<img src="../images/1862.png" alt="1862"> <strong>(Add a new Report)</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Columns</strong> tab, fill out the <strong>Basic Report Info</strong> area.</p>
+
+    <ul>
+      <li>
+        <p>Type a unique name in <strong>Menu Name</strong> for how you want the report
+described in the menu list.</p>
+      </li>
+      <li>
+        <p>Type the <strong>Title</strong> to display on the report.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Add fields in the <strong>Configure Report Columns</strong> area.</p>
+
+    <ul>
+      <li>
+        <p>From the <strong>Base the report on</strong> list, select <strong>Chargebacks</strong>.</p>
+      </li>
+      <li>
+        <p>Select the fields to include in the report from the <strong>Available
+Fields</strong> list, then click <img src="../images/2289.png" alt="2289"> <strong>(Move
+selected fields down)</strong>. In addition to the fields, you can also
+select any tags that you have created and assigned.</p>
+      </li>
+      <li>
+        <p>Change the order of the fields in the report by clicking
+<img src="../images/2290.png" alt="2290"> <strong>(Move selected fields up)</strong> or
+<img src="../images/2289.png" alt="2289"> <strong>(Move selected fields down)]</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Formatting</strong> tab to set the size of paper for a PDF and
+column header format.</p>
+
+    <ul>
+      <li>
+        <p>From the <strong>PDF Output</strong> area, select the page size from the
+<strong>Page Size</strong> list.</p>
+      </li>
+      <li>
+        <p>From <strong>Specify Column Headers and Formats</strong>, type the text to
+display for each field. For each numeric field, you can also set
+the numeric format.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Filter</strong> tab to set filters for the data displayed in
+the report.</p>
+
+    <ul>
+      <li>
+        <p>From <strong>Chargeback Filters</strong>, select how you want the costs to
+show, the tag category, the tag, and how you want the items
+grouped.</p>
+      </li>
+      <li>
+        <p>From <strong>Chargeback Interval</strong>, select the time interval. You must
+have a full interval worth of data in order to select an option
+other than <strong>Partial</strong> in the <strong>Daily Ending With</strong> list.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <strong>Preview</strong> tab, and then <strong>Load</strong> to see what the report
+will look like.</p>
+  </li>
+  <li>
+    <p>When you are satisfied that you have the report that you want, click
+<strong>Add</strong> to create the new report.</p>
+  </li>
+</ol>
+
+<p>The new report is created. To make the report accessible from the
+<strong>Report</strong> menu, you must add it to a report menu.</p>
+
+<h2 id="optimization">
+<a class="anchor" href="#optimization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization</h2>
+
+<p>Optimization provides administrators with a series of reports to provide
+meaningful information on areas for optimizing resources such as CPU,
+memory and disk and identify potential savings.</p>
+
+<h3 id="running-an-optimization-report">
+<a class="anchor" href="#running-an-optimization-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running an Optimization Report</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Optimization].</p>
+  </li>
+  <li>
+    <p>Click <strong>Queue Report</strong> for each report type you choose to run.</p>
+  </li>
+</ol>
+
+<h3 id="viewing-optimization-reports">
+<a class="anchor" href="#viewing-optimization-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing Optimization Reports</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Overview[Optimization].</p>
+  </li>
+  <li>
+    <p>Click on the report type you wish to view details for.</p>
+  </li>
+  <li>
+    <p>On the report type screen, click on a report instance to view
+details.</p>
+  </li>
+  <li>
+    <p>Sort reports by clicking on the field names at the top of the
+report.</p>
+  </li>
+</ol>
+
+<h2 id="alerts">
+<a class="anchor" href="#alerts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alerts</h2>
+
+<h3 id="assigning-the-notifier-role">
+<a class="anchor" href="#assigning-the-notifier-role" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning the Notifier Role</h3>
+
+<ol>
+  <li>
+    <p>Click <img src="../images/config-gear.png" alt="config gear"> (<strong>Configuration</strong>).</p>
+  </li>
+  <li>
+    <p>Click the <strong>Settings</strong> accordion, and select the ManageIQ
+server.</p>
+  </li>
+  <li>
+    <p>From the <strong>Server Control</strong> tab, select the <strong>Notifier</strong> role.</p>
+
+    <p><img src="../images/6255.png" alt="6255"></p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-an-alert">
+<a class="anchor" href="#creating-an-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Alert</h3>
+
+<p>This section outlines the basic procedure to create an alert.</p>
+
+<div class="note">
+
+To send emails or SNMP traps from the ManageIQ server, you must
+enable the Notifier server role and set up SMTP email or SNMP traps. For
+more information, see *General Configuration*.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alerts</strong> accordion, then click <img src="../images/1847.png" alt="1847">
+(<strong>Configuration</strong>), <img src="../images/1862.png" alt="1862"> (<strong>Add a New
+Alert</strong>).</p>
+  </li>
+  <li>
+    <p>Enter the basic details of the alert:</p>
+
+    <ol>
+      <li>
+        <p>Enter a description in the <strong>Description</strong> field.</p>
+      </li>
+      <li>
+        <p>Select the <strong>Active</strong> check box to enable the alert after
+creation.</p>
+      </li>
+      <li>
+        <p>Select the severity level from the <strong>Severity</strong> list.</p>
+      </li>
+      <li>
+        <p>Select the inventory item on which to base the alert from the
+<strong>Based On</strong> list.</p>
+      </li>
+      <li>
+        <p>Select the type of event that triggers the alert from the <strong>What
+to Evaluate</strong> list.</p>
+      </li>
+      <li>
+        <p>Select the frequency with which to be notified if the event log
+threshold is reached from the <strong>Notification Frequency</strong> list.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Configure the parameters of the alert.</p>
+
+    <div class="note">
+
+The available parameters depend on the options you selected in the
+**Based On** and **What to Evaluate** lists. See later sections for
+the details of these parameters.
+
+</div>
+  </li>
+  <li>
+    <p>Optionally, select <strong>Send an E-mail</strong> to configure options so that
+an email is sent when the alert is triggered:</p>
+
+    <ol>
+      <li>
+        <p>Enter the email address from which to send the email in the
+<strong>From</strong> field.</p>
+      </li>
+      <li>
+        <p>Select a user from the <strong>Add a User</strong> list to add a user
+registered in ManageIQ. The user must have a valid email
+address entered under accounts.</p>
+      </li>
+      <li>
+        <p>Enter the email address of a user in the <strong>Add (enter
+manually)</strong> field and click <img src="../images/2261.png" alt="2261"> to add a
+user not registered in ManageIQ.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Optionally, select <strong>Send an SNMP Trap</strong> to configure options so
+that an SNMP trap is sent when the alert is triggered:</p>
+
+    <ol>
+      <li>
+        <p>Enter the IP addresses of the hosts to send the trap in the
+<strong>Host</strong> fields.</p>
+      </li>
+      <li>
+        <p>Select the version of SNMP to use from the <strong>Version</strong> list:</p>
+
+        <ol>
+          <li>
+            <p>If you select <strong>v1</strong>, enter a trap number in the <strong>Trap
+Number</strong> field. Enter <strong>1</strong>, <strong>2</strong>, or <strong>3</strong>, based on the
+appropriate suffix number in
+<a href="#snmp-trap-identifiers">table_title</a>.</p>
+          </li>
+          <li>
+            <p>If you select <strong>v2</strong>, enter a trap object ID in the <strong>Trap
+Object ID</strong> field. Enter <strong>info</strong>, <strong>warning</strong>, or
+<strong>critical</strong> based on the values in
+<a href="#snmp-trap-identifiers">table_title</a>.</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Object ID</th>
+                  <th>Suffix Number Added to PEN</th>
+                  <th>PEN with the Suffix Added</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>info</td>
+                  <td>1</td>
+                  <td>1.3.6.1.4.1.33482.1</td>
+                </tr>
+                <tr>
+                  <td>warn, warning</td>
+                  <td>2</td>
+                  <td>1.3.6.1.4.1.33482.2</td>
+                </tr>
+                <tr>
+                  <td>crit, critical, error</td>
+                  <td>3</td>
+                  <td>1.3.6.1.4.1.33482.3</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>SNMP Trap Identifiers</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Optionally, select <strong>Send a Management Event</strong> to trigger an
+automation event:</p>
+
+    <ol>
+      <li>Enter the name of the event that exists in the <strong>Process/Event
+Class</strong> in the <strong>Event Name</strong> field.</li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-hardware-reconfigured-alert">
+<a class="anchor" href="#creating-a-hardware-reconfigured-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Hardware Reconfigured Alert</h3>
+
+<p>Use a hardware reconfigure alert to detect changes to the amount of
+memory or the number of CPUs on a virtual machine.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alerts</strong> accordion, then click <img src="../images/1847.png" alt="1847">
+(<strong>Configuration</strong>), <img src="../images/1862.png" alt="1862"> (<strong>Add a new
+Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <ul>
+      <li>
+        <p>Type in a description for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>VM and Instance</strong>.</p>
+      </li>
+      <li>
+        <p>From <strong>What to Evaluate</strong>, select <strong>Hardware Reconfigured</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if hardware reconfiguration is detected.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>From <strong>Hardware Attribute</strong>, select Number of CPUs. From the next
+dropdown, select <strong>Decreased</strong>.</p>
+
+    <p><img src="../images/1973.png" alt="1973"></p>
+  </li>
+  <li>
+    <p>After setting the parameters, select what you want the alert to do.
+You can send an email, create an SNMP Trap, or send a management
+event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-normal-operating-range-alert">
+<a class="anchor" href="#creating-a-normal-operating-range-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Normal Operating Range Alert</h3>
+
+<p>Normal operating range alerts enables you to be notified when the normal
+operating range is exceeded, or falls below for a period of time from 1
+minute to 2 hours. Capacity and utilization must be enabled for normal
+operating ranges to be calculated. See <em>General Configuration</em> for more
+information.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alerts</strong> accordion, then click <img src="../images/1847.png" alt="1847">
+(<strong>Configuration</strong>), <img src="../images/1862.png" alt="1862"> (<strong>Add a new
+Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <ul>
+      <li>
+        <p>Type in a <strong>Description</strong> for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>VM and Instance</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>What to Evaluate</strong>, select <strong>Normal Operating Range</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if the performance threshold is reached.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Set the threshold in the <strong>Normal Operating Range Parameters</strong> area.</p>
+
+    <p><img src="../images/1976.png" alt="1976"></p>
+
+    <ul>
+      <li>
+        <p>From <strong>Performance Field</strong>, select the field to check and
+whether you want to be notified if the field is exceeded or fell
+below.</p>
+      </li>
+      <li>
+        <p>In <strong>Field Meets Criteria for</strong>, select the amount of time that
+the threshold requires to be met to trigger the alert.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>After setting the parameters, you then select what you want the
+alert to do. You can send an email, create an SNMP Trap, or send a
+management event to start an automation process. See
+<a href="#_to_create_an_alert">???</a>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-real-time-performance-alert">
+<a class="anchor" href="#creating-a-real-time-performance-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Real Time Performance Alert</h3>
+
+<p>Real Time Performance alerts enables you to be notified immediately when
+a performance threshold has been met for a virtual machine, host, or
+cluster. Capacity and Utilization must be enabled for performance
+thresholds to be detected.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alert</strong> accordion, then click <img src="../images/1847.png" alt="1847">
+(<strong>Configuration</strong>), <img src="../images/1862.png" alt="1862"> (<strong>Add a new
+Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <ul>
+      <li>
+        <p>Type in a <strong>Description</strong> for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>VM and Instance</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>What to Evaluate</strong>, select <strong>Real Time Performance</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if the performance threshold is reached.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Set the threshold in the <strong>Real Time Performance Parameters</strong> area.</p>
+
+    <p><img src="../images/1978.png" alt="1978"></p>
+
+    <ul>
+      <li>
+        <p>From <strong>Performance Field</strong>, select the field to check and any
+other parameters required for that field.</p>
+      </li>
+      <li>
+        <p>In <strong>And is Trending</strong>, select <strong>Don’t Care</strong> if it does not
+matter how the performance metric is trending. Otherwise, choose
+from the possible trending options.</p>
+      </li>
+      <li>
+        <p>In <strong>Field Meets Criteria for</strong>, select the amount of time that
+the threshold requires to be met to trigger the alert.</p>
+      </li>
+      <li>
+        <p>Set <strong>Debug Tracing</strong> to true only when directed to do so by Red
+Hat Support. This provides an extremely detailed level of
+logging and can result in many more log lines being written.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>After setting the parameters, you then select what you want the
+alert to do. You can send an email, create an SNMP Trap, or send a
+management event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-an-hourly-performance-alert">
+<a class="anchor" href="#creating-an-hourly-performance-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Hourly Performance Alert</h3>
+
+<p>Hourly performance alerts enable you to be notified immediately when an
+hourly performance threshold has been met for a cluster. Capacity and
+Utilization must be enabled for performance thresholds to be detected.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alerts</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="1862"> (<strong>Add a new Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <p><img src="../images/1979.png" alt="1979"></p>
+
+    <ul>
+      <li>
+        <p>Type in a <strong>Description</strong> for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>Cluster</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>What to Evaluate</strong>, select <strong>Hourly Performance</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if threshold is met.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In the <strong>Hourly Performance Parameters</strong> area select performance
+field and the criteria. You can also select options from the <strong>And
+is Trending</strong> dropdown box and whether the <strong>Debug Tracing</strong> is true
+or false.</p>
+  </li>
+  <li>
+    <p>After setting the parameters, you then select what you want the
+alert to do. You can send an email, create an SNMP Trap, or send a
+management event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-hostd-log-threshold-alert">
+<a class="anchor" href="#creating-a-hostd-log-threshold-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a hostd Log Threshold Alert</h3>
+
+<p>Use the <strong>hostd Log Threshold</strong> to send a notification when certain
+items are found in the event logs for a host. A default analysis profile
+with event log items is required for this feature. The following example
+shows steps to check the host’s log for a failure to validate a virtual
+machine’s IP address.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alert</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="1862"> (<strong>Add a new Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <p><img src="../images/hostdlogalert.png" alt="hostdlogalert"></p>
+
+    <ul>
+      <li>
+        <p>Type in a <strong>Description</strong> for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>Host/Node</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>What to Evaluate</strong>, select <strong>Hostd Log Threshold</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if the log item is detected.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In the <strong>Hostd Log Threshold Parameters</strong> area, select the
+parameters for the event log message. You can set a threshold for a
+filter, level, or message source.</p>
+
+    <ul>
+      <li>
+        <p>Use <strong>Message Filter</strong> to look for specific text in a message.
+Use <strong>Message Level</strong> to filter based on message level.
+ManageIQ reports on the specified level and above. Use
+<strong>Message Source</strong> to filter log messages based on its source.</p>
+      </li>
+      <li>
+        <p>Set <strong>How Far Back to Check</strong> in days you want to look for this
+message.</p>
+      </li>
+      <li>
+        <p>If you only want an alert triggered when the log message has
+occurred a certain number of times, type the number in <strong>Event
+Count Threshold</strong>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>After setting the parameters, select what you want the alert to do.
+You can send an email, create an SNMP Trap, or send a management
+event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-vmware-alarm-alert">
+<a class="anchor" href="#creating-a-vmware-alarm-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a VMware Alarm Alert</h3>
+
+<p>ManageIQ can use VMware alarms as a trigger for an alert. This
+type of alert can be created for a cluster, host, or virtual machine.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Alerts</strong> accordion, then click <img src="../images/1847.png" alt="1847">
+(<strong>Configuration</strong>), <img src="../images/1862.png" alt="1862"> (<strong>Add a new
+Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <ul>
+      <li>
+        <p>Type in a description for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>Cluster</strong>, <strong>Host</strong>, or <strong>VM</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>What to Evaluate</strong>, select <strong>VMware Alarm</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if the log item is detected.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In the <strong>VMware Alarm Parameters</strong> area select the provider and
+alarm.</p>
+
+    <p><img src="../images/1984.png" alt="1984"></p>
+  </li>
+  <li>
+    <p>After setting the parameters, you then select what you want the
+alert to do. You can send an email, create an SNMP Trap, or send a
+management event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-an-expression-alert">
+<a class="anchor" href="#creating-an-expression-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Expression Alert</h3>
+
+<p>Expression alerts enables you to create a notification based on any
+possible criteria for clusters, datastores, hosts, and virtual machines.
+The following procedure creates an alert for when a host’s datastore has
+less than 5% free space.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alerts</strong> accordion, then click
+<img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="1862"> (<strong>Add a new Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <p><img src="../images/expressionalerts.png" alt="expressionalerts"></p>
+
+    <ul>
+      <li>
+        <p>Type in a description for the alert.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>Host/Node</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>What to Evaluate</strong>, select <strong>Expression (Custom)</strong>.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if the expression is evaluated to true.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Use the expression editor to create your expression. This is the
+same expression editor used to create <strong>Conditions</strong>.</p>
+
+    <p><img src="../images/expressioneditor.png" alt="expressioneditor"></p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1863.png" alt="1863"> (<strong>Commit expression element
+changes</strong>) to accept the expression.</p>
+  </li>
+  <li>
+    <p>After setting the parameters, you then select what you want the
+alert to do. You can send an email, create an SNMP Trap, or send a
+management event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="create-an-operational-alert">
+<a class="anchor" href="#create-an-operational-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create an Operational Alert</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alerts</strong> accordion, then click
+<img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="1862"> (<strong>Add a new Alert</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Info</strong> area:</p>
+
+    <ul>
+      <li>
+        <p>Type in a description for the alert.</p>
+      </li>
+      <li>
+        <p>Check <strong>Active</strong> when you feel that the alert is ready to be
+enabled.</p>
+      </li>
+      <li>
+        <p>From <strong>Based On</strong>, select <strong>Server</strong>.</p>
+      </li>
+      <li>
+        <p>Select the appropriate driving event.</p>
+      </li>
+      <li>
+        <p>In <strong>Notification Frequency</strong>, select how often you want to be
+notified if the event log threshold is reached.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>After setting the parameters, select what you want the alert to do.
+You can send an email, create an SNMP Trap, or send a management
+event to start an automation process.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="operational-alert-types">
+<a class="anchor" href="#operational-alert-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operational Alert Types</h3>
+
+<table>
+<caption>Operational Alerts</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Driving Event</th>
+<th>Explanation (Thresholds, Description)</th>
+<th>Proposed Action and Next Steps</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>EVM Server Start</p></td>
+<td><p>Alert is raised when an server starts.</p></td>
+<td><p>Send e-email. This is a notification.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Server Stop</p></td>
+<td><p>Alert is raised when a server stops.</p></td>
+<td><p>Send e-mail. Review logs to see why the server stopped.</p></td>
+</tr>
+<tr class="odd">
+<td><p>EVM Server Not Responding</p></td>
+<td><p>Alert is raised when one server detects that another server has not responded in 2 minutes.</p></td>
+<td><p>This is a sign of a problem that should be investigated. Check logs.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Server Exceeded Memory Limit</p></td>
+<td>
+<p>Alert is raised when an server has exceeded its system memory limit and begins killing workers. Default is 80%.</p>
+<p>Threshold configured in Advanced Settings.</p>
+<p>server:</p>
+<p>:worker_monitor:</p>
+<p>:kill_algorithm:</p>
+<p>:name: :used_swap_percent_gt_value</p>
+<p>:value: 80</p>
+</td>
+<td>
+<p>This may be caused by the following issues:</p>
+<p>The server is running with too few resources.</p>
+<p>The server is enabled with too many roles or number of workers.</p>
+<p>The server picked up all the roles because another server has failed.</p>
+<p>A runaway process has taken up most of the memory.</p>
+</td>
+</tr>
+<tr class="odd">
+<td><p>EVM Server is Master</p></td>
+<td><p>When one server takes over as a master server.</p></td>
+<td><p>Typically, this should only occur when first starting a set of servers, perhaps following expected outages. If a server picks up as master in other situations, the old master had an issue that needs to be researched (such as server not responding in time).</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Server High System Disk Usage</p></td>
+<td>
+<p>The server’s system disk is 80% full. This check is run as part of a system schedule.</p>
+<p>Threshold configured in Advanced Settings.</p>
+<p>server:</p>
+<p>events:</p>
+<p>:disk_usage_gt_percent: 80</p>
+</td>
+<td><p>Temp files used by the operating system may be filling the disk. Yum updates, normal /tmp files, or temp files in /var/lib/data/miqtemp/ may cause the problem.</p></td>
+</tr>
+<tr class="odd">
+<td><p>EVM Server High App Disk Usage</p></td>
+<td>
+<p>The server’s app disk is 80% full. This check is run as part of a system schedule.</p>
+<p>Threshold configured in Advanced Settings.</p>
+<p>server:</p>
+<p>events:</p>
+<p>:disk_usage_gt_percent: 80</p>
+</td>
+<td><p>Server temp files may remain.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Server High Log Disk Usage</p></td>
+<td>
+<p>The server’s log disk is 80% full. This check is run as part of a system schedule.</p>
+<p>Threshold configured in Advanced Settings.</p>
+<p>server:</p>
+<p>events:</p>
+<p>:disk_usage_gt_percent: 80</p>
+</td>
+<td><p>Logs are getting too big or are not being log rotated properly every day. Review the most recent logs.</p></td>
+</tr>
+<tr class="odd">
+<td><p>EVM Server High DB Disk Usage</p></td>
+<td>
+<p>The server’s db disk is 80% full. This check is run as part of a system schedule. Applies if using PostgreSQL as the VDMB.</p>
+<p>Threshold configured in Advanced Settings.</p>
+<p>server:</p>
+<p>events:</p>
+<p>:disk_usage_gt_percent: 80</p>
+</td>
+<td><p>Database or database logging is getting too large. May require <strong>full</strong> vacuuming of PostgreSQL database.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Worker Started</p></td>
+<td><p>Alert is raised when a worker is about to start.</p></td>
+<td><p>This is a notification. Failover may trigger this alert.</p></td>
+</tr>
+<tr class="odd">
+<td><p>EVM Worker Stopped</p></td>
+<td><p>Alert is raised when a worker is requested to stop.</p></td>
+<td><p>Review logs for reason in the event the worker was not purposefully stopped.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Worker Killed</p></td>
+<td><p>Alert is raised when a non- responsive worker does not restart on its own and is killed.</p></td>
+<td><p>Review logs for reason the worker was killed. May be the result of EVM Worker Not Responding.</p></td>
+</tr>
+<tr class="odd">
+<td><p>EVM Worker Not Responding</p></td>
+<td><p>Alert is raised when a worker has not responded for 2 minutes (:heartbeat_timeout) or has not started within 10 minutes (:starting_timeout).</p></td>
+<td><p>An influx of events from the Virtual Center or Red Hat Virtualization causes an inability of EVM/CFME to handle the capacity at which they are being queued. Utilize the Event Handler Configuration to filter events that are causing problematic queue table growth.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Worker Exceeded Memory Limit</p></td>
+<td><p>Alert is raised when a worker exceeds the memory threshold. The default is 150 MB, but some workers have their own value in the :memory_threshold section for that specific worker.</p></td>
+<td><p>Review logs for reason the worker is exceeding the memory limit. This may be the result of an overload to the worker process that requires further investigation.</p></td>
+</tr>
+<tr class="odd">
+<td><p>EVM Worker Exceeded Uptime Limit</p></td>
+<td><p>Alert is raised when a worker has been running longer than the :restart_interval. (Most workers are set to never restart using the 0.hours setting.) The EMS Refresh SmartProxy workers are set to restart every 2 hours.</p></td>
+<td><p>Review logs for the reason the worker is exceeding the limit. This may be the result of an overload to the worker process that needs further investigation.</p></td>
+</tr>
+<tr class="even">
+<td><p>EVM Worker Exit File</p></td>
+<td><p>Alert is raised when the scheduler worker exits due to a pending large ntp time change.</p></td>
+<td><p>This is a notification.</p></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="editing-an-alert">
+<a class="anchor" href="#editing-an-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing an Alert</h3>
+
+<p>After creating an alert, you can edit the threshold, expression, or the
+notification type.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alerts</strong> accordion, then click on the alert that you
+need to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> <strong>(Configuration)</strong>,
+<img src="../images/1851.png" alt="1851"> <strong>(Edit this Alert)</strong>.</p>
+  </li>
+  <li>
+    <p>Make the required changes.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="copying-an-alert">
+<a class="anchor" href="#copying-an-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying an Alert</h3>
+
+<p>You can copy an existing alert to create a new alert that is similar to
+the existing one, then change the values associated with it.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alert</strong> accordion, then click on the alert that you
+want to copy.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1859.png" alt="1859"> (<strong>Copy this Alert</strong>). Click <strong>OK</strong> to
+confirm.</p>
+  </li>
+  <li>
+    <p>Make the required changes.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="deleting-an-alert">
+<a class="anchor" href="#deleting-an-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting an Alert</h3>
+
+<p>When an alert is no longer needed, you can remove it from your VMDB.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alerts</strong> accordion, then click on the alert that you
+want to delete.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1861.png" alt="1861"> (<strong>Delete this Alert</strong>).</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong> to confirm.</p>
+  </li>
+</ol>
+
+<h3 id="evaluating-an-alert">
+<a class="anchor" href="#evaluating-an-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evaluating an Alert</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Actions</strong> accordion, then click
+<img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="1862"> (<strong>Add a new Action</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Description</strong> for the action.</p>
+
+    <p><img src="../images/1911.png" alt="1911"></p>
+  </li>
+  <li>
+    <p>Select <strong>Evaluate Alerts</strong> from <strong>Action Type</strong>.</p>
+  </li>
+  <li>
+    <p>Select the alerts to be evaluated and click
+<img src="../images/1876.png" alt="1876"> (<strong>Move selected Alerts into this
+Action</strong>). Use the <code class="language-plaintext highlighter-rouge">Ctrl</code> key to select multiple alerts.</p>
+
+    <p><img src="../images/1912.png" alt="1912"></p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="alert-profiles">
+<a class="anchor" href="#alert-profiles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alert Profiles</h2>
+
+<h3 id="creating-alert-profiles">
+<a class="anchor" href="#creating-alert-profiles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Alert Profiles</h3>
+
+<p>Alert profiles enable you to create groups of standard alerts. An alert
+profile can have as many alerts assigned as you need, and can be
+assigned to clusters, datastores, hosts, and virtual machines.</p>
+
+<div class="note">
+
+Each profile type under the **Alert Profile** accordion menu will have
+its own **Alert Selections** and subsequent **Assignments** choices.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alert Profiles</strong> accordion, then click on the type of
+profile that you want to create.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="1862"> (<strong>Add a new Profile</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Basic Information</strong> box, type in a unique <strong>Description</strong>
+for the alert profile.</p>
+  </li>
+  <li>
+    <p>Select the desired alerts from the <strong>Alert Selection</strong> area. Use the
+<code class="language-plaintext highlighter-rouge">Ctrl</code> key to select multiple alerts.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1876.png" alt="1876"> to add the Alerts.</p>
+  </li>
+  <li>
+    <p>Type in any additional description in the <strong>Notes</strong> area.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="editing-an-alert-profile">
+<a class="anchor" href="#editing-an-alert-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing an Alert Profile</h3>
+
+<p>You can edit an alert profile as your enterprise’s needs change.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alert Profiles</strong> accordion, then click the alert
+profile you want to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1851.png" alt="1851"> (<strong>Edit this Alert Profile</strong>).</p>
+  </li>
+  <li>
+    <p>Make the required changes.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="deleting-an-alert-profile">
+<a class="anchor" href="#deleting-an-alert-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting an Alert Profile</h3>
+
+<p>Remove alert profiles that you no longer need. This does not remove the
+alerts associated with the alert profile.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alert Profiles</strong> accordion, then click the alert
+profile you want to remove.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1861.png" alt="1861"> (<strong>Delete this Alert Profile</strong>).</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong> to confirm.</p>
+  </li>
+</ol>
+
+<h3 id="assigning-an-alert-profile">
+<a class="anchor" href="#assigning-an-alert-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning an Alert Profile</h3>
+
+<p>After an alert profile is created and verified, you can assign it
+directly to a resource.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Alert Profiles</strong> accordion, then click on the alert
+profile that you want to assign.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>),
+<img src="../images/1851.png" alt="1851"> (<strong>Edit Assignments for this Alert
+Profile</strong>).</p>
+  </li>
+  <li>
+    <p>The options presented change based on if the alert is for a cluster,
+datastore, ManageIQ server, host, or virtual machine and
+instance. You can assign to the enterprise, to specific hosts,
+cluster, resource pools, and providers, or based on assign tags. For
+a ManageIQ server alert profile, you can only assign to
+ManageIQ servers in the current Region.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="importing-and-exporting">
+<a class="anchor" href="#importing-and-exporting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing and Exporting</h2>
+
+<h3 id="importing-and-exporting-policies-policy-profiles-and-alerts">
+<a class="anchor" href="#importing-and-exporting-policies-policy-profiles-and-alerts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing and Exporting Policies, Policy Profiles, and Alerts</h3>
+
+<p>If you have multiple VMDBs, you can export policies, policy profiles, or
+alerts from one to another. You can export and import for use with other
+ManageIQ infrastructures.</p>
+
+<div class="note">
+
+The appliances you are exporting or importing data between must use the
+same ManageIQ version.
+
+</div>
+
+<ol>
+  <li>
+    <p>Copy the file to import to a location that is accessible to your
+ManageIQ console.</p>
+  </li>
+  <li>
+    <p>Navigate to menu:Control[Import/Export].</p>
+  </li>
+  <li>
+    <p>Click <strong>Choose file</strong> to navigate to the location of the file.</p>
+  </li>
+  <li>
+    <p>Select the file, and then click <strong>Open</strong> from the file selection
+box.</p>
+  </li>
+  <li>
+    <p>Click <strong>Upload</strong>.</p>
+  </li>
+  <li>
+    <p>Verify that these are the policies or policy profiles that you want
+to import.</p>
+  </li>
+  <li>
+    <p>Click <strong>Commit</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="exporting-a-policy-policy-profile-or-an-alert">
+<a class="anchor" href="#exporting-a-policy-policy-profile-or-an-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exporting a Policy, Policy Profile, or an Alert</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Import/Export].</p>
+  </li>
+  <li>
+    <p>From the <strong>Export dropdown</strong>, select policy profiles, policies, or
+alerts, depending on what you want to export.</p>
+
+    <p><img src="../images/2013.png" alt="2013"></p>
+  </li>
+  <li>
+    <p>From the <strong>Available Profiles</strong> or <strong>Available Policies</strong> or
+<strong>Available Alerts</strong> list, select the items to export. Use the
+<code class="language-plaintext highlighter-rouge">Ctrl</code> key to select multiple items to export into one file.</p>
+  </li>
+  <li>
+    <p>Click <strong>Export</strong>.</p>
+  </li>
+  <li>
+    <p>Follow the prompts in your browser to save the file.</p>
+  </li>
+</ol>
+
+<h2 id="openshift-prometheus-alerts">
+<a class="anchor" href="#openshift-prometheus-alerts" aria-hidden="true"><span class="octicon octicon-link"></span></a>OpenShift Prometheus Alerts</h2>
+
+<div class="note">
+
+This feature is currently available as a technology preview only. For
+more information on the support scope for features marked as technology
+preview, see [Technology Preview Features Support
+Scope](https://access.redhat.com/support/offerings/techpreview).
+
+</div>
+
+<p>Prometheus is used as an external alerting component.
+ManageIQ integrates Prometheus alerts for use with
+OpenShift Container Platform. ManageIQ collects events
+from Prometheus, generates alerts based on these events, and then
+attaches alerts to inventory objects.</p>
+
+<p>It is possible to view ongoing alerts in ManageIQ by
+navigating to menu:Monitor[Alerts] and manage their life cycle,
+including the ability to:</p>
+
+<ul>
+  <li>
+    <p>View active alerts per provider in the <strong>Overview</strong> screen.</p>
+  </li>
+  <li>
+    <p>View alert data and related objects.</p>
+  </li>
+  <li>
+    <p>Comment, assign, and acknowledge alerts in the <strong>All Alerts</strong>
+screen.</p>
+  </li>
+</ul>
+
+<div class="important">
+
+Network utilization metrics for OpenShift Container Platform are only
+collected for `eth0` network interfaces. Therefore, network utilization
+trend will not be displayed for network interfaces other than `eth0` on
+the overview screen of the provider.
+
+</div>
+
+<h3 id="configuring-prometheus-alerts-in-manageiq">
+<a class="anchor" href="#configuring-prometheus-alerts-in-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Prometheus Alerts in ManageIQ</h3>
+
+<p>Configuring and enabling Prometheus alerts in ManageIQ
+comprises the following steps:</p>
+
+<ol>
+  <li>
+    <p>Deploying and configuring Prometheus on OpenShift.</p>
+  </li>
+  <li>
+    <p>Assigning Prometheus alert profiles to the enterprise in
+ManageIQ.</p>
+  </li>
+  <li>
+    <p>Adding an OpenShift Containers Provider with a Prometheus alert
+endpoint in ManageIQ.</p>
+  </li>
+</ol>
+
+<h4 id="deploying-and-configuring-prometheus-on-openshift">
+<a class="anchor" href="#deploying-and-configuring-prometheus-on-openshift" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying and Configuring Prometheus on OpenShift</h4>
+
+<ol>
+  <li>
+    <p>Deploy Prometheus on OpenShift by following the steps covered in
+<a href="https://docs.openshift.com/container-platform/3.7/install_config/cluster_metrics.html#openshift-prometheus">Prometheus on OpenShift Container
+Platform</a>.</p>
+  </li>
+  <li>
+    <p>Add Prometheus to an OpenShift cluster and configure alert
+definitions. See the example code block below for configuring alerts
+(currently must be done on the Prometheus side):</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ oc edit configmap -n openshift-metrics prometheus
+# Supported labels:
+# severity: ERROR|WARNING|INFO. defaults to ERROR.
+# Supported annotations:
+# description: The error message displayed on the screen
+# miqTarget: ContainerNode|ExtManagementSystem, defaults to ContainerNode.
+# miqIgnore: "true|false", should ManageIQ pick up this alert, defaults to true.
+  prometheus.rules: |
+    groups:
+    - name: example-rules
+      interval: 30s # defaults to global interval
+      rules:
+      - alert: "NodeDown" &lt;&lt; Alert starts here
+        expr: up{job="kubernetes-nodes"} == 0
+        annotations:
+          miqTarget: "ContainerNode"
+          severity: "ERROR"
+          url: "https://www.example.com/node_down_fixing_instructions"
+          description: "Node  is down"
+      - alert: "TooManyRequests"
+        expr: rate(authenticated_user_requests[2m]) &gt; 12
+        annotations:
+          miqTarget: "ExtManagementSystem"
+          severity: "ERROR"
+          url: "https://www.example.com/too_many_requests_fixing_instructions"
+          description: "Too many authenticated requests"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Reload the Prometheus configuration. You can do this by deleting the
+Prometheus pod, then redeploying with the new configuration.</p>
+  </li>
+</ol>
+
+<h4 id="assigning-prometheus-alert-profiles-to-the-enterprise">
+<a class="anchor" href="#assigning-prometheus-alert-profiles-to-the-enterprise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning Prometheus Alert Profiles to the Enterprise</h4>
+
+<p>Complete the following procedure to assign Prometheus alert profiles to
+the enterprise using the ManageIQ user interface.</p>
+
+<div class="note">
+
+Both Node and Provider alert profiles are created automatically during
+the installation, so it is not required to create these profiles.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer], then click <strong>Alert Profiles</strong>
+in the accordion menu.</p>
+  </li>
+  <li>
+    <p>Click to expand <strong>Node Alert Profiles</strong>, then click <strong>Prometheus
+Node Profile</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1851.png" alt="1851"> (<strong>Edit assignments for this Alert
+Profile</strong>). Assign the profile to <strong>The Enterprise</strong> from the
+<strong>Assign To</strong> list.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+  <li>
+    <p>Click to expand <strong>Provider Alert Profiles</strong>, then click <strong>Prometheus
+Provider Profile</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Configuration</strong>, then click <strong>Edit assignments for this
+Alert Profile</strong>. Assign the profile to <strong>The Enterprise</strong> from the
+<strong>Assign To</strong> list.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+
+    <div class="note">
+
+Alerts triggered before assigning the profiles to the enterprise
+will not appear in ManageIQ at all.
+
+</div>
+  </li>
+</ol>
+
+<h4 id="adding-an-openshift-containers-provider-with-a-prometheus-alert-endpoint">
+<a class="anchor" href="#adding-an-openshift-containers-provider-with-a-prometheus-alert-endpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an OpenShift Containers Provider with a Prometheus Alert Endpoint</h4>
+
+<p>Complete the following procedure to add an OpenShift Containers Provider
+with a Prometheus Alert Endpoint using the ManageIQ user
+interface.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Containers &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1862.png" alt="Add a New Containers Provider"> (<strong>Add a
+New Containers Provider</strong>).</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> for the provider.</p>
+  </li>
+  <li>
+    <p>From the <strong>Type</strong> list, select <strong>OpenShift Container Platform</strong>.</p>
+  </li>
+  <li>
+    <p>Enter the appropriate <strong>Zone</strong> for the provider. If you do not
+specify a zone, it is set to <code class="language-plaintext highlighter-rouge">default</code>.</p>
+  </li>
+  <li>
+    <p>From the <strong>Alerts</strong> list, select <strong>Prometheus</strong> to enable external
+alerts. Selecting <strong>Prometheus</strong> adds an <strong>Alerts</strong> tab to the lower
+pane to configure the Prometheus service. Alerts are disabled by
+default.</p>
+  </li>
+  <li>
+    <p>From the <strong>Metrics</strong> list, select <strong>Hawkular</strong> or <strong>Prometheus</strong> to
+collect capacity and utilization data, or leave as <strong>Disabled</strong>.
+Selecting <strong>Prometheus</strong> or <strong>Hawkular</strong> adds a <strong>Metrics</strong> tab to
+the lower pane for further configuration. Metrics are disabled by
+default.</p>
+  </li>
+  <li>
+    <p>In the <strong>Default</strong> tab, configure the following for the OpenShift
+provider:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the provider:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option.</p>
+          </li>
+          <li>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
+self-signed certificate. For this option, copy your
+provider’s CA certificate to the <strong>Trusted CA
+Certificates</strong> box in PEM format.</p>
+
+            <div class="note">
+
+You can obtain your OpenShift Container Platform provider’s
+CA certificate for all endpoints (default, metrics, alerts)
+from `/etc/origin/master/ca.crt`. Paste the output (a block
+of text starting with `-----BEGIN CERTIFICATE-----`) into
+the **Trusted CA Certificates** field.
+
+</div>
+          </li>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely (not recommended).</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
+provider.</p>
+
+        <div class="important">
+
+The **Hostname** must use a unique fully qualified domain name.
+
+</div>
+      </li>
+      <li>
+        <p>Enter the <strong>API Port</strong> of the provider. The default port is
+<code class="language-plaintext highlighter-rouge">8443</code>.</p>
+      </li>
+      <li>
+        <p>Enter a token for your provider in the <strong>Token</strong> box.</p>
+
+        <div class="note">
+
+To obtain a token for your provider, run the `oc get secret`
+command on your provider; see [Obtaining an OpenShift Container
+Platform Management
+Token](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#Obtaining_OpenShift_Container_Platform_Management_Token).
+
+For example:
+
+\# oc get secret --namespace management-infra
+management-admin-token-8ixxs --template='' | base64 --decode
+
+</div>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
+to the OpenShift Container Platform provider.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>For the <strong>Prometheus</strong> alerts service, add the Prometheus alerts
+endpoint in the <strong>Alerts</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the service:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option.</p>
+          </li>
+          <li>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
+self-signed certificate. For this option, copy your
+provider’s CA certificate to the <strong>Trusted CA
+Certificates</strong> box in PEM format.</p>
+          </li>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely using SSL. (Not recommended)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) or alert
+<strong>Route</strong>.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>API Port</strong> if your Prometheus provider uses a
+non-standard port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can
+connect to the alerts service.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>If you selected a metrics service, configure the service details in
+the <strong>Metrics</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to
+authenticate the service:</p>
+
+        <ul>
+          <li>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
+Certificate Authority. Select this option if the provider
+has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required
+for this option.</p>
+          </li>
+          <li>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
+self-signed certificate. For this option, copy your
+provider’s CA certificate to the <strong>Trusted CA
+Certificates</strong> box in PEM format.</p>
+
+            <div class="note">
+
+In OpenShift, the default deployment of the router generates
+certificates during installation, which can be used with the
+**SSL trusting custom CA** option. Connecting a Hawkular
+endpoint with this option requires the CA certificate that
+the cluster uses for service certificates, which is stored
+in `/etc/origin/master/service-signer.crt` on the first
+master in a cluster.
+
+</div>
+          </li>
+          <li>
+            <p><strong>SSL without validation</strong>: Authenticate the provider
+insecurely using SSL. (Not recommended)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
+provider, or use the <strong>Detect</strong> button to find the hostname.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>API Port</strong> if your Hawkular or Prometheus provider
+uses a non-standard port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
+to the metrics endpoint.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Advanced</strong> tab to add image inspector settings for
+scanning container images on your provider using OpenSCAP.</p>
+
+    <div class="note">
+
+  - These settings control downloading the image inspector container
+    image from the registry and obtaining the Common Vulnerabilities
+    and Exposures (CVE) information (for effective scanning) via a
+    proxy.
+
+  - CVE URL that ManageIQ requires to be open for
+    OpenSCAP scanning:
+    &lt;https://www.redhat.com/security/data/metrics/ds/&gt;. This
+    information is based on the source code of OpenSCAP.
+
+</div>
+
+    <ol>
+      <li>
+        <p>Enter the proxy information for the provider in either <strong>HTTP</strong>,
+<strong>HTTPS</strong>, or <strong>NO Proxy</strong> depending on your environment.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Image-Inspector Repository</strong> information. For
+example, <code class="language-plaintext highlighter-rouge">openshift3/image-inspector</code>.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Image-Inspector Registry</strong> information. For example,
+<code class="language-plaintext highlighter-rouge">registry.access.redhat.com</code>.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Image-Inspector Tag</strong> value. A tag is a mark used to
+differentiate images in a repository, typically by the
+application version stored in the image.</p>
+      </li>
+      <li>
+        <p>Enter <code class="language-plaintext highlighter-rouge">https://www.redhat.com/security/data/metrics/ds/</code> in
+<strong>CVE location</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<div class="note">
+
+You can also set global default image-inspector settings for all
+OpenShift providers in the advanced settings menu by editing the values
+under `ems_kubernetes`, instead of setting this for each provider.
+
+For example:
+
+    :image_inspector_registry: registry.access.redhat.com
+    :image_inspector_repository: openshift3/image-inspector
+
+</div>
+
+<p>Once you have completed the procedure, you will have OpenShift
+Prometheus alerts enabled in ManageIQ, and can manage
+their life cyle from the menu:Monitor[Alerts] screen in the user
+interface.</p>
+
+<h1 id="regular-expressions">
+<a class="anchor" href="#regular-expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regular Expressions</h1>
+
+<p>In ManageIQ, regular expressions can be used to search the
+contents of a file for a specific string for use in a condition. Below
+are listed the items most commonly used with ManageIQ to search
+strings. These are a small subset of all the items available to use in
+regular expressions. If you are unfamiliar with regular expressions,
+there are many resources available on the Internet, including
+<a href="http://www.regular-expressions.info/">www.regular-expressions.info</a>.
+Note that if you want to search a file, you must collect it as part of a
+host analysis profile.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Anchors</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>^</td>
+      <td>start of string</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>$</td>
+      <td>end of string</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Character Classes</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\s</td>
+      <td>white space including spaces, tabs, and line breaks</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\S</td>
+      <td>not white space</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\d</td>
+      <td>digit, same as [0-9]</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\D</td>
+      <td>not digit</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\w</td>
+      <td>word</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\W</td>
+      <td>not word</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Quantifiers</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>0 or more of preceding characters</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>1 or more of preceding characters</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>?</td>
+      <td>0 or 1 of preceding character</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Escape Character</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\</td>
+      <td>put before a metacharacter to search for that actual character</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Metacharacters</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>^ [ . $ { * ( \ + )</td>
+      <td>? &lt; &gt;</td>
+      <td>must be used with the Escape Character if you are searching specifically for it</td>
+    </tr>
+    <tr>
+      <td>Special characters</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\n</td>
+      <td>new line</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\t</td>
+      <td>tab</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Groups and Ranges</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>.</td>
+      <td>any character except new line (\n)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>(a</td>
+      <td>b)</td>
+      <td>a or b</td>
+    </tr>
+    <tr>
+      <td>()</td>
+      <td>group</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[abc]</td>
+      <td>a or b or c</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[^abc]</td>
+      <td>not a or b or c</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[a-q]</td>
+      <td>letter between a and q</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[A-Q]</td>
+      <td>upper case letter between A and Q</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[0-7]</td>
+      <td>digit between 0 and 7</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pattern modifiers</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>i</td>
+      <td>case insensitive</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Other helpers</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>.*</td>
+      <td>swallows text between 2 words</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\s+</td>
+      <td>guarantees minimum of 1 whitespace between 2 words</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\s*</td>
+      <td>guarantees 0 or more whitespace between 2 words</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>^\s*</td>
+      <td>beginning of line with zero or more whitespace</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\s+.*</td>
+      <td>swallows all text and white space between 2 words</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\d+</td>
+      <td>guarantees minimum of 1 number between 2 words</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>&lt;\w&gt;</td>
+      <td>identical to &lt;[a-zA-Z0-(_]&gt;</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Regular Expressions</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Description</td>
+      <td>Regular Expression</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>([a-zA-Z0-9]+)</td>
+      <td>Letters, numbers, hyphens</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Find the line beginning with <code class="language-plaintext highlighter-rouge">sshd</code>. Then, using a colon <code class="language-plaintext highlighter-rouge">:</code> as delimiter, check that the value four “:” over is equal to 99999.</td>
+      <td>^sshd:[^:]*:[^:]*:[^:]*:99999:</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify that <code class="language-plaintext highlighter-rouge">PASS_MAX_DAYS</code> exists starting in position <code class="language-plaintext highlighter-rouge">1</code> and a value after it is ⇐ 90.</td>
+      <td>^\s*PASS_MAX_DAYS\s+([0-9]</td>
+      <td>[1-8][0-9]</td>
+      <td>90)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify that <code class="language-plaintext highlighter-rouge">ROOTPW</code> (in any case) exists on an uncommented line.</td>
+      <td>/<sup>[</sup>#]*ROOTPW/i</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Verify that line in file starts with size and the value after is ⇐ 4096k.</td>
+      <td>^\s*size\s+(409[0-6]</td>
+      <td>40[0-8][0-9]</td>
+      <td>[123][09]{3}</td>
+      <td>\d{1,3})k</td>
+    </tr>
+    <tr>
+      <td>Find line with string <code class="language-plaintext highlighter-rouge">restrict 127.0.0.1</code> that starts in position `1 to ensure it is not commented out.</td>
+      <td>^\s*restrict\s+127\.0\.0\.1</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Find an uncommented line that contains <code class="language-plaintext highlighter-rouge">/home</code>. There will be additional text before the desired string.</td>
+      <td>
+<sup>[</sup>#]*\/home</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples</p>
+
+<h1 id="reportable-fields-in-manageiq">
+<a class="anchor" href="#reportable-fields-in-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reportable Fields in ManageIQ</h1>
+
+<p>ManageIQ provides a set of out of the box reports covering a
+variety of areas. These fields are collected by ManageIQ from the
+different parts of the infrastructure. Most of the fields are named
+directly as the vendor would name them. However, there are some fields
+that ManageIQ calculates given this data. Note that this list may
+vary by Provider and may change as new Providers are added to
+ManageIQ. Also, note that the value returned by each reportable
+field below is in megabytes (MB).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reportable Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Clusters</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reportable Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Datastore : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Datastore : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Datastore : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>VM Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VM Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VM Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>VM Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VM and Instance : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VM and Instance : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VM and Instance : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VM and Instance : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Datastore Files</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reportable Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.Logical Disk.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.File System.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>File Share.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Hosts : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Datastores</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reportable Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>EVM Groups</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reportable Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Cluster : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Cluster : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Cluster : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Miq Templates : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Hosts</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reportable Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>Cluster : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Cluster : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Cluster : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Datastore : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Datastore : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Datastore : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Datastores : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Host : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Host : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Host : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Provider : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned From Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned From Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned From Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned From Template : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>Provisioned VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+    <tr>
+      <td>Provisioned VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>Service.VMs : Memory - Aggregate Used for Child VMs for Collected Intervals 30 Day Max</td>
+    </tr>
+    <tr>
+      <td>Service.VMs : Memory - Avg Used for Collected Intervals 30 Day Avg</td>
+    </tr>
+    <tr>
+      <td>Service.VMs : Memory - Avg Used for Collected Intervals 30 Day High Avg</td>
+    </tr>
+    <tr>
+      <td>Service.VMs : Memory - Avg Used for Collected Intervals 30 Day Low Avg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Images</p>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

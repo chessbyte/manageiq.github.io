@@ -1540,97 +1540,91 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect2">
-<h3 id="crud-request-examples"><a class="anchor" href="#crud-request-examples"></a>CRUD Request Examples</h3>
-<div class="paragraph">
+        <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#crud-request-examples">CRUD Request Examples</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#show-a-collection-of-resources">Show a collection of Resources</a></li>
+<li class="toc-entry toc-h4"><a href="#return-a-single-resource">Return a single Resource</a></li>
+<li class="toc-entry toc-h4"><a href="#create-a-resource">Create a Resource</a></li>
+<li class="toc-entry toc-h4"><a href="#update-a-resource">Update a Resource</a></li>
+<li class="toc-entry toc-h4"><a href="#delete-a-resource">Delete a Resource</a></li>
+</ul>
+</li>
+</ul><h3 id="crud-request-examples">
+<a class="anchor" href="#crud-request-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>CRUD Request Examples</h3>
+
 <p>The following examples show the basic CRUD operations (Create, Read,
 Update, Delete) using the REST API.</p>
-</div>
-<div class="paragraph">
+
 <p>For Authentication, we are showing here basic authentication via the
-<em>--user admin:smartvm</em> credentials argument. For multiple API calls it
+<em>–user admin:smartvm</em> credentials argument. For multiple API calls it
 is recommended to access the REST API via token based authentication,
 please refer the the <a href="auth.html">Authentication Page</a> for details.</p>
-</div>
-<div class="sect3">
-<h4 id="show-a-collection-of-resources"><a class="anchor" href="#show-a-collection-of-resources"></a>Show a collection of Resources</h4>
-<div class="paragraph">
+
+<h4 id="show-a-collection-of-resources">
+<a class="anchor" href="#show-a-collection-of-resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show a collection of Resources</h4>
+
 <p>Get a collection of services: <strong>GET /api/services</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="sh">curl --user admin:smartvm
-      -i -X GET -H &quot;Accept: application/json&quot;
-      http://localhost:3000/api/services</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="return-a-single-resource"><a class="anchor" href="#return-a-single-resource"></a>Return a single Resource</h4>
-<div class="paragraph">
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--user</span> admin:smartvm
+      <span class="nt">-i</span> <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span>
+      http://localhost:3000/api/services
+</code></pre></div></div>
+
+<h4 id="return-a-single-resource">
+<a class="anchor" href="#return-a-single-resource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Return a single Resource</h4>
+
 <p>Return a single service: <strong>GET /api/services/:id</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="sh">curl --user admin:smartvm
-      -i -X GET -H &quot;Accept: application/json&quot;
-      http://localhost:3000/api/services/1</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="create-a-resource"><a class="anchor" href="#create-a-resource"></a>Create a Resource</h4>
-<div class="paragraph">
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--user</span> admin:smartvm
+      <span class="nt">-i</span> <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span>
+      http://localhost:3000/api/services/1
+</code></pre></div></div>
+
+<h4 id="create-a-resource">
+<a class="anchor" href="#create-a-resource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Resource</h4>
+
 <p>Create a new provider: <strong>POST /api/providers</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="sh">curl --user admin:smartvm
-      -i -X POST -H &quot;Accept: application/json&quot;
-      -d '{
-            &quot;type&quot;      : &quot;ManageIQ::Providers::Redhat::InfraManager&quot;,
-            &quot;name&quot;      : &quot;RHEVM Provider&quot;,
-            &quot;hostname&quot;  : &quot;rhevm.local.com&quot;,
-            &quot;ipaddress&quot; : &quot;192.168.5.1&quot;,
-            &quot;credentials&quot; : {
-              &quot;userid&quot;   : &quot;admin&quot;,
-              &quot;password&quot; : &quot;12345&quot;
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--user</span> admin:smartvm
+      <span class="nt">-i</span> <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span>
+      <span class="nt">-d</span> <span class="s1">'{
+            "type"      : "ManageIQ::Providers::Redhat::InfraManager",
+            "name"      : "RHEVM Provider",
+            "hostname"  : "rhevm.local.com",
+            "ipaddress" : "192.168.5.1",
+            "credentials" : {
+              "userid"   : "admin",
+              "password" : "12345"
             }
-      }'
-      http://localhost:3000/api/providers</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="update-a-resource"><a class="anchor" href="#update-a-resource"></a>Update a Resource</h4>
-<div class="paragraph">
+      }'</span>
+      http://localhost:3000/api/providers
+</code></pre></div></div>
+
+<h4 id="update-a-resource">
+<a class="anchor" href="#update-a-resource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update a Resource</h4>
+
 <p>Update the name of a service: <strong>PUT /api/services/:id</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="sh">curl --user admin:smartvm
-      -i -X PUT -H &quot;Accept: application/json&quot;
-      -d '{ &quot;name&quot; : &quot;updated service name&quot; }'
-      http://localhost:3000/api/services/1</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-a-resource"><a class="anchor" href="#delete-a-resource"></a>Delete a Resource</h4>
-<div class="paragraph">
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--user</span> admin:smartvm
+      <span class="nt">-i</span> <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span>
+      <span class="nt">-d</span> <span class="s1">'{ "name" : "updated service name" }'</span>
+      http://localhost:3000/api/services/1
+</code></pre></div></div>
+
+<h4 id="delete-a-resource">
+<a class="anchor" href="#delete-a-resource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delete a Resource</h4>
+
 <p>Delete a service: <strong>DELETE /api/services/:id</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="sh">curl --user admin:smartvm
-      -i -X DELETE -H &quot;Accept: application/json&quot;
-      http://localhost:3000/api/services/1</code></pre>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--user</span> admin:smartvm
+      <span class="nt">-i</span> <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span>
+      http://localhost:3000/api/services/1
+</code></pre></div></div>
+
+
       </div>
     </article>
   </div>

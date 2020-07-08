@@ -1540,618 +1540,551 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="reports-support"><a class="anchor" href="#reports-support"></a>Reports Support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Support for querying, importing and running Reports is now available. Access to reports
-and report results is through the following collections:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/reports</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/results</code></pre>
-</div>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#reports-support">Reports Support</a>
 <ul>
-<li>
-<p><a href="#querying-reports">Querying Reports</a></p>
+<li class="toc-entry toc-h3"><a href="#querying-reports">Querying Reports</a></li>
+<li class="toc-entry toc-h3"><a href="#running-reports">Running Reports</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#request">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response">Response:</a></li>
+</ul>
 </li>
-<li>
-<p><a href="#running-reports">Running Reports</a></p>
+<li class="toc-entry toc-h3"><a href="#requesting-report-result-downloads">Requesting Report Result Downloads</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#request-1">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response-1">Response:</a></li>
+</ul>
 </li>
-<li>
-<p><a href="#requesting-result-downloads">Requesting Report Result Downloads</a></p>
-</li>
-<li>
-<p><a href="#importing-reports">Importing Reports</a></p>
+<li class="toc-entry toc-h3"><a href="#importing-reports">Importing Reports</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#request-2">Request:</a></li>
+<li class="toc-entry toc-h4"><a href="#response-2">Response:</a></li>
+</ul>
 </li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="querying-reports"><a class="anchor" href="#querying-reports"></a>Querying Reports</h3>
-<div class="paragraph">
+</li>
+</ul><h2 id="reports-support">
+<a class="anchor" href="#reports-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reports Support</h2>
+
+<p>Support for querying, importing and running Reports is now available.
+Access to reports and report results is through the following
+collections:</p>
+
+<pre><code class="language-data">/api/reports
+</code></pre>
+
+<pre><code class="language-data">/api/results
+</code></pre>
+
+<ul>
+  <li>
+    <p><a href="#querying-reports">Querying Reports</a></p>
+  </li>
+  <li>
+    <p><a href="#running-reports">Running Reports</a></p>
+  </li>
+  <li>
+    <p><a href="#requesting-result-downloads">Requesting Report Result Downloads</a></p>
+  </li>
+  <li>
+    <p><a href="#importing-reports">Importing Reports</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-reports">
+<a class="anchor" href="#querying-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Reports</h3>
+
 <p>Querying Available Reports</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/reports
+</code></pre>
+
 <p>Querying a Single Report</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/reports/:id
+</code></pre>
+
 <p>Querying Results of a Particular Reports</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id/results</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/reports/:id/results
+</code></pre>
+
 <p>Optionally, expanding all results</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id/results?expand=resources</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/reports/:id/results?expand=resources
+</code></pre>
+
 <p>Querying a single result of a report</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id/results/:result_id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/reports/:id/results/:result_id
+</code></pre>
+
 <p>Querying report results</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/results</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="running-reports"><a class="anchor" href="#running-reports"></a>Running Reports</h3>
-<div class="paragraph">
-<p>Running reports is done via the <strong>run</strong> action on a report resource as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;action&quot; : &quot;run&quot;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/results
+</code></pre>
+
+<h3 id="running-reports">
+<a class="anchor" href="#running-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Reports</h3>
+
+<p>Running reports is done via the <strong>run</strong> action on a report resource as
+follows:</p>
+
+<pre><code class="language-data">POST /api/reports/:id
+</code></pre>
+
+<pre><code class="language-data">{
+  "action" : "run"
+}
+</code></pre>
+
 <p>Example for running a report on the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;href&quot;: &quot;http://localhost:3000/api/reports/80&quot;,
-  &quot;id&quot;: &quot;80&quot;,
-  &quot;name&quot;: &quot;VM Relationships&quot;
-}</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports/80</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;action&quot; : &quot;run&quot;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;success&quot;: true,
-  &quot;message&quot;: &quot;running report 80&quot;,
-  &quot;href&quot;: &quot;http://localhost:3000/api/reports/80&quot;,
-  &quot;result_id&quot;: &quot;27&quot;,
-  &quot;result_href&quot;: &quot;http://localhost:3000/api/results/27&quot;,
-  &quot;task_id&quot;: &quot;726&quot;,
-  &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/726&quot;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The report run&#8217;s task can be queried periodically via the task_href specified above
-as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/tasks/726</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;href&quot;: &quot;http://localhost:3000/api/tasks/726&quot;,
-  &quot;id&quot;: &quot;726&quot;,
-  &quot;name&quot;: &quot;Generate Report: 'VM Relationships'&quot;,
-  &quot;state&quot;: &quot;Queued&quot;,
-  &quot;status&quot;: &quot;Ok&quot;,
-  &quot;message&quot;: &quot;Task has been queued&quot;,
-  &quot;userid&quot;: &quot;system&quot;,
-  &quot;created_on&quot;: &quot;2015-11-09T18:44:41Z&quot;,
-  &quot;updated_on&quot;: &quot;2015-11-09T18:44:41Z&quot;
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;href&quot;: &quot;http://localhost:3000/api/tasks/726&quot;,
-  &quot;id&quot;: &quot;726&quot;,
-  &quot;name&quot;: &quot;Generate Report: 'VM Relationships'&quot;,
-  &quot;state&quot;: &quot;Finished&quot;,
-  &quot;status&quot;: &quot;Ok&quot;,
-  &quot;message&quot;: &quot;Generating report complete&quot;,
-  &quot;userid&quot;: &quot;system&quot;,
-  &quot;created_on&quot;: &quot;2015-11-09T18:44:41Z&quot;,
-  &quot;updated_on&quot;: &quot;2015-11-09T18:47:13Z&quot;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">{
+  "href": "http://localhost:3000/api/reports/80",
+  "id": "80",
+  "name": "VM Relationships"
+}
+</code></pre>
+
+<h4 id="request">
+<a class="anchor" href="#request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<pre><code class="language-data">POST /api/reports/80
+</code></pre>
+
+<pre><code class="language-data">{
+  "action" : "run"
+}
+</code></pre>
+
+<h4 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<pre><code class="language-data">{
+  "success": true,
+  "message": "running report 80",
+  "href": "http://localhost:3000/api/reports/80",
+  "result_id": "27",
+  "result_href": "http://localhost:3000/api/results/27",
+  "task_id": "726",
+  "task_href": "http://localhost:3000/api/tasks/726"
+}
+</code></pre>
+
+<p>The report run’s task can be queried periodically via the task_href
+specified above as follows:</p>
+
+<pre><code class="language-data">GET /api/tasks/726
+</code></pre>
+
+<pre><code class="language-data">{
+  "href": "http://localhost:3000/api/tasks/726",
+  "id": "726",
+  "name": "Generate Report: 'VM Relationships'",
+  "state": "Queued",
+  "status": "Ok",
+  "message": "Task has been queued",
+  "userid": "system",
+  "created_on": "2015-11-09T18:44:41Z",
+  "updated_on": "2015-11-09T18:44:41Z"
+}
+</code></pre>
+
+<pre><code class="language-data">{
+  "href": "http://localhost:3000/api/tasks/726",
+  "id": "726",
+  "name": "Generate Report: 'VM Relationships'",
+  "state": "Finished",
+  "status": "Ok",
+  "message": "Generating report complete",
+  "userid": "system",
+  "created_on": "2015-11-09T18:44:41Z",
+  "updated_on": "2015-11-09T18:47:13Z"
+}
+</code></pre>
+
 <p>With the results queried via the result_href provided above:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/results/27</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;href&quot;: &quot;http://localhost:3000/api/results/27&quot;,
-  &quot;id&quot;: &quot;27&quot;,
-  &quot;name&quot;: &quot;VM Relationships&quot;,
-  &quot;miq_report_id&quot;: &quot;80&quot;,
-  &quot;miq_task_id&quot;: &quot;726&quot;,
-  &quot;userid&quot;: &quot;system&quot;,
-  &quot;report_source&quot;: &quot;Requested by user&quot;,
-  &quot;db&quot;: &quot;Vm&quot;,
-  &quot;report&quot;: {
-    &quot;name&quot;: &quot;VM Relationships&quot;,
-    &quot;title&quot;: &quot;VM Relationships&quot;,
-    &quot;rpt_group&quot;: &quot;Relationships - Virtual Machines, Folders, Clusters&quot;,
-    &quot;rpt_type&quot;: &quot;Default&quot;,
-    &quot;priority&quot;: 10,
-    &quot;db&quot;: &quot;Vm&quot;,
-    &quot;cols&quot;: [
-      &quot;name&quot;,
-      &quot;v_owning_datacenter&quot;,
-      &quot;v_owning_folder&quot;,
-      &quot;v_owning_resource_pool&quot;
+
+<pre><code class="language-data">GET /api/results/27
+</code></pre>
+
+<pre><code class="language-data">{
+  "href": "http://localhost:3000/api/results/27",
+  "id": "27",
+  "name": "VM Relationships",
+  "miq_report_id": "80",
+  "miq_task_id": "726",
+  "userid": "system",
+  "report_source": "Requested by user",
+  "db": "Vm",
+  "report": {
+    "name": "VM Relationships",
+    "title": "VM Relationships",
+    "rpt_group": "Relationships - Virtual Machines, Folders, Clusters",
+    "rpt_type": "Default",
+    "priority": 10,
+    "db": "Vm",
+    "cols": [
+      "name",
+      "v_owning_datacenter",
+      "v_owning_folder",
+      "v_owning_resource_pool"
     ],
-    &quot;include&quot;: {
-      &quot;ext_management_system&quot;: {
-        &quot;columns&quot;: [
-          &quot;name&quot;
+    "include": {
+      "ext_management_system": {
+        "columns": [
+          "name"
         ]
       },
-      &quot;host&quot;: {
-        &quot;columns&quot;: [
-          &quot;v_owning_cluster&quot;,
-          &quot;hostname&quot;
+      "host": {
+        "columns": [
+          "v_owning_cluster",
+          "hostname"
         ]
       },
-      &quot;storage&quot;: {
-        &quot;columns&quot;: [
-          &quot;name&quot;
+      "storage": {
+        "columns": [
+          "name"
         ]
       }
     },
-    &quot;col_order&quot;: [
-      &quot;name&quot;,
-      &quot;ext_management_system.name&quot;,
-      &quot;v_owning_datacenter&quot;,
-      &quot;host.v_owning_cluster&quot;,
-      &quot;host.hostname&quot;,
-      &quot;v_owning_folder&quot;,
-      &quot;v_owning_resource_pool&quot;,
-      &quot;storage.name&quot;
+    "col_order": [
+      "name",
+      "ext_management_system.name",
+      "v_owning_datacenter",
+      "host.v_owning_cluster",
+      "host.hostname",
+      "v_owning_folder",
+      "v_owning_resource_pool",
+      "storage.name"
     ],
-    &quot;headers&quot;: [
-      &quot;VM Name&quot;,
-      &quot;Provider Name&quot;,
-      &quot;Datacenter&quot;,
-      &quot;Cluster&quot;,
-      &quot;Host&quot;,
-      &quot;Folder&quot;,
-      &quot;Resource Pool&quot;,
-      &quot;Datastore&quot;
+    "headers": [
+      "VM Name",
+      "Provider Name",
+      "Datacenter",
+      "Cluster",
+      "Host",
+      "Folder",
+      "Resource Pool",
+      "Datastore"
     ],
-    &quot;conditions&quot;: {
-      &quot;exp&quot;: {
-        &quot;IS NOT EMPTY&quot;: {
-          &quot;field&quot;: &quot;Vm.host-name&quot;
+    "conditions": {
+      "exp": {
+        "IS NOT EMPTY": {
+          "field": "Vm.host-name"
         }
       },
-      &quot;col_details&quot;: {
-        &quot;Vm.host-name&quot;: {
-          &quot;data_type&quot;: &quot;string&quot;,
-          &quot;virtual_reflection&quot;: false,
-          &quot;virtual_column&quot;: false,
-          &quot;excluded_by_preprocess_options&quot;: false,
-          &quot;tag&quot;: false,
-          &quot;include&quot;: {
-            &quot;host&quot;: {
+      "col_details": {
+        "Vm.host-name": {
+          "data_type": "string",
+          "virtual_reflection": false,
+          "virtual_column": false,
+          "excluded_by_preprocess_options": false,
+          "tag": false,
+          "include": {
+            "host": {
             }
           },
-          &quot;format_sub_type&quot;: &quot;string&quot;
+          "format_sub_type": "string"
         }
       },
-      &quot;pexp&quot;: {
-        &quot;IS NOT EMPTY&quot;: {
-          &quot;field&quot;: &quot;Vm.host-name&quot;
+      "pexp": {
+        "IS NOT EMPTY": {
+          "field": "Vm.host-name"
         }
       },
-      &quot;ruby&quot;: &quot;&lt;value ref=vm, type=string&gt;/virtual/host/name&lt;/value&gt; != \&quot;\&quot;&quot;
+      "ruby": "&lt;value ref=vm, type=string&gt;/virtual/host/name&lt;/value&gt; != \"\""
     },
-    &quot;order&quot;: &quot;Ascending&quot;,
-    &quot;sortby&quot;: [
-      &quot;name&quot;
+    "order": "Ascending",
+    "sortby": [
+      "name"
     ],
-    &quot;filename&quot;: &quot;450_Relationships - Virtual Machines, Folders, Clusters/010_VMs Relationships.yaml&quot;,
-    &quot;file_mtime&quot;: &quot;2015-08-19T13:23:50Z&quot;,
-    &quot;template_type&quot;: &quot;report&quot;,
-    &quot;col_formats&quot;: [
+    "filename": "450_Relationships - Virtual Machines, Folders, Clusters/010_VMs Relationships.yaml",
+    "file_mtime": "2015-08-19T13:23:50Z",
+    "template_type": "report",
+    "col_formats": [
 
     ],
-    &quot;rpt_options&quot;: {
+    "rpt_options": {
     },
-    &quot;extras&quot;: {
-      &quot;total_html_rows&quot;: 1709
+    "extras": {
+      "total_html_rows": 1709
     },
-    &quot;user_categories&quot;: [
+    "user_categories": [
 
     ],
-    &quot;trend_data&quot;: {
+    "trend_data": {
     }
   },
-  &quot;created_on&quot;: &quot;2015-11-09T18:52:48Z&quot;,
-  &quot;last_run_on&quot;: &quot;2015-11-09T18:52:56Z&quot;,
-  &quot;last_accessed_on&quot;: &quot;2015-11-09T18:52:56Z&quot;,
-  &quot;result_set&quot;: [
+  "created_on": "2015-11-09T18:52:48Z",
+  "last_run_on": "2015-11-09T18:52:56Z",
+  "last_accessed_on": "2015-11-09T18:52:56Z",
+  "result_set": [
     {
-      &quot;name&quot;: &quot;aab-vm1&quot;,
-      &quot;v_owning_datacenter&quot;: &quot;&quot;,
-      &quot;v_owning_folder&quot;: &quot;&quot;,
-      &quot;v_owning_resource_pool&quot;: &quot;&quot;,
-      &quot;host.v_owning_cluster&quot;: &quot;&quot;,
-      &quot;host.hostname&quot;: &quot;test-host.testdomain.com&quot;,
-      &quot;storage.name&quot;: &quot;StarStorage1&quot;
-      &quot;id&quot;: &quot;320&quot;
+      "name": "aab-vm1",
+      "v_owning_datacenter": "",
+      "v_owning_folder": "",
+      "v_owning_resource_pool": "",
+      "host.v_owning_cluster": "",
+      "host.hostname": "test-host.testdomain.com",
+      "storage.name": "StarStorage1"
+      "id": "320"
     },
     {
-      &quot;name&quot;: &quot;aab_demo_vm&quot;,
-      &quot;v_owning_datacenter&quot;: &quot;&quot;,
-      &quot;v_owning_folder&quot;: &quot;&quot;,
-      &quot;v_owning_resource_pool&quot;: &quot;&quot;,
-      &quot;host.v_owning_cluster&quot;: &quot;&quot;,
-      &quot;host.hostname&quot;: &quot;test-host2.testdomain.com&quot;,
-      &quot;storage.name&quot;: &quot;StarStorage2&quot;,
-      &quot;id&quot;: &quot;1&quot;
+      "name": "aab_demo_vm",
+      "v_owning_datacenter": "",
+      "v_owning_folder": "",
+      "v_owning_resource_pool": "",
+      "host.v_owning_cluster": "",
+      "host.hostname": "test-host2.testdomain.com",
+      "storage.name": "StarStorage2",
+      "id": "1"
     },
     ...
   ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+}
+</code></pre>
+
 <p>Note that one can query all the results run for a report as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/80/results?expand=resources&amp;attributes=created_on</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;name&quot;: &quot;results&quot;,
-  &quot;count&quot;: 27,
-  &quot;subcount&quot;: 2,
-  &quot;resources&quot;: [
+
+<pre><code class="language-data">GET /api/reports/80/results?expand=resources&amp;attributes=created_on
+</code></pre>
+
+<pre><code class="language-data">{
+  "name": "results",
+  "count": 27,
+  "subcount": 2,
+  "resources": [
     {
-      &quot;href&quot;: &quot;http://localhost:3000/api/reports/80/results/27&quot;,
-      &quot;id&quot;: &quot;27&quot;,
-      &quot;created_on&quot;: &quot;2015-11-09T18:52:48Z&quot;
+      "href": "http://localhost:3000/api/reports/80/results/27",
+      "id": "27",
+      "created_on": "2015-11-09T18:52:48Z"
     },
     {
-      &quot;href&quot;: &quot;http://localhost:3000/api/reports/80/results/13&quot;,
-      &quot;id&quot;: &quot;13&quot;,
-      &quot;created_on&quot;: &quot;2015-07-29T18:24:35Z&quot;
+      "href": "http://localhost:3000/api/reports/80/results/13",
+      "id": "13",
+      "created_on": "2015-07-29T18:24:35Z"
     }
   ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="requesting-result-downloads"><a class="anchor" href="#requesting-result-downloads"></a>Requesting Report Result Downloads</h3>
-<div class="paragraph">
-<p>Requesting a <strong>txt</strong>, <strong>csv</strong> or <strong>pdf</strong> download of the report results can be done
-via the <strong>request_download</strong> action requiring the desired <em>result_type</em> as
-follows:</p>
-</div>
-<div class="sect3">
-<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/results/22</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;action&quot; : &quot;request_download&quot;,
-  &quot;result_type&quot; : &quot;csv&quot;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This triggers an async request of the report and returns an action response
-as follows:</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;success&quot;: true,
-  &quot;message&quot;: &quot;Requesting a download of a csv report for Result id:22 name:VMware VM Summary&quot;,
-  &quot;task_id&quot;: &quot;46&quot;,
-  &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;,
-  &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/46/task_results&quot;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The task can simply be queried for a <em>Finished</em> state and the results then
-fetched via the <em>task_results_href</em> provided above.</p>
-</div>
-<div class="paragraph">
+}
+</code></pre>
+
+<h3 id="requesting-report-result-downloads">
+<a class="anchor" href="#requesting-report-result-downloads" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requesting Report Result Downloads</h3>
+
+<p>Requesting a <strong>txt</strong>, <strong>csv</strong> or <strong>pdf</strong> download of the report results
+can be done via the <strong>request_download</strong> action requiring the desired
+<em>result_type</em> as follows:</p>
+
+<h4 id="request-1">
+<a class="anchor" href="#request-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<pre><code class="language-data">POST /api/results/22
+</code></pre>
+
+<pre><code class="language-data">{
+  "action" : "request_download",
+  "result_type" : "csv"
+}
+</code></pre>
+
+<p>This triggers an async request of the report and returns an action
+response as follows:</p>
+
+<h4 id="response-1">
+<a class="anchor" href="#response-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<pre><code class="language-data">{
+  "success": true,
+  "message": "Requesting a download of a csv report for Result id:22 name:VMware VM Summary",
+  "task_id": "46",
+  "task_href": "http://localhost:3000/api/tasks/46",
+  "task_results_href": "http://localhost:3000/api/tasks/46/task_results"
+}
+</code></pre>
+
+<p>The task can simply be queried for a <em>Finished</em> state and the results
+then fetched via the <em>task_results_href</em> provided above.</p>
+
 <p>Querying for the task completion:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/tasks/46</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;,
-  &quot;id&quot;: &quot;46&quot;,
-  &quot;name&quot;: &quot;Generate Report result [csv]: 'VMware VM Summary'&quot;,
-  &quot;state&quot;: &quot;Finished&quot;,
-  &quot;status&quot;: &quot;Ok&quot;,
-  &quot;message&quot;: &quot;Generate Report result [csv]&quot;,
-  &quot;userid&quot;: &quot;admin&quot;,
-  &quot;created_on&quot;: &quot;2020-05-06T17:15:29Z&quot;,
-  &quot;updated_on&quot;: &quot;2020-05-06T17:15:30Z&quot;,
-  &quot;pct_complete&quot;: null,
-  &quot;context_data&quot;: {
-    &quot;result_id&quot;: &quot;22&quot;,
-    &quot;result_type&quot;: &quot;csv&quot;,
-    &quot;session_id&quot;: &quot;1cae5e9c-9b3e-4ee1-a286-bc2a0131233d-7f4bc905&quot;
+
+<pre><code class="language-data">GET /api/tasks/46
+</code></pre>
+
+<pre><code class="language-data">{
+  "href": "http://localhost:3000/api/tasks/46",
+  "id": "46",
+  "name": "Generate Report result [csv]: 'VMware VM Summary'",
+  "state": "Finished",
+  "status": "Ok",
+  "message": "Generate Report result [csv]",
+  "userid": "admin",
+  "created_on": "2020-05-06T17:15:29Z",
+  "updated_on": "2020-05-06T17:15:30Z",
+  "pct_complete": null,
+  "context_data": {
+    "result_id": "22",
+    "result_type": "csv",
+    "session_id": "1cae5e9c-9b3e-4ee1-a286-bc2a0131233d-7f4bc905"
   },
-  &quot;results&quot;: null,
-  &quot;miq_server_id&quot;: &quot;3&quot;,
-  &quot;identifier&quot;: null,
-  &quot;started_on&quot;: &quot;2020-05-06T17:15:30Z&quot;,
-  &quot;zone&quot;: null,
-  &quot;actions&quot;: [
+  "results": null,
+  "miq_server_id": "3",
+  "identifier": null,
+  "started_on": "2020-05-06T17:15:30Z",
+  "zone": null,
+  "actions": [
     {
-      &quot;name&quot;: &quot;delete&quot;,
-      &quot;method&quot;: &quot;post&quot;,
-      &quot;href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;
+      "name": "delete",
+      "method": "post",
+      "href": "http://localhost:3000/api/tasks/46"
     },
     {
-      &quot;name&quot;: &quot;delete&quot;,
-      &quot;method&quot;: &quot;delete&quot;,
-      &quot;href&quot;: &quot;http://localhost:3000/api/tasks/46&quot;
+      "name": "delete",
+      "method": "delete",
+      "href": "http://localhost:3000/api/tasks/46"
     }
   ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+}
+</code></pre>
+
 <p>And the results can be fetched as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/tasks/46/task_results</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This will return the report with the appropriately typed <strong>Content-Type</strong>,
-<em>application/txt</em>, <em>application/csv</em>, or <em>application/pdf</em> as per the
-requested download.</p>
-</div>
-<div class="paragraph">
-<p>With a <strong>request_download</strong> action targeted at the collection level, one can
-also request the download for multiple report results as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/results</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;action&quot; : &quot;request_download&quot;,
-  &quot;resources&quot; : [
-      { &quot;id&quot; : &quot;15&quot;, &quot;result_type&quot; : &quot;txt&quot; },
-      { &quot;id&quot; : &quot;17&quot;, &quot;result_type&quot; : &quot;txt&quot; },
-      { &quot;id&quot; : &quot;22&quot;, &quot;result_type&quot; : &quot;csv&quot; }
+
+<pre><code class="language-data">GET /api/tasks/46/task_results
+</code></pre>
+
+<p>This will return the report with the appropriately typed
+<strong>Content-Type</strong>, <em>application/txt</em>, <em>application/csv</em>, or
+<em>application/pdf</em> as per the requested download.</p>
+
+<p>With a <strong>request_download</strong> action targeted at the collection level,
+one can also request the download for multiple report results as
+follows:</p>
+
+<pre><code class="language-data">POST /api/results
+</code></pre>
+
+<pre><code class="language-data">{
+  "action" : "request_download",
+  "resources" : [
+      { "id" : "15", "result_type" : "txt" },
+      { "id" : "17", "result_type" : "txt" },
+      { "id" : "22", "result_type" : "csv" }
    ]
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;results&quot; : [
+}
+</code></pre>
+
+<pre><code class="language-data">{
+  "results" : [
     {
-      &quot;success&quot;: true,
-      &quot;message&quot;: &quot;Requesting a download of a txt report for Result id:15 name:VMware VM Summary&quot;,
-      &quot;task_id&quot;: &quot;54&quot;,
-      &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/54&quot;,
-      &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/54/task_results&quot;
+      "success": true,
+      "message": "Requesting a download of a txt report for Result id:15 name:VMware VM Summary",
+      "task_id": "54",
+      "task_href": "http://localhost:3000/api/tasks/54",
+      "task_results_href": "http://localhost:3000/api/tasks/54/task_results"
     },
     {
-      &quot;success&quot;: true,
-      &quot;message&quot;: &quot;Requesting a download of a txt report for Result id:17 name:VMware VM Summary&quot;,
-      &quot;task_id&quot;: &quot;55&quot;,
-      &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/55&quot;,
-      &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/55/task_results&quot;
+      "success": true,
+      "message": "Requesting a download of a txt report for Result id:17 name:VMware VM Summary",
+      "task_id": "55",
+      "task_href": "http://localhost:3000/api/tasks/55",
+      "task_results_href": "http://localhost:3000/api/tasks/55/task_results"
     },
     {
-      &quot;success&quot;: true,
-      &quot;message&quot;: &quot;Requesting a download of a txt report for Result id:22 name:VMware VM Summary&quot;,
-      &quot;task_id&quot;: &quot;56&quot;,
-      &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/56&quot;,
-      &quot;task_results_href&quot;: &quot;http://localhost:3000/api/tasks/56/task_results&quot;
+      "success": true,
+      "message": "Requesting a download of a txt report for Result id:22 name:VMware VM Summary",
+      "task_id": "56",
+      "task_href": "http://localhost:3000/api/tasks/56",
+      "task_results_href": "http://localhost:3000/api/tasks/56/task_results"
     }
   ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+}
+</code></pre>
+
 <p>Each can then be individually queried and downloaded upon completion.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="importing-reports"><a class="anchor" href="#importing-reports"></a>Importing Reports</h3>
-<div class="paragraph">
-<p>Importing reports to the system can be done by posting an <strong>import</strong> action to the
-reports collection as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;action&quot; : &quot;import&quot;,
-  &quot;resource&quot; : {
-    &quot;report&quot; : { JSON serialized report },
-    &quot;options&quot; : { &quot;save&quot; : true }
+
+<h3 id="importing-reports">
+<a class="anchor" href="#importing-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing Reports</h3>
+
+<p>Importing reports to the system can be done by posting an <strong>import</strong>
+action to the reports collection as follows:</p>
+
+<pre><code class="language-data">POST /api/reports
+</code></pre>
+
+<pre><code class="language-data">{
+  "action" : "import",
+  "resource" : {
+    "report" : { JSON serialized report },
+    "options" : { "save" : true }
   }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s an example:</p>
-</div>
-<div class="sect3">
-<h4 id="request-3"><a class="anchor" href="#request-3"></a>Request:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;action&quot; : &quot;import&quot;,
-  &quot;resource&quot; : {
-    &quot;report&quot; : {
-      &quot;menu_name&quot; : &quot;Test Report&quot;,
-      &quot;col_order&quot; : [&quot;col1&quot;, &quot;col2&quot;, &quot;col3&quot;],
-      &quot;cols&quot;      : [&quot;col1&quot;, &quot;col2&quot;, &quot;col3&quot;],
-      &quot;rpt_type&quot;  : &quot;Custom&quot;,
-      &quot;title&quot;     : &quot;Test Report&quot;,
-      &quot;db&quot;        : &quot;My::Db&quot;,
-      &quot;rpt_group&quot; : &quot;Custom&quot;
+}
+</code></pre>
+
+<p>Here’s an example:</p>
+
+<h4 id="request-2">
+<a class="anchor" href="#request-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request:</h4>
+
+<pre><code class="language-data">POST /api/reports
+</code></pre>
+
+<pre><code class="language-data">{
+  "action" : "import",
+  "resource" : {
+    "report" : {
+      "menu_name" : "Test Report",
+      "col_order" : ["col1", "col2", "col3"],
+      "cols"      : ["col1", "col2", "col3"],
+      "rpt_type"  : "Custom",
+      "title"     : "Test Report",
+      "db"        : "My::Db",
+      "rpt_group" : "Custom"
     },
-    &quot;options&quot; : { &quot;save&quot; : true }
+    "options" : { "save" : true }
   }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="response-3"><a class="anchor" href="#response-3"></a>Response:</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">{
-  &quot;results&quot;: [
+}
+</code></pre>
+
+<h4 id="response-2">
+<a class="anchor" href="#response-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response:</h4>
+
+<pre><code class="language-data">{
+  "results": [
     {
-      &quot;success&quot;: true,
-      &quot;message&quot;: &quot;Imported Report: [Test Report]&quot;,
-      &quot;result&quot;: {
-        &quot;id&quot;: &quot;199&quot;,
-        &quot;name&quot;: &quot;Test Report&quot;,
-        &quot;title&quot;: &quot;Test Report&quot;,
-        &quot;rpt_group&quot;: &quot;Custom&quot;,
-        &quot;rpt_type&quot;: &quot;Custom&quot;,
-        &quot;db&quot;: &quot;My::Db&quot;,
-        &quot;cols&quot;: [
-          &quot;col1&quot;,
-          &quot;col2&quot;,
-          &quot;co3l&quot;
+      "success": true,
+      "message": "Imported Report: [Test Report]",
+      "result": {
+        "id": "199",
+        "name": "Test Report",
+        "title": "Test Report",
+        "rpt_group": "Custom",
+        "rpt_type": "Custom",
+        "db": "My::Db",
+        "cols": [
+          "col1",
+          "col2",
+          "co3l"
         ],
-        &quot;col_order&quot;: [
-          &quot;col1&quot;,
-          &quot;col2&quot;,
-          &quot;col3&quot;
+        "col_order": [
+          "col1",
+          "col2",
+          "col3"
         ],
-        &quot;created_on&quot;: &quot;2015-11-09T19:44:37Z&quot;,
-        &quot;updated_on&quot;: &quot;2015-11-09T19:44:37Z&quot;,
-        &quot;miq_group_id&quot;: &quot;1&quot;,
-        &quot;user_id&quot;: &quot;1&quot;
+        "created_on": "2015-11-09T19:44:37Z",
+        "updated_on": "2015-11-09T19:44:37Z",
+        "miq_group_id": "1",
+        "user_id": "1"
       }
     }
   ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+}
+</code></pre>
+
+
       </div>
     </article>
   </div>

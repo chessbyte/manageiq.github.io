@@ -1540,99 +1540,82 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="cloud-volumes"><a class="anchor" href="#cloud-volumes"></a>Cloud Volumes</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of Cloud Volumes is provided via the following collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/cloud_volumes</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following actions are available on cloud_volumes:</p>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#cloud-volumes">Cloud Volumes</a>
 <ul>
-<li>
-<p><a href="#querying-cloud-volumes">Querying Cloud Volumes</a></p>
-</li>
-<li>
-<p><a href="#deleting-cloud-volumes">Deleting Cloud Volumes</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#querying-cloud-volumes">Querying Cloud Volumes</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-cloud-volumes">Deleting Cloud Volumes</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="querying-cloud-volumes"><a class="anchor" href="#querying-cloud-volumes"></a>Querying Cloud Volumes</h3>
-<div class="paragraph">
+</li>
+</ul><h2 id="cloud-volumes">
+<a class="anchor" href="#cloud-volumes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cloud Volumes</h2>
+
+<p>Management of Cloud Volumes is provided via the following collection:</p>
+
+<pre><code class="language-data">/api/cloud_volumes
+</code></pre>
+
+<p>The following actions are available on cloud_volumes:</p>
+
+<ul>
+  <li>
+    <p><a href="#querying-cloud-volumes">Querying Cloud Volumes</a></p>
+  </li>
+  <li>
+    <p><a href="#deleting-cloud-volumes">Deleting Cloud Volumes</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-cloud-volumes">
+<a class="anchor" href="#querying-cloud-volumes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Cloud Volumes</h3>
+
 <p>Querying all cloud volumes in the system is simply:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/cloud_volumes</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/cloud_volumes
+</code></pre></div></div>
+
 <p>And getting details of a specific Cloud Volume is as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/cloud_volumes/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-cloud-volumes"><a class="anchor" href="#deleting-cloud-volumes"></a>Deleting Cloud Volumes</h3>
-<div class="paragraph">
-<p>Cloud Volumes can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/cloud_volumes/101</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/cloud_volumes/:id
+</code></pre></div></div>
+
+<h3 id="deleting-cloud-volumes">
+<a class="anchor" href="#deleting-cloud-volumes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Cloud Volumes</h3>
+
+<p>Cloud Volumes can be deleted via either the <strong>delete</strong> POST action or
+via the DELETE HTTP method.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/cloud_volumes/101
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or simply:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>DELETE /api/cloud_volumes/101</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/cloud_volumes/101
+</code></pre></div></div>
+
 <p>Deleting multiple Cloud Volumes can be done as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/cloud_volumes</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/cloud_volumes/101</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/cloud_volumes/102</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/cloud_volumes
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/cloud_volumes/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/cloud_volumes/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

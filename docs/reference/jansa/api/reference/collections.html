@@ -1540,478 +1540,473 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="collections"><a class="anchor" href="#collections"></a>Collections</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following tables shows the currently available primary collections accessible via:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/:collection</code></pre>
-</div>
-</div>
-<div class="paragraph">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#collections">Collections</a></li>
+</ul><h2 id="collections">
+<a class="anchor" href="#collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collections</h2>
+
+<p>The following tables shows the currently available primary collections
+accessible via:</p>
+
+<pre><code class="language-data">GET /api/:collection
+</code></pre>
+
 <p>Where :collection is one of the following:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 60%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Collection</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">actions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Actions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alert_definition_profiles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alert Definition Profiles</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alert_definitions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alert Definitions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alerts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alerts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">auth_key_pairs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auth Key Pairs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">authentications</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Authentications</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">automate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automate Model</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">automate_classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automate Classes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">automate_domains</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automate Domains</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">automate_workspaces</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automate Workspaces</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">automation_requests</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automation Requests</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">availability_zones</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Availability Zones</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">categories</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Categories</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">chargebacks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chargebacks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_networks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Networks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_object_store_containers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Object Store Containers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_subnets</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Subnets</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_templates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Templates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_tenants</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Tenants</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_volume_types</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volume Types</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloud_volumes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clusters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Clusters</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">conditions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conditions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">configuration_profiles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration Profiles</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">configuration_script_payloads</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration Script Payloads</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">configuration_script_sources</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration Script Source</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">configuration_scripts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration Scripts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">configured_systems</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configured Systems</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">container_groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Container Groups</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">container_images</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Container Images</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">container_nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Container Nodes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">container_projects</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Container Projects</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">container_templates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Container Templates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">container_volumes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Container Volumes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">containers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Containers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">conversion_hosts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conversion Hosts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currencies</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currencies</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">custom_button_sets</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Custom Button Sets</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">custom_buttons</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Custom Buttons</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">customization_scripts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Customization Scripts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">customization_templates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Customization Templates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data_stores</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datastores</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterprises</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprises</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">event_streams</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Event Streams</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Events</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">features</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product Features</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">firmware_registries</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Firmware Registries</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">firmwares</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Firmwares</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">flavors</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flavors</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">floating_ips</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Floating IPs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generic_object_definitions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generic Object Definitions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generic_objects</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generic Objects</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Groups</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">guest_devices</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Guest Devices</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hosts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hosts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instances</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instances</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lans</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lans</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">load_balancers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Load Balancers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">measures</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Measures</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metric_rollups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metric Rollups</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">network_routers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Network Routers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">notifications</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User&#8217;s past notifications</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">orchestration_stacks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Orchestration Stacks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">orchestration_templates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Orchestration Template</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">physical_chassis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Chassis</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">physical_racks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Racks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">physical_servers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Servers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">physical_storages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Storages</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">physical_switches</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Switches</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pictures</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pictures</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">policies</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Policies</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">policy_actions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Actions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">policy_profiles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Policy Profiles</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">providers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Providers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">provision_dialogs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provisioning Dialogs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">provision_requests</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provision Requests</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pxe_images</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PXE Images</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pxe_menus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PXE Menus</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pxe_servers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PXE Servers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chargeback Rates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">regions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Regions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reports</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reports</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">request_tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Request Tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">requests</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requests</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resource_pools</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resource Pools</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">results</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Report Results</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">roles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Roles</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">search_filters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search Filters</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">security_groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Security Groups</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">servers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EVM Servers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_catalogs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Catalogs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_dialogs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Dialogs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_offerings</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Offerings</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_orders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Orders</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_parameters_sets</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Parameters Sets</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_requests</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Requests</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service_templates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Service Templates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">services</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Services</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Settings</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">switches</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switches</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">templates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Templates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tenant_groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tenant Groups</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tenants</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tenants</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">transformation_mappings</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transformation Mappings</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Users</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Machines</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">widgets</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Miq Widgets</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">zones</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zones</p></td>
-</tr>
-</tbody>
+
+<table>
+  <thead>
+    <tr>
+      <th>Collection</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>actions</td>
+      <td>Actions</td>
+    </tr>
+    <tr>
+      <td>alert_definition_profiles</td>
+      <td>Alert Definition Profiles</td>
+    </tr>
+    <tr>
+      <td>alert_definitions</td>
+      <td>Alert Definitions</td>
+    </tr>
+    <tr>
+      <td>alerts</td>
+      <td>Alerts</td>
+    </tr>
+    <tr>
+      <td>auth_key_pairs</td>
+      <td>Auth Key Pairs</td>
+    </tr>
+    <tr>
+      <td>authentications</td>
+      <td>Authentications</td>
+    </tr>
+    <tr>
+      <td>automate</td>
+      <td>Automate Model</td>
+    </tr>
+    <tr>
+      <td>automate_classes</td>
+      <td>Automate Classes</td>
+    </tr>
+    <tr>
+      <td>automate_domains</td>
+      <td>Automate Domains</td>
+    </tr>
+    <tr>
+      <td>automate_workspaces</td>
+      <td>Automate Workspaces</td>
+    </tr>
+    <tr>
+      <td>automation_requests</td>
+      <td>Automation Requests</td>
+    </tr>
+    <tr>
+      <td>availability_zones</td>
+      <td>Availability Zones</td>
+    </tr>
+    <tr>
+      <td>categories</td>
+      <td>Categories</td>
+    </tr>
+    <tr>
+      <td>chargebacks</td>
+      <td>Chargebacks</td>
+    </tr>
+    <tr>
+      <td>cloud_networks</td>
+      <td>Cloud Networks</td>
+    </tr>
+    <tr>
+      <td>cloud_object_store_containers</td>
+      <td>Cloud Object Store Containers</td>
+    </tr>
+    <tr>
+      <td>cloud_subnets</td>
+      <td>Cloud Subnets</td>
+    </tr>
+    <tr>
+      <td>cloud_templates</td>
+      <td>Cloud Templates</td>
+    </tr>
+    <tr>
+      <td>cloud_tenants</td>
+      <td>Cloud Tenants</td>
+    </tr>
+    <tr>
+      <td>cloud_volume_types</td>
+      <td>Cloud Volume Types</td>
+    </tr>
+    <tr>
+      <td>cloud_volumes</td>
+      <td>Cloud Volumes</td>
+    </tr>
+    <tr>
+      <td>clusters</td>
+      <td>Clusters</td>
+    </tr>
+    <tr>
+      <td>conditions</td>
+      <td>Conditions</td>
+    </tr>
+    <tr>
+      <td>configuration_profiles</td>
+      <td>Configuration Profiles</td>
+    </tr>
+    <tr>
+      <td>configuration_script_payloads</td>
+      <td>Configuration Script Payloads</td>
+    </tr>
+    <tr>
+      <td>configuration_script_sources</td>
+      <td>Configuration Script Source</td>
+    </tr>
+    <tr>
+      <td>configuration_scripts</td>
+      <td>Configuration Scripts</td>
+    </tr>
+    <tr>
+      <td>configured_systems</td>
+      <td>Configured Systems</td>
+    </tr>
+    <tr>
+      <td>container_groups</td>
+      <td>Container Groups</td>
+    </tr>
+    <tr>
+      <td>container_images</td>
+      <td>Container Images</td>
+    </tr>
+    <tr>
+      <td>container_nodes</td>
+      <td>Container Nodes</td>
+    </tr>
+    <tr>
+      <td>container_projects</td>
+      <td>Container Projects</td>
+    </tr>
+    <tr>
+      <td>container_templates</td>
+      <td>Container Templates</td>
+    </tr>
+    <tr>
+      <td>container_volumes</td>
+      <td>Container Volumes</td>
+    </tr>
+    <tr>
+      <td>containers</td>
+      <td>Containers</td>
+    </tr>
+    <tr>
+      <td>conversion_hosts</td>
+      <td>Conversion Hosts</td>
+    </tr>
+    <tr>
+      <td>currencies</td>
+      <td>Currencies</td>
+    </tr>
+    <tr>
+      <td>custom_button_sets</td>
+      <td>Custom Button Sets</td>
+    </tr>
+    <tr>
+      <td>custom_buttons</td>
+      <td>Custom Buttons</td>
+    </tr>
+    <tr>
+      <td>customization_scripts</td>
+      <td>Customization Scripts</td>
+    </tr>
+    <tr>
+      <td>customization_templates</td>
+      <td>Customization Templates</td>
+    </tr>
+    <tr>
+      <td>data_stores</td>
+      <td>Datastores</td>
+    </tr>
+    <tr>
+      <td>enterprises</td>
+      <td>Enterprises</td>
+    </tr>
+    <tr>
+      <td>event_streams</td>
+      <td>Event Streams</td>
+    </tr>
+    <tr>
+      <td>events</td>
+      <td>Events</td>
+    </tr>
+    <tr>
+      <td>features</td>
+      <td>Product Features</td>
+    </tr>
+    <tr>
+      <td>firmware_registries</td>
+      <td>Firmware Registries</td>
+    </tr>
+    <tr>
+      <td>firmwares</td>
+      <td>Firmwares</td>
+    </tr>
+    <tr>
+      <td>flavors</td>
+      <td>Flavors</td>
+    </tr>
+    <tr>
+      <td>floating_ips</td>
+      <td>Floating IPs</td>
+    </tr>
+    <tr>
+      <td>generic_object_definitions</td>
+      <td>Generic Object Definitions</td>
+    </tr>
+    <tr>
+      <td>generic_objects</td>
+      <td>Generic Objects</td>
+    </tr>
+    <tr>
+      <td>groups</td>
+      <td>Groups</td>
+    </tr>
+    <tr>
+      <td>guest_devices</td>
+      <td>Guest Devices</td>
+    </tr>
+    <tr>
+      <td>hosts</td>
+      <td>Hosts</td>
+    </tr>
+    <tr>
+      <td>instances</td>
+      <td>Instances</td>
+    </tr>
+    <tr>
+      <td>lans</td>
+      <td>Lans</td>
+    </tr>
+    <tr>
+      <td>load_balancers</td>
+      <td>Load Balancers</td>
+    </tr>
+    <tr>
+      <td>measures</td>
+      <td>Measures</td>
+    </tr>
+    <tr>
+      <td>metric_rollups</td>
+      <td>Metric Rollups</td>
+    </tr>
+    <tr>
+      <td>network_routers</td>
+      <td>Network Routers</td>
+    </tr>
+    <tr>
+      <td>notifications</td>
+      <td>User’s past notifications</td>
+    </tr>
+    <tr>
+      <td>orchestration_stacks</td>
+      <td>Orchestration Stacks</td>
+    </tr>
+    <tr>
+      <td>orchestration_templates</td>
+      <td>Orchestration Template</td>
+    </tr>
+    <tr>
+      <td>physical_chassis</td>
+      <td>Physical Chassis</td>
+    </tr>
+    <tr>
+      <td>physical_racks</td>
+      <td>Physical Racks</td>
+    </tr>
+    <tr>
+      <td>physical_servers</td>
+      <td>Physical Servers</td>
+    </tr>
+    <tr>
+      <td>physical_storages</td>
+      <td>Physical Storages</td>
+    </tr>
+    <tr>
+      <td>physical_switches</td>
+      <td>Physical Switches</td>
+    </tr>
+    <tr>
+      <td>pictures</td>
+      <td>Pictures</td>
+    </tr>
+    <tr>
+      <td>policies</td>
+      <td>Policies</td>
+    </tr>
+    <tr>
+      <td>policy_actions</td>
+      <td>Actions</td>
+    </tr>
+    <tr>
+      <td>policy_profiles</td>
+      <td>Policy Profiles</td>
+    </tr>
+    <tr>
+      <td>providers</td>
+      <td>Providers</td>
+    </tr>
+    <tr>
+      <td>provision_dialogs</td>
+      <td>Provisioning Dialogs</td>
+    </tr>
+    <tr>
+      <td>provision_requests</td>
+      <td>Provision Requests</td>
+    </tr>
+    <tr>
+      <td>pxe_images</td>
+      <td>PXE Images</td>
+    </tr>
+    <tr>
+      <td>pxe_menus</td>
+      <td>PXE Menus</td>
+    </tr>
+    <tr>
+      <td>pxe_servers</td>
+      <td>PXE Servers</td>
+    </tr>
+    <tr>
+      <td>rates</td>
+      <td>Chargeback Rates</td>
+    </tr>
+    <tr>
+      <td>regions</td>
+      <td>Regions</td>
+    </tr>
+    <tr>
+      <td>reports</td>
+      <td>Reports</td>
+    </tr>
+    <tr>
+      <td>request_tasks</td>
+      <td>Request Tasks</td>
+    </tr>
+    <tr>
+      <td>requests</td>
+      <td>Requests</td>
+    </tr>
+    <tr>
+      <td>resource_pools</td>
+      <td>Resource Pools</td>
+    </tr>
+    <tr>
+      <td>results</td>
+      <td>Report Results</td>
+    </tr>
+    <tr>
+      <td>roles</td>
+      <td>Roles</td>
+    </tr>
+    <tr>
+      <td>search_filters</td>
+      <td>Search Filters</td>
+    </tr>
+    <tr>
+      <td>security_groups</td>
+      <td>Security Groups</td>
+    </tr>
+    <tr>
+      <td>servers</td>
+      <td>EVM Servers</td>
+    </tr>
+    <tr>
+      <td>service_catalogs</td>
+      <td>Service Catalogs</td>
+    </tr>
+    <tr>
+      <td>service_dialogs</td>
+      <td>Service Dialogs</td>
+    </tr>
+    <tr>
+      <td>service_offerings</td>
+      <td>Service Offerings</td>
+    </tr>
+    <tr>
+      <td>service_orders</td>
+      <td>Service Orders</td>
+    </tr>
+    <tr>
+      <td>service_parameters_sets</td>
+      <td>Service Parameters Sets</td>
+    </tr>
+    <tr>
+      <td>service_requests</td>
+      <td>Service Requests</td>
+    </tr>
+    <tr>
+      <td>service_templates</td>
+      <td>Service Templates</td>
+    </tr>
+    <tr>
+      <td>services</td>
+      <td>Services</td>
+    </tr>
+    <tr>
+      <td>settings</td>
+      <td>Settings</td>
+    </tr>
+    <tr>
+      <td>switches</td>
+      <td>Switches</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>Tags</td>
+    </tr>
+    <tr>
+      <td>tasks</td>
+      <td>Tasks</td>
+    </tr>
+    <tr>
+      <td>templates</td>
+      <td>Templates</td>
+    </tr>
+    <tr>
+      <td>tenant_groups</td>
+      <td>Tenant Groups</td>
+    </tr>
+    <tr>
+      <td>tenants</td>
+      <td>Tenants</td>
+    </tr>
+    <tr>
+      <td>transformation_mappings</td>
+      <td>Transformation Mappings</td>
+    </tr>
+    <tr>
+      <td>users</td>
+      <td>Users</td>
+    </tr>
+    <tr>
+      <td>vms</td>
+      <td>Virtual Machines</td>
+    </tr>
+    <tr>
+      <td>widgets</td>
+      <td>Miq Widgets</td>
+    </tr>
+    <tr>
+      <td>zones</td>
+      <td>Zones</td>
+    </tr>
+  </tbody>
 </table>
-</div>
-</div>
+
+
       </div>
     </article>
   </div>

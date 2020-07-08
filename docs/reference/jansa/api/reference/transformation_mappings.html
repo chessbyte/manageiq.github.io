@@ -1540,200 +1540,183 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="transformation_mappings"><a class="anchor" href="#transformation_mappings"></a>Transformation Mappings</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of transformation mappings is provided via the following collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/transformation_mappings</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following actions are available for transformation mappings:</p>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#transformation-mappings">Transformation Mappings</a>
 <ul>
-<li>
-<p><a href="#querying-transformation-mappings">Querying Transformation Mappings</a></p>
-</li>
-<li>
-<p><a href="#creating-transformation-mappings">Creating Transformation Mappings</a></p>
-</li>
-<li>
-<p><a href="#deleting-transformation-mappings">Deleting Transformation Mappings</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#querying-transformation-mappings">Querying Transformation Mappings</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-transformation-mappings">Creating Transformation Mappings</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#transportation-mapping-attributes">Transportation Mapping Attributes</a></li>
+<li class="toc-entry toc-h4"><a href="#response">Response</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="querying-transformation-mappings"><a class="anchor" href="#querying-transformation-mappings"></a>Querying Transformation Mappings</h3>
-<div class="paragraph">
+</li>
+<li class="toc-entry toc-h3"><a href="#deleting-transformation-mappings">Deleting Transformation Mappings</a></li>
+</ul>
+</li>
+</ul><h2 id="transformation-mappings">
+<a class="anchor" href="#transformation-mappings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transformation Mappings</h2>
+
+<p>Management of transformation mappings is provided via the following
+collection:</p>
+
+<pre><code class="language-data">/api/transformation_mappings
+</code></pre>
+
+<p>The following actions are available for transformation mappings:</p>
+
+<ul>
+  <li>
+    <p><a href="#querying-transformation-mappings">Querying Transformation
+Mappings</a></p>
+  </li>
+  <li>
+    <p><a href="#creating-transformation-mappings">Creating Transformation
+Mappings</a></p>
+  </li>
+  <li>
+    <p><a href="#deleting-transformation-mappings">Deleting Transformation
+Mappings</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-transformation-mappings">
+<a class="anchor" href="#querying-transformation-mappings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Transformation Mappings</h3>
+
 <p>To query all transformation mappings:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/transformation_mappings</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/transformation_mappings
+</code></pre></div></div>
+
 <p>To query a specific transformation mapping for details:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/transformation_mappings/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="creating-transformation-mappings"><a class="anchor" href="#creating-transformation-mappings"></a>Creating Transformation Mappings</h3>
-<div class="paragraph">
-<p>Transformation mappings can be created via the <em>create</em> <code>POST</code> action, by posting the
-request directly to <strong>/api/transformation_mappings</strong>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span>: {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VMware to RHV</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Infrastructure Mapping for migration from VMware to RHV</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>transformation_mapping_items</span><span style="color:#404">&quot;</span></span>: [
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/clusters/00000000000001</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/clusters/00000000000003</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000001</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000013</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000002</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000013</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000003</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000013</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000004</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/data_stores/00000000000013</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000007</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000034</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000015</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000034</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000009</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000032</span><span style="color:#710">&quot;</span></span> },
-      { <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000017</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>destination</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/api/lans/00000000000032</span><span style="color:#710">&quot;</span></span> }
-    ]
-  }
-}</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="transportation-mapping-attributes"><a class="anchor" href="#transportation-mapping-attributes"></a>Transportation Mapping Attributes</h4>
-<table class="tableblock frame-all grid-all stretch">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/transformation_mappings/:id
+</code></pre></div></div>
+
+<h3 id="creating-transformation-mappings">
+<a class="anchor" href="#creating-transformation-mappings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Transformation Mappings</h3>
+
+<p>Transformation mappings can be created via the <em>create</em> <code class="language-plaintext highlighter-rouge">POST</code> action,
+by posting the request directly to <strong>/api/transformation_mappings</strong>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VMware to RHV"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Infrastructure Mapping for migration from VMware to RHV"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transformation_mapping_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/clusters/00000000000001"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/clusters/00000000000003"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000001"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000013"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000002"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000013"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000003"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000013"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000004"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/data_stores/00000000000013"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000007"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000034"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000015"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000034"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000009"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000032"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000017"</span><span class="p">,</span><span class="w"> </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/lans/00000000000032"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="transportation-mapping-attributes">
+<a class="anchor" href="#transportation-mapping-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transportation Mapping Attributes</h4>
+
+<table>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
-<tr>
-<th class="tableblock halign-left valign-top">Attribute</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<tr class="header">
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of transformation mapping</p></td>
+<tr class="odd">
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td><p>Name of transformation mapping</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description of transformation mapping</p></td>
+<tr class="even">
+<td><p>description</p></td>
+<td><p>string</p></td>
+<td><p>Description of transformation mapping</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">transformation_mapping_items</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">array</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<tr class="odd">
+<td><p>transformation_mapping_items</p></td>
+<td><p>array</p></td>
+<td>
 <p>List of transformation mapping items. Each item contains:</p>
-</div>
-<div class="ulist">
 <ul>
-<li>
-<p><code>source</code>: Suffix of the source resource URL</p>
-</li>
-<li>
-<p><code>destination</code>: Suffix of the destination resource URL</p>
-</li>
+<li><p><code>source</code>: Suffix of the source resource URL</p></li>
+<li><p><code>destination</code>: Suffix of the destination resource URL</p></li>
 </ul>
-</div></div></td>
+</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="response"><a class="anchor" href="#response"></a>Response</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/transformation_mappings/00000000000001</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">00000000000001</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VMware to RHV</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Infrastructure Mapping for migration from VMware to RHV</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>comments</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>state</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {},
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>tenant_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2019-09-09T09:56:59Z</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2019-09-09T09:56:59Z</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-transformation-mappings"><a class="anchor" href="#deleting-transformation-mappings"></a>Deleting Transformation Mappings</h3>
-<div class="paragraph">
-<p>Transformation mappings can be deleted either with the <strong>delete</strong> <code>POST</code> action or the <code>DELETE</code> HTTP method.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/transformation_mappings/101</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<h4 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/transformation_mappings/00000000000001"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000001"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VMware to RHV"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Infrastructure Mapping for migration from VMware to RHV"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T09:56:59Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T09:56:59Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="deleting-transformation-mappings">
+<a class="anchor" href="#deleting-transformation-mappings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Transformation Mappings</h3>
+
+<p>Transformation mappings can be deleted either with the <strong>delete</strong> <code class="language-plaintext highlighter-rouge">POST</code>
+action or the <code class="language-plaintext highlighter-rouge">DELETE</code> HTTP method.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/transformation_mappings/101
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>DELETE /api/transformation_mappings/101</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/transformation_mappings/101
+</code></pre></div></div>
+
 <p>To delete multiple transformation mappings:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/transformation_mappings</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/transformation_mappings/101</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/transformation_mappings/102</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/transformation_mappings
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/transformation_mappings/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/transformation_mappings/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

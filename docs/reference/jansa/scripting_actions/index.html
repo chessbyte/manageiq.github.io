@@ -1,0 +1,4102 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ManageIQ</title>
+  <meta name="description" content="">
+  <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
+  
+  <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
+  <link rel="canonical" href="http://manageiq.org/docs/reference/jansa/scripting_actions/index">
+  <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
+
+  <link href="/assets/images/favicon.ico" rel="shortcut icon">
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-name">ManageIQ</span>
+    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
+  </a>
+
+  <div id="site_header-nav_toggle">
+    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+  </div>
+</header>
+
+
+    <main data-url="/docs/reference/jansa/scripting_actions/index">
+      <nav class="doc_tabs">
+  <ul>
+  <li>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li class="active">
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="/docs/automation">
+      Automation Book
+    </a>
+  </li>
+  <li>
+    <a href="/docs/api">
+      API Docs
+    </a>
+  </li>
+  <li>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 pull-right" style="margin-top: 10px">
+        <script async src="https://cse.google.com/cse.js?cx=006042792541147862616:dfkijfebdts"></script>
+         <div class="gcse-search"></div>
+    </div>
+</nav>
+
+<script>
+  window.onload = demo;
+	function demo() {
+	    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Documentation")
+	}
+</script>
+
+<div class="doc_container">
+  <div class="doc_menu">
+    
+    
+
+<div class="doc_menu-heading">
+  Jansa
+</div>
+
+<ul class="menu menu-toplevel" id=ref_menu_jansa>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Installation
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_aws/index.html">
+      Amazon Web Services (AWS)
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_microsoft_azure/index.html">
+      Microsoft Azure
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_google_compute_engine/index.html">
+      Google Compute Engine
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_vmware_vsphere/index.html">
+      VMware vSphere
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_red_hat_enterprise_linux_openstack_platform/index.html">
+      Red Hat Enterprise OpenStack Platform
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_red_hat_virtualization/index.html">
+      Red Hat Enterprise Virtualization
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/installing_on_scvmm/index.html">
+      Microsoft System Center Virtual Machine Manager (SCVMM)
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Configuration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/deployment_planning_guide/index.html">
+      Deployment Planning Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/general_configuration/index.html">
+      General Configuration
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/high_availability_guide/index.html">
+      High Availability Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/appliance_hardening_guide/index.html">
+      Appliance Hardening Guide
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Administration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/monitoring_alerts_and_reporting/index.html">
+      Monitoring, Alerts, and Reporting
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/policies_and_profiles_guide/index.html">
+      Policies and Profiles Guide
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/managing_infrastructure_and_inventory/index.html">
+      Managing Infrastructure and Inventory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/managing_providers/index.html">
+      Managing Providers
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/provisioning_virtual_machines_and_hosts/index.html">
+      Provisioning Virtual Machines and Hosts
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item active">
+    <a href="/docs/reference/jansa/scripting_actions/index.html">
+      Scripting Actions in ManageIQ
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Authentication
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/active_directory.html">
+      Active Directory
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_2fa.html">
+      2-Factor-Authentication with IPA
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ipa_ad_trust.html">
+      IPA/AD Trust
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/ldap.html">
+      LDAP
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/saml.html">
+      SAML
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/auth/openid_connect.html">
+      OpenID-Connect
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Integration
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/integration_with_aws_cloudformation_and_openstack_heat/index.html">
+      AWS CloudFormation and OpenStack Heat
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/integration_with_servicenow/index.html">
+      ServiceNow
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+
+  <li class="menu-parent">
+    
+    <a href="#">
+      Reference
+    </a>
+    
+    
+      <ul>
+        
+
+
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/rest_api/index.html">
+      ManageIQ REST API
+    </a>
+    
+  </li>
+
+  
+  
+  
+  <li class="doc_menu-item">
+    <a href="/docs/reference/jansa/methods_available_for_automation/index.html">
+      Methods Available for Automation
+    </a>
+    
+  </li>
+
+
+      </ul>
+    
+  </li>
+
+</ul>
+
+    
+  </div>
+  <div class="doc_main">
+    <article class="doc user_doc">
+      
+
+      <div class="doc-content">
+        
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          
+            <span>
+              <a href="/docs/reference/latest/scripting_actions/index.html">
+                Latest
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span class="active" >
+              <a href="/docs/reference/jansa/scripting_actions/index.html">
+                Jansa
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/ivanchuk/doc-Scripting_Actions/miq/index.html">
+                Ivanchuk
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/hammer/doc-Scripting_Actions/miq/index.html">
+                Hammer
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/gaprindashvili/doc-Scripting_Actions/miq/index.html">
+                Gaprindashvili
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/fine/doc-Scripting_Actions/miq/index.html">
+                Fine
+              </a>
+            </span>
+            
+              <span class="separator">/</span>
+            
+          
+            <span>
+              <a href="/docs/reference/euwe/doc-Scripting_Actions/miq/index.html">
+                Euwe
+              </a>
+            </span>
+            
+          
+        </div>
+        
+        <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#scripting-actions-in-cloudforms">Scripting Actions in CloudForms</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#updates-to-rails-and-ruby">Updates to Rails and Ruby</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#updates-and-changes-in-rails">Updates and Changes in Rails</a></li>
+<li class="toc-entry toc-h3"><a href="#updates-and-changes-in-ruby">Updates and Changes in Ruby</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#understanding-the-automate-model">Understanding the Automate Model</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#automate-model">Automate Model</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-domain">Creating a Domain</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-a-domain">Editing a Domain</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-a-domain">Deleting a Domain</a></li>
+<li class="toc-entry toc-h3"><a href="#importing-a-domain-from-a-git-repository">Importing a Domain from a Git Repository</a></li>
+<li class="toc-entry toc-h3"><a href="#changing-priority-order-of-domains">Changing Priority Order of Domains</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-namespace">Creating a Namespace</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-class">Creating a Class</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-schema-for-a-class">Creating a Schema for a Class</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-a-field-in-a-schema">Editing a Field in a Schema</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-schema-sequence">Editing Schema Sequence</a></li>
+<li class="toc-entry toc-h3"><a href="#adding-an-instance-to-a-class">Adding an Instance to a Class</a></li>
+<li class="toc-entry toc-h3"><a href="#copying-a-class-or-instance">Copying a Class or Instance</a></li>
+<li class="toc-entry toc-h3"><a href="#relationships">Relationships</a></li>
+<li class="toc-entry toc-h3"><a href="#methods">Methods</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#creating-a-method">Creating a Method</a></li>
+<li class="toc-entry toc-h4"><a href="#creating-a-dynamic-content-dialog">Creating a Dynamic Content Dialog</a></li>
+<li class="toc-entry toc-h4"><a href="#creating-a-playbook-automate-method">Creating a Playbook Automate Method</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#passing-variables-between-successive-playbook-methods">Passing variables between successive playbook methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#expression-methods">Expression Methods</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#input-parameters">Input Parameters</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#optional-input-parameters">Optional Input Parameters</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h4"><a href="#creating-an-expression-method">Creating an Expression Method</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#simulation">Simulation</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#simulating-an-automate-model">Simulating an Automate Model</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#importing-exporting-and-resetting-the-datastore">Importing, Exporting, and Resetting the Datastore</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#exporting-all-datastore-classes">Exporting All Datastore Classes</a></li>
+<li class="toc-entry toc-h4"><a href="#importing-datastore-classes">Importing Datastore Classes</a></li>
+<li class="toc-entry toc-h4"><a href="#resetting-datastores-to-the-default">Resetting Datastores to the Default</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#invoking-automate">Invoking Automate</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#automate-examples">Automate Examples</a></li>
+<li class="toc-entry toc-h3"><a href="#invoking-automate-using-a-custom-button">Invoking Automate using a Custom Button</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-custom-button-group">Creating a Custom Button Group</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-custom-button">Creating a Custom Button</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-an-ansible-playbook-button">Creating an Ansible Playbook Button</a></li>
+<li class="toc-entry toc-h3"><a href="#editing-a-custom-button">Editing a Custom Button</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-a-custom-button">Deleting a Custom Button</a></li>
+<li class="toc-entry toc-h3"><a href="#setting-enablement-and-visibility-for-custom-buttons">Setting Enablement and Visibility for Custom Buttons</a></li>
+<li class="toc-entry toc-h3"><a href="#using-a-custom-button">Using a Custom Button</a></li>
+<li class="toc-entry toc-h3"><a href="#initiating-automate-from-an-event">Initiating Automate from an Event</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-policy-for-automate">Creating a Policy for Automate</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-a-custom-automate-action">Creating a Custom Automate Action</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#objects">Objects</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#virtual-machine-properties">Virtual Machine Properties</a></li>
+<li class="toc-entry toc-h3"><a href="#methods-for-use-in-ruby-scripts">Methods for use in Ruby Scripts</a></li>
+<li class="toc-entry toc-h3"><a href="#host-properties">Host Properties</a></li>
+<li class="toc-entry toc-h3"><a href="#provider-properties">Provider Properties</a></li>
+<li class="toc-entry toc-h3"><a href="#storage-properties">Storage Properties</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#faqs-and-flows">FAQs and Flows</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#phase-1-create-provision-request">Phase 1: Create Provision Request</a></li>
+<li class="toc-entry toc-h3"><a href="#phase-2-request-approval">Phase 2: Request Approval</a></li>
+<li class="toc-entry toc-h3"><a href="#phase-3-quota-validation">Phase 3: Quota Validation</a></li>
+<li class="toc-entry toc-h3"><a href="#phase-4-provisioning">Phase 4: Provisioning</a></li>
+<li class="toc-entry toc-h3"><a href="#phase-5-retirement">Phase 5: Retirement</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#inline-method-to-create-a-provision-request">Inline Method to Create a Provision Request</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#ruby-method">Ruby method</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#migrating-custom-buttons">Migrating Custom Buttons</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#migrating-custom-buttons-1">Migrating Custom Buttons</a></li>
+</ul>
+</li>
+</ul><h1 id="scripting-actions-in-cloudforms">
+<a class="anchor" href="#scripting-actions-in-cloudforms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scripting Actions in CloudForms</h1>
+
+<p>The Automate model provides flexibility to not only change parts of the
+provisioning process, but also to allow you to automate other
+operational tasks. Below are some scenarios where the Automate model can
+help accomplish these tasks.</p>
+
+<ul>
+  <li>
+    <p>Intelligent Workload Management - An enterprise had a requirement
+that when a virtual machine has reached a High CPU Percent Ready for
+a specified period of time, a vMotion should occur to a more
+suitable host. For this reason, VMware’s Distributed Resource
+Scheduler (DRS) was not practical, as the CPU Ready metric could not
+trigger DRS. The solution was to leverage ManageIQ Control
+and ManageIQ Automate to drive the management of this
+workflow.</p>
+  </li>
+  <li>
+    <p>Power on only during business hours - An organization which gave a
+group of self-service users ManageIQ access had a requirement
+to only allow certain virtual machines to be powered during business
+hours. This was solved with ManageIQ Automate.</p>
+  </li>
+  <li>
+    <p>Auto-Tagging virtual machines based on file contents - An IT
+organization needed a way to consume information from a text file on
+a virtual machine and dynamically populate vCenter. The data used to
+auto-tag virtual machines is also used to align unmanaged virtual
+machines to the business.</p>
+  </li>
+</ul>
+
+<h2 id="updates-to-rails-and-ruby">
+<a class="anchor" href="#updates-to-rails-and-ruby" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updates to Rails and Ruby</h2>
+
+<p>Changes within Ruby and Rails versions can create issues for custom code
+and automation in ManageIQ environments.</p>
+
+<p>Before proceeding with major upgrades that include changes to versions
+of Ruby and Rails, review the below resources.</p>
+
+<h3 id="updates-and-changes-in-rails">
+<a class="anchor" href="#updates-and-changes-in-rails" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updates and Changes in Rails</h3>
+
+<p>See <a href="https://weblog.rubyonrails.org/releases/">Rails Releases</a> for
+information on each release of Rails. To compare versions of Rails, see
+<a href="https://github.com/rails/rails/compare">Comparing changes in Rails</a>.</p>
+
+<h3 id="updates-and-changes-in-ruby">
+<a class="anchor" href="#updates-and-changes-in-ruby" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updates and Changes in Ruby</h3>
+
+<p>See <a href="https://www.ruby-lang.org/en/downloads/releases/">Ruby Releases</a>
+for information on each release of Ruby by version number. To compare
+versions of Ruby, see <a href="https://github.com/ruby/ruby/compare">Comparing changes in
+Ruby</a>.</p>
+
+<h2 id="understanding-the-automate-model">
+<a class="anchor" href="#understanding-the-automate-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Understanding the Automate Model</h2>
+
+<p>Automate enables real-time, bi-directional process integration. This
+provides users with a method to implement adaptive automation for
+management events and administrative or operational activities.</p>
+
+<h3 id="automate-model">
+<a class="anchor" href="#automate-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automate Model</h3>
+
+<p>The Automate model is arranged to provide an object oriented hierarchy
+to control automation functions. The model uses the following
+organizational units arranged in a hierarchy:</p>
+
+<ul>
+  <li>
+    <p><strong>Datastore</strong> - The main organization unit that stores the entire
+model.</p>
+  </li>
+  <li>
+    <p><strong>Domains</strong> - Domains act as collection of automation functions.
+Functions are executed depending on the order of Domain priority,
+which means a function in a Domain with a higher priority overrides
+the same functions specified in a lower-priority Domain. This allows
+ManageIQ to specify a core Domain (ManageIQ) but allow users
+to override automate functions with custom Domains. Each Domain
+contains a set of Namespaces.</p>
+  </li>
+  <li>
+    <p><strong>Namespaces</strong> - Containers that organize and categorize functions
+of the model. Namespaces can contain child Namespaces as well as
+Classes.</p>
+  </li>
+  <li>
+    <p><strong>Classes</strong> - Templates for a specific function of the model. Each
+Class uses a Schema to apply to Instances to populate with default
+values. Each class also can contain a set of methods.</p>
+  </li>
+  <li>
+    <p><strong>Instances</strong> - An instance is a version of a class populated with
+initial configuration data. An instance can include a collection of
+any number of attributes, calls to methods, and relationships.</p>
+  </li>
+  <li>
+    <p><strong>Methods</strong> - Methods are functions within the model. Methods use
+Ruby code to execute various operations needed for a Class.</p>
+  </li>
+</ul>
+
+<p>ManageIQ contains a set of preconfigured Domains for users:</p>
+
+<ul>
+  <li>
+    <p><strong>ManageIQ</strong> - The core domain for ManageIQ Automate
+operations. This domain is locked with the following Namespaces:</p>
+
+    <ul>
+      <li>
+        <p><strong>Cloud</strong> - General cloud instance lifecycle from provisioning,
+retirement, methods, email.</p>
+      </li>
+      <li>
+        <p><strong>Control</strong> - Control contains email alerts for policy controls.</p>
+      </li>
+      <li>
+        <p><strong>Infrastructure</strong> - General infrastructure VM lifecycle from
+provisioning, retirement, methods, email.</p>
+      </li>
+      <li>
+        <p><strong>Service</strong> - Service lifecycle from provisioning, retirement,
+methods, email.</p>
+      </li>
+      <li>
+        <p><strong>System</strong> - System contains classes that can provide the start
+points for all ManageIQ Automate activities.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>RedHat</strong> - Domain containing advanced operations, specifically
+interactions with supported cloud and infrastructure providers. This
+domain is locked with the following Namespaces:</p>
+
+    <ul>
+      <li>
+        <p><strong>Cloud</strong> - Red Hat-supported cloud instance lifecycle from
+provisioning, retirement, methods, email.</p>
+      </li>
+      <li>
+        <p><strong>Infrastructure</strong> - Red Hat-supported cloud instance lifecycle
+from provisioning, retirement, methods, email.</p>
+      </li>
+      <li>
+        <p><strong>Integration</strong> - Used to interface with systems outside of
+ManageIQ. Use this namespace to integrate with additional
+systems.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can copy classes and instances from locked Domains into your own
+custom domains.</p>
+
+<div class="note">
+
+Changing the existing classes or instances shipped with the product is
+not recommended because this may hinder the operation of
+ManageIQ. You can link to these methods using relationships.
+
+</div>
+
+<p>To reset the Automate model to default settings, navigate to
+menu:Automate[Import/Export] and click the <strong>Reset</strong> option.</p>
+
+<h3 id="creating-a-domain">
+<a class="anchor" href="#creating-a-domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Domain</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer]. The default
+view is the Datastore.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Domain</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a unique <strong>Name</strong> and <strong>Description</strong>. Choose if the Domain
+is <strong>Enabled</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The new domain is created.</p>
+
+<h3 id="editing-a-domain">
+<a class="anchor" href="#editing-a-domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Domain</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer]. The default
+view is the Datastore.</p>
+  </li>
+  <li>
+    <p>Select the Domain you want to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit Selected Domain</strong>).</p>
+  </li>
+  <li>
+    <p>Make the required edits.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>You have edited the selected domain.</p>
+
+<h3 id="deleting-a-domain">
+<a class="anchor" href="#deleting-a-domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Domain</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer]. The default
+view is the Datastore.</p>
+  </li>
+  <li>
+    <p>Select the <strong>Domain</strong> that you want to delete.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1861.png" alt="image"> (<strong>Remove This Domain</strong>).</p>
+  </li>
+  <li>
+    <p>A window to confirm the removal of Domain appears.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<p>The selected Domain is deleted.</p>
+
+<h3 id="importing-a-domain-from-a-git-repository">
+<a class="anchor" href="#importing-a-domain-from-a-git-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing a Domain from a Git Repository</h3>
+
+<p>ManageIQ can import an Automate domain from a Git repository by
+specifying a repository and branch, along with user details. Currently,
+you can only add git domains via the <strong>Import/Export</strong> area of the user
+interface.</p>
+
+<p><img src="../images/import-datastore.png" alt="Import Datastore"></p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Import/Export].</p>
+  </li>
+  <li>
+    <p>In <strong>Import Datastore via git</strong>, enter the <strong>Git URL</strong>. Select the
+branch or tag to use.</p>
+  </li>
+  <li>
+    <p>Optionally, enter a <strong>Username</strong> and <strong>Password</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Verify Peer Certificate</strong> if desired.</p>
+  </li>
+  <li>
+    <p>Click <strong>Submit</strong>.</p>
+  </li>
+</ol>
+
+<p>The new domain is imported via Git repository. Note that the domain is
+validated on import.</p>
+
+<h3 id="changing-priority-order-of-domains">
+<a class="anchor" href="#changing-priority-order-of-domains" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Priority Order of Domains</h3>
+
+<p>Functions are executed depending on the order of Domain priority. Use
+this procedure to change the priority order of domains.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer]. The default
+view is the Datastore.</p>
+  </li>
+  <li>
+    <p>Select the Domains you want to change the priority order for.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit Priority Order of Domains</strong>).</p>
+  </li>
+  <li>
+    <p>The list of Domains selected shows up. Note that you cannot change
+the priority of locked Domains and therefore locked Domains do not
+show up on the list.</p>
+  </li>
+  <li>
+    <p>Select one or more consecutive groups to move up or down to change
+their priority as required.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-namespace">
+<a class="anchor" href="#creating-a-namespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Namespace</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer]. The default
+view is the Datastore.</p>
+  </li>
+  <li>
+    <p>Navigate through the various Domains and Namespaces until you reach
+the desired location for your new Namespace.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Namespace</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a unique <strong>Name</strong> and <strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The new Namespace is created.</p>
+
+<h3 id="creating-a-class">
+<a class="anchor" href="#creating-a-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Class</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer], navigate to the
+namespace you want to add a class to.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Class</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a unique <strong>Name</strong> and <strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>If you want to use the schema from a class that has already been
+created, select it from the <strong>Inherits From</strong> dropdown. If the class
+that the new class inherits from changes, the new class will also
+change.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The new class is created and you can create a schema, add instances and
+methods.</p>
+
+<div class="note">
+
+For each class, create a schema if you did not choose to inherit from an
+existing class. The schema can include attributes, methods, assertions,
+and relationships.
+
+</div>
+
+<h3 id="creating-a-schema-for-a-class">
+<a class="anchor" href="#creating-a-schema-for-a-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Schema for a Class</h3>
+
+<p>This procedure shows you how to create a schema.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer], and click the
+class you want to define a schema for.</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Schema</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit selected Schema</strong>).</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2366.png" alt="image"> (<strong>Click to add a new field</strong>) to
+create a new field.</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Name</strong> for the new field.</p>
+  </li>
+  <li>
+    <p>From <strong>Type</strong>, select <strong>Assertion</strong>, <strong>Attribute</strong>, <strong>Method</strong>,
+<strong>Relationship</strong>, or <strong>State</strong>.</p>
+  </li>
+  <li>
+    <p>If applicable, select a <strong>Data Type</strong> and set a <strong>Default Value</strong>.</p>
+  </li>
+  <li>
+    <p>Type in a user friendly <strong>Display Name</strong> and <strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>Check <strong>Sub</strong> to enable the substitution syntax of <code class="language-plaintext highlighter-rouge">${}</code>. Uncheck it
+if you want to use that syntax as a regular string.</p>
+  </li>
+  <li>
+    <p>Fill in <strong>Collect</strong> and <strong>Message</strong> as required. <strong>Collect</strong> is used
+to roll up values from resolved relationships. For example, a
+relationship can resolve to a large object tree. Use <strong>collect</strong> to
+specify how to pull out data from those child objects into the
+current object. If you give <strong>collect</strong> a name value, it will store
+the method result in an attribute of the current object with that
+name.</p>
+  </li>
+  <li>
+    <p><strong>On Entry</strong>, <strong>On Exit</strong>, <strong>On Error</strong>, <strong>Max Retries</strong>, and <strong>Max
+Time</strong> are fields used mostly for state machines. Leave blank if not
+applicable.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1863.png" alt="image"> (<strong>Add this entry</strong>) to confirm the
+fields values.</p>
+  </li>
+  <li>
+    <p>For each new field, repeat steps 4 through 10.</p>
+  </li>
+  <li>
+    <p>When you have created all of the fields, click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>The class schema is created, and you can now add instances to it.</p>
+
+<div class="note">
+
+You may need to edit a class schema to reorder, add, edit, or remove a
+field. Classes define the order in which fields are processed and you
+may need to process some items before others.
+
+</div>
+
+<h3 id="editing-a-field-in-a-schema">
+<a class="anchor" href="#editing-a-field-in-a-schema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Field in a Schema</h3>
+
+<p>This procedure describes how to edit schema fields.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer].</p>
+  </li>
+  <li>
+    <p>Click the class you want to define a schema for.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Schema</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit selected Schema</strong>).</p>
+  </li>
+  <li>
+    <p>Make required changes to any of the definitions for the field.</p>
+  </li>
+  <li>
+    <p>To remove a field, click <img src="../images/2367.png" alt="image"> (<strong>Click to
+delete this field from the schema</strong>).</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong> when you are finished editing the schema.</p>
+  </li>
+</ol>
+
+<p>Once the schema is created, you can add instances and methods to the
+class.</p>
+
+<h3 id="editing-schema-sequence">
+<a class="anchor" href="#editing-schema-sequence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing Schema Sequence</h3>
+
+<p>This procedure shows you how to change schema sequence.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer].</p>
+  </li>
+  <li>
+    <p>Click the class you want to change the schema sequence for.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Schema</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit Sequence</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Class Schema Sequencing</strong> area, click the field you want to
+change the sequence for.</p>
+
+    <ul>
+      <li>
+        <p>To move a field up in the order of resolving an instance, click
+<img src="../images/2290.png" alt="image"> (<strong>Move selected field up</strong>).</p>
+      </li>
+      <li>
+        <p>To move a field down in the order of resolving an instance,
+click <img src="../images/2289.png" alt="image"> (<strong>Move selected field down</strong>).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong> when you are finished editing the sequence.</p>
+  </li>
+</ol>
+
+<h3 id="adding-an-instance-to-a-class">
+<a class="anchor" href="#adding-an-instance-to-a-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an Instance to a Class</h3>
+
+<p>This procedure shows you how to create an instance.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer].</p>
+  </li>
+  <li>
+    <p>Click the class you want to define a schema for.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Instances</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Instance</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Main Info</strong> area, type in a <strong>Name</strong>, <strong>Display Name</strong> and
+<strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Fields</strong> area, type in an appropriate value for each field,
+leave the field blank if no value is required, or use the default
+value.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="copying-a-class-or-instance">
+<a class="anchor" href="#copying-a-class-or-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Class or Instance</h3>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer]. The default
+view is the Datastore.</p>
+  </li>
+  <li>
+    <p>Navigate through the various Domains and Namespaces until you reach
+the desired class or instance to copy.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then either
+(<strong>Copy this Class</strong>) or (<strong>Copy this Instance</strong>) depending on the
+object chosen.</p>
+  </li>
+  <li>
+    <p>Choose the target Domain in the <strong>To Domain</strong> drop-down menu.</p>
+  </li>
+  <li>
+    <p>The object retains the same path as the <strong>From Domain</strong> and
+overrides the class in <strong>From Domain</strong> if the <strong>To Domain</strong> has a
+high priority. You can also untick the <strong>Copy to same path</strong> option
+to specify a new Namespace.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="relationships">
+<a class="anchor" href="#relationships" aria-hidden="true"><span class="octicon octicon-link"></span></a>Relationships</h3>
+
+<p>Relationships are used to connect to other instances in the <strong>Automation
+Datastore</strong>. Relationships are formed using URI syntax. The following
+can also be passed through a relationship:</p>
+
+<ul>
+  <li>
+    <p>Use <code class="language-plaintext highlighter-rouge">#</code> to set the message to send to the item in the relationship.</p>
+  </li>
+  <li>
+    <p>To pass an input to the method use <code class="language-plaintext highlighter-rouge">?</code> followed by the item to pass.</p>
+  </li>
+  <li>
+    <p>If you want to use a substitution, the syntax is <code class="language-plaintext highlighter-rouge">$\{}</code> with the
+substitution located between the brackets.</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Example</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Cloud/VM/Provisioning/Naming/Default#create</code></td>
+      <td>This relationships uses the Default instance of the Naming class, which provides a means for other classes to name virtual machines. The relationship sends the <code class="language-plaintext highlighter-rouge">create</code> message to the class.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Cloud/VM/Provisioning/StateMachines/VMProvision_VM/AcquireMACAddress#$\{#ae_message}</code></td>
+      <td>This relationships substitutes the message to send to the AcquireMACAddress instance of the VMProvision_VM class with the value in <code class="language-plaintext highlighter-rouge">ae_message</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Cloud/VM/Retirement/Email/vm_retirement_emails?event=vm_retired</code></td>
+      <td>Invokes the vm_retirement_emails instance of the Email class. Also sends the value <code class="language-plaintext highlighter-rouge">vm_retired</code> in the <code class="language-plaintext highlighter-rouge">event</code> attribute, which is used in the vm_retirement_emails method.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/Service/Lifecycle/Retirement?service_id=$\{process#service_id}</code></td>
+      <td>Invokes the Retirement instance of the Lifecycle class and send a replacement value in <code class="language-plaintext highlighter-rouge">process#service_id</code> to the <code class="language-plaintext highlighter-rouge">service_id</code> attribute.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="methods">
+<a class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+
+<p>Methods are pieces of code associated with a class or object to perform
+a task. ManageIQ allows for Ruby methods or backing a method
+using an Ansible playbook. You can create your own methods or use
+relationships to link to pre-existing ones.</p>
+
+<p>ManageIQ ships with a core set of Ruby gems used by the
+ManageIQ Rails Application. The Ruby gems in this set are subject
+to change. If you are calling gems using Automate that are no longer in
+this release, you can install them by using the <code class="language-plaintext highlighter-rouge">gem install</code> command.</p>
+
+<p>While gems can be imported into automation methods using <code class="language-plaintext highlighter-rouge">require</code>, it
+is recommended that the authors of the automation methods clearly
+document the use of gems either in the core set or a custom set. It is
+the responsibility of the author of such custom automation to own the
+life cycle of any gem being referenced in those methods.</p>
+
+<p>The Release Notes list Ruby gems that have been added, updated, or
+removed in the latest version of ManageIQ.</p>
+
+<h4 id="creating-a-method">
+<a class="anchor" href="#creating-a-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Method</h4>
+
+<p>This procedure shows you how to create a method.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer], navigate to the
+class where you want to create a method.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Methods</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>),
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Method</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Main Info</strong> area, type in a <strong>Name</strong> and <strong>Display Name</strong>.</p>
+  </li>
+  <li>
+    <p>For <strong>Location</strong>, select <strong>inline</strong>. Once selected, you will be
+presented with a <strong>Data</strong> area in which to write or copy the script.</p>
+  </li>
+  <li>
+    <p>Click <strong>Validate</strong> to check the syntax.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="creating-a-dynamic-content-dialog">
+<a class="anchor" href="#creating-a-dynamic-content-dialog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Dynamic Content Dialog</h4>
+
+<p>The procedure describes the steps to create a dynamic content dialog.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer].</p>
+  </li>
+  <li>
+    <p>From the accordion menu, click menu:DOMAIN[Cloud &gt; VM &gt;
+Operations &gt; Methods].</p>
+
+    <div class="note">
+
+DOMAIN must be a user-defined Domain and not the locked ManageIQ
+Domain. If necessary, you can copy the class from the ManageIQ
+domain into a custom domain.
+
+</div>
+
+    <p>This example uses the <strong>Cloud</strong> Namespace but can also use the
+<strong>Infrastructure</strong> namespace.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Instance</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Main Info</strong> area, enter <strong>Name</strong> = <em>dynamic_list</em>,
+replacing <em>dynamic_list</em> with an appropriate name for the method.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Display Name</strong> and <strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>Fields</strong> area, enter <strong>Value</strong> = <em>dynamic_list</em>. Leave the
+other fields blank or use the default values.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+  <li>
+    <p>Navigate to <strong>Methods</strong> tab.</p>
+  </li>
+  <li>
+    <p>In the <strong>Main Info</strong> area, enter <strong>Name</strong> = <em>dynamic_list</em> and
+populate the <strong>Data</strong> section with the example automate method
+below.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+  <li>
+    <p>Set the automate entry point for the dialog control; use the new
+instance created in step four. You can create a new domain and copy
+the method to that domain.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>#  Automate Method
+
+dialog_field = $evm.object
+
+# sort_by: value / description / none
+dialog_field["sort_by"] = "value"
+
+# sort_order: ascending / descending
+#dialog_field["sort_order"] = "ascending"
+
+# data_type: string / integer
+dialog_field["data_type"] = "integer"
+
+# required: true / false
+# dialog_field["required"] = "true"
+
+dialog_field["values"] = {1 =&gt; "one", 2 =&gt; "two", 10 =&gt; "ten", 50 =&gt; "fifty"}
+dialog_field["default_value"] = 2
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="creating-a-playbook-automate-method">
+<a class="anchor" href="#creating-a-playbook-automate-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Playbook Automate Method</h4>
+
+<p>ManageIQ can choose an Ansible playbook from a repository and
+execute it as a method. Each playbook method can take additional input
+parameters specified by the user.</p>
+
+<div class="important">
+
+  - You must first sync your playbook repositories before using them to
+    create a method. See [Adding a Playbook
+    Repository](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/managing_providers/automation_management_providers#adding-a-playbook-repository)
+    in *Managing Providers* for information on initial playbook
+    repository set-up.
+
+  - Using Ansible playbooks to populate dynamic dialog fields is not
+    recommended due to delay times caused by the overhead of interaction
+    between systems.
+
+  - Only users with administrator privileges can run a service dialog
+    based on a playbook automate method.
+
+</div>
+
+<p>To create a playbook automate method:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer], then click on a
+domain under <strong>Datastore</strong>.</p>
+  </li>
+  <li>
+    <p>Under a namespace, select the class for which you want to create a
+new method.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Methods</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>) then,
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Method</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Main Info</strong> area, select <strong>Playbook</strong> from the <strong>Type</strong>
+dropdown menu.</p>
+  </li>
+  <li>
+    <p>Provide a <strong>Name</strong> and <strong>Display Name</strong>.</p>
+  </li>
+  <li>
+    <p>Select a playbook <strong>Repository</strong> from the list.</p>
+
+    <ol>
+      <li>
+        <p>Choose a <strong>Playbook</strong> to use.</p>
+      </li>
+      <li>
+        <p>Select the <strong>Machine Credential</strong> the playbook will use when it
+runs.</p>
+      </li>
+      <li>
+        <p>Select the <strong>Vault Credential</strong> to use.</p>
+      </li>
+      <li>
+        <p>From the <strong>Cloud Type</strong> list, select a cloud provider.</p>
+      </li>
+      <li>
+        <p>Choose the <strong>Cloud Credential</strong> that corresponds to the selected
+cloud type.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Specify the <strong>Hosts</strong> on which the playbook will run. Choose
+<strong>Localhost</strong> or provide unique values in the <strong>Specify host
+values</strong> field.</p>
+  </li>
+  <li>
+    <p>Set the <strong>Max TTL</strong> in minutes. The Time To Live (TTL) field allows
+you to set the maximum execution time for the playbook to run.</p>
+  </li>
+  <li>
+    <p>Select when to receive <strong>Logging Output</strong> from the options in the
+drop-down menu.</p>
+  </li>
+  <li>
+    <p>Use the <strong>Escalate Privilege</strong> toggle switch to enable user
+privilege escalation if credentials are called for during the
+playbook run.</p>
+  </li>
+  <li>
+    <p>Choose a <strong>Verbosity</strong> value to set the debug level for playbook
+execution.</p>
+  </li>
+  <li>
+    <p>Add required <strong>Input Parameters</strong> using the fields and values
+available. Click the <img src="../images/add_parameter.png" alt="add parameter"> to
+add additional input parameters.</p>
+
+    <div class="note">
+
+Input parameters become extra vars, with substitution enabled. This
+overcomes the lack of a dialog which would normally allow for the
+input of additional information. For more information on extra vars,
+see the Ansible documentation.
+
+</div>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> when finished.</p>
+  </li>
+</ol>
+
+<p>Once created, the domain including your playbook method can be exported
+to appliances in your testing or production environments or imported in
+appliances in multiple regions.</p>
+
+<div class="important">
+
+To import a domain with a playbook method, you must have an existing
+Ansible playbook on the destination environment with the same name or
+the import will fail.
+
+</div>
+
+<p>See <a href="#exporting-all-datastore-classes">???</a> for information.</p>
+
+<h5 id="passing-variables-between-successive-playbook-methods">
+<a class="anchor" href="#passing-variables-between-successive-playbook-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Passing variables between successive playbook methods</h5>
+
+<p>Automate designers can pass variables between successive Ansible
+playbook methods in a state machine using ManageIQ.</p>
+
+<p>To pass variables between Ansible playbook methods, use the <code class="language-plaintext highlighter-rouge">set_stats</code>
+module in your playbooks.</p>
+
+<p><strong>Example.</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+# This playbook prints a simple debug message
+- name: Echo Hello, Fred and Wilma
+  hosts: localhost
+
+  tasks:
+  - name: "playbook1 - testing input vars"
+    set_stats:
+      data:
+        pb_var1a: ""
+        pb_var1b: ""
+
+  - debug: msg="Hello,  and "
+</code></pre></div></div>
+
+<p>For more information on the <code class="language-plaintext highlighter-rouge">set_stats</code> module, see the
+<a href="https://docs.ansible.com">Ansible</a> documentation.</p>
+
+<h3 id="expression-methods">
+<a class="anchor" href="#expression-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expression Methods</h3>
+
+<p>ManageIQ additionally provides support for Expression
+Methods, that allow you to use advance search filters as Automate
+Methods, substituting the user input from Automate Objects. Expression
+methods have several distinct advantages, including: running directly in
+the worker appliance; removing the overhead of forking a DRb process to
+run the Automate Methods; no Ruby code required; and prebuilt for
+Dynamic Dialogs.</p>
+
+<h4 id="input-parameters">
+<a class="anchor" href="#input-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input Parameters</h4>
+
+<p>Expression methods allow for substitution of user input through input
+parameters,</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Parameter</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>arg</strong></td>
+      <td>The argument used in the expression. Each argument should employ the prefix <strong>arg</strong>. Example: <strong>arg1</strong>: the first argument in the expression; <strong>arg2</strong>: the second argument in the expression; <strong>argn</strong>: the nth argument in the expression.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="optional-input-parameters">
+<a class="anchor" href="#optional-input-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional Input Parameters</h5>
+
+<div class="note">
+
+If attributes and distinct are not specified we try to store the result
+in a variable called values with a hash consisting of id and name. This
+makes it compatible with our existing dynamic dialog result set.
+
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Optional Input Parameter</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>attributes</strong></td>
+      <td>A comma delimited list of attributes to select from the resultant objects. This should me marked as an Array Type in the Input Parameters field.</td>
+    </tr>
+    <tr>
+      <td><strong>distinct</strong></td>
+      <td>A comma delimited list of attributes which are distinct in the resultant objects.This should me marked as an Array Type in the Input Parameters field.</td>
+    </tr>
+    <tr>
+      <td><strong>result_obj</strong></td>
+      <td>The object where the result data should be stored. (default: current object)</td>
+    </tr>
+    <tr>
+      <td><strong>result_attr</strong></td>
+      <td>The name of the attribute which stores the result. (default: values)</td>
+    </tr>
+    <tr>
+      <td><strong>result_type</strong></td>
+      <td>The result type hash or array (default: dialog_hash which matches to our dynamic dialog hash. Valid values are ‘hash’, ‘dialog_hash’, ‘array’, ‘simple’</td>
+    </tr>
+    <tr>
+      <td><strong>on_empty</strong></td>
+      <td>The method behavior when the search returns an empty list.</td>
+    </tr>
+    <tr>
+      <td><strong>error</strong></td>
+      <td>Abort. (default: error)</td>
+    </tr>
+    <tr>
+      <td><strong>default</strong></td>
+      <td>The default value in case the result is empty and you select warn.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="creating-an-expression-method">
+<a class="anchor" href="#creating-an-expression-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Expression Method</h4>
+
+<p>Expression methods allow you to use advance search filters as automate
+methods, substituting user input at runtime, and making them ideal for
+dynamic dialogs.</p>
+
+<p>To create an expression method:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer], then click on a
+domain under <strong>Datastore</strong>.</p>
+  </li>
+  <li>
+    <p>Under a namespace, select the class for which you want to create a
+new method.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Methods</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>) then,
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Method</strong>).</p>
+  </li>
+  <li>
+    <p>In the <strong>Main Info</strong> area, select <strong>expression</strong> from the drop-down
+menu.</p>
+  </li>
+  <li>
+    <p>Provide a <strong>Name</strong> and <strong>Display Name</strong>.</p>
+  </li>
+  <li>
+    <p>Select an <strong>Expression Object</strong> from the drop-down menu.</p>
+  </li>
+  <li>
+    <p>In the <strong>Expression</strong> editor, create the expression by setting the
+controls and values used at runtime:</p>
+
+    <ol>
+      <li>
+        <p>Using the drop-down menu, select the value to use. Based on your
+selection, choose or input additional values from the drop-down
+menus or text fields that appear.</p>
+      </li>
+      <li>
+        <p>In the <strong>Contains</strong> field, input a value or click <strong>User will
+input the value</strong>.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="image"> to complete the expression.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Add <strong>Input Parameters</strong> for each of the user input fields required.</p>
+
+    <ol>
+      <li>
+        <p>Click <img src="../images/2366.png" alt="image"> to add a new parameter.</p>
+      </li>
+      <li>
+        <p>Provide a <strong>Name</strong>, <strong>Default Value</strong> and select a <strong>Data Type</strong>
+for each parameter.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="image"> to add the parameter.</p>
+
+        <div class="note">
+
+If **User will input the value** is checked, arguments for each
+input parameter names using the prefix “arg”.
+
+For example, if there are 3 fields then the input parameter
+names should be arg1, arg2, and arg3. If there are two runtime
+parameters arg1 and arg2 must be defined in the input
+parameters. In the default value for these fields values can be
+substituted from other objects in the Automate Workspace.
+
+</div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="simulation">
+<a class="anchor" href="#simulation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simulation</h3>
+
+<p>After your model is designed, use the simulate page to test it. It
+allows you to see the results in tree and XML view.</p>
+
+<h4 id="simulating-an-automate-model">
+<a class="anchor" href="#simulating-an-automate-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simulating an Automate Model</h4>
+
+<p>This procedure shows you how to simulate an automate model.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Simulation].</p>
+  </li>
+  <li>
+    <p>In <strong>Object Details</strong>, select a type of object from
+<code class="language-plaintext highlighter-rouge">/System/Process/</code> that will initiate the model. The <strong>Message</strong>
+should be <code class="language-plaintext highlighter-rouge">create</code>. Type in the name of the <strong>Request</strong> where you
+are starting from.</p>
+
+    <p><img src="../images/2368.png" alt="image"></p>
+  </li>
+  <li>
+    <p>Select the <strong>Type</strong> of item you want to run the simulation on. Then,
+select a specific one to use as the example.</p>
+
+    <p><img src="../images/2369.png" alt="image"></p>
+  </li>
+  <li>
+    <p>Check <strong>Execute Methods</strong> if you want to perform the model and not
+just simulate it.</p>
+
+    <p><img src="../images/2370.png" alt="image"></p>
+  </li>
+  <li>
+    <p>Type in the <strong>Attribute/Value Pairs</strong> fields if applicable.</p>
+  </li>
+  <li>
+    <p>Click <strong>Submit</strong>.</p>
+  </li>
+</ol>
+
+<p>Click on the <strong>Tree View</strong> or <strong>XML View</strong> tabs to see results.</p>
+
+<h3 id="importing-exporting-and-resetting-the-datastore">
+<a class="anchor" href="#importing-exporting-and-resetting-the-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing, Exporting, and Resetting the Datastore</h3>
+
+<p>The <strong>Automate Model</strong> can be exported and imported as a YAML file.
+ManageIQ allows you to back up your model by export. Red Hat may
+provide you with new or updated classes, and provides an import function
+for either a class or the entire model. Finally, you can reset the
+datastore to its default. Always be sure to export the current datastore
+before importing or resetting.</p>
+
+<div class="note">
+
+The datastores you are exporting or importing between must use the same
+ManageIQ version.
+
+</div>
+
+<h4 id="exporting-all-datastore-classes">
+<a class="anchor" href="#exporting-all-datastore-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exporting All Datastore Classes</h4>
+
+<p>This procedure shows you how export datastore classes as a YAML file.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Import/Export].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2371.png" alt="image"> (<strong>Export all Datastore classes and
+instances to a file</strong>).</p>
+  </li>
+  <li>
+    <p>Follow your browser’s prompts to save the file.</p>
+  </li>
+</ol>
+
+<p>The datastore is zipped and exported as a <code class="language-plaintext highlighter-rouge">YAML</code> file.</p>
+
+<h4 id="importing-datastore-classes">
+<a class="anchor" href="#importing-datastore-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing Datastore Classes</h4>
+
+<p>This procedure shows you how to import datastore classes.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Import/Export].</p>
+  </li>
+  <li>
+    <p>Export the datastore so that you have a backup.</p>
+  </li>
+  <li>
+    <p>Click <strong>Choose file</strong> to navigate to the location of the <em>*.zip</em>
+file to import.</p>
+  </li>
+  <li>
+    <p>Click <strong>Upload</strong>.</p>
+  </li>
+  <li>
+    <p>After the file has uploaded, specify the following using the
+dropdown menus:</p>
+
+    <ul>
+      <li>
+        <p>The domain to import into</p>
+      </li>
+      <li>
+        <p>The domain to import from</p>
+      </li>
+      <li>
+        <p>All namespaces you wish to import</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Commit</strong> to finish importing the selected domain.</p>
+  </li>
+</ol>
+
+<p>The datastore is imported from the uploaded <code class="language-plaintext highlighter-rouge">YAML</code> files.</p>
+
+<h4 id="resetting-datastores-to-the-default">
+<a class="anchor" href="#resetting-datastores-to-the-default" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resetting Datastores to the Default</h4>
+
+<p>This procedure shows you how reset the datastores to the default.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Import/Export].</p>
+  </li>
+  <li>
+    <p>Export the datastore so that you have a backup.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/reset.png" alt="Reset"> (<strong>Reset all components in the
+following domains: RedHat, ManageIQ</strong>).</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="invoking-automate">
+<a class="anchor" href="#invoking-automate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invoking Automate</h2>
+
+<h3 id="automate-examples">
+<a class="anchor" href="#automate-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automate Examples</h3>
+
+<p>This chapter describes the ways to invoke an Automate workflow.
+Automation can be initiated through an alert, an event, a
+ManageIQ application, or a custom button. The same automation
+process can be re-used across more than one of these. For example, using
+automation to remove orphaned virtual machines and instances could be
+initiated by:</p>
+
+<ul>
+  <li>
+    <p>An administrator request from the ManageIQ console (from a
+custom button)</p>
+  </li>
+  <li>
+    <p>An alert indicating the datastore has less than 20% free-space</p>
+  </li>
+  <li>
+    <p>A virtual machine or instance unregistered event is detected</p>
+  </li>
+</ul>
+
+<p>All invocations of an automate model must enter through the
+<code class="language-plaintext highlighter-rouge">/System/Process</code> namespace.</p>
+
+<h3 id="invoking-automate-using-a-custom-button">
+<a class="anchor" href="#invoking-automate-using-a-custom-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invoking Automate using a Custom Button</h3>
+
+<p>Invoke an Automate model by mapping an Ansible playbook or instance from
+the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code> class to a custom button. Before creating
+the button, you need to have an Ansible playbook service catalog item or
+an instance in the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code> class to map to it and a
+button group to assign it to.</p>
+
+<p>Create buttons for a cluster, host, datastore, provider, virtual
+machines or cloud instances. When the button is clicked, the model or
+playbook will be invoked for the selected item. For each of these, you
+can have up to 15 buttons.</p>
+
+<h3 id="creating-a-custom-button-group">
+<a class="anchor" href="#creating-a-custom-button-group" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Button Group</h3>
+
+<p>This procedure shows you how to create a custom button group.</p>
+
+<ol>
+  <li>
+    <p>Browse to menu: <strong>Automation &gt; Automate &gt; Customization</strong>.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Buttons</strong> accordion.</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Types</strong> tree, select the type of object you want to create the button group for.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"><strong>Configuration</strong>, <img src="../images/1862.png" alt="image"><strong>Add a new Button Group</strong>.</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Button Group Text</strong> and <strong>Button Group Hover Text</strong>, and select the <strong>Button Group Image</strong> that you want to use.</p>
+  </li>
+  <li>
+    <p>If custom buttons have already been created, assign them to the button group. If not, see <a href="#create-a-custom-button">???</a> to create custom buttons.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The button group will show in the object type you added the button to.</p>
+
+<h3 id="creating-a-custom-button">
+<a class="anchor" href="#creating-a-custom-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Button</h3>
+
+<p>This procedure shows you how to create a custom button.</p>
+
+<div class="note">
+
+Custom buttons can be migrated to other ManageIQ appliances. See
+[Migrating Custom Buttons](#export-import-custom-button) for guidance on
+migrating custom buttons to a new ManageIQ appliance.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Buttons</strong> accordion.</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Types</strong> tree, select the type of object you want
+to create the button for.</p>
+  </li>
+  <li>
+    <p>Click <strong>Unassigned Buttons</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>).</p>
+
+    <div class="note">
+
+If ![image](../images/1862.png) (**Add a new Button**) is not
+available, that means you have not created a button group for that
+object. To continue, create a button group first. See
+[???](#create-custom-button-group)
+
+</div>
+  </li>
+  <li>
+    <p>Under the <strong>Options</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Select the <strong>Button</strong> type from the list.</p>
+      </li>
+      <li>
+        <p>Enter button <strong>Text</strong> and <strong>Hover Text</strong>, and select the
+<strong>Icon</strong> and <strong>Icon Color</strong> to use.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Dialog</strong> if applicable.</p>
+      </li>
+      <li>
+        <p>Check <strong>Open URL</strong> to open a browser window for the custom URL
+returned when the button is executed.</p>
+      </li>
+      <li>
+        <p>Choose a <strong>Display For</strong> option for the button.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Submit</strong> parameter to choose how to submit objects to
+automate. Selecting <em>Submit All</em> will pass all objects at once
+when the button is executed, while choosing <em>One by one</em> will
+run execute the button action each time per object.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Under the <strong>Advanced</strong> tab:</p>
+
+    <ol>
+      <li>
+        <p>Set button <strong>Enablement</strong>. Click <strong>Define Expression</strong> to access
+the expression editor tool. Enter <strong>Disabled Button Text</strong> to
+display when the custom button is disabled.</p>
+      </li>
+      <li>
+        <p>Use <strong>Visibility</strong> to determine button appearance based on a
+custom expression. Click <strong>Define Expression</strong> to access the
+expression editor tool.</p>
+
+        <div class="note">
+
+For more about setting visibility and enablement for a custom
+button, see [???](#filtering-actions-custom-buttons).
+
+</div>
+      </li>
+      <li>
+        <p>In <strong>Object Details</strong>, select <strong>Request</strong> from the
+<code class="language-plaintext highlighter-rouge">/System/Process/</code> dropdown. By default, the message is
+<code class="language-plaintext highlighter-rouge">create</code>. Do not change it.</p>
+      </li>
+      <li>
+        <p>Enter a <strong>Request</strong> name for the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code>
+instance.</p>
+      </li>
+      <li>
+        <p>Enter the <strong>Attribute/Value Pairs</strong> fields if applicable.</p>
+      </li>
+      <li>
+        <p>Set <strong>Role Access</strong>. Selecting <em>&lt;By Role&gt;</em> will display
+available roles. Check applicable roles.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> when you have confirmed that the button accomplishes
+the task you want.</p>
+  </li>
+</ol>
+
+<p>The button will show in the object type you added the button to.</p>
+
+<h3 id="creating-an-ansible-playbook-button">
+<a class="anchor" href="#creating-an-ansible-playbook-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Ansible Playbook Button</h3>
+
+<p>ManageIQ includes an option to create an Ansible Playbook custom
+button. This feature allows users to select a playbook to run as well as
+an inventory target to run it against. An Ansible playbook type button
+can be defined for any object type available.</p>
+
+<div class="note">
+
+An Ansible Playbook catalog item must exist in order to create an
+Ansible Playbook custom button. For more information, see [Creating an
+Ansible Playbook Service Catalog
+Item](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html/provisioning_virtual_machines_and_hosts/catalogs-services#create-playbook-service-catalog-item)
+in the Provisioning Virtual Machines and Hosts guide.
+
+</div>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Buttons</strong> accordion.</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Types</strong> tree, select the type of object you want
+to create the button for.</p>
+  </li>
+  <li>
+    <p>Click <strong>Unassigned Buttons</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>).</p>
+
+    <div class="note">
+
+If ![image](../images/1862.png) (**Add a new Button**) is not
+available, that means you have not created a button group for that
+object. To continue, create a button group first. See
+[???](#create-custom-button-group).
+
+</div>
+  </li>
+  <li>
+    <p>Select <strong>Ansible Playbook</strong> from the <strong>Button Type</strong> drop-down menu.</p>
+  </li>
+  <li>
+    <p>From the <strong>Playbook Catalog Item</strong> choose a playbook-backed catalog
+item to run.</p>
+  </li>
+  <li>
+    <p>Choose a host from the <strong>Inventory</strong> against which to run the
+playbook. If <strong>Specific Hosts</strong> is selected, input the IP address or
+DNS names for each host in the text field, separating each with a
+comma.</p>
+
+    <div class="note">
+
+ManageIQ supports two configurations for host value
+input:
+
+  - To allow user-provided host values, set the custom button to
+    **Specific Hosts** and leave the associated text field blank.
+
+  - To use admin-specified host values, remove the **Hosts** field
+    when creating the dialog the service uses. In this
+    configuration, the field will not appear to users. See [Service
+    Dialogs](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/provisioning_virtual_machines_and_hosts/catalogs-services#service-dialogs)
+    for information on generating a service dialog.
+
+</div>
+  </li>
+  <li>
+    <p>Type in a <strong>Text</strong> and <strong>Hover Text</strong>, and select the <strong>Icon</strong> you
+want to use.</p>
+  </li>
+  <li>
+    <p>Select an <strong>Icon Color</strong> from the color selection palette that pops
+up.</p>
+  </li>
+  <li>
+    <p>Check <strong>Open URL</strong> to open a browser window for the custom URL
+returned when the playbook is run.</p>
+  </li>
+  <li>
+    <p>Select display options for the Ansible Playbook button from the
+<strong>Display for</strong> drop-down menu. Choose for the button to display in
+the list view, for single entities, or both.</p>
+  </li>
+  <li>
+    <p>Choose how to submit objects to automate by selecting an option from
+the <strong>Submit</strong> drop-down menu. Selecting <strong>Submit all</strong> will pass
+all objects at once when the playbook is executed, while choosing
+<strong>One by one</strong> will run the the playbook each time per object.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong> when you have confirmed that the button accomplishes
+the task you want.</p>
+  </li>
+</ol>
+
+<h3 id="editing-a-custom-button">
+<a class="anchor" href="#editing-a-custom-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Custom Button</h3>
+
+<p>This procedure shows you how to edit a custom button.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Types</strong> dropdown, select the type of object you
+want to edit the button for.</p>
+  </li>
+  <li>
+    <p>Click the button you want to edit.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>),
+<img src="../images/1851.png" alt="image"> (<strong>Edit this Button</strong>).</p>
+  </li>
+  <li>
+    <p>Modify as required.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="deleting-a-custom-button">
+<a class="anchor" href="#deleting-a-custom-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Custom Button</h3>
+
+<p>This procedure shows you how to delete a custom button.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization], then
+select the <strong>Buttons</strong> accordion.</p>
+  </li>
+  <li>
+    <p>From the <strong>Object Type</strong> tree in the accordion menu, select the type
+of object you want to remove the button from.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>). then click
+<img src="../images/2098.png" alt="image"> (<strong>Remove this button</strong>).</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong> to confirm that you want to delete this button.</p>
+  </li>
+</ol>
+
+<h3 id="setting-enablement-and-visibility-for-custom-buttons">
+<a class="anchor" href="#setting-enablement-and-visibility-for-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Enablement and Visibility for Custom Buttons</h3>
+
+<p>ManageIQ adds methods for evaluating an expression to determine
+whether a custom button is visible and enabled. Each method has a target
+object, for example, a virtual machine or host, and expressions can set
+a custom button to visible, hidden, or disabled.</p>
+
+<div class="note">
+
+Filtering works on single objects and is not applicable to lists.
+
+</div>
+
+<p>To apply filtering actions to a custom button:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Buttons</strong> accordion. Select the custom button to use.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit this Button</strong>).</p>
+  </li>
+  <li>
+    <p>Click the <strong>Advanced</strong> tab.</p>
+  </li>
+  <li>
+    <p>To set enablement filtering on a custom button:</p>
+
+    <ol>
+      <li>
+        <p>Under <strong>Enablement</strong>, click on <strong>Define Expression</strong>.</p>
+      </li>
+      <li>
+        <p>Create a visibility expression using the expression editor
+tools.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="Confirm"> (<strong>Confirm</strong>) when finished
+defining the expression.</p>
+      </li>
+      <li>
+        <p>Provide <strong>Disabled Button Text</strong> in the field.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>To set visibility filtering on a custom button:</p>
+
+    <ol>
+      <li>
+        <p>Under <strong>Visibility</strong>, click on <strong>Define Expression</strong>.</p>
+      </li>
+      <li>
+        <p>Create a visibility expression using the expression editor
+tools.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1863.png" alt="Confirm"> (<strong>Confirm</strong>) when finished
+defining the expression.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="using-a-custom-button">
+<a class="anchor" href="#using-a-custom-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using a Custom Button</h3>
+
+<p>This procedure shows you how to use custom buttons to invoke a cluster,
+host, datastore, provider, virtual machine or instance.</p>
+
+<ol>
+  <li>
+    <p>Go to the page for the item that you created a button for.</p>
+  </li>
+  <li>
+    <p>Click the custom button group from the taskbar, and then your custom
+button.</p>
+  </li>
+</ol>
+
+<p>The automate model is invoked for the specified item.</p>
+
+<h3 id="initiating-automate-from-an-event">
+<a class="anchor" href="#initiating-automate-from-an-event" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initiating Automate from an Event</h3>
+
+<p>You can also use a ManageIQ Policy Event to initiate automation.
+You can either use the provided Raise Automation Event action or create
+a custom automation action. The first case will start in the
+<code class="language-plaintext highlighter-rouge">/System/Process</code> class, but then go to the Event that initiated the
+Automate model in the <code class="language-plaintext highlighter-rouge">/System/Process/Event Class</code>. If you create your
+own custom action, it will start from the <code class="language-plaintext highlighter-rouge">/System/Process</code> class and
+then go to the <code class="language-plaintext highlighter-rouge">/System/Process/Request Class</code> instead.</p>
+
+<p>For example, suppose that you always want the same Automate model to
+occur when a virtual machine is created. You would use the Raise
+Automation Event Action. There are instances in the
+<code class="language-plaintext highlighter-rouge">/System/Process/Event Class</code> for the following Events that you can
+select as part of a Policy:</p>
+
+<p><img src="../images/2373.png" alt="image"></p>
+
+<h3 id="creating-a-policy-for-automate">
+<a class="anchor" href="#creating-a-policy-for-automate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Policy for Automate</h3>
+
+<p>This procedure shows you how to create a policy for automate.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer].</p>
+  </li>
+  <li>
+    <p>Click the <strong>Policies</strong> accordion, and select <strong>Control Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Vm Control Policies</strong>.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Control Vm Policy</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Description</strong>.</p>
+  </li>
+  <li>
+    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even
+when assigned to a resource.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>. You are brought to the page where you add conditions
+and events to your new policy.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1851.png" alt="image"> (<strong>Edit this Policy’s Event
+assignments</strong>).</p>
+
+    <ul>
+      <li>
+        <p>Check the events you want to use to send to an <strong>Automate
+Model</strong>.</p>
+      </li>
+      <li>
+        <p>Click <strong>Save</strong>.</p>
+      </li>
+      <li>
+        <p>From the <strong>Events</strong> area, click on the <strong>Description of the
+Event</strong> you want to assign an action to.</p>
+      </li>
+      <li>
+        <p>Click <img src="../images/1851.png" alt="image"> (<strong>Edit Actions for this Policy
+Event</strong>).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Select <strong>Raise Automation Event</strong>, and click
+<img src="../images/1876.png" alt="image"> (<strong>Move selected Actions into this
+Event</strong>).</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>You can now assign this policy to a <strong>Policy Profile</strong>. Then, assign the
+policy profile to the virtual machines. Every time this event happens on
+the virtual machine the appropriate Automate Model will be initiated.</p>
+
+<div class="note">
+
+If you want the policy to initiate an Automate Model from the
+`/System/Process/Request` class, then you can create your own custom
+action. Be sure to have an instance in the `/System/Process/Request`
+class for it to map to.
+
+</div>
+
+<h3 id="creating-a-custom-automate-action">
+<a class="anchor" href="#creating-a-custom-automate-action" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Automate Action</h3>
+
+<p>This procedure shows you how to create a custom Automate action.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Control[Explorer] accordion.</p>
+  </li>
+  <li>
+    <p>Click the <strong>Actions</strong> accordion.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
+<img src="../images/1862.png" alt="image"> (<strong>Add a new Action</strong>).</p>
+  </li>
+  <li>
+    <p>Type in a <strong>Description</strong> for the Action.</p>
+  </li>
+  <li>
+    <p>Select <strong>Invoke a Custom Automation</strong> from <strong>Action Type</strong>.</p>
+  </li>
+  <li>
+    <p>In <strong>Custom Automation</strong>,</p>
+
+    <ul>
+      <li>
+        <p>For <strong>Message</strong>, type <code class="language-plaintext highlighter-rouge">create</code>.</p>
+      </li>
+      <li>
+        <p>For <strong>Request</strong>, type in the name of the instance of the
+<code class="language-plaintext highlighter-rouge">/System/Process/Request Class</code> in the second.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Type in the <strong>Attribute/Value Pairs</strong> fields if applicable.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The action is created and can be added to a policy.</p>
+
+<h1 id="objects">
+<a class="anchor" href="#objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objects</h1>
+
+<h3 id="virtual-machine-properties">
+<a class="anchor" href="#virtual-machine-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual Machine Properties</h3>
+
+<p>When using these items in a method, prefix them with <code class="language-plaintext highlighter-rouge">vm.</code>. For example:
+<code class="language-plaintext highlighter-rouge">vm.storage_id.</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Friendly Name or Description</th>
+      <th>Raw Column Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Allocated Disk Storage</td>
+      <td>allocated_disk_storage</td>
+    </tr>
+    <tr>
+      <td>Autostart</td>
+      <td>autostart</td>
+    </tr>
+    <tr>
+      <td>Blackbox Exists</td>
+      <td>blackbox_exists</td>
+    </tr>
+    <tr>
+      <td>Blackbox Validated</td>
+      <td>blackbox_validated</td>
+    </tr>
+    <tr>
+      <td>Boot Time</td>
+      <td>boot_time</td>
+    </tr>
+    <tr>
+      <td>Busy</td>
+      <td>busy</td>
+    </tr>
+    <tr>
+      <td>Cluster</td>
+      <td>ems_cluster_name</td>
+    </tr>
+    <tr>
+      <td>Configuration XML</td>
+      <td>config_xml</td>
+    </tr>
+    <tr>
+      <td>Connection State</td>
+      <td>connection_state</td>
+    </tr>
+    <tr>
+      <td>CPU Affinity</td>
+      <td>cpu_affinity</td>
+    </tr>
+    <tr>
+      <td>CPU Limit</td>
+      <td>cpu_limit</td>
+    </tr>
+    <tr>
+      <td>CPU Reserve</td>
+      <td>cpu_reserve</td>
+    </tr>
+    <tr>
+      <td>CPU Reserve Expand</td>
+      <td>cpu_reserve_expand</td>
+    </tr>
+    <tr>
+      <td>CPU Shares</td>
+      <td>cpu_shares</td>
+    </tr>
+    <tr>
+      <td>CPU Shares Level</td>
+      <td>cpu_shares_level</td>
+    </tr>
+    <tr>
+      <td>Created on Time</td>
+      <td>ems_created_on</td>
+    </tr>
+    <tr>
+      <td>Currently Used Space</td>
+      <td>used_storage_by_state</td>
+    </tr>
+    <tr>
+      <td>Datastore Path</td>
+      <td>v_datastore_path</td>
+    </tr>
+    <tr>
+      <td>Date Created</td>
+      <td>created_on</td>
+    </tr>
+    <tr>
+      <td>Date Updated</td>
+      <td>updated_on</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>description</td>
+    </tr>
+    <tr>
+      <td>Ems</td>
+      <td>ems_id</td>
+    </tr>
+    <tr>
+      <td>Evm Owner</td>
+      <td>evm_owner_id</td>
+    </tr>
+    <tr>
+      <td>Evm Owner Email</td>
+      <td>evm_owner_email</td>
+    </tr>
+    <tr>
+      <td>Evm Owner Name</td>
+      <td>evm_owner_name</td>
+    </tr>
+    <tr>
+      <td>ManageIQ Unique ID (Guid)</td>
+      <td>guid</td>
+    </tr>
+    <tr>
+      <td>Format</td>
+      <td>format</td>
+    </tr>
+    <tr>
+      <td>Host</td>
+      <td>host_id</td>
+    </tr>
+    <tr>
+      <td>Host Name</td>
+      <td>host_name</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Is a Template</td>
+      <td>v_is_a_template</td>
+    </tr>
+    <tr>
+      <td>Last Analysis Attempt On</td>
+      <td>last_scan_attempt_on</td>
+    </tr>
+    <tr>
+      <td>Last Analysis Time</td>
+      <td>last_scan_on</td>
+    </tr>
+    <tr>
+      <td>Last Compliance Status</td>
+      <td>last_compliance_status</td>
+    </tr>
+    <tr>
+      <td>Last Compliance Timestamp</td>
+      <td>last_compliance_timestamp</td>
+    </tr>
+    <tr>
+      <td>Last Perf Capture On</td>
+      <td>last_perf_capture_on</td>
+    </tr>
+    <tr>
+      <td>Last Sync Time</td>
+      <td>last_sync_on</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>location</td>
+    </tr>
+    <tr>
+      <td>Memory Limit</td>
+      <td>memory_limit</td>
+    </tr>
+    <tr>
+      <td>Memory Reserve</td>
+      <td>memory_reserve</td>
+    </tr>
+    <tr>
+      <td>Memory Reserve Expand</td>
+      <td>memory_reserve_expand</td>
+    </tr>
+    <tr>
+      <td>Memory Shares</td>
+      <td>memory_shares</td>
+    </tr>
+    <tr>
+      <td>Memory Shares Level</td>
+      <td>memory_shares_level</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>OS Name</td>
+      <td>os_image_name</td>
+    </tr>
+    <tr>
+      <td>Owner</td>
+      <td>owner</td>
+    </tr>
+    <tr>
+      <td>Paravirtualization</td>
+      <td>paravirtualization</td>
+    </tr>
+    <tr>
+      <td>Parent Cluster</td>
+      <td>v_owning_cluster</td>
+    </tr>
+    <tr>
+      <td>Parent Datacenter</td>
+      <td>v_owning_datacenter</td>
+    </tr>
+    <tr>
+      <td>Parent Folder (Hosts &amp; Clusters)</td>
+      <td>v_owning_folder</td>
+    </tr>
+    <tr>
+      <td>Parent Folder (VMs &amp; Templates)</td>
+      <td>v_owning_blue_folder</td>
+    </tr>
+    <tr>
+      <td>Parent Folder Path (Hosts &amp; Clusters)</td>
+      <td>v_owning_folder_path</td>
+    </tr>
+    <tr>
+      <td>Parent Folder Path (VMs &amp; Templates)</td>
+      <td>v_owning_blue_folder_path</td>
+    </tr>
+    <tr>
+      <td>Parent Host Platform</td>
+      <td>v_host_vmm_product</td>
+    </tr>
+    <tr>
+      <td>Parent Resource Pool</td>
+      <td>v_owning_resource_pool</td>
+    </tr>
+    <tr>
+      <td>Pct Free Disk</td>
+      <td>v_pct_free_disk_space</td>
+    </tr>
+    <tr>
+      <td>Platform</td>
+      <td>platform</td>
+    </tr>
+    <tr>
+      <td>Power State</td>
+      <td>power_state</td>
+    </tr>
+    <tr>
+      <td>Previous State</td>
+      <td>previous_state</td>
+    </tr>
+    <tr>
+      <td>Registered</td>
+      <td>registered</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td>reserved</td>
+    </tr>
+    <tr>
+      <td>Retired</td>
+      <td>retired</td>
+    </tr>
+    <tr>
+      <td>Retirement</td>
+      <td>retirement</td>
+    </tr>
+    <tr>
+      <td>Retires On</td>
+      <td>retires_on</td>
+    </tr>
+    <tr>
+      <td>Service</td>
+      <td>service_id</td>
+    </tr>
+    <tr>
+      <td>Smart</td>
+      <td>smart</td>
+    </tr>
+    <tr>
+      <td>Standby Action</td>
+      <td>standby_action</td>
+    </tr>
+    <tr>
+      <td>State Changed On</td>
+      <td>state_changed_on</td>
+    </tr>
+    <tr>
+      <td>Storage</td>
+      <td>storage_id</td>
+    </tr>
+    <tr>
+      <td>Storage Name</td>
+      <td>storage_name</td>
+    </tr>
+    <tr>
+      <td>Template</td>
+      <td>template</td>
+    </tr>
+    <tr>
+      <td>Thin Provisioned</td>
+      <td>thin_provisioned</td>
+    </tr>
+    <tr>
+      <td>Tools Status</td>
+      <td>tools_status</td>
+    </tr>
+    <tr>
+      <td>Total Provisioned Space</td>
+      <td>provisioned_storage</td>
+    </tr>
+    <tr>
+      <td>Total Snapshots</td>
+      <td>v_total_snapshots</td>
+    </tr>
+    <tr>
+      <td>Total Used Disk Space</td>
+      <td>used_disk_storage</td>
+    </tr>
+    <tr>
+      <td>Uid Ems</td>
+      <td>uid_ems</td>
+    </tr>
+    <tr>
+      <td>Uncommitted Space</td>
+      <td>uncommitted_storage</td>
+    </tr>
+    <tr>
+      <td>Used Storage</td>
+      <td>used_storage</td>
+    </tr>
+    <tr>
+      <td>V Pct Used Disk Space</td>
+      <td>v_pct_used_disk_space</td>
+    </tr>
+    <tr>
+      <td>VDI Available</td>
+      <td>vdi_available</td>
+    </tr>
+    <tr>
+      <td>VDI Connection DNS Name</td>
+      <td>vdi_connection_dns_name</td>
+    </tr>
+    <tr>
+      <td>VDI Connection Logon Server</td>
+      <td>vdi_connection_logon_server</td>
+    </tr>
+    <tr>
+      <td>VDI Connection Name</td>
+      <td>vdi_connection_name</td>
+    </tr>
+    <tr>
+      <td>VDI Connection Remote IP Address</td>
+      <td>vdi_connection_remote_ip_address</td>
+    </tr>
+    <tr>
+      <td>VDI Connection Session Name</td>
+      <td>vdi_connection_session_name</td>
+    </tr>
+    <tr>
+      <td>VDI Connection Session Type</td>
+      <td>vdi_connection_session_type</td>
+    </tr>
+    <tr>
+      <td>VDI Connection URL</td>
+      <td>vdi_connection_url</td>
+    </tr>
+    <tr>
+      <td>VDI Endpoint IP Address</td>
+      <td>vdi_endpoint_ip_address</td>
+    </tr>
+    <tr>
+      <td>VDI Endpoint MAC Address</td>
+      <td>vdi_endpoint_mac_address</td>
+    </tr>
+    <tr>
+      <td>VDI Endpoint Name</td>
+      <td>vdi_endpoint_name</td>
+    </tr>
+    <tr>
+      <td>VDI Endpoint Type</td>
+      <td>vdi_endpoint_type</td>
+    </tr>
+    <tr>
+      <td>VDI User Appdata</td>
+      <td>vdi_user_appdata</td>
+    </tr>
+    <tr>
+      <td>VDI User DNS Domain</td>
+      <td>vdi_user_dns_domain</td>
+    </tr>
+    <tr>
+      <td>VDI User Domain</td>
+      <td>vdi_user_domain</td>
+    </tr>
+    <tr>
+      <td>VDI User Home Drive</td>
+      <td>vdi_user_home_drive</td>
+    </tr>
+    <tr>
+      <td>VDI User Home Path</td>
+      <td>vdi_user_home_path</td>
+    </tr>
+    <tr>
+      <td>VDI User Home Share</td>
+      <td>vdi_user_home_share</td>
+    </tr>
+    <tr>
+      <td>VDI User Logon Time</td>
+      <td>vdi_user_logon_time</td>
+    </tr>
+    <tr>
+      <td>VDI User Name</td>
+      <td>vdi_user_name</td>
+    </tr>
+    <tr>
+      <td>Vendor</td>
+      <td>vendor</td>
+    </tr>
+    <tr>
+      <td>Version</td>
+      <td>version</td>
+    </tr>
+    <tr>
+      <td>VMsafe Agent Address</td>
+      <td>vmsafe_agent_address</td>
+    </tr>
+    <tr>
+      <td>VMsafe Agent Port</td>
+      <td>vmsafe_agent_port</td>
+    </tr>
+    <tr>
+      <td>VMsafe Enable</td>
+      <td>vmsafe_enable</td>
+    </tr>
+    <tr>
+      <td>VMsafe Fail Open</td>
+      <td>vmsafe_fail_open</td>
+    </tr>
+    <tr>
+      <td>VMsafe Immutable VM</td>
+      <td>vmsafe_immutable_vm</td>
+    </tr>
+    <tr>
+      <td>VMsafe Timeout (ms)</td>
+      <td>vmsafe_timeout_ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Virtual Machine Properties</p>
+
+<h3 id="methods-for-use-in-ruby-scripts">
+<a class="anchor" href="#methods-for-use-in-ruby-scripts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods for use in Ruby Scripts</h3>
+
+<p>To use one of these in one of your own Ruby methods, use the syntax of
+<code class="language-plaintext highlighter-rouge">vm.method</code>. For example, to reboot the guest operating system, use
+<code class="language-plaintext highlighter-rouge">vm.rebootGuest</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>start</td>
+      <td>Start Virtual Machine container.</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>Stop Virtual Machine container.</td>
+    </tr>
+    <tr>
+      <td>suspend</td>
+      <td>Suspend Virtual Machine container.</td>
+    </tr>
+    <tr>
+      <td>unregister</td>
+      <td>Unregister Virtual Machine.</td>
+    </tr>
+    <tr>
+      <td>collect_running_processes</td>
+      <td>Collect the running processes from a started Virtual Machine.</td>
+    </tr>
+    <tr>
+      <td>shutdownGuest</td>
+      <td>Shutdown the guest operating system of the VM container. Requires VMware tools (or vendors tools) installed on the guest.</td>
+    </tr>
+    <tr>
+      <td>standbyGuest</td>
+      <td>Put the guest operating system into standby. Requires VMware tools (or vendors tools) installed on the guest.</td>
+    </tr>
+    <tr>
+      <td>rebootGuest</td>
+      <td>Reboot the guest operating system. Requires VMware tools (or vendors tools) installed on the guest.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="host-properties">
+<a class="anchor" href="#host-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Host Properties</h3>
+
+<p>When using these items in a method, prefix them with host, such as
+<code class="language-plaintext highlighter-rouge">host.ems_id</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Friendly Name or Description</th>
+      <th>Raw Column Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>All Enabled Ports</td>
+      <td>all_enabled_ports</td>
+    </tr>
+    <tr>
+      <td>Annotation</td>
+      <td>v_annotation</td>
+    </tr>
+    <tr>
+      <td>Authentication Status</td>
+      <td>Authentication_status</td>
+    </tr>
+    <tr>
+      <td>Connection State</td>
+      <td>connection_state</td>
+    </tr>
+    <tr>
+      <td>CPU usage MHz rate average over time period</td>
+      <td>cpu_usagemhz_rate_average_avg_over_time_period</td>
+    </tr>
+    <tr>
+      <td>CPU usage MHz rate high over time period</td>
+      <td>cpu_usagemhz_rate_average_high_over_time_period</td>
+    </tr>
+    <tr>
+      <td>CPU usage MHz rate low over time period</td>
+      <td>cpu_usagemhz_rate_average_low_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 1</td>
+      <td>custom_1</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 2</td>
+      <td>custom_2</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 3</td>
+      <td>custom_3</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 4</td>
+      <td>custom_4</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 5</td>
+      <td>custom_5</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 6</td>
+      <td>custom_6</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 7</td>
+      <td>custom_7</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 8</td>
+      <td>custom_8</td>
+    </tr>
+    <tr>
+      <td>Custom Attribute 9</td>
+      <td>custom_9</td>
+    </tr>
+    <tr>
+      <td>Date Created</td>
+      <td>created_on</td>
+    </tr>
+    <tr>
+      <td>Derived memory usage average over time period</td>
+      <td>derived_memory_used_avg_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Derived memory usage high over time period</td>
+      <td>derived_memory_used_high_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Derived memory usage low over time period</td>
+      <td>derived_memory_used_low_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Ems</td>
+      <td>ems_id</td>
+    </tr>
+    <tr>
+      <td>Enabled Inbound Ports</td>
+      <td>enabled_inbound_ports</td>
+    </tr>
+    <tr>
+      <td>Enabled Outbound Ports</td>
+      <td>enabled_outbound_ports</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 0 Services</td>
+      <td>enabled_run_level_0_services</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 1 Services</td>
+      <td>enabled_run_level_1_services</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 2 Services</td>
+      <td>enabled_run_level_2_services</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 3 Services</td>
+      <td>enabled_run_level_3_services</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 4 Services</td>
+      <td>enabled_run_level_4_services</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 5 Services</td>
+      <td>enabled_run_level_5_services</td>
+    </tr>
+    <tr>
+      <td>Enabled Run Level 6 Services</td>
+      <td>enabled_run_level_6_services</td>
+    </tr>
+    <tr>
+      <td>Enabled TCP Inbound Ports</td>
+      <td>enabled_tcp_inbound_ports</td>
+    </tr>
+    <tr>
+      <td>Enabled TCP Outbound Ports</td>
+      <td>enabled_tcp_outbound_ports</td>
+    </tr>
+    <tr>
+      <td>Enabled UDP Inbound Ports</td>
+      <td>enabled_udp_inbound_ports</td>
+    </tr>
+    <tr>
+      <td>Enabled UDP Outbound Ports</td>
+      <td>enabled_udp_outbound_ports</td>
+    </tr>
+    <tr>
+      <td>EVM Unique ID (Guid)</td>
+      <td>guid</td>
+    </tr>
+    <tr>
+      <td>Hostname</td>
+      <td>hostname</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>IP Address</td>
+      <td>ipaddress</td>
+    </tr>
+    <tr>
+      <td>Last Compliance Status</td>
+      <td>last_compliance_status</td>
+    </tr>
+    <tr>
+      <td>Last Compliance Timestamp</td>
+      <td>last_compliance_timestamp</td>
+    </tr>
+    <tr>
+      <td>Last Perf Capture On</td>
+      <td>last_perf_capture_on</td>
+    </tr>
+    <tr>
+      <td>Last Analysis Time</td>
+      <td>last_scan_on</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>OS Name</td>
+      <td>os_image_name</td>
+    </tr>
+    <tr>
+      <td>Platform</td>
+      <td>platform</td>
+    </tr>
+    <tr>
+      <td>Power State</td>
+      <td>power_state</td>
+    </tr>
+    <tr>
+      <td>Region Description</td>
+      <td>region_description</td>
+    </tr>
+    <tr>
+      <td>Region Number</td>
+      <td>region_number</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td>reserved</td>
+    </tr>
+    <tr>
+      <td>Service Names</td>
+      <td>service_names</td>
+    </tr>
+    <tr>
+      <td>Settings</td>
+      <td>settings</td>
+    </tr>
+    <tr>
+      <td>Smart</td>
+      <td>smart</td>
+    </tr>
+    <tr>
+      <td>SSH Root Access</td>
+      <td>ssh_permit_root_login</td>
+    </tr>
+    <tr>
+      <td>Uid Ems</td>
+      <td>uid_ems</td>
+    </tr>
+    <tr>
+      <td>Date Updated</td>
+      <td>updated_on</td>
+    </tr>
+    <tr>
+      <td>User Assigned Os</td>
+      <td>user_assigned_os</td>
+    </tr>
+    <tr>
+      <td>Parent Cluster</td>
+      <td>v_owning_cluster</td>
+    </tr>
+    <tr>
+      <td>Parent Datacenter</td>
+      <td>v_owning_datacenter</td>
+    </tr>
+    <tr>
+      <td>Parent Folder (Hosts &amp; Clusters)</td>
+      <td>v_owning_folder</td>
+    </tr>
+    <tr>
+      <td>Total Datastores</td>
+      <td>v_total_storages</td>
+    </tr>
+    <tr>
+      <td>Total VMs</td>
+      <td>v_total_vms</td>
+    </tr>
+    <tr>
+      <td>VMM Build Number</td>
+      <td>vmm_buildnumber</td>
+    </tr>
+    <tr>
+      <td>VMM Platform</td>
+      <td>vmm_product</td>
+    </tr>
+    <tr>
+      <td>VMM Vendor</td>
+      <td>vmm_vendor</td>
+    </tr>
+    <tr>
+      <td>VMM Version</td>
+      <td>vmm_version</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="provider-properties">
+<a class="anchor" href="#provider-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provider Properties</h3>
+
+<p>When using these items in a method, prefix them with <code class="language-plaintext highlighter-rouge">ems</code>, such as
+<code class="language-plaintext highlighter-rouge">ems.ems_id</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Friendly Name or Description</th>
+      <th>Raw Column Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aggregate VM CPUs</td>
+      <td>aggregate_vm_cpus</td>
+    </tr>
+    <tr>
+      <td>Aggregate VM Memory</td>
+      <td>aggregate_vm_memory</td>
+    </tr>
+    <tr>
+      <td>CPU Ratio</td>
+      <td>v_cpu_vr_ratio</td>
+    </tr>
+    <tr>
+      <td>CPU Usage MHZ Rate Average High Over Time Period</td>
+      <td>cpu_usagemhz_rate_average_high_over_time_period”</td>
+    </tr>
+    <tr>
+      <td>CPU Usage MHZ Rate Average Low Over Time Period</td>
+      <td>cpu_usagemhz_rate_average_low_over_time_period</td>
+    </tr>
+    <tr>
+      <td>CPU Usage MHZ Rate Average Over Time Period</td>
+      <td>cpu_usagemhz_rate_average_avg_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Date Created</td>
+      <td>created_on</td>
+    </tr>
+    <tr>
+      <td>Date Updated</td>
+      <td>updated_on</td>
+    </tr>
+    <tr>
+      <td>Derived Memory Usage Rate Average High Over Time Period</td>
+      <td>derived_memory_used_high_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Derived Memory Usage Rate Average Low Time Period</td>
+      <td>derived_memory_used_low_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Derived Memory Usage Rate Average Over Time Period</td>
+      <td>derived_memory_used_avg_over_time_period</td>
+    </tr>
+    <tr>
+      <td>Distributed Resource Scheduler Automation Level</td>
+      <td>drs_automation_level</td>
+    </tr>
+    <tr>
+      <td>Distributed Resource Scheduler Enabled</td>
+      <td>drs_enabled</td>
+    </tr>
+    <tr>
+      <td>Distributed Resource Scheduler Migration Threshold</td>
+      <td>drs_migration_threshold</td>
+    </tr>
+    <tr>
+      <td>EMS ID</td>
+      <td>ems_id</td>
+    </tr>
+    <tr>
+      <td>EVM Zone</td>
+      <td>zone_name</td>
+    </tr>
+    <tr>
+      <td>High-Availability Admission Control</td>
+      <td>ha_admit_control</td>
+    </tr>
+    <tr>
+      <td>High-Availability Enabled</td>
+      <td>ha_enabled</td>
+    </tr>
+    <tr>
+      <td>High-Availability Max Failures</td>
+      <td>ha_max_failures</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Last Performance Data Captured</td>
+      <td>last_perf_capture_on</td>
+    </tr>
+    <tr>
+      <td>Last Smart State Analysis</td>
+      <td>last_scan_on</td>
+    </tr>
+    <tr>
+      <td>Memory Ratio</td>
+      <td>v_ram_vr_ratio</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>Parent Datacenter</td>
+      <td>v_parent_datacenter</td>
+    </tr>
+    <tr>
+      <td>Qualified Description</td>
+      <td>v_qualified_desc</td>
+    </tr>
+    <tr>
+      <td>Region Description</td>
+      <td>region_description</td>
+    </tr>
+    <tr>
+      <td>Region Number</td>
+      <td>region_number</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td>reserved</td>
+    </tr>
+    <tr>
+      <td>Total CPU Speed</td>
+      <td>aggregate_cpu_speed</td>
+    </tr>
+    <tr>
+      <td>Total Hosts</td>
+      <td>total_hosts</td>
+    </tr>
+    <tr>
+      <td>Total Memory</td>
+      <td>aggregate_memory</td>
+    </tr>
+    <tr>
+      <td>Total Number of Logical CPUs</td>
+      <td>aggregate_logical_cpus</td>
+    </tr>
+    <tr>
+      <td>Total Number of Physical CPUs</td>
+      <td>aggregate_physical_cpus</td>
+    </tr>
+    <tr>
+      <td>Total Vms</td>
+      <td>total_vms</td>
+    </tr>
+    <tr>
+      <td>Unique Identifier</td>
+      <td>uid_ems</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="storage-properties">
+<a class="anchor" href="#storage-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Storage Properties</h3>
+
+<p>When using these items in a method, prefix them with <code class="language-plaintext highlighter-rouge">storage</code>, such as
+<code class="language-plaintext highlighter-rouge">storage.name</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Friendly Name or Description</th>
+      <th>Raw Column Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Date Created</td>
+      <td>created_on</td>
+    </tr>
+    <tr>
+      <td>Date Updated</td>
+      <td>updated_on</td>
+    </tr>
+    <tr>
+      <td>Disk Files Percent of Used</td>
+      <td>v_disk_percent_of_used</td>
+    </tr>
+    <tr>
+      <td>Free Space</td>
+      <td>free_space</td>
+    </tr>
+    <tr>
+      <td>Free Space Percent of Total</td>
+      <td>v_free_space_percent_of_total</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Last Analysis Time</td>
+      <td>last_scan_on</td>
+    </tr>
+    <tr>
+      <td>Last Perf Capture On</td>
+      <td>last_perf_capture_on</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>location</td>
+    </tr>
+    <tr>
+      <td>Multiple Host Access</td>
+      <td>multiplehostaccess</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>Non-VM Files Percent of Used</td>
+      <td>v_debris_percent_of_used</td>
+    </tr>
+    <tr>
+      <td>Other VM Files Percent of Used</td>
+      <td>v_vm_misc_percent_of_used</td>
+    </tr>
+    <tr>
+      <td>Provisioned Space Percent of Total</td>
+      <td>v_provisioned_percent_of_total</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td>reserved</td>
+    </tr>
+    <tr>
+      <td>Size of Non-VM Files</td>
+      <td>v_total_debris_size</td>
+    </tr>
+    <tr>
+      <td>Size of Other VM Files</td>
+      <td>v_total_vm_misc_size</td>
+    </tr>
+    <tr>
+      <td>Size of VM Memory Files</td>
+      <td>v_total_vm_ram_size</td>
+    </tr>
+    <tr>
+      <td>Size of VM Snapshot Files</td>
+      <td>v_total_snapshot_size</td>
+    </tr>
+    <tr>
+      <td>Snapshot Files Percent of Used</td>
+      <td>v_snapshot_percent_of_used</td>
+    </tr>
+    <tr>
+      <td>Store Type</td>
+      <td>store_type</td>
+    </tr>
+    <tr>
+      <td>Total Hosts</td>
+      <td>v_total_hosts</td>
+    </tr>
+    <tr>
+      <td>Total Managed Registered Vms</td>
+      <td>total_managed_registered_vms</td>
+    </tr>
+    <tr>
+      <td>Total Managed Unregistered Vms</td>
+      <td>total_managed_unregistered_vms</td>
+    </tr>
+    <tr>
+      <td>Total Provisioned Space</td>
+      <td>v_total_provisioned</td>
+    </tr>
+    <tr>
+      <td>Total Space</td>
+      <td>total_space</td>
+    </tr>
+    <tr>
+      <td>Total Unmanaged Vms</td>
+      <td>total_unmanaged_vms</td>
+    </tr>
+    <tr>
+      <td>Total VMs</td>
+      <td>v_total_vms</td>
+    </tr>
+    <tr>
+      <td>Uncommitted</td>
+      <td>uncommitted</td>
+    </tr>
+    <tr>
+      <td>Used Space</td>
+      <td>v_used_space</td>
+    </tr>
+    <tr>
+      <td>Used Space Percent of Total</td>
+      <td>v_used_space_percent_of_total</td>
+    </tr>
+    <tr>
+      <td>VM Memory Files Percent of Used</td>
+      <td>v_memory_percent_of_used</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Storage Properties</p>
+
+<h1 id="faqs-and-flows">
+<a class="anchor" href="#faqs-and-flows" aria-hidden="true"><span class="octicon octicon-link"></span></a>FAQs and Flows</h1>
+
+<h3 id="phase-1-create-provision-request">
+<a class="anchor" href="#phase-1-create-provision-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase 1: Create Provision Request</h3>
+
+<p><img src="../images/2375.png" alt="image"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Where do I create a new provisioning profile based on a users LDAP group?</td>
+      <td>Navigate to [<code class="language-plaintext highlighter-rouge">VM / Provisioning / Profile</code>] of either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace in your domain.</td>
+    </tr>
+    <tr>
+      <td>Where can I specify a pre-dialog to present to a Requester in their LDAP group?</td>
+      <td>Custom pre-dialogs can be defined in [`VM / Provisioning /</td>
+    </tr>
+    <tr>
+      <td>Profile / <ldap group="" name="">`\] of either the **Cloud** or **Infrastructure** namespace in your domain.</ldap>
+</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>I would like to customize our dialogs. Where are all the dialogs kept?</td>
+      <td>All dialogs are located on each ManageIQ appliance in the <code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/db/fixtures</code> directory.</td>
+    </tr>
+    <tr>
+      <td>What happens if I do not specify any profiles for provisioning?</td>
+      <td>ManageIQ searches for a matching LDAP group in the [<code class="language-plaintext highlighter-rouge">VM / Provisioning / Profile</code>] class of either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace in your domain. If an LDAP profile is NOT found then ManageIQ will use the <code class="language-plaintext highlighter-rouge">missing class instance</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="phase-2-request-approval">
+<a class="anchor" href="#phase-2-request-approval" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase 2: Request Approval</h3>
+
+<p><img src="../images/2376.png" alt="image"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Where can I specify auto-approval values on a per virtual machine template basis?</td>
+      <td>Tags can be assigned to templates in the form of [<strong>prov_max_vms</strong>, <strong>prov_max_cpus</strong>, <strong>prov_max_memory</strong>, <strong>prov_max_retirement_days</strong>].</td>
+    </tr>
+    <tr>
+      <td>Where can I modify the default Auto-Approval values?</td>
+      <td>These values can be set in the [`Service / Provisioning / StateMachines /</td>
+    </tr>
+    <tr>
+      <td>ServiceProvisionRequestApproval / Default`] class instance in your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>How can I customize the email that is sent when a request is approved?</td>
+      <td>The Request Approved email message can be modified in [<code class="language-plaintext highlighter-rouge">VM / Provisioning / Email / MiqProvisionRequest_Approved</code>] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+    </tr>
+    <tr>
+      <td>How can I customize the email that is sent when a request is denied?</td>
+      <td>The Request Denied email message can be modified in [<code class="language-plaintext highlighter-rouge">VM / Provisioning / Email / MiqProvisionRequest_Denied</code>] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+    </tr>
+    <tr>
+      <td>How can I customize the email that is sent when a request is not Auto-approved?</td>
+      <td>The Request Pending email message can be modified in [<code class="language-plaintext highlighter-rouge">VM / Provisioning / Email / MiqProvisionRequest_Denied</code>] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+    </tr>
+    <tr>
+      <td>If a Request Approval requires manual approval, how does an Approver approve the request?</td>
+      <td>Log into ManageIQ as an approver/admin and navigate to menu:Virtual Machines[Requests] and then click on the request.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="phase-3-quota-validation">
+<a class="anchor" href="#phase-3-quota-validation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase 3: Quota Validation</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Where in ManageIQ can I set default quota thresholds for users and groups?</td>
+      <td>These values can be set in the [`VM</td>
+    </tr>
+    <tr>
+      <td>Provisioning / StateMachines / ProvisionRequestQuotaVerification`] class instance of either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace in your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Where in ManageIQ can I set individual and group quota thresholds?</td>
+      <td>Tags can be assigned to groups or users by navigating to menu:Configuration[Access Control]. The following are valid tags that can be assigned to group or individual users: [<strong>quota_max_cpu</strong>, <strong>quota_max_memory</strong>, <strong>quota_max_storage</strong>].</td>
+    </tr>
+    <tr>
+      <td>Where can I customize the way our virtual machines are named?</td>
+      <td>Virtual machine naming conventions can be altered using the methods in the [`VM /</td>
+    </tr>
+    <tr>
+      <td>Provisioning / Naming`] class of either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace in your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>How can I customize the email that is sent when a request is denied?</td>
+      <td>The Request Denied email message can be modified in the [`VM /</td>
+    </tr>
+    <tr>
+      <td>Provisioning / Email / MiqProvisionRequest_Denied`] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="phase-4-provisioning">
+<a class="anchor" href="#phase-4-provisioning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase 4: Provisioning</h3>
+
+<p><strong>Target Type: Cloning a Template to a Virtual Machine.</strong></p>
+
+<p><img src="../images/:../images/2377.png" alt="Target Type: Cloning a Template to a Virtual
+Machine"></p>
+
+<p><strong>Target Type: Clone to Template.</strong></p>
+
+<p><img src="../images/:../images/2378.png" alt="Target Type: Clone to Template"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Where can I customize the email message that is sent upon provisioning completion?</td>
+      <td>This can be customized using the [`VM / Provisioning / Email</td>
+    </tr>
+    <tr>
+      <td>/ MiqProvision_Complete` ] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Where can I change what is put into the virtual machines Annotation after provisioning?</td>
+      <td>These settings can be modified by leveraging the <code class="language-plaintext highlighter-rouge">_PreProvision Ruby</code> methods in [`VM / Provisioning / StateMachines /</td>
+    </tr>
+    <tr>
+      <td>Methods`] in either the *Cloud&lt;/emphasis&gt; or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Where do I set the default VC folder location for provisioning virtual machines?</td>
+      <td>This can be modified by leveraging by leveraging the <code class="language-plaintext highlighter-rouge">_PreProvision Ruby</code> methods in [`VM / Provisioning / StateMachines /</td>
+    </tr>
+    <tr>
+      <td>Methods`] in either the *Cloud&lt;/emphasis&gt; or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Where can I modify the virtual machine customization spec mapping?</td>
+      <td>This can be modified by leveraging by leveraging the `_PreProvision</td>
+    </tr>
+    <tr>
+      <td>Ruby<code class="language-plaintext highlighter-rouge"> methods in \[</code>VM / Provisioning / StateMachines / Methods`] in either the *Cloud&lt;/emphasis&gt; or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Where can I modify the Clone_to_Template state_machine?</td>
+      <td>Navigate to [<code class="language-plaintext highlighter-rouge">VM / Provisioning / StateMachines / VMProvision_VM / template</code>] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+    </tr>
+    <tr>
+      <td>Where can I modify the Clone_to_VM state_machine?</td>
+      <td>Navigate to [`VM /</td>
+    </tr>
+    <tr>
+      <td>Provisioning / StateMachines / VMProvision_VM / clone_to_vm`] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="phase-5-retirement">
+<a class="anchor" href="#phase-5-retirement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase 5: Retirement</h3>
+
+<p><img src="../images/2379.png" alt="image"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Where can I customize the email message that is sent upon completion of virtual machine retirement?</td>
+      <td>This can be customized using the [`VM /</td>
+    </tr>
+    <tr>
+      <td>Retirement / Email / vm_retirement_emails`] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Where can I customize the email message that is sent during virtual machine retirement warnings?</td>
+      <td>This can be customized using the [`VM /</td>
+    </tr>
+    <tr>
+      <td>Retirement / Email / vm_retirement_emails`] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>If I want to customize what gets called during the retirement phase where should I look?</td>
+      <td>This can be customized using the [`VM / Retirement</td>
+    </tr>
+    <tr>
+      <td>/ StateMachines / VMRetirement`] in either the <strong>Cloud</strong> or <strong>Infrastructure</strong> namespace of your domain.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>How can I extend the virtual machine retirement date an additional number of days?</td>
+      <td>Create a custom button for virtual machines that launches [<code class="language-plaintext highlighter-rouge">/System/Request/vm_retire_extend</code>]. Then navigate to the [`VM /</td>
+    </tr>
+    <tr>
+      <td>Retirement / Email / vm_retire_extend<code class="language-plaintext highlighter-rouge">\] Ruby method in the **Cloud** or **Infrastructure** namespaces and set the </code>vm_retire_extend_days` value.</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="inline-method-to-create-a-provision-request">
+<a class="anchor" href="#inline-method-to-create-a-provision-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inline Method to Create a Provision Request</h1>
+
+<h3 id="ruby-method">
+<a class="anchor" href="#ruby-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ruby method</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ManageIQ Automate Method</span>
+<span class="c1">#</span>
+<span class="vg">$evm</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">"info"</span><span class="p">,</span> <span class="s2">"ManageIQ Automate Method  Building VM Provisioning Request Started"</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="err"> </span>
+<span class="n">prov</span><span class="o">=</span> <span class="vg">$evm</span><span class="p">.</span><span class="nf">root</span><span class="p">[</span><span class="s1">'miq_provision'</span><span class="p">]</span>
+
+<span class="err"> </span> <span class="c1"># arg1 = version</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'1.1'</span><span class="p">]</span>
+  <span class="c1"># arg2 = templateFields</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="p">{</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'App'</span><span class="p">}</span>
+  <span class="c1"># arg3 = vmFields</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="p">{</span><span class="s1">'vm_name'</span> <span class="o">=&gt;</span> <span class="s1">'CRM_APP'</span><span class="p">,</span> <span class="s1">'request_type'</span> <span class="o">=&gt;</span> <span class="s1">'template'</span><span class="p">}</span>
+  <span class="c1"># arg4 =  requester</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="p">{</span><span class="s1">'owner_email'</span> <span class="o">=&gt;</span> <span class="s1">'admin@asd.com'</span><span class="p">,</span> <span class="s1">'owner_last_name'</span> <span class="o">=&gt;</span> <span class="s1">'Admin'</span><span class="p">,</span> <span class="s1">'owner_first_name'</span> <span class="o">=&gt;</span> <span class="s1">'Admin'</span><span class="p">,</span> <span class="s1">'user_name'</span> <span class="o">=&gt;</span> <span class="s1">'admin'</span><span class="p">}</span>
+  <span class="c1"># arg5 =  tags</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="p">{</span><span class="s1">'crm'</span> <span class="o">=&gt;</span> <span class="s1">'true'</span><span class="p">}</span>
+  <span class="c1"># arg6 =  WS Values</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="kp">nil</span>
+  <span class="c1"># arg7 = emsCustomAttributes</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="kp">nil</span>
+  <span class="c1"># arg8 = miqCustomAttributes</span>
+  <span class="n">args</span> <span class="o">&lt;&lt;</span> <span class="kp">nil</span>
+
+<span class="vg">$evm</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">"info"</span><span class="p">,</span><span class="s2">"Building provisioning request with the following arguments: &lt;</span><span class="si">#{</span><span class="n">args</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">&gt;"</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="vg">$evm</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="s1">'create_provision_request'</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="migrating-custom-buttons">
+<a class="anchor" href="#migrating-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migrating Custom Buttons</h1>
+
+<h3 id="migrating-custom-buttons-1">
+<a class="anchor" href="#migrating-custom-buttons-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migrating Custom Buttons</h3>
+
+<p>This workflow demonstrates how to export custom buttons from one
+ManageIQ appliance and import them in another
+ManageIQ appliance.</p>
+
+<ol>
+  <li>
+    <p>Export custom buttons from the source ManageIQ
+appliance:</p>
+
+    <ol>
+      <li>
+        <p>SSH into the ManageIQ appliance as <code class="language-plaintext highlighter-rouge">root</code>.</p>
+      </li>
+      <li>
+        <p>Create a temporary directory:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># mkdir /tmp/custom_buttons
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Navigate to the Virtual Management Database (VMDB) directory:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># vmdb
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Export custom buttons using the following <code class="language-plaintext highlighter-rouge">rake</code> command:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># rake evm:export:custom_buttons -- --directory /tmp/custom_buttons
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Confirm the <code class="language-plaintext highlighter-rouge">yaml</code> file was created by navigating to the new
+directory:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># cd /tmp/custom_buttons
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Copy the directory to the target ManageIQ appliance:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>scp -r /tmp/custom_buttons/ hostname:/tmp/custom_buttons
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Import custom buttons on the target ManageIQ
+appliance:</p>
+
+    <ol>
+      <li>
+        <p>SSH to the target ManageIQ appliance as <code class="language-plaintext highlighter-rouge">root</code>.</p>
+      </li>
+      <li>
+        <p>Navigate to the VMDB directory:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># vmdb
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Import custom buttons using the following <code class="language-plaintext highlighter-rouge">rake</code> command:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># rake evm:import:custom_buttons -- --source /tmp/custom_buttons
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>To verify successful import of custom buttons:</p>
+
+<ol>
+  <li>
+    <p>Log in to the target ManageIQ appliance.</p>
+  </li>
+  <li>
+    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+  </li>
+  <li>
+    <p>Click <strong>Buttons</strong> in the accordion menu.</p>
+  </li>
+</ol>
+
+<p>Imported buttons will appear under the parent <strong>Object Type</strong>.</p>
+
+
+
+      </div>
+    </article>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-row" id="footer_top">
+    <div class="footer-group">
+      <img class="footer-logo" src="/assets/images/manageiq-glyph-inverse.svg" alt="ManageIQ">
+      <ul class="site_nav">
+  <li >
+    <a href="/download/">Download</a>
+  </li>
+  <li >
+    <a href="/docs/">Documentation</a>
+  </li>
+  <li >
+    <a href="/community/">Community</a>
+  </li>
+  <li >
+    <a href="/blog/">Blog</a>
+  </li>
+</ul>
+
+    </div>
+
+
+    <ul class="contact_menu">
+      <li>
+        <a href="https://github.com/ManageIQ/">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">
+          <i class="fa fa-gitter">
+            <svg viewBox="45 47 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(45.000000, 47.000000)">
+        <g id="icon-gitter" transform="translate(10.000000, 0.000000)">
+            <rect id="Rectangle-path" x="0" y="0.5" width="8.25" height="61"></rect>
+            <rect id="Rectangle-path" x="49.75" y="14.5" width="8.25" height="47"></rect>
+            <rect id="Rectangle-path" x="16.5" y="14.5" width="8.25" height="80.25"></rect>
+            <rect id="Rectangle-path" x="33.25" y="14.5" width="8.25" height="80.25"></rect>
+        </g>
+    </g>
+</svg>
+
+          </i>
+          Gitter
+        </a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">
+          <i class="fa fa-comments"></i>
+          Forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-row" id="footer_bottom">
+    <div class="footer-legal">
+      <span class="copyright">
+        &copy; 2020 ManageIQ.
+      </span>
+      <span>
+        <a href="http://community.redhat.com/software/" target="_blank">
+          Sponsored by Red Hat, Inc.
+        </a>
+      </span>
+      <span>
+        <a href="/logo/" class="footer-link">Logo</a>
+      </span>
+      <span>
+        <a href="/security/" class="footer-link">Security</a>
+      </span>
+      <span>
+        <a href="/legal/" class="footer-link">Legal &amp; Privacy</a>
+      </span>
+    </div>
+
+    <div class="footer-social">
+      <ul class="social_menu">
+        <li>
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <!--  -->
+        <li>
+          <a href="https://www.linkedin.com/company/manageiq" class="social_link social_link-linkedin">
+            <span class="social_link-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <div id="lightbox">
+  <header class="lightbox-header">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-close">
+      <span class="fa fa-times"></span>
+    </div>
+  </header>
+
+  <div class="lightbox-image">
+    <img src="" alt="">
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/main.js" charset="utf-8"></script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58883457-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+  </body>
+</html>

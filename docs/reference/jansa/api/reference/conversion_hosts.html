@@ -1540,268 +1540,240 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="conversion-hosts"><a class="anchor" href="#conversion-hosts"></a>Conversion Hosts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of conversion hosts is provided via the following collection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/conversion_hosts</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following actions are available for conversion hosts:</p>
-</div>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#conversion-hosts">Conversion Hosts</a>
 <ul>
-<li>
-<p><a href="#querying-conversion-hosts">Querying Conversion Hosts</a></p>
-</li>
-<li>
-<p><a href="#creating-conversion-hosts">Creating Conversion Hosts</a></p>
-</li>
-<li>
-<p><a href="#deleting-conversion-hosts">Deleting Conversion Hosts</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#querying-conversion-hosts">Querying Conversion Hosts</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-conversion-hosts">Creating Conversion Hosts</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#conversion-host-attributes">Conversion Host Attributes</a></li>
+<li class="toc-entry toc-h4"><a href="#response">Response</a></li>
+<li class="toc-entry toc-h4"><a href="#monitoring-configuration-tasks">Monitoring Configuration Tasks</a></li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="querying-conversion-hosts"><a class="anchor" href="#querying-conversion-hosts"></a>Querying Conversion Hosts</h3>
-<div class="paragraph">
+</li>
+<li class="toc-entry toc-h3"><a href="#deleting-conversion-hosts">Deleting Conversion Hosts</a></li>
+</ul>
+</li>
+</ul><h2 id="conversion-hosts">
+<a class="anchor" href="#conversion-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conversion Hosts</h2>
+
+<p>Management of conversion hosts is provided via the following collection:</p>
+
+<pre><code class="language-data">/api/conversion_hosts
+</code></pre>
+
+<p>The following actions are available for conversion hosts:</p>
+
+<ul>
+  <li>
+    <p><a href="#querying-conversion-hosts">Querying Conversion Hosts</a></p>
+  </li>
+  <li>
+    <p><a href="#creating-conversion-hosts">Creating Conversion Hosts</a></p>
+  </li>
+  <li>
+    <p><a href="#deleting-conversion-hosts">Deleting Conversion Hosts</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-conversion-hosts">
+<a class="anchor" href="#querying-conversion-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Conversion Hosts</h3>
+
 <p>To query all conversion hosts:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/conversion_hosts</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To query a specific conversion host&#8217;s details:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/conversion_hosts/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="creating-conversion-hosts"><a class="anchor" href="#creating-conversion-hosts"></a>Creating Conversion Hosts</h3>
-<div class="paragraph">
-<p>Conversion hosts can be created via the <em>create</em> POST action by posting the
-request directly to <strong>/api/conversion_hosts</strong>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ManageIQ::Providers::Redhat::InfraManager::Host</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">0</span><span style="color:#00D">4</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>auth_user</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">root</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>conversion_host_ssh_private_key</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-----BEGIN PRIVATE KEY-----</span><span style="color:#b0b">\n</span><span style="color:#D20">MIIEvQI[...]gaS2cBrzxn3IQKTabc=</span><span style="color:#b0b">\n</span><span style="color:#D20">-----END PRIVATE KEY-----</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>vmware_vddk_package_url</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://file.example.com/vddk/VMware-vix-disklib-stable.tar.gz</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="conversion-host-attributes"><a class="anchor" href="#conversion-host-attributes"></a>Conversion Host Attributes</h4>
-<table class="tableblock frame-all grid-all stretch">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/conversion_hosts
+</code></pre></div></div>
+
+<p>To query a specific conversion host’s details:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/conversion_hosts/:id
+</code></pre></div></div>
+
+<h3 id="creating-conversion-hosts">
+<a class="anchor" href="#creating-conversion-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Conversion Hosts</h3>
+
+<p>Conversion hosts can be created via the <em>create</em> POST action by posting
+the request directly to <strong>/api/conversion_hosts</strong>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ManageIQ::Providers::Redhat::InfraManager::Host"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">00000000000004</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auth_user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"conversion_host_ssh_private_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-----BEGIN PRIVATE KEY-----</span><span class="se">\n</span><span class="s2">MIIEvQI[...]gaS2cBrzxn3IQKTabc=</span><span class="se">\n</span><span class="s2">-----END PRIVATE KEY-----</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vmware_vddk_package_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://file.example.com/vddk/VMware-vix-disklib-stable.tar.gz"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="conversion-host-attributes">
+<a class="anchor" href="#conversion-host-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conversion Host Attributes</h4>
+
+<table>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
-<tr>
-<th class="tableblock halign-left valign-top">Attribute Group</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<tr class="header">
+<th>Attribute Group</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resource_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<tr class="odd">
+<td><p>resource_type</p></td>
+<td><p>string</p></td>
+<td>
 <p>Type of resource that is acting as a conversion host:</p>
-</div>
-<div class="ulist">
 <ul>
-<li>
-<p>oVirt / RHV Host: <code>ManageIQ::Providers::Redhat::InfraManager::Host</code></p>
-</li>
-<li>
-<p>oVirt / RHV VM: <code>ManageIQ::Providers::Redhat::InfraManager::Vm</code></p>
-</li>
-<li>
-<p>OpenStack VM: <code>ManageIQ::Providers::Openstack::CloudManager::Vm</code></p>
-</li>
+<li><p>oVirt / RHV Host: <code>ManageIQ::Providers::Redhat::InfraManager::Host</code></p></li>
+<li><p>oVirt / RHV VM: <code>ManageIQ::Providers::Redhat::InfraManager::Vm</code></p></li>
+<li><p>OpenStack VM: <code>ManageIQ::Providers::Openstack::CloudManager::Vm</code></p></li>
 </ul>
-</div></div></td>
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resource_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the resource acting as a conversion host</p></td>
+<tr class="even">
+<td><p>resource_id</p></td>
+<td><p>integer</p></td>
+<td><p>ID of the resource acting as a conversion host</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">auth_user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User name for the SSH connection to a conversion host</p></td>
+<tr class="odd">
+<td><p>auth_user</p></td>
+<td><p>string</p></td>
+<td><p>User name for the SSH connection to a conversion host</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">conversion_host_ssh_private_key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH private key for SSH connection to a conversion host. Line breaks must be replaced with <code>\n</code>.</p></td>
+<tr class="even">
+<td><p>conversion_host_ssh_private_key</p></td>
+<td><p>string</p></td>
+<td><p>SSH private key for SSH connection to a conversion host. Line breaks must be replaced with <code>\n</code>.</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vmware_vddk_package_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Only for VDDK transport</em></strong>. URL of downloaded VMware VDDK <code>tar.gz</code> archive file. The VDDK must be saved in an HTML-accessible location.</p></td>
+<tr class="odd">
+<td><p>vmware_vddk_package_url</p></td>
+<td><p>string</p></td>
+<td><p><strong><em>Only for VDDK transport</em></strong>. URL of downloaded VMware VDDK <code>tar.gz</code> archive file. The VDDK must be saved in an HTML-accessible location.</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vmware_ssh_private_key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Only for SSH transport</em></strong>. SSH private key for SSH connection to the VMware ESXi hosts. Line breaks must be replaced with <code>\n</code>.</p></td>
+<tr class="even">
+<td><p>vmware_ssh_private_key</p></td>
+<td><p>string</p></td>
+<td><p><strong><em>Only for SSH transport</em></strong>. SSH private key for SSH connection to the VMware ESXi hosts. Line breaks must be replaced with <code>\n</code>.</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tls_ca_certs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CA certificate chain for validating the provider API endpoint certificate.</p></td>
+<tr class="odd">
+<td><p>tls_ca_certs</p></td>
+<td><p>string</p></td>
+<td><p>CA certificate chain for validating the provider API endpoint certificate.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="response"><a class="anchor" href="#response"></a>Response</h4>
-<div class="paragraph">
-<p>Creating a conversion host can take a few minutes because the resource is configured by an Ansible playbook. For this reason, the conversion host creation process is asynchronous.</p>
-</div>
-<div class="paragraph">
+
+<h4 id="response">
+<a class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h4>
+
+<p>Creating a conversion host can take a few minutes because the resource
+is configured by an Ansible playbook. For this reason, the conversion
+host creation process is asynchronous.</p>
+
 <p>The response provides the ID and the URL of the configuration task.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Enabling resource id:00000000000004 type:ManageIQ::Providers::Redhat::InfraManager::Host</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">00000000000005</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/00000000000005</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://localhost:3000/api/conversion_hosts/</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="monitoring-configuration-tasks"><a class="anchor" href="#monitoring-configuration-tasks"></a>Monitoring Configuration Tasks</h4>
-<div class="paragraph">
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enabling resource id:00000000000004 type:ManageIQ::Providers::Redhat::InfraManager::Host"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"task_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000005"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"task_href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/tasks/00000000000005"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost:3000/api/conversion_hosts/"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="monitoring-configuration-tasks">
+<a class="anchor" href="#monitoring-configuration-tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Monitoring Configuration Tasks</h4>
+
 <p>To monitor the conversion host configuration tasks:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/tasks/:id</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/00000000000005</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">00000000000005</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Configuring a conversion_host: operation=enable resource=(name: rhvh01.example.com type: ManageIQ::Providers::Redhat::InfraManager::Host id: 00000000000004)</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Active</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Task starting</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">root</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2019-09-10T07:21:36Z</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2019-09-10T07:21:37Z</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>pct_complete</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>context_data</span><span style="color:#404">&quot;</span></span>: {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_params</span><span style="color:#404">&quot;</span></span>: {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Host</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">00000000000004</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>vmware_vddk_package_url</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://file.example.com/vddk/VMware-vix-disklib-stable.tar.gz</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>auth_user</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">root</span><span style="color:#710">&quot;</span></span>
-    }
-  },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_server_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">00000000000001</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>identifier</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>started_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2019-09-10T07:21:37Z</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>zone</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">null</span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/00000000000005</span><span style="color:#710">&quot;</span></span>
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/00000000000005</span><span style="color:#710">&quot;</span></span>
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-conversion-hosts"><a class="anchor" href="#deleting-conversion-hosts"></a>Deleting Conversion Hosts</h3>
-<div class="paragraph">
-<p>Conversion hosts can be deleted with either the <strong>delete</strong> <code>POST</code> action or the <code>DELETE</code> HTTP action.</p>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/tasks/:id
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/tasks/00000000000005"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000005"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Configuring a conversion_host: operation=enable resource=(name: rhvh01.example.com type: ManageIQ::Providers::Redhat::InfraManager::Host id: 00000000000004)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task starting"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"userid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-10T07:21:36Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-10T07:21:37Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pct_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"context_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"request_params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Host"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000004"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vmware_vddk_package_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://file.example.com/vddk/VMware-vix-disklib-stable.tar.gz"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"auth_user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"miq_server_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"started_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-10T07:21:37Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/tasks/00000000000005"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/tasks/00000000000005"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="deleting-conversion-hosts">
+<a class="anchor" href="#deleting-conversion-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Conversion Hosts</h3>
+
+<p>Conversion hosts can be deleted with either the <strong>delete</strong> <code class="language-plaintext highlighter-rouge">POST</code> action
+or the <code class="language-plaintext highlighter-rouge">DELETE</code> HTTP action.</p>
+
 <p>To delete a single conversion host:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conversion_hosts/101</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conversion_hosts/101
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>or:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>DELETE /api/conversion_hosts/101</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/conversion_hosts/101
+</code></pre></div></div>
+
 <p>To delete multiple conversion hosts:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>POST /api/conversion_hosts</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/conversion_hosts/101</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/conversion_hosts/102</span><span style="color:#710">&quot;</span></span> },
-    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /api/conversion_hosts
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/conversion_hosts/101"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/conversion_hosts/102"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

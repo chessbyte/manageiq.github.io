@@ -1540,377 +1540,322 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="custom-button-management"><a class="anchor" href="#custom-button-management"></a>Custom Button Management</h2>
-<div class="sectionbody">
-<div class="paragraph">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#custom-button-management">Custom Button Management</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#managing-custom-button-sets">Managing Custom Button Sets</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#querying-custom-button-sets">Querying Custom Button Sets</a></li>
+<li class="toc-entry toc-h4"><a href="#creating-custom-button-sets">Creating Custom Button Sets</a></li>
+<li class="toc-entry toc-h4"><a href="#editing-custom-button-sets">Editing Custom Button Sets</a></li>
+<li class="toc-entry toc-h4"><a href="#deleting-custom-button-sets">Deleting Custom Button Sets</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#managing-custom-buttons">Managing Custom Buttons</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#querying-custom-buttons">Querying Custom Buttons</a></li>
+<li class="toc-entry toc-h4"><a href="#creating-custom-buttons">Creating Custom Buttons</a></li>
+<li class="toc-entry toc-h4"><a href="#editing-custom-buttons">Editing Custom Buttons</a></li>
+<li class="toc-entry toc-h4"><a href="#deleting-custom-buttons">Deleting Custom Buttons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2 id="custom-button-management">
+<a class="anchor" href="#custom-button-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Button Management</h2>
+
 <p>Management of Custom Buttons is provided with the following collections:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/custom_button_sets
-/api/custom_buttons</code></pre>
-</div>
-</div>
-<div class="ulist">
+
+<pre><code class="language-data">/api/custom_button_sets
+/api/custom_buttons
+</code></pre>
+
 <ul>
-<li>
-<p><a href="#custom-button-sets">Managing Custom Button Sets</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#querying-custom-button-sets">Querying Custom Button Sets</a></p>
-</li>
-<li>
-<p><a href="#creating-custom-button-sets">Creating Custom Button Sets</a></p>
-</li>
-<li>
-<p><a href="#editing-custom-button-sets">Editing Custom Button Sets</a></p>
-</li>
-<li>
-<p><a href="#deleting-custom-button-sets">Deleting Custom Button Sets</a></p>
-</li>
+  <li>
+    <p><a href="#custom-button-sets">Managing Custom Button Sets</a></p>
+
+    <ul>
+      <li>
+        <p><a href="#querying-custom-button-sets">Querying Custom Button Sets</a></p>
+      </li>
+      <li>
+        <p><a href="#creating-custom-button-sets">Creating Custom Button Sets</a></p>
+      </li>
+      <li>
+        <p><a href="#editing-custom-button-sets">Editing Custom Button Sets</a></p>
+      </li>
+      <li>
+        <p><a href="#deleting-custom-button-sets">Deleting Custom Button Sets</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="#custom-buttons">Managing Custom Buttons</a></p>
+
+    <ul>
+      <li>
+        <p><a href="#querying-custom-buttons">Querying Custom Buttons</a></p>
+      </li>
+      <li>
+        <p><a href="#creating-custom-buttons">Creating Custom Buttons</a></p>
+      </li>
+      <li>
+        <p><a href="#editing-custom-buttons">Editing Custom Buttons</a></p>
+      </li>
+      <li>
+        <p><a href="#deleting-custom-buttons">Deleting Custom Buttons</a></p>
+      </li>
+    </ul>
+  </li>
 </ul>
-</div>
-</li>
-<li>
-<p><a href="#custom-buttons">Managing Custom Buttons</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#querying-custom-buttons">Querying Custom Buttons</a></p>
-</li>
-<li>
-<p><a href="#creating-custom-buttons">Creating Custom Buttons</a></p>
-</li>
-<li>
-<p><a href="#editing-custom-buttons">Editing Custom Buttons</a></p>
-</li>
-<li>
-<p><a href="#deleting-custom-buttons">Deleting Custom Buttons</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="custom-button-sets"><a class="anchor" href="#custom-button-sets"></a>Managing Custom Button Sets</h3>
-<div class="sect3">
-<h4 id="querying-custom-button-sets"><a class="anchor" href="#querying-custom-button-sets"></a>Querying Custom Button Sets</h4>
-<div class="paragraph">
+
+<h3 id="managing-custom-button-sets">
+<a class="anchor" href="#managing-custom-button-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Custom Button Sets</h3>
+
+<h4 id="querying-custom-button-sets">
+<a class="anchor" href="#querying-custom-button-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Custom Button Sets</h4>
+
 <p>Querying all available Custom Button Sets:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/custom_button_sets</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/custom_button_sets
+</code></pre></div></div>
+
 <p>Getting details on a specific Custom Button Set:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/custom_button_sets/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-custom-button-sets"><a class="anchor" href="#creating-custom-button-sets"></a>Creating Custom Button Sets</h4>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/custom_button_sets/:id
+</code></pre></div></div>
+
+<h4 id="creating-custom-button-sets">
+<a class="anchor" href="#creating-custom-button-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Custom Button Sets</h4>
+
 <p>Custom Button Sets can be created as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_button_sets</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>        : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generic Object Custom Button Group</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generic Object Custom Button Group Description</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>set_data</span><span style="color:#404">&quot;</span></span>    : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-view-expanded</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_color</span><span style="color:#404">&quot;</span></span>     : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">#4727ff</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>          : <span style="color:#088">true</span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>applies_to_class</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GenericObjectDefinition</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>applies_to_id</span><span style="color:#404">&quot;</span></span>    : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">50</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-custom-button-sets"><a class="anchor" href="#editing-custom-button-sets"></a>Editing Custom Button Sets</h4>
-<div class="paragraph">
-<p>Updating Custom Button Sets can be done via the <em>edit</em> action as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_button_sets/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Custom Button Group</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Custom Button Group Description</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>set_data</span><span style="color:#404">&quot;</span></span> : {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-closed</span><span style="color:#710">&quot;</span></span>
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_button_sets
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="s2">"Generic Object Custom Button Group"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Generic Object Custom Button Group Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"set_data"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"button_icon"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-view-expanded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"button_color"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"#4727ff"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"display"</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"applies_to_class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GenericObjectDefinition"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"applies_to_id"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="editing-custom-button-sets">
+<a class="anchor" href="#editing-custom-button-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing Custom Button Sets</h4>
+
+<p>Updating Custom Button Sets can be done via the <em>edit</em> action as
+follows:</p>
+
+<pre><code class="language-data">POST /api/custom_button_sets/:id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Custom Button Group"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Custom Button Group Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"set_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"button_icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-closed"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>Custom Button Sets can also be updated in bulk:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_button_sets</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">11</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>set_data</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-closed</span><span style="color:#710">&quot;</span></span> } },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">12</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>set_data</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-closed</span><span style="color:#710">&quot;</span></span> } },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">13</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>set_data</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-closed</span><span style="color:#710">&quot;</span></span> } }
-  ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_button_sets
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w"> </span><span class="nl">"set_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"button_icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-closed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w"> </span><span class="nl">"set_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"button_icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-closed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w"> </span><span class="nl">"set_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"button_icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-closed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>Custom button sets can also be updated with the PUT method as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">PUT /api/custom_button_sets/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Custom Button Group</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Custom Button Group Description</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>set_data</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-closed</span><span style="color:#710">&quot;</span></span>
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-custom-button-sets"><a class="anchor" href="#deleting-custom-button-sets"></a>Deleting Custom Button Sets</h4>
-<div class="paragraph">
+
+<pre><code class="language-data">PUT /api/custom_button_sets/:id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Custom Button Group"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Custom Button Group Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"set_data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"button_icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-closed"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="deleting-custom-button-sets">
+<a class="anchor" href="#deleting-custom-button-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Custom Button Sets</h4>
+
 <p>Custom Button Sets can be deleted via the <em>delete</em> action as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_button_sets/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_button_sets/:id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>and in bulk as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_button_sets</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/custom_button_sets/21</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/custom_button_sets/22</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">23</span><span style="color:#710">&quot;</span></span> }
-  ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A single Custom Button Set can also be deleted with the DELETE method as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/custom_button_sets/:id</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="custom-buttons"><a class="anchor" href="#custom-buttons"></a>Managing Custom Buttons</h3>
-<div class="sect3">
-<h4 id="querying-custom-buttons"><a class="anchor" href="#querying-custom-buttons"></a>Querying Custom Buttons</h4>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_button_sets
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/custom_button_sets/21"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/custom_button_sets/22"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>A single Custom Button Set can also be deleted with the DELETE method as
+follows:</p>
+
+<pre><code class="language-data">DELETE /api/custom_button_sets/:id
+</code></pre>
+
+<h3 id="managing-custom-buttons">
+<a class="anchor" href="#managing-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Custom Buttons</h3>
+
+<h4 id="querying-custom-buttons">
+<a class="anchor" href="#querying-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Custom Buttons</h4>
+
 <p>Querying all available Custom Buttons:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/custom_buttons</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/custom_buttons
+</code></pre></div></div>
+
 <p>Getting details on a specific Custom Button:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/custom_buttons/:id</pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-custom-buttons"><a class="anchor" href="#creating-custom-buttons"></a>Creating Custom Buttons</h4>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/custom_buttons/:id
+</code></pre></div></div>
+
+<h4 id="creating-custom-buttons">
+<a class="anchor" href="#creating-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Custom Buttons</h4>
+
 <p>Custom Buttons can be created as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_buttons</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>             : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generic Object Custom Button</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generic Object Custom Button Description</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>applies_to_class</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GenericObjectDefinition</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>          : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_icon</span><span style="color:#404">&quot;</span></span>    : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ff ff-view-expanded</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_color</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">#4727ff</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>        : <span style="color:#088">true</span>
-  },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_action</span><span style="color:#404">&quot;</span></span>  : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_namespace</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SYSTEM</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_class</span><span style="color:#404">&quot;</span></span>       : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">PROCESS</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_id</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
-  },
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>visibility</span><span style="color:#404">&quot;</span></span>       : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>roles</span><span style="color:#404">&quot;</span></span>          : [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">_ALL_</span><span style="color:#710">&quot;</span></span>]
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-custom-buttons"><a class="anchor" href="#editing-custom-buttons"></a>Editing Custom Buttons</h4>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_buttons
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="w">             </span><span class="p">:</span><span class="w"> </span><span class="s2">"Generic Object Custom Button"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">"Generic Object Custom Button Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"applies_to_class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GenericObjectDefinition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"options"</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"button_icon"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">"ff ff-view-expanded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"button_color"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">"#4727ff"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"display"</span><span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"resource_action"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ae_namespace"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ae_class"</span><span class="w">       </span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialog_id"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"visibility"</span><span class="w">       </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"roles"</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"_ALL_"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="editing-custom-buttons">
+<a class="anchor" href="#editing-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing Custom Buttons</h4>
+
 <p>Updating Custom Buttons can be done via the <em>edit</em> action as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_buttons/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Custom Button</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Custom Button Description</span><span style="color:#710">&quot;</span></span>,
-    <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_action</span><span style="color:#404">&quot;</span></span> : {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_namespace</span><span style="color:#404">&quot;</span></span>  : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SYSTEM2</span><span style="color:#710">&quot;</span></span>
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_buttons/:id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Custom Button"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Custom Button Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resource_action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ae_namespace"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>Custom Buttons can also be updated in Bulk as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_buttons</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/custom_buttons/31</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> :  { <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span> }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/custom_buttons/32</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> :  { <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span> }
-    },
-    {
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">33</span><span style="color:#710">&quot;</span></span>,
-      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> :  { <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span> }
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-custom-buttons"><a class="anchor" href="#deleting-custom-buttons"></a>Deleting Custom Buttons</h4>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/custom_buttons
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/custom_buttons/31"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/custom_buttons/32"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="deleting-custom-buttons">
+<a class="anchor" href="#deleting-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Custom Buttons</h4>
+
 <p>Custom Buttons can be deleted via the <em>delete</em> action as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_buttons/:id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Multiple Custom Buttons can also be deleted in a single request as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/custom_buttons</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/custom_buttons/21</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">22</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">23</span><span style="color:#710">&quot;</span></span> }
-  ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Single Custom Buttons can also be deleted with the DELETE method as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/custom_buttons/:id</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<pre><code class="language-data">POST /api/custom_buttons/:id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Multiple Custom Buttons can also be deleted in a single request as
+follows:</p>
+
+<pre><code class="language-data">POST /api/custom_buttons
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/custom_buttons/21"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Single Custom Buttons can also be deleted with the DELETE method as
+follows:</p>
+
+<pre><code class="language-data">DELETE /api/custom_buttons/:id
+</code></pre>
+
+
       </div>
     </article>
   </div>

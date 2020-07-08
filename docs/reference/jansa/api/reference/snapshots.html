@@ -1540,255 +1540,208 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="snapshot-management"><a class="anchor" href="#snapshot-management"></a>Snapshot Management</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Management of snapshots is provided for virtual machines and instances via the snapshots subcollection:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/vms/:id/snapshots</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">/api/instances/:id/snapshots</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="snapshot-actions"><a class="anchor" href="#snapshot-actions"></a>Snapshot Actions</h3>
-<div class="paragraph">
-<p>The following snapshot actions are available for the supported resources:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Snapshot Action</th>
-<th class="tableblock halign-left valign-top">Vms</th>
-<th class="tableblock halign-left valign-top">Instances</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">read</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">create</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">revert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-</tbody>
-</table>
-<div class="ulist">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#snapshot-management">Snapshot Management</a>
 <ul>
-<li>
-<p><a href="#query-snapshots">Querying Snapshots</a></p>
-</li>
-<li>
-<p><a href="#create-snapshots">Creating Snapshots</a></p>
-</li>
-<li>
-<p><a href="#revert-snapshots">Reverting Snapshots</a></p>
-</li>
-<li>
-<p><a href="#delete-snapshots">Deleting Snapshots</a></p>
-</li>
+<li class="toc-entry toc-h3"><a href="#snapshot-actions">Snapshot Actions</a></li>
+<li class="toc-entry toc-h3"><a href="#querying-snapshots">Querying Snapshots</a></li>
+<li class="toc-entry toc-h3"><a href="#creating-snapshots">Creating Snapshots</a></li>
+<li class="toc-entry toc-h3"><a href="#reverting-snapshots">Reverting Snapshots</a></li>
+<li class="toc-entry toc-h3"><a href="#deleting-snapshots">Deleting Snapshots</a></li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="query-snapshots"><a class="anchor" href="#query-snapshots"></a>Querying Snapshots</h3>
-<div class="paragraph">
-<p>Snapshots of machines are queried via the subcollection of vms and instances as follows:</p>
-</div>
-<div class="paragraph">
+</li>
+</ul><h2 id="snapshot-management">
+<a class="anchor" href="#snapshot-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Snapshot Management</h2>
+
+<p>Management of snapshots is provided for virtual machines and instances
+via the snapshots subcollection:</p>
+
+<pre><code class="language-data">/api/vms/:id/snapshots
+</code></pre>
+
+<pre><code class="language-data">/api/instances/:id/snapshots
+</code></pre>
+
+<h3 id="snapshot-actions">
+<a class="anchor" href="#snapshot-actions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Snapshot Actions</h3>
+
+<p>The following snapshot actions are available for the supported
+resources:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Snapshot Action</th>
+      <th>Vms</th>
+      <th>Instances</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>read</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>create</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>revert</td>
+      <td>X</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>delete</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p><a href="#query-snapshots">Querying Snapshots</a></p>
+  </li>
+  <li>
+    <p><a href="#create-snapshots">Creating Snapshots</a></p>
+  </li>
+  <li>
+    <p><a href="#revert-snapshots">Reverting Snapshots</a></p>
+  </li>
+  <li>
+    <p><a href="#delete-snapshots">Deleting Snapshots</a></p>
+  </li>
+</ul>
+
+<h3 id="querying-snapshots">
+<a class="anchor" href="#querying-snapshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Querying Snapshots</h3>
+
+<p>Snapshots of machines are queried via the subcollection of vms and
+instances as follows:</p>
+
 <p>Querying all snapshots of a VM:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/:id/snapshots</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/vms/:id/snapshots
+</code></pre>
+
 <p>Querying all snapshots of an Instance:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id/snapshots</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/instances/:id/snapshots
+</code></pre>
+
 <p>Filtering, sorting and paging on the subcollection as mentioned on the
 <a href="../overview/query.html">Querying</a> page.</p>
-</div>
-<div class="paragraph">
+
 <p>For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/11/snapshots?expand=resources&amp;filter[]=name=test*</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/vms/11/snapshots?expand=resources&amp;filter[]=name=test*
+</code></pre>
+
 <p>One can also fetch a single snapshot by id:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="create-snapshots"><a class="anchor" href="#create-snapshots"></a>Creating Snapshots</h3>
-<div class="paragraph">
-<p>Creating snapshots on Vms and Instances is done by posting the request to the snapshots subcollection.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id/snapshots</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/instances/:id/snapshots</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">name_of_new_snapshot</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Description of new Snapshot</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the above example, only <em>name</em> is required. <em>memory</em> can be set to true to have the snapshot include physical memory.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="revert-snapshots"><a class="anchor" href="#revert-snapshots"></a>Reverting Snapshots</h3>
-<div class="paragraph">
+
+<pre><code class="language-data">GET /api/vms/:id/snapshots/:snapshot_id
+</code></pre>
+
+<pre><code class="language-data">GET /api/instances/:id/snapshots/:snapshot_id
+</code></pre>
+
+<h3 id="creating-snapshots">
+<a class="anchor" href="#creating-snapshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Snapshots</h3>
+
+<p>Creating snapshots on Vms and Instances is done by posting the request
+to the snapshots subcollection.</p>
+
+<pre><code class="language-data">POST /api/vms/:id/snapshots
+</code></pre>
+
+<pre><code class="language-data">POST /api/instances/:id/snapshots
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"name_of_new_snapshot"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Description of new Snapshot"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"memory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In the above example, only <em>name</em> is required. <em>memory</em> can be set to
+true to have the snapshot include physical memory.</p>
+
+<h3 id="reverting-snapshots">
+<a class="anchor" href="#reverting-snapshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reverting Snapshots</h3>
+
 <p>Reverting snapshots is only available for Vms.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">revert</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="delete-snapshots"><a class="anchor" href="#delete-snapshots"></a>Deleting Snapshots</h3>
-<div class="paragraph">
-<p>Individual snapshots of Vms and Instances can be deleted via the DELETE method as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/vms/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/instances/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/vms/:id/snapshots/:snapshot_id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"revert"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="deleting-snapshots">
+<a class="anchor" href="#deleting-snapshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Snapshots</h3>
+
+<p>Individual snapshots of Vms and Instances can be deleted via the DELETE
+method as follows:</p>
+
+<pre><code class="language-data">DELETE /api/vms/:id/snapshots/:snapshot_id
+</code></pre>
+
+<pre><code class="language-data">DELETE /api/instances/:id/snapshots/:snapshot_id
+</code></pre>
+
 <p>As well as the <em>delete</em> POST action as follows for VMs:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/vms/:id/snapshots/:snapshot_id
+</code></pre>
+
 <p>or instances:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/instances/:id/snapshots/:snapshot_id</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Snapshots can also be deleted in bulk via the <em>delete</em> action on the snapshots subcollection as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/11/snapshots</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11/snapshots/3</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11/snapshots/4</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11/snapshots/5</span><span style="color:#710">&quot;</span></span> }
-  ]
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
+
+<pre><code class="language-data">POST /api/instances/:id/snapshots/:snapshot_id
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Snapshots can also be deleted in bulk via the <em>delete</em> action on the
+snapshots subcollection as follows:</p>
+
+<pre><code class="language-data">POST /api/vms/11/snapshots
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/11/snapshots/3"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/11/snapshots/4"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/vms/11/snapshots/5"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <p>As well as for instances:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="data">POST /api/instances/201/snapshots</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
-  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/instances/201/snapshots/7</span><span style="color:#710">&quot;</span></span> },
-    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/instances/201/snapshots/8</span><span style="color:#710">&quot;</span></span> }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<pre><code class="language-data">POST /api/instances/201/snapshots
+</code></pre>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/instances/201/snapshots/7"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"href"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/api/instances/201/snapshots/8"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
       </div>
     </article>
   </div>

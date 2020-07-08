@@ -1540,124 +1540,113 @@
     <article class="doc api_doc">
       
 
-      <div class="legacy-doc-content">
+      <div class="doc-content">
         
-        <div class="sect1">
-<h2 id="collection-filtering"><a class="anchor" href="#collection-filtering"></a>Collection Filtering</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When querying collections, filters can be specified by providing
-one or more filter[]=&#8230;&#8203; parameter.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/:collection?filter[]=...&amp;filter[]=...&amp;filter[]=...</pre>
-</div>
-</div>
-<div class="paragraph">
+        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#collection-filtering">Collection Filtering</a></li>
+</ul><h2 id="collection-filtering">
+<a class="anchor" href="#collection-filtering" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collection Filtering</h2>
+
+<p>When querying collections, filters can be specified by providing one or
+more filter[]=…​ parameter.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/:collection?filter[]=...&amp;filter[]=...&amp;filter[]=...
+</code></pre></div></div>
+
 <p>Syntax for a filter is as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>filter[]=attribute op value</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>By default, filters are logically <em>anded</em> together, for a logical or, prefix the attribute with <em>or</em> as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>filter[]=or attribute op value</pre>
-</div>
-</div>
-<div class="paragraph">
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>filter[]=attribute op value
+</code></pre></div></div>
+
+<p>By default, filters are logically <em>anded</em> together, for a logical or,
+prefix the attribute with <em>or</em> as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>filter[]=or attribute op value
+</code></pre></div></div>
+
 <p>Where op supports the following operators:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
+
+<table>
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 60%">
 </colgroup>
 <thead>
-<tr>
-<th class="tableblock halign-left valign-top">Operator</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Operands</th>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+<th>Operands</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Equality</p></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Numeric or string. For String, supports % or * as wildcard</p>
-<p class="tableblock">NULL or nil can also be specified instead of quoted string</p></td>
+<tr class="odd">
+<td><p>=</p></td>
+<td><p>Equality</p></td>
+<td>
+<p>Numeric or string. For String, supports % or * as wildcard</p>
+<p>NULL or nil can also be specified instead of quoted string</p>
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">!=</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inequality</p></td>
+<tr class="even">
+<td><p>!=</p></td>
+<td><p>Inequality</p></td>
+<td></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Less Than</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<tr class="odd">
+<td><p>&lt;</p></td>
+<td><p>Less Than</p></td>
+<td><p>Numeric</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;=</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Less Than or Equal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<tr class="even">
+<td><p>&lt;=</p></td>
+<td><p>Less Than or Equal</p></td>
+<td><p>Numeric</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Greater Than or Equal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<tr class="odd">
+<td><p>&gt;=</p></td>
+<td><p>Greater Than or Equal</p></td>
+<td><p>Numeric</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Greater Than</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<tr class="even">
+<td><p>&gt;</p></td>
+<td><p>Greater Than</p></td>
+<td><p>Numeric</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>When strings, value to be quoted in single or double quotes.
-When datetimes, only strict comparison operators are supported.</p>
-</div>
-<div class="paragraph">
-<p>Example Query VMs named sample*, created_on &gt; 2019-09-01, and return name and vendor</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/vms?expand=resources&amp;attributes=name,vendor&amp;filter[]=created_on&gt;2019-09-01&amp;filter[]=name='sample%'</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Example Query looking for services that are retired but have an unspecified service_id</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/services?expand=resources&amp;attributes=retired&amp;filter[]=service_id=nil&amp;filter[]=retired=true</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Attributes specified via the filter[] parameter can include virtual attributes, including
-one level association of the virtual attribute as follows:</p>
-</div>
-<div class="paragraph">
-<p>The HTTP <strong>OPTIONS</strong> request can be used on a collection to display all of the collection
-specific metadata, including the available virtual attributes. For more information please
-refer to the <a href="../appendices/collection_metadata.html">Collection Metadata</a> page.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>GET /api/vms?attributes=name,vendor,hardware&amp;filter[]=vendor='vmware'&amp;filter[]=hardware.memory_mb&gt;=8192</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here filtering on the virtual attribute <em>hardware</em> including the one level association <em>memory_mb</em> off hardware.</p>
-</div>
-</div>
-</div>
+
+<p>When strings, value to be quoted in single or double quotes. When
+datetimes, only strict comparison operators are supported.</p>
+
+<p>Example Query VMs named sample*, created_on &gt; 2019-09-01, and return
+name and vendor</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/vms?expand=resources&amp;attributes=name,vendor&amp;filter[]=created_on&gt;2019-09-01&amp;filter[]=name='sample%'
+</code></pre></div></div>
+
+<p>Example Query looking for services that are retired but have an
+unspecified service_id</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/services?expand=resources&amp;attributes=retired&amp;filter[]=service_id=nil&amp;filter[]=retired=true
+</code></pre></div></div>
+
+<p>Attributes specified via the filter[] parameter can include virtual
+attributes, including one level association of the virtual attribute as
+follows:</p>
+
+<p>The HTTP <strong>OPTIONS</strong> request can be used on a collection to display all
+of the collection specific metadata, including the available virtual
+attributes. For more information please refer to the <a href="../appendices/collection_metadata.html">Collection
+Metadata</a> page.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/vms?attributes=name,vendor,hardware&amp;filter[]=vendor='vmware'&amp;filter[]=hardware.memory_mb&gt;=8192
+</code></pre></div></div>
+
+<p>Here filtering on the virtual attribute <em>hardware</em> including the one
+level association <em>memory_mb</em> off hardware.</p>
+
+
       </div>
     </article>
   </div>
