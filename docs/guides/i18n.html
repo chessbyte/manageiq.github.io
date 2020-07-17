@@ -491,13 +491,11 @@
   </li>
   <li><a href="#updating-translations-developers">Updating translations</a>
     <ul>
-      <li><a href="#zanata">Zanata</a></li>
+      <li><a href="#transifex">Transifex</a></li>
       <li><a href="#manageiq-the-main-project">ManageIQ</a></li>
       <li><a href="#manageiq-self-service-ui">ManageIQ Self Service UI</a></li>
-      <li><a href="#manageiq-amazon-provider">ManageIQ Amazon Provider</a></li>
     </ul>
   </li>
-  <li><a href="#internationalization-in-rails-engines-plugins">i18n in rails engines</a></li>
 </ul>
 
 <h2 id="i18n-implementation">i18n implementation</h2>
@@ -751,8 +749,8 @@ Then you do the translation when needed <em>(e.g. when generating the HTML or JS
 
 <h2 id="translating-manageiq">Translating ManageIQ</h2>
 
-<p>To contribute with translation to ManageIQ, create an account at <a href="https://translate.zanata.org">Zanata</a>
-and navigate to <a href="https://translate.zanata.org/zanata/project/view/manageiq">ManageIQ project page</a></p>
+<p>To contribute with translation to ManageIQ, create an account at <a href="https://www.transifex.com/">Transifex</a>
+and navigate to the <a href="https://www.transifex.com/manageiq/public/">ManageIQ project page</a></p>
 
 <h3 id="translator-notes">Translator notes</h3>
 
@@ -774,24 +772,23 @@ and navigate to <a href="https://translate.zanata.org/zanata/project/view/manage
 <p>The general workflow for updating translations is:</p>
 <ul>
   <li>extract strings from source code and create new gettext catalog.</li>
-  <li>upload the new catalog into a translation tool <em>(we use Zanata)</em>.</li>
+  <li>upload the new catalog into a translation tool <em>(we use Transifex)</em>.</li>
   <li>once the translations for the languages are complete, fetch the translations from the translation tool and put them into git.</li>
 </ul>
 
 <p>The instructions will differ in details depending on the specific ManageIQ project.</p>
 
-<h3 id="zanata">Zanata</h3>
+<h3 id="transifex">Transifex</h3>
 
-<p>We use <a href="https://translate.zanata.org">Zanata</a> for online translations. We maintain several zanata projects for the ManageIQ project:</p>
+<p>We use <a href="https://www.transifex.com/">Transifex</a> for online translations. We maintain several transifex projects for the ManageIQ project:</p>
 <ul>
-  <li><a href="https://translate.zanata.org/project/view/manageiq?dswid=-9684">ManageIQ</a></li>
-  <li><a href="https://translate.zanata.org/project/view/manageiq-ui-service?dswid=8199">ManageIQ Service UI</a></li>
-  <li><a href="https://translate.zanata.org/project/view/manageiq-providers-amazon?dswid=8199">ManageIQ Amazon Provider</a></li>
+  <li><a href="https://www.transifex.com/manageiq/manageiq/">ManageIQ</a></li>
+  <li><a href="https://www.transifex.com/manageiq/manageiq-service-ui/">ManageIQ Service UI</a></li>
 </ul>
 
-<p>To be able to use zanata from command line, make sure you have <code class="highlighter-rouge">zanata-cli</code> installed and configured (<a href="http://zanata.org/help/">documentation</a>)</p>
+<p>To be able to use transifex from command line, make sure you have <code class="highlighter-rouge">transifex-client</code> installed and configured (<a href="https://docs.transifex.com/client">documentation</a>)</p>
 
-<p>To be able to manipulate zanata catalogs, you need to be maintainer of the project in zanata.</p>
+<p>To be able to manipulate transifex catalogs, you need to be maintainer of the project in transifex.</p>
 
 <h3 id="manageiq-the-main-project">ManageIQ (the main project)</h3>
 
@@ -823,23 +820,23 @@ config/locales/*/*.po
 </code></pre></div></div>
 
 <ul>
-  <li>Upload the catalog created in previous step to <a href="http://translate.zanata.org">zanata</a>:</li>
+  <li>Upload the catalog created in previous step to <a href="https://www.transifex.com/">Transifex</a>:</li>
 </ul>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>config/locales
-<span class="nv">$ </span>zanata-cli push <span class="nt">--push-type</span> <span class="nb">source</span>
+<span class="nv">$ </span>tx push <span class="nt">--source</span> <span class="nb">source</span>
 </code></pre></div></div>
 
-<p>Now translators in zanata will have the latest stuff to translate available.</p>
+<p>Now translators in Transifex will have the latest stuff to translate available.</p>
 
 <ul>
-  <li>Once the translators finish translations of a particular language, pull the translated catalog from zanata back to ManageIQ repository.</li>
+  <li>Once the translators finish translations of a particular language, pull the translated catalog from Transifex back to ManageIQ repository.</li>
 </ul>
 
 <p>Run the following in ManageIQ git checkout:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>config/locales
-<span class="nv">$ </span>zanata-cli pull <span class="nt">--pull-type</span> trans    <span class="c"># add --locales ... if you wish to download only specific locales</span>
+<span class="nv">$ </span>tx pull <span class="nt">--all</span>    <span class="c"># use --language option, if you wish to download only specific locales</span>
 <span class="nv">$ </span>bundle <span class="nb">exec </span>rake gettext:po_to_json
 </code></pre></div></div>
 
@@ -869,17 +866,17 @@ config/human_locale_names.yaml        # optionally, if you added locales
 </code></pre></div></div>
 
 <ul>
-  <li>Upload the catalogs to zanata:</li>
+  <li>Upload the catalogs to <a href="https://www.transifex.com/">Transifex</a>:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli push <span class="nt">--push-type</span> <span class="nb">source</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tx push <span class="nt">--source</span> <span class="nb">source</span>
 </code></pre></div></div>
 
 <ul>
   <li>Once the translations are complete, download the translated catalogs:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli pull <span class="nt">--pull-type</span> trans <span class="nt">--locales</span> ...
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tx pull <span class="nt">--all</span>    <span class="c"># use --language option, if you wish to download only specific locales</span>
 </code></pre></div></div>
 
 <ul>
@@ -903,65 +900,6 @@ config/human_locale_names.yaml        # optionally, if you added locales
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit client/gettext/po client/gettext/json
 <span class="nv">$ </span>git push
 </code></pre></div></div>
-
-<h3 id="manageiq-amazon-provider">ManageIQ Amazon Provider</h3>
-
-<p>This procedure would apply to all rails engines hooked into ManageIQ in general.</p>
-
-<ul>
-  <li>Update the gettext catalog. With the Amazon provider engine (plugin) hooked into your ManageIQ instance, run the following from the ManageIQ git checkout:</li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rake locale:plugin:find[ManageIQ::Providers::Amazon]
-</code></pre></div></div>
-
-<ul>
-  <li>Upload the catalog to zanata:</li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli push <span class="nt">--push-type</span> <span class="nb">source</span>
-</code></pre></div></div>
-
-<ul>
-  <li>Once the translations are complete, download the translated catalogs:</li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zanata-cli pull <span class="nt">--pull-type</span> trans <span class="nt">--locales</span> ...
-</code></pre></div></div>
-
-<ul>
-  <li>Commit and push the new catalogs into git:</li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit locale/
-<span class="nv">$ </span>git push
-</code></pre></div></div>
-
-<h2 id="internationalization-in-rails-engines-plugins">Internationalization in rails engines (plugins)</h2>
-
-<ul>
-  <li>Create an initializer in your engine / plugin with a content similar to:</li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>config/initializers/gettext.rb
-Vmdb::Gettext::Domains.add_domain<span class="o">(</span><span class="s1">'ManageIQ_Providers_Amazon'</span>,
-  ManageIQ::Providers::Amazon::Engine.root.join<span class="o">(</span><span class="s1">'locale'</span><span class="o">)</span>.to_s,
-  :po<span class="o">)</span>
-
-</code></pre></div></div>
-
-<ul>
-  <li>Initial extraction of gettext strings found in your engine / plugin:</li>
-</ul>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/plugin/root
-<span class="nv">$ </span><span class="nb">mkdir</span> ./locale
-<span class="nv">$ </span><span class="k">for </span>locale <span class="k">in </span>en, ...<span class="p">;</span> <span class="k">do </span><span class="nb">mkdir</span> ./locale/<span class="nv">$locale</span><span class="p">;</span> <span class="k">done</span>
-<span class="nv">$ </span><span class="nb">cd</span> /path/to/your/manageiq/root
-<span class="nv">$ </span>rake locale:plugin:find[YourPlugin]
-</code></pre></div></div>
-
-<p>Refer to <a href="https://github.com/ManageIQ/manageiq-providers-amazon/pull/28">ManageIQ/manageiq-providers-amazon/pull/28</a> as an example.</p>
 
       </div>
     </article>

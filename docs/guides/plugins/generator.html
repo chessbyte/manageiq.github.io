@@ -520,7 +520,7 @@ generator but with some extra features.</p>
 do the following:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>manageiq
-bundle <span class="nb">exec </span>rails generate manageiq:provider ManageIQ::Providers::AwesomeCloud
+bundle <span class="nb">exec </span>rails generate manageiq:provider ManageIQ::Providers::AwesomeCloud <span class="nt">--manager-type</span><span class="o">=</span>cloud
 </code></pre></div></div>
 
 <p>Much like the plugin generator, you can pass <code class="highlighter-rouge">--path</code> to change the path.
@@ -534,21 +534,33 @@ Additionally, you also have the following options</p>
 for specs.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">[--dummy], [--no-dummy]  # Generate dummy implementations (Default: --no-dummy)</code></p>
+    <p><code class="highlighter-rouge">[--scaffolding], [--no-scaffolding]  # Generate default class scaffolding (Default: true)</code></p>
 
     <p>Adds some scaffolding for a dummy cloud provider, including implementations of
 core models and common workers. The generated scaffolding is similar to the
 <a href="https://github.com/ManageIQ/manageiq-providers-dummy_provider">dummy provider repo</a>.</p>
   </li>
+  <li>
+    <p><code class="highlighter-rouge">[--manager-type=MANAGER_TYPE]        # What type of manager to create, required if building scaffolding</code></p>
+
+    <p>Indicates what type of manager to create, for example: cloud, container, infra, physical, etc…  <code class="highlighter-rouge">--help</code> will print the full list of possible manager types.</p>
+  </li>
 </ul>
 
 <h4 id="core-modifications-1">Core modifications</h4>
 
-<p>The following lines are added to <code class="highlighter-rouge">lib/workers/miq_worker_types.rb</code>:</p>
+<p>The following lines are added to your <code class="highlighter-rouge">Gemfile</code>:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::EventCatcher"</span>           <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
-<span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::MetricsCollectorWorker"</span> <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
-<span class="s2">"ManageIQ::Providers::AwesomeCloud::CloudManager::RefreshWorker"</span>          <span class="o">=&gt;</span> <span class="sx">%i(manageiq_default)</span><span class="p">,</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">### providers</span>
+
+<span class="n">group</span> <span class="ss">:awesome_cloud</span><span class="p">,</span> <span class="ss">:manageiq_default</span> <span class="k">do</span>
+  <span class="n">manageiq_plugin</span> <span class="s2">"manageiq-providers-awesome_cloud"</span> <span class="c1"># TODO: Sort alphabetically...</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Until your plugin is pushed upstream you can override the gem for local development by adding the following to a <code class="highlighter-rouge">bundler.d/plugins.rb</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override_gem "manageiq-providers-awesome_cloud", :path =&gt; "../plugins/manageiq-providers-awesome_cloud"
 </code></pre></div></div>
 
 <h4 id="create-an-awesomecloud-instance">Create an AwesomeCloud instance</h4>
