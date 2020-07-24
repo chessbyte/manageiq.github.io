@@ -707,7 +707,7 @@ Appliance login screen.</p>
 file, however the template, <em>sssd.conf.erb</em>, is now delivered with
 ManageIQ which can be used to seed the <em>/etc/sssd/sssd.conf</em>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TEMPLATE_DIR="/opt/manageiq/manageiq-appliance/TEMPLATE"
 # mkdir -p /etc/sssd
 # cp ${TEMPLATE_DIR}/etc/sssd/sssd.conf.erb /etc/sssd/sssd.conf
 # chmod 600 /etc/sssd/sssd.conf
@@ -894,7 +894,7 @@ the SSSD cache as follows then retry:</p>
 
 <p>Create the Apache configuration files</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TEMPLATE_DIR="/opt/manageiq/manageiq-appliance/TEMPLATE"
 # cp ${TEMPLATE_DIR}/etc/pam.d/httpd-auth                         \
                     /etc/pam.d/httpd-auth
 # cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user.conf       \
