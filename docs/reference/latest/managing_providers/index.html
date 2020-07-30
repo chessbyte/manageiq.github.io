@@ -3982,10 +3982,7 @@ create cloud tenants or tenant object hierarchy from OpenStack.</p>
 
 <div class="note">
 
-You can set whether ManageIQ should use the Telemetry service or
-Advanced Message Queueing Protocol (AMQP) for event monitoring. If you
-choose Telemetry, you should first configure the **ceilometer** service
-on the overcloud to store events. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/quickstart_guide_for_cloudforms_with_red_hat_openstack_platform/add-openstack-oc#openstack-events-oc" target="_blank">Configuring the Overcloud to Store Events</a> for instructions.
+You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the overcloud to store events. See [Configuring the Overcloud to Store Events](../managing_providers/index.html#configuring-the-overcloud-to-store-events) for instructions.
 
 For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
 (ceilometer)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
@@ -4158,10 +4155,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-oc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="../managing_providers/index.html#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, or eventing

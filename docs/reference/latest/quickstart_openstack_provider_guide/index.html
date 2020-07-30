@@ -1556,8 +1556,7 @@ from the Support Matrix and <a href="https://access.redhat.com/documentation/en-
 Analysis</a>
 in the <em>Managing Providers</em> guide for more information.</p>
 
-<p>Enabling SmartState analysis is similar to <a href="#cf-caputils">???</a>, in that
-the procedure also involves enabling server roles on a specific server.
+<p>Enabling SmartState analysis is similar to <a href="../deployment_planning_guide/index#assigning-the-capacity-and-utilization-server-roles">Assigning the Capacity and Utilization Server Roles</a>, in that the procedure also involves enabling server roles on a specific server.
 To do so:</p>
 
 <ol>
@@ -1863,10 +1862,7 @@ create cloud tenants or tenant object hierarchy from OpenStack.</p>
 
 <div class="note">
 
-You can set whether ManageIQ should use the Telemetry service or
-Advanced Message Queueing Protocol (AMQP) for event monitoring. If you
-choose Telemetry, you should first configure the **ceilometer** service
-on the overcloud to store events. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/quickstart_guide_for_cloudforms_with_red_hat_openstack_platform/add-openstack-oc#openstack-events-oc" target="_blank">Configuring the Overcloud to Store Events</a> for instructions.
+You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the overcloud to store events. See [Configuring the Overcloud to Store Events](../managing_providers/index.html#configuring-the-overcloud-to-store-events) for instructions.
 
 For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
 (ceilometer)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
@@ -2039,10 +2035,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-oc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="../managing_providers/index.html#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, or eventing
@@ -2634,13 +2627,9 @@ ManageIQ Server is configured to use LDAP, you can use the
 <strong>Look Up</strong> button to populate the other fields based on the email
 address.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Parameters with a \* next to the label are required to submit the
-provisioning request. To change the required parameters, see
-[???](#provisioning-dialogs-customizing).
-
-</div>
+    <p>Parameters with a * next to the label are required to submit the provisioning request. To change the required parameters, see <a href="#customizing-provisioning-dialogs">Customizing Provisioning Dialogs</a>.</p>
   </li>
   <li>
     <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the
@@ -2678,8 +2667,7 @@ and security settings.</p>
       </li>
       <li>
         <p>Select a <strong>Guest Access Key Pair</strong> for access to the instance.
-For more information about key pairs, see
-<a href="#provision-keypairs">???</a>.</p>
+For more information about key pairs, see <a href="#managing-key-pairs">Managing Key Pairs</a>.</p>
       </li>
     </ol>
   </li>

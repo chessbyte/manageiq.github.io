@@ -1543,7 +1543,11 @@
       <div class="doc-content">
         
         <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#pagination">Pagination</a></li>
+<li class="toc-entry toc-h2"><a href="#pagination">Pagination</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#about-max_results_per_page">About max_results_per_page</a></li>
+</ul>
+</li>
 </ul><h2 id="pagination">
 <a class="anchor" href="#pagination" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pagination</h2>
 
@@ -1631,23 +1635,16 @@ be limited to the first max_results_per_page resources.</p>
   </li>
 </ul>
 
-<div class="note">
+<h3 id="about-max_results_per_page">
+<a class="anchor" href="#about-max_results_per_page" aria-hidden="true"><span class="octicon octicon-link"></span></a>About max_results_per_page</h3>
 
-<div class="title">
-
-About max\_results\_per\_page
-
-</div>
-
-If the default value for max\_results\_per\_page does not meet your
+<p>If the default value for max_results_per_page does not meet your
 needs, it can be changed using the Advanced Settings feature in the UI.
-It is recommended however that it is not set to some arbitrarily large
+However, it is <em>NOT</em> recommended to set it to some arbitrarily large
 number in an effort to circumvent the pagination feature. The pagination
-feature is designed to prevent excessive load, which is easy to do with
-collections such as metric rollups and event streams that may have
-millions of records.
-
-</div>
+feature is designed to prevent excessive load on the API workers, which
+is easy to do with large collections such as metric rollups and event
+streams that may have millions of records.</p>
 
 
       </div>
