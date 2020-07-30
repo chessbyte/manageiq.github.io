@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2020 20:29:31 +0000</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2020 20:29:31 +0000</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2020 21:26:15 +0000</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2020 21:26:15 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Announcing Jansa Release Candidate</title>
+        <description>&lt;p&gt;The ManageIQ Jansa release candidate is here!  All the major features in this release are in the &lt;a href=&quot;https://github.com/orgs/ManageIQ/projects/13#column-7337345&quot;&gt;ManageIQ Roadmap in the column named Jansa&lt;/a&gt;. We have fixed numerous issues since we announced &lt;a href=&quot;https://www.manageiq.org/blog/2020/06/Announcing-Jansa-Beta/&quot;&gt;Jansa Beta&lt;/a&gt;.  Below are some last-minute enhancements that made it into the Jansa Release Candidate.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 29 Jul 2020 19:12:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/07/Announcing-Jansa-Release-Candidate/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/07/Announcing-Jansa-Release-Candidate/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Ivanchuk-5</title>
@@ -144,20 +160,6 @@ Here are just a few of the things added since the Ivanchuk-2 release:&lt;/p&gt;
         <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/</guid>
-        
-        <category>tutorials</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Embedded Ansible — Part 1, Built-In Ansible Roles</title>
-        <description>&lt;p&gt;This is the first of four blog posts in a series written by Peter McGowan about Embedded Ansible capabilities released in ManageIQ Fine.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-1-Built-In-Roles/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-1-Built-In-Roles/</guid>
         
         <category>tutorials</category>
         
