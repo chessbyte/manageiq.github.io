@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ManageIQ - July</title>
-  <meta name="description" content="">
+  <title>ManageIQ - Announcing Ivanchuk-6</title>
+  <meta name="description" content="ManageIQ Ivanchuk-6 is now available. This release contains bug fixes, UI tweaks, and stabilization.Here are just some of the things added since the Ivanchuk...">
   <meta property="og:image" content="http://manageiq.org/assets/images/logo/manageiq-logo-blue.png" />
 
   <link type="text/css" rel="stylesheet" href="/assets/main-412c594495c704da596cbb3d877ad18c43c772fc419857af7e1eff04fdff6542.css">
-  <link rel="canonical" href="http://manageiq.org/blog/2020/07/">
+  <link rel="canonical" href="http://manageiq.org/blog/2020/07/2020-07-27-Announcing-Ivanchuk-6/">
   <link rel="alternate" type="application/rss+xml" title="ManageIQ" href="http://manageiq.org/feed.xml">
 
   <link href="/assets/images/favicon.ico" rel="shortcut icon">
@@ -58,52 +58,96 @@
 </header>
 
 
-    <main data-url="/blog/2020/07/">
-      <div class="blog blog_year">
+    <main data-url="/blog/2020/07/Announcing-Ivanchuk-6/">
+      <div class="blog">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-10">
         <header class="blog_header">
           <h1>
-            July
+            ManageIQ Blog
           </h1>
         </header>
       </div>
     </div>
-    <div class="row">
+    <div class="row"> 
       <div class="col-xs-12 col-sm-10 blog_main">
-        <div class="posts month_archive">
-  
-  <article class="post_excerpt">
-    <header class="post-header">
-      <h1><a href="/blog/2020/07/Announcing-Ivanchuk-6/">Announcing Ivanchuk-6</a></h1>
-    </header>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">Announcing Ivanchuk-6</h1>
 
-    <div class="post-content">
-      <p>ManageIQ Ivanchuk-6 is now available. This release contains bug fixes, UI tweaks, and stabilization.
+            <div class="post-meta">
+              <time datetime="2020-07-27T19:12:13+00:00" itemprop="datePublished">
+                Jul 27, 2020
+              </time>
+
+              
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  chessbyte
+                </i>
+              </span>
+              
+
+              <ul class="post-tags">
+                
+                <li>
+                  <a href="/blog/tags/releases">releases</a>
+                </li>
+                
+                <li>
+                  <a href="/blog/tags/announcements">announcements</a>
+                </li>
+                
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>ManageIQ Ivanchuk-6 is now available. This release contains bug fixes, UI tweaks, and stabilization.
 Here are just some of the things added since the Ivanchuk-5 release:</p>
 
+<h3 id="fixed">Fixed</h3>
+<ul>
+  <li>Allow embedded_ansible role on multiple appliances <a href="https://github.com/ManageIQ/manageiq/pull/19162">(#19162)</a></li>
+  <li>Fixed cockpit process starting <a href="https://github.com/ManageIQ/manageiq/pull/20077">(#20077)</a></li>
+  <li>Addressed <a href="https://github.com/rack/rack/security/advisories/GHSA-hrqr-hxpp-chr3">Possible Information Leak / Session Hijack Vulnerability</a> by using the proper version of the <code class="highlighter-rouge">rack</code> gem <a href="https://github.com/ManageIQ/manageiq/pull/20210">(#20210)</a></li>
+  <li>[API] Add name to valid edit attributes for vms <a href="https://github.com/ManageIQ/manageiq-api/pull/832">(ManageIQ/manageiq-api#832)</a></li>
+  <li>[AWS] Check instance exists before getting status during provisioning <a href="https://github.com/ManageIQ/manageiq-providers-amazon/pull/604">(ManageIQ/manageiq-providers-amazon#604)</a></li>
+  <li>[AWS] Update Floating IP target and event collection <a href="https://github.com/ManageIQ/manageiq-providers-amazon/pull/618">(ManageIQ/manageiq-providers-amazon#618)</a></li>
+  <li>[Ansible Tower] Catch exceptions when parsing job_templates <a href="https://github.com/ManageIQ/manageiq-providers-ansible_tower/pull/218">(ManageIQ/manageiq-providers-ansible_tower#218)</a></li>
+  <li>[Automation Engine] Add cc and bcc into builtin method send_email’s inputs fields <a href="https://github.com/ManageIQ/manageiq-automation_engine/pull/404">(ManageIQ/manageiq-automation_engine#404)</a></li>
+  <li>[Classic UI] Provision Dialog (prov_dialog) customize - do not fail when no :sysprep_enabled <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/6953">(ManageIQ/manageiq-ui-classic#6953)</a></li>
+  <li>[Classic UI] Remove Tags from Network Topology View and others so as to limit the ability for users to see other users’ tags <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/6351">(ManageIQ/manageiq-ui-classic#6351)</a></li>
+  <li>[Classic UI] Fix cancel, save and select_tree actions in breadcrumbs and title in PXE menu section <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/7045">(ManageIQ/manageiq-ui-classic#7045)</a></li>
+  <li>[Classic UI] Fix breadcrumbs for Dashboard Widgets <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/7063">(ManageIQ/manageiq-ui-classic#7063)</a></li>
+  <li>[Classic UI] Add reconfigureMode parameter to dialog-user <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/7074">(ManageIQ/manageiq-ui-classic#7074)</a></li>
+</ul>
 
-    </div>
-  </article>
-  
-  <article class="post_excerpt">
-    <header class="post-header">
-      <h1><a href="/blog/2020/07/Announcing-Jansa-Release-Candidate/">Announcing Jansa Release Candidate</a></h1>
-    </header>
+<p>You can download the Ivanchuk-6 release <a href="http://manageiq.org/download/">here</a>.</p>
 
-    <div class="post-content">
-      <p>The ManageIQ Jansa release candidate is here!  All the major features in this release are in the <a href="https://github.com/orgs/ManageIQ/projects/13#column-7337345">ManageIQ Roadmap in the column named Jansa</a>. We have fixed numerous issues since we announced <a href="https://www.manageiq.org/blog/2020/06/Announcing-Jansa-Beta/">Jansa Beta</a>.  Below are some last-minute enhancements that made it into the Jansa Release Candidate.</p>
+<p>Here are the changes (since Ivanchuk-5) per affected repository in GitHub:</p>
+<ul>
+  <li><a href="https://github.com/ManageIQ/manageiq/compare/ivanchuk-5...ivanchuk-6">manageiq</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-api/compare/ivanchuk-5...ivanchuk-6">manageiq-api</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-automation_engine/compare/ivanchuk-5...ivanchuk-6">manageiq-automation_engine</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-content/compare/ivanchuk-5...ivanchuk-6">manageiq-content</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-providers-amazon/compare/ivanchuk-5...ivanchuk-6">manageiq-providers-amazon</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-providers-ansible_tower/compare/ivanchuk-5...ivanchuk-6">manageiq-providers-ansible_tower</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-ui-classic/compare/ivanchuk-5...ivanchuk-6">manageiq-ui-classic</a></li>
+  <li><a href="https://github.com/ManageIQ/manageiq-v2v/compare/ivanchuk-5...ivanchuk-6">manageiq-v2v</a></li>
+</ul>
 
+<p>For questions or support,
+<a href="http://talk.manageiq.org/">join in on the talk page</a>.</p>
 
-    </div>
-  </article>
-  
-</div>
-
+          </div>
+        </article>
       </div>
-    
-        <div class="blog_side-group">
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          <div class="blog_side-group">
   <h3 class="blog_side-heading">
     Categories
   </h3>
@@ -247,6 +291,7 @@ Here are just some of the things added since the Ivanchuk-5 release:</p>
 </div>
 
       </div>
+
     </div>
   </div>
 </div>

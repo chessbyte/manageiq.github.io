@@ -5,8 +5,8 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Jul 2020 13:30:48 +0000</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2020 13:30:48 +0000</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2020 17:19:33 +0000</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2020 17:19:33 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -17,6 +17,23 @@
         <pubDate>Wed, 29 Jul 2020 19:12:13 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/07/Announcing-Jansa-Release-Candidate/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/07/Announcing-Jansa-Release-Candidate/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Announcing Ivanchuk-6</title>
+        <description>&lt;p&gt;ManageIQ Ivanchuk-6 is now available. This release contains bug fixes, UI tweaks, and stabilization.
+Here are just some of the things added since the Ivanchuk-5 release:&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 27 Jul 2020 19:12:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/07/Announcing-Ivanchuk-6/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/07/Announcing-Ivanchuk-6/</guid>
         
         <category>releases</category>
         
@@ -146,20 +163,6 @@ Here are just a few of the things added since the Ivanchuk-2 release:&lt;/p&gt;
         <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-3-Ansible-In-An-Automation-Workflow/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-3-Ansible-In-An-Automation-Workflow/</guid>
-        
-        <category>tutorials</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Embedded Ansible — Part 2, Passing Parameters Into A Playbook</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-1-Built-In-Roles/&quot;&gt;Part one of this series&lt;/a&gt; described the &lt;em&gt;manageiq_automate&lt;/em&gt; and &lt;em&gt;manageiq_vmdb&lt;/em&gt; roles that can be used by a playbook to interact with a ManageIQ workflow.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/</guid>
         
         <category>tutorials</category>
         
