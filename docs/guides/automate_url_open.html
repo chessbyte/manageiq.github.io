@@ -488,17 +488,17 @@ a new window.</p>
 <p>c) Configuration -&gt; Copy this Class (copy it to your new domain from step 1a)</p>
 
 <p>d) select Request Class in your new domain -&gt; Configuration -&gt; Add a new Instance
-      * name <code class="highlighter-rouge">TestOpenUrl</code>
-      * to <code class="highlighter-rouge">meth1</code> write <code class="highlighter-rouge">test_open_url</code></p>
+      * name <code class="language-plaintext highlighter-rouge">TestOpenUrl</code>
+      * to <code class="language-plaintext highlighter-rouge">meth1</code> write <code class="language-plaintext highlighter-rouge">test_open_url</code></p>
 
 <p>e) Select Request class in your new domain, click Methods -&gt; Configuration -&gt; Add a new Method
       * type: inline
       * name: test_open_url
-      * data should be (or anything that sets <code class="highlighter-rouge">vm.external_url</code> to something):</p>
+      * data should be (or anything that sets <code class="language-plaintext highlighter-rouge">vm.external_url</code> to something):</p>
 
 <p><img src="images/automate_url_open.png?raw=true" alt="Create Automate Method" title="Create Automate Method" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      vm = $evm.root['vm']
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      vm = $evm.root['vm']
       $evm.log(:info, "VM to launch SSH for is #{vm.hostnames[0]}")
       vm.external_url = "https://www.google.com"
 
@@ -509,7 +509,7 @@ a new window.</p>
 
 <p>Automation -&gt; Automate -&gt; Customization -&gt; Buttons</p>
 
-<p>Create a new button for VMs with “Open Url” checked and either w/ or w/o a “Dialog” and “Request” has to be <code class="highlighter-rouge">TestOpenUrl</code></p>
+<p>Create a new button for VMs with “Open Url” checked and either w/ or w/o a “Dialog” and “Request” has to be <code class="language-plaintext highlighter-rouge">TestOpenUrl</code></p>
 
 <p>Go to VM summary page and click the new button.</p>
 
@@ -517,7 +517,7 @@ a new window.</p>
 
 <h4 id="example-automate-code-for-user">Example automate code for User</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$evm.log(:info, "Current user_id #{$evm.root['user_id']}")
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$evm.log(:info, "Current user_id #{$evm.root['user_id']}")
 object = $evm.vmdb($evm.root['vmdb_object_type']).find_by(:id =&gt; $evm.root['user_id'])
 $evm.log(:info, "Current object #{object}")
 object.external_url = "https://www.linkedin.com"

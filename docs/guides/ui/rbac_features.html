@@ -470,26 +470,26 @@
         
         <h3 id="rbac-features">RBAC features</h3>
 
-<p>RBAC features are defined in <code class="highlighter-rouge">db/fixtures/miq_product_features.yml</code>. These are
+<p>RBAC features are defined in <code class="language-plaintext highlighter-rouge">db/fixtures/miq_product_features.yml</code>. These are
 organized in a tree structure that can be seen in the Role editor under
 Settings.</p>
 
-<p>RBAC features are assigned to roles. For the built-in roles this is predefined in <code class="highlighter-rouge">db/fixtures/miq_user_roles.yml</code>.</p>
+<p>RBAC features are assigned to roles. For the built-in roles this is predefined in <code class="language-plaintext highlighter-rouge">db/fixtures/miq_user_roles.yml</code>.</p>
 
-<p>RBAC checking is done for every action and every button in <code class="highlighter-rouge">check_privileges</code>
-in <code class="highlighter-rouge">ApplicationController</code>. Therefore each button, each menu item and each
+<p>RBAC checking is done for every action and every button in <code class="language-plaintext highlighter-rouge">check_privileges</code>
+in <code class="language-plaintext highlighter-rouge">ApplicationController</code>. Therefore each button, each menu item and each
 screen needs to have its RBAC feature.</p>
 
 <h3 id="checking-permissions-on-individual-items">Checking permissions on individual items</h3>
 
 <p>More detailed RBAC checking is done in individual actions both in the UI and
-the API. In <code class="highlighter-rouge">CheckedIdMixin</code> you can find methods that fetch and verify access
+the API. In <code class="language-plaintext highlighter-rouge">CheckedIdMixin</code> you can find methods that fetch and verify access
 to items selected in the UI.</p>
 
 <p>Example below fetches cloud volumes whose IDs are either passed in as checked
-items from a GTL view or in <code class="highlighter-rouge">params[:id]</code>.</p>
+items from a GTL view or in <code class="language-plaintext highlighter-rouge">params[:id]</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  volumes = find_records_with_rbac(CloudVolume, checked_or_params)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  volumes = find_records_with_rbac(CloudVolume, checked_or_params)
 </code></pre></div></div>
 
       </div>

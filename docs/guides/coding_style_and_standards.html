@@ -519,8 +519,8 @@ Please try to document methods that are used by external teams, like providers.
 These are the integration API for them and should be documented best.</p>
 
 <p>To view the documentation online visit <a href="http://www.rubydoc.info/github/manageiq/manageiq">rubydoc.info</a>. For a local
-version you can run <code class="highlighter-rouge">bundle exec yard</code> and view the html docs in <code class="highlighter-rouge">/doc/index.html</code>. When writing documentation you
-should add your source files to <code class="highlighter-rouge">/.yardopts</code> and run <code class="highlighter-rouge">bundle exec yard server -r</code>. This will create a local 
+version you can run <code class="language-plaintext highlighter-rouge">bundle exec yard</code> and view the html docs in <code class="language-plaintext highlighter-rouge">/doc/index.html</code>. When writing documentation you
+should add your source files to <code class="language-plaintext highlighter-rouge">/.yardopts</code> and run <code class="language-plaintext highlighter-rouge">bundle exec yard server -r</code>. This will create a local 
 documentation server which regenerates the docs on each request.</p>
 
 <h2 id="logging">Logging</h2>
@@ -550,7 +550,7 @@ consider using a variable named log_prefix.</p>
 string with ellipses, to make it easier to search them in the logs.  As a
 corollary, avoid using words that would not make sense on both ends, such as
 “Starting”.  Attach any extra information after the latter message using
-<code class="highlighter-rouge">" - #{extra_info}"</code></p>
+<code class="language-plaintext highlighter-rouge">" - #{extra_info}"</code></p>
 
     <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vg">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">log_prefix</span><span class="si">}</span><span class="s2"> Refreshing EMS </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
 <span class="o">...</span>
@@ -620,7 +620,7 @@ a separate pull request.</li>
     <p>Use descriptive names for feature branches as they are included in the
 Git history.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># bad
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># bad
 faster_tests
 rework_amazon_code
 
@@ -649,7 +649,7 @@ code smells.</li>
     </ul>
   </li>
   <li>Try to avoid having a commit with, for example, a spelling mistake, that
-is fixed in a subsequent commit in the same pull request.  Use <code class="highlighter-rouge">git rebase -i</code>
+is fixed in a subsequent commit in the same pull request.  Use <code class="language-plaintext highlighter-rouge">git rebase -i</code>
 to clean up those commits to keep the history clean.</li>
   <li>If a pull request involves UI changes, consider adding a before/after
 set of screenshots to show what has changed visually.</li>
@@ -670,13 +670,13 @@ production.log.  A snippet from there with the entire UI transaction is
 needed, including the error message and the stack trace.  A UI transaction
 starts with something that looks like</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:11.910803 #24340:3fd36e0349dc]  INFO -- : Started GET "/ems_infra/show/7" for 127.0.0.1 at 2013-08-22 00:39:11 -0400
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:11.910803 #24340:3fd36e0349dc]  INFO -- : Started GET "/ems_infra/show/7" for 127.0.0.1 at 2013-08-22 00:39:11 -0400
 [----] I, [2013-08-22T04:39:11.929926 #24340:3fd36e0349dc]  INFO -- : Processing by EmsInfraController#show as HTML
 </code></pre></div>    </div>
 
     <p>and ends with something that looks like</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:12.127578 #24340:3fd36e0349dc]  INFO -- : Rendered layouts/_global_footer.html.erb (0.1ms)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[----] I, [2013-08-22T04:39:12.127578 #24340:3fd36e0349dc]  INFO -- : Rendered layouts/_global_footer.html.erb (0.1ms)
 [----] I, [2013-08-22T04:39:12.127794 #24340:3fd36e0349dc]  INFO -- : Completed 200 OK in 198ms (Views: 110.1ms | ActiveRecord: 15.4ms)
 </code></pre></div>    </div>
 
@@ -738,7 +738,7 @@ changes or additions to the guides can be put here.</li>
 
 <h2 id="git-how-to">Git how-to</h2>
 
-<p>Note after the changes in this section, you will need <code class="highlighter-rouge">git push -f </code>if you have 
+<p>Note after the changes in this section, you will need <code class="language-plaintext highlighter-rouge">git push -f </code>if you have 
 already pushed them before.</p>
 
 <ul>
@@ -746,22 +746,22 @@ already pushed them before.</p>
     <p>Reword/squashing/reordering a commit</p>
 
     <p>To modify with recent commit in current branch, first do 
-<code class="highlighter-rouge">git rebase -i origin branch-name</code>.
-To modify a specific commit, use <code class="highlighter-rouge">git rebase -i SOME_COMMIT_ID^</code> instead.
+<code class="language-plaintext highlighter-rouge">git rebase -i origin branch-name</code>.
+To modify a specific commit, use <code class="language-plaintext highlighter-rouge">git rebase -i SOME_COMMIT_ID^</code> instead.
 git will popup a vi window to let you do modification on commits, press 
-<code class="highlighter-rouge">:wq</code> after done.</p>
+<code class="language-plaintext highlighter-rouge">:wq</code> after done.</p>
 
     <ul>
       <li>
         <p>Reword a commit</p>
 
-        <p>Change the <code class="highlighter-rouge">pick</code> before the commit you want to reword to <code class="highlighter-rouge">edit</code> and edit 
+        <p>Change the <code class="language-plaintext highlighter-rouge">pick</code> before the commit you want to reword to <code class="language-plaintext highlighter-rouge">edit</code> and edit 
 its message in popup vi window.</p>
       </li>
       <li>
         <p>Squashing commits</p>
 
-        <p>Change the <code class="highlighter-rouge">pick</code> before the commit you want to squach to <code class="highlighter-rouge">squash</code> and edit 
+        <p>Change the <code class="language-plaintext highlighter-rouge">pick</code> before the commit you want to squach to <code class="language-plaintext highlighter-rouge">squash</code> and edit 
 the commit message after squash in a following popup vi window. A commit 
 will be squashed with its previous commit.</p>
       </li>
@@ -776,20 +776,20 @@ will be squashed with its previous commit.</p>
     <p>Amend a commit</p>
 
     <p>You can commit first and rebase it in the previous section. Or if you want to
-amend most recent commit, you can: <code class="highlighter-rouge">git commit some_file --amend</code>.</p>
+amend most recent commit, you can: <code class="language-plaintext highlighter-rouge">git commit some_file --amend</code>.</p>
   </li>
   <li>
     <p>Deleting a commit</p>
 
-    <p>You can delete commits by delete corresponding lines in <code class="highlighter-rouge">git rebase</code>. Or if
-you want to delete most recent commit, you can <code class="highlighter-rouge">git reset --hard HEAD^</code>. If you
+    <p>You can delete commits by delete corresponding lines in <code class="language-plaintext highlighter-rouge">git rebase</code>. Or if
+you want to delete most recent commit, you can <code class="language-plaintext highlighter-rouge">git reset --hard HEAD^</code>. If you
 want to go back to a specific commit and delete commits after that, use
-<code class="highlighter-rouge">git reset --hard commit-hash</code>.</p>
+<code class="language-plaintext highlighter-rouge">git reset --hard commit-hash</code>.</p>
   </li>
   <li>
     <p>Uncommit a file from an existing commit</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD^ path/to/file/to/revert
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD^ path/to/file/to/revert
 git commit --amend
 </code></pre></div>    </div>
   </li>

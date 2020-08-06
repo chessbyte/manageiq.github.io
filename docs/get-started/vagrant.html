@@ -271,12 +271,12 @@ VirtualBox boxes are provided.</p>
 <span class="nv">$ </span>vagrant init manageiq/ivanchuk
 </code></pre></div></div>
 
-<p>There is now a <code class="highlighter-rouge">Vagrantfile</code> in the current directory.</p>
+<p>There is now a <code class="language-plaintext highlighter-rouge">Vagrantfile</code> in the current directory.</p>
 
 <h3 id="step-2-modify-vagrantfile">Step 2: Modify Vagrantfile</h3>
 
 <p>You need to expose the ManageIQ web interface. Add the following setting to
-the <code class="highlighter-rouge">Vagrantfile</code>:</p>
+the <code class="language-plaintext highlighter-rouge">Vagrantfile</code>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="s2">"forwarded_port"</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">443</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">8443</span>
 </code></pre></div></div>

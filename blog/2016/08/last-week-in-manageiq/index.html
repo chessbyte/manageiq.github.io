@@ -127,17 +127,17 @@ application. There’s plenty left to do but this is a great start!</p>
 
 <h3 id="rbac-allow-limits-to-come-from-the-scope"><a href="https://github.com/ManageIQ/manageiq/pull/10209">Rbac allow limits to come from the scope</a></h3>
 
-<p>The RBAC interface no longer requires you to pass <code class="highlighter-rouge">limit</code>, <code class="highlighter-rouge">order</code>, and <code class="highlighter-rouge">offset</code>
+<p>The RBAC interface no longer requires you to pass <code class="language-plaintext highlighter-rouge">limit</code>, <code class="language-plaintext highlighter-rouge">order</code>, and <code class="language-plaintext highlighter-rouge">offset</code>
 explicitly in the options hash, instead pulling from the passed scope itself.</p>
 
 <p>Before:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rbac.filtered(Vm.all, :limit =&gt; 20, :offset =&gt; 40)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rbac.filtered(Vm.all, :limit =&gt; 20, :offset =&gt; 40)
 </code></pre></div></div>
 
 <p>After:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rbac.filtered(Vm.limit(20).offset(40))
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rbac.filtered(Vm.limit(20).offset(40))
 </code></pre></div></div>
 
 <p>The old hash signature is still valid for now while hashes are converted to scopes.</p>

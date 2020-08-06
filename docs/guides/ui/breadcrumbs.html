@@ -514,7 +514,7 @@
 
 <p>Breadcrumbs are automatically generated from information collected in the controller. To allow generating the breadcrumbs, a controller should include the Breadcrumbs mixin:</p>
 
-<p><code class="highlighter-rouge">include Mixins::BreadcrumbMixin</code></p>
+<p><code class="language-plaintext highlighter-rouge">include Mixins::BreadcrumbMixin</code></p>
 
 <p>and then it has to define a new method which returns a hash with variables depended on the controller and its type.</p>
 
@@ -540,74 +540,74 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:breadcrumbs</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:breadcrumbs</code></td>
       <td style="text-align: center">array</td>
       <td style="text-align: center"><strong>required</strong></td>
       <td style="text-align: center">all</td>
       <td style="text-align: right">Initial sets of breadcrumbs. Should include the menu path.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:record_info</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:record_info</code></td>
       <td style="text-align: center">hash</td>
-      <td style="text-align: center"><code class="highlighter-rouge">@record</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">@record</code></td>
       <td style="text-align: center">both</td>
       <td style="text-align: right">Object where currently shown record is stored.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:record_title</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:record_title</code></td>
       <td style="text-align: center">symbol</td>
-      <td style="text-align: center"><code class="highlighter-rouge">:name</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">:name</code></td>
       <td style="text-align: center">both</td>
-      <td style="text-align: right">Attribute of the <code class="highlighter-rouge">:record_info</code> object, which will be used as a title in breadcrumbs.</td>
+      <td style="text-align: right">Attribute of the <code class="language-plaintext highlighter-rouge">:record_info</code> object, which will be used as a title in breadcrumbs.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:include_record</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:include_record</code></td>
       <td style="text-align: center">bool</td>
-      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">false</code></td>
       <td style="text-align: center">both</td>
-      <td style="text-align: right">Will use <code class="highlighter-rouge">:record_info</code> for creating the item breadcrumb.</td>
+      <td style="text-align: right">Will use <code class="language-plaintext highlighter-rouge">:record_info</code> for creating the item breadcrumb.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:hide_title</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:hide_title</code></td>
       <td style="text-align: center">bool</td>
-      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">false</code></td>
       <td style="text-align: center">non-explorer</td>
-      <td style="text-align: right">Will not append <code class="highlighter-rouge">@title</code> to breadcrumbs.</td>
+      <td style="text-align: right">Will not append <code class="language-plaintext highlighter-rouge">@title</code> to breadcrumbs.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:ancestry</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:ancestry</code></td>
       <td style="text-align: center">Class</td>
-      <td style="text-align: center"><code class="highlighter-rouge">nil</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">nil</code></td>
       <td style="text-align: center">explorer</td>
-      <td style="text-align: right">Parent class for ancestry. Used in <code class="highlighter-rouge">service</code> controller</td>
+      <td style="text-align: right">Parent class for ancestry. Used in <code class="language-plaintext highlighter-rouge">service</code> controller</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:not_tree</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:not_tree</code></td>
       <td style="text-align: center">bool</td>
-      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">false</code></td>
       <td style="text-align: center">explorer</td>
       <td style="text-align: right">This sets that the controller is not explorer. It should be used in controllers used in more places which someones do not use the explorer presenter.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:disable_tree</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:disable_tree</code></td>
       <td style="text-align: center">bool</td>
-      <td style="text-align: center"><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">false</code></td>
       <td style="text-align: center">explorer</td>
       <td style="text-align: right">Will disable all links in breadcrumbs.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:to_explorer</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:to_explorer</code></td>
       <td style="text-align: center">string</td>
-      <td style="text-align: center"><code class="highlighter-rouge">nil</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">nil</code></td>
       <td style="text-align: center">explorer</td>
-      <td style="text-align: right">Link to the explorer page. Will be appended to the penultimate breadcrumb when <code class="highlighter-rouge">:disable_tree</code> is set.</td>
+      <td style="text-align: right">Link to the explorer page. Will be appended to the penultimate breadcrumb when <code class="language-plaintext highlighter-rouge">:disable_tree</code> is set.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">:x_node</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">:x_node</code></td>
       <td style="text-align: center">string</td>
-      <td style="text-align: center"><code class="highlighter-rouge">x_node</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">x_node</code></td>
       <td style="text-align: center">explorer</td>
-      <td style="text-align: right">Use custom node id instead of default <code class="highlighter-rouge">x_node</code>.</td>
+      <td style="text-align: right">Use custom node id instead of default <code class="language-plaintext highlighter-rouge">x_node</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -637,37 +637,37 @@
 
 <p>Non-explorer controllers should have this structure:</p>
 
-<p><code class="highlighter-rouge">show_list</code> &gt; <code class="highlighter-rouge">show</code> &gt; <code class="highlighter-rouge">action</code></p>
+<p><code class="language-plaintext highlighter-rouge">show_list</code> &gt; <code class="language-plaintext highlighter-rouge">show</code> &gt; <code class="language-plaintext highlighter-rouge">action</code></p>
 
 <ul>
-  <li>On <code class="highlighter-rouge">show_list</code> the title is not appended, because the title from the menu path is used.</li>
-  <li>On <code class="highlighter-rouge">show</code> the <code class="highlighter-rouge">:record_info</code> is not used by default, because the <code class="highlighter-rouge">@title</code> of the page serves as a title in the last breadcrumb.</li>
-  <li>On <code class="highlighter-rouge">action</code> the <code class="highlighter-rouge">:record_info</code> is used to generate item breadcrumb and <code class="highlighter-rouge">@title</code> is used as an action breadcrumb.</li>
+  <li>On <code class="language-plaintext highlighter-rouge">show_list</code> the title is not appended, because the title from the menu path is used.</li>
+  <li>On <code class="language-plaintext highlighter-rouge">show</code> the <code class="language-plaintext highlighter-rouge">:record_info</code> is not used by default, because the <code class="language-plaintext highlighter-rouge">@title</code> of the page serves as a title in the last breadcrumb.</li>
+  <li>On <code class="language-plaintext highlighter-rouge">action</code> the <code class="language-plaintext highlighter-rouge">:record_info</code> is used to generate item breadcrumb and <code class="language-plaintext highlighter-rouge">@title</code> is used as an action breadcrumb.</li>
 </ul>
 
 <h5 id="default-list">Default list</h5>
 
-<p><code class="highlighter-rouge">[MENU]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[MENU]</code></p>
 
-<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Hosts / Nodes</code></p>
+<p>ex. <code class="language-plaintext highlighter-rouge">Compute</code> &gt; <code class="language-plaintext highlighter-rouge">Infrastructure</code> &gt; <code class="language-plaintext highlighter-rouge">Hosts / Nodes</code></p>
 
 <p>When the title of the page is different from the last item in the main navigation, the navigation title is used as the breadcrumb title.</p>
 
 <h5 id="detail">Detail</h5>
 
-<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ITEM TITLE]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[MENU]</code> &gt; <code class="language-plaintext highlighter-rouge">[ITEM TITLE]</code></p>
 
-<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Hosts / Nodes</code> &gt; <code class="highlighter-rouge">17d6ec2e-0e75-45ab-95a6-642eb41855cd (Controller) (Summary)</code></p>
+<p>ex. <code class="language-plaintext highlighter-rouge">Compute</code> &gt; <code class="language-plaintext highlighter-rouge">Infrastructure</code> &gt; <code class="language-plaintext highlighter-rouge">Hosts / Nodes</code> &gt; <code class="language-plaintext highlighter-rouge">17d6ec2e-0e75-45ab-95a6-642eb41855cd (Controller) (Summary)</code></p>
 
-<p>The whole title is used (with <code class="highlighter-rouge">Summary</code>, <code class="highlighter-rouge">Dashboard</code>)</p>
+<p>The whole title is used (with <code class="language-plaintext highlighter-rouge">Summary</code>, <code class="language-plaintext highlighter-rouge">Dashboard</code>)</p>
 
 <h5 id="action">Action</h5>
 
-<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ITEM TITLE]</code> &gt; <code class="highlighter-rouge">[ACTION HEADER]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[MENU]</code> &gt; <code class="language-plaintext highlighter-rouge">[ITEM TITLE]</code> &gt; <code class="language-plaintext highlighter-rouge">[ACTION HEADER]</code></p>
 
-<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Hosts / Nodes</code> &gt; <code class="highlighter-rouge">17d6ec2e-0e75-45ab-95a6-642eb41855cd (Controller)</code> &gt; <code class="highlighter-rouge">Info/Settings</code></p>
+<p>ex. <code class="language-plaintext highlighter-rouge">Compute</code> &gt; <code class="language-plaintext highlighter-rouge">Infrastructure</code> &gt; <code class="language-plaintext highlighter-rouge">Hosts / Nodes</code> &gt; <code class="language-plaintext highlighter-rouge">17d6ec2e-0e75-45ab-95a6-642eb41855cd (Controller)</code> &gt; <code class="language-plaintext highlighter-rouge">Info/Settings</code></p>
 
-<p>Notice the item title is now without the appendix (<code class="highlighter-rouge">Summary</code>, <code class="highlighter-rouge">Dashboard</code>). That is correct.</p>
+<p>Notice the item title is now without the appendix (<code class="language-plaintext highlighter-rouge">Summary</code>, <code class="language-plaintext highlighter-rouge">Dashboard</code>). That is correct.</p>
 
 <p>Breadcrumbs should not be deeper than this.</p>
 
@@ -675,9 +675,9 @@
 
 <h5 id="default--detail-view">Default + detail view</h5>
 
-<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ACCORDION TITLE]</code> &gt; <code class="highlighter-rouge">[CURRENT NODE TEXT]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[MENU]</code> &gt; <code class="language-plaintext highlighter-rouge">[ACCORDION TITLE]</code> &gt; <code class="language-plaintext highlighter-rouge">[CURRENT NODE TEXT]</code></p>
 
-<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Virtual Machines</code> &gt; <code class="highlighter-rouge">VMs &amp; Templates</code> &gt; <code class="highlighter-rouge">All VMs &amp; Templates</code></p>
+<p>ex. <code class="language-plaintext highlighter-rouge">Compute</code> &gt; <code class="language-plaintext highlighter-rouge">Infrastructure</code> &gt; <code class="language-plaintext highlighter-rouge">Virtual Machines</code> &gt; <code class="language-plaintext highlighter-rouge">VMs &amp; Templates</code> &gt; <code class="language-plaintext highlighter-rouge">All VMs &amp; Templates</code></p>
 
 <p>Accordion title should lead to the tree’s root.</p>
 
@@ -685,16 +685,16 @@
 
 <h5 id="action-1">Action</h5>
 
-<p><code class="highlighter-rouge">[MENU]</code> &gt; <code class="highlighter-rouge">[ACCORDION TITLE]</code> &gt; <code class="highlighter-rouge">[CURRENT NODE TEXT]</code> &gt; <code class="highlighter-rouge">[ACTION TITLE]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[MENU]</code> &gt; <code class="language-plaintext highlighter-rouge">[ACCORDION TITLE]</code> &gt; <code class="language-plaintext highlighter-rouge">[CURRENT NODE TEXT]</code> &gt; <code class="language-plaintext highlighter-rouge">[ACTION TITLE]</code></p>
 
-<p>ex. <code class="highlighter-rouge">Compute</code> &gt; <code class="highlighter-rouge">Infrastructure</code> &gt; <code class="highlighter-rouge">Virtual Machines</code> &gt; <code class="highlighter-rouge">VMs &amp; Templates</code> &gt; <code class="highlighter-rouge">3.9ocp</code> &gt; <code class="highlighter-rouge">Editing Virtual Machine "3.9ocp"</code></p>
+<p>ex. <code class="language-plaintext highlighter-rouge">Compute</code> &gt; <code class="language-plaintext highlighter-rouge">Infrastructure</code> &gt; <code class="language-plaintext highlighter-rouge">Virtual Machines</code> &gt; <code class="language-plaintext highlighter-rouge">VMs &amp; Templates</code> &gt; <code class="language-plaintext highlighter-rouge">3.9ocp</code> &gt; <code class="language-plaintext highlighter-rouge">Editing Virtual Machine "3.9ocp"</code></p>
 
-<p>As a <code class="highlighter-rouge">action title</code> it used one of these variables (sorted by the highest priority):</p>
+<p>As a <code class="language-plaintext highlighter-rouge">action title</code> it used one of these variables (sorted by the highest priority):</p>
 <ul>
-  <li><code class="highlighter-rouge">right_cell_text</code> as a local variable provided to the breadcrumbs template (if you provide it in <code class="highlighter-rouge">replace_right_cell</code> method)</li>
-  <li><code class="highlighter-rouge">@title_for_breadcrumbs</code> (non standard use)</li>
-  <li><code class="highlighter-rouge">@right_cell_text</code> (standard use)</li>
-  <li><code class="highlighter-rouge">@title</code> (explorer controller switched to non-explorer)</li>
+  <li><code class="language-plaintext highlighter-rouge">right_cell_text</code> as a local variable provided to the breadcrumbs template (if you provide it in <code class="language-plaintext highlighter-rouge">replace_right_cell</code> method)</li>
+  <li><code class="language-plaintext highlighter-rouge">@title_for_breadcrumbs</code> (non standard use)</li>
+  <li><code class="language-plaintext highlighter-rouge">@right_cell_text</code> (standard use)</li>
+  <li><code class="language-plaintext highlighter-rouge">@title</code> (explorer controller switched to non-explorer)</li>
 </ul>
 
 <p>Breadcrumbs should not be deeper than this.</p>

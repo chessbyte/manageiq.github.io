@@ -482,11 +482,11 @@
 
 <p>Injection example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ManageIQ.angular.app.controller('arbitrationProfileFormController', ['$scope', '$location', 'arbitrationProfileFormId', 'miqService', 'postService', 'API', 'arbitrationProfileDataFactory', function($scope, $location, arbitrationProfileFormId, miqService, postService, API, arbitrationProfileDataFactory) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ManageIQ.angular.app.controller('arbitrationProfileFormController', ['$scope', '$location', 'arbitrationProfileFormId', 'miqService', 'postService', 'API', 'arbitrationProfileDataFactory', function($scope, $location, arbitrationProfileFormId, miqService, postService, API, arbitrationProfileDataFactory) {
 </code></pre></div></div>
 
 <p>then you can use the API. GET example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API.get(url).then(function(response) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API.get(url).then(function(response) {
   $scope.cloud_subnets   = response.cloud_subnets;
   $scope.security_groups = response.security_groups;
   $scope._cloud_subnet = _.find($scope.cloud_subnets, {id: $scope.arbitrationProfileModel.cloud_subnet_id})
@@ -495,7 +495,7 @@
 </code></pre></div></div>
 
 <p>POST example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API.post(url, {"action" : "create", "resource" : resource}).then(function (response) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API.post(url, {"action" : "create", "resource" : resource}).then(function (response) {
   'use strict';
   $scope.deployInProgress = false;
   $scope.deployComplete = true;

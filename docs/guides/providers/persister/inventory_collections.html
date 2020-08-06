@@ -473,10 +473,10 @@
 
 <p><a href="../dev-guide">back</a></p>
 
-<p><strong>Inventory Collection</strong> (<code class="highlighter-rouge">ManagerRefresh::InventoryCollection</code> - subsequently called <strong>“IC”</strong>) is an object used by Refresh process. 
+<p><strong>Inventory Collection</strong> (<code class="language-plaintext highlighter-rouge">ManagerRefresh::InventoryCollection</code> - subsequently called <strong>“IC”</strong>) is an object used by Refresh process. 
 It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</strong>, <strong>Operating system</strong>, <strong>Host</strong> etc.</p>
 
-<p>Each IC is defined by persister (<code class="highlighter-rouge">ManagerRefresh::Inventory::Persister</code>), stored in a hash called <code class="highlighter-rouge">@collections</code> and accessible as persister’s method. It’s name is equal to the IC’s association property (will be described later). One persister usually contains many IC definitions.</p>
+<p>Each IC is defined by persister (<code class="language-plaintext highlighter-rouge">ManagerRefresh::Inventory::Persister</code>), stored in a hash called <code class="language-plaintext highlighter-rouge">@collections</code> and accessible as persister’s method. It’s name is equal to the IC’s association property (will be described later). One persister usually contains many IC definitions.</p>
 
 <h2 id="defining-an-inventory-collection">Defining an Inventory Collection</h2>
 
@@ -485,7 +485,7 @@ It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</
 <ul>
   <li>Persister’s helper
     <ul>
-      <li>includes <em>add_collection()</em> interface common to all persisters derived from <code class="highlighter-rouge">ManagerRefresh::Inventory::Persister</code></li>
+      <li>includes <em>add_collection()</em> interface common to all persisters derived from <code class="language-plaintext highlighter-rouge">ManagerRefresh::Inventory::Persister</code></li>
     </ul>
   </li>
   <li>InventoryCollection Builder
@@ -509,20 +509,20 @@ It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</
 
 <h3 id="add_collection-method">add_collection() method</h3>
 
-<p><em>This interface is intended to replace older interfaces <code class="highlighter-rouge">add_inventory_collection()</code> and <code class="highlighter-rouge">has_inventory()</code></em></p>
+<p><em>This interface is intended to replace older interfaces <code class="language-plaintext highlighter-rouge">add_inventory_collection()</code> and <code class="language-plaintext highlighter-rouge">has_inventory()</code></em></p>
 
 <p>Entry point for creating IC definition. It defines parameters:</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">builder_class</span><span class="p">,</span> <span class="n">collection_name</span><span class="p">,</span> <span class="n">extra_properties</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">settings</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
 </code></pre></div></div>
 <p>which we’ll see more detailed in this chapter.</p>
 
-<p>It creates <code class="highlighter-rouge">ManagerRefresh::InventoryCollection</code>  and assigns it to <strong>persister’s @collections[:vms]</strong></p>
+<p>It creates <code class="language-plaintext highlighter-rouge">ManagerRefresh::InventoryCollection</code>  and assigns it to <strong>persister’s @collections[:vms]</strong></p>
 
-<p>Method can throw exception <strong><code class="highlighter-rouge">ManagerRefresh::InventoryCollection::Builder::MissingModelClassError</code></strong> (described <a href="#automatic-model_class">later</a>)</p>
+<p>Method can throw exception <strong><code class="language-plaintext highlighter-rouge">ManagerRefresh::InventoryCollection::Builder::MissingModelClassError</code></strong> (described <a href="#automatic-model_class">later</a>)</p>
 
 <h4 id="--builder_class-mandatory">- builder_class [<em>mandatory</em>]</h4>
 
-<p>There is a builder class for every manager type. Because they’re used as parameter of <code class="highlighter-rouge">add_collection()</code> they are wrapped to methods with short name (persister’s methods):</p>
+<p>There is a builder class for every manager type. Because they’re used as parameter of <code class="language-plaintext highlighter-rouge">add_collection()</code> they are wrapped to methods with short name (persister’s methods):</p>
 <ul>
   <li>cloud</li>
   <li>infra</li>
@@ -539,11 +539,11 @@ It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_collection</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="ss">:vms</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Instantiates <code class="highlighter-rouge">cloud</code> builder class, searches for <code class="highlighter-rouge">vms</code> method in it, searches for <code class="highlighter-rouge">...::CloudManager::Vm</code> as model_class property and discovers model_class attributes.</p>
+<p>Instantiates <code class="language-plaintext highlighter-rouge">cloud</code> builder class, searches for <code class="language-plaintext highlighter-rouge">vms</code> method in it, searches for <code class="language-plaintext highlighter-rouge">...::CloudManager::Vm</code> as model_class property and discovers model_class attributes.</p>
 
 <h4 id="--collection_name-mandatory">- collection_name [<em>mandatory</em>]</h4>
 
-<p>Name (also <code class="highlighter-rouge">InventoryCollection.association</code>) is unique identifier of IC definition (in scope of one persister).</p>
+<p>Name (also <code class="language-plaintext highlighter-rouge">InventoryCollection.association</code>) is unique identifier of IC definition (in scope of one persister).</p>
 
 <p>It has several functions:</p>
 
@@ -557,14 +557,14 @@ It represents types of inventory such as <strong>VM</strong>, <strong>Hardware</
 <p>Collection name is also used for automated assignments, such as:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">:model_class</code> (where are collected data persisted)  [<em>below</em>]</li>
-  <li><code class="highlighter-rouge">:inventory_object_attributes</code> - “columns” of model_class [<em>below</em>]</li>
+  <li><code class="language-plaintext highlighter-rouge">:model_class</code> (where are collected data persisted)  [<em>below</em>]</li>
+  <li><code class="language-plaintext highlighter-rouge">:inventory_object_attributes</code> - “columns” of model_class [<em>below</em>]</li>
 </ul>
 
 <h4 id="--extra_properties-optional">- extra_properties [<em>optional</em>]</h4>
 
 <p>Properties added to IC at <strong>top level priority</strong>.<br />
-It overwrites both shared and IC specific properties. Added by <code class="highlighter-rouge">Builder#add_properties()</code>.</p>
+It overwrites both shared and IC specific properties. Added by <code class="language-plaintext highlighter-rouge">Builder#add_properties()</code>.</p>
 
 <h4 id="--settings-optional">- settings [<em>optional</em>]</h4>
 
@@ -575,17 +575,17 @@ It overwrites both shared and IC specific properties. Added by <code class="high
 
 <h5 id="advanced-settings">Advanced settings</h5>
 
-<p>Contains shared properties from UI’s Configuration/Advanced settings, which <strong>can be set by user</strong> (typically <code class="highlighter-rouge">:saver_strategy</code> property).</p>
+<p>Contains shared properties from UI’s Configuration/Advanced settings, which <strong>can be set by user</strong> (typically <code class="language-plaintext highlighter-rouge">:saver_strategy</code> property).</p>
 
 <p>Applied at <strong>lowest level priority</strong> so these properties cannot overwrite properties written in code.</p>
 
 <p>Can be found in tab Advanced(yaml editor):</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ems/ems_refresh/&lt;ExtManagementSystem.ems_type&gt;/inventory_collections/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ems/ems_refresh/&lt;ExtManagementSystem.ems_type&gt;/inventory_collections/
 </code></pre></div></div>
 
 <h5 id="shared-options">Shared options</h5>
 
-<p>Contains shared properties for all ICs defined in persister’s method <code class="highlighter-rouge">shared_options()</code>.
+<p>Contains shared properties for all ICs defined in persister’s method <code class="language-plaintext highlighter-rouge">shared_options()</code>.
 Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strategy</strong></em> and <em><strong>parent</strong></em></p>
 
 <p>Applied at <strong>low level priority</strong> so these properties overwrites Advanced settings but doesn’t overwrite IC specific properties.</p>
@@ -594,7 +594,7 @@ Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strate
 
 <ul>
   <li><strong>auto_inventory_attributes</strong> [Boolean] - Enables automatic settings of InventoryObject attributes (“columns” of model_class). Default: true</li>
-  <li><strong>without_model_class</strong> [Boolean] - When true, disables automatic derivation of <code class="highlighter-rouge">:model_class</code> and doesn’t throw exception when not set manually. Default: false</li>
+  <li><strong>without_model_class</strong> [Boolean] - When true, disables automatic derivation of <code class="language-plaintext highlighter-rouge">:model_class</code> and doesn’t throw exception when not set manually. Default: false</li>
 </ul>
 
 <h5 id="example-1">Example</h5>
@@ -604,7 +604,7 @@ Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strate
 
 <h4 id="--block">- block</h4>
 
-<p>Block will provide you instance of <code class="highlighter-rouge">builder_class</code>. It’s place where you can define specific properties. Described in next chapter.</p>
+<p>Block will provide you instance of <code class="language-plaintext highlighter-rouge">builder_class</code>. It’s place where you can define specific properties. Described in next chapter.</p>
 
 <h5 id="example-2">Example</h5>
 
@@ -644,7 +644,7 @@ Usually have properties <em><strong>:targeted</strong></em>, <em><strong>:strate
 
 <h4 id="automatic-model_class">Automatic model_class</h4>
 
-<p><strong><code class="highlighter-rouge">model_class</code></strong> property contains class where are stored data from inventory.<br />
+<p><strong><code class="language-plaintext highlighter-rouge">model_class</code></strong> property contains class where are stored data from inventory.<br />
 There are two attemps:</p>
 <ul>
   <li>find provider specific class</li>
@@ -655,32 +655,32 @@ There are two attemps:</p>
 <ul>
   <li>provider module of persister
     <ul>
-      <li>e.g. <code class="highlighter-rouge">ManageIQ::Providers::Amazon</code></li>
+      <li>e.g. <code class="language-plaintext highlighter-rouge">ManageIQ::Providers::Amazon</code></li>
     </ul>
   </li>
   <li>manager module of builder
     <ul>
-      <li>e.g. <code class="highlighter-rouge">CloudManager</code></li>
+      <li>e.g. <code class="language-plaintext highlighter-rouge">CloudManager</code></li>
     </ul>
   </li>
   <li>collection_name (association property) of IC
     <ul>
-      <li>e.g. <code class="highlighter-rouge">Vm</code></li>
+      <li>e.g. <code class="language-plaintext highlighter-rouge">Vm</code></li>
     </ul>
   </li>
-  <li>=&gt; <strong><code class="highlighter-rouge">ManageIQ::Providers::Amazon::CloudManager::Vm</code></strong></li>
+  <li>=&gt; <strong><code class="language-plaintext highlighter-rouge">ManageIQ::Providers::Amazon::CloudManager::Vm</code></strong></li>
 </ul>
 
 <p>If this class doesn’t exist, generic class <strong>Vm</strong> is tested for presence.</p>
 
 <p><em><strong>Note</strong>: Automatic choice is <strong>always</strong> overwritten by manual setting, either in common definitions or in provider specific definition.</em></p>
 
-<p>If neither any class matches criteria nor model_class defined manually, <code class="highlighter-rouge">add_collection</code> throws <strong><code class="highlighter-rouge">ManagerRefresh::InventoryCollection::Builder::MissingModelClassError</code></strong> exception.<br />
+<p>If neither any class matches criteria nor model_class defined manually, <code class="language-plaintext highlighter-rouge">add_collection</code> throws <strong><code class="language-plaintext highlighter-rouge">ManagerRefresh::InventoryCollection::Builder::MissingModelClassError</code></strong> exception.<br />
 You can disable it by builder setting <em>without_model_class</em> =&gt; <strong>true</strong>.</p>
 
 <h4 id="automatic-inventoryobject-attributes">Automatic InventoryObject attributes</h4>
 
-<p><strong><code class="highlighter-rouge">inventory_object_attributes</code></strong> property contains possible columns of <em>model_class</em>. These attributes are constructed from setter methods of model_class (<code class="highlighter-rouge">model_class#some_method=</code>).<br />
+<p><strong><code class="language-plaintext highlighter-rouge">inventory_object_attributes</code></strong> property contains possible columns of <em>model_class</em>. These attributes are constructed from setter methods of model_class (<code class="language-plaintext highlighter-rouge">model_class#some_method=</code>).<br />
 It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 <ul>
   <li><em>add_inventory_attributes</em></li>
@@ -692,7 +692,7 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 
 <h3 id="common-definitions">Common definitions</h3>
 
-<p>Many of IC definitions are common to 2+ providers, for example <code class="highlighter-rouge">:vms</code>. That’s why their properties were extracted to builder so defining IC in provider is then very simple.</p>
+<p>Many of IC definitions are common to 2+ providers, for example <code class="language-plaintext highlighter-rouge">:vms</code>. That’s why their properties were extracted to builder so defining IC in provider is then very simple.</p>
 
 <h4 id="example-3">Example</h4>
 <p>Let’s look how it works:</p>
@@ -703,17 +703,17 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 <p>This simple definition performs following steps:</p>
 
 <ul>
-  <li>Infra builder == <code class="highlighter-rouge">::ManagerRefresh::InventoryCollection::Builder::InfraManager</code></li>
-  <li>It searches for <code class="highlighter-rouge">::ManagerRefresh::InventoryCollection::Builder::InfraManager#host_networks</code> method</li>
+  <li>Infra builder == <code class="language-plaintext highlighter-rouge">::ManagerRefresh::InventoryCollection::Builder::InfraManager</code></li>
+  <li>It searches for <code class="language-plaintext highlighter-rouge">::ManagerRefresh::InventoryCollection::Builder::InfraManager#host_networks</code> method</li>
   <li>There is manually defined <em>model_class</em> <strong>::Network</strong></li>
   <li><em>inventory_object_attributes</em> are derived from <strong>::Network</strong> class
     <ul>
-      <li><em><strong>Important</strong>: If <code class="highlighter-rouge">model_class</code> is defined in common definitions, provider specific class <strong>is not derived automatically</strong> even if it exists!</em></li>
+      <li><em><strong>Important</strong>: If <code class="language-plaintext highlighter-rouge">model_class</code> is defined in common definitions, provider specific class <strong>is not derived automatically</strong> even if it exists!</em></li>
     </ul>
   </li>
 </ul>
 
-<p>So properties given to <code class="highlighter-rouge">InventoryCollection</code> object are following:</p>
+<p>So properties given to <code class="language-plaintext highlighter-rouge">InventoryCollection</code> object are following:</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:host_networks</span><span class="p">,</span>
   <span class="ss">:model_class</span> <span class="o">=&gt;</span> <span class="no">Network</span><span class="p">,</span>
@@ -742,7 +742,7 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
   <span class="p">)</span>
 </code></pre></div></div>
 
-<p>produces <code class="highlighter-rouge">InventoryCollection</code> attributes:</p>
+<p>produces <code class="language-plaintext highlighter-rouge">InventoryCollection</code> attributes:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:association</span> <span class="o">=&gt;</span> <span class="ss">:host_networks</span><span class="p">,</span>
@@ -761,17 +761,17 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 
 <p>Following conventions should be applied:</p>
 <ul>
-  <li>define collections belonging to CloudManager (using <code class="highlighter-rouge">cloud</code> Builder) in concern &lt;persister’s path&gt;/definitions/cloud_manager.rb</li>
-  <li>define collections belonging to NetworkManager (using <code class="highlighter-rouge">network</code> Builder) in concern &lt;persister’s path&gt;/definitions/network_manager.rb</li>
-  <li>define <code class="highlighter-rouge">shared_options</code> method with common properties, if possible</li>
-  <li>redefine <code class="highlighter-rouge">targeted?</code> method to true if it’s persister for targeted refresh</li>
+  <li>define collections belonging to CloudManager (using <code class="language-plaintext highlighter-rouge">cloud</code> Builder) in concern &lt;persister’s path&gt;/definitions/cloud_manager.rb</li>
+  <li>define collections belonging to NetworkManager (using <code class="language-plaintext highlighter-rouge">network</code> Builder) in concern &lt;persister’s path&gt;/definitions/network_manager.rb</li>
+  <li>define <code class="language-plaintext highlighter-rouge">shared_options</code> method with common properties, if possible</li>
+  <li>redefine <code class="language-plaintext highlighter-rouge">targeted?</code> method to true if it’s persister for targeted refresh</li>
 </ul>
 
 <h4 id="example-4">Example</h4>
 
 <p>Let’s consider persister for cloud_manager in Amazon:</p>
 <ul>
-  <li><code class="highlighter-rouge">ManageIQ::Providers::Amazon::Inventory::Persister::TargetCollection</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ManageIQ::Providers::Amazon::Inventory::Persister::TargetCollection</code></li>
 </ul>
 
 <p>Simple definition of :vms is following:</p>
@@ -799,11 +799,11 @@ It fits 99% of IC definitions, for there rest you can use builder methods:</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p><code class="highlighter-rouge">add_collection()</code> method is the way how to define <code class="highlighter-rouge">InventoryCollection</code> objects and add them to Persister.
+<p><code class="language-plaintext highlighter-rouge">add_collection()</code> method is the way how to define <code class="language-plaintext highlighter-rouge">InventoryCollection</code> objects and add them to Persister.
 It simplifies definitions using several IC Builders and its common definitions.<br />
 Basic properties, like model class and its attributes can be derived automatically by name of persister’s class and builder’s class.</p>
 
-<p>Persister’s methods <code class="highlighter-rouge">has_inventory()</code> and <code class="highlighter-rouge">add_inventory_collection()</code> are <em>deprecated</em> now.</p>
+<p>Persister’s methods <code class="language-plaintext highlighter-rouge">has_inventory()</code> and <code class="language-plaintext highlighter-rouge">add_inventory_collection()</code> are <em>deprecated</em> now.</p>
 
 
       </div>

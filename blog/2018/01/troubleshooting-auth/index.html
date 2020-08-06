@@ -245,24 +245,24 @@ a SAML configuration with <a href="https://dbus.freedesktop.org/doc/dbus-send.1.
     <p>To aid in the debugging of issues encountered when using SAML the Apache log level
 can be increased to debug on the ManageIQ appliance.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
 ...
 LogLevel debug
 ...
 </code></pre></div>    </div>
 
     <p>Then restart the httpd service</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># systemctl restart httpd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># systemctl restart httpd
 </code></pre></div>    </div>
 
     <p>Then attemp to perform a SAML authentication while tailing the ssl_error.log file.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tail -f /var/www/miq/vmdb/log/apache/ssl_error.log
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tail -f /var/www/miq/vmdb/log/apache/ssl_error.log
 
 </code></pre></div>    </div>
 
     <p>NOTE: Once any issues have been resolved return the log level to warn:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/httpd/conf.d/manageiq-https-application.conf
 ...
 LogLevel warn
 ...
@@ -290,7 +290,7 @@ client running the browser used to access the ManageIQ appliance UI.</p>
     <p>A common issue occures when the date on the SAML identity provider and the ManageIQ appliance are out of sync. This configuration error can result in <a href="/assets/images/blog/auth_saml_bad_request_date_time.png">this <strong><em>Bad Request</em></strong></a> message being displayed.</p>
 
     <p>If the Apache LogLevel is set to debug, as described above, errors similar to the bellow will be found in the <strong><em>/var/www/miq/vmdb/log/apache/ssl_error.log</em></strong> log file:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  SubjectConfirmationData was in the past
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  SubjectConfirmationData was in the past
     and
   SSL Library Error: error:14094416:SSL routines:ssl3_read_bytes:sslv3 alert certificate unknown
 </code></pre></div>    </div>
@@ -368,7 +368,7 @@ see: <a href="#adding-groups-in-manageiq"><strong>Adding Groups In ManageIQ</str
   <li>If configured for <strong><em>Mode: LDAP(S)</em></strong> provide the output from ldapsearch. See: <a href="#confirming-ldap-configuration"><strong>Confirming LDAP Configuration</strong></a></li>
   <li>If configured for <strong><em>Mode: External (httpd)</em></strong>:
     <ul>
-      <li>attach the <code class="highlighter-rouge">/etc/sssd/sssd.conf</code></li>
+      <li>attach the <code class="language-plaintext highlighter-rouge">/etc/sssd/sssd.conf</code></li>
       <li>provide the output from dbus-send. See: <a href="#confirming-sssd-configuration"><strong>Confirming SSSD Configuration</strong></a></li>
       <li>If the dbus-send commands fail to return the required information the SSSD configuration must be diagnosed and fixed before attempting to use ManageIQ.
 See: <a href="#diagnosing-failed-dbus-commands"><strong>Diagnosing Failed dbus Commands</strong></a></li>
@@ -453,9 +453,9 @@ group reported by this command. If not one must be manually added using the Mana
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Step 2. Update <code class="highlighter-rouge">/etc/openldap/ldap.conf</code> to:</p>
+    <p>Step 2. Update <code class="language-plaintext highlighter-rouge">/etc/openldap/ldap.conf</code> to:</p>
 
-    <p>Here is an example of an <code class="highlighter-rouge">ldap.conf</code>. <em>The values will vary depending on how the certs are managed on the LDAP server.</em></p>
+    <p>Here is an example of an <code class="language-plaintext highlighter-rouge">ldap.conf</code>. <em>The values will vary depending on how the certs are managed on the LDAP server.</em></p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">SASL_NOCANON    on
 URI             https://ldaphost.example.com:636
@@ -473,7 +473,7 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>The flags used in the <code class="highlighter-rouge">ldapsearch</code> examples are:</p>
+    <p>The flags used in the <code class="language-plaintext highlighter-rouge">ldapsearch</code> examples are:</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">-x Use simple authentication instead of SASL.
 
@@ -495,32 +495,32 @@ TLS_CACERT      /etc/openldap/certs/cacert.pem
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>Step 4. Run non-secure <code class="highlighter-rouge">ldapsearch</code></p>
+    <p>Step 4. Run non-secure <code class="language-plaintext highlighter-rouge">ldapsearch</code></p>
 
-    <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port with a binddn and password</p>
+    <p>Specify <code class="language-plaintext highlighter-rouge">ldap</code> protocol and port with a binddn and password</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>  <span class="nt">-D</span> <span class="s2">"cn=Manager,dc=example,dc=com"</span> <span class="nt">-w</span> password
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Step 5. Run <code class="highlighter-rouge">ldapsearch</code> using Transport Layer Security <strong><em>TLS</em></strong></p>
+    <p>Step 5. Run <code class="language-plaintext highlighter-rouge">ldapsearch</code> using Transport Layer Security <strong><em>TLS</em></strong></p>
 
-    <p>Specify <code class="highlighter-rouge">ldap</code> protocol and port but do not specify binddn or password will result in a TLS exchange.</p>
+    <p>Specify <code class="language-plaintext highlighter-rouge">ldap</code> protocol and port but do not specify binddn or password will result in a TLS exchange.</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldap://ldaphost.example.com:389  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Step 6. Run <code class="highlighter-rouge">ldapsearch</code> using Secure Sockets Layer <strong><em>SSL</em></strong></p>
+    <p>Step 6. Run <code class="language-plaintext highlighter-rouge">ldapsearch</code> using Secure Sockets Layer <strong><em>SSL</em></strong></p>
 
-    <p>Specify <code class="highlighter-rouge">ldaps</code> protocol and port will result in SSL exchange.</p>
+    <p>Specify <code class="language-plaintext highlighter-rouge">ldaps</code> protocol and port will result in SSL exchange.</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ldapsearch <span class="nt">-x</span> <span class="nt">-H</span> ldaps://ldaphost.example.com:636  <span class="nt">-b</span> <span class="s2">"dc=example,dc=com"</span>
 </code></pre></div>    </div>
 
-    <p>The <code class="highlighter-rouge">-d</code> flag can be used to produce debugging information.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">-d</code> flag can be used to produce debugging information.</p>
 
-    <p>Diagnosing <code class="highlighter-rouge">ldapsearch</code> failures is beyond the scope of this blog.</p>
+    <p>Diagnosing <code class="language-plaintext highlighter-rouge">ldapsearch</code> failures is beyond the scope of this blog.</p>
   </li>
 </ul>
 
@@ -551,7 +551,7 @@ by ManageIQ authentication are correctly provided by the underlying technology.<
 
 <p>The output from the above <strong><em>dbus-send / GetUserAttr</em></strong> command should look similar to the following:</p>
 
-<p><code class="highlighter-rouge">Note:</code> The <strong><em>domainname</em></strong> attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.</p>
+<p><code class="language-plaintext highlighter-rouge">Note:</code> The <strong><em>domainname</em></strong> attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">method return sender=:1.40 -&gt;</span><span class="w"> </span><span class="nv">dest</span><span class="o">=</span>:1.48 <span class="nv">reply_serial</span><span class="o">=</span>2
 <span class="go">   array [
@@ -626,14 +626,14 @@ do not succeed the SSSD configuration can be diagnosed by doing the following:</
   <li>
     <p>Restart the sssd service and confirm it is running.</p>
 
-    <p>If it does not restart there could be errors in the <code class="highlighter-rouge">/etd/sssd/sssd.conf</code> file that need to be addressed.</p>
+    <p>If it does not restart there could be errors in the <code class="language-plaintext highlighter-rouge">/etd/sssd/sssd.conf</code> file that need to be addressed.</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>systemctl restart sssd.service
 <span class="gp">$</span><span class="w"> </span>systemctl status sssd.service
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Note:</code> If updates are done to the  <strong><em>/etc/sssd/sssd.conf</em></strong> file and not immediately seen when authenticating,
+    <p><code class="language-plaintext highlighter-rouge">Note:</code> If updates are done to the  <strong><em>/etc/sssd/sssd.conf</em></strong> file and not immediately seen when authenticating,
  then clean the SSSD cache as follows and restart the service:</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>sss_cache <span class="nt">-E</span>
@@ -657,7 +657,7 @@ do not succeed the SSSD configuration can be diagnosed by doing the following:</
 Retrieving them is a good test to confirm connectivity to the IdP server and it is reporting group membership for
 the specified user. Doing this is analogous to using the <strong><em>dbus-send / GetUserGroups</em></strong> command.</p>
 
-<p><code class="highlighter-rouge">Note:</code> <strong><em>Look up Groups</em></strong> does not work with SAML.</p>
+<p><code class="language-plaintext highlighter-rouge">Note:</code> <strong><em>Look up Groups</em></strong> does not work with SAML.</p>
 
 <p>Look up groups for a specific user with ManageIQ by doing:</p>
 
@@ -692,7 +692,7 @@ Some default groups are provided, others must be manually created.
   <li>
     <p>ldapsearch example using userPrincipalName</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ldapsearch -x -LLL \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ldapsearch -x -LLL \
     -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389 \
     -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com" \
     -D "my-ad\testuser1" \
@@ -703,7 +703,7 @@ Some default groups are provided, others must be manually created.
   <li>
     <p>ldapsearch example using sAMAccountName</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ldapsearch -x -LLL \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ldapsearch -x -LLL \
     -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389  \
     -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com"  \
     -D "my-ad\testuser1" \

@@ -127,7 +127,7 @@
 <p><a href="https://github.com/Fryguy">Jason Frey</a> and <a href="https://github.com/chrisarcand">Chris Arcand</a> have been busy in fixing-the-fix-to-fix-the-fix-land - this time to fix some reload issues and test failures after the recent changes to Vmdb::Settings. First, we <a href="https://github.com/ManageIQ/manageiq/pull/10841">skipped the failures</a>, <a href="https://github.com/ManageIQ/manageiq/pull/10857">actually skipped the failures</a>, then <a href="https://github.com/ManageIQ/manageiq/pull/10886">fixed the failures</a> and the reload error in devel mode. Developers everywhere, rejoice!</p>
 
 <h3 id="check-the-request-format-before-setting-the-redirection-after-the-login-page"><a href="https://github.com/ManageIQ/manageiq/pull/10702">Check the request format before setting the redirection after the login page</a></h3>
-<p><a href="https://github.com/yaacov">Yaacov Zamir</a> has done a small but important fix to prevent an annoying routing error, when the user gets redirected to the login screen from a POST action. 1 error less, <code class="highlighter-rouge">NaN</code> to go!</p>
+<p><a href="https://github.com/yaacov">Yaacov Zamir</a> has done a small but important fix to prevent an annoying routing error, when the user gets redirected to the login screen from a POST action. 1 error less, <code class="language-plaintext highlighter-rouge">NaN</code> to go!</p>
 
 <h3 id="force-jasmine-core-241-instead-of-25"><a href="https://github.com/ManageIQ/manageiq/pull/10898">Force jasmine-core 2.4.1 instead of 2.5</a></h3>
 <p>Last week <a href="https://github.com/jasmine/jasmine">jasmine 2.5</a> also came out, making all our javascript tests fail because of an overly optimistic version constraint. Fixed shortly after by <a href="https://github.com/himdel">yours truly</a>, <em>cough</em> shameless plug <em>cough</em>.</p>
@@ -153,13 +153,13 @@ Now, we have a scope for non-archived, non-orphaned VMs.</p>
 <h2 id="deleted">Deleted</h2>
 
 <h3 id="remove-process_tasks-methods-from-provider-classes"><a href="https://github.com/ManageIQ/manageiq/pull/10985">Remove process_tasks methods from provider classes</a></h3>
-<p><a href="https://github.com/carbonin">Nick Carboni</a> has found some more dead code, this time <code class="highlighter-rouge">process_tasks</code> in a couple of provider classes .. aaand it’s gone, never to be seen again :).</p>
+<p><a href="https://github.com/carbonin">Nick Carboni</a> has found some more dead code, this time <code class="language-plaintext highlighter-rouge">process_tasks</code> in a couple of provider classes .. aaand it’s gone, never to be seen again :).</p>
 
 <h3 id="remove-old-admintable-class-table-styling"><a href="https://github.com/ManageIQ/manageiq/pull/10921">Remove old “admintable” class table styling</a></h3>
 <p><a href="https://github.com/epwinchell">Eric Winchell</a> has been working on multiple old styling cleanups - <a href="https://github.com/ManageIQ/manageiq/pull/10921">admintable class</a>, <a href="https://github.com/ManageIQ/manageiq/pull/10881">tagstable class</a>, <a href="https://github.com/ManageIQ/manageiq/pull/10878">form buttons</a> and <a href="https://github.com/ManageIQ/manageiq/pull/10876">checkboxes</a>. Good riddance.</p>
 
 <h3 id="removed-unused-report-tree-partials"><a href="https://github.com/ManageIQ/manageiq/pull/10790">Removed unused report tree partials</a></h3>
-<p><a href="https://github.com/skateman">David Halász</a> has also found a couple of unused tree partials during his bootstrap tree work - and he promptly dispatched them to <code class="highlighter-rouge">/dev/null</code>.</p>
+<p><a href="https://github.com/skateman">David Halász</a> has also found a couple of unused tree partials during his bootstrap tree work - and he promptly dispatched them to <code class="language-plaintext highlighter-rouge">/dev/null</code>.</p>
 
 <h2 id="wrapping-up">Wrapping up</h2>
 

@@ -105,8 +105,8 @@
 <p>So, this has been <a href="http://blog.headius.com/2008/02/rubys-threadraise-threadkill-timeoutrb.html">documented</a>
 <a href="http://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/">many</a> <a href="https://jvns.ca/blog/2015/11/27/why-rubys-timeout-is-dangerous-and-thread-dot-raise-is-terrifying/">times</a> before.</p>
 
-<p>Even though we all know that ruby’s <code class="highlighter-rouge">Timeout.timeout</code> is not threadsafe and
-<code class="highlighter-rouge">Thread#raise</code> can and will interrupt your ensure/rescue code on a Friday at 5 pm,
+<p>Even though we all know that ruby’s <code class="language-plaintext highlighter-rouge">Timeout.timeout</code> is not threadsafe and
+<code class="language-plaintext highlighter-rouge">Thread#raise</code> can and will interrupt your ensure/rescue code on a Friday at 5 pm,
 it’s still around in the libraries we use.</p>
 
 <p>Note, I even filtered out some of the results below:</p>
@@ -148,9 +148,9 @@ webmock-2.3.2/spec/support/network_connection.rb:                               
 <p>Those are only gems used by ManageIQ.  I’m sure there are many other gems used by other
 projects that still use Timeout.</p>
 
-<p>Wait a second.  We didn’t actually look at the contents of the <code class="highlighter-rouge">Timeout.timeout</code> block.
+<p>Wait a second.  We didn’t actually look at the contents of the <code class="language-plaintext highlighter-rouge">Timeout.timeout</code> block.
 That’s the point, it doesn’t matter.  If you hit this code at all, there’s a small
-chance it can <code class="highlighter-rouge">Thread#raise</code> at a very inopportune time in code that will never
+chance it can <code class="language-plaintext highlighter-rouge">Thread#raise</code> at a very inopportune time in code that will never
 expect it!</p>
 
 <p>You might be thinking, “that’s fine, this why I’m wrapping my code with a begin and a rescue or ensure
@@ -159,12 +159,12 @@ code.  But don’t underestimate Murphy’s law.  What if the exception is raise
 preventing it from completing?  To top it off, it will find the weirdest possible place to raise and at the most
 unfortunate time, such as Friday at 5pm.  I’ll <a href="http://blog.headius.com/2008/02/rubys-threadraise-threadkill-timeoutrb.html">repeat</a>
 the <a href="http://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/">links</a> listed <a href="https://jvns.ca/blog/2015/11/27/why-rubys-timeout-is-dangerous-and-thread-dot-raise-is-terrifying/">above</a> for convenience
-because this is exactly what they show: <code class="highlighter-rouge">Thread#raise</code> can raise while in your ensure/rescue cleanup code.</p>
+because this is exactly what they show: <code class="language-plaintext highlighter-rouge">Thread#raise</code> can raise while in your ensure/rescue cleanup code.</p>
 
 <h2 id="fun-times">Fun times</h2>
 
 <p>A “fun” bug recently reminded <a href="https://github.com/cben">Beni</a> and I of a “new” and totally awful
-way <code class="highlighter-rouge">Timeout.timeout</code> can ruin your day.</p>
+way <code class="language-plaintext highlighter-rouge">Timeout.timeout</code> can ruin your day.</p>
 
 <p>Ironically and hilariously, Beni stumbled upon this when writing a <a href="https://github.com/ManageIQ/manageiq-gems-pending/pull/263">test to workaround the “Timeout
 can raise during your ensure code”</a>. Ok, so
@@ -174,8 +174,8 @@ I find it funny.  I’m sure Beni didn’t.</p>
 run in isolation.</p>
 
 <p>After some serious spelunking via rspec bisect and manually minimizing the reproducer by commenting out parts of
-the remaining tests, he found the hang would occur when another test created a <code class="highlighter-rouge">Tempfile</code>.  As soon as he put
-a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workaround test, the test would hang “sometimes”.</p>
+the remaining tests, he found the hang would occur when another test created a <code class="language-plaintext highlighter-rouge">Tempfile</code>.  As soon as he put
+a <code class="language-plaintext highlighter-rouge">Tempfile.new('x')</code> in the timeout workaround test, the test would hang “sometimes”.</p>
 
 <h2 id="thats-it-im-done">That’s it, I’m done</h2>
 
@@ -204,9 +204,9 @@ a <code class="highlighter-rouge">Tempfile.new('x')</code> in the timeout workar
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Note: Don’t ask about the <code class="highlighter-rouge">stuff</code> method.  Without it, I couldn’t get the test to hang sporadically.</p>
+<p>Note: Don’t ask about the <code class="language-plaintext highlighter-rouge">stuff</code> method.  Without it, I couldn’t get the test to hang sporadically.</p>
 
-<p>We ran it with ruby debug <code class="highlighter-rouge">RUBYOPT=-d</code>.</p>
+<p>We ran it with ruby debug <code class="language-plaintext highlighter-rouge">RUBYOPT=-d</code>.</p>
 
 <p>When it worked, it looked like this:</p>
 
@@ -221,19 +221,19 @@ done
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57351-jfeu6l...
 </span></code></pre></div></div>
 
-<p>If you’re still reading, you might have noticed that <code class="highlighter-rouge">done</code> is missing when the
-test hangs. The <code class="highlighter-rouge">done</code> happens after <code class="highlighter-rouge">Tempfile</code> wants to <a href="https://github.com/ruby/ruby/blob/820605ba3c10b9f4dafc4e5d6e09765b8b31cbea/lib/tempfile.rb#L255-L257">close and unlink the file here</a>.</p>
+<p>If you’re still reading, you might have noticed that <code class="language-plaintext highlighter-rouge">done</code> is missing when the
+test hangs. The <code class="language-plaintext highlighter-rouge">done</code> happens after <code class="language-plaintext highlighter-rouge">Tempfile</code> wants to <a href="https://github.com/ruby/ruby/blob/820605ba3c10b9f4dafc4e5d6e09765b8b31cbea/lib/tempfile.rb#L255-L257">close and unlink the file here</a>.</p>
 
-<p>Therefore, when it hangs, the <code class="highlighter-rouge">Tempfile</code> <code class="highlighter-rouge">finalizer</code> never completes.</p>
+<p>Therefore, when it hangs, the <code class="language-plaintext highlighter-rouge">Tempfile</code> <code class="language-plaintext highlighter-rouge">finalizer</code> never completes.</p>
 
-<p>tldr; <code class="highlighter-rouge">Timeout.timeout</code> can <code class="highlighter-rouge">Thread#raise</code> while in a <code class="highlighter-rouge">finalizer</code> for another object!  AWESOME.</p>
+<p>tldr; <code class="language-plaintext highlighter-rouge">Timeout.timeout</code> can <code class="language-plaintext highlighter-rouge">Thread#raise</code> while in a <code class="language-plaintext highlighter-rouge">finalizer</code> for another object!  AWESOME.</p>
 
 <h2 id="the-final-straw">The final straw</h2>
 
 <p>Wait, what’s a finalizer?</p>
 
 <p>There is no guarantee when the ruby garbage collector will garbage collect an
-object. <code class="highlighter-rouge">ObjectSpace.define_finalizer</code> provides a place for you to tell ruby to “run
+object. <code class="language-plaintext highlighter-rouge">ObjectSpace.define_finalizer</code> provides a place for you to tell ruby to “run
 this code when my object is to be garbage collected.” Finalizers are generally used
 to cleanup things so we don’t cause memory leaks.  Interrupting them is probably
 not something we want to troubleshoot at 5pm on a Friday.</p>
@@ -261,16 +261,16 @@ winrm-2.2.3/lib/winrm/shells/base.rb:                                  ObjectSpa
 etc. are pretty common.  Again, this is only in the gems that ManageIQ uses.  This
 list will certainly grow if you searched dependencies of other applications.</p>
 
-<p>The ugly part of this story is that the finalizer and the <code class="highlighter-rouge">Thread#raise</code> are both async operations so they can happen
+<p>The ugly part of this story is that the finalizer and the <code class="language-plaintext highlighter-rouge">Thread#raise</code> are both async operations so they can happen
 at nearly any time.  We caught this in a test, but this could happen in development or even production and is really difficult
 to reason about because the symptoms could be nearly anything.</p>
 
 <h2 id="all-in-good-time">All in good time</h2>
 
-<p>We opened a ruby bug that Tempfile’s finalizer can be interrupted by Timeout’s <code class="highlighter-rouge">Thread#raise</code>.
+<p>We opened a ruby bug that Tempfile’s finalizer can be interrupted by Timeout’s <code class="language-plaintext highlighter-rouge">Thread#raise</code>.
 <a href="https://bugs.ruby-lang.org/issues/13876#note-1">It was found that Timeout can raise in any finalizer, not just Tempfile</a>.</p>
 
-<p>This is a reminder to rid your codebase and dependencies of <code class="highlighter-rouge">Timeout</code> and perhaps <code class="highlighter-rouge">Timeout</code>, which still lives in Ruby’s
+<p>This is a reminder to rid your codebase and dependencies of <code class="language-plaintext highlighter-rouge">Timeout</code> and perhaps <code class="language-plaintext highlighter-rouge">Timeout</code>, which still lives in Ruby’s
 standard library, will be fixed or replaced.</p>
 
 <p>Finally, there’s a <a href="https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts">guide on how to configure safe timeouts in various libraries</a>.  Please try it out and contribute

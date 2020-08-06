@@ -471,9 +471,9 @@
         <h3 id="listnavs">Listnavs</h3>
 
 <p>Listnavs are the left parts of the non-explorer screens. They typically contain information about entities and their relationships organized into accordions.
-Listnavs are defined under <code class="highlighter-rouge">app/views/layouts/listnav/</code>.</p>
+Listnavs are defined under <code class="language-plaintext highlighter-rouge">app/views/layouts/listnav/</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- if @record.try(:name)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- if @record.try(:name)
   #accordion.panel-group
     = miq_accordion_panel(truncate(@record.name, :length =&gt; truncate_length), true, "icon") do
       = render_quadicon(@record, :mode =&gt; :icon, :size =&gt; 72, :typ =&gt; :listnav)
@@ -491,7 +491,7 @@ Listnavs are defined under <code class="highlighter-rouge">app/views/layouts/lis
         = single_relationship_link(@record, :ems_container, "ext_management_system")
 </code></pre></div></div>
 
-<p>Notice the use of helper methods <code class="highlighter-rouge">miq_accordion_panel</code>, <code class="highlighter-rouge">single_relationship_link</code> and more.</p>
+<p>Notice the use of helper methods <code class="language-plaintext highlighter-rouge">miq_accordion_panel</code>, <code class="language-plaintext highlighter-rouge">single_relationship_link</code> and more.</p>
 
       </div>
     </article>

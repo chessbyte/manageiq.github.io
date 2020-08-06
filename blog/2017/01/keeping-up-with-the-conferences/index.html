@@ -112,7 +112,7 @@
 
 <p><a href="https://github.com/epwinchell">Eric Winchell</a> is responsible for creating more and more vector graphics in the UI. His plan is to use fonticons where we don’t need more than one color and SVG files where colors are necessary. His <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/249">last merged PR</a> gets rid of references to PNG files in trees related to Automation and Policies. Hopefully when we are fully converted across the whole UI, we can get rid of hundreds of unused PNG files.</p>
 
-<p>Ansible is great and we would like to have better integration with our automation. <a href="https://github.com/jameswnl">James</a> is one of the people working on this very hard. By <a href="https://github.com/ManageIQ/manageiq/pull/13630">migrating</a> the <code class="highlighter-rouge">ConfigurationManager</code> of Ansible Tower to the new <code class="highlighter-rouge">AutomationManager</code> we are one step closer in achieving this goal.</p>
+<p>Ansible is great and we would like to have better integration with our automation. <a href="https://github.com/jameswnl">James</a> is one of the people working on this very hard. By <a href="https://github.com/ManageIQ/manageiq/pull/13630">migrating</a> the <code class="language-plaintext highlighter-rouge">ConfigurationManager</code> of Ansible Tower to the new <code class="language-plaintext highlighter-rouge">AutomationManager</code> we are one step closer in achieving this goal.</p>
 
 <h2 id="fixed">Fixed</h2>
 
@@ -122,7 +122,7 @@
 
 <h2 id="new">New</h2>
 
-<p>Collecting metrics is useful, but storing them in an SQL database is not always <em>The Right Way</em>™. <a href="https://github.com/Fryguy">Jason</a> introduced a new model called <a href="https://github.com/ManageIQ/manageiq/pull/13436">ActiveMetrics</a> that is similar to <code class="highlighter-rouge">ActiveRecord</code> but it has adapters to databases tuned for collecting metrics in a high frequency.</p>
+<p>Collecting metrics is useful, but storing them in an SQL database is not always <em>The Right Way</em>™. <a href="https://github.com/Fryguy">Jason</a> introduced a new model called <a href="https://github.com/ManageIQ/manageiq/pull/13436">ActiveMetrics</a> that is similar to <code class="language-plaintext highlighter-rouge">ActiveRecord</code> but it has adapters to databases tuned for collecting metrics in a high frequency.</p>
 
 <p>We introduced the new dashboard type summary screens a few months ago. These are giving you a better overview of a given entity by showing <strong>more charts</strong> and less tables. Thanks to <a href="https://github.com/ZitaNemeckova">Zita</a> now you have a <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/141">configuration option in the UI</a> to set the dashboards as the default view across the UI.</p>
 
@@ -130,7 +130,7 @@
 
 <p><a href="https://github.com/bdunne">Brandon</a> found out that some constants were not used anywhere. These were connected with Automation at some point, but no longer used, so it was safe to <a href="https://github.com/ManageIQ/manageiq/pull/13665">get rid of them</a>.</p>
 
-<p><a href="https://github.com/mzazrivec">Milan</a> is making our internationalization support better and better, which means that we can delete more legacy code used to maintain compatibility. A good example of this is the use of <code class="highlighter-rouge">PostponedTranslation</code> which is no longer required in <code class="highlighter-rouge">UiConstants</code> so <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/241">it has been deleted</a>.</p>
+<p><a href="https://github.com/mzazrivec">Milan</a> is making our internationalization support better and better, which means that we can delete more legacy code used to maintain compatibility. A good example of this is the use of <code class="language-plaintext highlighter-rouge">PostponedTranslation</code> which is no longer required in <code class="language-plaintext highlighter-rouge">UiConstants</code> so <a href="https://github.com/ManageIQ/manageiq-ui-classic/pull/241">it has been deleted</a>.</p>
 
 <h2 id="wrapping-up">Wrapping up</h2>
 <p>This was a quick overview of what have we done last week, but feel free to check out the complete list for each repository. If you want to meet us in person, we will be attending <a href="https://fosdem.org/2017/">FOSDEM</a> this weekend in Brussels, Belgium. Search for the people in ManageIQ T-shirts!</p>

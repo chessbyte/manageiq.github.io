@@ -122,7 +122,7 @@ in on the fun, be sure to checkout the
 <p>Along with <a href="https://github.com/ManageIQ/manageiq-appliance-build/pull/165">ManageIQ/manageiq-appliance-build#165</a>
 and <a href="https://github.com/ManageIQ/manageiq-appliance/pull/91">ManageIQ/manageiq-appliance#91</a>,
 this PR changes the mountpoint location of the PostgreSQL data disk. The
-<code class="highlighter-rouge">pg_upgrade</code> tool from PostgreSQL has a really cool feature where it will use
+<code class="language-plaintext highlighter-rouge">pg_upgrade</code> tool from PostgreSQL has a really cool feature where it will use
 hard links for files that are the same on both sides of the upgrade, which can
 save a significant amount of space. However, the current mountpoint is too deep
 and makes taking advantage of that feature difficult. So, this PR moves us in a

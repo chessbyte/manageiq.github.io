@@ -472,7 +472,7 @@
 <h2 id="infrastructure-setup">Infrastructure setup:</h2>
 <ul>
   <li>Configure iPXE/sources/windows directory to be accessible via SAMBA (Create directories if they don’t already exist)
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [sources]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [sources]
     path = /srv/httpboot/ipxe/sources
     guest ok = yes
     writable = yes
@@ -481,7 +481,7 @@
 </code></pre></div>    </div>
   </li>
   <li>Configure iPXE/sysprep directory to be accessible via SAMBA (Create directories if they don’t already exist)
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [sysprep]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [sysprep]
     path = /srv/httpboot/ipxe/sysprep
     guest ok = yes
     writable = no
@@ -507,9 +507,9 @@
       <li>Create iPXE menu item for WinPE
         <ul>
           <li>Menu section:
-<code class="highlighter-rouge">item winpex64   WindowsPE_amd64</code></li>
+<code class="language-plaintext highlighter-rouge">item winpex64   WindowsPE_amd64</code></li>
           <li>Label:
-            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    :winpex64
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    :winpex64
     initrd http://server/ipxe/sources/windows/winpe_amd64.iso
     kernel http://server/ipxe/sources/memdisk iso raw
     boot
@@ -527,12 +527,12 @@
   <li>Build Windows_PE environment and create ISO</li>
   <li>Generate WinPE directory structure
     * Open Start / Windows AIK / Deployment Tools Command Prompt
-    <code class="highlighter-rouge">
+    <code class="language-plaintext highlighter-rouge">
     copycmd amd64 c:\winpe_amd64
    </code></li>
   <li>Copy additional tools and customize our working directory
     * Always enter WinPE (don’t prompt for key press)
-    <code class="highlighter-rouge">
+    <code class="language-plaintext highlighter-rouge">
     del c:\winpe_amd64\ISO\boot\bootfix.bin
    </code></li>
   <li>Edit the Boot Image
@@ -541,7 +541,7 @@
     dism /mount-wim /wimfile:c:\winpe_amd64\winpe.wim /index:1 /mountdir:c:\winpe_amd64\mount</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Modify startnet.cmd to mount shares and call scripts
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Modify startnet.cmd to mount shares and call scripts
 C:\winpe_amd64\mount\Windows\System32&gt;notepad startnet.cmd
 
 # Add Driver Files
@@ -573,7 +573,7 @@ On your technician computer: click Start, All Programs, Windows AIK,
 right-click Deployment Tools Command Prompt, and Run as administrator</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Cope WinPE files - This creates the winPE directory and copies necessary files to it
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Cope WinPE files - This creates the winPE directory and copies necessary files to it
 copype.cmd x86 c:\winpe_amd64
 
 # Copy the out of the box winPE WIM to the ISO folder
@@ -595,36 +595,36 @@ dism /image:c:\winpe_amd64\mount /get-packages
 
 <ul>
   <li>notepad C:\winpe_amd64\mount\Windows\System32\startnet.cmd
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wpeinit
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wpeinit
 net use s: \\10.10.1.7\ipxe
 s:\sources\microsoft\evm.bat
 </code></pre></div>    </div>
   </li>
   <li>To Commit Changes to the WIM
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dism /Unmount-Wim /MountDir:C:\winpe_amd64\mount /Commit
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dism /Unmount-Wim /MountDir:C:\winpe_amd64\mount /Commit
 </code></pre></div>    </div>
   </li>
   <li>To discard change made to the WIM
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dism /Unmount-Wim /MountDir:C:\winpe_amd64\mount /discard
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dism /Unmount-Wim /MountDir:C:\winpe_amd64\mount /discard
 </code></pre></div>    </div>
   </li>
   <li>To Create the ISO image
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>oscdimg -n -bc:\winpe_amd64\etfsboot.com c:\winpe_amd64\ISO c:\winpe_amd64\winpe_amd64.iso
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>oscdimg -n -bc:\winpe_amd64\etfsboot.com c:\winpe_amd64\ISO c:\winpe_amd64\winpe_amd64.iso
 </code></pre></div>    </div>
   </li>
   <li>Copy iso image to
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>copy c:\winpe_amd64\winpe_amd64.iso  &lt;PXE Server&gt;/srv/boot/ipxe/sources/microsoft
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>copy c:\winpe_amd64\winpe_amd64.iso  &lt;PXE Server&gt;/srv/boot/ipxe/sources/microsoft
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Refresh PXE Server in EVM</p>
   </li>
   <li>To rename a WIM files information (Useful if you need to rename the image to match a template name)
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>imagex /info win2k8.wim 1 "win2008r2" "Windows 2008 R2 x64"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>imagex /info win2k8.wim 1 "win2008r2" "Windows 2008 R2 x64"
 </code></pre></div>    </div>
   </li>
   <li>To cleanup stale mounts
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dism /cleanup-wim
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dism /cleanup-wim
 </code></pre></div>    </div>
   </li>
 </ul>

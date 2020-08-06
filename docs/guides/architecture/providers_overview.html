@@ -476,7 +476,7 @@
 
 <p>Management systems are at the center of ManageIQ’s Provider Integration story.</p>
 
-<p><code class="highlighter-rouge">Manager == ExtManagementSystem</code></p>
+<p><code class="language-plaintext highlighter-rouge">Manager == ExtManagementSystem</code></p>
 
 <p>In <a href="https://github.com/ManageIQ/manageiq">ManageIQ</a>, managers are the <em>external management systems</em>.  This description has changed slightly over time.  Originally, providers were external management systems.  But, this has rapidly changed as providers became more complex (like OpenStack) and less clearly defined as a manager of a single set of resources.  As providers began managing more than one type of main resource, it became clear that providers could be broken down into separate managers.</p>
 
@@ -609,9 +609,9 @@
   <li>Executable: <a href="https://github.com/ManageIQ/manageiq/blob/9456ba68a455a5a0501c1e9e0aef88c78dc83338/lib/workers/bin/worker.rb">lib/workers/bin/worker.rb</a></li>
 </ol>
 
-<p>Workers are all separate processes started and managed by the <a href="enterprise#appliance">main server</a>.  Worker processes are tracked in the <code class="highlighter-rouge">miq_workers</code> table as instances of the <code class="highlighter-rouge">MiqWorker</code> model object.  These records are used by the main server to track the actual worker processes.</p>
+<p>Workers are all separate processes started and managed by the <a href="enterprise#appliance">main server</a>.  Worker processes are tracked in the <code class="language-plaintext highlighter-rouge">miq_workers</code> table as instances of the <code class="language-plaintext highlighter-rouge">MiqWorker</code> model object.  These records are used by the main server to track the actual worker processes.</p>
 
-<p>An instance of <code class="highlighter-rouge">WorkerBase</code> is where the actual work happens.  Each <code class="highlighter-rouge">WorkerBase</code> instance can identify the <code class="highlighter-rouge">MiqWorker</code> record and the <code class="highlighter-rouge">MiqWorker</code> instance can identify its corresponding <code class="highlighter-rouge">WorkerBase</code> class.</p>
+<p>An instance of <code class="language-plaintext highlighter-rouge">WorkerBase</code> is where the actual work happens.  Each <code class="language-plaintext highlighter-rouge">WorkerBase</code> instance can identify the <code class="language-plaintext highlighter-rouge">MiqWorker</code> record and the <code class="language-plaintext highlighter-rouge">MiqWorker</code> instance can identify its corresponding <code class="language-plaintext highlighter-rouge">WorkerBase</code> class.</p>
 
 <p>Each worker has subclasses that implement specific worker functionality, such as Refresh Workers, Event Catcher Workers, and Metrics Collector Workers.</p>
 
@@ -645,14 +645,14 @@
   <li>Refreshes are scheduled to occur once every 24 hours, for all providers, by default</li>
 </ol>
 
-<p>When a refresh request is received by a Refresh Worker, the worker uses the <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/ems_refresh.rb"><code class="highlighter-rouge">EmsRefresh</code></a> module to perform the actual refresh.  Each manager implements a refresh process.</p>
+<p>When a refresh request is received by a Refresh Worker, the worker uses the <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/ems_refresh.rb"><code class="language-plaintext highlighter-rouge">EmsRefresh</code></a> module to perform the actual refresh.  Each manager implements a refresh process.</p>
 
 <p>Refresh Workers are created for each registered manager.  In other words, if you have registered two Amazon Cloud managers, there will be two unique Amazon Refresh Worker processes running.</p>
 
 <p>Amazon Example:</p>
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/refresh_worker.rb"><code class="highlighter-rouge">Amazon::CloudManager::RefreshWorker</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/refresh_worker/runner.rb"><code class="highlighter-rouge">Amazon::CloudManager::RefreshWorker::Runner</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/refresh_worker.rb"><code class="language-plaintext highlighter-rouge">Amazon::CloudManager::RefreshWorker</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/refresh_worker/runner.rb"><code class="language-plaintext highlighter-rouge">Amazon::CloudManager::RefreshWorker::Runner</code></a></li>
 </ul>
 
 <h4 id="event-workers">Event Workers</h4>
@@ -664,25 +664,25 @@
 <p>TODO</p>
 
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/event_catcher.rb"><code class="highlighter-rouge">BaseManager::EventCatcher</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/event_catcher/runner.rb"><code class="highlighter-rouge">BaseManager::EventCatcher::Runner</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/event_catcher.rb"><code class="language-plaintext highlighter-rouge">BaseManager::EventCatcher</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/event_catcher/runner.rb"><code class="language-plaintext highlighter-rouge">BaseManager::EventCatcher::Runner</code></a></li>
 </ul>
 
 <p>Amazon Example:</p>
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/event_catcher.rb"><code class="highlighter-rouge">Amazon::CloudManager::EventCatcher</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/event_catcher/runner.rb"><code class="highlighter-rouge">Amazon::CloudManager::EventCatcher::Runner</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/event_catcher.rb"><code class="language-plaintext highlighter-rouge">Amazon::CloudManager::EventCatcher</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/event_catcher/runner.rb"><code class="language-plaintext highlighter-rouge">Amazon::CloudManager::EventCatcher::Runner</code></a></li>
 </ul>
 
 <h5 id="event-handler">Event Handler</h5>
 
-<p>The first thing to notice about the <code class="highlighter-rouge">EventHandler</code> is that its parts are still located in the legacy locations with legacy names.</p>
+<p>The first thing to notice about the <code class="language-plaintext highlighter-rouge">EventHandler</code> is that its parts are still located in the legacy locations with legacy names.</p>
 
-<p>The second thing to notice about the <code class="highlighter-rouge">EventHandler</code> is that there is no manager-specific implementation.  All events are handled by the same handler.</p>
+<p>The second thing to notice about the <code class="language-plaintext highlighter-rouge">EventHandler</code> is that there is no manager-specific implementation.  All events are handled by the same handler.</p>
 
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/miq_event_handler.rb"><code class="highlighter-rouge">MiqEventHandler</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/lib/workers/event_handler.rb"><code class="highlighter-rouge">EventHandler</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/miq_event_handler.rb"><code class="language-plaintext highlighter-rouge">MiqEventHandler</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/lib/workers/event_handler.rb"><code class="language-plaintext highlighter-rouge">EventHandler</code></a></li>
 </ul>
 
 <h6 id="event-mappings">Event Mappings</h6>
@@ -698,23 +698,23 @@
 <p>TODO</p>
 
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/metrics_collector_worker.rb"><code class="highlighter-rouge">BaseManager::MetricsCollectorWorker</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/metrics_collector_worker/runner.rb"><code class="highlighter-rouge">BaseManager::MetricsCollectorWorker::Runner</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/metrics_collector_worker.rb"><code class="language-plaintext highlighter-rouge">BaseManager::MetricsCollectorWorker</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/base_manager/metrics_collector_worker/runner.rb"><code class="language-plaintext highlighter-rouge">BaseManager::MetricsCollectorWorker::Runner</code></a></li>
 </ul>
 
 <p>Amazon Example:</p>
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/metrics_collector_worker.rb"><code class="highlighter-rouge">Amazon::CloudManager::MetricsCollectorWorker</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/metrics_collector_worker/runner.rb"><code class="highlighter-rouge">Amazon::CloudManager::MetricsCollectorWorker::Runner</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/metrics_collector_worker.rb"><code class="language-plaintext highlighter-rouge">Amazon::CloudManager::MetricsCollectorWorker</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/manageiq/providers/amazon/cloud_manager/metrics_collector_worker/runner.rb"><code class="language-plaintext highlighter-rouge">Amazon::CloudManager::MetricsCollectorWorker::Runner</code></a></li>
 </ul>
 
 <h5 id="metrics-processor">Metrics Processor</h5>
 
-<p>The <code class="highlighter-rouge">MetricsProcessor</code> worker is similar to the <code class="highlighter-rouge">EventHandler</code>.  Its parts are still in the legacy locations, and there is no manager-specific implementation.</p>
+<p>The <code class="language-plaintext highlighter-rouge">MetricsProcessor</code> worker is similar to the <code class="language-plaintext highlighter-rouge">EventHandler</code>.  Its parts are still in the legacy locations, and there is no manager-specific implementation.</p>
 
 <ul>
-  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/miq_ems_metrics_processor_worker.rb"><code class="highlighter-rouge">MiqEmsMetricsProcessorWorker</code></a></li>
-  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/lib/workers/ems_metrics_processor_worker.rb"><code class="highlighter-rouge">EmsMetricsProcessorWorker</code></a></li>
+  <li>Model Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/app/models/miq_ems_metrics_processor_worker.rb"><code class="language-plaintext highlighter-rouge">MiqEmsMetricsProcessorWorker</code></a></li>
+  <li>Worker Class: <a href="https://github.com/ManageIQ/manageiq/blob/fd90bedc57ee51c77bc8fbb6dd2ea850191a8d4f/lib/workers/ems_metrics_processor_worker.rb"><code class="language-plaintext highlighter-rouge">EmsMetricsProcessorWorker</code></a></li>
 </ul>
 
       </div>

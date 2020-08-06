@@ -476,9 +476,9 @@ Quadicons are present, but not limited to Explorer trees, GTLs and Listnavs.</p>
 <p>Example: 4 VM quadicons:
 <img src="../images/quadicon.png" alt="Textual Summary Example" /></p>
 
-<p>The definition of quadicons is stored as methods in model decorators under the <code class="highlighter-rouge">app/decorators</code> folder.
+<p>The definition of quadicons is stored as methods in model decorators under the <code class="language-plaintext highlighter-rouge">app/decorators</code> folder.
 The format allows you to specify either a single quadrant large icon, or four small ones (see the examples below).
-Ideally each new model that gets displayed in a GTL should have a <code class="highlighter-rouge">quadicon</code> method defined.</p>
+Ideally each new model that gets displayed in a GTL should have a <code class="language-plaintext highlighter-rouge">quadicon</code> method defined.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quadicon</span> <span class="c1"># icon with four quadrants</span>
   <span class="p">{</span>
@@ -511,9 +511,9 @@ Ideally each new model that gets displayed in a GTL should have a <code class="h
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>It’s not recommended to use too much inheritance between decorators, because there might be side effects and we would like to have everything as explicit as possible. Any common behavior that affects all of the quadicons should be moved into a static method in <code class="highlighter-rouge">app/helpers/quadicon_helper.rb</code>, see <code class="highlighter-rouge">QuadiconHelper.machine_state</code> as an example.</p>
+<p>It’s not recommended to use too much inheritance between decorators, because there might be side effects and we would like to have everything as explicit as possible. Any common behavior that affects all of the quadicons should be moved into a static method in <code class="language-plaintext highlighter-rouge">app/helpers/quadicon_helper.rb</code>, see <code class="language-plaintext highlighter-rouge">QuadiconHelper.machine_state</code> as an example.</p>
 
-<p>Old quadicon implementation lives in (obsolete) <a href="https://github.com/ManageIQ/ui-components">ui-components repository</a>. The new one lives in <code class="highlighter-rouge">Quadicon</code> component under the <a href="https://github.com/ManageIQ/react-ui-components/tree/master/src/quadicon">react-ui-components</a>.</p>
+<p>Old quadicon implementation lives in (obsolete) <a href="https://github.com/ManageIQ/ui-components">ui-components repository</a>. The new one lives in <code class="language-plaintext highlighter-rouge">Quadicon</code> component under the <a href="https://github.com/ManageIQ/react-ui-components/tree/master/src/quadicon">react-ui-components</a>.</p>
 
       </div>
     </article>

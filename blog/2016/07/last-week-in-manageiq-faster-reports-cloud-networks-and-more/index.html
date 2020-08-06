@@ -119,15 +119,15 @@ want to get involved.</p>
 
 <h3 id="speed-up-miqreport-by-using-join-instead-of-include"><a href="https://github.com/ManageIQ/manageiq/pull/9930">Speed up MiqReport by using join instead of include</a></h3>
 
-<p>An include was fetching all the <code class="highlighter-rouge">MiqReportResult</code> records in order to
-filter the <code class="highlighter-rouge">MiqReport</code> objects on the <code class="highlighter-rouge">/report/explorer</code> page. Using a
-<code class="highlighter-rouge">join</code>/<code class="highlighter-rouge">distinct</code> instead greatly reduced the number of rows sent back
+<p>An include was fetching all the <code class="language-plaintext highlighter-rouge">MiqReportResult</code> records in order to
+filter the <code class="language-plaintext highlighter-rouge">MiqReport</code> objects on the <code class="language-plaintext highlighter-rouge">/report/explorer</code> page. Using a
+<code class="language-plaintext highlighter-rouge">join</code>/<code class="language-plaintext highlighter-rouge">distinct</code> instead greatly reduced the number of rows sent back
 from the database, resulting in faster times and a much better user
 experience.</p>
 
 <h3 id="improve-performance-on-networkmanager-list-pages"><a href="https://github.com/ManageIQ/manageiq/pull/9824">Improve performance on NetworkManager list pages</a></h3>
 
-<p>This PR was able to improve the performance of <code class="highlighter-rouge">NetworkManager</code> list
+<p>This PR was able to improve the performance of <code class="language-plaintext highlighter-rouge">NetworkManager</code> list
 pages by removing a number of N+1 queries.</p>
 
 <h2 id="fixed">Fixed</h2>
@@ -137,28 +137,28 @@ pages by removing a number of N+1 queries.</p>
 <p>With the introduction of Puma as the default web server, concurrent
 requests were starting to cause issues with starting and stopping
 services in Automate. To fix this a mutex was used in the the
-<code class="highlighter-rouge">MiqAeEngine</code> deliver code, preventing more than one delivery from
+<code class="language-plaintext highlighter-rouge">MiqAeEngine</code> deliver code, preventing more than one delivery from
 running at a time.</p>
 
 <h3 id="better-support-for-acts_as_ar_query-collection-methods"><a href="https://github.com/ManageIQ/manageiq/pull/9901">Better support for acts_as_ar_query collection methods</a></h3>
 
 <p>This PR, along with the work done in
 <a href="https://github.com/ManageIQ/manageiq/pull/9896">#9896</a>, expands
-support for <code class="highlighter-rouge">acts_as_ar_query</code> objects to respond properly to
-<code class="highlighter-rouge">#empty?</code> and <code class="highlighter-rouge">#present?</code>.</p>
+support for <code class="language-plaintext highlighter-rouge">acts_as_ar_query</code> objects to respond properly to
+<code class="language-plaintext highlighter-rouge">#empty?</code> and <code class="language-plaintext highlighter-rouge">#present?</code>.</p>
 
 <h2 id="new">New</h2>
 
 <h3 id="cloud-networks-api"><a href="https://github.com/ManageIQ/manageiq/pull/9926">Cloud Networks API</a></h3>
 
-<p>This PR added a new <code class="highlighter-rouge">/api/cloud_networks</code> endpoint to the API, as well
-as a new <code class="highlighter-rouge">/api/providers/:provider_id/cloud_networks</code> subcollection.</p>
+<p>This PR added a new <code class="language-plaintext highlighter-rouge">/api/cloud_networks</code> endpoint to the API, as well
+as a new <code class="language-plaintext highlighter-rouge">/api/providers/:provider_id/cloud_networks</code> subcollection.</p>
 
 <h3 id="enhancement-to-users-api"><a href="https://github.com/ManageIQ/manageiq/pull/9801">Enhancement to Users API</a></h3>
 
 <p>Where users could previously only update their password through this
 endpoint, support was added to update their email and settings too. It
-also updated the <code class="highlighter-rouge">/api</code> entrypoint to include all the user’s settings
+also updated the <code class="language-plaintext highlighter-rouge">/api</code> entrypoint to include all the user’s settings
 in the response.</p>
 
 <h3 id="add-a-language-switcher-in-the-ssui"><a href="https://github.com/ManageIQ/manageiq-ui-self_service/pull/80">Add a language switcher in the SSUI</a></h3>
@@ -179,8 +179,8 @@ available languages as a Gulp task
 
 <h3 id="remove-unused-code-for-activesupportinflector"><a href="https://github.com/ManageIQ/manageiq/pull/9900">Remove unused code for ActiveSupport::Inflector</a></h3>
 
-<p>Since the <code class="highlighter-rouge">miq-string</code> extension file was requiring
-<code class="highlighter-rouge">active_support/inflector</code>, a total of 141 lines could be removed
+<p>Since the <code class="language-plaintext highlighter-rouge">miq-string</code> extension file was requiring
+<code class="language-plaintext highlighter-rouge">active_support/inflector</code>, a total of 141 lines could be removed
 which duplicated that work.</p>
 
 <h2 id="wrapping-up">Wrapping up</h2>

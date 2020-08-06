@@ -608,10 +608,10 @@ const unbind = addReducer(someApp);</li>
 
 <h3 id="folder-structure">Folder structure</h3>
 <p>Note in mind, that this is example on how to write global reducers. If you are writing reducer which is specific to your
-pack, please replace <code class="highlighter-rouge">app/javascipt/reducers/reducer-example</code> with <code class="highlighter-rouge">app/javascript/your-pack/reducers/</code> this way we can 
+pack, please replace <code class="language-plaintext highlighter-rouge">app/javascipt/reducers/reducer-example</code> with <code class="language-plaintext highlighter-rouge">app/javascript/your-pack/reducers/</code> this way we can 
 abstract same logical things.</p>
 
-<p><strong><code class="highlighter-rouge">app/javascipt/reducers/reducer-example/actions.js</code></strong></p>
+<p><strong><code class="language-plaintext highlighter-rouge">app/javascipt/reducers/reducer-example/actions.js</code></strong></p>
 
 <p>Here you will write functions which reacts to actions with payload and change state.
 ```javascript 1.8
@@ -623,7 +623,7 @@ export function secondReducerFn(state, action) {
   // do something completely different with state
   return state;
 }</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**`app/javascipt/reducers/reducer-example/types.js`**
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**`app/javascipt/reducers/reducer-example/types.js`**
 
 Here you will write constants which will be used for dispatching and for mapping simple functions to action types
 ```javascript 1.8
@@ -633,7 +633,7 @@ export const SECOND_ACTION = 'secondExampleAction';
 export const ANOTHER_ACTION = 'someOtherAction';
 export const ONE_MORE_ACTION = 'absolutelyDifferentAction';
 </code></pre></div></div>
-<p><strong><code class="highlighter-rouge">app/javascipt/reducers/reducer-example/index.js</code></strong></p>
+<p><strong><code class="language-plaintext highlighter-rouge">app/javascipt/reducers/reducer-example/index.js</code></strong></p>
 
 <p>Here you will glue together actions and types, plus you will export all types so they can be dispatched later on.
 Please export any reducer’s type which can be used later on, so anybody can use your constant and we don’t have to look
@@ -654,7 +654,7 @@ import { addReducer, applyReducerHash } from ‘../miq-redux/reducer’;</p>
 <p>addReducer(
   (state, action) =&gt; applyReducerHash(typesToActions, state, action)
 )</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 #### Dispatching action
 Dispatching actions is basically how redux changes it's state. 
 

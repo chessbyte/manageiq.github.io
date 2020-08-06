@@ -551,7 +551,7 @@
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">Vmdb::Config</code> class, when loading a particular configuration will load the template from the file system, then apply delta rows in scope order.  All region deltas, then all zone deltas, etc.  Final result is cached as the singleton.</p>
+<p><code class="language-plaintext highlighter-rouge">Vmdb::Config</code> class, when loading a particular configuration will load the template from the file system, then apply delta rows in scope order.  All region deltas, then all zone deltas, etc.  Final result is cached as the singleton.</p>
 
 <ul>
   <li>When a user makes a change, we add a delta row.</li>
@@ -594,26 +594,26 @@
     <tr>
       <td>/performance/history/initial_capture_days</td>
       <td>0</td>
-      <td><code class="highlighter-rouge">&lt;default&gt;</code></td>
-      <td><code class="highlighter-rouge">[_____] (Reset to Default)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;default&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[_____] (Reset to Default)</code></td>
     </tr>
     <tr>
       <td>/performance/history/keep_daily_performances</td>
       <td>6.months</td>
       <td>6.months</td>
-      <td><code class="highlighter-rouge">[_____] (Reset to Default)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[_____] (Reset to Default)</code></td>
     </tr>
     <tr>
       <td>/performance/history/keep_hourly_performances</td>
       <td>6.months</td>
       <td>3.months</td>
-      <td><code class="highlighter-rouge">[_____] (Reset to Default)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[_____] (Reset to Default)</code></td>
     </tr>
     <tr>
       <td>/performance/history/keep_realtime_performances</td>
       <td>4.hours</td>
-      <td><code class="highlighter-rouge">&lt;default&gt;</code></td>
-      <td><code class="highlighter-rouge">[_____] (Reset to Default)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;default&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[_____] (Reset to Default)</code></td>
     </tr>
   </tbody>
 </table>
@@ -623,7 +623,7 @@
   <li>Present each value in a tree structure, at the end of which is a text box and/or a “reset to default” button</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- performance
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- performance
   - history
     - initial_capture_days
       - Default Value: "0", Current Value: `&lt;default&gt;`  New Value: `[_____] (Reset to Default)`

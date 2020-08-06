@@ -486,7 +486,7 @@
 <p>There are two types of rollups, <strong>time-based</strong> and <strong>infrastructure-based</strong>.</p>
 <ul>
   <li><strong>Time-based</strong> rollups go from realtime → hourly → daily.</li>
-  <li><strong>Infrastructure-based</strong> rollups for hourly go from <code class="highlighter-rouge">Vm</code> → <code class="highlighter-rouge">Host</code> → <code class="highlighter-rouge">EmsCluster</code> → <code class="highlighter-rouge">ExtManagementSystem</code> → <code class="highlighter-rouge">MiqRegion</code> (and maybe to <code class="highlighter-rouge">MiqEnterprise</code>?).</li>
+  <li><strong>Infrastructure-based</strong> rollups for hourly go from <code class="language-plaintext highlighter-rouge">Vm</code> → <code class="language-plaintext highlighter-rouge">Host</code> → <code class="language-plaintext highlighter-rouge">EmsCluster</code> → <code class="language-plaintext highlighter-rouge">ExtManagementSystem</code> → <code class="language-plaintext highlighter-rouge">MiqRegion</code> (and maybe to <code class="language-plaintext highlighter-rouge">MiqEnterprise</code>?).</li>
 </ul>
 
 <h3 id="example">Example</h3>
@@ -495,7 +495,7 @@
 
 <p>Below is the full tree of rollups that will occur:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Vm (realtime collected)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Vm (realtime collected)
  Vm (hourly)
    Vm (daily)
    Host (hourly)
@@ -524,7 +524,7 @@
     <p><strong>Storages are slightly different.  Their information is collected from our storage scans</strong>, so if you’ve never scanned a Storage, you won’t get any data. Storages rollup directly to their EMS, I think.  Also, they are run on a different schedule.</p>
   </li>
   <li>
-    <p><strong>Cloud rollups</strong> <em>(coming soon)</em> will go from <code class="highlighter-rouge">Vm</code> → <code class="highlighter-rouge">Availability Zone</code> → <code class="highlighter-rouge">ExtManagementSystem</code> → <code class="highlighter-rouge">MiqRegion</code>.</p>
+    <p><strong>Cloud rollups</strong> <em>(coming soon)</em> will go from <code class="language-plaintext highlighter-rouge">Vm</code> → <code class="language-plaintext highlighter-rouge">Availability Zone</code> → <code class="language-plaintext highlighter-rouge">ExtManagementSystem</code> → <code class="language-plaintext highlighter-rouge">MiqRegion</code>.</p>
   </li>
 </ul>
 
@@ -534,16 +534,16 @@
     <p><strong>Rollups are automatic behind the scenes and are triggered by a collection</strong>.  Therefore, if you try to manually inject data, you are not really running a collection and thus won’t get rollups.</p>
   </li>
   <li>
-    <p><strong>A capture of a Vm can be kicked off in a rails console with <code class="highlighter-rouge">vm.perf_capture("realtime")</code></strong>.  The rollups on the queue can be executed without a worker by just delivering them from the queue</p>
+    <p><strong>A capture of a Vm can be kicked off in a rails console with <code class="language-plaintext highlighter-rouge">vm.perf_capture("realtime")</code></strong>.  The rollups on the queue can be executed without a worker by just delivering them from the queue</p>
 
     <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">q</span> <span class="o">=</span> <span class="no">MiqQueue</span><span class="p">.</span><span class="nf">find</span>
   <span class="n">q</span><span class="p">.</span><span class="nf">delivered</span><span class="p">(</span><span class="o">*</span><span class="n">q</span><span class="p">.</span><span class="nf">deliver</span><span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>If you want to fake creating rollups, you can just do <code class="highlighter-rouge">vm.perf_rollup_to_parent("realtime", start_time, end_time)</code>, which queues them up and starts the chain.</p>
+    <p>If you want to fake creating rollups, you can just do <code class="language-plaintext highlighter-rouge">vm.perf_rollup_to_parent("realtime", start_time, end_time)</code>, which queues them up and starts the chain.</p>
   </li>
   <li>
-    <p><strong>Database tables are not ordered sets of data, so if you did a straight query they are not guaranteed to appear in any particular order.</strong>  In addition, due to the nature of multiple workers, data may get written in different orders, especially if records have to be updated.  It may be helpful to order by timestamp and filter against <code class="highlighter-rouge">resource_type</code>, <code class="highlighter-rouge">resource_id</code>, <code class="highlighter-rouge">capture_interval_name</code>.</p>
+    <p><strong>Database tables are not ordered sets of data, so if you did a straight query they are not guaranteed to appear in any particular order.</strong>  In addition, due to the nature of multiple workers, data may get written in different orders, especially if records have to be updated.  It may be helpful to order by timestamp and filter against <code class="language-plaintext highlighter-rouge">resource_type</code>, <code class="language-plaintext highlighter-rouge">resource_id</code>, <code class="language-plaintext highlighter-rouge">capture_interval_name</code>.</p>
   </li>
 </ul>
 

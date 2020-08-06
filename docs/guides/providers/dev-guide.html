@@ -486,10 +486,10 @@ natural to split the task to the MVC layers.</p>
 <h2 id="developer-setup">Developer Setup</h2>
 <p>So as not to reinvent the wheel we recommend going to the
 <a href="https://github.com/ManageIQ/guides/blob/master/developer_setup.md">developer setup</a> page and do all the
-necessary steps. After this, you should be able to run the MiQ web application with typing <code class="highlighter-rouge">rails server</code> (shortly <code class="highlighter-rouge">rails s</code>)
-or even <code class="highlighter-rouge">bundle exec rails server</code> which makes sure it is running in context of the current bundle (more info
+necessary steps. After this, you should be able to run the MiQ web application with typing <code class="language-plaintext highlighter-rouge">rails server</code> (shortly <code class="language-plaintext highlighter-rouge">rails s</code>)
+or even <code class="language-plaintext highlighter-rouge">bundle exec rails server</code> which makes sure it is running in context of the current bundle (more info
 <a href="http://stackoverflow.com/a/6588708/1594980">here</a>). Running this command will start the Puma server that is
-listening on http://localhost:3000. The default credentials for the dev setup are <code class="highlighter-rouge">admin:smartvm</code>.</p>
+listening on http://localhost:3000. The default credentials for the dev setup are <code class="language-plaintext highlighter-rouge">admin:smartvm</code>.</p>
 
 <h2 id="data-flow">Data Flow</h2>
 <p>Managers are responsible to feed the data into MiQ DB during the refresh operation. In the MiQ terminology it’s
@@ -498,14 +498,14 @@ each 15 minutes. Each provider is also capable of running operations.</p>
 
 <p>After the Developer Setup step you should be able to run the UI server. This, however, won’t spawn the worker thread
 that is responsible for doing the refresh operation on providers. If you need to do also the refresh on providers,
-We recommend running <code class="highlighter-rouge">rails console</code> (or <code class="highlighter-rouge">rails c</code>) in a new terminal window and typing in <code class="highlighter-rouge">simulate_queue_worker</code>. This command in the
+We recommend running <code class="language-plaintext highlighter-rouge">rails console</code> (or <code class="language-plaintext highlighter-rouge">rails c</code>) in a new terminal window and typing in <code class="language-plaintext highlighter-rouge">simulate_queue_worker</code>. This command in the
 rails console will do the work if you click in UI on the refresh button. If you want to run the refresh
 directly from the rails console, you may want to do that with</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reload!</span><span class="p">;</span> <span class="no">EmsRefresh</span><span class="p">.</span><span class="nf">refresh</span><span class="p">(</span><span class="no">ExtManagementSystem</span><span class="p">.</span><span class="nf">last</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">reload!</code> in the command is not necessary if you didn’t modify the code.</p>
+<p>The <code class="language-plaintext highlighter-rouge">reload!</code> in the command is not necessary if you didn’t modify the code.</p>
 
 <h2 id="model-layer">Model Layer</h2>
 <p>When adding new features or writing new providers, the first step is usually to map the entities and relations by
@@ -570,7 +570,7 @@ some <a href="https://html2haml.herokuapp.com/">conversion tools</a> for that.</
 <h3 id="partials">Partials</h3>
 <p>Some pieces of the UI that are used in many places can be extracted into so-called partials and reused from multiple
 contexts. A partial is a HAML file whose name starts with the underscore. So for instance, one can create a file called
-<code class="highlighter-rouge">_sidebar.haml</code> and reuse this by calling <code class="highlighter-rouge">render :partial =&gt; sidebar</code>. Partials can also have a “slots for data”
+<code class="language-plaintext highlighter-rouge">_sidebar.haml</code> and reuse this by calling <code class="language-plaintext highlighter-rouge">render :partial =&gt; sidebar</code>. Partials can also have a “slots for data”
 that are passed to the render method or one can call normal ruby methods from it similarly as in the normal HAML
 files. This way we can customize them easily. A more comprehensive (and 100% better) description is
 <a href="http://guides.rubyonrails.org/layouts_and_rendering.html#partial-layouts">here</a>.</p>
@@ -580,19 +580,19 @@ files. This way we can customize them easily. A more comprehensive (and 100% bet
 convert as much UI code as possible into the Angular. The UI components repo mentioned above
 is completely written in Angular, while the old UI contains only some parts in angular. It’s
 done in a way that HAML files contains also the directives and calls to the angular controller.
-Angular controllers are stored in <code class="highlighter-rouge">app/assets/javascripts/controllers/</code>.</p>
+Angular controllers are stored in <code class="language-plaintext highlighter-rouge">app/assets/javascripts/controllers/</code>.</p>
 
 <h4 id="rxjs">RxJS</h4>
-<p>The RxJS library is used in a simple way as a message bus so one can send events –<code class="highlighter-rouge">sendDataWithRx()</code>
+<p>The RxJS library is used in a simple way as a message bus so one can send events –<code class="language-plaintext highlighter-rouge">sendDataWithRx()</code>
 and subscribe to a <a href="https://github.com/ReactiveX/rxjs/blob/master/doc/subject.md">Rx subject</a>
-–<code class="highlighter-rouge">ManageIQ.angular.rxSubject.subscribe(event =&gt; {..})</code>.</p>
+–<code class="language-plaintext highlighter-rouge">ManageIQ.angular.rxSubject.subscribe(event =&gt; {..})</code>.</p>
 
 <h3 id="topology-graph">Topology Graph</h3>
 
 <p>TODO</p>
 
 <h2 id="controller-layer">Controller Layer</h2>
-<p>While the model and most of the business logic is in the <code class="highlighter-rouge">manageiq/manageiq</code> repository, the controller+view is in <code class="highlighter-rouge">manageiq/manageiq-ui-classic</code> repo.</p>
+<p>While the model and most of the business logic is in the <code class="language-plaintext highlighter-rouge">manageiq/manageiq</code> repository, the controller+view is in <code class="language-plaintext highlighter-rouge">manageiq/manageiq-ui-classic</code> repo.</p>
 
 <h3 id="router">Router</h3>
 <p>In Rails apps, all the possible actions must be whitelisted in the router configuration. In the case of MiQ, the router is
@@ -600,20 +600,20 @@ and subscribe to a <a href="https://github.com/ReactiveX/rxjs/blob/master/doc/su
 Most common actions are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">show</code> (detail page of entity),</li>
-  <li><code class="highlighter-rouge">show_list</code> (list of n entities),</li>
-  <li><code class="highlighter-rouge">new</code> &amp; <code class="highlighter-rouge">edit</code> (if creating and editing is supported)</li>
-  <li><code class="highlighter-rouge">tagging_edit</code> &amp; <code class="highlighter-rouge">tag_edit_form_field_changed</code> (tagging mechanism in MiQ)</li>
-  <li><code class="highlighter-rouge">button</code> (when clicking on a button in the toolbar, this action is invoked)</li>
-  <li><code class="highlighter-rouge">quick_search</code> (if we want the search form field in the GTL (grid, tiles, list) view)</li>
-  <li><code class="highlighter-rouge">perf_top_chart</code> (metrics)</li>
+  <li><code class="language-plaintext highlighter-rouge">show</code> (detail page of entity),</li>
+  <li><code class="language-plaintext highlighter-rouge">show_list</code> (list of n entities),</li>
+  <li><code class="language-plaintext highlighter-rouge">new</code> &amp; <code class="language-plaintext highlighter-rouge">edit</code> (if creating and editing is supported)</li>
+  <li><code class="language-plaintext highlighter-rouge">tagging_edit</code> &amp; <code class="language-plaintext highlighter-rouge">tag_edit_form_field_changed</code> (tagging mechanism in MiQ)</li>
+  <li><code class="language-plaintext highlighter-rouge">button</code> (when clicking on a button in the toolbar, this action is invoked)</li>
+  <li><code class="language-plaintext highlighter-rouge">quick_search</code> (if we want the search form field in the GTL (grid, tiles, list) view)</li>
+  <li><code class="language-plaintext highlighter-rouge">perf_top_chart</code> (metrics)</li>
   <li>…</li>
 </ul>
 
 <p>NOTE: These actions are implemented by actual methods on the corresponding controller class. So for instance if http get is sent
-to <code class="highlighter-rouge">http://localhost:3000/container/show/26</code> the method <code class="highlighter-rouge">show</code> in the <code class="highlighter-rouge">container_controller.rb</code> is invoked
-and the <code class="highlighter-rouge">container</code> entity with id <code class="highlighter-rouge">26</code> will be accessible in the <code class="highlighter-rouge">@record</code> variable. After further processing like
-(setting the <code class="highlighter-rouge">@display</code>) the data will be rendered using those corresponding HAML template files. For the described example,
+to <code class="language-plaintext highlighter-rouge">http://localhost:3000/container/show/26</code> the method <code class="language-plaintext highlighter-rouge">show</code> in the <code class="language-plaintext highlighter-rouge">container_controller.rb</code> is invoked
+and the <code class="language-plaintext highlighter-rouge">container</code> entity with id <code class="language-plaintext highlighter-rouge">26</code> will be accessible in the <code class="language-plaintext highlighter-rouge">@record</code> variable. After further processing like
+(setting the <code class="language-plaintext highlighter-rouge">@display</code>) the data will be rendered using those corresponding HAML template files. For the described example,
 this <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/256e9aa5f13de59db943fb581ec4bc56f3dcd591/app/views/container/show.html.haml">file</a> will be used.
 Again, the naming is absolutely crucial here, because everything should auto-magically work when preserving those conventions.</p>
 
@@ -630,28 +630,28 @@ need to be modified.</p>
 <ul>
   <li>in the backend repo:
     <ul>
-      <li><code class="highlighter-rouge">db/fixtures/miq_product_features.yml</code> (list of features that a role can do on entity, used by RBAC)</li>
-      <li><code class="highlighter-rouge">app/models/ems_refresh/</code> (refresh logic of the provider, basically consumes the output of <code class="highlighter-rouge">refresh_parser.sh</code>)</li>
-      <li><code class="highlighter-rouge">product/views/YourNewEntity.yaml</code> (although this is only report config, it’s necessary for UI to work properly, check for the similar in the directory)</li>
+      <li><code class="language-plaintext highlighter-rouge">db/fixtures/miq_product_features.yml</code> (list of features that a role can do on entity, used by RBAC)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/models/ems_refresh/</code> (refresh logic of the provider, basically consumes the output of <code class="language-plaintext highlighter-rouge">refresh_parser.sh</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">product/views/YourNewEntity.yaml</code> (although this is only report config, it’s necessary for UI to work properly, check for the similar in the directory)</li>
     </ul>
   </li>
   <li>in the frontend repo:
     <ul>
-      <li><code class="highlighter-rouge">config/routes.rb</code> (this was described in the Router section)</li>
-      <li><code class="highlighter-rouge">app/decorators/your_new_entity_decorator.rb</code> (there is a convention to put a placeholder icons here)</li>
-      <li><code class="highlighter-rouge">app/controllers/your_new_entity_controller.rb</code> (the controller for the entity)</li>
-      <li><code class="highlighter-rouge">app/views/your_new_entity/{show|_main|show_list|some_other_action|_some_other_partial}.html.haml</code></li>
-      <li><code class="highlighter-rouge">app/views/layouts/listnav/_your_new_entity.html.haml</code> (the side panel, this needs to be also registered in <code class="highlighter-rouge">ApplicationHelper.render_listnav_filename</code>)</li>
-      <li><code class="highlighter-rouge">app/helpers/your_new_entity_helper/textual_summary.rb</code></li>
-      <li><code class="highlighter-rouge">app/helpers/your_new_entity_helper.rb</code></li>
-      <li><code class="highlighter-rouge">app/views/configuration/_ui_2.html.haml</code></li>
-      <li><code class="highlighter-rouge">app/views/layouts/listnav/</code> (if you need direct link in web UI from provider)</li>
-      <li><code class="highlighter-rouge">app/views/shared/views/ems_common/_show.html.haml</code> (same as ^)</li>
-      <li><code class="highlighter-rouge">app/helpers/application_helper.rb</code> (multiple use-cases)</li>
-      <li><code class="highlighter-rouge">/app/helpers/application_helper/toolbar_chooser.rb</code> (toolbar with buttons)</li>
-      <li><code class="highlighter-rouge">/app/helpers/application_helper/toolbar/your_new_entity_center.rb</code> (description of what buttons are allowed for 1 entity)</li>
-      <li><code class="highlighter-rouge">/app/helpers/application_helper/toolbar/your_new_entities_center.rb</code> (same as above, except it’s for the GTL view)</li>
-      <li><code class="highlighter-rouge">app/views/layouts/_perf_options.html.haml</code> (metrics)</li>
+      <li><code class="language-plaintext highlighter-rouge">config/routes.rb</code> (this was described in the Router section)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/decorators/your_new_entity_decorator.rb</code> (there is a convention to put a placeholder icons here)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/controllers/your_new_entity_controller.rb</code> (the controller for the entity)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/views/your_new_entity/{show|_main|show_list|some_other_action|_some_other_partial}.html.haml</code></li>
+      <li><code class="language-plaintext highlighter-rouge">app/views/layouts/listnav/_your_new_entity.html.haml</code> (the side panel, this needs to be also registered in <code class="language-plaintext highlighter-rouge">ApplicationHelper.render_listnav_filename</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/helpers/your_new_entity_helper/textual_summary.rb</code></li>
+      <li><code class="language-plaintext highlighter-rouge">app/helpers/your_new_entity_helper.rb</code></li>
+      <li><code class="language-plaintext highlighter-rouge">app/views/configuration/_ui_2.html.haml</code></li>
+      <li><code class="language-plaintext highlighter-rouge">app/views/layouts/listnav/</code> (if you need direct link in web UI from provider)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/views/shared/views/ems_common/_show.html.haml</code> (same as ^)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/helpers/application_helper.rb</code> (multiple use-cases)</li>
+      <li><code class="language-plaintext highlighter-rouge">/app/helpers/application_helper/toolbar_chooser.rb</code> (toolbar with buttons)</li>
+      <li><code class="language-plaintext highlighter-rouge">/app/helpers/application_helper/toolbar/your_new_entity_center.rb</code> (description of what buttons are allowed for 1 entity)</li>
+      <li><code class="language-plaintext highlighter-rouge">/app/helpers/application_helper/toolbar/your_new_entities_center.rb</code> (same as above, except it’s for the GTL view)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/views/layouts/_perf_options.html.haml</code> (metrics)</li>
     </ul>
   </li>
 </ul>
@@ -661,16 +661,16 @@ need to be modified.</p>
 <p>There are actually two log files where you can find what is wrong.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">log/evm.log</code></li>
-  <li><code class="highlighter-rouge">log/development.log</code></li>
+  <li><code class="language-plaintext highlighter-rouge">log/evm.log</code></li>
+  <li><code class="language-plaintext highlighter-rouge">log/development.log</code></li>
 </ul>
 
-<p>There should be a lot of SQL queries that may be handy during the development. Of course, you can use them in the good old <code class="highlighter-rouge">psql</code> client.</p>
+<p>There should be a lot of SQL queries that may be handy during the development. Of course, you can use them in the good old <code class="language-plaintext highlighter-rouge">psql</code> client.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres vmdb_development
 </code></pre></div></div>
 <p>The command should open the Postgres client on the dev db. By default the development environment is active, this can be changed
-by <code class="highlighter-rouge">rails s -e production</code>.</p>
+by <code class="language-plaintext highlighter-rouge">rails s -e production</code>.</p>
 
 <p>Even better option is to inspect the db with:</p>
 
@@ -680,43 +680,43 @@ by <code class="highlighter-rouge">rails s -e production</code>.</p>
 <p>This command takes into consideration the actual environment and the configured database.</p>
 
 <h3 id="pry">Pry</h3>
-<p>Pry is a command line oriented debugger similar to famous <code class="highlighter-rouge">gdb</code>.
-We suggest adding this line to <code class="highlighter-rouge">Gemfile.dev.rb</code> (create this file if it doesn’t exist in the root of manageiq/manageiq repo):</p>
+<p>Pry is a command line oriented debugger similar to famous <code class="language-plaintext highlighter-rouge">gdb</code>.
+We suggest adding this line to <code class="language-plaintext highlighter-rouge">Gemfile.dev.rb</code> (create this file if it doesn’t exist in the root of manageiq/manageiq repo):</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'pry-byebug'</span>
 </code></pre></div></div>
-<p>Then after running <code class="highlighter-rouge">bundle install</code>, you should be all set. Now, adding the breakpoint means writing <code class="highlighter-rouge">binding.pry</code> somewhere in the code.
+<p>Then after running <code class="language-plaintext highlighter-rouge">bundle install</code>, you should be all set. Now, adding the breakpoint means writing <code class="language-plaintext highlighter-rouge">binding.pry</code> somewhere in the code.
 Once the ruby executes the code with this line, it stops the execution and opens a REPL where Ruby code can be inspected and executed.</p>
 
-<p>TIP: This works also for the HAML files. But instead of using just <code class="highlighter-rouge">binding.pry</code>, use <code class="highlighter-rouge">- binding.pry</code> (and respect the indentation of the file).</p>
+<p>TIP: This works also for the HAML files. But instead of using just <code class="language-plaintext highlighter-rouge">binding.pry</code>, use <code class="language-plaintext highlighter-rouge">- binding.pry</code> (and respect the indentation of the file).</p>
 
 <h3 id="console">Console</h3>
-<p>Another way of debugging is just printing the variables to the console by <code class="highlighter-rouge">puts foo</code>. Object can have the <code class="highlighter-rouge">.to_s</code> method that
-is responsible for printing the object (equivalent to <code class="highlighter-rouge">.toString()</code> method in Java), if the <code class="highlighter-rouge">.to_s</code> method is not implemented,
-you can use the <code class="highlighter-rouge">.inspect</code> method that provides the info about the object.</p>
+<p>Another way of debugging is just printing the variables to the console by <code class="language-plaintext highlighter-rouge">puts foo</code>. Object can have the <code class="language-plaintext highlighter-rouge">.to_s</code> method that
+is responsible for printing the object (equivalent to <code class="language-plaintext highlighter-rouge">.toString()</code> method in Java), if the <code class="language-plaintext highlighter-rouge">.to_s</code> method is not implemented,
+you can use the <code class="language-plaintext highlighter-rouge">.inspect</code> method that provides the info about the object.</p>
 
 <h2 id="rails-console">Rails Console</h2>
-<p>In Rails apps, you can use rails console by typing the <code class="highlighter-rouge">rails console</code> or <code class="highlighter-rouge">rails c</code> to the command line
+<p>In Rails apps, you can use rails console by typing the <code class="language-plaintext highlighter-rouge">rails console</code> or <code class="language-plaintext highlighter-rouge">rails c</code> to the command line
 (being in the root of the repo). This opens the REPL Ruby console, where you can type in Ruby code and it evaluates it.
 What’s interesting here is that you can actually alter the running Rails application by:</p>
 
 <ul>
-  <li>creating new entities: <code class="highlighter-rouge">MyAwesomeEntity.create(params)</code></li>
-  <li>finding entities: <code class="highlighter-rouge">MyAwesomeEntity.all</code> / <code class="highlighter-rouge">MyAwesomeEntity.find(foo: 'bar')</code></li>
-  <li>delete: <code class="highlighter-rouge">MyAwesomeEntity.find(foo: 'bar').destroy</code> / <code class="highlighter-rouge">MyAwesomeEntity.delete(foo: 'bar')</code></li>
+  <li>creating new entities: <code class="language-plaintext highlighter-rouge">MyAwesomeEntity.create(params)</code></li>
+  <li>finding entities: <code class="language-plaintext highlighter-rouge">MyAwesomeEntity.all</code> / <code class="language-plaintext highlighter-rouge">MyAwesomeEntity.find(foo: 'bar')</code></li>
+  <li>delete: <code class="language-plaintext highlighter-rouge">MyAwesomeEntity.find(foo: 'bar').destroy</code> / <code class="language-plaintext highlighter-rouge">MyAwesomeEntity.delete(foo: 'bar')</code></li>
   <li>…</li>
 </ul>
 
-<p>The methods like <code class="highlighter-rouge">.create</code>, <code class="highlighter-rouge">.all</code>, <code class="highlighter-rouge">.find</code> are actually not defined on the models, but comes from the ActiveRecord (~ORM) framework.</p>
+<p>The methods like <code class="language-plaintext highlighter-rouge">.create</code>, <code class="language-plaintext highlighter-rouge">.all</code>, <code class="language-plaintext highlighter-rouge">.find</code> are actually not defined on the models, but comes from the ActiveRecord (~ORM) framework.</p>
 
 <h2 id="code-style">Code Style</h2>
 <p>For up-to-date coding standards, consult this <a href="https://github.com/ManageIQ/guides/blob/master/coding_style_and_standards.md">guide</a>.
 The travis build is set to check what rules are violated and report those in the PR comment. If you want to run it locally, just
-type in: <code class="highlighter-rouge">rubocop</code> and/or <code class="highlighter-rouge">haml-lint</code> (if necessary, install those ruby gems).</p>
+type in: <code class="language-plaintext highlighter-rouge">rubocop</code> and/or <code class="language-plaintext highlighter-rouge">haml-lint</code> (if necessary, install those ruby gems).</p>
 
-<p>There is also a bash helper script called <a href="https://github.com/zeari/miq-helpers/blob/master/murphy.sh"><code class="highlighter-rouge">murphy.sh</code></a>
- that runs the <code class="highlighter-rouge">rubocop</code> and <code class="highlighter-rouge">haml-lint</code> only on those commits that haven’t been pushed yet.
-It is similar to the <code class="highlighter-rouge">rubocop-git</code> gem.</p>
+<p>There is also a bash helper script called <a href="https://github.com/zeari/miq-helpers/blob/master/murphy.sh"><code class="language-plaintext highlighter-rouge">murphy.sh</code></a>
+ that runs the <code class="language-plaintext highlighter-rouge">rubocop</code> and <code class="language-plaintext highlighter-rouge">haml-lint</code> only on those commits that haven’t been pushed yet.
+It is similar to the <code class="language-plaintext highlighter-rouge">rubocop-git</code> gem.</p>
 
 <h1 id="common-tasks">Common Tasks</h1>
 <p>Rather than trying to describe each part separately as before, here we would like to focus on some common tasks and provide a link to
@@ -724,17 +724,17 @@ PRs/commits that did so in the past.</p>
 
 <h2 id="creating-new-models-and-migrations">Creating new Models and Migrations</h2>
 <p>As mentioned above, there is a scaffolding helper for creating the migrations. The database knows its current version, so
-if there is a new migration that hasn’t been applied, it will get applied when running <code class="highlighter-rouge">rake db:migrate</code>. In case there was
-anything wrong with the migration, one can go back and undo it by <code class="highlighter-rouge">rake db:rollback</code>, change the migration file and try again.</p>
+if there is a new migration that hasn’t been applied, it will get applied when running <code class="language-plaintext highlighter-rouge">rake db:migrate</code>. In case there was
+anything wrong with the migration, one can go back and undo it by <code class="language-plaintext highlighter-rouge">rake db:rollback</code>, change the migration file and try again.</p>
 
 <p><a href="http://edgeguides.rubyonrails.org/active_record_migrations.html">documentation</a></p>
 
 <h2 id="handling-the-refresh-logic-and-saving-to-the-db">Handling the Refresh Logic and Saving to the DB</h2>
 
-<p>Refresh logic mostly happens in a <code class="highlighter-rouge">refresh_parser.rb</code> class. Parsed entities are then processed by core <code class="highlighter-rouge">ems_refresh.rb</code>.
+<p>Refresh logic mostly happens in a <code class="language-plaintext highlighter-rouge">refresh_parser.rb</code> class. Parsed entities are then processed by core <code class="language-plaintext highlighter-rouge">ems_refresh.rb</code>.
 The logic in this class has
 quite strong assumptions on the data being stored. It assumes that it has the tree structure and each entity contains its kids as a nested hash.
-If you are able to achieve that structure in the <code class="highlighter-rouge">refresh_parser.rb</code>, you are halfway done. Otherwise, good luck :]</p>
+If you are able to achieve that structure in the <code class="language-plaintext highlighter-rouge">refresh_parser.rb</code>, you are halfway done. Otherwise, good luck :]</p>
 
 <h3 id="defining-inventory">Defining Inventory</h3>
 
@@ -747,7 +747,7 @@ Parser maps data collected from the provider to the common format defined by the
 
 <h2 id="registering-the-features-for-rbac">Registering the Features for RBAC</h2>
 <p>If everything is as it should be but you still can’t see anything in the UI, permissions may be the reason. MiQ has the RBAC model
-that checks if the user in the current role is able to access the feature. This is described in the yaml file called <code class="highlighter-rouge">miq_product_features.yml</code>.</p>
+that checks if the user in the current role is able to access the feature. This is described in the yaml file called <code class="language-plaintext highlighter-rouge">miq_product_features.yml</code>.</p>
 
 <p>When adding the new entity, it is also necessary add the record
 <a href="https://github.com/ManageIQ/manageiq/blob/master/db/fixtures/miq_product_features.yml">here</a> and describe it.
@@ -755,14 +755,14 @@ It is best to copy&amp;paste the existing definition and change the details.</p>
 
 <h2 id="if-the-side-panel-or-toolbar-is-missing">If the Side Panel or Toolbar is Missing</h2>
 <p>If the screen should have the left panel with navigation, it needs the be whitelisted in:
-<code class="highlighter-rouge">ApplicationHelper.render_listnav_filename</code>. There are more places in that “god file” where new entity needs to be
+<code class="language-plaintext highlighter-rouge">ApplicationHelper.render_listnav_filename</code>. There are more places in that “god file” where new entity needs to be
 registered (for instance if it wants to participate in the GTL views).</p>
 
-<p>The side navigation layout is described in <code class="highlighter-rouge">/app/views/layouts/listnav/_X.html.haml</code></p>
+<p>The side navigation layout is described in <code class="language-plaintext highlighter-rouge">/app/views/layouts/listnav/_X.html.haml</code></p>
 
 <p>As for the missing toolbar, adding the plural of the entity name for list and singular for the detail page to this file
-<code class="highlighter-rouge">/app/helpers/application_helper/toolbar/Xs_center.rb</code> is needed + register itself here:
-<code class="highlighter-rouge">/app/helpers/application_helper/toolbar_chooser.rb:439</code> (2 places in that file, 1 for singular and 1 for plural).
+<code class="language-plaintext highlighter-rouge">/app/helpers/application_helper/toolbar/Xs_center.rb</code> is needed + register itself here:
+<code class="language-plaintext highlighter-rouge">/app/helpers/application_helper/toolbar_chooser.rb:439</code> (2 places in that file, 1 for singular and 1 for plural).
 Then it automagically should work.</p>
 
 <h2 id="exposing-the-live-metrics-for-entity">Exposing the Live Metrics for Entity</h2>
@@ -770,11 +770,11 @@ Then it automagically should work.</p>
 <p>If the metric graphs should be displayed for your entity, you need to do the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">app/controllers/application_controller/performance.rb</code>,</li>
-  <li>including the <code class="highlighter-rouge">LiveMetricMixin</code> in the entity model,</li>
-  <li>creating the entity that ends with <code class="highlighter-rouge">Perf</code>, etc.</li>
-  <li>changing <code class="highlighter-rouge">app/views/layouts/_perf_options.html.haml</code></li>
-  <li>the <code class="highlighter-rouge">show.haml</code> of the entity has to contain:</li>
+  <li><code class="language-plaintext highlighter-rouge">app/controllers/application_controller/performance.rb</code>,</li>
+  <li>including the <code class="language-plaintext highlighter-rouge">LiveMetricMixin</code> in the entity model,</li>
+  <li>creating the entity that ends with <code class="language-plaintext highlighter-rouge">Perf</code>, etc.</li>
+  <li>changing <code class="language-plaintext highlighter-rouge">app/views/layouts/_perf_options.html.haml</code></li>
+  <li>the <code class="language-plaintext highlighter-rouge">show.haml</code> of the entity has to contain:</li>
 </ul>
 
 <div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> <span class="k">if</span> <span class="vi">@showtype</span> <span class="o">==</span> <span class="s2">"performance"</span>
@@ -784,8 +784,8 @@ Then it automagically should work.</p>
 </code></pre></div></div>
 
 <ul>
-  <li>adding <code class="highlighter-rouge">perf_chart_chooser</code> action into <code class="highlighter-rouge">router.rb</code> to corresponding entity</li>
-  <li>adding to <code class="highlighter-rouge">db/fixtures/miq_product_features.yml</code> (<code class="highlighter-rouge">X</code> is the entity name)</li>
+  <li>adding <code class="language-plaintext highlighter-rouge">perf_chart_chooser</code> action into <code class="language-plaintext highlighter-rouge">router.rb</code> to corresponding entity</li>
+  <li>adding to <code class="language-plaintext highlighter-rouge">db/fixtures/miq_product_features.yml</code> (<code class="language-plaintext highlighter-rouge">X</code> is the entity name)</li>
 </ul>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">:name: Utilization</span>
@@ -795,8 +795,8 @@ Then it automagically should work.</p>
 </code></pre></div></div>
 
 <ul>
-  <li>create <code class="highlighter-rouge">/product/live_metric_X.yaml</code> similar to the existing ones</li>
-  <li>creating a yaml file in <code class="highlighter-rouge">product/charts/layouts/{Y}_perf_charts/X.yaml</code> similar to the existing ones (<code class="highlighter-rouge">X</code> is entity name and Y is the interval or “realtime” phrase). The cols ids must match with the ids defined in <code class="highlighter-rouge">/product/live_metric_X.yaml</code></li>
+  <li>create <code class="language-plaintext highlighter-rouge">/product/live_metric_X.yaml</code> similar to the existing ones</li>
+  <li>creating a yaml file in <code class="language-plaintext highlighter-rouge">product/charts/layouts/{Y}_perf_charts/X.yaml</code> similar to the existing ones (<code class="language-plaintext highlighter-rouge">X</code> is entity name and Y is the interval or “realtime” phrase). The cols ids must match with the ids defined in <code class="language-plaintext highlighter-rouge">/product/live_metric_X.yaml</code></li>
   <li>add the tests</li>
 </ul>
 

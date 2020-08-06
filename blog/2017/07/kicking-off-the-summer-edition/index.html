@@ -122,12 +122,12 @@ the various provider plugins.</p>
 
 <h3 id="allow-miqworkerrequired_roles-to-be-a-lambda-manageiq15522">Allow MiqWorker.required_roles to be a lambda (<a href="https://github.com/ManageIQ/manageiq/pull/15522">manageiq#15522</a>)</h3>
 <p>This allows required_roles to use a lambda to define them, like
-<code class="highlighter-rouge">MiqWorker.workers</code> currently does. This allows for greater flexibility since
+<code class="language-plaintext highlighter-rouge">MiqWorker.workers</code> currently does. This allows for greater flexibility since
 you can now change the roles of a worker depending on what’s configured.</p>
 
 <h3 id="ensure-we-test-against-a-random-non-0-region-manageiq15525">Ensure we test against a random, non-0 region (<a href="https://github.com/ManageIQ/manageiq/pull/15525">manageiq#15525</a>)</h3>
 <p>Our test suite received an improvement in the form of random region testing. We
-previously hardcoded a region of <code class="highlighter-rouge">1</code> in all of our CI builds whereas we now
+previously hardcoded a region of <code class="language-plaintext highlighter-rouge">1</code> in all of our CI builds whereas we now
 test against random, non-0 regions to further cover odd edge cases with our
 test suite.</p>
 
@@ -158,7 +158,7 @@ This new method now allows you to hook into the validation of these names and sp
 <h2 id="deleted">Deleted</h2>
 
 <h3 id="save-inventory-container-remove-target-option-manageiq15182">Save inventory container: remove target option (<a href="https://github.com/ManageIQ/manageiq/pull/15182">manageiq#15182</a>)</h3>
-<p>The <code class="highlighter-rouge">target</code> option in the save inventory container was removed as it was unused, greatly simplifying partial graph refreshes in the future.</p>
+<p>The <code class="language-plaintext highlighter-rouge">target</code> option in the save inventory container was removed as it was unused, greatly simplifying partial graph refreshes in the future.</p>
 
 <h3 id="miscellaneous">Miscellaneous</h3>
 

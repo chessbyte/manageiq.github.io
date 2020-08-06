@@ -470,13 +470,13 @@
         
         <h2 id="debugging-manageiq-with-remote-pry">Debugging ManageIQ with Remote Pry</h2>
 
-<p>Interactive debugging using pry or byebug is normally difficult with ManageIQ, as <code class="highlighter-rouge">rake evm:start</code> launches the server and worker processes in the background. Therefore the only way to do interactive debugging is with <code class="highlighter-rouge">pry-remote</code> or <code class="highlighter-rouge">byebug</code> running in remote mode.</p>
+<p>Interactive debugging using pry or byebug is normally difficult with ManageIQ, as <code class="language-plaintext highlighter-rouge">rake evm:start</code> launches the server and worker processes in the background. Therefore the only way to do interactive debugging is with <code class="language-plaintext highlighter-rouge">pry-remote</code> or <code class="language-plaintext highlighter-rouge">byebug</code> running in remote mode.</p>
 
-<p>Running ManageIQ with <code class="highlighter-rouge">byebug</code> was exceedingly slow, so this guide will focus on remote debugging using <code class="highlighter-rouge">pry</code>.</p>
+<p>Running ManageIQ with <code class="language-plaintext highlighter-rouge">byebug</code> was exceedingly slow, so this guide will focus on remote debugging using <code class="language-plaintext highlighter-rouge">pry</code>.</p>
 
 <h3 id="adding-dependencies">Adding dependencies</h3>
 
-<p>You’ll need to add the following gems to your dev overrides file in <code class="highlighter-rouge">bundler.d/</code>:</p>
+<p>You’ll need to add the following gems to your dev overrides file in <code class="language-plaintext highlighter-rouge">bundler.d/</code>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">gem</span> <span class="s1">'pry'</span>
   <span class="n">gem</span> <span class="s1">'pry-remote'</span>
@@ -485,25 +485,25 @@
 
 <h3 id="starting-the-debugger">Starting the debugger</h3>
 
-<p>Setting a breakpoint with <code class="highlighter-rouge">pry</code> requires adding the following line somewhere in your code:</p>
+<p>Setting a breakpoint with <code class="language-plaintext highlighter-rouge">pry</code> requires adding the following line somewhere in your code:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#code executes until this line</span>
 <span class="nb">binding</span><span class="p">.</span><span class="nf">remote_pry</span>
 <span class="c1">#code here does not execute</span>
 </code></pre></div></div>
 
-<p>When execution reaches the <code class="highlighter-rouge">remote_pry</code> call, the line  <code class="highlighter-rouge">pry-remote] Waiting for client on drb://localhost:9876</code> will print to STDOUT (stderr?) and execution will block until you connect the client debug process.</p>
+<p>When execution reaches the <code class="language-plaintext highlighter-rouge">remote_pry</code> call, the line  <code class="language-plaintext highlighter-rouge">pry-remote] Waiting for client on drb://localhost:9876</code> will print to STDOUT (stderr?) and execution will block until you connect the client debug process.</p>
 
 <p>To connect the debugger, simply run from the ManageIQ root dir:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec pry-remote
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec pry-remote
 </code></pre></div></div>
 <p>which will attempt to connect to the pry server on port 9876.</p>
 
-<p>With the addition of <code class="highlighter-rouge">pry-nav</code>, you’ll have access to commands <code class="highlighter-rouge">continue</code>, <code class="highlighter-rouge">step</code>, and <code class="highlighter-rouge">next</code>, to navigate through your code.</p>
+<p>With the addition of <code class="language-plaintext highlighter-rouge">pry-nav</code>, you’ll have access to commands <code class="language-plaintext highlighter-rouge">continue</code>, <code class="language-plaintext highlighter-rouge">step</code>, and <code class="language-plaintext highlighter-rouge">next</code>, to navigate through your code.</p>
 
 <h3 id="notes">Notes</h3>
 
-<p>Setting breakpoints from within pry is currently not possible with <code class="highlighter-rouge">pry-nav</code>. As a workaround, it’s possible to set conditional breakpoints throughout your code like so:</p>
+<p>Setting breakpoints from within pry is currently not possible with <code class="language-plaintext highlighter-rouge">pry-nav</code>. As a workaround, it’s possible to set conditional breakpoints throughout your code like so:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nb">binding</span><span class="p">.</span><span class="nf">remote_pry</span>
@@ -515,9 +515,9 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>And simply set <code class="highlighter-rouge">@breakpoint_enabled = true</code> when you reach your first breakpoint to enable the next breakpoint to trigger.</p>
+<p>And simply set <code class="language-plaintext highlighter-rouge">@breakpoint_enabled = true</code> when you reach your first breakpoint to enable the next breakpoint to trigger.</p>
 
-<p>Note that you will have to <code class="highlighter-rouge">continue</code> to exit out of <code class="highlighter-rouge">pry</code> and then <code class="highlighter-rouge">bundle exec pry-remote</code> again to enter into subsequent breakpoints in the same process.</p>
+<p>Note that you will have to <code class="language-plaintext highlighter-rouge">continue</code> to exit out of <code class="language-plaintext highlighter-rouge">pry</code> and then <code class="language-plaintext highlighter-rouge">bundle exec pry-remote</code> again to enter into subsequent breakpoints in the same process.</p>
 
       </div>
     </article>

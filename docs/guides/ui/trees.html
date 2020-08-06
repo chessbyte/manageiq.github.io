@@ -472,10 +472,10 @@
 
 <p>Trees are displayed in various places in the UI. Most notable are trees in explorer-like pages. Other examples include the snapshot tree for VMs and RBAC feature tree under Settings/Access Controll/Roles.</p>
 
-<p>Trees are built using <code class="highlighter-rouge">TreeBuilder</code> subclasses located in <code class="highlighter-rouge">app/presenters/tree_builder*</code>.</p>
+<p>Trees are built using <code class="language-plaintext highlighter-rouge">TreeBuilder</code> subclasses located in <code class="language-plaintext highlighter-rouge">app/presenters/tree_builder*</code>.</p>
 
 <p>Example tree builder:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class TreeBuilderInstances &lt; TreeBuilder
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class TreeBuilderInstances &lt; TreeBuilder
   has_kids_for AvailabilityZone, [:x_get_tree_az_kids]
   has_kids_for ExtManagementSystem, [:x_get_tree_ems_kids]
 
@@ -518,16 +518,16 @@ end
 
 </code></pre></div></div>
 <ul>
-  <li><code class="highlighter-rouge">x_get_tree_roots</code> describes the root element(s) of the tree.</li>
-  <li><code class="highlighter-rouge">has_kids_for</code> is used to declare non-root branches in the tree and methods that produce those.</li>
+  <li><code class="language-plaintext highlighter-rouge">x_get_tree_roots</code> describes the root element(s) of the tree.</li>
+  <li><code class="language-plaintext highlighter-rouge">has_kids_for</code> is used to declare non-root branches in the tree and methods that produce those.</li>
 </ul>
 
-<p>Rules for buiding particular tree nodes are in <code class="highlighter-rouge">TreeNodeBuilder</code> and it’s subclasses in <code class="highlighter-rouge">app/presenters/tree_node_builder*</code>.</p>
+<p>Rules for buiding particular tree nodes are in <code class="language-plaintext highlighter-rouge">TreeNodeBuilder</code> and it’s subclasses in <code class="language-plaintext highlighter-rouge">app/presenters/tree_node_builder*</code>.</p>
 
 <p>Trees in explorer screens are wrapped in accordions. The list of accordions with trees in a particular controller is specified via “features”.</p>
 
 <p>Example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def features
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def features
   [
     ApplicationController::Feature.new_with_hash(
       :role  =&gt; "vandt_accord",

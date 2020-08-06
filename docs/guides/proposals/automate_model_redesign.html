@@ -504,14 +504,14 @@
   <li>Simplify the UI
     <ul>
       <li>Remove meaningless icons</li>
-      <li>Remove <code class="highlighter-rouge">&lt;class-description&gt; (&lt;class-name&gt;)</code> convention in favor of simply <code class="highlighter-rouge">&lt;name&gt;</code>. This will encourage the use of meaningful names.</li>
+      <li>Remove <code class="language-plaintext highlighter-rouge">&lt;class-description&gt; (&lt;class-name&gt;)</code> convention in favor of simply <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code>. This will encourage the use of meaningful names.</li>
     </ul>
   </li>
 </ul>
 
 <h3 id="proposed-example-namespace-file-structure">Proposed example namespace file structure</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/&lt;namespace&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/&lt;namespace&gt;
     README
     /&lt;class&gt;
         README
@@ -522,13 +522,13 @@
 
 <h3 id="proposed-example-instanceyaml">Proposed example instance.yaml</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>param_1: default
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>param_1: default
 execute: my_method.rb
 </code></pre></div></div>
 
 <h3 id="proposed-example-schemayaml">Proposed example schema.yaml</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>param_1:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>param_1:
     type: attribute
     default_value: my string
     substitute: 1
@@ -540,7 +540,7 @@ method_1:
 
 <h3 id="proposed-namespaceclass-restructure">Proposed Namespace/Class Restructure</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/ManageIQ (domain)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/ManageIQ (domain)
   /Cloud
     /VM
       /LifeCycle

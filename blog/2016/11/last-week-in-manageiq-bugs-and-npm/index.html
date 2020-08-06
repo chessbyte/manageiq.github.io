@@ -105,9 +105,9 @@
 
 <h2 id="featured">Featured</h2>
 
-<p>Since the last edition, we’ve merged 114 <a href="https://github.com/ManageIQ/manageiq/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20">pull requests</a> in the <code class="highlighter-rouge">manageiq</code> repo, 56 of which were labeled <code class="highlighter-rouge">bug</code>, 18 <code class="highlighter-rouge">enhancement</code>, 16 <code class="highlighter-rouge">technical debt</code> and 13 <code class="highlighter-rouge">refactoring</code>. As always, almost half was in the UI, totalling 48 <code class="highlighter-rouge">ui</code> pull requests.</p>
+<p>Since the last edition, we’ve merged 114 <a href="https://github.com/ManageIQ/manageiq/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20">pull requests</a> in the <code class="language-plaintext highlighter-rouge">manageiq</code> repo, 56 of which were labeled <code class="language-plaintext highlighter-rouge">bug</code>, 18 <code class="language-plaintext highlighter-rouge">enhancement</code>, 16 <code class="language-plaintext highlighter-rouge">technical debt</code> and 13 <code class="language-plaintext highlighter-rouge">refactoring</code>. As always, almost half was in the UI, totalling 48 <code class="language-plaintext highlighter-rouge">ui</code> pull requests.</p>
 
-<p>In the recently renamed <code class="highlighter-rouge">manageiq-ui-service</code> repo, we’ve had 8 <a href="https://github.com/ManageIQ/manageiq-ui-service/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20">pull requests</a>, and there are surely more in our other repos.</p>
+<p>In the recently renamed <code class="language-plaintext highlighter-rouge">manageiq-ui-service</code> repo, we’ve had 8 <a href="https://github.com/ManageIQ/manageiq-ui-service/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20">pull requests</a>, and there are surely more in our other repos.</p>
 
 <p>There are also many <a href="https://github.com/ManageIQ/manageiq/issues">open issues</a> you can try your skills on, because who doesn’t want to be <a href="https://github.com/ManageIQ/manageiq/graphs/contributors">famous</a>? And, as always, we’re ready to help on <a href="https://gitter.im/ManageIQ/manageiq">gitter</a>.</p>
 
@@ -115,15 +115,15 @@
 
 <p>As a sign of things to come, <a href="https://github.com/AllenBW">Allen</a> has finished moving our Service UI from Bower to npm (actually, Yarn, we’re so modern!) (<a href="https://github.com/ManageIQ/manageiq-ui-service/pull/296">#296</a>), ManageIQ itself will follow shortly.</p>
 
-<p><a href="https://github.com/martinpovolny">Martin P</a> has deduplicated our <code class="highlighter-rouge">tree_select</code> and <code class="highlighter-rouge">accordion_select</code> methods (<a href="https://github.com/ManageIQ/manageiq/pull/12320">#12320</a>), making it easier to make bigger changes to trees, and getting rid of about 40 lines in the process. While deduplicating, he also looked into <code class="highlighter-rouge">x_show</code> (<a href="https://github.com/ManageIQ/manageiq/pull/12313">#12313</a>), and apparently, he’s also <a href="https://github.com/ManageIQ/manageiq/pull/12314">removed “some code”</a>, that’s it :).</p>
+<p><a href="https://github.com/martinpovolny">Martin P</a> has deduplicated our <code class="language-plaintext highlighter-rouge">tree_select</code> and <code class="language-plaintext highlighter-rouge">accordion_select</code> methods (<a href="https://github.com/ManageIQ/manageiq/pull/12320">#12320</a>), making it easier to make bigger changes to trees, and getting rid of about 40 lines in the process. While deduplicating, he also looked into <code class="language-plaintext highlighter-rouge">x_show</code> (<a href="https://github.com/ManageIQ/manageiq/pull/12313">#12313</a>), and apparently, he’s also <a href="https://github.com/ManageIQ/manageiq/pull/12314">removed “some code”</a>, that’s it :).</p>
 
 <p><a href="https://github.com/zakiva">Zahi</a> has added advanced search capability to Containers (<a href="https://github.com/ManageIQ/manageiq/pull/12303">#12303</a>), bringing Containers a bit closer to Infra &amp; Cloud, feature-wise.</p>
 
 <h2 id="fixed">Fixed</h2>
 
-<p><a href="https://github.com/hayesr">Eric H</a> has fixed a <em>weird</em> bug, where <code class="highlighter-rouge">Kernel.const_get</code> would return the wrong class for toolbars. See for yourself (<a href="https://github.com/ManageIQ/manageiq/pull/12451">#12451</a>) ;).</p>
+<p><a href="https://github.com/hayesr">Eric H</a> has fixed a <em>weird</em> bug, where <code class="language-plaintext highlighter-rouge">Kernel.const_get</code> would return the wrong class for toolbars. See for yourself (<a href="https://github.com/ManageIQ/manageiq/pull/12451">#12451</a>) ;).</p>
 
-<p>The (Self) Service UI repo got renamed, and the URL it lives on has changed from <code class="highlighter-rouge">/self_service</code> to <code class="highlighter-rouge">/ui/service</code>. <a href="https://github.com/AllenBW">Allen</a> and <a href="https://github.com/simaishi">Satoe</a> have been fixing the fallout, updating apache config (<a href="https://github.com/ManageIQ/manageiq/pull/12311">#12311</a>), and updating the Dockerfile (<a href="https://github.com/ManageIQ/manageiq/pull/12263">#12263</a>).</p>
+<p>The (Self) Service UI repo got renamed, and the URL it lives on has changed from <code class="language-plaintext highlighter-rouge">/self_service</code> to <code class="language-plaintext highlighter-rouge">/ui/service</code>. <a href="https://github.com/AllenBW">Allen</a> and <a href="https://github.com/simaishi">Satoe</a> have been fixing the fallout, updating apache config (<a href="https://github.com/ManageIQ/manageiq/pull/12311">#12311</a>), and updating the Dockerfile (<a href="https://github.com/ManageIQ/manageiq/pull/12263">#12263</a>).</p>
 
 <h2 id="new">New</h2>
 
@@ -133,7 +133,7 @@
 
 <p>In RHEV land, <a href="https://github.com/jelkosz">Tomas</a> has implemented migrating VMs (<a href="https://github.com/ManageIQ/manageiq/pull/11366">#11366</a>).</p>
 
-<p>And in our API, <a href="https://github.com/alongoldboim">Alon</a> has added a <code class="highlighter-rouge">MiqPolicy</code> collection making it possible to CRUD policies (<a href="https://github.com/ManageIQ/manageiq/pull/11505">#11505</a>), and <a href="https://github.com/bdunne">Brandon</a> has made it possible to approve or deny requests via the API (<a href="https://github.com/ManageIQ/manageiq/pull/12258">#12258</a>).</p>
+<p>And in our API, <a href="https://github.com/alongoldboim">Alon</a> has added a <code class="language-plaintext highlighter-rouge">MiqPolicy</code> collection making it possible to CRUD policies (<a href="https://github.com/ManageIQ/manageiq/pull/11505">#11505</a>), and <a href="https://github.com/bdunne">Brandon</a> has made it possible to approve or deny requests via the API (<a href="https://github.com/ManageIQ/manageiq/pull/12258">#12258</a>).</p>
 
 <h2 id="deleted">Deleted</h2>
 

@@ -484,14 +484,14 @@ multiple log targets and formats.</p>
 <p>where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">[----]</code> is a placeholder for future use</li>
-  <li><code class="highlighter-rouge">I</code> is the single character form of the log level (e.g. <code class="highlighter-rouge">I</code> == <code class="highlighter-rouge">INFO</code>)</li>
-  <li><code class="highlighter-rouge">2020-01-01T12:34:56.789012</code> is the timestamp of the message in ISO8601 format</li>
-  <li><code class="highlighter-rouge">12345</code> is the process ID (PID)</li>
-  <li><code class="highlighter-rouge">6789abcdef01</code> is the Ruby thread ID (TID) in hexadecimal</li>
-  <li><code class="highlighter-rouge">INFO</code> is the log level (can also be <code class="highlighter-rouge">DEBUG</code>, <code class="highlighter-rouge">WARN</code>, <code class="highlighter-rouge">ERROR</code>, <code class="highlighter-rouge">FATAL</code>)</li>
-  <li><code class="highlighter-rouge">MIQ(Class#method)</code> is an optional location in the code where the message was logged</li>
-  <li><code class="highlighter-rouge">Example message</code> is the logged message</li>
+  <li><code class="language-plaintext highlighter-rouge">[----]</code> is a placeholder for future use</li>
+  <li><code class="language-plaintext highlighter-rouge">I</code> is the single character form of the log level (e.g. <code class="language-plaintext highlighter-rouge">I</code> == <code class="language-plaintext highlighter-rouge">INFO</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">2020-01-01T12:34:56.789012</code> is the timestamp of the message in ISO8601 format</li>
+  <li><code class="language-plaintext highlighter-rouge">12345</code> is the process ID (PID)</li>
+  <li><code class="language-plaintext highlighter-rouge">6789abcdef01</code> is the Ruby thread ID (TID) in hexadecimal</li>
+  <li><code class="language-plaintext highlighter-rouge">INFO</code> is the log level (can also be <code class="language-plaintext highlighter-rouge">DEBUG</code>, <code class="language-plaintext highlighter-rouge">WARN</code>, <code class="language-plaintext highlighter-rouge">ERROR</code>, <code class="language-plaintext highlighter-rouge">FATAL</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">MIQ(Class#method)</code> is an optional location in the code where the message was logged</li>
+  <li><code class="language-plaintext highlighter-rouge">Example message</code> is the logged message</li>
 </ul>
 
 <h3 id="container-log-format">Container log format</h3>
@@ -519,14 +519,14 @@ as a single line.</p>
 
 <h3 id="development">Development</h3>
 
-<p>In development, a number of log objects are available, with <code class="highlighter-rouge">$log</code> being the
+<p>In development, a number of log objects are available, with <code class="language-plaintext highlighter-rouge">$log</code> being the
 primary log object.  There are a number of separate log objects created for
 various purposes, particularly for provider clients.  The Rails logger is also
-available via <code class="highlighter-rouge">$rails_log</code> (or the standard <code class="highlighter-rouge">Rails.logger</code>). See
+available via <code class="language-plaintext highlighter-rouge">$rails_log</code> (or the standard <code class="language-plaintext highlighter-rouge">Rails.logger</code>). See
 <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/vmdb/loggers.rb">lib/vmdb/loggers.rb</a>
 for the complete list of loggers.</p>
 
-<p>Additionally, if the <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/vmdb/logging.rb"><code class="highlighter-rouge">Vmdb::Logging</code></a>
+<p>Additionally, if the <a href="https://github.com/ManageIQ/manageiq/blob/master/lib/vmdb/logging.rb"><code class="language-plaintext highlighter-rouge">Vmdb::Logging</code></a>
 module is mixed into a class, then the _log method is available.  This method will
 automatically prefix the code location to the message, and so is the most preferred
 way to do logging.</p>

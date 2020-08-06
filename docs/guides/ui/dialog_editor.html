@@ -474,7 +474,7 @@
 
 <h3 id="dialog-editor-1">Dialog Editor</h3>
 
-<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/dialog-editor"><code class="highlighter-rouge">%dialog-editor</code></a> is the component on the top of the hierarchy of the whole editor.</p>
+<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/dialog-editor"><code class="language-plaintext highlighter-rouge">%dialog-editor</code></a> is the component on the top of the hierarchy of the whole editor.</p>
 
 <p>The overall dialog editor hierarchy is as follows:</p>
 <div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">%dialog-editor</span>
@@ -503,18 +503,18 @@
 
 <h3 id="dialog-tabs">Dialog Tabs</h3>
 
-<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/tab-list"><code class="highlighter-rouge">%dialog-editor-tabs</code></a> displays a list of tabs assigned to the dialog.</p>
+<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/tab-list"><code class="language-plaintext highlighter-rouge">%dialog-editor-tabs</code></a> displays a list of tabs assigned to the dialog.</p>
 
 <p>It is the main component as all the content is stored inside the object.</p>
 
 <p>At the beginning, the component’s controller loads the tabs of the dialog:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">tabList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">getDialogTabs</span><span class="p">();</span>
 </code></pre></div></div>
-<p>and assigns id of the currently active tab in the  <code class="highlighter-rouge">activeTab</code> variable in the <code class="highlighter-rouge">DialogEditor</code> service.</p>
+<p>and assigns id of the currently active tab in the  <code class="language-plaintext highlighter-rouge">activeTab</code> variable in the <code class="language-plaintext highlighter-rouge">DialogEditor</code> service.</p>
 
-<h4 id="addtab"><code class="highlighter-rouge">addTab()</code></h4>
+<h4 id="addtab"><code class="language-plaintext highlighter-rouge">addTab()</code></h4>
 
-<p>function <code class="highlighter-rouge">addTab</code> creates a new empty tab, pushes it to the array with the other tabs, and updates <code class="highlighter-rouge">activeTab</code> to the new tab.</p>
+<p>function <code class="language-plaintext highlighter-rouge">addTab</code> creates a new empty tab, pushes it to the array with the other tabs, and updates <code class="language-plaintext highlighter-rouge">activeTab</code> to the new tab.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="nl">description</span><span class="p">:</span> <span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">New tab </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="nx">nextIndex</span><span class="p">,</span>
   <span class="nx">display</span><span class="p">:</span> <span class="dl">'</span><span class="s1">edit</span><span class="dl">'</span><span class="p">,</span>
@@ -525,27 +525,27 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h4 id="removetabid-number"><code class="highlighter-rouge">removeTab(id: number)</code></h4>
+<h4 id="removetabid-number"><code class="language-plaintext highlighter-rouge">removeTab(id: number)</code></h4>
 
-<p>removes the tab with the ID sent in parameter and updates the <code class="highlighter-rouge">activeTab</code>.</p>
+<p>removes the tab with the ID sent in parameter and updates the <code class="language-plaintext highlighter-rouge">activeTab</code>.</p>
 
 <h4 id="update-positions-of-tabs">Update positions of tabs</h4>
 
-<p>Because it is possible to remove (or just move the position) tab in the middle of the list, after every change the positions are updated by calling <code class="highlighter-rouge">updatePosition</code> method defined in the <code class="highlighter-rouge">Dialog Editor</code> service:</p>
+<p>Because it is possible to remove (or just move the position) tab in the middle of the list, after every change the positions are updated by calling <code class="language-plaintext highlighter-rouge">updatePosition</code> method defined in the <code class="language-plaintext highlighter-rouge">Dialog Editor</code> service:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">DialogEditor</span><span class="p">.</span><span class="nx">updatePositions</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tabList</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h3 id="dialog-groups">Dialog Groups</h3>
 
-<p>On the first level, the <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/box"><code class="highlighter-rouge">%dialog-editor-boxes</code></a> component iterates through all the tabs, selects the one that is <code class="highlighter-rouge">active</code>, and renders its groups:</p>
+<p>On the first level, the <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/box"><code class="language-plaintext highlighter-rouge">%dialog-editor-boxes</code></a> component iterates through all the tabs, selects the one that is <code class="language-plaintext highlighter-rouge">active</code>, and renders its groups:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ng-repeat='tab in vm.dialogTabs'
 ng-if='tab.position === vm.service.activeTab'
 </code></pre></div></div>
 
-<p>After, it iterates through all the tabs, and calls <code class="highlighter-rouge">%dialog-editor-field</code> component belonging to the group (decided by the position of the group).</p>
+<p>After, it iterates through all the tabs, and calls <code class="language-plaintext highlighter-rouge">%dialog-editor-field</code> component belonging to the group (decided by the position of the group).</p>
 
-<p>Working with groups is very similar to working with tabs – <code class="highlighter-rouge">addBox()</code>, <code class="highlighter-rouge">removeBox(id: number)</code> have the same purpose.</p>
+<p>Working with groups is very similar to working with tabs – <code class="language-plaintext highlighter-rouge">addBox()</code>, <code class="language-plaintext highlighter-rouge">removeBox(id: number)</code> have the same purpose.</p>
 
 <p>After every change, the position needs to be updated:</p>
 
@@ -554,7 +554,7 @@ ng-if='tab.position === vm.service.activeTab'
 <span class="p">);</span>
 </code></pre></div></div>
 
-<p>The Group is <code class="highlighter-rouge">droppable</code> which means that elements can be Drag&amp;Drop-ed into the content of the group.</p>
+<p>The Group is <code class="language-plaintext highlighter-rouge">droppable</code> which means that elements can be Drag&amp;Drop-ed into the content of the group.</p>
 
 <p>Therefore in the controller of the component handling for updating position of dialog fields needs to be done:</p>
 
@@ -575,7 +575,7 @@ ng-if='tab.position === vm.service.activeTab'
 
 <h3 id="dialog-fields">Dialog Fields</h3>
 
-<p>The most important part of <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/field"><code class="highlighter-rouge">%dialog-editor-field</code></a> component is <code class="highlighter-rouge">ng-switch</code> in the template of the component, that renders the dialog field according to its type (<code class="highlighter-rouge">on="vm.fieldData.type"</code>).</p>
+<p>The most important part of <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/field"><code class="language-plaintext highlighter-rouge">%dialog-editor-field</code></a> component is <code class="language-plaintext highlighter-rouge">ng-switch</code> in the template of the component, that renders the dialog field according to its type (<code class="language-plaintext highlighter-rouge">on="vm.fieldData.type"</code>).</p>
 
 <p>All the possible fields and their parameters are listed in this component.</p>
 
@@ -592,7 +592,7 @@ ng-if='tab.position === vm.service.activeTab'
   <li>Tag Control</li>
 </ul>
 
-<p>In case of Dropdown, the <code class="highlighter-rouge">default_value</code> can be represented either as an array (if the Dropdown is multiselect) or a string. For multiselect dropdowns there is a method for converting the <code class="highlighter-rouge">default_value</code> attribute:</p>
+<p>In case of Dropdown, the <code class="language-plaintext highlighter-rouge">default_value</code> can be represented either as an array (if the Dropdown is multiselect) or a string. For multiselect dropdowns there is a method for converting the <code class="language-plaintext highlighter-rouge">default_value</code> attribute:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">convertValuesToArray</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">fieldData</span><span class="p">.</span><span class="nx">default_value</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">fromJson</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fieldData</span><span class="p">.</span><span class="nx">default_value</span><span class="p">);</span>
@@ -601,36 +601,36 @@ ng-if='tab.position === vm.service.activeTab'
 
 <h3 id="modal">Modal</h3>
 
-<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal"><code class="highlighter-rouge">%dialog-editor-modal</code></a> does not contain any template for the component. Instead it contains behavior for modal used to edit details for Tabs, Groups and Fields.</p>
+<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal"><code class="language-plaintext highlighter-rouge">%dialog-editor-modal</code></a> does not contain any template for the component. Instead it contains behavior for modal used to edit details for Tabs, Groups and Fields.</p>
 
-<p>The primary function of the component is to load data it needs. Each type has its own mehthods to load the data into <code class="highlighter-rouge">this.modalData</code>. The source for the data is again the commonly used <code class="highlighter-rouge">DialogEditor</code> service method: <code class="highlighter-rouge">this.DialogEditor.getDialogTabs()</code>.</p>
+<p>The primary function of the component is to load data it needs. Each type has its own mehthods to load the data into <code class="language-plaintext highlighter-rouge">this.modalData</code>. The source for the data is again the commonly used <code class="language-plaintext highlighter-rouge">DialogEditor</code> service method: <code class="language-plaintext highlighter-rouge">this.DialogEditor.getDialogTabs()</code>.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nx">loadModalTabData</span><span class="p">(</span><span class="nx">tab</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span>
 <span class="k">public</span> <span class="nx">loadModalBoxData</span><span class="p">(</span><span class="nx">tab</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">box</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span>
 <span class="k">public</span> <span class="nx">loadModalFieldData</span><span class="p">(</span><span class="nx">tab</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">box</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">field</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Modal controller also contains methods <code class="highlighter-rouge">addEntry()</code> and <code class="highlighter-rouge">removeEntry()</code> that are specific for Dropdown List or Radio Button component.</p>
+<p>Modal controller also contains methods <code class="language-plaintext highlighter-rouge">addEntry()</code> and <code class="language-plaintext highlighter-rouge">removeEntry()</code> that are specific for Dropdown List or Radio Button component.</p>
 
-<p><code class="highlighter-rouge">resolveCategories()</code> , <code class="highlighter-rouge">setupCategoryOptions()</code> and <code class="highlighter-rouge">currentCategoryEntries()</code> are methods specific for Tag Control fields.</p>
+<p><code class="language-plaintext highlighter-rouge">resolveCategories()</code> , <code class="language-plaintext highlighter-rouge">setupCategoryOptions()</code> and <code class="language-plaintext highlighter-rouge">currentCategoryEntries()</code> are methods specific for Tag Control fields.</p>
 
-<p>The methods are shared with other controllers by binding them to the component’s template in <code class="highlighter-rouge">buildTemplate()</code>.</p>
+<p>The methods are shared with other controllers by binding them to the component’s template in <code class="language-plaintext highlighter-rouge">buildTemplate()</code>.</p>
 
-<p>Displaying the modal is done by <code class="highlighter-rouge">showModal(options: any)</code>.</p>
+<p>Displaying the modal is done by <code class="language-plaintext highlighter-rouge">showModal(options: any)</code>.</p>
 
 <h4 id="tab-modal">Tab Modal</h4>
 
-<p>In <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-tab"><code class="highlighter-rouge">dialog-editor-modal-tab</code></a> component, only the label and description of the Dialog Tab is set.</p>
+<p>In <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-tab"><code class="language-plaintext highlighter-rouge">dialog-editor-modal-tab</code></a> component, only the label and description of the Dialog Tab is set.</p>
 
 <h4 id="group-modal">Group Modal</h4>
 
-<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-box"><code class="highlighter-rouge">dialog-editor-modal-box</code></a> is also only used to set label and description of the Dialog Group.</p>
+<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-box"><code class="language-plaintext highlighter-rouge">dialog-editor-modal-box</code></a> is also only used to set label and description of the Dialog Group.</p>
 
 <h4 id="field-modal">Field Modal</h4>
 
-<p>The main purpose of <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-field"><code class="highlighter-rouge">dialog-editor-modal-field</code></a> is similar to the <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/field"><code class="highlighter-rouge">%dialog-editor-field</code></a> component.</p>
+<p>The main purpose of <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-field"><code class="language-plaintext highlighter-rouge">dialog-editor-modal-field</code></a> is similar to the <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/field"><code class="language-plaintext highlighter-rouge">%dialog-editor-field</code></a> component.</p>
 
-<p>The component’s template mostly consists of <code class="highlighter-rouge">ng-switch</code>, which renders templates of specific fields from the <code class="highlighter-rouge">modal-field-template</code> component described lower, with necessary methods passed into the component through the binding described in <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal"><code class="highlighter-rouge">%dialog-editor-modal</code></a> component.</p>
+<p>The component’s template mostly consists of <code class="language-plaintext highlighter-rouge">ng-switch</code>, which renders templates of specific fields from the <code class="language-plaintext highlighter-rouge">modal-field-template</code> component described lower, with necessary methods passed into the component through the binding described in <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal"><code class="language-plaintext highlighter-rouge">%dialog-editor-modal</code></a> component.</p>
 
 <p>Example for the Radio Button Dialog Field:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dialog-editor-modal-field-template</span>
@@ -648,50 +648,50 @@ ng-if='tab.position === vm.service.activeTab'
 
 <h4 id="field-template">Field Template</h4>
 
-<p>Controller of <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-field-template"><code class="highlighter-rouge">dialog-editor-modal-field-template</code></a> contains mostly bindings to the methods related to specific components.</p>
+<p>Controller of <a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/modal-field-template"><code class="language-plaintext highlighter-rouge">dialog-editor-modal-field-template</code></a> contains mostly bindings to the methods related to specific components.</p>
 
 <p>The main part of the component are templates for each of the dialog fields. All the parameters for Dialog Fields are described in the templates of this component.</p>
 
-<p>The modal for Dialog Fields contains three permanent tabs - <em>Field Information</em>, <em>Options</em>, <em>Advanced</em>. If the Dialog Field is set as <code class="highlighter-rouge">dynamic</code>, a new tab with an <em>Overridable Options</em> heading is displayed.</p>
+<p>The modal for Dialog Fields contains three permanent tabs - <em>Field Information</em>, <em>Options</em>, <em>Advanced</em>. If the Dialog Field is set as <code class="language-plaintext highlighter-rouge">dynamic</code>, a new tab with an <em>Overridable Options</em> heading is displayed.</p>
 
-<p>In <em>Field Information</em> all the fields must have a <code class="highlighter-rouge">name</code> that is unique in the dialog, optionally a <code class="highlighter-rouge">label</code>, <code class="highlighter-rouge">description</code>, and (as mentioned before, except Tag Control) all the fields can be set as <code class="highlighter-rouge">dynamic</code> <em>(boolean)</em>.</p>
+<p>In <em>Field Information</em> all the fields must have a <code class="language-plaintext highlighter-rouge">name</code> that is unique in the dialog, optionally a <code class="language-plaintext highlighter-rouge">label</code>, <code class="language-plaintext highlighter-rouge">description</code>, and (as mentioned before, except Tag Control) all the fields can be set as <code class="language-plaintext highlighter-rouge">dynamic</code> <em>(boolean)</em>.</p>
 
-<p>In the <em>Advanced</em> tab, the <code class="highlighter-rouge">reconfigurable</code> <em>(boolean)</em> option can be set.</p>
+<p>In the <em>Advanced</em> tab, the <code class="language-plaintext highlighter-rouge">reconfigurable</code> <em>(boolean)</em> option can be set.</p>
 
 <p>All the other parameters for the components the can be set in <em>Options</em> or <em>Overridable Options</em> tab through the modal are as follows:</p>
 
 <h5 id="text-box">Text Box</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-      <li><code class="highlighter-rouge">default_value</code> <em>(string)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">options.protected</code> <em>(boolean)</em> – for passwords, value will be replaced with <code class="highlighter-rouge">*</code></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
-      <li><code class="highlighter-rouge">validator_rule</code> <em>(string; only if <code class="highlighter-rouge">validatior_type</code> has a value <code class="highlighter-rouge">'regex'</code>)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(string)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.protected</code> <em>(boolean)</em> – for passwords, value will be replaced with <code class="language-plaintext highlighter-rouge">*</code></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_rule</code> <em>(string; only if <code class="language-plaintext highlighter-rouge">validatior_type</code> has a value <code class="language-plaintext highlighter-rouge">'regex'</code>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">options.protected</code> <em>(boolean)</em> – for passwords, value will be replaced with <code class="highlighter-rouge">*</code></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
-      <li><code class="highlighter-rouge">validator_rule</code> <em>(string; only if <code class="highlighter-rouge">validatior_type</code> has a value <code class="highlighter-rouge">'regex'</code>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.protected</code> <em>(boolean)</em> – for passwords, value will be replaced with <code class="language-plaintext highlighter-rouge">*</code></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_rule</code> <em>(string; only if <code class="language-plaintext highlighter-rouge">validatior_type</code> has a value <code class="language-plaintext highlighter-rouge">'regex'</code>)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">default_value</code> <em>(string)</em></li>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(string)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -701,31 +701,31 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="text-area">Text Area</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">default_value</code> <em>(string)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
-      <li><code class="highlighter-rouge">validator_rule</code> <em>(string; only if <code class="highlighter-rouge">validatior_type</code> has a value <code class="highlighter-rouge">'regex'</code>)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(string)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_rule</code> <em>(string; only if <code class="language-plaintext highlighter-rouge">validatior_type</code> has a value <code class="language-plaintext highlighter-rouge">'regex'</code>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
-      <li><code class="highlighter-rouge">validator_rule</code> <em>(string; only if <code class="highlighter-rouge">validatior_type</code> has a value <code class="highlighter-rouge">'regex'</code>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_type</code> <em>(‘regex’ (string) / false (boolean))</em></li>
+      <li><code class="language-plaintext highlighter-rouge">validator_rule</code> <em>(string; only if <code class="language-plaintext highlighter-rouge">validatior_type</code> has a value <code class="language-plaintext highlighter-rouge">'regex'</code>)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">default_value</code> <em>(string)</em></li>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(string)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -735,26 +735,26 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="check-box">Check Box</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">default_value</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -764,27 +764,27 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="date-control">Date Control</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">default_value</code> <em>(Date object, after <a href="https://github.com/ManageIQ/ui-components/pull/373/files">#373</a>)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">show_past_dates</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(Date object, after <a href="https://github.com/ManageIQ/ui-components/pull/373/files">#373</a>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_past_dates</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">options.show_past_dates</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.show_past_dates</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -794,27 +794,27 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="date-time-control">Date Time Control</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">default_value</code> <em>(Date object, after <a href="https://github.com/ManageIQ/ui-components/pull/373/files">#373</a>)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">show_past_dates</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(Date object, after <a href="https://github.com/ManageIQ/ui-components/pull/373/files">#373</a>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_past_dates</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">options.show_past_dates</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.show_past_dates</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -824,35 +824,35 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="dropdown-list">Dropdown List</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-      <li><code class="highlighter-rouge">default_value</code> <em>(string, or a string representing an array for multiselect – <code class="highlighter-rouge">default_value: "[\"1\", \"2\"]"</code>)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">options.force_multi_value</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
-      <li><code class="highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">values</code> <em>(array, [0] - value, [1] - key)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(string, or a string representing an array for multiselect – <code class="language-plaintext highlighter-rouge">default_value: "[\"1\", \"2\"]"</code>)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.force_multi_value</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">values</code> <em>(array, [0] - value, [1] - key)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">options.force_multi_value</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.force_multi_value</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
-          <li><code class="highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -862,33 +862,33 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="radio-button">Radio Button</h5>
 
 <ul>
-  <li><strong>if <code class="highlighter-rouge">dynamic</code> is not checked:</strong>
+  <li><strong>if <code class="language-plaintext highlighter-rouge">dynamic</code> is not checked:</strong>
     <ul>
-      <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-      <li><code class="highlighter-rouge">default_value</code> <em>(string or array for multiselect)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
-      <li><code class="highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">values</code> <em>(array, [0] - value, [1] - key)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">default_value</code> <em>(string or array for multiselect)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">values</code> <em>(array, [0] - value, [1] - key)</em></li>
     </ul>
   </li>
-  <li><strong>if the field is <code class="highlighter-rouge">dynamic</code>:</strong>
+  <li><strong>if the field is <code class="language-plaintext highlighter-rouge">dynamic</code>:</strong>
     <ul>
-      <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-      <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-      <li><code class="highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-      <li><code class="highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
-      <li><code class="highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">load_values_on_init</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">resource_action</code> <em>(path to automate method)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">show_refresh_button</code> <em>(boolean)</em></li>
       <li><strong>In <em>Overridable Options</em> tab:</strong>
         <ul>
-          <li><code class="highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
-          <li><code class="highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
-          <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-          <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+          <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
         </ul>
       </li>
     </ul>
@@ -898,39 +898,39 @@ ng-if='tab.position === vm.service.activeTab'
 <h5 id="tag-control">Tag Control</h5>
 
 <ul>
-  <li><code class="highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
-  <li><code class="highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
-  <li><code class="highlighter-rouge">options.category_id</code> <em>(select - list of categories)</em></li>
-  <li><code class="highlighter-rouge">options.force_single_value</code> <em>(boolean)</em></li>
-  <li><code class="highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
-  <li><code class="highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
-  <li><code class="highlighter-rouge">required</code> <em>(boolean)</em></li>
-  <li><code class="highlighter-rouge">read_only</code> <em>(boolean)</em></li>
-  <li><code class="highlighter-rouge">visible</code> <em>(boolean)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">data_type</code> <em>(select - string / integer)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">dialog_field_responders</code> <em>(multiple select - dynamic fields list)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">options.category_id</code> <em>(select - list of categories)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">options.force_single_value</code> <em>(boolean)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">options.sort_by</code> <em>(select - none / value / description)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">options.sort_order</code> <em>(select - ascending / descending)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">required</code> <em>(boolean)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">read_only</code> <em>(boolean)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">visible</code> <em>(boolean)</em></li>
 </ul>
 
 <p><em>*A <a href="https://github.com/ManageIQ/ui-components/pull/392#discussion_r296871830">note</a> by @eclarizio related to accessing values of the fields:</em></p>
 
 <blockquote>
   <p>on the ui-components side for most of the field types,
-<code class="highlighter-rouge">default_value</code> is the value that is getting passed back from the
+<code class="language-plaintext highlighter-rouge">default_value</code> is the value that is getting passed back from the
 refresh API call that we should be looking at to determine what to
 show to the user after a refresh happens. We changed it in
 <a href="https://github.com/ManageIQ/ui-components/commit/7dcb1f7ca9fc404588cfd8944796bd3ed726c376">7dcb1f7</a>.
-For sorted items, <code class="highlighter-rouge">values</code> is the key we use since it needs to be a
-list, and <code class="highlighter-rouge">default_value</code> is simply the one that is selected from that
+For sorted items, <code class="language-plaintext highlighter-rouge">values</code> is the key we use since it needs to be a
+list, and <code class="language-plaintext highlighter-rouge">default_value</code> is simply the one that is selected from that
 list.</p>
 
   <p>On the ui-components side, because of the way datetime controls work,
 there is special logic for the date and time parts because the
-<code class="highlighter-rouge">default_value</code> comes in as a string (because it is just a JSON
-response), and then it gets parsed and separated into a <code class="highlighter-rouge">dateField</code>
-and a <code class="highlighter-rouge">timeField</code> since the controls are separate.</p>
+<code class="language-plaintext highlighter-rouge">default_value</code> comes in as a string (because it is just a JSON
+response), and then it gets parsed and separated into a <code class="language-plaintext highlighter-rouge">dateField</code>
+and a <code class="language-plaintext highlighter-rouge">timeField</code> since the controls are separate.</p>
 </blockquote>
 
 <h3 id="toolbox">Toolbox</h3>
 
-<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/toolbox"><code class="highlighter-rouge">dialog-editor-field-static</code></a> is the component used for dragging the Dialog Fields placeholders into the droppable Dialog Group.</p>
+<p><a href="https://github.com/ManageIQ/ui-components/tree/master/src/dialog-editor/components/toolbox"><code class="language-plaintext highlighter-rouge">dialog-editor-field-static</code></a> is the component used for dragging the Dialog Fields placeholders into the droppable Dialog Group.</p>
 
 <p>Its controller describes default values for parameters of each Dialog Field.</p>
 
@@ -944,7 +944,7 @@ and a <code class="highlighter-rouge">timeField</code> since the controls are se
 
 <h3 id="dialog-editor-2">Dialog Editor</h3>
 
-<p>The <a href="https://github.com/ManageIQ/ui-components/blob/master/src/dialog-editor/services/dialogEditorService.ts"><code class="highlighter-rouge">DialogEditor</code></a> service’s primary use is to store the data of the edited dialog in the <code class="highlighter-rouge">setData</code> function:</p>
+<p>The <a href="https://github.com/ManageIQ/ui-components/blob/master/src/dialog-editor/services/dialogEditorService.ts"><code class="language-plaintext highlighter-rouge">DialogEditor</code></a> service’s primary use is to store the data of the edited dialog in the <code class="language-plaintext highlighter-rouge">setData</code> function:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
@@ -954,11 +954,11 @@ and a <code class="highlighter-rouge">timeField</code> since the controls are se
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">setData</code> function is then called in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L86">Dialog Editor controller</a></p>
+<p>The <code class="language-plaintext highlighter-rouge">setData</code> function is then called in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L86">Dialog Editor controller</a></p>
 
-<p>Another often used function is <code class="highlighter-rouge">public updatePositions(elements: any[])</code> used to re-calculate indexes of items in the dialog after a change of their position.</p>
+<p>Another often used function is <code class="language-plaintext highlighter-rouge">public updatePositions(elements: any[])</code> used to re-calculate indexes of items in the dialog after a change of their position.</p>
 
-<p>The Dialog Editor also uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">sessionStorage</a> to protect the users from mistakenly losing the changes while editing the dialog. In the <code class="highlighter-rouge">sessionStorage</code> the dialogs are stored by identificator <code class="highlighter-rouge">'service_dialog-' + id</code>.</p>
+<p>The Dialog Editor also uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">sessionStorage</a> to protect the users from mistakenly losing the changes while editing the dialog. In the <code class="language-plaintext highlighter-rouge">sessionStorage</code> the dialogs are stored by identificator <code class="language-plaintext highlighter-rouge">'service_dialog-' + id</code>.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">clearSessionStorage</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sessionStorageKey</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
@@ -975,7 +975,7 @@ and a <code class="highlighter-rouge">timeField</code> since the controls are se
 
 <h3 id="dialog-editor-validation">Dialog Editor Validation</h3>
 
-<p>The <a href="https://github.com/ManageIQ/ui-components/blob/master/src/dialog-editor/services/dialogValidationService.ts"><code class="highlighter-rouge">DialogValidation</code></a> service contains set of rules that needs to be fulfilled in order to be able to submit the Dialog.</p>
+<p>The <a href="https://github.com/ManageIQ/ui-components/blob/master/src/dialog-editor/services/dialogValidationService.ts"><code class="language-plaintext highlighter-rouge">DialogValidation</code></a> service contains set of rules that needs to be fulfilled in order to be able to submit the Dialog.</p>
 
 <p>The rules are:</p>
 <ul>
@@ -1013,11 +1013,11 @@ and a <code class="highlighter-rouge">timeField</code> since the controls are se
 
 <h3 id="launch-the-action-to-open-dialog-editor">Launch the action to open Dialog Editor</h3>
 
-<p>The Dialog Editor can be opened for three different actions - <code class="highlighter-rouge">edit</code>, <code class="highlighter-rouge">copy</code> or <code class="highlighter-rouge">new</code>.
-If both <code class="highlighter-rouge">:id</code> and <code class="highlighter-rouge">:copy</code> keys are specified, action is <code class="highlighter-rouge">copy</code>. If the <code class="highlighter-rouge">:copy</code> key is missing, the action is <code class="highlighter-rouge">edit</code>, if ever <code class="highlighter-rouge">:id</code> is not present, a <code class="highlighter-rouge">new</code> Dialog is being created.
-The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/helpers/miq_ae_customization_helper.rb"><code class="highlighter-rouge">miq_ae_customization_helper.rb</code></a></p>
+<p>The Dialog Editor can be opened for three different actions - <code class="language-plaintext highlighter-rouge">edit</code>, <code class="language-plaintext highlighter-rouge">copy</code> or <code class="language-plaintext highlighter-rouge">new</code>.
+If both <code class="language-plaintext highlighter-rouge">:id</code> and <code class="language-plaintext highlighter-rouge">:copy</code> keys are specified, action is <code class="language-plaintext highlighter-rouge">copy</code>. If the <code class="language-plaintext highlighter-rouge">:copy</code> key is missing, the action is <code class="language-plaintext highlighter-rouge">edit</code>, if ever <code class="language-plaintext highlighter-rouge">:id</code> is not present, a <code class="language-plaintext highlighter-rouge">new</code> Dialog is being created.
+The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/helpers/miq_ae_customization_helper.rb"><code class="language-plaintext highlighter-rouge">miq_ae_customization_helper.rb</code></a></p>
 
-<p>The top level component <code class="highlighter-rouge">%dialog-editor</code> is used in the <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/views/miq_ae_customization/editor.html.haml">editor.html.haml</a> template, where the ID of the dialog is also stored by:</p>
+<p>The top level component <code class="language-plaintext highlighter-rouge">%dialog-editor</code> is used in the <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/master/app/views/miq_ae_customization/editor.html.haml">editor.html.haml</a> template, where the ID of the dialog is also stored by:</p>
 
 <div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ManageIQ.angular.app.value('dialogIdAction', '<span class="si">#{</span> <span class="n">dialog_id_action</span><span class="p">.</span><span class="nf">to_json</span> <span class="si">}</span>');
 </code></pre></div></div>
@@ -1046,7 +1046,7 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>from the API the data are received from the method <a href="https://github.com/ManageIQ/manageiq-api/blob/e9ca3256ded6d026fe412c0815e1bb672ee0d4e1/app/controllers/api/service_dialogs_controller.rb#L19-L22"><code class="highlighter-rouge">fetch_service_dialogs_content</code></a>:</p>
+<p>from the API the data are received from the method <a href="https://github.com/ManageIQ/manageiq-api/blob/e9ca3256ded6d026fe412c0815e1bb672ee0d4e1/app/controllers/api/service_dialogs_controller.rb#L19-L22"><code class="language-plaintext highlighter-rouge">fetch_service_dialogs_content</code></a>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fetch_service_dialogs_content</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
   <span class="n">target</span><span class="p">,</span> <span class="n">resource_action</span> <span class="o">=</span> <span class="n">validate_dialog_content_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
@@ -1054,11 +1054,11 @@ The behavior is described in <a href="https://github.com/ManageIQ/manageiq-ui-cl
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>after JSON is loaded for dynamic fields, dialog_field_responders needs to have an id, customized by: <code class="highlighter-rouge">translateResponderNamesToIds</code>.</p>
+<p>after JSON is loaded for dynamic fields, dialog_field_responders needs to have an id, customized by: <code class="language-plaintext highlighter-rouge">translateResponderNamesToIds</code>.</p>
 
 <h3 id="submitting-the-dialog">Submitting the Dialog</h3>
 
-<p>Before sumbitting the Dialog, a keys used by Angular need to be removed from the object describing the Dialog content. For that a <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L94-L116"><code class="highlighter-rouge">customizer</code></a> function is used.</p>
+<p>Before sumbitting the Dialog, a keys used by Angular need to be removed from the object describing the Dialog content. For that a <a href="https://github.com/ManageIQ/manageiq-ui-classic/blob/62c50e0af7324eee16bc333b65d801e4398a5674/app/assets/javascripts/controllers/dialog_editor/dialog_editor_controller.js#L94-L116"><code class="language-plaintext highlighter-rouge">customizer</code></a> function is used.</p>
 
 <p>After, the Dialog is saved by calling:</p>
 

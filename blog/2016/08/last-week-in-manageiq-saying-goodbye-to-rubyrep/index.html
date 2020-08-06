@@ -119,9 +119,9 @@ Making the move from rubyrep to pglogical was a giant undertaking. A very huge t
 
 <h3 id="allow-for-service-templates-to-have-multiple-vms"><a href="https://github.com/ManageIQ/manageiq/pull/8515">Allow for service templates to have multiple VM’s</a></h3>
 
-<p>When setting <code class="highlighter-rouge">option_1_number_of_vms</code> in a service dialog we would only provision 1 virtual machine
+<p>When setting <code class="language-plaintext highlighter-rouge">option_1_number_of_vms</code> in a service dialog we would only provision 1 virtual machine
 regardless of the value passed in.
-This improvement reads the <code class="highlighter-rouge">number_of_vms</code> and exposes that change in the following 4 areas:</p>
+This improvement reads the <code class="language-plaintext highlighter-rouge">number_of_vms</code> and exposes that change in the following 4 areas:</p>
 
 <p><em>Provision Request</em></p>
 
@@ -133,7 +133,7 @@ This improvement reads the <code class="highlighter-rouge">number_of_vms</code> 
 
 <h3 id="applying-rbac-search-to-automate-simulation"><a href="https://github.com/ManageIQ/manageiq/pull/10060">Applying RBAC search to Automate Simulation</a></h3>
 
-<p>The Automate Simulation tool includes two dropdowns <code class="highlighter-rouge">Type</code> and <code class="highlighter-rouge">Selection</code> in the Object Attribute panel.
+<p>The Automate Simulation tool includes two dropdowns <code class="language-plaintext highlighter-rouge">Type</code> and <code class="language-plaintext highlighter-rouge">Selection</code> in the Object Attribute panel.
 The populated data used to allow a full object selection regardless of who was logged in.
 This change locks the list down via RBAC and only shows the user what they are allowed to see.</p>
 
@@ -150,9 +150,9 @@ This fix pulls three trees from the Group Summary screen out of session and stor
 The join table received an id in the global region when it should have had a remote region
 id assigned.</p>
 
-<p><code class="highlighter-rouge">cloud_subnets_network_ports</code> prior to the change:</p>
+<p><code class="language-plaintext highlighter-rouge">cloud_subnets_network_ports</code> prior to the change:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
        id       | cloud_subnet_id | network_port_id | address 
 ----------------+-----------------+-----------------+---------
  99000000000001 |               2 |               1 |        |
@@ -164,7 +164,7 @@ id assigned.</p>
 
 <p>The same table after the change:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vmdb_production=# select * from cloud_subnets_network_ports;
  id | cloud_subnet_id | network_port_id |    address     
 ----+-----------------+-----------------+----------------
   1 |               2 |               1 | 192.0.2.1     |
@@ -178,11 +178,11 @@ id assigned.</p>
 
 <h3 id="expose-generic-object-and-definition-to-automate"><a href="https://github.com/ManageIQ/manageiq/pull/9861">Expose generic object and definition to automate</a></h3>
 
-<p>New automate models for <code class="highlighter-rouge">GenericObjectDefinition</code> and <code class="highlighter-rouge">GenericObject</code> have been added.</p>
+<p>New automate models for <code class="language-plaintext highlighter-rouge">GenericObjectDefinition</code> and <code class="language-plaintext highlighter-rouge">GenericObject</code> have been added.</p>
 
 <h3 id="create-a-bundle-service-template-and-attach-to-blueprint"><a href="https://github.com/ManageIQ/manageiq/pull/9854">Create a bundle service template and attach to blueprint</a></h3>
 
-<p>Part of the Blueprint feature.  This PR builds a new method <code class="highlighter-rouge">create_bundle</code> in the <code class="highlighter-rouge">Blueprint</code> class.
+<p>Part of the Blueprint feature.  This PR builds a new method <code class="language-plaintext highlighter-rouge">create_bundle</code> in the <code class="language-plaintext highlighter-rouge">Blueprint</code> class.
 It creates a bundle service template and places all copied item templates underneath it. All of these items are part
 of a single Blueprint.</p>
 
@@ -190,13 +190,13 @@ of a single Blueprint.</p>
 
 <h3 id="these-files-should-not-be-executable"><a href="https://github.com/ManageIQ/manageiq/pull/10068">These files should not be executable</a></h3>
 
-<p>Less about ‘deletions’ and more about security. This fix turned off the executable <code class="highlighter-rouge">0755</code> permission for 78 files!</p>
+<p>Less about ‘deletions’ and more about security. This fix turned off the executable <code class="language-plaintext highlighter-rouge">0755</code> permission for 78 files!</p>
 
 <h3 id="miqpolicycontroller---remove-dead-policy_options-and-cat_pressed"><a href="https://github.com/ManageIQ/manageiq/pull/10112">MiqPolicyController - remove dead policy_options and cat_pressed</a></h3>
 
-<p>The method <code class="highlighter-rouge">policy_options</code> was only used on vms and not for policies as the name implied. It also called the 
-previously removed <code class="highlighter-rouge">build_policy_tree</code>.  Due to the above the method was removed.
-<code class="highlighter-rouge">cat_pressed</code> is no longer used anywhere in the codebase and was <a href="https://github.com/himdel">happily</a> removed!</p>
+<p>The method <code class="language-plaintext highlighter-rouge">policy_options</code> was only used on vms and not for policies as the name implied. It also called the 
+previously removed <code class="language-plaintext highlighter-rouge">build_policy_tree</code>.  Due to the above the method was removed.
+<code class="language-plaintext highlighter-rouge">cat_pressed</code> is no longer used anywhere in the codebase and was <a href="https://github.com/himdel">happily</a> removed!</p>
 
 <h2 id="wrapping-up">Wrapping up</h2>
 

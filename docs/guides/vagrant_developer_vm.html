@@ -486,22 +486,22 @@ Code is copied from the host during provisioning, so you can test changes in you
   <li>Install <a href="http://vagrantup.com/">Vagrant</a> in your machine</li>
   <li>The image we use needs <a href="https://www.virtualbox.org/">VirtualBox</a></li>
   <li>We will provision the machine using <a href="https://www.ansible.com/">Ansible</a>, by default it will use the Ansible provisioner in your host, but it can be configured to run locally in the VM</li>
-  <li>The code to be run should be in <code class="highlighter-rouge">~/workspace/manageiq</code></li>
+  <li>The code to be run should be in <code class="language-plaintext highlighter-rouge">~/workspace/manageiq</code></li>
 </ul>
 
 <h2 id="instructions">Instructions</h2>
 
 <ol>
-  <li>Clone the ManageIQ code into <code class="highlighter-rouge">~/workspace/manageiq</code></li>
+  <li>Clone the ManageIQ code into <code class="language-plaintext highlighter-rouge">~/workspace/manageiq</code></li>
 </ol>
 
-<p>Everything that is inside that folder will be copied into <code class="highlighter-rouge">/manageiq</code> in the VM</p>
+<p>Everything that is inside that folder will be copied into <code class="language-plaintext highlighter-rouge">/manageiq</code> in the VM</p>
 
 <ol>
-  <li>Clone the repo into your machine (i.e. in <code class="highlighter-rouge">Vagrant/manageiq-dev</code>)</li>
+  <li>Clone the repo into your machine (i.e. in <code class="language-plaintext highlighter-rouge">Vagrant/manageiq-dev</code>)</li>
 </ol>
 
-<p><code class="highlighter-rouge">git clone https://github.com/ManageIQ/manageiq-vagrant-dev.git ~/Vagrant/manageiq-dev</code></p>
+<p><code class="language-plaintext highlighter-rouge">git clone https://github.com/ManageIQ/manageiq-vagrant-dev.git ~/Vagrant/manageiq-dev</code></p>
 
 <ol>
   <li>Verify that the Vagrant file is properly configured</li>
@@ -516,7 +516,7 @@ Code is copied from the host during provisioning, so you can test changes in you
   <li>Run the machine</li>
 </ol>
 
-<p><code class="highlighter-rouge"> $ (manageiq-dev) &gt; vagrant up</code></p>
+<p><code class="language-plaintext highlighter-rouge"> $ (manageiq-dev) &gt; vagrant up</code></p>
 
 <p>Look at the Vagrant documentation to know for options not described here:</p>
 
@@ -534,15 +534,15 @@ Code is copied from the host during provisioning, so you can test changes in you
   <li>Developing</li>
 </ol>
 
-<p>You have all the options in the development guide to test. The basic ones are: (Running in <code class="highlighter-rouge">vagrant ssh</code>)</p>
+<p>You have all the options in the development guide to test. The basic ones are: (Running in <code class="language-plaintext highlighter-rouge">vagrant ssh</code>)</p>
 
 <p>Prepare the environment to be run (gems, migrations, etc)</p>
 
-<p><code class="highlighter-rouge"> cd ~/manageiq; bin/setup</code></p>
+<p><code class="language-plaintext highlighter-rouge"> cd ~/manageiq; bin/setup</code></p>
 
 <p>Run the server in full mode</p>
 
-<p><code class="highlighter-rouge"> cd ~/manageiq; bundle exec rake evm:start</code></p>
+<p><code class="language-plaintext highlighter-rouge"> cd ~/manageiq; bundle exec rake evm:start</code></p>
 
 <h2 id="the-process">The process</h2>
 

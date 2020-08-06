@@ -496,11 +496,11 @@ even able to reach the API endpoint of the underlying provider.</p>
   <li>opening a remote console to a VM.</li>
 </ul>
 
-<p>In such cases we have the <code class="highlighter-rouge">wait\_for\_task</code> call.</p>
+<p>In such cases we have the <code class="language-plaintext highlighter-rouge">wait\_for\_task</code> call.</p>
 
-<p>Example in <code class="highlighter-rouge">create</code> we do a call that returns a <code class="highlighter-rouge">task\_id</code>. Then we call <code class="highlighter-rouge">initiate\_wait\_for\_task</code>.</p>
+<p>Example in <code class="language-plaintext highlighter-rouge">create</code> we do a call that returns a <code class="language-plaintext highlighter-rouge">task\_id</code>. Then we call <code class="language-plaintext highlighter-rouge">initiate\_wait\_for\_task</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def create
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def create
   ...
 
   task_id = CloudTenant.create_cloud_tenant_queue(session[:userid], ems, options)
@@ -516,11 +516,11 @@ even able to reach the API endpoint of the underlying provider.</p>
 end
 </code></pre></div></div>
 
-<p>This results in a transaction that fired busy waiting in the browser and polling <code class="highlighter-rouge">ApplicationController::wait\_for\_task</code>.</p>
+<p>This results in a transaction that fired busy waiting in the browser and polling <code class="language-plaintext highlighter-rouge">ApplicationController::wait\_for\_task</code>.</p>
 
-<p>When the task is finished, the <code class="highlighter-rouge">:action</code> passed in is called with the original parameters passed to the <code class="highlighter-rouge">create</code> call plus the task_id.</p>
+<p>When the task is finished, the <code class="language-plaintext highlighter-rouge">:action</code> passed in is called with the original parameters passed to the <code class="language-plaintext highlighter-rouge">create</code> call plus the task_id.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  def create_finished
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  def create_finished
     task_id = session[:async][:params][:task_id]
     tenant_name = session[:async][:params][:name]
     task = MiqTask.find(task_id)

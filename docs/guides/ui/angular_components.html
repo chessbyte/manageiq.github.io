@@ -470,22 +470,22 @@
         
         <h3 id="angular-component">Angular Component</h3>
 
-<p>Location: <code class="highlighter-rouge">app/assets/javascripts/components</code>.</p>
+<p>Location: <code class="language-plaintext highlighter-rouge">app/assets/javascripts/components</code>.</p>
 
 <h4 id="basic-pattern">Basic pattern</h4>
 <p>A component shouldn’t modify any data or DOM that’s out of its scope. All communication should go via bindings. One-way binding should be preferred over two-way binding.<br />
-Set <code class="highlighter-rouge">controllerAs: "vm"</code>.<br />
-<code class="highlighter-rouge">templateUrl:</code> should be preferred over <code class="highlighter-rouge">template:</code> but at the moment it’s impossible to test that component’s HTML is generated correctly if <code class="highlighter-rouge">templateUrl:</code> is used. So temporarily <code class="highlighter-rouge">template:</code> should be used instead of <code class="highlighter-rouge">templateUrl:</code>.</p>
+Set <code class="language-plaintext highlighter-rouge">controllerAs: "vm"</code>.<br />
+<code class="language-plaintext highlighter-rouge">templateUrl:</code> should be preferred over <code class="language-plaintext highlighter-rouge">template:</code> but at the moment it’s impossible to test that component’s HTML is generated correctly if <code class="language-plaintext highlighter-rouge">templateUrl:</code> is used. So temporarily <code class="language-plaintext highlighter-rouge">template:</code> should be used instead of <code class="language-plaintext highlighter-rouge">templateUrl:</code>.</p>
 
-<h4 id="miq-button"><code class="highlighter-rouge">miq-button</code></h4>
+<h4 id="miq-button"><code class="language-plaintext highlighter-rouge">miq-button</code></h4>
 <p>Component for a button element.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%miq-button{:name      =&gt; t = _('Cancel'),
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%miq-button{:name      =&gt; t = _('Cancel'),
             :title     =&gt; t,
             :alt       =&gt; t,
             :enabled   =&gt; "true",
             'on-click' =&gt; "cancelClicked()"}
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%miq-button{:name          =&gt; t = _('Validate'),
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%miq-button{:name          =&gt; t = _('Validate'),
             :enabledTitle  =&gt; validate_title_on,
             :disabledTitle =&gt; validate_title_off,
             :enabled       =&gt; "true",
@@ -495,15 +495,15 @@ Set <code class="highlighter-rouge">controllerAs: "vm"</code>.<br />
 
 <p>It consists of:</p>
 <ul>
-  <li><code class="highlighter-rouge">name</code> (String) sets text shown in the button.</li>
-  <li><code class="highlighter-rouge">enabled</code> (expression) sets button to enabled or disabled.</li>
-  <li><code class="highlighter-rouge">enabledTitle</code> (String, optional) used if button has different title/alt for enabled and disabled state. Sets title/alt for enabled button. If <code class="highlighter-rouge">enabledTitle</code> is set <code class="highlighter-rouge">disabledTitle</code> should be set as well.</li>
-  <li><code class="highlighter-rouge">disabledTitle</code> (String, optional) used if button has different title/alt for enabled and disabled state. Sets title/alt for disabled button. If <code class="highlighter-rouge">disabledTitle</code> is set <code class="highlighter-rouge">enabledTitle</code> should be set as well.</li>
-  <li><code class="highlighter-rouge">primary</code> (expression, optional) True if button has class <code class="highlighter-rouge">btn-primary</code> otherwise it will have class <code class="highlighter-rouge">btn-default</code>.</li>
-  <li><code class="highlighter-rouge">onClick</code> (function) is a callback to be called when button is clicked.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> (String) sets text shown in the button.</li>
+  <li><code class="language-plaintext highlighter-rouge">enabled</code> (expression) sets button to enabled or disabled.</li>
+  <li><code class="language-plaintext highlighter-rouge">enabledTitle</code> (String, optional) used if button has different title/alt for enabled and disabled state. Sets title/alt for enabled button. If <code class="language-plaintext highlighter-rouge">enabledTitle</code> is set <code class="language-plaintext highlighter-rouge">disabledTitle</code> should be set as well.</li>
+  <li><code class="language-plaintext highlighter-rouge">disabledTitle</code> (String, optional) used if button has different title/alt for enabled and disabled state. Sets title/alt for disabled button. If <code class="language-plaintext highlighter-rouge">disabledTitle</code> is set <code class="language-plaintext highlighter-rouge">enabledTitle</code> should be set as well.</li>
+  <li><code class="language-plaintext highlighter-rouge">primary</code> (expression, optional) True if button has class <code class="language-plaintext highlighter-rouge">btn-primary</code> otherwise it will have class <code class="language-plaintext highlighter-rouge">btn-default</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">onClick</code> (function) is a callback to be called when button is clicked.</li>
 </ul>
 
-<p>If <code class="highlighter-rouge">title</code>/<code class="highlighter-rouge">alt</code> are the same for both states, <code class="highlighter-rouge">title</code> and <code class="highlighter-rouge">alt</code> should be set as attributes of the button.</p>
+<p>If <code class="language-plaintext highlighter-rouge">title</code>/<code class="language-plaintext highlighter-rouge">alt</code> are the same for both states, <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">alt</code> should be set as attributes of the button.</p>
 
       </div>
     </article>

@@ -110,9 +110,9 @@
 <h2 id="improved">Improved</h2>
 
 <p>If removing technical debt is considered an improvement (answer: it should be), then these last two weeks won’t disappoint.
-First up is <a href="https://github.com/imtayadeway">Tim Wade</a> removing some <a href="https://github.com/ManageIQ/manageiq/pull/10959">dead paths</a> in <code class="highlighter-rouge">MiqExpression.operands2rubyvalue</code>. Next up is <a href="https://github.com/imtayadeway">Tim Wade</a> again! This time <a href="https://github.com/ManageIQ/manageiq/pull/13310">fixing invalid chargeback factories</a> in our test suite.</p>
+First up is <a href="https://github.com/imtayadeway">Tim Wade</a> removing some <a href="https://github.com/ManageIQ/manageiq/pull/10959">dead paths</a> in <code class="language-plaintext highlighter-rouge">MiqExpression.operands2rubyvalue</code>. Next up is <a href="https://github.com/imtayadeway">Tim Wade</a> again! This time <a href="https://github.com/ManageIQ/manageiq/pull/13310">fixing invalid chargeback factories</a> in our test suite.</p>
 
-<p>And finally, a useful improvement from <a href="https://github.com/zeari">Ari Zellner</a> Changing <code class="highlighter-rouge">Images</code> to <code class="highlighter-rouge">ContainerImages</code> in our <a href="https://github.com/ManageIQ/manageiq/pull/13198">chargeback rate assignments</a>.</p>
+<p>And finally, a useful improvement from <a href="https://github.com/zeari">Ari Zellner</a> Changing <code class="language-plaintext highlighter-rouge">Images</code> to <code class="language-plaintext highlighter-rouge">ContainerImages</code> in our <a href="https://github.com/ManageIQ/manageiq/pull/13198">chargeback rate assignments</a>.</p>
 
 <h2 id="fixed">Fixed</h2>
 
@@ -124,13 +124,13 @@ First up is <a href="https://github.com/imtayadeway">Tim Wade</a> removing some 
 
 <h2 id="new">New</h2>
 
-<p>New code usually creates new bugs. One of our new and ongoing projects is creating a new physical infrastructure provider. However that has led to a couple of bugs, but <a href="https://github.com/skateman">Dávid Halász</a> to the rescue he’s fixed our <a href="https://github.com/bbatsov/rubocop">Rubocop</a> <a href="https://github.com/ManageIQ/manageiq/blob/master/.rubocop.yml">style guide</a> to <a href="https://github.com/ManageIQ/manageiq/pull/13266">not complain</a> about the <code class="highlighter-rouge">$lenovo_log</code> global; the logging variable used by our first physical infrastructure provider, Lenovo.</p>
+<p>New code usually creates new bugs. One of our new and ongoing projects is creating a new physical infrastructure provider. However that has led to a couple of bugs, but <a href="https://github.com/skateman">Dávid Halász</a> to the rescue he’s fixed our <a href="https://github.com/bbatsov/rubocop">Rubocop</a> <a href="https://github.com/ManageIQ/manageiq/blob/master/.rubocop.yml">style guide</a> to <a href="https://github.com/ManageIQ/manageiq/pull/13266">not complain</a> about the <code class="language-plaintext highlighter-rouge">$lenovo_log</code> global; the logging variable used by our first physical infrastructure provider, Lenovo.</p>
 
 <p><a href="https://github.com/AparnaKarve">Aparna Karve</a> has a new feature exposing <a href="https://github.com/ManageIQ/manageiq/pull/13254">workflows on api request resources</a> to show the Request Workflow details in the SUI.</p>
 
 <h2 id="deleted">Deleted</h2>
 
-<p>In this issue, I think <a href="https://github.com/martinpovolny">Martin Povolny</a> wins the deletion prize, with a massive <code class="highlighter-rouge">359,849</code> lines deleted! Admittedly <a href="https://github.com/ManageIQ/manageiq/pull/13303">this PR</a> was part of the UI split into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in its own <a href="https://github.com/ManageIQ/manageiq-ui-classic">repository</a>, more information on this can be found in this <a href="https://github.com/ManageIQ/guides/blob/master/developer_setup/classic_ui_split.md">guide</a>. This is all part of ManageIQ’s plan to “extract all the things”. Expect more code extractions over the coming months.</p>
+<p>In this issue, I think <a href="https://github.com/martinpovolny">Martin Povolny</a> wins the deletion prize, with a massive <code class="language-plaintext highlighter-rouge">359,849</code> lines deleted! Admittedly <a href="https://github.com/ManageIQ/manageiq/pull/13303">this PR</a> was part of the UI split into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in its own <a href="https://github.com/ManageIQ/manageiq-ui-classic">repository</a>, more information on this can be found in this <a href="https://github.com/ManageIQ/guides/blob/master/developer_setup/classic_ui_split.md">guide</a>. This is all part of ManageIQ’s plan to “extract all the things”. Expect more code extractions over the coming months.</p>
 
 <h2 id="wrapping-up">Wrapping up</h2>
 

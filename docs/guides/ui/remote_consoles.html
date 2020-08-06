@@ -478,9 +478,9 @@
 
 <p>In some deployment scenarios the appliance running the UI role does not have the visibility to the hypervisors that expose the VNC/SPICE endpoints. For this case ManageIQ includes an option for a 2nd level proxy.</p>
 
-<p>In the 2nd level proxy scenario the websocket worker connects to a backend appliance that runs a <code class="highlighter-rouge">socat</code> process that forwards the TCP connection to the hypervisor.</p>
+<p>In the 2nd level proxy scenario the websocket worker connects to a backend appliance that runs a <code class="language-plaintext highlighter-rouge">socat</code> process that forwards the TCP connection to the hypervisor.</p>
 
-<p>WebMKS consoles are supported, but we can not distribute the code needed for that. Therefore, for webmks support, it is first necessary to download the relevant SDK from the official site, and to manually put <code class="highlighter-rouge">wmks.min.js</code> and <code class="highlighter-rouge">wmks-all.css</code> into a (new) <code class="highlighter-rouge">/var/www/miq/vmdb/public/webmks/</code> directory on the appliance.</p>
+<p>WebMKS consoles are supported, but we can not distribute the code needed for that. Therefore, for webmks support, it is first necessary to download the relevant SDK from the official site, and to manually put <code class="language-plaintext highlighter-rouge">wmks.min.js</code> and <code class="language-plaintext highlighter-rouge">wmks-all.css</code> into a (new) <code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/public/webmks/</code> directory on the appliance.</p>
 
       </div>
     </article>

@@ -101,36 +101,36 @@
           </header>
 
           <div class="post-content" itemprop="articleBody">
-            <p>If you run <code class="highlighter-rouge">git pull</code> on your ManageIQ appliance to pull down updates, restart and find that you can’t login in the web UI as the buttons are unresponsive, it’s likely you’re running in production mode, some assets were added or changed and haven’t been precompiled.</p>
+            <p>If you run <code class="language-plaintext highlighter-rouge">git pull</code> on your ManageIQ appliance to pull down updates, restart and find that you can’t login in the web UI as the buttons are unresponsive, it’s likely you’re running in production mode, some assets were added or changed and haven’t been precompiled.</p>
 
 <p>Note: It’s possible that the “symptoms” could be on other pages of the web application but usually involve UI elements looking “weird” or buttons/links are unresponsive.</p>
 
-<p>Warning: Running <code class="highlighter-rouge">git pull</code> could possibly break your current appliance so it’s not advised to run <code class="highlighter-rouge">git pull</code> if you haven’t taken a vm snapshot and you’re not comfortable with <code class="highlighter-rouge">git</code>.</p>
+<p>Warning: Running <code class="language-plaintext highlighter-rouge">git pull</code> could possibly break your current appliance so it’s not advised to run <code class="language-plaintext highlighter-rouge">git pull</code> if you haven’t taken a vm snapshot and you’re not comfortable with <code class="language-plaintext highlighter-rouge">git</code>.</p>
 
 <h4 id="there-are-two-solutions-to-fix-your-assets">There are two solutions to fix your assets:</h4>
 
 <h5 id="user-clear-and-precompile-all-assets-including-any-newchanged-ones">(User) Clear and precompile all assets, including any new/changed ones.</h5>
 <ul>
-  <li><code class="highlighter-rouge">vmdb &amp;&amp; bundle exec rake evm:compile_assets</code></li>
-  <li><code class="highlighter-rouge">service evmserverd restart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">vmdb &amp;&amp; bundle exec rake evm:compile_assets</code></li>
+  <li><code class="language-plaintext highlighter-rouge">service evmserverd restart</code></li>
 </ul>
 
 <h5 id="developer-run-in-development-mode-and-dont-precompile-assets">(Developer) Run in development mode and don’t precompile assets.</h5>
 <ul>
-  <li>Add the following to a new file: <code class="highlighter-rouge">/etc/default/evm_productization</code>
-<code class="highlighter-rouge">export RAILS_ENV=development</code></li>
-  <li>Clear precompiled assets: <code class="highlighter-rouge">vmdb &amp;&amp; bundle exec rake assets:clear</code></li>
+  <li>Add the following to a new file: <code class="language-plaintext highlighter-rouge">/etc/default/evm_productization</code>
+<code class="language-plaintext highlighter-rouge">export RAILS_ENV=development</code></li>
+  <li>Clear precompiled assets: <code class="language-plaintext highlighter-rouge">vmdb &amp;&amp; bundle exec rake assets:clear</code></li>
   <li>Finally, reboot the OS</li>
 </ul>
 
 <h5 id="general-manageiq-appliance-git-pull-procedure">General ManageIQ appliance git pull procedure:</h5>
 
 <ul>
-  <li><code class="highlighter-rouge">vmdb &amp;&amp; git stash</code></li>
-  <li><code class="highlighter-rouge">git pull</code></li>
-  <li><code class="highlighter-rouge">bundle exec rake db:migrate</code> # optional[1]</li>
-  <li><code class="highlighter-rouge">vmdb &amp;&amp; bundle exec rake evm:compile_assets</code> # optional[2]</li>
-  <li><code class="highlighter-rouge">git stash pop</code> # Note [3]</li>
+  <li><code class="language-plaintext highlighter-rouge">vmdb &amp;&amp; git stash</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git pull</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec rake db:migrate</code> # optional[1]</li>
+  <li><code class="language-plaintext highlighter-rouge">vmdb &amp;&amp; bundle exec rake evm:compile_assets</code> # optional[2]</li>
+  <li><code class="language-plaintext highlighter-rouge">git stash pop</code> # Note [3]</li>
 </ul>
 
 <p>[1] If any new database migrations were pulled down.</p>

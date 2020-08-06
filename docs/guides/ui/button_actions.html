@@ -477,14 +477,14 @@ code is calling the API from client-side button actions.</p>
 
 <h4 id="server-side-button-actions">Server-side Button Actions</h4>
 
-<p>When a toolbar button is pressed current controller’s <code class="highlighter-rouge">button</code> or <code class="highlighter-rouge">x_button</code>
+<p>When a toolbar button is pressed current controller’s <code class="language-plaintext highlighter-rouge">button</code> or <code class="language-plaintext highlighter-rouge">x_button</code>
 method is called.</p>
 
-<p>The identifier of the button that was pressed is passed in <code class="highlighter-rouge">params[:pressed]</code>.</p>
+<p>The identifier of the button that was pressed is passed in <code class="language-plaintext highlighter-rouge">params[:pressed]</code>.</p>
 
-<p>The <code class="highlighter-rouge">x_button</code> or <code class="highlighter-rouge">button</code> handlers should follow this pattern:</p>
+<p>The <code class="language-plaintext highlighter-rouge">x_button</code> or <code class="language-plaintext highlighter-rouge">button</code> handlers should follow this pattern:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> def x_button
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> def x_button
    generic_x_button(AE_CUSTOM_X_BUTTON_ALLOWED_ACTIONS)
  end
 </code></pre></div></div>

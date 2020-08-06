@@ -520,27 +520,27 @@ In particular, the project uses the following gems to make internationalization 
 <p>The following gettext routines are supported in Ruby and HAML sources:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">_(msgid)</code> – translates <code class="highlighter-rouge">msgid</code> and returns the translated string
+  <li><code class="language-plaintext highlighter-rouge">_(msgid)</code> – translates <code class="language-plaintext highlighter-rouge">msgid</code> and returns the translated string
     <ul>
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#gettext-instance_method">rubydoc</a></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">N_(msgid)</code> – dynamic translation: this will put <code class="highlighter-rouge">msgid</code> in the gettext catalog but the string will not be translated by gettext at this time (see delayed translation below)
+  <li><code class="language-plaintext highlighter-rouge">N_(msgid)</code> – dynamic translation: this will put <code class="language-plaintext highlighter-rouge">msgid</code> in the gettext catalog but the string will not be translated by gettext at this time (see delayed translation below)
     <ul>
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#N_-instance_method">rubydoc</a></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">n(msgid, msgid_plural, n)</code> – returns either translated <code class="highlighter-rouge">msgid</code> or its translated plural form (<code class="highlighter-rouge">msgid_plural</code>) depending on <code class="highlighter-rouge">n</code>, a number determining the count (i.e. number above 1 means plural form)
+  <li><code class="language-plaintext highlighter-rouge">n(msgid, msgid_plural, n)</code> – returns either translated <code class="language-plaintext highlighter-rouge">msgid</code> or its translated plural form (<code class="language-plaintext highlighter-rouge">msgid_plural</code>) depending on <code class="language-plaintext highlighter-rouge">n</code>, a number determining the count (i.e. number above 1 means plural form)
     <ul>
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#ngettext-instance_method">rubydoc</a></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">s_(msgid, seperator = "|")</code> – translates <code class="highlighter-rouge">msgid</code>, but if there are no localized text, it returns a last part of <code class="highlighter-rouge">msgid</code> separated by <code class="highlighter-rouge">separator</code> (<code class="highlighter-rouge">|</code> by default)
+  <li><code class="language-plaintext highlighter-rouge">s_(msgid, seperator = "|")</code> – translates <code class="language-plaintext highlighter-rouge">msgid</code>, but if there are no localized text, it returns a last part of <code class="language-plaintext highlighter-rouge">msgid</code> separated by <code class="language-plaintext highlighter-rouge">separator</code> (<code class="language-plaintext highlighter-rouge">|</code> by default)
     <ul>
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#sgettext-instance_method">rubydoc</a></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">ns_(msgid, msgid_plural, n, seperator = "|")</code> – similar to the <code class="highlighter-rouge">n_()</code>, but if there is no localized text, it returns a last part of <code class="highlighter-rouge">msgid</code> separated by <code class="highlighter-rouge">separator</code>.
+  <li><code class="language-plaintext highlighter-rouge">ns_(msgid, msgid_plural, n, seperator = "|")</code> – similar to the <code class="language-plaintext highlighter-rouge">n_()</code>, but if there is no localized text, it returns a last part of <code class="language-plaintext highlighter-rouge">msgid</code> separated by <code class="language-plaintext highlighter-rouge">separator</code>.
     <ul>
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#ngettext-instance_method">rubydoc</a></li>
     </ul>
@@ -549,16 +549,16 @@ In particular, the project uses the following gems to make internationalization 
 
 <h3 id="javascript">JavaScript</h3>
 
-<p>Internationalization in JavaScript is done with <code class="highlighter-rouge">gettext_i18n_rails_js</code> gem. The gem extends <code class="highlighter-rouge">gettext_i18n_rails</code> making the <code class="highlighter-rouge">.po</code> files available to client side javascript as JSON files.</p>
+<p>Internationalization in JavaScript is done with <code class="language-plaintext highlighter-rouge">gettext_i18n_rails_js</code> gem. The gem extends <code class="language-plaintext highlighter-rouge">gettext_i18n_rails</code> making the <code class="language-plaintext highlighter-rouge">.po</code> files available to client side javascript as JSON files.</p>
 
-<p>Unlike Ruby / HAML sources, JavaScript uses <code class="highlighter-rouge">__()</code> <em>(i.e. two underscores rather than one)</em> to invoke gettext. This is done to avoid conflicts with other JavaScript modules.</p>
+<p>Unlike Ruby / HAML sources, JavaScript uses <code class="language-plaintext highlighter-rouge">__()</code> <em>(i.e. two underscores rather than one)</em> to invoke gettext. This is done to avoid conflicts with other JavaScript modules.</p>
 
 <p>The gettext routines supported in JavaScript sources:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">__(msgid)</code></li>
-  <li><code class="highlighter-rouge">n_(msgid, msgid_plural, n)</code></li>
-  <li><code class="highlighter-rouge">s_(msgid)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">__(msgid)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">n_(msgid, msgid_plural, n)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">s_(msgid)</code></li>
 </ul>
 
 <p>The semantic is similar to the Ruby equivalents.</p>
@@ -566,7 +566,7 @@ In particular, the project uses the following gems to make internationalization 
 <h3 id="angular-applications">Angular applications</h3>
 
 <p>Purely Angular applications, such as Self-Service UI, use <a href="https://angular-gettext.rocketeer.be/">angular-gettext</a> for internationalization.
-The <code class="highlighter-rouge">angular-gettext</code> module allows for annotating parts of the Angular application (HTML of JavaScript), which need to be translated.</p>
+The <code class="language-plaintext highlighter-rouge">angular-gettext</code> module allows for annotating parts of the Angular application (HTML of JavaScript), which need to be translated.</p>
 
 <p>Guides for annotating content:</p>
 
@@ -582,7 +582,7 @@ The <code class="highlighter-rouge">angular-gettext</code> module allows for ann
   <li><a href="https://github.com/ManageIQ/manageiq/blob/master/spa_ui/self_service/client/app/config/gettext.config.js#L21">__ alias</a></li>
 </ul>
 
-<p>we can use <code class="highlighter-rouge">N_()</code> and <code class="highlighter-rouge">__()</code> in javascript sources instead of regular <code class="highlighter-rouge">angular-gettext</code> routines (<code class="highlighter-rouge">gettext</code> and <code class="highlighter-rouge">gettextCatalog.getString</code>).</p>
+<p>we can use <code class="language-plaintext highlighter-rouge">N_()</code> and <code class="language-plaintext highlighter-rouge">__()</code> in javascript sources instead of regular <code class="language-plaintext highlighter-rouge">angular-gettext</code> routines (<code class="language-plaintext highlighter-rouge">gettext</code> and <code class="language-plaintext highlighter-rouge">gettextCatalog.getString</code>).</p>
 
 <h4 id="substitute-filter">Substitute filter</h4>
 
@@ -592,20 +592,20 @@ strings are a value of an HTML element and contain a variable interpolation. For
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">tooltip=</span><span class="s">"{{item.v_total_vms}} VMs"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>This is where the <code class="highlighter-rouge">substitute</code> filter comes in handy. The above situation would then be resolved as:</p>
+<p>This is where the <code class="language-plaintext highlighter-rouge">substitute</code> filter comes in handy. The above situation would then be resolved as:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">tooltip=</span><span class="s">"{{ '[[number]] VMs'|translate|substitute:{number: item.v_total_vms} }}"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>i.e. <code class="highlighter-rouge">[[</code> and <code class="highlighter-rouge">]]</code> mark start and end of a variable to be substituted, the actual values would be
-then substituted with the context of the <code class="highlighter-rouge">substitute</code> filter.</p>
+<p>i.e. <code class="language-plaintext highlighter-rouge">[[</code> and <code class="language-plaintext highlighter-rouge">]]</code> mark start and end of a variable to be substituted, the actual values would be
+then substituted with the context of the <code class="language-plaintext highlighter-rouge">substitute</code> filter.</p>
 
 <h4 id="caveats">Caveats</h4>
 
-<p>There are certain aspects of using <code class="highlighter-rouge">angular-gettext</code> you should be aware of.</p>
+<p>There are certain aspects of using <code class="language-plaintext highlighter-rouge">angular-gettext</code> you should be aware of.</p>
 
 <ul>
-  <li><strong>Be careful where you put the <code class="highlighter-rouge">translate</code> directive</strong>. For example, a markup like:</li>
+  <li><strong>Be careful where you put the <code class="language-plaintext highlighter-rouge">translate</code> directive</strong>. For example, a markup like:</li>
 </ul>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"outside"</span> <span class="na">translate</span><span class="nt">&gt;</span>
@@ -622,10 +622,10 @@ then substituted with the context of the <code class="highlighter-rouge">substit
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p>block being collected during string extraction by <code class="highlighter-rouge">gulp gettext-extract</code>. Correctly, the <code class="highlighter-rouge">translate</code> directive should be placed inside the <code class="highlighter-rouge">span</code> element.</p>
+<p>block being collected during string extraction by <code class="language-plaintext highlighter-rouge">gulp gettext-extract</code>. Correctly, the <code class="language-plaintext highlighter-rouge">translate</code> directive should be placed inside the <code class="language-plaintext highlighter-rouge">span</code> element.</p>
 
 <ul>
-  <li><strong>Don’t use dynamic content inside <code class="highlighter-rouge">__()</code></strong>. For example, the following javascript code won’t be collected correctly by <code class="highlighter-rouge">gulp gettext-extract</code>.</li>
+  <li><strong>Don’t use dynamic content inside <code class="language-plaintext highlighter-rouge">__()</code></strong>. For example, the following javascript code won’t be collected correctly by <code class="language-plaintext highlighter-rouge">gulp gettext-extract</code>.</li>
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="dl">"</span><span class="s2">My name is %s.</span><span class="dl">"</span><span class="p">,</span> <span class="nx">me</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
@@ -637,7 +637,7 @@ then substituted with the context of the <code class="highlighter-rouge">substit
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Don’t apply the <code class="highlighter-rouge">translate</code> filter on a dynamic content</strong>. The string inside would not be correctly extracted during string collection. For example the following won’t be collected correctly by <code class="highlighter-rouge">gulp gettext-extract</code>.</li>
+  <li><strong>Don’t apply the <code class="language-plaintext highlighter-rouge">translate</code> filter on a dynamic content</strong>. The string inside would not be correctly extracted during string collection. For example the following won’t be collected correctly by <code class="language-plaintext highlighter-rouge">gulp gettext-extract</code>.</li>
 </ul>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span>
@@ -681,18 +681,18 @@ then substituted with the context of the <code class="highlighter-rouge">substit
 
 <p>Sometimes we need to delay translation of a string to a later time. For example menu items and sections or certain tree nodes are defined once but then need to be rendered many times possibly in different locales.</p>
 
-<p>In the simplest case you can use <code class="highlighter-rouge">N_('bar')</code> saying “do not translate this string” such as:</p>
+<p>In the simplest case you can use <code class="language-plaintext highlighter-rouge">N_('bar')</code> saying “do not translate this string” such as:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">menu_item</span> <span class="o">=</span> <span class="no">Menu</span><span class="o">::</span><span class="no">Item</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">N_</span><span class="p">(</span><span class="s1">'Cloud Tennants'</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p>and such strings will be caught by the <code class="highlighter-rouge">rake gettext:find</code> task so these strings end up in the catalog.
-Then you do the translation when needed <em>(e.g. when generating the HTML or JSON format of the data)</em> by calling <code class="highlighter-rouge">_()</code> such as:</p>
+<p>and such strings will be caught by the <code class="language-plaintext highlighter-rouge">rake gettext:find</code> task so these strings end up in the catalog.
+Then you do the translation when needed <em>(e.g. when generating the HTML or JSON format of the data)</em> by calling <code class="language-plaintext highlighter-rouge">_()</code> such as:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">menu_item_text</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="n">menu_item</span><span class="p">.</span><span class="nf">text</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>To properly internationalize a string with interpolation that needs to be translated at render time rather than right away, use <code class="highlighter-rouge">PostponedTranslation</code> class.</p>
+<p>To properly internationalize a string with interpolation that needs to be translated at render time rather than right away, use <code class="language-plaintext highlighter-rouge">PostponedTranslation</code> class.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tip</span> <span class="o">=</span> <span class="no">PostponedTranslation</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="n">_N</span><span class="p">(</span><span class="s2">"%s Alert Profiles"</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="s2">"already translated string"</span> <span class="p">}</span>
 </code></pre></div></div>
@@ -742,9 +742,9 @@ Then you do the translation when needed <em>(e.g. when generating the HTML or JS
   <span class="na">mark_translated_strings</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
-<p>and <strong>restart</strong> the ManageIQ application. With these settings on, all strings passing through gettext will be marked with <code class="highlighter-rouge">»</code> and <code class="highlighter-rouge">«</code> markers:</p>
+<p>and <strong>restart</strong> the ManageIQ application. With these settings on, all strings passing through gettext will be marked with <code class="language-plaintext highlighter-rouge">»</code> and <code class="language-plaintext highlighter-rouge">«</code> markers:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>»webui text that went through some of the gettext routines«
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>»webui text that went through some of the gettext routines«
 </code></pre></div></div>
 
 <h2 id="translating-manageiq">Translating ManageIQ</h2>
@@ -755,14 +755,14 @@ and navigate to the <a href="https://www.transifex.com/manageiq/public/">ManageI
 <h3 id="translator-notes">Translator notes</h3>
 
 <ul>
-  <li><strong>How do I translate keys in the form of <code class="highlighter-rouge">Hardware|Usage</code>? What do they mean?</strong>
+  <li><strong>How do I translate keys in the form of <code class="language-plaintext highlighter-rouge">Hardware|Usage</code>? What do they mean?</strong>
     <ul>
-      <li><code class="highlighter-rouge">Hardware|Usage</code> means Usage in namespace Hardware. This is the way we translate model attributes for ActiveRecord models for example. You do not have to translate “Hardware”, just translate “Usage”.</li>
+      <li><code class="language-plaintext highlighter-rouge">Hardware|Usage</code> means Usage in namespace Hardware. This is the way we translate model attributes for ActiveRecord models for example. You do not have to translate “Hardware”, just translate “Usage”.</li>
     </ul>
   </li>
-  <li><strong>What does the key <code class="highlighter-rouge">locale_name</code> mean?</strong>
+  <li><strong>What does the key <code class="language-plaintext highlighter-rouge">locale_name</code> mean?</strong>
     <ul>
-      <li><code class="highlighter-rouge">local_name</code> meens name of the given language in the language itself. Such as “Deutsch” for German or “Česky” for Czech. Make sure to provide the value for this key, without it the language/locale cannot be presented in the UI.</li>
+      <li><code class="language-plaintext highlighter-rouge">local_name</code> meens name of the given language in the language itself. Such as “Deutsch” for German or “Česky” for Czech. Make sure to provide the value for this key, without it the language/locale cannot be presented in the UI.</li>
     </ul>
   </li>
 </ul>
@@ -786,7 +786,7 @@ and navigate to the <a href="https://www.transifex.com/manageiq/public/">ManageI
   <li><a href="https://www.transifex.com/manageiq/manageiq-service-ui/">ManageIQ Service UI</a></li>
 </ul>
 
-<p>To be able to use transifex from command line, make sure you have <code class="highlighter-rouge">transifex-client</code> installed and configured (<a href="https://docs.transifex.com/client">documentation</a>)</p>
+<p>To be able to use transifex from command line, make sure you have <code class="language-plaintext highlighter-rouge">transifex-client</code> installed and configured (<a href="https://docs.transifex.com/client">documentation</a>)</p>
 
 <p>To be able to manipulate transifex catalogs, you need to be maintainer of the project in transifex.</p>
 
@@ -805,14 +805,14 @@ To update the catalog, run the following rake task in the root of ManageIQ git c
 <p>This task will:</p>
 <ul>
   <li>extract model attributes</li>
-  <li>extract strings from <code class="highlighter-rouge">en.yml</code></li>
+  <li>extract strings from <code class="language-plaintext highlighter-rouge">en.yml</code></li>
   <li>extract strings from other yaml files</li>
   <li>extract strings from ruby, javascript and haml sources</li>
 </ul>
 
 <p>Now, commit and push changed files into git (branch, pull request, etc.). Make sure no other files than the following list is commited:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/model_attributes.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/model_attributes.rb
 config/dictionary_strings.rb
 config/yaml_strings.rb
 config/locales/manageiq.pot
@@ -846,11 +846,11 @@ language. From the root of ManageIQ checkout, run the following:</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>rake locale:extract_locale_names
 </code></pre></div></div>
 
-<p>This will update <code class="highlighter-rouge">config/human_locale_names.yaml</code> file.</p>
+<p>This will update <code class="language-plaintext highlighter-rouge">config/human_locale_names.yaml</code> file.</p>
 
 <p>Now commit and push the changes (branch, pull request, etc.). Make sure no other files than the following list is commited:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/locales/*/*.po
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/locales/*/*.po
 app/assets/javascripts/locale/*/*.js
 config/human_locale_names.yaml        # optionally, if you added locales
 </code></pre></div></div>

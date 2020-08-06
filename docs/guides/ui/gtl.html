@@ -474,12 +474,12 @@
 
 <p>GTL are backed by the <a href="reports_charts">reporting</a> subsystem.</p>
 
-<p>Each GTL screen is fed by report resuts through JSON endpoint <code class="highlighter-rouge">report_data</code>.
+<p>Each GTL screen is fed by report resuts through JSON endpoint <code class="language-plaintext highlighter-rouge">report_data</code>.
 This is supposed to work statelessly however there’s some functionality that
 uses the session such as search, advanced search and filters.</p>
 
-<p><code class="highlighter-rouge">report_data</code> serves data comming throught the <code class="highlighter-rouge">get_view</code> method in <code class="highlighter-rouge">ApplicationController</code>. That in
-turn loads the appropriate report from the YAML definition stored under <code class="highlighter-rouge">product/views</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">report_data</code> serves data comming throught the <code class="language-plaintext highlighter-rouge">get_view</code> method in <code class="language-plaintext highlighter-rouge">ApplicationController</code>. That in
+turn loads the appropriate report from the YAML definition stored under <code class="language-plaintext highlighter-rouge">product/views</code>.</p>
 
 <p>Displaying of GTL data is handled by an Angular component from <a href="https://github.com/ManageIQ/ui-components">ui-components</a> repository.</p>
 

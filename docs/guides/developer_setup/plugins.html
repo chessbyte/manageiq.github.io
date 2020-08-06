@@ -498,11 +498,11 @@ git clone git@github.com:JoeSmith/manageiq-ui-classic.git
 
 <h4 id="inside-the-core-manageiq-checkout">Inside the core ManageIQ checkout</h4>
 
-<p>The <code class="highlighter-rouge">plugins/</code> directory inside the core repository is ignored by <code class="highlighter-rouge">.gitignore</code>. This means you can clone plugins
+<p>The <code class="language-plaintext highlighter-rouge">plugins/</code> directory inside the core repository is ignored by <code class="language-plaintext highlighter-rouge">.gitignore</code>. This means you can clone plugins
 into this directory. The benefit is, e.g. when working with a project oriented IDE, you have all code under one
 directory. This way you can easily search across the core <em>and</em> plugin code base.</p>
 
-<p>You still have to change into the plugin root directory to run the tests - running <code class="highlighter-rouge">rspec</code> from the ManageIQ root will
+<p>You still have to change into the plugin root directory to run the tests - running <code class="language-plaintext highlighter-rouge">rspec</code> from the ManageIQ root will
 not pickup your plugin code, but the core code. This is a drawback which can lead to some confusion.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /path/to/manageiq <span class="p">;</span> <span class="nb">mkdir </span>plugins
@@ -533,7 +533,7 @@ git push origin master
 
 <p>To run the tests for a plugin, we need an application context. Usually Rails expects a dummy Rails app. But because
 our plugins are only for ManageIQ, we run the tests inside the ManageIQ app. Therefore we need a checkout of ManageIQ
-at <code class="highlighter-rouge">spec/manageiq</code>. The database used for tests is the same as for the core app. Keep that in mind when developing a
+at <code class="language-plaintext highlighter-rouge">spec/manageiq</code>. The database used for tests is the same as for the core app. Keep that in mind when developing a
 feature that requires database migrations.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>manageiq-providers-amazon
@@ -548,7 +548,7 @@ bundle <span class="nb">install
 bundle <span class="nb">exec </span>rake
 </code></pre></div></div>
 
-<p>Updating the sample app is handled by <code class="highlighter-rouge">bin/update</code>:</p>
+<p>Updating the sample app is handled by <code class="language-plaintext highlighter-rouge">bin/update</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/update
 <span class="c"># == Updating manageiq sample app ==</span>
@@ -561,7 +561,7 @@ cross repository dependencies, which can be handled from the plugin side or from
 
 <h4 id="symlink-your-sample-app">Symlink your sample app</h4>
 
-<p>Creating a symlink from <code class="highlighter-rouge">spec/manageiq</code> to your current checkout of ManageIQ will run the tests inside whatever branch
+<p>Creating a symlink from <code class="language-plaintext highlighter-rouge">spec/manageiq</code> to your current checkout of ManageIQ will run the tests inside whatever branch
 you checked out in the core repo.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># remove current sample app</span>
@@ -572,22 +572,22 @@ you checked out in the core repo.</p>
 
 <h4 id="dependency-on-a-local-gem">Dependency on a local gem</h4>
 
-<p>Inside ManageIQ core, you can override gem dependencies with <code class="highlighter-rouge">override_gem</code>. This is a small helper to be used under
-<code class="highlighter-rouge">bundler.d</code> directory. Use it to point the dependency to a local version of your plugin.</p>
+<p>Inside ManageIQ core, you can override gem dependencies with <code class="language-plaintext highlighter-rouge">override_gem</code>. This is a small helper to be used under
+<code class="language-plaintext highlighter-rouge">bundler.d</code> directory. Use it to point the dependency to a local version of your plugin.</p>
 
 <p>Please, use absolute path in</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
 <span class="n">override_gem</span> <span class="s1">'manageiq-providers-amazon'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'/home/developer/repos/manageiq-providers-amazon'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>or use relative path to current file and <code class="highlighter-rouge">__dir__</code> like</p>
+<p>or use relative path to current file and <code class="language-plaintext highlighter-rouge">__dir__</code> like</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bundler.d/local_plugins.rb:</span>
 <span class="n">override_gem</span> <span class="s1">'manageiq-providers-amazon'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../../manageiq-providers-amazon'</span><span class="p">,</span> <span class="n">__dir__</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="rails-console">Rails console</h4>
 
-<p>Unfortunately Rails Engines don’t support running <code class="highlighter-rouge">rails console</code> from the root of the plugin. To test your code you
+<p>Unfortunately Rails Engines don’t support running <code class="language-plaintext highlighter-rouge">rails console</code> from the root of the plugin. To test your code you
 will have to change the dependency of ManageIQ to point to your local plugin. See above.</p>
 
 <h3 id="migrating-a-pr-from-manageiq">Migrating a PR from ManageIQ</h3>
@@ -616,10 +616,10 @@ git cherry-pick &lt;sha from above&gt;
 </code></pre></div></div>
 
 <p>If your PR has a lot of commits or you have a lot of PRs, this script automates it.
-It needs <code class="highlighter-rouge">jq</code> to parse the github API output - <code class="highlighter-rouge">brew install jq</code> or <code class="highlighter-rouge">dnf install jq</code> or <code class="highlighter-rouge">apt install jq</code>.
+It needs <code class="language-plaintext highlighter-rouge">jq</code> to parse the github API output - <code class="language-plaintext highlighter-rouge">brew install jq</code> or <code class="language-plaintext highlighter-rouge">dnf install jq</code> or <code class="language-plaintext highlighter-rouge">apt install jq</code>.
 Optionally uses <a href="https://hub.github.com/">hub</a> to create the pull request.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PR=123
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PR=123
 COMMITS=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR/commits | jq -r .[].sha`
 TITLE=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR | jq -r .title`
 DESCRIPTION=`wget -qO- https://api.github.com/repos/ManageIQ/manageiq/pulls/$PR | jq -r .body`

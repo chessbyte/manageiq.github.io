@@ -473,7 +473,7 @@
 <p>Each ManageIQ component (providers, UI, vmdb, automation engine, etc.)
 contains its own set of specs. Most of them can be run by executing</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake
 </code></pre></div></div>
 
 <p>Components that require non-standard invocation of the test suite are
@@ -482,23 +482,23 @@ documented in the remaining part of the document.</p>
 <h3 id="running-the-vmdb-suite">Running the vmdb suite</h3>
 
 <p>The ManageIQ test database needs to be setup before the test suite can be run.
-This is automatically created if you run <code class="highlighter-rouge">bin/setup</code> or <code class="highlighter-rouge">bin/update</code>, but can
-also be created using <code class="highlighter-rouge">bundle exec rake test:vmdb:setup</code>.</p>
+This is automatically created if you run <code class="language-plaintext highlighter-rouge">bin/setup</code> or <code class="language-plaintext highlighter-rouge">bin/update</code>, but can
+also be created using <code class="language-plaintext highlighter-rouge">bundle exec rake test:vmdb:setup</code>.</p>
 
 <p>To run the suite, execute:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake
 </code></pre></div></div>
 
 <p>There are some other test related tasks available and those can be listed by
 running</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake -T test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake -T test
 </code></pre></div></div>
 
 <h3 id="running-the-vmdb-suite-in-parallel">Running the vmdb suite in parallel</h3>
 
-<p>The main <code class="highlighter-rouge">vmdb</code> suite of tests can be run in parallel, utilizing multiple
+<p>The main <code class="language-plaintext highlighter-rouge">vmdb</code> suite of tests can be run in parallel, utilizing multiple
 processor cores. These separate processes run concurrently and are then
 collected and reported on together when they all complete their delegated work.
 You can run the entire vmdb suite or select spec files within it.</p>
@@ -509,56 +509,56 @@ You can run the entire vmdb suite or select spec files within it.</p>
 
 <p>To set up these databases, simply execute the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PARALLEL=true bin/rake test:vmdb:setup
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PARALLEL=true bin/rake test:vmdb:setup
 </code></pre></div></div>
 
 <h4 id="run-the-entire-suite-in-parallel">Run the entire suite in parallel</h4>
 
 <p>You can run the entire suite in parallel using the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PARALLEL=true bin/rake test:vmdb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PARALLEL=true bin/rake test:vmdb
 </code></pre></div></div>
 
 <h4 id="passing-rspec-options-to-the-rake-tasks">Passing RSpec options to the rake tasks</h4>
 
-<p>RSpec accepts a <code class="highlighter-rouge">SPEC_OPTS</code> environment variable to pass command line flags.
+<p>RSpec accepts a <code class="language-plaintext highlighter-rouge">SPEC_OPTS</code> environment variable to pass command line flags.
 This is necessary when you wish to use some command line option with our
 built-in rake commands to run the tests.</p>
 
 <p>For example, I may wish to set a particular seed and stop running the tests
 immediately on a failure:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PARALLEL=true SPEC_OPTS="--seed 1234 --fail-fast" bin/rake test:vmdb:setup
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ PARALLEL=true SPEC_OPTS="--seed 1234 --fail-fast" bin/rake test:vmdb:setup
 </code></pre></div></div>
 
-<p>Note that <code class="highlighter-rouge">--fail-fast</code> will stop whichever core encountered the error, not
+<p>Note that <code class="language-plaintext highlighter-rouge">--fail-fast</code> will stop whichever core encountered the error, not
 every core at the first error found.</p>
 
 <h4 id="running-specific-spec-files-in-parallel">Running specific spec files in parallel</h4>
 
 <p>You needn’t run the entire vmdb suite to take advantage of running tests in
-parallel. Use <code class="highlighter-rouge">parallel_rspec</code> to run specific directories of spec files.</p>
+parallel. Use <code class="language-plaintext highlighter-rouge">parallel_rspec</code> to run specific directories of spec files.</p>
 
 <p>For example, I may have done some work on the front end and want to run the
 controller, helper, and view specs specifically:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ parallel_rspec spec/controllers spec/helpers spec/views
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ parallel_rspec spec/controllers spec/helpers spec/views
 </code></pre></div></div>
 
 <p>This will run all of the specs in their respective directories, in parallel.
-Note you do not need <code class="highlighter-rouge">PARALLEL=true</code> using <code class="highlighter-rouge">parallel_rspec</code>.</p>
+Note you do not need <code class="language-plaintext highlighter-rouge">PARALLEL=true</code> using <code class="language-plaintext highlighter-rouge">parallel_rspec</code>.</p>
 
 <p><strong>Other tips:</strong></p>
 
 <ul>
   <li>
     <p>You can get creative with searching and globbing patterns to feed to the
-<code class="highlighter-rouge">parallel_rspec</code> command. For example, I might have recently made some pretty
+<code class="language-plaintext highlighter-rouge">parallel_rspec</code> command. For example, I might have recently made some pretty
 drastic changes to role checking code having to do with a method named
-<code class="highlighter-rouge">#role_allows</code>. To quickly run specs that <em>might</em> touch this code, I can pass
+<code class="language-plaintext highlighter-rouge">#role_allows</code>. To quickly run specs that <em>might</em> touch this code, I can pass
 in all tests that mention it directly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ parallel_rspec `git grep -l role_allows spec`
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ parallel_rspec `git grep -l role_allows spec`
 </code></pre></div>    </div>
   </li>
   <li>
@@ -567,10 +567,10 @@ the application code, etc. Always running the maximum number of cores
 available isn’t always beneficial to fast tests. If you’re running a subset
 of tests and parallel_tests reports that you’re running a very small number
 of specs across each core, try using fewer cores doing more work instead. You
-can specify the number with the <code class="highlighter-rouge">-n</code> option.  For example, to run all the
+can specify the number with the <code class="language-plaintext highlighter-rouge">-n</code> option.  For example, to run all the
 request specs with four cores:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ parallel_rspec -n 4 spec/requests
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ parallel_rspec -n 4 spec/requests
 </code></pre></div>    </div>
   </li>
   <li>
@@ -582,44 +582,44 @@ things you can do with running ManageIQ tests in parallel!</p>
 
 <h3 id="running-ui-specs">Running UI specs</h3>
 
-<p>Running the test suite for <code class="highlighter-rouge">manageiq-ui-classic</code> requires a bit more
+<p>Running the test suite for <code class="language-plaintext highlighter-rouge">manageiq-ui-classic</code> requires a bit more
 preparation.</p>
 
-<p>These instructions assume that you have <code class="highlighter-rouge">manageiq</code> and <code class="highlighter-rouge">manageiq-ui-classic</code>
-cloned into <code class="highlighter-rouge">/home/u/miq/manageiq</code> and <code class="highlighter-rouge">/home/u/miq/manageiq-ui-classic</code>
+<p>These instructions assume that you have <code class="language-plaintext highlighter-rouge">manageiq</code> and <code class="language-plaintext highlighter-rouge">manageiq-ui-classic</code>
+cloned into <code class="language-plaintext highlighter-rouge">/home/u/miq/manageiq</code> and <code class="language-plaintext highlighter-rouge">/home/u/miq/manageiq-ui-classic</code>
 respectively and that both repositores have the right branch checked out.</p>
 
 <p>First, you need to symlink the core repo into spec folder of the UI repo:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ln -s /home/u/miq/manageiq /home/u/miq/manageiq-ui-classic/spec/manageiq
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ln -s /home/u/miq/manageiq /home/u/miq/manageiq-ui-classic/spec/manageiq
 </code></pre></div></div>
 
-<p>Next, you need to ensure that <code class="highlighter-rouge">/home/u/miq/manageiq/bundler.d/overrides.rb</code>
+<p>Next, you need to ensure that <code class="language-plaintext highlighter-rouge">/home/u/miq/manageiq/bundler.d/overrides.rb</code>
 file contains a block like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override_gem "manageiq-ui-classic", path: "/home/u/miq/manageiq-ui-classic"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override_gem "manageiq-ui-classic", path: "/home/u/miq/manageiq-ui-classic"
 </code></pre></div></div>
 
-<p>Now you must run <code class="highlighter-rouge">bin/update</code> from the <code class="highlighter-rouge">/home/u/miq/manageiq</code> folder, followed
-by <code class="highlighter-rouge">bin/update</code> from the <code class="highlighter-rouge">/home/u/miq/manageiq-ui-classic</code> folder.</p>
+<p>Now you must run <code class="language-plaintext highlighter-rouge">bin/update</code> from the <code class="language-plaintext highlighter-rouge">/home/u/miq/manageiq</code> folder, followed
+by <code class="language-plaintext highlighter-rouge">bin/update</code> from the <code class="language-plaintext highlighter-rouge">/home/u/miq/manageiq-ui-classic</code> folder.</p>
 
 <p>After all this is done, you can run tests as usual:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake
 </code></pre></div></div>
 
-<p>To run the javascript specs in <code class="highlighter-rouge">spec/javascripts/**/*_spec.js</code> in a headless
+<p>To run the javascript specs in <code class="language-plaintext highlighter-rouge">spec/javascripts/**/*_spec.js</code> in a headless
 browser, you can run</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake spec:javascript
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake spec:javascript
 </code></pre></div></div>
 
-<p>For debugging, <code class="highlighter-rouge">rake environment jasmine</code> runs a webserver listening on
-<code class="highlighter-rouge">localhost:8888</code>.</p>
+<p>For debugging, <code class="language-plaintext highlighter-rouge">rake environment jasmine</code> runs a webserver listening on
+<code class="language-plaintext highlighter-rouge">localhost:8888</code>.</p>
 
 <p>You can also list all test-related rake tasks by running</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake -T spec
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle exec rake -T spec
 </code></pre></div></div>
 
       </div>

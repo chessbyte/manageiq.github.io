@@ -472,7 +472,7 @@
 
 <h2 id="run_single_workerrb">run_single_worker.rb</h2>
 
-<p>The <code class="highlighter-rouge">run_single_worker.rb</code> script allows a single worker to be started without needing a server to monitor it. You simply provide the worker class and optionally a queue name and port as environment variables and the worker will start.</p>
+<p>The <code class="language-plaintext highlighter-rouge">run_single_worker.rb</code> script allows a single worker to be started without needing a server to monitor it. You simply provide the worker class and optionally a queue name and port as environment variables and the worker will start.</p>
 
 <p>There are additional options available which can be seen in the script’s usage documentation.</p>
 
@@ -491,7 +491,7 @@ For our example Procfile, this means that the UI worker will get port 3000, the 
 
 <p>An <a href="https://github.com/ManageIQ/manageiq/blob/master/Procfile.example">example procfile</a> can be found in the root of the ManageIQ repo. This file illustrates some common ways to start different types of workers, including web server workers, queue workers, and provider based workers.</p>
 
-<p>A developer should create a <code class="highlighter-rouge">Procfile</code> which suits their particular needs then run <code class="highlighter-rouge">bin/rake evm:foreman:start</code>. This task will configure the local server to look started and then start the processes in the <code class="highlighter-rouge">Procfile</code>.</p>
+<p>A developer should create a <code class="language-plaintext highlighter-rouge">Procfile</code> which suits their particular needs then run <code class="language-plaintext highlighter-rouge">bin/rake evm:foreman:start</code>. This task will configure the local server to look started and then start the processes in the <code class="language-plaintext highlighter-rouge">Procfile</code>.</p>
 
 <p>These processes will run in the console in which the rake task was run until the user kills them with a Ctrl-C.</p>
 

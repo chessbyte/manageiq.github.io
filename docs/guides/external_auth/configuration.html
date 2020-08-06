@@ -512,7 +512,7 @@ IPA Server and Appliance:</p>
 
 <p><strong>/etc/hosts</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com
 192.168.100.12   appliance.test.company.com
 </code></pre></div></div>
 
@@ -522,7 +522,7 @@ the systems must reflect their FQDN.</p>
 <p>If specifying both FQDN and Hostname in the /etc/hosts file,
 make sure the FQDN comes first:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com   ipaserver
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.11   ipaserver.test.company.com   ipaserver
 192.168.100.12   appliance.test.company.com   appliance
 </code></pre></div></div>
 
@@ -560,7 +560,7 @@ the Apache modules for external authentication:</p>
   <li>Add to the [domain/test.company.com] section:</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[domain/test.company.com]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[domain/test.company.com]
   ldap_user_extra_attrs = mail, givenname, sn, displayname
 </code></pre></div></div>
 
@@ -569,7 +569,7 @@ the Apache modules for external authentication:</p>
 to include “, ifp”:</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[sssd]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[sssd]
    services = nss, pam, ssh, ifp
 </code></pre></div></div>
 
@@ -577,7 +577,7 @@ to include “, ifp”:</li>
   <li>Add an [ifp] section at the end of the file:</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ifp]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ifp]
   allowed_uids = apache, root
   user_attributes = +mail, +givenname, +sn, +displayname
 </code></pre></div></div>
@@ -589,7 +589,7 @@ to include “, ifp”:</li>
 
 <p><strong>/etc/pam.d/httpd-auth</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auth    required pam_sss.so
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auth    required pam_sss.so
 account required pam_sss.so
 </code></pre></div></div>
 
@@ -600,7 +600,7 @@ account required pam_sss.so
 
 <p><strong>/etc/httpd/conf.d/manageiq-external-auth</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule authnz_pam_module modules/mod_authnz_pam.so
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule authnz_pam_module modules/mod_authnz_pam.so
 LoadModule intercept_form_submit_module modules/mod_intercept_form_submit.so
 LoadModule lookup_identity_module modules/mod_lookup_identity.so
 
@@ -657,7 +657,7 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   <li>add this line before the <em>VirtualHost</em> directive:</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Include conf.d/manageiq-external-auth
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Include conf.d/manageiq-external-auth
 </code></pre></div></div>
 
 <ul>
@@ -670,7 +670,7 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   </li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RequestHeader unset X_REMOTE_USER
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RequestHeader unset X_REMOTE_USER
 RequestHeader set X_REMOTE_USER           %{REMOTE_USER}e            env=REMOTE_USER
 RequestHeader set X_EXTERNAL_AUTH_ERROR   %{EXTERNAL_AUTH_ERROR}e    env=EXTERNAL_AUTH_ERROR
 RequestHeader set X_REMOTE_USER_EMAIL     %{REMOTE_USER_EMAIL}e      env=REMOTE_USER_EMAIL

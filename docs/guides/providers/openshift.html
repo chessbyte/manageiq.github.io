@@ -480,7 +480,7 @@ deploy RPM packages on a cluster</li>
 openshift source to a vm</li>
 </ul>
 
-<p>You can also use <code class="highlighter-rouge">oc cluster up</code> and configure it yourself (instructions not
+<p>You can also use <code class="language-plaintext highlighter-rouge">oc cluster up</code> and configure it yourself (instructions not
 provided) as another alternative.</p>
 
 <h3 id="deploying-openshift-with-ansible">Deploying OpenShift With Ansible</h3>
@@ -519,11 +519,11 @@ master_hostname
 node_hostname
 </code></pre>
 
-<p>There are more like variables like <code class="highlighter-rouge">use_metrics</code> to enable other options in
+<p>There are more like variables like <code class="language-plaintext highlighter-rouge">use_metrics</code> to enable other options in
 OpenShift.  A more detailed example can be found in
-<code class="highlighter-rouge">inventory/byo/hosts.origin.example</code>. Specifically, to deploy metrics and
-logging use <code class="highlighter-rouge">openshift_hosted_metrics_deploy=True</code> and
-<code class="highlighter-rouge">openshift_hosted_logging_deploy=True</code></p>
+<code class="language-plaintext highlighter-rouge">inventory/byo/hosts.origin.example</code>. Specifically, to deploy metrics and
+logging use <code class="language-plaintext highlighter-rouge">openshift_hosted_metrics_deploy=True</code> and
+<code class="language-plaintext highlighter-rouge">openshift_hosted_logging_deploy=True</code></p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ansible-playbook playbooks/byo/config.yml <span class="nt">-i</span> path/to/inventory/file
 </code></pre></div></div>
@@ -531,13 +531,13 @@ logging use <code class="highlighter-rouge">openshift_hosted_metrics_deploy=True
 <h3 id="running-with-minishift">Running with minishift</h3>
 
 <p>For a simple single host setup for working with the openshift provider locally,
-you can use <a href="https://github.com/minishift/minishift"><code class="highlighter-rouge">minishift</code></a> to run a
+you can use <a href="https://github.com/minishift/minishift"><code class="language-plaintext highlighter-rouge">minishift</code></a> to run a
 local openshift 3.x instance.</p>
 
 <h4 id="requirements">Requirements</h4>
 
 <ul>
-  <li><a href="https://github.com/minishift/minishift"><code class="highlighter-rouge">minishift</code></a> &gt;= 1.0.0.rc1 (<a href="https://docs.openshift.org/latest/minishift/getting-started/installing.html#installing-instructions">Installation Instructions</a>)</li>
+  <li><a href="https://github.com/minishift/minishift"><code class="language-plaintext highlighter-rouge">minishift</code></a> &gt;= 1.0.0.rc1 (<a href="https://docs.openshift.org/latest/minishift/getting-started/installing.html#installing-instructions">Installation Instructions</a>)</li>
   <li>Virtualization host of your choice (see supported hypervisors <a href="https://docs.openshift.org/latest/minishift/getting-started/installing.html#install-prerequisites">here</a>)</li>
 </ul>
 
@@ -564,7 +564,7 @@ regardless of the hypervisor).</p>
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>minishift start <span class="nt">--vm-driver</span> virtualbox <span class="nt">--openshift-version</span> <span class="s2">"v3.6.1"</span>
 </code></pre></div>    </div>
 
-    <p>You might want to add <code class="highlighter-rouge">--metrics --memory 5G</code>.  As of this writing that only supports hawkular and doesn’t work on 3.7.0.</p>
+    <p>You might want to add <code class="language-plaintext highlighter-rouge">--metrics --memory 5G</code>.  As of this writing that only supports hawkular and doesn’t work on 3.7.0.</p>
 
     <p>See https://hub.docker.com/r/openshift/origin/tags/ for possible versions.</p>
   </li>
@@ -575,14 +575,14 @@ regardless of the hypervisor).</p>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add <code class="highlighter-rouge">oc</code> and/or <code class="highlighter-rouge">docker</code> to your PATH, configured to the cluster (auto-detects correct shell):</p>
+    <p>Add <code class="language-plaintext highlighter-rouge">oc</code> and/or <code class="language-plaintext highlighter-rouge">docker</code> to your PATH, configured to the cluster (auto-detects correct shell):</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">eval</span> <span class="si">$(</span>minishift oc-env<span class="si">)</span>
 <span class="gp">$</span><span class="w"> </span><span class="nb">eval</span> <span class="si">$(</span>minishift docker-env<span class="si">)</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Grab the token to access openshift through <code class="highlighter-rouge">manageiq</code>:</p>
+    <p>Grab the token to access openshift through <code class="language-plaintext highlighter-rouge">manageiq</code>:</p>
 
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>oc login <span class="nt">-u</span> system:admin
 <span class="gp">$</span><span class="w"> </span>oc sa get-token <span class="nt">-n</span> management-infra management-admin
@@ -613,7 +613,7 @@ vm openshift on your development machine) but is an OpenShift v4 cluster.</p>
 <h4 id="requirements-1">Requirements</h4>
 
 <ul>
-  <li><a href="https://github.com/code-ready/crc"><code class="highlighter-rouge">CodeReady Containers</code></a> (<a href="https://code-ready.github.io/crc/#installation_gsg">Installation Instructions</a>)</li>
+  <li><a href="https://github.com/code-ready/crc"><code class="language-plaintext highlighter-rouge">CodeReady Containers</code></a> (<a href="https://code-ready.github.io/crc/#installation_gsg">Installation Instructions</a>)</li>
   <li>A compatible <a href="https://code-ready.github.io/crc/#minimum-system-requirements-operating-system_gsg">Operating System</a> and the <a href="https://code-ready.github.io/crc/#required-software-packages_gsg">Required software packages</a></li>
 </ul>
 
@@ -647,7 +647,7 @@ vm openshift on your development machine) but is an OpenShift v4 cluster.</p>
 </span><span class="go"> ? Image pull secret [? for help]
 </span></code></pre></div>    </div>
   </li>
-  <li>Login to the cluster with <code class="highlighter-rouge">oc</code>, the command will be printed when <code class="highlighter-rouge">crc start</code> finishes or you can call <code class="highlighter-rouge">crc console --credentials</code>
+  <li>Login to the cluster with <code class="language-plaintext highlighter-rouge">oc</code>, the command will be printed when <code class="language-plaintext highlighter-rouge">crc start</code> finishes or you can call <code class="language-plaintext highlighter-rouge">crc console --credentials</code>
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> crc console --credentials
  oc login -u kubeadmin -p KUBEADMING_PASSWORD https://api.crc.testing:6443
 </span></code></pre></div>    </div>
@@ -666,7 +666,7 @@ vm openshift on your development machine) but is an OpenShift v4 cluster.</p>
  oc adm policy add-cluster-role-to-user self-provisioner system:serviceaccount:management-infra:management-admin
 </span></code></pre></div>    </div>
   </li>
-  <li>Grab the console IP address and token to acess CRC through <code class="highlighter-rouge">ManageIQ</code>
+  <li>Grab the console IP address and token to acess CRC through <code class="language-plaintext highlighter-rouge">ManageIQ</code>
     <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> cluster_ip=$</span><span class="o">(</span>crc ip<span class="o">)</span>
 <span class="gp"> service_account_token=$</span><span class="o">(</span>oc sa get-token <span class="nt">-n</span> management-infra management-admin<span class="o">)</span>
 </code></pre></div>    </div>
@@ -686,18 +686,18 @@ vm openshift on your development machine) but is an OpenShift v4 cluster.</p>
 <ul>
   <li>
     <p>Easiest to use script with minishift/crc.<br />
-Have <code class="highlighter-rouge">minishift</code> or <code class="highlighter-rouge">crc</code> in your PATH.
-As described above, including manageiq addon.  Don’t need <code class="highlighter-rouge">--metrics</code>.</p>
+Have <code class="language-plaintext highlighter-rouge">minishift</code> or <code class="language-plaintext highlighter-rouge">crc</code> in your PATH.
+As described above, including manageiq addon.  Don’t need <code class="language-plaintext highlighter-rouge">--metrics</code>.</p>
   </li>
   <li>
     <p>Alternatively bring your own openshift.
-Set <code class="highlighter-rouge">OPENSHIFT_MASTER_HOST</code> env var.
-Perform <code class="highlighter-rouge">oc login</code> as a user having <code class="highlighter-rouge">cluster-admin</code> role.</p>
+Set <code class="language-plaintext highlighter-rouge">OPENSHIFT_MASTER_HOST</code> env var.
+Perform <code class="language-plaintext highlighter-rouge">oc login</code> as a user having <code class="language-plaintext highlighter-rouge">cluster-admin</code> role.</p>
   </li>
 </ul>
 
 <p>Then run in manageiq-providers-openshift repo:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./spec/vcr_cassettes/manageiq/providers/openshift/container_manager/test_objects_record.sh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./spec/vcr_cassettes/manageiq/providers/openshift/container_manager/test_objects_record.sh
 </code></pre></div></div>
 
 <p>You may need to adjust specs if object counts and/or names changed (ideally, figure out why and how to make it more reproducible).</p>

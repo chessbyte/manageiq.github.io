@@ -495,15 +495,15 @@ git clone https://github.com/kubernetes/kubernetes/
 <p>Ensure the following conditions are met:</p>
 
 <ol>
-  <li>In <code class="highlighter-rouge">/etc/kubernetes/kubelet</code>, ensure <code class="highlighter-rouge">KUBELET_ARGS</code> contains <code class="highlighter-rouge">--allow-privileged</code></li>
-  <li>On the master node, generate a default serviceaccount key with <code class="highlighter-rouge">openssl genrsa -out /tmp/serviceaccount.key 2048</code></li>
-  <li>In <code class="highlighter-rouge">/etc/kubernetes/apiserver</code>, ensure <code class="highlighter-rouge">KUBE_API_ARGS</code> contains <code class="highlighter-rouge">--service_account_key_file=/tmp/serviceaccount.key</code> (or the correct path to your default serviceaccount key).</li>
-  <li>In <code class="highlighter-rouge">/etc/kubernetes/apiserver</code>, ensure <code class="highlighter-rouge">KUBE_API_ARGS</code> contains <code class="highlighter-rouge">--allow-privileged</code></li>
+  <li>In <code class="language-plaintext highlighter-rouge">/etc/kubernetes/kubelet</code>, ensure <code class="language-plaintext highlighter-rouge">KUBELET_ARGS</code> contains <code class="language-plaintext highlighter-rouge">--allow-privileged</code></li>
+  <li>On the master node, generate a default serviceaccount key with <code class="language-plaintext highlighter-rouge">openssl genrsa -out /tmp/serviceaccount.key 2048</code></li>
+  <li>In <code class="language-plaintext highlighter-rouge">/etc/kubernetes/apiserver</code>, ensure <code class="language-plaintext highlighter-rouge">KUBE_API_ARGS</code> contains <code class="language-plaintext highlighter-rouge">--service_account_key_file=/tmp/serviceaccount.key</code> (or the correct path to your default serviceaccount key).</li>
+  <li>In <code class="language-plaintext highlighter-rouge">/etc/kubernetes/apiserver</code>, ensure <code class="language-plaintext highlighter-rouge">KUBE_API_ARGS</code> contains <code class="language-plaintext highlighter-rouge">--allow-privileged</code></li>
 </ol>
 
 <h3 id="prepare-cluster-for-use-with-manageiq">Prepare cluster for use with ManageIQ:</h3>
 <ol>
-  <li>Create <code class="highlighter-rouge">management-infra</code> namespace:
+  <li>Create <code class="language-plaintext highlighter-rouge">management-infra</code> namespace:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl create ns management-infra
 </code></pre></div>    </div>
   </li>
@@ -512,17 +512,17 @@ git clone https://github.com/kubernetes/kubernetes/
  kubectl create sa <span class="nt">-n</span> management-infra inspector-admin   
 </code></pre></div>    </div>
   </li>
-  <li>Grant cluster-reader cluster role to <code class="highlighter-rouge">management-admin</code> SA:
+  <li>Grant cluster-reader cluster role to <code class="language-plaintext highlighter-rouge">management-admin</code> SA:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl create clusterrolebinding management-infra-cluster-reader <span class="nt">--clusterrole</span><span class="o">=</span>cluster-reader <span class="nt">--user</span><span class="o">=</span>system:serviceaccount:management-infra:management-admin
 </code></pre></div>    </div>
   </li>
-  <li>Retrieve the serviceaccount token for <code class="highlighter-rouge">management-admin</code> (this will be the auth token ManageIQ uses):
+  <li>Retrieve the serviceaccount token for <code class="language-plaintext highlighter-rouge">management-admin</code> (this will be the auth token ManageIQ uses):
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl describe secret <span class="nt">-n</span> management-infra <span class="si">$(</span>kubectl get secrets <span class="nt">-n</span> management-infra | <span class="nb">grep </span>management-admin | <span class="nb">cut</span> <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s1">' '</span><span class="si">)</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s1">'^token'</span> | <span class="nb">cut</span> <span class="nt">-f2</span> <span class="nt">-d</span><span class="s1">':'</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s1">'\t'</span>
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>The local kubernetes cluster should now be ready for use with ManageIQ (simply use localhost as the hostname and the <code class="highlighter-rouge">management-admin</code> token to authenticate).</p>
+<p>The local kubernetes cluster should now be ready for use with ManageIQ (simply use localhost as the hostname and the <code class="language-plaintext highlighter-rouge">management-admin</code> token to authenticate).</p>
 
       </div>
     </article>

@@ -118,7 +118,7 @@
 
 <p>The following is an example of how the role can be used:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  vars:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  vars:
   - manageiq_validate_certs: false
 
   roles:
@@ -144,42 +144,42 @@
 <h3 id="working-with-input-parameters">Working with Input Parameters</h3>
 <p>A playbook method’s input parameters can be queried and retrieved using the following functions:</p>
 
-<p><code class="highlighter-rouge">method_parameter_exists</code><br />
-<code class="highlighter-rouge">get_method_parameters</code><br />
-<code class="highlighter-rouge">get_method_parameter</code><br />
-<code class="highlighter-rouge">get_decrypted_method_parameter</code></p>
+<p><code class="language-plaintext highlighter-rouge">method_parameter_exists</code><br />
+<code class="language-plaintext highlighter-rouge">get_method_parameters</code><br />
+<code class="language-plaintext highlighter-rouge">get_method_parameter</code><br />
+<code class="language-plaintext highlighter-rouge">get_decrypted_method_parameter</code></p>
 
 <h3 id="working-with-workspace-objects">Working with Workspace Objects</h3>
 <p>Workspace objects (instances that are already loaded in the $evm workspace) can be queried using the following functions:</p>
 
-<p><code class="highlighter-rouge">object_exists</code><br />
-<code class="highlighter-rouge">get_object_names</code><br />
-<code class="highlighter-rouge">get_object_attribute_names</code><br />
-<code class="highlighter-rouge">get_vmdb_object</code></p>
+<p><code class="language-plaintext highlighter-rouge">object_exists</code><br />
+<code class="language-plaintext highlighter-rouge">get_object_names</code><br />
+<code class="language-plaintext highlighter-rouge">get_object_attribute_names</code><br />
+<code class="language-plaintext highlighter-rouge">get_vmdb_object</code></p>
 
 <h3 id="working-with-object-attributes">Working with Object Attributes</h3>
 <p>Workspace object attributes can be queried, retrieved and set using the following functions:</p>
 
-<p><code class="highlighter-rouge">attribute_exists</code><br />
-<code class="highlighter-rouge">get_attribute</code><br />
-<code class="highlighter-rouge">get_decrypted_attribute</code><br />
-<code class="highlighter-rouge">set_attribute</code><br />
-<code class="highlighter-rouge">set_attributes</code><br />
-<code class="highlighter-rouge">set_encrypted_attribute</code></p>
+<p><code class="language-plaintext highlighter-rouge">attribute_exists</code><br />
+<code class="language-plaintext highlighter-rouge">get_attribute</code><br />
+<code class="language-plaintext highlighter-rouge">get_decrypted_attribute</code><br />
+<code class="language-plaintext highlighter-rouge">set_attribute</code><br />
+<code class="language-plaintext highlighter-rouge">set_attributes</code><br />
+<code class="language-plaintext highlighter-rouge">set_encrypted_attribute</code></p>
 
 <h3 id="working-with-state-machines">Working with State Machines</h3>
 <p>A state machine’s state variables can be retrieved or set using the following functions when a playbook method is running in the state machine:</p>
 
-<p><code class="highlighter-rouge">get_state_var_names</code><br />
-<code class="highlighter-rouge">state_var_exists</code><br />
-<code class="highlighter-rouge">get_state_var</code><br />
-<code class="highlighter-rouge">set_state_var</code><br />
-<code class="highlighter-rouge">set_retry</code></p>
+<p><code class="language-plaintext highlighter-rouge">get_state_var_names</code><br />
+<code class="language-plaintext highlighter-rouge">state_var_exists</code><br />
+<code class="language-plaintext highlighter-rouge">get_state_var</code><br />
+<code class="language-plaintext highlighter-rouge">set_state_var</code><br />
+<code class="language-plaintext highlighter-rouge">set_retry</code></p>
 
 <h2 id="return-values">Return Values</h2>
-<p>The <code class="highlighter-rouge">get_*</code> and <code class="highlighter-rouge">*_exists</code> functions return their values into a variable using the <em>register</em> command, for example:</p>
+<p>The <code class="language-plaintext highlighter-rouge">get_*</code> and <code class="language-plaintext highlighter-rouge">*_exists</code> functions return their values into a variable using the <em>register</em> command, for example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "rhel_subscription_pool" attribute from a configuration domain
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_attribute:
@@ -189,19 +189,19 @@
 - debug: msg="Result:"
 </code></pre></div></div>
 
-<p>The return value from these commands is typically a hash, and the value of interest has the <code class="highlighter-rouge">value</code> key in this hash. For example, the debug line above will print the following:</p>
+<p>The return value from these commands is typically a hash, and the value of interest has the <code class="language-plaintext highlighter-rouge">value</code> key in this hash. For example, the debug line above will print the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ok: [localhost] =&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ok: [localhost] =&gt; {
     "msg": "Result:{'changed': False, 'value': 'Red Hat OpenShift Container Platform, Premium*', 'failed': False}"
 }
 </code></pre></div></div>
 
-<p>If the variable is to be used elsewhere in the playbook it should therefore be referenced using the <code class="highlighter-rouge">value</code> key, for example
+<p>If the variable is to be used elsewhere in the playbook it should therefore be referenced using the <code class="language-plaintext highlighter-rouge">value</code> key, for example
 <code> {{ get_attribute_result.value }} </code>.</p>
 
 <p>Some of the functions return an object. For example, <em>get_decrypted_attribute</em> returns a hash whose <em>value</em> key itself points to a further object hash:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Get the "ldap_user_password" encrypted attribute from a configuration domain
   manageiq_automate:
     workspace: "{{ workspace }}"
     get_decrypted_attribute:
@@ -215,7 +215,7 @@ ok: [localhost] =&gt; {
 }
 </code></pre></div></div>
 
-<p>If the variable is to be used elsewhere in the playbook it should be referenced with the <code class="highlighter-rouge">value.value</code> key, for example
+<p>If the variable is to be used elsewhere in the playbook it should be referenced with the <code class="language-plaintext highlighter-rouge">value.value</code> key, for example
 <code> {{ get_decrypted_attribute_result.value.value }} </code> .</p>
 
 <h2 id="the-manageiq-vmdb-role">The manageiq-vmdb Role</h2>
@@ -225,7 +225,7 @@ ok: [localhost] =&gt; {
 
 <p>The following is an example of how the role can be used:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  vars:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  vars:
   - manageiq_validate_certs: false
 
   roles:
@@ -263,7 +263,7 @@ ok: [localhost] =&gt; {
 <h2 id="cfme-appliance-hostname">CFME Appliance Hostname</h2>
 <p>If no appliance hostname has been set from <em>appliance_console</em>, the embedded Ansible provider may fail to connect back to itself when running these roles. An error such as the following may be logged:</p>
 
-<p><code class="highlighter-rouge">MIQ(ManageIQ::Providers::EmbeddedAnsible::Provider#authentication_check_no_validation) type: ["default"] for [2] [Embedded Ansible] Validation failed: error, Failed to open TCP connection to https:443 (getaddrinfo: Name or service not known)</code></p>
+<p><code class="language-plaintext highlighter-rouge">MIQ(ManageIQ::Providers::EmbeddedAnsible::Provider#authentication_check_no_validation) type: ["default"] for [2] [Embedded Ansible] Validation failed: error, Failed to open TCP connection to https:443 (getaddrinfo: Name or service not known)</code></p>
 
 <p>To prevent this error, always ensure that the appliance hostname has been defined.</p>
 

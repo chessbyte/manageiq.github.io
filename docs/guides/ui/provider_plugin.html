@@ -493,14 +493,14 @@ be collected using a custom form.</p>
 <h3 id="provider-workflow">Provider workflow</h3>
 
 <ul>
-  <li>Implement Ansible playbooks and place them in the provider repo <code class="highlighter-rouge">manageiq-provider-xxx</code>.</li>
+  <li>Implement Ansible playbooks and place them in the provider repo <code class="language-plaintext highlighter-rouge">manageiq-provider-xxx</code>.</li>
   <li>Implement custom forms as React components or a ManageIQ Dynamic (service) Dialog. Place them in the provider repo.</li>
-  <li>Create a toolbar extension class and place it in the provider repo under <code class="highlighter-rouge">app/helpers</code>.</li>
+  <li>Create a toolbar extension class and place it in the provider repo under <code class="language-plaintext highlighter-rouge">app/helpers</code>.</li>
 </ul>
 
 <h3 id="extending-the-toolbars">Extending the toolbars</h3>
 
-<p>Providers can add new button groups to existing <a href="toolbars">toolbars</a>. Specifically, the “Center toolbars” can be extended this way. Currently, toolbar extensions can add new <code class="highlighter-rouge">button_group</code>s to the toolbar.</p>
+<p>Providers can add new button groups to existing <a href="toolbars">toolbars</a>. Specifically, the “Center toolbars” can be extended this way. Currently, toolbar extensions can add new <code class="language-plaintext highlighter-rouge">button_group</code>s to the toolbar.</p>
 
 <p>In addition to what is documented on the <a href="toolbars">toolbars</a> page, providers can specify what Dialog has to be displayed then a toolbar button is pressed.</p>
 
@@ -528,17 +528,17 @@ be collected using a custom form.</p>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Above is an example where provider <code class="highlighter-rouge">ManageIQ::Providers::Amazon</code> is extending existing toolbar <code class="highlighter-rouge">EmsCloudCenter</code>with a new group containing a single button.</p>
+<p>Above is an example where provider <code class="language-plaintext highlighter-rouge">ManageIQ::Providers::Amazon</code> is extending existing toolbar <code class="language-plaintext highlighter-rouge">EmsCloudCenter</code>with a new group containing a single button.</p>
 
-<p>When the button is pressed, a modal will be opened with a form implemented as a React class named <code class="highlighter-rouge">CreateAmazonSecurityGroupForm</code>. The title of the modal will be <code class="highlighter-rouge">Create a Security Group</code>.</p>
+<p>When the button is pressed, a modal will be opened with a form implemented as a React class named <code class="language-plaintext highlighter-rouge">CreateAmazonSecurityGroupForm</code>. The title of the modal will be <code class="language-plaintext highlighter-rouge">Create a Security Group</code>.</p>
 
 <h3 id="creating-forms">Creating Forms</h3>
 
 <h4 id="react-based-forms">React based forms</h4>
 
-<p>The example above references a React class <code class="highlighter-rouge">CreateAmazonSecurityGroupForm</code>. In this scenario, the React class is also responsible for submitting a request with the collected data to the <a href="calling_api">API</a>.</p>
+<p>The example above references a React class <code class="language-plaintext highlighter-rouge">CreateAmazonSecurityGroupForm</code>. In this scenario, the React class is also responsible for submitting a request with the collected data to the <a href="calling_api">API</a>.</p>
 
-<p>The React code can be part of the provider repository or it can be added as the dependency. Provider repositories can add dependencies in their <code class="highlighter-rouge">package.json</code>.</p>
+<p>The React code can be part of the provider repository or it can be added as the dependency. Provider repositories can add dependencies in their <code class="language-plaintext highlighter-rouge">package.json</code>.</p>
 
 <p>It’s recommended that the React class be split into two parts:</p>
 <ul>
@@ -595,11 +595,11 @@ be collected using a custom form.</p>
 
 <p>When a user clicks this button, a series of actions take place.</p>
 <ol>
-  <li>Dialog definition is fetched from disk. The dialog definition has to be stored under the name matching the <code class="highlighter-rouge">:dialog_name</code> argument from path <code class="highlighter-rouge">&lt;provider_repo_root&gt;/dialogs/&lt;dialog_name&gt;.json</code>.</li>
-  <li>A modal is displayed with a form created from the dialog definition. The correct dialog data is located using <code class="highlighter-rouge">:class</code> and <code class="highlighter-rouge">dialog_name</code>. Title of the modal is taken from <code class="highlighter-rouge">:dialog_title</code>.</li>
+  <li>Dialog definition is fetched from disk. The dialog definition has to be stored under the name matching the <code class="language-plaintext highlighter-rouge">:dialog_name</code> argument from path <code class="language-plaintext highlighter-rouge">&lt;provider_repo_root&gt;/dialogs/&lt;dialog_name&gt;.json</code>.</li>
+  <li>A modal is displayed with a form created from the dialog definition. The correct dialog data is located using <code class="language-plaintext highlighter-rouge">:class</code> and <code class="language-plaintext highlighter-rouge">dialog_name</code>. Title of the modal is taken from <code class="language-plaintext highlighter-rouge">:dialog_title</code>.</li>
   <li>User interacts with the form.</li>
-  <li>If “Ok” was pressed by the user, an API call is made by POST to <code class="highlighter-rouge">/api/&lt;entity_name&gt;</code> and <code class="highlighter-rouge">{ action: &lt;action_name&gt; }</code>. Serialized data from the form are passed in <code class="highlighter-rouge">data</code> key.</li>
-  <li>If the call is successfull the <code class="highlighter-rouge">:success_message</code> is displayed as a flash message. Otherwise an error message is displayed.</li>
+  <li>If “Ok” was pressed by the user, an API call is made by POST to <code class="language-plaintext highlighter-rouge">/api/&lt;entity_name&gt;</code> and <code class="language-plaintext highlighter-rouge">{ action: &lt;action_name&gt; }</code>. Serialized data from the form are passed in <code class="language-plaintext highlighter-rouge">data</code> key.</li>
+  <li>If the call is successfull the <code class="language-plaintext highlighter-rouge">:success_message</code> is displayed as a flash message. Otherwise an error message is displayed.</li>
 </ol>
 
 

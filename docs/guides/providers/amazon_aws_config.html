@@ -481,7 +481,7 @@ documentation</a>.  An
 overview is provided here.</p>
 
 <ol>
-  <li>Create an AWS SNS Topic called <code class="highlighter-rouge">AWSConfig_topic</code>.
+  <li>Create an AWS SNS Topic called <code class="language-plaintext highlighter-rouge">AWSConfig_topic</code>.
     <ul>
       <li>Log in to the AWS Console.</li>
       <li>Navigate to the SNS tab.</li>
@@ -504,7 +504,7 @@ overview is provided here.</p>
       <li>Navigate to the Config tab.</li>
       <li>Click the gear icon next to the “Status” link.</li>
       <li>Under the “Amazon SNS Topic” heading, select “Choose a topic from your.
- account” and select the <code class="highlighter-rouge">AWSConfig_topic</code>.</li>
+ account” and select the <code class="language-plaintext highlighter-rouge">AWSConfig_topic</code>.</li>
       <li>Under the “Amazon S3 Bucket” heading, select “Choose a bucket from my.
  account” and select the correct bucket name.</li>
       <li>Enter an optional subdirectory.</li>
@@ -522,7 +522,7 @@ handler mechanisms.</p>
 
 <p>When the ManageIQ AWS Event Catcher starts for the first time, it will create a
 new AWS SQS Queue that subscribes to the AWS SNS Topic used by the AWS Config
-service.  It is important to use the AWS SNS Topic name of <code class="highlighter-rouge">AWSConfig_topic</code>
+service.  It is important to use the AWS SNS Topic name of <code class="language-plaintext highlighter-rouge">AWSConfig_topic</code>
 when setting up the AWS Config service so that ManageIQ can find the topic when
 creating the SQS Queue.</p>
 

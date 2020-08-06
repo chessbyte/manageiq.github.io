@@ -480,7 +480,7 @@
 bundle <span class="nb">exec </span>rails generate manageiq:plugin ManageIQ::MyPlugin
 </code></pre></div></div>
 
-<p>This will create the directory <code class="highlighter-rouge">plugins/manageiq-my_plugin</code>, and you will see
+<p>This will create the directory <code class="language-plaintext highlighter-rouge">plugins/manageiq-my_plugin</code>, and you will see
 the creation progress emitted to the console:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create
@@ -488,15 +488,15 @@ create  .codeclimate.yml
 ...
 </code></pre></div></div>
 
-<p>By default, the plugin will be created in the <code class="highlighter-rouge">plugins</code> directory, but you can
-specify an alternate directory with <code class="highlighter-rouge">--path &lt;path&gt;</code>.</p>
+<p>By default, the plugin will be created in the <code class="language-plaintext highlighter-rouge">plugins</code> directory, but you can
+specify an alternate directory with <code class="language-plaintext highlighter-rouge">--path &lt;path&gt;</code>.</p>
 
 <h4 id="core-modifications">Core modifications</h4>
 
 <p>In addition to creating to new plugin, the generator will also modify some core
 ManageIQ files in order connect the application with the new plugin.</p>
 
-<p>The following lines are added to the <code class="highlighter-rouge">Gemfile</code>:</p>
+<p>The following lines are added to the <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group</span> <span class="ss">:my_plugin</span><span class="p">,</span> <span class="ss">:manageiq_default</span> <span class="k">do</span>
   <span class="n">manageiq_plugin</span> <span class="s2">"manageiq-my_plugin"</span> <span class="c1"># TODO: Sort alphabetically...</span>
@@ -508,7 +508,7 @@ ManageIQ files in order connect the application with the new plugin.</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'manageiq-my_plugin'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'plugins/manageiq-my_plugin'</span>
 </code></pre></div></div>
 
-<p>Now you can run <code class="highlighter-rouge">bundle install</code> to activate the new plugin.</p>
+<p>Now you can run <code class="language-plaintext highlighter-rouge">bundle install</code> to activate the new plugin.</p>
 
 <h3 id="provider-generator">Provider generator</h3>
 
@@ -523,33 +523,33 @@ do the following:</p>
 bundle <span class="nb">exec </span>rails generate manageiq:provider ManageIQ::Providers::AwesomeCloud <span class="nt">--manager-type</span><span class="o">=</span>cloud
 </code></pre></div></div>
 
-<p>Much like the plugin generator, you can pass <code class="highlighter-rouge">--path</code> to change the path.
+<p>Much like the plugin generator, you can pass <code class="language-plaintext highlighter-rouge">--path</code> to change the path.
 Additionally, you also have the following options</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">[--vcr], [--no-vcr]      # Enable VCR cassettes (Default: --no-vcr)</code></p>
+    <p><code class="language-plaintext highlighter-rouge">[--vcr], [--no-vcr]      # Enable VCR cassettes (Default: --no-vcr)</code></p>
 
     <p>Adds some scaffolding to support <a href="https://github.com/vcr/vcr">VCR</a> recordings
 for specs.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">[--scaffolding], [--no-scaffolding]  # Generate default class scaffolding (Default: true)</code></p>
+    <p><code class="language-plaintext highlighter-rouge">[--scaffolding], [--no-scaffolding]  # Generate default class scaffolding (Default: true)</code></p>
 
     <p>Adds some scaffolding for a dummy cloud provider, including implementations of
 core models and common workers. The generated scaffolding is similar to the
 <a href="https://github.com/ManageIQ/manageiq-providers-dummy_provider">dummy provider repo</a>.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">[--manager-type=MANAGER_TYPE]        # What type of manager to create, required if building scaffolding</code></p>
+    <p><code class="language-plaintext highlighter-rouge">[--manager-type=MANAGER_TYPE]        # What type of manager to create, required if building scaffolding</code></p>
 
-    <p>Indicates what type of manager to create, for example: cloud, container, infra, physical, etc…  <code class="highlighter-rouge">--help</code> will print the full list of possible manager types.</p>
+    <p>Indicates what type of manager to create, for example: cloud, container, infra, physical, etc…  <code class="language-plaintext highlighter-rouge">--help</code> will print the full list of possible manager types.</p>
   </li>
 </ul>
 
 <h4 id="core-modifications-1">Core modifications</h4>
 
-<p>The following lines are added to your <code class="highlighter-rouge">Gemfile</code>:</p>
+<p>The following lines are added to your <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">### providers</span>
 
@@ -558,14 +558,14 @@ core models and common workers. The generated scaffolding is similar to the
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Until your plugin is pushed upstream you can override the gem for local development by adding the following to a <code class="highlighter-rouge">bundler.d/plugins.rb</code>:</p>
+<p>Until your plugin is pushed upstream you can override the gem for local development by adding the following to a <code class="language-plaintext highlighter-rouge">bundler.d/plugins.rb</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override_gem "manageiq-providers-awesome_cloud", :path =&gt; "../plugins/manageiq-providers-awesome_cloud"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override_gem "manageiq-providers-awesome_cloud", :path =&gt; "../plugins/manageiq-providers-awesome_cloud"
 </code></pre></div></div>
 
 <h4 id="create-an-awesomecloud-instance">Create an AwesomeCloud instance</h4>
 
-<p>Start rails console by executing <code class="highlighter-rouge">bundle exec rails c</code> and perform the following
+<p>Start rails console by executing <code class="language-plaintext highlighter-rouge">bundle exec rails c</code> and perform the following
 in the rails console, to create the cloud manager with an associated authentication.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ems</span> <span class="o">=</span> <span class="no">ManageIQ</span><span class="o">::</span><span class="no">Providers</span><span class="o">::</span><span class="no">AwesomeCloud</span><span class="o">::</span><span class="no">CloudManager</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'CloudAwesome'</span><span class="p">,</span> <span class="ss">:zone</span> <span class="o">=&gt;</span> <span class="no">Zone</span><span class="p">.</span><span class="nf">default_zone</span><span class="p">)</span>

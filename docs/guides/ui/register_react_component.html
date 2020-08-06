@@ -478,7 +478,7 @@
 <h4 id="1-define-react-component">1. Define react component</h4>
 <p>This is your first step of creating shared abstract component. You may use our custom function which fits react, should you choose angular, Vue.js or whatever you’ll have to write your own funcion.</p>
 
-<p>When using react blueprint function, just wrap your component (or HTML) with <code class="highlighter-rouge">addReact</code> function and as argument use callback which will be called with props. These props will be passed when new isntance of this component is created.</p>
+<p>When using react blueprint function, just wrap your component (or HTML) with <code class="language-plaintext highlighter-rouge">addReact</code> function and as argument use callback which will be called with props. These props will be passed when new isntance of this component is created.</p>
 
 <pre><code class="language-JSX">import React from 'react';
 import addReact from 'helpers';
@@ -488,7 +488,7 @@ addReact('YourComponentName', YourComponent);
 </code></pre>
 
 <h4 id="2-new-instance">2. New instance</h4>
-<p>When you want to create new instance of recently created component just call <code class="highlighter-rouge">newInstance</code> function with these arguments</p>
+<p>When you want to create new instance of recently created component just call <code class="language-plaintext highlighter-rouge">newInstance</code> function with these arguments</p>
 <ul>
   <li>name - name of the component you wish to use.</li>
   <li>element - DOM element where this new instance of component should be rendered.</li>
@@ -501,7 +501,7 @@ addReact('YourComponentName', YourComponent);
 componentFactory('YourComponentName', '#selector');
 </code></pre>
 
-<p>There is helper method in ManageIQ, which helps you do this automatically by calling <code class="highlighter-rouge">react</code> in .haml file. This will 
+<p>There is helper method in ManageIQ, which helps you do this automatically by calling <code class="language-plaintext highlighter-rouge">react</code> in .haml file. This will 
 result in div element with generic ID and it places component defined in step 1. over it.</p>
 
 <div class="language-haml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">=</span> <span class="n">react</span> <span class="s1">'YourComponentName'</span><span class="p">,</span> <span class="p">{</span><span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="s1">'ps'</span><span class="p">}</span>
@@ -525,7 +525,7 @@ getDefinition('YourComponentName');
 </code></pre>
 
 <h4 id="new-instance">New instance</h4>
-<p>To create new instance and mount it to DOM element call function <code class="highlighter-rouge">newInstance</code>. This function not only creates new instance it also gives you object over which you can update its pros, update it or destroy it from component’s drawer. Inside this object you will also find comeponent’s instance ID and should the component choose its interact property for side channel communication.</p>
+<p>To create new instance and mount it to DOM element call function <code class="language-plaintext highlighter-rouge">newInstance</code>. This function not only creates new instance it also gives you object over which you can update its pros, update it or destroy it from component’s drawer. Inside this object you will also find comeponent’s instance ID and should the component choose its interact property for side channel communication.</p>
 
 <p>When creating new instance you have option to pass multiple parameters:</p>
 <ul>
@@ -537,7 +537,7 @@ import newInstance from ‘registry’;</li>
 </ul>
 
 <p>newInstance(‘YourComponentName’, {}, element);</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 #### export instance
 To receive component's instance from registery you can call function `getInstance`. You will get full information about this instance, ways to interact with it and s name and ID.
 ```JS
@@ -572,15 +572,15 @@ isDefined('YourComponentName');
 <p>To destroy instance and remove it from DOM (no point of return) simply call this function.</p>
 
 <h3 id="import-mapping">Import mapping</h3>
-<p>When using this API in older code without option to import some functions were made available over <code class="highlighter-rouge">window.ManageIQ</code> object.</p>
+<p>When using this API in older code without option to import some functions were made available over <code class="language-plaintext highlighter-rouge">window.ManageIQ</code> object.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">addReact</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.addReact</code></li>
-  <li><code class="highlighter-rouge">define</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.define</code></li>
-  <li><code class="highlighter-rouge">getInstance</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.getInstance</code></li>
-  <li><code class="highlighter-rouge">isDefined</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.isDefined</code></li>
-  <li><code class="highlighter-rouge">newInstance</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.newInstance</code></li>
-  <li><code class="highlighter-rouge">reactBlueprint</code> -&gt; <code class="highlighter-rouge">ManageIQ.component.reactBlueprint</code></li>
+  <li><code class="language-plaintext highlighter-rouge">addReact</code> -&gt; <code class="language-plaintext highlighter-rouge">ManageIQ.component.addReact</code></li>
+  <li><code class="language-plaintext highlighter-rouge">define</code> -&gt; <code class="language-plaintext highlighter-rouge">ManageIQ.component.define</code></li>
+  <li><code class="language-plaintext highlighter-rouge">getInstance</code> -&gt; <code class="language-plaintext highlighter-rouge">ManageIQ.component.getInstance</code></li>
+  <li><code class="language-plaintext highlighter-rouge">isDefined</code> -&gt; <code class="language-plaintext highlighter-rouge">ManageIQ.component.isDefined</code></li>
+  <li><code class="language-plaintext highlighter-rouge">newInstance</code> -&gt; <code class="language-plaintext highlighter-rouge">ManageIQ.component.newInstance</code></li>
+  <li><code class="language-plaintext highlighter-rouge">reactBlueprint</code> -&gt; <code class="language-plaintext highlighter-rouge">ManageIQ.component.reactBlueprint</code></li>
 </ul>
 
       </div>

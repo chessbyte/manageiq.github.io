@@ -475,12 +475,12 @@
 <h3 id="config">Config</h3>
 
 <p><a href="config.sh">config.sh</a> file contains basic settings, like your home and plugins directory of ManageIQ.<br />
-If you want to redefine some value, create <code class="highlighter-rouge">config.dev.sh</code> file (excluded from git) and override variable.</p>
+If you want to redefine some value, create <code class="language-plaintext highlighter-rouge">config.dev.sh</code> file (excluded from git) and override variable.</p>
 
 <h3 id="repositories">Repositories</h3>
 
-<p>List of repositories are either generated automatically (<code class="highlighter-rouge">$custom_repo_list == 0</code>) or you can define your own array manually
-(<code class="highlighter-rouge">$custom_repo_list == 1</code>). See config for example.</p>
+<p>List of repositories are either generated automatically (<code class="language-plaintext highlighter-rouge">$custom_repo_list == 0</code>) or you can define your own array manually
+(<code class="language-plaintext highlighter-rouge">$custom_repo_list == 1</code>). See config for example.</p>
 
 <h3 id="scripts">Scripts</h3>
 
@@ -489,12 +489,12 @@ If you want to redefine some value, create <code class="highlighter-rouge">confi
 <ul>
   <li><a href="pull.sh">pull.sh</a>: If no changes in repo, checkouts to master and pulls changes. Otherwise it lists changes</li>
   <li><a href="rebase.sh">rebase.sh</a>: The same as pull.sh, then rebases your current branch</li>
-  <li><a href="list-branches.sh">list-branches.sh</a>: Prints local branches, current with <code class="highlighter-rouge">*</code></li>
+  <li><a href="list-branches.sh">list-branches.sh</a>: Prints local branches, current with <code class="language-plaintext highlighter-rouge">*</code></li>
   <li><a href="list-changes.sh">list-changes.sh</a>: Prints changes in repo</li>
   <li><a href="cleanup.sh">cleanup.sh</a>: Deletes branches merged to master
     <ul>
       <li>Without args: local branches only</li>
-      <li>With <code class="highlighter-rouge">--with-remote</code> arg: also deletes merged remote branches</li>
+      <li>With <code class="language-plaintext highlighter-rouge">--with-remote</code> arg: also deletes merged remote branches</li>
     </ul>
   </li>
 </ul>

@@ -474,55 +474,55 @@
 
 <p>A skin is a directory containing images, styles and (js) texts, that can be linked into an Service UI instance to alter the look of the application, overriding the default theme.</p>
 
-<p>A sample skin exists in the Service UI code base, under the <code class="highlighter-rouge">skin-sample</code> directory.</p>
+<p>A sample skin exists in the Service UI code base, under the <code class="language-plaintext highlighter-rouge">skin-sample</code> directory.</p>
 
-<p>Images need to exist under the <code class="highlighter-rouge">images/</code> subdirectory of the skin, any image in there will override any images from <code class="highlighter-rouge">client/assets/images</code>. Of course, adding a new one and referencing it from the css (<code class="highlighter-rouge">url(../images/foo.png)</code> being the preferred way) is possible too.</p>
+<p>Images need to exist under the <code class="language-plaintext highlighter-rouge">images/</code> subdirectory of the skin, any image in there will override any images from <code class="language-plaintext highlighter-rouge">client/assets/images</code>. Of course, adding a new one and referencing it from the css (<code class="language-plaintext highlighter-rouge">url(../images/foo.png)</code> being the preferred way) is possible too.</p>
 
-<p>Styles live in <code class="highlighter-rouge">*.css</code> files, directly in the skin directory. These get concatenated and included last.</p>
+<p>Styles live in <code class="language-plaintext highlighter-rouge">*.css</code> files, directly in the skin directory. These get concatenated and included last.</p>
 
-<p>To override certain hardcoded strings (currently only the product name, and the login screen branding) a skin may also contain <code class="highlighter-rouge">*.js</code> files, also included last, which should be used to provide an angular <code class="highlighter-rouge">constant</code> named <code class="highlighter-rouge">Text</code> in the <code class="highlighter-rouge">app.skin</code> module. (See <code class="highlighter-rouge">client/app/skin/skin.module.js</code> for details.) This feature may also be used to override other code in the application, but that is neither supported, nor recommended.</p>
+<p>To override certain hardcoded strings (currently only the product name, and the login screen branding) a skin may also contain <code class="language-plaintext highlighter-rouge">*.js</code> files, also included last, which should be used to provide an angular <code class="language-plaintext highlighter-rouge">constant</code> named <code class="language-plaintext highlighter-rouge">Text</code> in the <code class="language-plaintext highlighter-rouge">app.skin</code> module. (See <code class="language-plaintext highlighter-rouge">client/app/skin/skin.module.js</code> for details.) This feature may also be used to override other code in the application, but that is neither supported, nor recommended.</p>
 
 <h2 id="how-to-apply-a-skin">How to apply a skin</h2>
 
-<p>Simple! Just run <code class="highlighter-rouge">./link.sh</code> in the skin directory, optionally supplying the path to the Service UI directory (ie. something that includes the <code class="highlighter-rouge">client/</code> and <code class="highlighter-rouge">server/</code> subdirectories).</p>
+<p>Simple! Just run <code class="language-plaintext highlighter-rouge">./link.sh</code> in the skin directory, optionally supplying the path to the Service UI directory (ie. something that includes the <code class="language-plaintext highlighter-rouge">client/</code> and <code class="language-plaintext highlighter-rouge">server/</code> subdirectories).</p>
 
-<p>To undo this, run <code class="highlighter-rouge">./unlink.sh</code>.</p>
+<p>To undo this, run <code class="language-plaintext highlighter-rouge">./unlink.sh</code>.</p>
 
-<p>What these scripts do, is to create a symlink from <code class="highlighter-rouge">client/skin</code> to this skin’s directory.</p>
+<p>What these scripts do, is to create a symlink from <code class="language-plaintext highlighter-rouge">client/skin</code> to this skin’s directory.</p>
 
-<p>All you need to do after is <code class="highlighter-rouge">gulp build</code>, or restart the development server.</p>
+<p>All you need to do after is <code class="language-plaintext highlighter-rouge">gulp build</code>, or restart the development server.</p>
 
 <h2 id="how-to-override-an-image">How to override an image</h2>
 
-<p>Just put an identically named image in the <code class="highlighter-rouge">images/</code> subdirectory of the skin. It will overwrite the image copied from <code class="highlighter-rouge">client/assets/images</code> during the build.</p>
+<p>Just put an identically named image in the <code class="language-plaintext highlighter-rouge">images/</code> subdirectory of the skin. It will overwrite the image copied from <code class="language-plaintext highlighter-rouge">client/assets/images</code> during the build.</p>
 
 <h3 id="known-images-that-you-may-want-to-override">Known images (that you may want to override)</h3>
 
-<p>For up-to-date info, please see the <code class="highlighter-rouge">client/assets/images</code> directory.</p>
+<p>For up-to-date info, please see the <code class="language-plaintext highlighter-rouge">client/assets/images</code> directory.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">bg-login.png</code>, <code class="highlighter-rouge">bg-login-2.png</code> - login screen backgrounds</li>
-  <li><code class="highlighter-rouge">bg-modal-about-pf.png</code> - background for the About dialog</li>
-  <li><code class="highlighter-rouge">bg-navbar.png</code> - background for the top navbar</li>
-  <li><code class="highlighter-rouge">brand.svg</code> - the application logo used in the navbar</li>
-  <li><code class="highlighter-rouge">login-screen-logo.png</code> - login screen logo, also used in the About dialog</li>
+  <li><code class="language-plaintext highlighter-rouge">bg-login.png</code>, <code class="language-plaintext highlighter-rouge">bg-login-2.png</code> - login screen backgrounds</li>
+  <li><code class="language-plaintext highlighter-rouge">bg-modal-about-pf.png</code> - background for the About dialog</li>
+  <li><code class="language-plaintext highlighter-rouge">bg-navbar.png</code> - background for the top navbar</li>
+  <li><code class="language-plaintext highlighter-rouge">brand.svg</code> - the application logo used in the navbar</li>
+  <li><code class="language-plaintext highlighter-rouge">login-screen-logo.png</code> - login screen logo, also used in the About dialog</li>
 </ul>
 
 <h2 id="how-to-override-a-style">How to override a style</h2>
 
-<p>Simply add a css file in the skin, it will get included last, and so will override any identical selectors. Feel free to use <code class="highlighter-rouge">!important</code> but use with care.</p>
+<p>Simply add a css file in the skin, it will get included last, and so will override any identical selectors. Feel free to use <code class="language-plaintext highlighter-rouge">!important</code> but use with care.</p>
 
 <h2 id="how-to-override-a-text-label">How to override a text label</h2>
 
-<p>Provide a JS file that introduces an angular <code class="highlighter-rouge">constant</code> named <code class="highlighter-rouge">Text</code>. It should be an object of objects, see below for the list of fields.</p>
+<p>Provide a JS file that introduces an angular <code class="language-plaintext highlighter-rouge">constant</code> named <code class="language-plaintext highlighter-rouge">Text</code>. It should be an object of objects, see below for the list of fields.</p>
 
 <h3 id="known-labels">Known labels</h3>
 
-<p>For up-to-date info, please see the <code class="highlighter-rouge">client/app/skin/skin.module.js</code> file.</p>
+<p>For up-to-date info, please see the <code class="language-plaintext highlighter-rouge">client/app/skin/skin.module.js</code> file.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Text.app.name</code> - the name of the application</li>
-  <li><code class="highlighter-rouge">Text.login.brand</code> - HTML for the brand name on the login page</li>
+  <li><code class="language-plaintext highlighter-rouge">Text.app.name</code> - the name of the application</li>
+  <li><code class="language-plaintext highlighter-rouge">Text.login.brand</code> - HTML for the brand name on the login page</li>
 </ul>
 
       </div>
