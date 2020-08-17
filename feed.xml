@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Aug 2020 13:38:40 +0000</pubDate>
-    <lastBuildDate>Mon, 17 Aug 2020 13:38:40 +0000</lastBuildDate>
+    <pubDate>Mon, 17 Aug 2020 19:43:24 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Aug 2020 19:43:24 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Announcing Ivanchuk-7 and Jansa-1 RC2</title>
+        <description>&lt;p&gt;ManageIQ Ivanchuk-7 and Jansa-1 RC2 are now available. These releases are primarily security fix releases, after extensive security testing. Many thanks goes to the IBM Security team for finding and reporting these vulnerabilities.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 17 Aug 2020 13:01:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/08/Announcing-Ivanchuk-2-And-Jansa-1-RC2/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/08/Announcing-Ivanchuk-2-And-Jansa-1-RC2/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Jansa Release Candidate</title>
@@ -149,20 +165,6 @@ Here are just a few of the things added since the Ivanchuk-2 release:&lt;/p&gt;
         <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-4-Working-With-State-Machines/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-4-Working-With-State-Machines/</guid>
-        
-        <category>tutorials</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Embedded Ansible — Part 3, Ansible in an Automation Workflow</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-1-Built-In-Roles/&quot;&gt;Part one&lt;/a&gt; of this series described the functionality for using built-in roles to perform tasks with Ansible playbooks rather than Ruby methods in Fine. &lt;a href=&quot;https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/&quot;&gt;Part two&lt;/a&gt; of this series looked at how host lists and input parameters can be passed to embedded Ansible playbook services and methods. This article will discuss how a playbook method can form part of a larger automation workflow by interacting with the ManageIQ Automate workspace.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-3-Ansible-In-An-Automation-Workflow/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-3-Ansible-In-An-Automation-Workflow/</guid>
         
         <category>tutorials</category>
         
