@@ -1220,14 +1220,7 @@ associated with the <code class="language-plaintext highlighter-rouge">admin</co
 
 <div class="note">
 
-  - You can set whether ManageIQ should use the Telemetry service
-    or Advanced Message Queueing Protocol (AMQP) for event monitoring.
-    If you choose Telemetry, you should first configure the
-    **ceilometer** service on the undercloud to store events. See
-    [???](#openstack-events-uc) for instructions. For more information,
-    see [OpenStack Telemetry
-    (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry)
-    in the Red Hat OpenStack Platform *Architecture Guide*.
+  - You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the undercloud to store events. See [Configuring the Undercloud to Store Events](#configuring-the-undercloud-to-store-events) for instructions. For more information, see [OpenStack Telemetry (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry) in the Red Hat OpenStack Platform *Architecture Guide*.
 
   - To authenticate the provider using a self-signed Certificate
     Authority (CA), configure the ManageIQ appliance to
@@ -1358,10 +1351,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-uc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="#configuring-the-undercloud-to-store-events">Configuring the Undercloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, select
