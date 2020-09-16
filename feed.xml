@@ -5,9 +5,23 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Sep 2020 14:34:07 +0000</pubDate>
-    <lastBuildDate>Tue, 15 Sep 2020 14:34:07 +0000</lastBuildDate>
+    <pubDate>Wed, 16 Sep 2020 13:52:06 +0000</pubDate>
+    <lastBuildDate>Wed, 16 Sep 2020 13:52:06 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Using the API with OpenID-Connect Authentication</title>
+        <description>&lt;p&gt;The goal of this blog post is to provide a basic understanding of how to use the ManageIQ REST API when configured with OpenID-Connect authentication.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/09/oidc-auth-api-usage/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/09/oidc-auth-api-usage/</guid>
+        
+        <category>tutorials</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Ivanchuk-7 and Jansa-1 RC2</title>
@@ -153,20 +167,6 @@ Here are just a few of the things added since the Ivanchuk-2 release:&lt;/p&gt;
         <category>releases</category>
         
         <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Embedded Ansible — Part 4, Working With State Machines</title>
-        <description>&lt;p&gt;Parts &lt;a href=&quot;https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/&quot;&gt;two&lt;/a&gt; and &lt;a href=&quot;https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-3-Ansible-In-An-Automation-Workflow/&quot;&gt;three&lt;/a&gt; of this series looked at passing input parameters into playbooks, and how to work with the Automate workspace. This article discusses how an Ansible playbook can be effectively used in a state machine.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-4-Working-With-State-Machines/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/02/Embedded-Ansible-Part-4-Working-With-State-Machines/</guid>
-        
-        <category>tutorials</category>
         
         
       </item>
