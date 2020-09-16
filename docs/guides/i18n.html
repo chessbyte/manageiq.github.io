@@ -795,11 +795,11 @@ and navigate to the <a href="https://www.transifex.com/manageiq/public/">ManageI
 <p>Steps for updating translations:</p>
 
 <ul>
-  <li>Update gettext catalogs in ManageIQ git repository. This is done to make sure the gettext catalog contains up to date (i.e. current) strings for translators.
-To update the catalog, run the following rake task in the root of ManageIQ git checkout:</li>
+  <li>Update message catalog in the <a href="https://github.com/ManageIQ/manageiq">core</a> ManageIQ repository. This is done to make sure the message catalog contains up to date (i.e. current) strings for translators.
+To update the message catalog including the plugin repos, run the following rake task in the root of <code class="language-plaintext highlighter-rouge">ManageIQ/manageiq</code> git checkout:</li>
 </ul>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>rake locale:update
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>rake locale:update_all
 </code></pre></div></div>
 
 <p>This task will:</p>
