@@ -478,6 +478,7 @@
   <li>Backports
     <ul>
       <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+is%3Amerged+is%3Apr+label%3Ajansa%2Fyes%3F+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-documentation+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs">Backport requests</a></li>
+      <li><a href="https://github.com/issues?q=archived%3Afalse+sort%3Acreated-desc+base%3Ajansa+is%3Aopen+is%3Apr+-label%3Ajansa%2Fno+-label%3Ajansa%2Fyes+org%3AManageIQ+-repo%3AManageIQ%2Fbugzilla_mirror+-repo%3AManageIQ%2Fmanageiq-consumption+-repo%3AManageIQ%2Fmanageiq-cross_repo-tests+-repo%3AManageIQ%2Fmanageiq-design+-repo%3AManageIQ%2Fmanageiq-performance+-repo%3AManageIQ%2Fmanageiq-release+-repo%3AManageIQ%2Fmanageiq-v2v+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host+-repo%3AManageIQ%2Fmanageiq-v2v-conversion_host-build+-repo%3AManageIQ%2Fmanageiq-vagrant-dev+-repo%3AManageIQ%2Fpolisher+-repo%3AManageIQ%2Fintegration_tests+-repo%3AManageIQ%2Fwrapanapi+-repo%3AManageIQ%2Fmanageiq-documentation+-repo%3AManageIQ%2Fmanageiq-lxca-docs+-repo%3AManageIQ%2Fmanageiq-nuage-docs+-repo%3AManageIQ%2Fmanageiq-redfish-docs+-repo%3AManageIQ%2Fmanageiq-vcloud-docs">Backport direct PRs</a></li>
     </ul>
   </li>
   <li>Issues
@@ -499,14 +500,10 @@
 <h2 id="actions">Actions</h2>
 
 <ul>
-  <li>Backport requests
+  <li>Backport requests and direct PRs
     <ul>
-      <li>Review <code class="language-plaintext highlighter-rouge">&lt;release&gt;/yes?</code> labels.
-        <ul>
-          <li>If accepted for backport, change to <code class="language-plaintext highlighter-rouge">&lt;release&gt;/yes</code></li>
-          <li>If not accepted for backport, change to <code class="language-plaintext highlighter-rouge">&lt;release&gt;/no</code></li>
-        </ul>
-      </li>
+      <li>If accepted for backport, add <code class="language-plaintext highlighter-rouge">&lt;release&gt;/yes</code> and remove <code class="language-plaintext highlighter-rouge">&lt;release&gt;/yes?</code></li>
+      <li>If not accepted for backport, add <code class="language-plaintext highlighter-rouge">&lt;release&gt;/no</code> and remove <code class="language-plaintext highlighter-rouge">&lt;release&gt;/yes?</code></li>
     </ul>
   </li>
   <li>Unassigned issues (and PRs)
