@@ -5,13 +5,13 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Sep 2020 15:44:48 +0000</pubDate>
-    <lastBuildDate>Wed, 23 Sep 2020 15:44:48 +0000</lastBuildDate>
+    <pubDate>Wed, 23 Sep 2020 16:17:12 +0000</pubDate>
+    <lastBuildDate>Wed, 23 Sep 2020 16:17:12 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
         <title>ManageIQ Jansa GA announcement</title>
-        <description>&lt;p&gt;On behalf of the ManageIQ team, I’m happy to announce the release of &lt;strong&gt;ManageIQ Jansa&lt;/strong&gt;!  This release is named after Czech chess grandmaster &lt;a href=&quot;https://en.wikipedia.org/wiki/Vlastimil_Jansa&quot;&gt;Vlastimil Jansa&lt;/a&gt;.  You can download the Jansa-1 release on our &lt;a href=&quot;/downloads&quot;&gt;downloads page&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;On behalf of the ManageIQ team, I’m happy to announce the release of &lt;strong&gt;ManageIQ Jansa&lt;/strong&gt;!  This release is named after Czech chess grandmaster &lt;a href=&quot;https://en.wikipedia.org/wiki/Vlastimil_Jansa&quot;&gt;Vlastimil Jansa&lt;/a&gt;.  You can download the Jansa-1 release on our &lt;a href=&quot;/download&quot;&gt;downloads page&lt;/a&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
