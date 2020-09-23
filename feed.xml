@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Sep 2020 13:55:32 +0000</pubDate>
-    <lastBuildDate>Wed, 23 Sep 2020 13:55:32 +0000</lastBuildDate>
+    <pubDate>Wed, 23 Sep 2020 15:44:48 +0000</pubDate>
+    <lastBuildDate>Wed, 23 Sep 2020 15:44:48 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>ManageIQ Jansa GA announcement</title>
+        <description>&lt;p&gt;On behalf of the ManageIQ team, I’m happy to announce the release of &lt;strong&gt;ManageIQ Jansa&lt;/strong&gt;!  This release is named after Czech chess grandmaster &lt;a href=&quot;https://en.wikipedia.org/wiki/Vlastimil_Jansa&quot;&gt;Vlastimil Jansa&lt;/a&gt;.  You can download the Jansa-1 release on our &lt;a href=&quot;/downloads&quot;&gt;downloads page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/09/manageiq-jansa-ga-announcement/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/09/manageiq-jansa-ga-announcement/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Using the API with OpenID-Connect Authentication</title>
@@ -146,23 +162,6 @@ Here are just a few of the things added since the Ivanchuk-4 release:&lt;/p&gt;
         <pubDate>Wed, 18 Mar 2020 13:33:33 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/03/Milestones_Cadence_Kasparov/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Milestones_Cadence_Kasparov/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Announcing Ivanchuk-3</title>
-        <description>&lt;p&gt;We’ve just built Ivanchuk-3. This release contains bug fixes, UI tweaks, and stabilization.
-Here are just a few of the things added since the Ivanchuk-2 release:&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 01 Mar 2020 19:12:13 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-3/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-3/</guid>
         
         <category>releases</category>
         
