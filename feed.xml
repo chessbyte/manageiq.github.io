@@ -5,8 +5,8 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Sep 2020 11:35:31 +0000</pubDate>
-    <lastBuildDate>Wed, 30 Sep 2020 11:35:31 +0000</lastBuildDate>
+    <pubDate>Wed, 30 Sep 2020 13:29:55 +0000</pubDate>
+    <lastBuildDate>Wed, 30 Sep 2020 13:29:55 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -21,6 +21,21 @@
         <category>releases</category>
         
         <category>announcements</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Troubleshooting OpenID-Connect Authentication on Containers</title>
+        <description>&lt;p&gt;The goal of this blog post is to provide a basic understanding of how to troubleshoot ManageIQ 
+configured for OpenID-Connect authentication when deploying ManageIQ on containers.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/09/troubleshooting-containerized-oidc/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/09/troubleshooting-containerized-oidc/</guid>
+        
+        <category>tutorials</category>
         
         
       </item>
@@ -146,22 +161,6 @@ Here are just a few of the things added since the Ivanchuk-4 release:&lt;/p&gt;
         <pubDate>Thu, 26 Mar 2020 19:12:13 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-4/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-4/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Milestones, Release Cadence, Kasparov</title>
-        <description>&lt;p&gt;ManageIQ is getting ready to release an alpha version of the Jansa release.  Additionally, we are moving to a faster release cadence - approximately once every 3 months to keep up with the rate of change of all the providers that ManageIQ interacts with.  We hope to release Jansa GA by June and the K-release by September.  You will notice new milestones in the ManageIQ community to help us keep track of the features being planned for a particular release.  The milestones and the &lt;a href=&quot;https://github.com/orgs/ManageIQ/projects/13&quot;&gt;roadmap&lt;/a&gt; should help keep us all on track!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 18 Mar 2020 13:33:33 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/03/Milestones_Cadence_Kasparov/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Milestones_Cadence_Kasparov/</guid>
         
         <category>releases</category>
         
