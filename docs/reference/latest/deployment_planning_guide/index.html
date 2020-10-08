@@ -581,6 +581,7 @@
 <li class="toc-entry toc-h4"><a href="#drilling-into-chart-data">Drilling into Chart Data</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#planning-where-to-put-a-new-virtual-machine">Planning Where to Put a New Virtual Machine</a></li>
 </ul>
 </li>
 </ul>
@@ -1632,7 +1633,7 @@ value set for <code class="language-plaintext highlighter-rouge">max_wal_senders
 
 <p>For some capacity and utilization data, ManageIQ calculates and shows trend lines in the charts. Trend lines are created by using linear regression, which is calculated by using the capacity and utilization data that is collected by ManageIQ during the interval you specify for the chart. The more data that you have the better the predictive value of the trend line.</p>
 
-<p>There are three server roles that are associated with the collection and metric creation of capacity and utilization.</p>
+<p>Three server roles are associated with the collection and metric creation of capacity and utilization.</p>
 
 <ul>
   <li>
@@ -1686,7 +1687,7 @@ ManageIQ is gathering data points going one month back in time.</p>
 <div class="note">
 
 In addition to setting the server role, you must also select which
-clusters and datastores to collect data for. For more information, see the **General Configuration** guide. You must have super administrator rights to edit these settings.
+clusters and data stores to collect data for. For more information, see the **General Configuration** guide. You must have super administrator privileges to edit these settings.
 
 </div>
 
@@ -2146,21 +2147,51 @@ Machines</p>
 
     <ul>
       <li>
-        <p>If you are viewing the <strong>CPU</strong>, <strong>Disk</strong>, <strong>Memory</strong>, or
-<strong>Network</strong> charts, selecting from the <strong>Chart</strong> option will change all of the charts on the page to the new interval selected.</p>
+        <p>If you are viewing the <strong>CPU</strong>, <strong>Disk</strong>, <strong>Memory</strong>, or <strong>Network</strong> charts, selecting from the <strong>Chart</strong> option will change all of the charts on the page to the new interval selected.</p>
       </li>
       <li>
-        <p>If you are viewing the <strong>CPU</strong>, <strong>Disk</strong>, <strong>Memory</strong>, or
-<strong>Network</strong> charts, selecting from the <strong>Display</strong> option will allow you to drill into the virtual machines or <strong>Hosts</strong> that were running at the time.</p>
+        <p>If you are viewing the <strong>CPU</strong>, <strong>Disk</strong>, <strong>Memory</strong>, or <strong>Network</strong> charts, selecting from the <strong>Display</strong> option will allow you to drill into the virtual machines or <strong>Hosts</strong> that were running at the time.</p>
       </li>
       <li>
-        <p>If you are viewing the <strong>VM</strong> or <strong>Hosts</strong> chart, the
-<strong>Display</strong> menu allows you to view running or stopped
-virtual machines. The time of the data point will be displayed in addition to the virtual machines that apply. From here, click a virtual machine to view its details.</p>
+        <p>If you are viewing the <strong>VM</strong> or <strong>Hosts</strong> chart, the <strong>Display</strong> menu allows you to view running or stopped virtual machines. The time of the data point will be displayed in addition to the virtual machines that apply. From here, click a virtual machine to view its details.</p>
       </li>
     </ul>
   </li>
 </ol>
+
+<h3 id="planning-where-to-put-a-new-virtual-machine">
+<a class="anchor" href="#planning-where-to-put-a-new-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planning Where to Put a New Virtual Machine</h3>
+
+<p>You can use the data that is collected in the VMDB to plan where you can put more virtual machines. With ManageIQ, you can use a reference virtual machine as an example to plan on which hosts and clusters you can place a new virtual machine.</p>
+
+<p>** Note:** For more information about utilization trends and identifying bottlenecks in your environment, see <a href="../managing_infrastructure_and_inventory/index.html#data-optimization">Data Optimization</a> in Managing Infrastructure and Inventory.</p>
+
+<ol>
+  <li>Navigate to <strong>Optimize</strong> &gt; <strong>Planning</strong>.</li>
+  <li>
+    <p>From <strong>Reference VM Selection</strong>, use the drop-down menu to select the virtual machine that is most like the one that you want to add.</p>
+
+    <p><img src="../images/2254.png" alt="2254"></p>
+  </li>
+  <li>
+    <p>Select the required VM Options for what you want to base the calculations on.</p>
+
+    <p><img src="../images/2255.png" alt="2255"></p>
+
+    <p>From the <strong>Source</strong> list, select the type of data to use as the source for your projections. For example, select <strong>Allocation</strong> to calculate based on the current allocation values of each resource (CPU, memory, or disk space) for the reference virtual machine. Use <strong>Reservation</strong> to project based on the current guaranteed value of the specific resource (CPU Speed, CPU count, memory, or disk space) although that amount might not be allocated to the virtual machine at a specific moment in time. Select <strong>Usage</strong> if you want to calculate based on usage history of the reference virtual machine. Use <strong>Manual Input</strong> to enter your own set of parameters for each resource.</p>
+  </li>
+  <li>
+    <p>From <strong>Target Options / Limits</strong>, select if you want to use clusters or hosts as your targets.</p>
+
+    <p><img src="../images/2256.png" alt="2256"></p>
+
+    <p>Also, select the limit of how high the projection can go for CPU, memory, and datastore space. If you are targeting hosts, you are able to select a filter for which hosts can be targets.</p>
+  </li>
+  <li>From Trend Options, select how far back you want to use the trend data for, a Time Profile and Time Zone if applicable. Note that Time Profile will only show if the logged on user has a Time Profile available.</li>
+  <li>Click Submit.</li>
+</ol>
+
+<p>The <strong>Summary</strong> tab shows the best clusters or hosts on which to place the virtual machines. The <strong>Report</strong> tab shows the best fit and statistics on the reference virtual machine in a tabular format. From the <strong>Report</strong> tab, you can also create a PDF of the report or download the data in <code class="language-plaintext highlighter-rouge">txt</code> or <code class="language-plaintext highlighter-rouge">csv</code> format.</p>
 
 <h1 id="appendix">
 <a class="anchor" href="#appendix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix</h1>
