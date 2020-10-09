@@ -1210,14 +1210,7 @@ associated with the <code class="language-plaintext highlighter-rouge">admin</co
 
 <div class="note">
 
-  - You can set whether ManageIQ should use the Telemetry service
-    or Advanced Message Queueing Protocol (AMQP) for event monitoring.
-    If you choose Telemetry, you should first configure the
-    **ceilometer** service on the undercloud to store events. See
-    [???](#openstack-events-uc) for instructions. For more information,
-    see [OpenStack Telemetry
-    (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry)
-    in the Red Hat OpenStack Platform *Architecture Guide*.
+  - You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the undercloud to store events. See [Configuring the Undercloud to Store Events](#configuring-the-undercloud-to-store-events) for instructions. For more information, see [OpenStack Telemetry (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry) in the Red Hat OpenStack Platform *Architecture Guide*.
 
   - To authenticate the provider using a self-signed Certificate
     Authority (CA), configure the ManageIQ appliance to
@@ -1348,10 +1341,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-uc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="#configuring-the-undercloud-to-store-events">Configuring the Undercloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, select
@@ -2187,7 +2177,7 @@ Satelllite 6 provider added to ManageIQ.</p>
   <li>
     <p>Enter a <strong>URL</strong> for the provider. This is the root URL for the
 Satellite 6 server and can be either an IP address or a hostname.
-For example, <em><a href="http://satellite6.example.com">http://satellite6.example.com</a></em>.</p>
+For example, <code class="language-plaintext highlighter-rouge">http://satellite6.example.com</code>.</p>
   </li>
   <li>
     <p>Select <strong>Verify Peer Certificate</strong> to use encrypted communication
@@ -3948,12 +3938,9 @@ with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.
 
 <div class="note">
 
-In OpenStack, you must add `admin` as a member of all tenants that users
-want to access and use in ManageIQ.
+In OpenStack, you must add `admin` as a member of all tenants that users want to access and use in ManageIQ.
 
-<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/5.0-beta/html-single/managing_infrastructure_and_inventory/index#tenants" target="_blank">Cloud
-Tenants</a> in *Managing Infrastructure and Inventory* for information on working
-with OpenStack tenants (projects) in ManageIQ.
+See [Cloud Tenants](../managing_infrastructure_and_inventory/index.html#cloud-tenants) in *Managing Infrastructure and Inventory* for information on working with OpenStack tenants (projects) in ManageIQ.
 
 </div>
 
@@ -3982,10 +3969,7 @@ create cloud tenants or tenant object hierarchy from OpenStack.</p>
 
 <div class="note">
 
-You can set whether ManageIQ should use the Telemetry service or
-Advanced Message Queueing Protocol (AMQP) for event monitoring. If you
-choose Telemetry, you should first configure the **ceilometer** service
-on the overcloud to store events. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/quickstart_guide_for_cloudforms_with_red_hat_openstack_platform/add-openstack-oc#openstack-events-oc" target="_blank">Configuring the Overcloud to Store Events</a> for instructions.
+You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the overcloud to store events. See [Configuring the Overcloud to Store Events](../managing_providers/index.html#configuring-the-overcloud-to-store-events) for instructions.
 
 For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
 (ceilometer)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
@@ -4158,10 +4142,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-oc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="../managing_providers/index.html#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, or eventing
@@ -5522,16 +5503,13 @@ by default, which display basic information about each provider:</p>
 <a class="anchor" href="#obtaining-an-openshift-container-platform-management-token" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtaining an OpenShift Container Platform Management Token</h2>
 
 <p>When deploying OpenShift using <code class="language-plaintext highlighter-rouge">openshift-ansible-3.0.20</code> (or later
-versions), the OpenShift Container Platform <a href="https://docs.openshift.com/container-platform/latest/admin_guide/service_accounts.html">service
-account</a>
-and
-<a href="https://docs.openshift.com/container-platform/latest/admin_guide/manage_authorization_policy.html">roles</a>
-required by ManageIQ are installed by default.</p>
+versions), the OpenShift Container Platform <a href="https://docs.openshift.com/container-platform/4.5/authentication/understanding-and-creating-service-accounts.html">service account</a>
+and <a href="https://docs.openshift.com/container-platform/4.5/authentication/understanding-and-creating-service-accounts.html#service-accounts-granting-roles_understanding-service-accounts">roles</a> required by ManageIQ are installed by default.</p>
 
 <div class="note">
 
 See the [OpenShift Container Platform
-documentation](https://docs.openshift.com/container-platform/latest/architecture/additional_concepts/authorization.html#roles)
+documentation](https://docs.openshift.com/container-platform/4.5/authentication/using-rbac.html#default-roles_using-rbac)
 for a list of the default roles.
 
 </div>
@@ -5552,9 +5530,7 @@ common issues.</p>
 
 <ul>
   <li>
-    <p>Configure ManageIQ to allow for all three <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.1/deployment-planning-guide/#assigning_the_capacity_and_utilization_server_roles"><strong>Capacity &amp;
-Utilization</strong> server
-roles</a>.</p>
+    <p>Configure ManageIQ to allow for all three <a href="../deployment_planning_guide/index.html#assigning-the-capacity-and-utilization-server-roles">Capacity &amp; Utilization server roles</a>.</p>
   </li>
   <li>
     <p>Enable cluster metrics using the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.5/html-single/installation_and_configuration/#install-config-cluster-metrics">OpenShift Container Platform

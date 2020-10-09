@@ -546,16 +546,11 @@
 <h2 id="overview">
 <a class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
 
-<p>This guide walks you through adding a Red Hat OpenShift Container
-Platform cluster to a ManageIQ container provider catalog. This
-deployment focuses on enabling the OpenShift Container Platform cluster
-metrics plug-in, so that ManageIQ can collect information
-from an OpenShift Container Platform cluster upon integration.</p>
+<p>This guide walks you through adding a Red Hat OpenShift Container Platform cluster to a ManageIQ container provider catalog. This deployment focuses on enabling the OpenShift Container Platform cluster metrics plug-in, so that ManageIQ can collect information from an OpenShift Container Platform cluster upon integration.</p>
 
 <p>Each procedure in this guide is covered in greater detail in the
-<a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/">ManageIQ</a>
-and <a href="https://access.redhat.com/documentation/en/openshift-container-platform/">OpenShift Container
-Platform</a>
+<a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/infra_mgmt_intro.html">ManageIQ</a>
+and <a href="https://access.redhat.com/documentation/en/openshift-container-platform/">OpenShift Container Platform</a>
 product documentation. However, links to the corresponding sections are
 provided for more detail.</p>
 
@@ -569,7 +564,7 @@ products prior to integration.</p>
 
 <ul>
   <li>
-    <p><a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/">Already deployed ManageIQ on your chosen
+    <p><a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/infra_mgmt_intro.html">Already deployed ManageIQ on your chosen
 platform</a></p>
   </li>
   <li>
@@ -578,30 +573,22 @@ Platform</a></p>
   </li>
 </ul>
 
-<p>When enabling metrics on OpenShift Container Platform, you can store
-your metrics data on <em>persistent</em> or <em>non-persistent</em> storage. To use
-persistent storage, you need to provision a persistent volume
-specifically for this purpose before <a href="#ocp-metrics-storage">configuring the metrics
-components</a>. See <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#architecture-additional-concepts-storage">Persistent
-Volumes</a>
-in the OpenShift Container Platform <em>Architecture</em> documentation for
-more information.</p>
+<p>When enabling metrics on OpenShift Container Platform, you can store your metrics data on <em>persistent</em> or <em>non-persistent</em> storage. To use persistent storage, you need to provision a persistent volume specifically for this purpose before <a href="#ocp-metrics-storage">configuring the metrics components</a>. See <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#architecture-additional-concepts-storage">Persistent Volumes</a>
+in the OpenShift Container Platform <em>Architecture</em> documentation for more information.</p>
 
 <h2 id="enabling-openshift-container-platform-metrics">
 <a class="anchor" href="#enabling-openshift-container-platform-metrics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling OpenShift Container Platform Metrics</h2>
 
-<p>In order for ManageIQ to collect OpenShift Container
-Platform node, pod, and container, you must first enable <em>cluster
+<p>In order for ManageIQ to collect OpenShift Container Platform node, pod, and container, you must first enable <em>cluster
 metrics</em> for your OpenShift cluster. This involves running the OpenShift
 Metrics services inside your cluster. If cluster metrics are already
 enabled on OpenShift, skip this section and proceed to
-<a href="#Obtaining_OpenShift_Management_Token">???</a>.</p>
+<a href="#retrieving-the-openshift-container-platform-management-token">Retrieving the OpenShift Container Platform Management Token</a>.</p>
 
 <div class="note">
 
 This section is an abridged version of a more detailed chapter, namely
-[Enabling Cluster
-Metrics](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics)
+[Enabling Cluster Metrics](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics)
 from the OpenShift Container Platform *Installation and Configuration*
 documentation. Refer to that chapter for more information.
 
@@ -663,8 +650,7 @@ Container Platform cluster.</p>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>As described in <a href="#ocp-metrics-storage">Configuring Metrics
-Components</a>, the Metrics Deployer uses the
+    <p>As described in <a href="#ocp-metrics-storage">Configuring Metrics Components</a>, the Metrics Deployer uses the
 <strong>metrics-deployer</strong> service account. Configure the
 <strong>metrics-deployer</strong> account to have <strong>edit</strong> permissions in the
 <strong>openshift-infra</strong> project:</p>
@@ -675,8 +661,7 @@ Components</a>, the Metrics Deployer uses the
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>The <strong>heapster</strong> account will be automatically created in <a href="#ocp-metrics-deploy">Deploying
-the Metrics Components</a>. However, pre-emptively
+    <p>The <strong>heapster</strong> account will be automatically created in <a href="#ocp-metrics-deploy">Deploying the Metrics Components</a>. However, pre-emptively
 grant it <strong>cluster-reader</strong> permission to the <strong>openshift-infra</strong>
 project:</p>
 
@@ -695,16 +680,14 @@ OpenShift Container Platform metrics. By default, the Metrics Deployer
 uses <em>self-signed certificates</em> to secure communication between
 components. This document assumes that you will use this default. For
 information on alternative secure communication configurations, see
-<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-using-secrets">Using
-Secrets</a>
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-using-secrets">Using Secrets</a>
 from the OpenShift Container Platform <em>Installation and Configuration</em>
 documentation.</p>
 
 <div class="note">
 
 This section is an abridged version of a more detailed chapter, namely
-[Metrics Data
-Storage](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-data-storage)
+[Metrics Data Storage](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-data-storage)
 in the OpenShift Container Platform *Installation and Configuration*
 documentation. Refer to that chapter for more information on how to
 deploy the metrics plug-in using persistent and non-persistent storage.
@@ -717,8 +700,7 @@ deploy the metrics plug-in using persistent and non-persistent storage.
 <p>OpenShift Container Platform uses <em>Hawkular Metrics</em> as its metrics
 engine. The Metrics Deployer will install the Hawkular Metrics service;
 however, you need to provide the external hostname so that
-ManageIQ can reach the Hawkular Metrics service. The base
-configuration of the Metrics Deployer is defined in the
+ManageIQ can reach the Hawkular Metrics service. The base configuration of the Metrics Deployer is defined in the
 <code class="language-plaintext highlighter-rouge">/usr/share/openshift/examples/infrastructure-templates/enterprise/metrics-deployer.yaml</code>
 file.</p>
 
@@ -733,8 +715,7 @@ With <em>persistent storage</em>, OpenShift metrics will be stored on a
 persistent volume. This offers metrics data protection by allowing
 it to survive a pod recreation or restart. OpenShift metrics
 requires a specifically configured persistent volume; see
-<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#persistent-volumes">Persistent
-Volumes</a>
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#persistent-volumes">Persistent Volumes</a>
 in the OpenShift Container Platform <em>Architecture</em> documentation.</p>
 
     <div class="language-plaintext highlighter-rouge">
@@ -805,7 +786,7 @@ Metrics Components</a>:</p>
 <p>After enabling cluster metrics on your OpenShift Container Platform
 deployment, retrieve the <em>management token</em> while you are still logged
 in to the OpenShift Container Platform host. This will be required later
-in <a href="#integration">???</a>.</p>
+in <a href="#adding-openshift-container-platform-as-a-container-provider">Adding OpenShift Container Platform as a Container Provider</a>.</p>
 
 <ul>
   <li>For OpenShift Container Platform 3.3 or later
@@ -875,16 +856,15 @@ token:  eyJhbGciOiJSUzI1NiI...
 
 <ol>
   <li>
-    <p><a href="#cf-caputils">Configuring ManageIQ Capacity and
-Utilization</a>, and</p>
+    <p><a href="../deployment_planning_guide/index.html#capacity-and-utilization-collection">Configuring ManageIQ Capacity and Utilization</a>, and</p>
   </li>
   <li>
-    <p><a href="#cf-smartproxy">???</a></p>
+    <p><a href="#enabling-smartstate-analysis">Enabling SmartState Analysis</a></p>
   </li>
 </ol>
 
 <p>These steps are required to allow ManageIQ to collect
-metrics from OpenShift Container Platform (<a href="#ocp-metrics">???</a>) and use
+metrics from OpenShift Container Platform <a href="#enabling-openshift-container-platform-metrics">Enabling OpenShift Container Platform Metrics</a> and use
 them to perform a SmartState analysis. You can choose different servers
 to perform either function; the following sections assume that you will.</p>
 
@@ -932,7 +912,7 @@ Capacity &amp; Utilization Collector role is 10 minutes. The first
 collection from a particular provider may take a few minutes since
 ManageIQ is gathering data points going one month back in time.</p>
 
-<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/deployment_planning_guide/#capacity-and-utilization-collection">Capacity and Utilization
+<p>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/deployment_planning_guide/index.html#capacity-and-utilization-collection">Capacity and Utilization
 Collection</a>
 in the <em>Deployment Planning Guide</em>.</p>
 
@@ -940,22 +920,18 @@ in the <em>Deployment Planning Guide</em>.</p>
 <a class="anchor" href="#enabling-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling SmartState Analysis</h3>
 
 <p>After enabling the required server roles, enable SmartState analysis.
-See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/support_matrix/#smart_state_analysis_support">Smart State Analysis
-Support</a>
-from the Support Matrix and <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#running-a-smartstate-analysis">Running a SmartState
-Analysis</a>
-in the <em>Managing Providers</em> guide for more information.</p>
+See <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/support_matrix.html#smart-state-analysis-support">Smart State Analysis Support</a>
+from the Support Matrix.</p>
 
-<p>Enabling SmartState analysis is similar to <a href="#cf-caputils">???</a>, in that
-the procedure also involves enabling server roles on a specific server.
+<p>Enabling SmartState analysis is similar to <a href="../deployment_planning_guide/index.html#assigning-the-capacity-and-utilization-server-roles">Assigning the Capacity and Utilization Server Roles</a>, in that the procedure also involves enabling server roles on a specific server.
 To do so:</p>
 
 <ol>
   <li>
-    <p>Click i*Configuration*.</p>
+    <p>Click <strong>Configuration</strong>.</p>
   </li>
   <li>
-    <p>Select the server to configure from menu:Settings[Zone] in the
+    <p>Select the server to configure from menu: <strong>Settings</strong>[Zone] in the
 left pane of the appliance.</p>
   </li>
   <li>
@@ -981,9 +957,7 @@ to <strong>ON</strong>. Namely:</p>
 <a class="anchor" href="#adding-openshift-container-platform-as-a-container-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding OpenShift Container Platform as a Container Provider</h2>
 
 <p>At this point, you should now be ready to add your OpenShift cluster to
-ManageIQ as a container provider. To do so, prepare the token you
-retrieved in <a href="#Obtaining_OpenShift_Management_Token">???</a> and follow the
-procedure below:</p>
+ManageIQ as a container provider. To do so, prepare the token you retrieved in <a href="#retrieving-the-openshift-container-platform-management-token">Retrieving the OpenShift Container Platform Management Token</a> and follow the procedure below:</p>
 
 <ol>
   <li>

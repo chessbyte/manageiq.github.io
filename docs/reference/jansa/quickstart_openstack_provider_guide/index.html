@@ -1550,22 +1550,18 @@ from the <em>Deployment Planning Guide</em>.</p>
 <a class="anchor" href="#enabling-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling SmartState Analysis</h4>
 
 <p>After enabling the required server roles, enable SmartState analysis.
-See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/support_matrix/#smart_state_analysis_support">Smart State Analysis
-Support</a>
-from the Support Matrix and <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#running-a-smartstate-analysis">Running a SmartState
-Analysis</a>
-in the <em>Managing Providers</em> guide for more information.</p>
+See <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/support_matrix.html#smart-state-analysis-support">Smart State Analysis Support</a>
+from the Support Matrix.</p>
 
-<p>Enabling SmartState analysis is similar to <a href="#cf-caputils">???</a>, in that
-the procedure also involves enabling server roles on a specific server.
+<p>Enabling SmartState analysis is similar to <a href="../deployment_planning_guide/index.html#assigning-the-capacity-and-utilization-server-roles">Assigning the Capacity and Utilization Server Roles</a>, in that the procedure also involves enabling server roles on a specific server.
 To do so:</p>
 
 <ol>
   <li>
-    <p>Click i*Configuration*.</p>
+    <p>Click <strong>Configuration</strong>.</p>
   </li>
   <li>
-    <p>Select the server to configure from menu:Settings[Zone] in the
+    <p>Select the server to configure from menu: <strong>Settings</strong>[Zone] in the
 left pane of the appliance.</p>
   </li>
   <li>
@@ -1602,14 +1598,7 @@ associated with the <code class="language-plaintext highlighter-rouge">admin</co
 
 <div class="note">
 
-  - You can set whether ManageIQ should use the Telemetry service
-    or Advanced Message Queueing Protocol (AMQP) for event monitoring.
-    If you choose Telemetry, you should first configure the
-    **ceilometer** service on the undercloud to store events. See
-    [???](#openstack-events-uc) for instructions. For more information,
-    see [OpenStack Telemetry
-    (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry)
-    in the Red Hat OpenStack Platform *Architecture Guide*.
+  - You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the undercloud to store events. See [Configuring the Undercloud to Store Events](#configuring-the-undercloud-to-store-events) for instructions. For more information, see [OpenStack Telemetry (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry) in the Red Hat OpenStack Platform *Architecture Guide*.
 
   - To authenticate the provider using a self-signed Certificate
     Authority (CA), configure the ManageIQ appliance to
@@ -1740,10 +1729,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-uc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="#configuring-the-undercloud-to-store-events">Configuring the Undercloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, select
@@ -1829,12 +1815,9 @@ with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.
 
 <div class="note">
 
-In OpenStack, you must add `admin` as a member of all tenants that users
-want to access and use in ManageIQ.
+In OpenStack, you must add `admin` as a member of all tenants that users want to access and use in ManageIQ.
 
-<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/5.0-beta/html-single/managing_infrastructure_and_inventory/index#tenants" target="_blank">Cloud
-Tenants</a> in *Managing Infrastructure and Inventory* for information on working
-with OpenStack tenants (projects) in ManageIQ.
+See [Cloud Tenants](../managing_infrastructure_and_inventory/index.html#cloud-tenants) in *Managing Infrastructure and Inventory* for information on working with OpenStack tenants (projects) in ManageIQ.
 
 </div>
 
@@ -1863,10 +1846,7 @@ create cloud tenants or tenant object hierarchy from OpenStack.</p>
 
 <div class="note">
 
-You can set whether ManageIQ should use the Telemetry service or
-Advanced Message Queueing Protocol (AMQP) for event monitoring. If you
-choose Telemetry, you should first configure the **ceilometer** service
-on the overcloud to store events. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/quickstart_guide_for_cloudforms_with_red_hat_openstack_platform/add-openstack-oc#openstack-events-oc" target="_blank">Configuring the Overcloud to Store Events</a> for instructions.
+You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the overcloud to store events. See [Configuring the Overcloud to Store Events](../managing_providers/index.html#configuring-the-overcloud-to-store-events) for instructions.
 
 For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
 (ceilometer)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
@@ -2039,10 +2019,7 @@ section to start.</p>
 
     <ul>
       <li>
-        <p>To use the Telemetry service of the OpenStack provider, select
-<strong>Ceilometer</strong>. Before you do so, the provider must first be
-configured accordingly. See <a href="#openstack-events-oc">???</a> for
-details.</p>
+        <p>To use the Telemetry service of the OpenStack provider, select <strong>Ceilometer</strong>. Before you do so, the provider must first be configured accordingly. See <a href="../managing_providers/index.html#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a> for details.</p>
       </li>
       <li>
         <p>If you prefer to use the AMQP Messaging bus instead, or eventing
@@ -2634,13 +2611,9 @@ ManageIQ Server is configured to use LDAP, you can use the
 <strong>Look Up</strong> button to populate the other fields based on the email
 address.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Parameters with a \* next to the label are required to submit the
-provisioning request. To change the required parameters, see
-[???](#provisioning-dialogs-customizing).
-
-</div>
+    <p>Parameters with a * next to the label are required to submit the provisioning request. To change the required parameters, see <a href="#customizing-provisioning-dialogs">Customizing Provisioning Dialogs</a>.</p>
   </li>
   <li>
     <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the
@@ -2678,8 +2651,7 @@ and security settings.</p>
       </li>
       <li>
         <p>Select a <strong>Guest Access Key Pair</strong> for access to the instance.
-For more information about key pairs, see
-<a href="#provision-keypairs">???</a>.</p>
+For more information about key pairs, see <a href="#managing-key-pairs">Managing Key Pairs</a>.</p>
       </li>
     </ol>
   </li>
@@ -3402,7 +3374,7 @@ datastore, requester, and virtual machine.</p>
   </li>
 </ul>
 
-<p>For more detailed information on managing reports, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/monitoring-alerts-and-reporting/">Monitoring,
+<p>For more detailed information on managing reports, see <a href="../monitoring_alerts_and_reporting/index.html">Monitoring,
 Alerts, and
 Reporting</a>.</p>
 
