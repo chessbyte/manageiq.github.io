@@ -113,9 +113,10 @@
   <li><a href="#the-openid-connect-rest-api-authentication-modes"><strong>The OpenID-Connect REST API Authentication Modes</strong></a></li>
   <li><a href="#examples"><strong>Examples</strong></a>
     <ul>
-      <li><a href="#example:-using-a-jwt-token">Example: Using a JWT Token</a></li>
-      <li><a href="#example:-using-a-manageiq-api-auth-token">Example: Using a ManageIQ API Auth Token</a></li>
-      <li><a href="#example:-using-basic-auth-for-admin">Example: Using Basic Auth For Admin</a></li>
+      <li><a href="#example-variables">Example Variables</a></li>
+      <li><a href="#example-using-a-jwt-token">Example Using a JWT Token</a></li>
+      <li><a href="#example-using-a-manageiq-api-auth-token">Example Using a ManageIQ API Auth Token</a></li>
+      <li><a href="#example-using-basic-auth-for-admin">Example Using Basic Auth For Admin</a></li>
     </ul>
   </li>
 </ul>
@@ -161,8 +162,12 @@ A JWT is required to obtain the ManageIQ API Auth Token but performance is impro
 
 <p>The below examples are BASH(1) shell script commands. They assume the
 <em>JQ(1)</em>  <em>Command-line JSON processor</em> is available, the client
-has been created in Keycloak with the realm name miq and the following
-variables are defined:</p>
+has been created in Keycloak with the realm name miq</p>
+
+<h2 id="example-variables">Example Variables</h2>
+<hr />
+
+<p>The following variables must be defined for each of the examples:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The user to be authenticated</span>
 <span class="nv">user</span><span class="o">=</span><span class="s2">"user1"</span>
@@ -182,15 +187,39 @@ variables are defined:</p>
 <span class="c"># OIDCClientID from the OpenID-Connect configuration.</span>
 <span class="nv">oidc_client_id</span><span class="o">=</span><span class="s2">"my-oidc-client"</span>
 
-<span class="c"># OIDCOauthIntrospectionEndpoint from the OpenID-Connect configuration</span>
-<span class="nv">oidc_auth_introspection_endpoint</span><span class="o">=</span><span class="s2">"https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"</span>
-
-<span class="c"># OIDCProviderTokenEndpoint from the OpenID-Connect configurationt</span>
-<span class="c"># Sometimes OIDCOauthIntrospectionEndpoint without the trailing "introspect"</span>
-<span class="nv">oidc_provider_token_endpoint</span><span class="o">=</span><span class="s2">"https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"</span>
 </code></pre></div></div>
 
-<h2 id="example-using-a-jwt-token">Example: Using a JWT Token</h2>
+<p>Each OpenID-Connect Provider defines its own endpoints for token generation and introspection. Consequently
+the value of these variables depend on the OpenID-Connect Provider being used.</p>
+
+<p><strong>Example for IBM’s Identity Access Management (IAM):</strong></p>
+
+<blockquote>
+  <p>Given this configuration:</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OIDCOAuthIntrospectionEndpoint https://cp-console.apps.iam.example.com/idprovider/v1/auth/introspect
+OIDCProviderTokenEndpoint      https://cp-console.apps.iam.example.com/idprovider/v1/auth/token
+</code></pre></div>  </div>
+
+  <p>Then <strong>oidc_auth_introspection_endpoint</strong> and <strong>oidc_provider_token_endpoint</strong> will be:</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">oidc_auth_introspection_endpoint</span><span class="o">=</span><span class="s2">"https://cp-console.apps.iam.example.com/idprovider/v1/auth/introspect"</span>
+<span class="nv">oidc_provider_token_endpoint</span><span class="o">=</span><span class="s2">"https://cp-console.apps.iam.example.com/idprovider/v1/auth/identitytoken"</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<p><strong>Example for Keycloak:</strong></p>
+
+<blockquote>
+  <p>Given this configuration:</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OIDCOAuthIntrospectionEndpoint https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect 
+</code></pre></div>  </div>
+
+  <p>Then <strong>oidc_auth_introspection_endpoint</strong> and <strong>oidc_provider_token_endpoint</strong> will be:</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">oidc_auth_introspection_endpoint</span><span class="o">=</span><span class="s2">"https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"</span>
+<span class="nv">oidc_provider_token_endpoint</span><span class="o">=</span><span class="s2">"https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h2 id="example-using-a-jwt-token">Example Using a JWT Token</h2>
 <hr />
 
 <p>This example details the steps for using a Java Web Token (JWT) obtained from the OpenID-Connect provider for a non-admin user.</p>
@@ -255,7 +284,7 @@ variables are defined:</p>
 
 </code></pre></div></div>
 
-<h2 id="example-using-basic-auth-for-admin">Example: Using Basic Auth For Admin</h2>
+<h2 id="example-using-basic-auth-for-admin">Example Using Basic Auth For Admin</h2>
 <hr />
 
 <p>The ManageIQ OpenID-Connect is configured to treat the admin user as a special case.
