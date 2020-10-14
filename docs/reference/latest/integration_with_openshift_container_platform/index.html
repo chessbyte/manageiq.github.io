@@ -969,8 +969,7 @@ ManageIQ as a container provider. To do so, prepare the token you retrieved in <
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
-click <img src="../images/1862.png" alt="Add a New Containers Provider"> (<strong>Add a
-New Containers Provider</strong>).</p>
+click <img src="../images/1862.png" alt="Add a New Containers Provider"> (<strong>Add a New Containers Provider</strong>).</p>
   </li>
   <li>
     <p>Enter a <strong>Name</strong> for the provider.</p>
@@ -1035,14 +1034,11 @@ insecurely (not recommended).</p>
         </ul>
       </li>
       <li>
-        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
-provider.</p>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the provider.</p>
 
-        <div class="important">
+        <p><strong>Important:</strong></p>
 
-The **Hostname** must use a unique fully qualified domain name.
-
-</div>
+        <p>The <strong>Hostname</strong> must use a unique fully qualified domain name.</p>
       </li>
       <li>
         <p>Enter the <strong>API Port</strong> of the provider. The default port is
@@ -1051,19 +1047,14 @@ The **Hostname** must use a unique fully qualified domain name.
       <li>
         <p>Enter a token for your provider in the <strong>Token</strong> box.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-To obtain a token for your provider, run the `oc get secret`
-command on your provider; see [Obtaining an OpenShift Container
-Platform Management
-Token](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#Obtaining_OpenShift_Container_Platform_Management_Token).
+        <p>To obtain a token for your provider, run the <code class="language-plaintext highlighter-rouge">oc get secret</code> command on your provider; see <a href="../managing_providers/index.html#obtaining-an-openshift-container-platform-management-token">Obtaining an OpenShift Container Platform Management Token</a>.</p>
 
-For example:
+        <p>For example:</p>
 
-\# oc get secret --namespace management-infra
-management-admin-token-8ixxs --template='' | base64 --decode
-
-</div>
+        <p># oc get secret –namespace management-infra
+management-admin-token-8ixxs –template=’’ | base64 –decode</p>
       </li>
       <li>
         <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
