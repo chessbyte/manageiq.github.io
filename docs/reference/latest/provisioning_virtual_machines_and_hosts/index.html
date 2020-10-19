@@ -610,6 +610,15 @@
 <ul>
 <li class="toc-entry toc-h4"><a href="#provisioning-an-ec2-instance-from-an-image">Provisioning an EC2 Instance from an Image</a></li>
 <li class="toc-entry toc-h4"><a href="#provisioning-an-openstack-instance-from-an-image-volume-or-volume-snapshot">Provisioning an OpenStack Instance from an Image, Volume or Volume Snapshot</a></li>
+<li class="toc-entry toc-h4"><a href="#provisioning-an-ibm-power-systems-virtual-servers-instance-from-an-image">Provisioning an IBM Power Systems Virtual Servers Instance from an Image</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#provisioning-ibm-power-systems-virtual-servers-vms">Provisioning IBM Power Systems Virtual Servers VMs</a>
+<ul>
 <li class="toc-entry toc-h4"><a href="#customizing-provisioning-dialogs">Customizing Provisioning Dialogs</a>
 <ul>
 <li class="toc-entry toc-h5"><a href="#adding-a-provision-dialog-for-all-users">Adding a Provision Dialog for All Users</a></li>
@@ -623,10 +632,6 @@
 </ul>
 </li>
 <li class="toc-entry toc-h4"><a href="#managing-key-pairs">Managing Key Pairs</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-entry toc-h2"><a href="#working-with-requests">Working with Requests</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#provisioning-request-approval-methods">Provisioning Request Approval Methods</a></li>
@@ -2301,6 +2306,192 @@ they are created, and whether to set a retirement date. If you
 select a retirement period, you will be prompted for when to
 receive a retirement warning.</p>
       </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Submit</strong>.</p>
+  </li>
+</ol>
+
+<p>The provisioning request is sent for approval. For the provisioning to
+begin, a user with the admin, approver, or super admin account role must
+approve the request. The admin and super admin roles can also edit,
+delete, and deny the requests. You will be able to see all provisioning
+requests where you are either the requester or the approver.</p>
+
+<p>After submission, the appliance assigns each provision request a
+<strong>Request ID</strong>. If an error occurs during the approval or provisioning
+process, use this ID to locate the request in the appliance logs. The
+Request ID consists of the region associated with the request followed
+by the request number. As regions define a range of one trillion
+database IDs, this number can be several digits long.</p>
+
+<p><strong>Request ID Format</strong></p>
+
+<p>Request 99 in region 123 results in Request ID 123000000000099.</p>
+
+<h4 id="provisioning-an-ibm-power-systems-virtual-servers-instance-from-an-image">
+<a class="anchor" href="#provisioning-an-ibm-power-systems-virtual-servers-instance-from-an-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provisioning an IBM Power Systems Virtual Servers Instance from an Image</h4>
+
+<h1 id="provisioning-ibm-power-systems-virtual-servers-vms">
+<a class="anchor" href="#provisioning-ibm-power-systems-virtual-servers-vms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provisioning IBM Power Systems Virtual Servers VMs</h1>
+
+<p>For an overview of IBM Power Systems Virtual Servers, including terminology
+used in ManageIQ, see <a href="https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started">Getting started with IBM Power
+Systems Virtual Servers</a></p>
+
+<p>Create a request to provision IBM Power Systems Virtual Servers instances
+from images.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Instances].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/2007.png" alt="2007">(<strong>Lifecycle</strong>), then click
+<img src="../images/1862.png" alt="1862">(<strong>Provision Instances</strong>).</p>
+  </li>
+  <li>
+    <p>Select an image from the list presented. Each image is associated with a
+single Power Systems Virtual Servers provider instance. If there are
+multiple provider instances registered be sure to select an image
+associated with the desired instance.</p>
+  </li>
+  <li>
+    <p>Click <strong>Continue</strong>.</p>
+  </li>
+  <li>
+    <p>Click the <strong>General</strong> tab for general instance options.</p>
+
+    <ol>
+      <li>
+        <p>Select the <strong>Number of Instances</strong> to provision.</p>
+      </li>
+      <li>
+        <p>Type an <strong>Instance Name</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Profile</strong> tab for hardware profile options.</p>
+
+    <ol>
+      <li>Select the <strong>Processor</strong> type.</li>
+    </ol>
+
+    <div class="note">
+
+See [Power Systems Virtual Servers documentation](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#processor)
+for more information.
+
+</div>
+
+    <ol>
+      <li>
+        <p>Select a <strong>Machine Type</strong>.</p>
+      </li>
+      <li>
+        <p>Optionally, select <strong>Attach Volumes</strong> items.</p>
+      </li>
+    </ol>
+
+    <div class="note">
+
+Note: A VM cannot have disks from different storage types. Only existing
+volumes matching the **Storage Type** will be available for selection.
+
+</div>
+
+    <ol>
+      <li>Select a <strong>Storage Type</strong>.</li>
+    </ol>
+
+    <div class="note">
+
+See [Power Systems Virtual Servers documentation](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage)
+for more information on volume types.
+
+</div>
+
+    <ol>
+      <li>Enter number of <strong>Entitled Processors</strong>.</li>
+    </ol>
+
+    <div class="note">
+
+If 'dedicated' **Processor** is selected, **Entitled Processors** must be
+allocated in whole numbers.
+
+If 'shared' or 'uncapped' **Processor** is selected,
+**Entitled Processors** must be allocated in a multiple of '0.25'.
+
+</div>
+
+    <ol>
+      <li>
+        <p>Enter <strong>Memory (GB)</strong>.</p>
+      </li>
+      <li>
+        <p>Optionally, select a <strong>Key Pair</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>New Volumes</strong> tab to optionally create new volumes to be
+attached to the VM.</p>
+
+    <p>All new volumes will be the <strong>Storage Type</strong> selected in the <strong>Profile</strong>
+tab. For each new volume:</p>
+
+    <ol>
+      <li>
+        <p>Type a volume <strong>Name</strong>.</p>
+      </li>
+      <li>
+        <p>Enter <strong>Size (GB)</strong>.</p>
+      </li>
+      <li>
+        <p>Select a <strong>Sharable</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Network</strong> tab to select networks.</p>
+
+    <ol>
+      <li>
+        <p>Select an existing network from <strong>Network Interface</strong>. If ‘None’
+is selected then <strong>Attach to New Public Network</strong> must be selected.</p>
+      </li>
+      <li>
+        <p>Select <strong>Attach to New Public Network</strong> to create a new public network
+to attach to the VM.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click the <strong>Customization</strong> tab for additional options.</p>
+
+    <ol>
+      <li>
+        <p>Use the <strong>Upload File</strong> section to upload a Cloud-init file.</p>
+      </li>
+      <li>
+        <p>In the <strong>Other</strong> section, select <strong>Migratable</strong> and <strong>VM pinning</strong></p>
+      </li>
+    </ol>
+
+    <div class="note">
+
+[Learn more](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#pinning)
+about VM pinning.
+
+</div>
+
+    <ol>
+      <li>In the <strong>IP Address Information</strong> section, optionally enter an IP
+address to request for the selected <strong>Network Interface</strong> in the
+<strong>Network</strong> tab.</li>
     </ol>
   </li>
   <li>

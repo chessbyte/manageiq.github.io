@@ -766,7 +766,15 @@
 <li class="toc-entry toc-h1"><a href="#attaching-a-volume-to-an-instance-1">Attaching a Volume to an Instance</a></li>
 <li class="toc-entry toc-h1"><a href="#detaching-a-volume-from-an-instance-1">Detaching a Volume from an Instance</a></li>
 <li class="toc-entry toc-h1"><a href="#editing-a-volume-1">Editing a Volume</a></li>
-<li class="toc-entry toc-h1"><a href="#deleting-a-volume-1">Deleting a Volume</a></li>
+<li class="toc-entry toc-h1"><a href="#deleting-a-volume-1">Deleting a Volume</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#ibm-power-systems-virtual-servers-block-storage-manager-volumes">IBM Power Systems Virtual Servers Block Storage Manager Volumes</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#creating-volumes-2">Creating Volumes</a></li>
+<li class="toc-entry toc-h1"><a href="#attaching-a-volume-to-an-instance-2">Attaching a Volume to an Instance</a></li>
+<li class="toc-entry toc-h1"><a href="#detaching-a-volume-from-an-instance-2">Detaching a Volume from an Instance</a></li>
+<li class="toc-entry toc-h1"><a href="#deleting-a-volume-2">Deleting a Volume</a></li>
 <li class="toc-entry toc-h1"><a href="#flavors">Flavors</a></li>
 <li class="toc-entry toc-h1"><a href="#creating-a-flavor">Creating a Flavor</a></li>
 <li class="toc-entry toc-h1"><a href="#viewing-a-flavor">Viewing a Flavor</a></li>
@@ -6489,6 +6497,134 @@ this Cloud Volume</strong>).</p>
 
 <h1 id="deleting-a-volume-1">
 <a class="anchor" href="#deleting-a-volume-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Volume</h1>
+
+<p>To delete a volume from a storage manager:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Select the volume to delete.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1861.png" alt="1861"> (<strong>Delete selected Cloud Volumes</strong>).</p>
+  </li>
+</ol>
+
+<h2 id="ibm-power-systems-virtual-servers-block-storage-manager-volumes">
+<a class="anchor" href="#ibm-power-systems-virtual-servers-block-storage-manager-volumes" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Power Systems Virtual Servers Block Storage Manager Volumes</h2>
+
+<p>This section outlines the actions that you can perform on IBM Power
+Systems Virtual Servers Block Storage manager volumes.</p>
+
+<h1 id="creating-volumes-2">
+<a class="anchor" href="#creating-volumes-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Volumes</h1>
+
+<p>You can create and attach volumes to your storage manager.</p>
+
+<p>To create a volume:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/1862.png" alt="1862"> (<strong>Add a new Cloud Volume</strong>).</p>
+  </li>
+  <li>
+    <p>Select the desired IBM Power Systems Virtual Servers instance from the
+<strong>Storage Manager</strong> list.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Volume Name</strong>.</p>
+  </li>
+  <li>
+    <p>Select the type of the volume from the <strong>Cloud Volume Type</strong> list.</p>
+
+    <div class="note">
+
+See [Power Systems Virtual Servers documentation](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage)
+for more information on volume types.
+
+</div>
+  </li>
+  <li>
+    <p>Enter the size of the volume in gigabytes (GB).</p>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
+  </li>
+</ol>
+
+<p>The volume appears in the list of volumes after it has been provisioned.</p>
+
+<h1 id="attaching-a-volume-to-an-instance-2">
+<a class="anchor" href="#attaching-a-volume-to-an-instance-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attaching a Volume to an Instance</h1>
+
+<p>To attach a volume to an instance:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Select the volume to attach.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/volume-icon.png" alt="Attach selected Cloud Volume to an
+Instance"> (<strong>Attach selected Cloud Volume
+to an Instance</strong>) to open the <strong>Attach Cloud Volume</strong> screen.</p>
+  </li>
+  <li>
+    <p>Select an instance from the list.</p>
+
+    <div class="note">
+
+Note: A VM cannot have disks from different storage types. Only VMs
+matching storage type will be available for selection.
+
+</div>
+  </li>
+  <li>
+    <p>The <strong>Device Mountpoint</strong> field is not used.</p>
+  </li>
+  <li>
+    <p>Click <strong>Attach</strong>.</p>
+  </li>
+</ol>
+
+<h1 id="detaching-a-volume-from-an-instance-2">
+<a class="anchor" href="#detaching-a-volume-from-an-instance-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Detaching a Volume from an Instance</h1>
+
+<p>To detach a volume from an instance:</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Storage[Block Storage &gt; Volumes].</p>
+  </li>
+  <li>
+    <p>Select the volume to detach.</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
+click <img src="../images/volume-icon.png" alt="Detach selected Cloud Volume from an
+Instance"> (<strong>Detach selected Cloud Volume
+from an Instance</strong>) to open the <strong>Detach Cloud Volume</strong> screen.</p>
+  </li>
+  <li>
+    <p>Select an instance from the list.</p>
+  </li>
+  <li>
+    <p>Click <strong>Detach</strong>.</p>
+  </li>
+</ol>
+
+<h1 id="deleting-a-volume-2">
+<a class="anchor" href="#deleting-a-volume-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a Volume</h1>
 
 <p>To delete a volume from a storage manager:</p>
 

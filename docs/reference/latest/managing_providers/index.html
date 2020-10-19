@@ -730,7 +730,13 @@
 <li class="toc-entry toc-h1"><a href="#tagging-cloud-providers">Tagging Cloud Providers</a></li>
 <li class="toc-entry toc-h1"><a href="#removing-cloud-providers">Removing Cloud Providers</a></li>
 <li class="toc-entry toc-h1"><a href="#editing-a-cloud-provider">Editing a Cloud Provider</a></li>
-<li class="toc-entry toc-h1"><a href="#viewing-a-cloud-providers-timeline">Viewing a Cloud Provider’s Timeline</a></li>
+<li class="toc-entry toc-h1"><a href="#viewing-a-cloud-providers-timeline">Viewing a Cloud Provider’s Timeline</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#ibm-power-systems-virtual-servers-providers">IBM Power Systems Virtual Servers Providers</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#ibm-power-systems-virtual-servers">IBM Power Systems Virtual Servers</a></li>
+<li class="toc-entry toc-h1"><a href="#adding-ibm-power-systems-virtual-servers-providers">Adding IBM Power Systems Virtual Servers Providers</a></li>
 <li class="toc-entry toc-h1"><a href="#network-managers">Network Managers</a></li>
 <li class="toc-entry toc-h1"><a href="#adding-or-viewing-network-providers">Adding or Viewing Network Providers</a></li>
 <li class="toc-entry toc-h1"><a href="#refreshing-network-providers">Refreshing Network Providers</a></li>
@@ -5132,6 +5138,74 @@ groups of events to display. Each has its own color.</p>
 <strong>Detail</strong> list of events.</p>
       </li>
     </ul>
+  </li>
+</ol>
+
+<h2 id="ibm-power-systems-virtual-servers-providers">
+<a class="anchor" href="#ibm-power-systems-virtual-servers-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Power Systems Virtual Servers Providers</h2>
+
+<h1 id="ibm-power-systems-virtual-servers">
+<a class="anchor" href="#ibm-power-systems-virtual-servers" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Power Systems Virtual Servers</h1>
+
+<p><a href="https://www.ibm.com/cloud/power-virtual-server">IBM Power Systems Virtual Servers</a>
+is a Power Systems infrastructure as a service (IaaS) offering with
+connectivity to the catalog of IBM Cloud Services that you can use to deploy a
+virtual server, also known as a logical partition (LPAR), in a matter of
+minutes. IBM Power Systems clients who have typically relied upon
+on-premises-only infrastructure can now quickly and economically extend their
+Power IT resources off-premises.</p>
+
+<h1 id="adding-ibm-power-systems-virtual-servers-providers">
+<a class="anchor" href="#adding-ibm-power-systems-virtual-servers-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding IBM Power Systems Virtual Servers Providers</h1>
+
+<p>Complete the following procedure to add an IBM Power Systems Virtual Servers
+cloud provider in ManageIQ.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
+<img src="../images/1862.png" alt="1862"> (<strong>Add a New Cloud Provider</strong>).</p>
+  </li>
+  <li>
+    <p>From the <strong>Type</strong> list, select <strong>IBM Power Systems Virtual Servers Providers</strong>.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> for the provider.</p>
+  </li>
+  <li>
+    <p>Select the appropriate <strong>Zone</strong>.</p>
+  </li>
+  <li>
+    <p>Under <strong>Endpoints</strong>, in the <strong>Default</strong> tab.</p>
+
+    <ol>
+      <li>
+        <p>Enter your <strong>IBM Cloud API Key</strong>.</p>
+
+        <p>For more information on managing IBM Cloud API keys, including how to
+create one, refer to IBM Cloud Docs:
+<a href="https://cloud.ibm.com/docs/account?topic=account-userapikey">Managing user API keys</a></p>
+      </li>
+      <li>
+        <p>Enter the <strong>PowerVS Service GUID</strong> of the IBM Power Systems Virtual
+Servers service instance you want to add.</p>
+
+        <p>You can easily copy the GUID from the
+<a href="https://cloud.ibm.com/resources">IBM Cloud Resources</a> page, by selecting
+“Services” and clicking on the whitespace of a PowerVS instance row.</p>
+
+        <p><img src="../images/ibm_cloud_powervs_guid.png" alt="Power Systems Virtual Server GUID"></p>
+      </li>
+      <li>
+        <p>Click <strong>Validate</strong> to validate the credentials.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
   </li>
 </ol>
 
