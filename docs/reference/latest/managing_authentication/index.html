@@ -597,14 +597,11 @@ in your ManageIQ environment as an administrative user.</p>
 <p>After completing the setup of an authentication system, users can log in
 with their credentials.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For further information on managing users, groups, and account roles,
-see [Access
-Control](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#access-control)
-in *General Configuration*.
-
-</div>
+<p>For further information on managing users, groups, and account roles,
+see <a href="../general_configuration/index.html#access-control">Access Control</a>
+in <em>General Configuration</em>.</p>
 
 <h2 id="configuring-authentication-settings-in-manageiq">
 <a class="anchor" href="#configuring-authentication-settings-in-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Authentication Settings in ManageIQ</h2>
@@ -636,25 +633,24 @@ methods:</p>
       <li>
         <p>To configure authentication locally using the Virtual Management
 Database (VMDB), choose <strong>Database</strong>. This is the default
-method. See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.5/html-single/general_configuration/#creating_a_user">Creating a
-User</a>
+method. See <a href="../general_configuration/index.html#creating-a-user">Creating a User</a>
 in <em>General Configuration</em> to create users from
 ManageIQ.</p>
       </li>
       <li>
         <p>To configure LDAP-based authentication to use with IdM or Active
 Directory, choose <strong>LDAP</strong> or <strong>LDAPS</strong>, see
-<a href="#ldap_settings">???</a> for configuration steps.</p>
+<a href="../managing_authentication/index.html#configuring-ldap-authentication-with-idm-and-active-directory">Configuring LDAP Authentication with IdM and Active Directory</a> for configuration steps.</p>
       </li>
       <li>
         <p>To configure Amazon AWS Identity and Access Management (IAM)
-authentication, choose <strong>Amazon</strong>, see <a href="#amazon_settings">???</a>
+authentication, choose <strong>Amazon</strong>, see <a href="../managing_authentication/index.html#configuring-aws-identity-and-access-management-iam-authentication">Configuring AWS Identity and Access Management (IAM) Authentication</a>
 for configuration steps.</p>
       </li>
       <li>
         <p>To configure federated authentication to use with IdM or Red Hat
 Single Sign-On (SSO), choose <strong>External (httpd)</strong> and follow the
-steps for your authentication method in <a href="#external_auth">???</a>.</p>
+steps for your authentication method in <a href="../managing_authentication/index.html#configuring-federated-authentication-with-saml">Configuring Federated Authentication with SAML</a>.</p>
       </li>
     </ul>
   </li>
@@ -672,13 +668,11 @@ protocol.</p>
 parameters are exposed under <strong>LDAP Settings</strong>. Be sure to validate your
 settings before saving them.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-This procedure requires a preconfigured authentication system such as
+<p>This procedure requires a preconfigured authentication system such as
 Red Hat Identity Management (IdM) or Active Directory (AD) with user
-groups configured.
-
-</div>
+groups configured.</p>
 
 <p>LDAP authentication for ManageIQ requires group membership
 to be defined by the LDAP RFC 2307 schema, where group members are
@@ -778,24 +772,25 @@ this constructs the fully qualified user name in the format
 Principal Name</strong> or <em>cn=users,dc=acme,dc=com</em> for
 <strong>Distinguished Name</strong>, in <strong>Base DN</strong>.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-The `ldapsearch(1)` command can be used to get details of your
-LDAP settings. To get details related to a specific user, run:
+        <p>The <code class="language-plaintext highlighter-rouge">ldapsearch(1)</code> command can be used to get details of your
+LDAP settings. To get details related to a specific user, run:</p>
 
-    # ldapsearch -D "cn=directory manager" -H ldap://www.acme.com:389 -b "dc=acme,dc=com" -s sub "(objectclass=*)" -w password | grep -i dbright
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># ldapsearch -D "cn=directory manager" -H ldap://www.acme.com:389 -b "dc=acme,dc=com" -s sub "(objectclass=*)" -w password | grep -i dbright
+</code></pre></div>        </div>
 
-To search for your directory server’s distinguished name (DN)
-values, run:
+        <p>To search for your directory server’s distinguished name (DN)
+values, run:</p>
 
-    # ldapsearch -D "cn=directory manager" -H ldap://www.acme.com:389 -b "dc=acme,dc=com" -s sub "(objectclass=*)" -w password
-
-</div>
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># ldapsearch -D "cn=directory manager" -H ldap://www.acme.com:389 -b "dc=acme,dc=com" -s sub "(objectclass=*)" -w password
+</code></pre></div>        </div>
 
         <p><strong>Example: LDAP Configuration.</strong></p>
 
-        <p><img src="../images/ldap-authentication-full.png" alt="ldap authentication
-full"></p>
+        <p><img src="../images/ldap-authentication-full.png" alt="ldap authentication full"></p>
       </li>
     </ul>
   </li>
@@ -803,20 +798,14 @@ full"></p>
     <p>Configure your <strong>Role Settings</strong>: In both LDAP and LDAPS, you can
 use groups from your directory service to set the role for the
 authenticated LDAP user. The LDAP user must be assigned one of the
-account role groups. See <a href="#assigning_account_roles_using_ldap_groups">Assigning ManageIQ Account
-Roles Using LDAP Groups</a>
-for more information.</p>
+account role groups. See <a href="../managing_authentication/index.html#assigning-manageiq-account-roles-using-ldap-groups">Assigning ManageIQ Account Roles Using LDAP Groups</a> for more information.</p>
 
     <ul>
       <li>
         <p>For LDAP users not belonging to a group:</p>
 
         <ul>
-          <li>Select a ManageIQ group from the <strong>Default
-Group for Users</strong> list. This default group can be used for
-all LDAP users who use LDAP for authentication only. Do not
-select <strong>Get User Groups from LDAP</strong>, which will hide the
-<strong>Default Group for Users</strong> option.</li>
+          <li>Select a ManageIQ group from the <strong>Default Group for Users</strong> list. This default group can be used for all LDAP users who use LDAP for authentication only. Do not select <strong>Get User Groups from LDAP</strong>, which will hide the <strong>Default Group for Users</strong> option.</li>
         </ul>
       </li>
       <li>
@@ -836,32 +825,26 @@ ManageIQ group names. Selecting this box
 enables user records to be automatically created in
 ManageIQ when a user logs in.</p>
 
-            <div class="important">
+            <p><strong>Important:</strong></p>
 
-If you do not select **Get User Groups from LDAP**, the user
+            <p>If you do not select <strong>Get User Groups from LDAP</strong>, the user
 must be defined in the VMDB where the User ID is the same as
 the user’s name in your directory service typed in
-lowercase. See [Creating a
-User](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#creating_a_user)
-in *General Configuration* for steps on creating users.
+lowercase. See <a href="../general_configuration/index.html#creating-a-user">Creating a User</a> in <em>General Configuration</em> for steps on creating users.</p>
 
-</div>
+            <p><strong>Note:</strong></p>
 
-            <div class="note">
-
-If your LDAP directory uses the `groupMembership` attribute
+            <p>If your LDAP directory uses the <code class="language-plaintext highlighter-rouge">groupMembership</code> attribute
 to contain a user’s group membership, you can use a
 multi-value attribute to look up a user’s groups in
 ManageIQ. This is not the default
 ManageIQ behaviour, and must be enabled
 manually in the advanced settings. After configuring your
 LDAP settings, update the default ManageIQ
-LDAP configuration to support `groupMembership` in
-menu:Configuration\[Settings \&gt; Advanced\] by changing
-`group_attribute: memberof` to `:group_attribute:
-groupmembership`.
-
-</div>
+LDAP configuration to support <code class="language-plaintext highlighter-rouge">groupMembership</code> in
+menu:Configuration[Settings &gt; Advanced] by changing
+<code class="language-plaintext highlighter-rouge">group_attribute: memberof</code> to <code class="language-plaintext highlighter-rouge">:group_attribute:
+groupmembership</code>.</p>
           </li>
           <li>
             <p>Select <strong>Get Groups from Home Forest</strong> to use the LDAP
@@ -872,13 +855,11 @@ server’s group names. Any user logging in will be assigned
 to that group. This option is only displayed when <strong>Get User
 Groups from LDAP</strong> is selected.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-In most environments, it is recommended to select both the
-**Get User Groups from LDAP** and **Get Groups from Home
-Forest** options.
-
-</div>
+            <p>In most environments, it is recommended to select both the
+<strong>Get User Groups from LDAP</strong> and <strong>Get Groups from Home
+Forest</strong> options.</p>
           </li>
           <li>
             <p>Select <strong>Follow Referrals</strong> to look up and bind a user that
@@ -917,9 +898,7 @@ the <code class="language-plaintext highlighter-rouge">group_attribute</code> fi
 settings. In menu:Configuration[Settings &gt; Advanced], change
 <code class="language-plaintext highlighter-rouge">group_attribute: memberof</code> to <code class="language-plaintext highlighter-rouge">:group_attribute: groupmembership</code>.</p>
 
-<p>To assign account roles using LDAP groups, see <a href="#assigning_account_roles_using_ldap_groups">Assigning
-ManageIQ Account Roles Using LDAP
-Groups</a>.</p>
+<p>To assign account roles using LDAP groups, see <a href="../managing_authentication/index.html#assigning-manageiq-account-roles-using-ldap-groups">Assigning ManageIQ Account Roles Using LDAP Groups</a>.</p>
 
 <h2 id="adding-trusted-forests">
 <a class="anchor" href="#adding-trusted-forests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding Trusted Forests</h2>
@@ -968,26 +947,20 @@ Port</strong>, <strong>Base DN</strong>, <strong>Bind DN</strong>, and <strong>B
 
 <p>After adding other trusted LDAP forests, you can then change the order
 in which ManageIQ looks up the forests for authentication.
-For instructions, see <a href="#ldap_lookup_priority">Configuring Lookup Priority for LDAP
-Groups</a>.</p>
+For instructions, see <a href="../managing_authentication/index.html#configuring-lookup-priority-for-ldap-groups">Configuring Lookup Priority for LDAP Groups</a>.</p>
 
 <h2 id="assigning-manageiq-account-roles-using-ldap-groups">
 <a class="anchor" href="#assigning-manageiq-account-roles-using-ldap-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assigning ManageIQ Account Roles Using LDAP Groups</h2>
 
-<p>After configuring LDAP authentication as described in <a href="#ldap_settings">Configuring LDAP
-Authentication with IdM and Active Directory</a>, you can
-associate ManageIQ account roles with your LDAP users. The
-LDAP directory server defines the groups and users for
-ManageIQ, while ManageIQ defines the account
-roles, and maps the roles to the privileges the LDAP user has.</p>
+<p>After configuring LDAP authentication as described in <a href="../managing_authentication/index.html#configuring-ldap-authentication-with-idm-and-active-directory">Configuring LDAP Authentication with IdM and Active Directory</a>, you can associate ManageIQ account roles with your LDAP users. The LDAP directory server defines the groups and users for
+ManageIQ, while ManageIQ defines the account roles, and maps the roles to the privileges the LDAP user has.</p>
 
 <p>There are two ways to associate your LDAP groups with
 ManageIQ account roles:</p>
 
 <ul>
   <li>
-    <p>Create groups in ManageIQ that match your existing
-LDAP groups by name, and assign the groups account roles; or</p>
+    <p>Create groups in ManageIQ that match your existing LDAP groups by name, and assign the groups account roles; or</p>
   </li>
   <li>
     <p>Create groups on your directory server based on the default account
@@ -995,8 +968,7 @@ roles in ManageIQ.</p>
   </li>
 </ul>
 
-<p>The users in your LDAP groups then inherit the ManageIQ
-account roles for the LDAP group(s) they are in.</p>
+<p>The users in your LDAP groups then inherit the ManageIQ account roles for the LDAP group(s) they are in.</p>
 
 <p>The authentication process then happens as such:</p>
 
@@ -1127,8 +1099,7 @@ automatically assigned to that specific account role.</p>
   <li>
     <p>Define a distribution group for one or more of the account roles
 with the names shown in the table below. This group must be in the
-LDAP directory source you specified for the server. See <a href="#ldap_settings">Configuring
-LDAP Authentication with IdM and Active Directory</a>.</p>
+LDAP directory source you specified for the server. See <a href="../managing_authentication/index.html#configuring-ldap-authentication-with-idm-and-active-directory">Configuring LDAP Authentication with IdM and Active Directory</a>.</p>
 
     <table>
       <thead>
@@ -1228,30 +1199,22 @@ access to ManageIQ membership to one of these groups.</p>
 <strong>Zones</strong>.</p>
   </li>
   <li>
-    <p>Click the <strong>Authentication</strong> tab and enable <strong>Get User Groups from
-LDAP</strong> after typing in all of the required LDAP authentication
-settings. See <a href="#ldap_settings">Configuring LDAP Authentication with IdM and Active
-Directory</a>.</p>
+    <p>Click the <strong>Authentication</strong> tab and enable <strong>Get User Groups from    LDAP</strong> after typing in all of the required LDAP authentication settings. See <a href="managing_authentication/index.html#configuring-ldap-authentication-with-idm-and-active-directory">Configuring LDAP Authentication with IdM and Active Directory</a>.</p>
   </li>
 </ol>
 
 <h2 id="configuring-lookup-priority-for-ldap-groups">
 <a class="anchor" href="#configuring-lookup-priority-for-ldap-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Lookup Priority for LDAP Groups</h2>
 
-<p>ManageIQ can have multiple LDAP groups configured, which
-the appliance will attempt to authenticate with one by one until it
-succeeds. The lookup priority of these groups can be rearranged.</p>
+<p>ManageIQ can have multiple LDAP groups configured, which the appliance will attempt to authenticate with one by one until it succeeds. The lookup priority of these groups can be rearranged.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-On initial login, a user’s *current group* assignment is the highest
+<p>On initial login, a user’s <em>current group</em> assignment is the highest
 priority group. User group membership, on subsequent logins, is set as
-the last assigned group from the prior session.
+the last assigned group from the prior session.</p>
 
-</div>
-
-<p>To configure the order in which ManageIQ looks up LDAP
-groups:</p>
+<p>To configure the order in which ManageIQ looks up LDAP groups:</p>
 
 <ol>
   <li>
@@ -1860,14 +1823,9 @@ External Authentication (httpd)</strong>.</p>
   </li>
 </ol>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-Make sure the user’s Active Directory groups for the appliance are
-created and appropriate roles assigned to those groups. See
-[Roles](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#roles)
-in *General Configuration* for more information.
-
-</div>
+<p>Make sure the user’s Active Directory groups for the appliance are created and appropriate roles assigned to those groups. See <a href="../general_configuration/index.html#roles">Roles</a> in <em>General Configuration</em> for more information.</p>
 
 <p>ManageIQ is now configured to use authentication from your
 Active Directory domain.</p>
@@ -2026,28 +1984,40 @@ to the appliance:</p>
 # cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth-saml.conf /etc/httpd/conf.d/
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-The following are notable SAML configuration defaults in the
-`manageiq-external-auth-saml.conf` file:
+    <p>The following are notable SAML configuration defaults in the
+<code class="language-plaintext highlighter-rouge">manageiq-external-auth-saml.conf</code> file:</p>
 
-  - Identity Provider Files (i.e. Red Hat SSO)
+    <ul>
+      <li>
+        <p>Identity Provider Files (i.e. Red Hat SSO)</p>
 
-      - Metadata File: `/etc/httpd/saml2/idp-metadata.xml`
+        <ul>
+          <li>Metadata File: <code class="language-plaintext highlighter-rouge">/etc/httpd/saml2/idp-metadata.xml</code>
+</li>
+        </ul>
+      </li>
+      <li>
+        <p>Service Provider Files (i.e. <code class="language-plaintext highlighter-rouge">mod_auth_mellon</code>)</p>
 
-  - Service Provider Files (i.e. `mod_auth_mellon`)
+        <ul>
+          <li>
+            <p>Private Key File: <code class="language-plaintext highlighter-rouge">/etc/httpd/saml2/miqsp-key.key</code></p>
+          </li>
+          <li>
+            <p>Certificate File: <code class="language-plaintext highlighter-rouge">/etc/httpd/saml2/miqsp-cert.cert</code></p>
+          </li>
+          <li>
+            <p>Metadata File: <code class="language-plaintext highlighter-rouge">/etc/httpd/saml2/miqsp-metadata.xml</code></p>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
-      - Private Key File: `/etc/httpd/saml2/miqsp-key.key`
-
-      - Certificate File: `/etc/httpd/saml2/miqsp-cert.cert`
-
-      - Metadata File: `/etc/httpd/saml2/miqsp-metadata.xml`
-
-Other `mod_auth_mellon` parameters, such as endpoints and protected
+    <p>Other <code class="language-plaintext highlighter-rouge">mod_auth_mellon</code> parameters, such as endpoints and protected
 URLs, must not be modified as the appliance expects them to be
-defined as such.
-
-</div>
+defined as such.</p>
   </li>
   <li>
     <p>Generate the service provider files on the appliance using the
@@ -2062,14 +2032,12 @@ Apache HTTP server’s <code class="language-plaintext highlighter-rouge">mod_au
     <p>The <code class="language-plaintext highlighter-rouge">mellon_create_metadata.sh</code> script creates file names based on
 the appliance URL.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If your appliance is behind a load balancer or uses a virtual IP
-address, use the hostname associated with the VIP. For example: `#
+    <p>If your appliance is behind a load balancer or uses a virtual IP
+address, use the hostname associated with the VIP. For example: <code class="language-plaintext highlighter-rouge">#
 /usr/libexec/mod_auth_mellon/mellon_create_metadata.sh
-https://my-haproxy-ka https://my-haproxy-ka/saml2`
-
-</div>
+https://my-haproxy-ka https://my-haproxy-ka/saml2</code></p>
   </li>
   <li>
     <p>Rename the files created by the <code class="language-plaintext highlighter-rouge">mellon_create_metadata.sh</code> script
@@ -2218,7 +2186,7 @@ to appliance and only allow SAML based authentication. Note that if
 there are issues with the identity provider or you require <code class="language-plaintext highlighter-rouge">admin</code>
 access to the appliance, you cannot log in through the appliance
 login screen until you re-enable local login as described in
-<a href="#re-enable-local-login">Re-enabling Local Login </a>.</p>
+<a href="../managing_authentication/index.html#re-enabling-local-login-optional">Re-enabling Local Login </a>.</p>
   </li>
   <li>
     <p>Check <strong>Get User Groups from External Authentication (httpd)</strong>.</p>
@@ -2228,31 +2196,28 @@ login screen until you re-enable local login as described in
   </li>
 </ol>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-Ensure the user’s groups are created on the appliance and appropriate
-roles are assigned to those groups. See *SAML Assertions* in [SAML
-Assertions](#saml-assertions) for more information on the parameters
-used by the ManageIQ appliance.
+<p>Ensure the user’s groups are created on the appliance and appropriate roles are assigned to those groups. See <a href="../managing_authentication/index.html#saml-assertions">SAML Assertions</a> for more information on the parameters used by the ManageIQ appliance.</p>
 
-For example, to configure user groups from your SAML identity provider
-to work with ManageIQ:
+<p>For example, to configure user groups from your SAML identity provider
+to work with ManageIQ:</p>
 
-1.  In your SAML identity provider, specify your existing user groups in
-    similar format to the following:
-    `REMOTE_USER_GROUPS=Administrators;CloudAdministrators;Users`
-
-2.  On your ManageIQ appliance, create the equivalent
-    groups. See [Creating a User
-    Group](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#creating-a-user-group)
-    in *General Configuration*.
-
-3.  On your ManageIQ appliance, assign EVM roles to the
-    groups. See [Creating a
-    Role](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#creating-a-role)
-    in *General Configuration*.
-
-</div>
+<ol>
+  <li>
+    <p>In your SAML identity provider, specify your existing user groups in
+similar format to the following:
+<code class="language-plaintext highlighter-rouge">REMOTE_USER_GROUPS=Administrators;CloudAdministrators;Users</code></p>
+  </li>
+  <li>
+    <p>On your ManageIQ appliance, create the equivalent
+groups. See <a href="../general_configuration/index.html#creating-a-user">Creating a User Group</a> in <em>General Configuration</em>.</p>
+  </li>
+  <li>
+    <p>On your ManageIQ appliance, assign EVM roles to the
+groups. See <a href="../general_configuration/index.html#creating-a-role">Creating a Role</a> in <em>General Configuration</em>.</p>
+  </li>
+</ol>
 
 <p>Complete the above steps on each appliance in the settings menu, then
 navigate to menu:Configuration[Access Control].</p>
@@ -2356,12 +2321,10 @@ appliance client in Red Hat SSO as mappers.</p>
   </tbody>
 </table>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-The `fullName` attribute was not available in the default database as of
-this writing and was added as a user attribute.
-
-</div>
+<p>The <code class="language-plaintext highlighter-rouge">fullName</code> attribute was not available in the default database as of
+this writing and was added as a user attribute.</p>
 
 <h2 id="re-enabling-local-login-optional">
 <a class="anchor" href="#re-enabling-local-login-optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Re-enabling Local Login <em>(Optional)</em>

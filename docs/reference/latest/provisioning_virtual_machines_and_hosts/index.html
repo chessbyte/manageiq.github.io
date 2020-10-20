@@ -1121,13 +1121,9 @@ machines.</li>
   </li>
 </ol>
 
-<div class="informalexample">
+<p><strong>Example:</strong></p>
 
-After creating the System Image Types, assign the types to each image on
-your PXE servers. To do this, you will select each image on the PXE
-server and identify its type.
-
-</div>
+<p>After creating the System Image Types, assign the types to each image on your PXE servers. To do this, you will select each image on the PXE server and identify its type.</p>
 
 <h4 id="setting-the-pxe-image-type-for-a-pxe-image">
 <a class="anchor" href="#setting-the-pxe-image-type-for-a-pxe-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting the PXE Image Type for a PXE Image</h4>
@@ -1139,21 +1135,13 @@ server and identify its type.
     <p>Navigate to menu:Compute[Infrastructure &gt; PXE].</p>
   </li>
   <li>
-    <p>Click the <strong>PXE Servers</strong> accordion and select the image that you
-want to set a type for.</p>
+    <p>Click the <strong>PXE Servers</strong> accordion and select the image that you want to set a type for.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
-<img src="../images/1851.png" alt="1851">(<strong>Edit this PXE Image</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then <img src="../images/1851.png" alt="1851">(<strong>Edit this PXE Image</strong>).</p>
   </li>
   <li>
-    <p>From the <strong>Basic Information</strong> area, select the correct type. If
-this PXE image will be used as the <strong>Windows Boot Environment</strong>,
-check <strong>Windows Boot Environment</strong>. At the time of this writing,
-only one PXE Image can be identified as the <strong>Windows Boot
-Environment</strong>. Therefore, checking one as the <strong>Windows Boot
-Environment</strong>, will remove that from any other PXE image with that
-check. <img src="../images/2319.png" alt="2319"> Click <strong>Save</strong>.
+    <p>From the <strong>Basic Information</strong> area, select the correct type. If this PXE image will be used as the <strong>Windows Boot Environment</strong>, check <strong>Windows Boot Environment</strong>. At the time of this writing, only one PXE Image can be identified as the <strong>Windows Boot Environment</strong>. Therefore, checking one as the <strong>Windows Boot Environment</strong>, will remove that from any other PXE image with that check. <img src="../images/2319.png" alt="2319"> Click <strong>Save</strong>.
 <img src="../images/2320.png" alt="2320"></p>
   </li>
 </ol>
@@ -1161,17 +1149,12 @@ check. <img src="../images/2319.png" alt="2319"> Click <strong>Save</strong>.
 <h3 id="iso-provisioning">
 <a class="anchor" href="#iso-provisioning" aria-hidden="true"><span class="octicon octicon-link"></span></a>ISO Provisioning</h3>
 
-<p>ManageIQ also allows ISO provisioning from Red Hat Virtualization
-Manager datastores. To use this feature, you will need to do the
+<p>ManageIQ also allows ISO provisioning from Red Hat Virtualization Manager datastores. To use this feature, you will need to do the
 following before creating a provision request.</p>
 
 <ol>
   <li>
-    <p>Add the <strong>ISO Datastore</strong>. The Red Hat Virtualization Manager system
-must have already been discovered or added into the VMDB. For more
-information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#adding_a_red_hat_enterprise_virtualization_manager_provider">Adding a Red Hat Enterprise Virtualization Manager
-Provider</a>
-in <em>Managing Providers</em>.</p>
+    <p>Add the <strong>ISO Datastore</strong>. The Red Hat Virtualization Manager system must have already been discovered or added into the VMDB. For more information, see <a href="../managing_providers/index.html#adding-a-red-hat-virtualization-provider">Adding a Red Hat Enterprise Virtualization Manager Provider</a> in <em>Managing Providers</em>.</p>
   </li>
   <li>
     <p>Refresh the <strong>ISO Datastore</strong>.</p>
@@ -1190,8 +1173,7 @@ in <em>Managing Providers</em>.</p>
 <h4 id="adding-an-iso-datastore">
 <a class="anchor" href="#adding-an-iso-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an ISO Datastore</h4>
 
-<p>The following procedure adds an ISO Datastore from your Red Hat
-Virtualization environment.</p>
+<p>The following procedure adds an ISO Datastore from your Red Hat Virtualization environment.</p>
 
 <ol>
   <li>
@@ -1205,8 +1187,7 @@ Virtualization environment.</p>
 <img src="../images/1862.png" alt="1862">(<strong>Add a new ISO Datastore</strong>).</p>
   </li>
   <li>
-    <p>Select the Cloud or Infrastructure provider hosting the ISO
-Datastore.</p>
+    <p>Select the Cloud or Infrastructure provider hosting the ISO Datastore.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -1218,8 +1199,7 @@ Datastore.</p>
 <h4 id="refreshing-an-iso-datastore">
 <a class="anchor" href="#refreshing-an-iso-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing an ISO Datastore</h4>
 
-<p>The following procedure refreshes the chosen ISO datastore and updates
-ManageIQ with available ISOs.</p>
+<p>The following procedure refreshes the chosen ISO datastore and updates ManageIQ with available ISOs.</p>
 
 <ol>
   <li>
@@ -1229,8 +1209,7 @@ ManageIQ with available ISOs.</p>
     <p>Click the <strong>ISO Datastores</strong> accordion, and select an ISO datastore.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then click
-<img src="../images/2003.png" alt="2003">(<strong>Refresh Relationships</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then click <img src="../images/2003.png" alt="2003">(<strong>Refresh Relationships</strong>).</p>
   </li>
 </ol>
 
@@ -1247,16 +1226,14 @@ ManageIQ with available ISOs.</p>
     <p>Click the <strong>System Image Types</strong> accordion.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="1862">(<strong>Add a new System Image Type</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then <img src="../images/1862.png" alt="1862">(<strong>Add a new System Image Type</strong>).</p>
   </li>
   <li>
     <p>In <strong>Basic Information</strong>, type in a <strong>Name</strong> and select a <strong>Type</strong>.
 <img src="../images/2317.png" alt="2317"></p>
 
     <ul>
-      <li>Use <strong>Vm</strong> if you want this image type to only apply to virtual
-machines.</li>
+      <li>Use <strong>Vm</strong> if you want this image type to only apply to virtual machines.</li>
     </ul>
   </li>
   <li>
@@ -1264,13 +1241,9 @@ machines.</li>
   </li>
 </ol>
 
-<div class="informalexample">
+<p><strong>Example:</strong></p>
 
-After creating the system image types, assign the types to each image on
-your ISO servers. To do this, you will select each image on the ISO
-server and identify its type.
-
-</div>
+<p>After creating the system image types, assign the types to each image on your ISO servers. To do this, you will select each image on the ISO server and identify its type.</p>
 
 <h4 id="setting-the-image-type-for-an-iso-image">
 <a class="anchor" href="#setting-the-image-type-for-an-iso-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting the Image Type for an ISO Image</h4>
@@ -1282,12 +1255,10 @@ server and identify its type.
     <p>Navigate to menu:Compute[Infrastructure &gt; PXE].</p>
   </li>
   <li>
-    <p>Click the <strong>ISO Datastores</strong> accordion, and select the image that
-you want to set a type for.</p>
+    <p>Click the <strong>ISO Datastores</strong> accordion, and select the image that you want to set a type for.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
-<img src="../images/1851.png" alt="1851">(<strong>Edit this ISO Image</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then <img src="../images/1851.png" alt="1851">(<strong>Edit this ISO Image</strong>).</p>
   </li>
   <li>
     <p>From the <strong>Basic Information</strong> area, select the correct <strong>Type</strong>.
@@ -1301,27 +1272,18 @@ you want to set a type for.</p>
 <h3 id="customization-templates-for-virtual-machine-and-instance-provisioning">
 <a class="anchor" href="#customization-templates-for-virtual-machine-and-instance-provisioning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customization Templates for Virtual Machine and Instance Provisioning</h3>
 
-<p>Add a customization template to provide <strong>Kickstart</strong>, <strong>Cloud-Init</strong>,
-or <strong>Sysprep</strong> files for the initial loading of the operating system.</p>
+<p>Add a customization template to provide <strong>Kickstart</strong>, <strong>Cloud-Init</strong>, or <strong>Sysprep</strong> files for the initial loading of the operating system.</p>
 
 <ul>
   <li>
-    <p>When creating a template using Red Hat Virtualization, install the
-<strong>cloud-init</strong> package on the source virtual machine. This enables
-Cloud-Init to source configuration scripts when a virtual machine
-built on that template boots.</p>
+    <p>When creating a template using Red Hat Virtualization, install the <strong>cloud-init</strong> package on the source virtual machine. This enables
+Cloud-Init to source configuration scripts when a virtual machine built on that template boots.</p>
   </li>
   <li>
-    <p>See <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.6/html-single/Virtual_Machine_Management_Guide/index.html#sect-Using_Cloud-Init_to_Automate_the_Configuration_of_Virtual_Machines">Using Cloud-Init to Automate the Configuration of Virtual
-Machines</a>
-in the Red Hat Virtualization <em>Administration Guide</em> for more
-information on using Cloud-Init in a Red Hat Virtualization
-environment.</p>
+    <p>See <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.6/html-single/Virtual_Machine_Management_Guide/index.html#sect-Using_Cloud-Init_to_Automate_the_Configuration_of_Virtual_Machines">Using Cloud-Init to Automate the Configuration of Virtual Machines</a> in the Red Hat Virtualization <em>Administration Guide</em> for more information on using Cloud-Init in a Red Hat Virtualization environment.</p>
   </li>
   <li>
-    <p>See the <a href="http://cloudinit.readthedocs.org/en/latest/">Cloud-Init
-Documentation</a> web site
-for example scripts.</p>
+    <p>See the <a href="http://cloudinit.readthedocs.org/en/latest/">Cloud-Init Documentation</a> web site for example scripts.</p>
   </li>
 </ul>
 
@@ -1439,35 +1401,27 @@ mount /dev/fd0 /tmp/floppy
 <img src="../images/2324.png" alt="2324"></p>
   </li>
   <li>
-    <p>Select the <strong>Image Type</strong>. This list should include the PXE image
-types you created.</p>
+    <p>Select the <strong>Image Type</strong>. This list should include the PXE image types you created.</p>
   </li>
   <li>
-    <p>In <strong>Type</strong>, select <strong>Kickstart</strong> or <strong>CloudInit</strong> for Linux based
-systems, and <strong>Sysprep</strong> for Windows based system.</p>
+    <p>In <strong>Type</strong>, select <strong>Kickstart</strong> or <strong>CloudInit</strong> for Linux based systems, and <strong>Sysprep</strong> for Windows based system.</p>
   </li>
   <li>
-    <p>In the <strong>Script</strong> area, either paste the script from another source
-or type the script directly into the ManageIQ interface.</p>
+    <p>In the <strong>Script</strong> area, either paste the script from another source or type the script directly into the ManageIQ interface.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
   </li>
 </ol>
 
-<div class="informalexample">
+<p><strong>Example:</strong></p>
 
-The default dialogs show all possible parameters for provisioning. To
-limit the options shown, see [Customizing Provisioning
-Dialogs](#provisioning-dialogs-customizing).
-
-</div>
+<p>The default dialogs show all possible parameters for provisioning. To limit the options shown, see <a href="#provisioning-dialogs-customizing">Customizing Provisioning Dialogs</a>.</p>
 
 <h3 id="provisioning-virtual-machines">
 <a class="anchor" href="#provisioning-virtual-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provisioning Virtual Machines</h3>
 
-<p>There are four types of provisioning requests available in
-ManageIQ:</p>
+<p>There are four types of provisioning requests available in ManageIQ:</p>
 
 <ol>
   <li>
@@ -1487,22 +1441,19 @@ ManageIQ:</p>
 <h4 id="provisioning-a-virtual-machine-from-a-template">
 <a class="anchor" href="#provisioning-a-virtual-machine-from-a-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provisioning a Virtual Machine from a Template</h4>
 
-<p>You can provision virtual machines through various methods. One method
-is to provision a virtual machine directly from a template stored on a
-provider.</p>
+<p>You can provision virtual machines through various methods. One method is to provision a virtual machine directly from a template stored on a provider.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-  - To provision a virtual machine, you must have the "Automation
-    Engine" role enabled.
-
-  - During virtual machine provisioning, the **Customize** tab is hidden
-    if the template has an unknown operating system (OS) type. To make
-    the **Customize** tab visible in the user interface, you will need
-    to set the OS type from the provider or perform SmartState analysis
-    on the template to detect the OS type.
-
-</div>
+<ul>
+  <li>
+    <p>To provision a virtual machine, you must have the “Automation Engine” role enabled.</p>
+  </li>
+  <li>
+    <p>During virtual machine provisioning, the <strong>Customize</strong> tab is hidden if the template has an unknown operating system (OS) type. To make
+the <strong>Customize</strong> tab visible in the user interface, you will need to set the OS type from the provider or perform SmartState analysis on the template to detect the OS type.</p>
+  </li>
+</ul>
 
 <p>To provision a virtual machine from a template:</p>
 
@@ -1525,27 +1476,18 @@ provider.</p>
 
     <p><img src="../images/request-info.png" alt="request info"></p>
 
-    <p>In <strong>Request Information</strong>, enter your name and email address. The
-requester will receive status emails about the provisioning request
-such as auto-approval, quota, provision complete, retirement,
+    <p>In <strong>Request Information</strong>, enter your name and email address. The requester will receive status emails about the provisioning request such as auto-approval, quota, provision complete, retirement,
 request pending approval, and request denied.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Parameters with a \* next to the label are required to submit the
-provisioning request. To change the required parameters, see
-[Customizing Provisioning
-Dialogs](#provisioning-dialogs-customizing).
-
-</div>
+    <p>Parameters with a * next to the label are required to submit the provisioning request. To change the required parameters, see <a href="#provisioning-dialogs-customizing">Customizing Provisioning Dialogs</a>.</p>
   </li>
   <li>
-    <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the
-provisioned virtual machines.</p>
+    <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the provisioned virtual machines.</p>
   </li>
   <li>
-    <p>Click the <strong>Catalog</strong> tab to select the template to provision from.
-This tab is context sensitive based on provider.</p>
+    <p>Click the <strong>Catalog</strong> tab to select the template to provision from. This tab is context sensitive based on provider.</p>
   </li>
   <li>
     <p>For templates on VMware providers: <img src="../images/2328.png" alt="2328"></p>
@@ -1705,9 +1647,9 @@ the template. <img src="../images/2336.png" alt="2336"></p>
 from the list in the custom specification area. The values that
 are honored by ManageIQ display.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Any values in the specification that do not show in the
+        <p>Any values in the specification that do not show in the
 ManageIQ console’s request dialogs are not used by
 ManageIQ. For example, for Windows operating systems, if
 you have any run once values in the specification, they are not
@@ -1715,14 +1657,11 @@ used in creating the new virtual machines. Currently, for a
 Windows operating system, ManageIQ honors the unattended
 GUI, identification, workgroup information, user data, windows
 options, and server license. If more than one network card is
-specified, only the first is used.
-
-</div>
+specified, only the first is used.</p>
 
         <p><img src="../images/2337.png" alt="2337"></p>
 
-        <p>To modify the specification, select <strong>Override Specification
-Values</strong>.</p>
+        <p>To modify the specification, select <strong>Override Specification Values</strong>.</p>
       </li>
       <li>
         <p>Select <strong>Sysprep Answer File</strong>, to upload a Sysprep file or use
@@ -1806,17 +1745,11 @@ database IDs, this number can be several digits long.</p>
 machines. In ManageIQ, you can use cloud-init via REST API
 to provision a virtual machine that was created based on a template.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To use cloud-init, the template from which the virtual machine is
-provisioned must have cloud-init package installed, and have the **Use
-Cloud-Init/Sysprep** option selected.
+<p>To use cloud-init, the template from which the virtual machine is provisioned must have cloud-init package installed, and have the <strong>Use Cloud-Init/Sysprep</strong> option selected.</p>
 
-</div>
-
-<p>For a virtual machine provision request via REST API, ensure the
-following two fields in the request’s body are set correctly, otherwise
-cloud-init may not work.</p>
+<p>For a virtual machine provision request via REST API, ensure the following two fields in the request’s body are set correctly, otherwise cloud-init may not work.</p>
 
 <ul>
   <li>
@@ -1829,8 +1762,7 @@ cloud-init may not work.</p>
 
 <p><strong>VLAN.</strong></p>
 
-<p>The value of <strong>VLAN</strong> in the API request can be one of the following
-options:</p>
+<p>The value of <strong>VLAN</strong> in the API request can be one of the following options:</p>
 
 <table>
   <thead>
@@ -1911,17 +1843,10 @@ the virtual machine provision dialog (menu:Compute[Infrastructure
 tab’s <strong>Customize</strong> drop-down list is called <strong>Specification</strong>.</li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For cloud-init to work *(that is, to have the provisioned virtual
-machine marked with **Use cloud-init** and the customized template as
-well as customized parameters, if any, will be used)* "sysprep\_enabled"
-must be set to “fields”. If you do not set it correctly, the customized
-template will be ignored and the provisioned virtual machine will not be
-marked with **Use cloud-init**; although, the template from which the
-virtual machine is provisioned has it marked.
-
-</div>
+<p>For cloud-init to work <em>(that is, to have the provisioned virtual machine marked with <strong>Use cloud-init</strong> and the customized template as well as customized parameters, if any, will be used)</em> “sysprep_enabled” must be set to “fields”. If you do not set it correctly, the customized template will be ignored and the provisioned virtual machine will not be
+marked with <strong>Use cloud-init</strong>; although, the template from which the virtual machine is provisioned has it marked.</p>
 
 <p><strong>For both Windows and Linux template</strong>:</p>
 
@@ -1929,24 +1854,13 @@ virtual machine is provisioned has it marked.
   <li>
 <strong>“disabled”</strong> - Do not customize
 In the ManageIQ user interface, when you navigate to
-the virtual machine provision dialog (menu:Compute[Infrastructure
-&gt; Virtual Machine]), this option located under the <strong>Customize</strong>
-tab’s <strong>Customize</strong> drop-down list is called <strong>&lt;None&gt;</strong>. The
-customized template will be ignored, and the provisioned virtual
-machine will not be marked with <strong>Use cloud-init</strong>, even though the
-template from which the virtual machine was provisioned, has it
-marked. The default value is ‘disabled’.</li>
+the virtual machine provision dialog (menu:Compute[Infrastructure &gt; Virtual Machine]), this option located under the <strong>Customize</strong>
+tab’s <strong>Customize</strong> drop-down list is called <strong>&lt;None&gt;</strong>. The customized template will be ignored, and the provisioned virtual machine will not be marked with <strong>Use cloud-init</strong>, even though the template from which the virtual machine was provisioned, has it marked. The default value is ‘disabled’.</li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For an example of virtual machine provisioning request using cloud-init
-via REST API, see *Provisioning a Virtual Machine Using Cloud-init* in
-the [ManageIQ REST
-API](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/red_hat_cloudforms_rest_api/index)
-guide.
-
-</div>
+<p>For an example of virtual machine provisioning request using cloud-init via REST API, see <em>Provisioning a Virtual Machine Using Cloud-init</em> in the <a href="../rest_api/index.html#provisioning-a-virtual-machine-using-cloud-init">ManageIQ REST API Guide</a> guide.</p>
 
 <h4 id="cloning-a-virtual-machine">
 <a class="anchor" href="#cloning-a-virtual-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cloning a Virtual Machine</h4>
@@ -1955,16 +1869,13 @@ guide.
 
 <ol>
   <li>
-    <p>Navigate to menu:Compute[Infrastructure &gt; Virtual Machines], and
-select the virtual machine you want to clone.</p>
+    <p>Navigate to menu:Compute[Infrastructure &gt; Virtual Machines], and select the virtual machine you want to clone.</p>
   </li>
   <li>
-    <p>Click <img src="../images/2007.png" alt="2007">(<strong>Lifecycle</strong>), and then
-<img src="../images/2339.png" alt="2339">(<strong>Clone selected item</strong>).</p>
+    <p>Click <img src="../images/2007.png" alt="2007">(<strong>Lifecycle</strong>), and then <img src="../images/2339.png" alt="2339">(<strong>Clone selected item</strong>).</p>
   </li>
   <li>
-    <p>Enter the requested information in the dialogs. Be sure to check the
-<strong>Catalog</strong> tab.</p>
+    <p>Enter the requested information in the dialogs. Be sure to check the <strong>Catalog</strong> tab.</p>
   </li>
   <li>
     <p>Schedule the request on the <strong>Schedule</strong> tab.</p>
@@ -2805,12 +2716,7 @@ the ManageIQ console.
 <strong>vmware_best_fit_with_scope</strong> methods, may require you to set
 <strong>Provisioning Scope</strong> tags for a host and a datastore.</p>
 
-<p>To enable these resources for all groups, set the scope to <strong>All</strong>. To
-limit access to a select group, create a tag in the <strong>Provisioning
-Scope</strong> category with the exact name of the user group and set this tag
-on the desired resources. See
-<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#regions">Tags</a>
-in <em>General Configuration</em> for information on creating tags.</p>
+<p>To enable these resources for all groups, set the scope to <strong>All</strong>. To limit access to a select group, create a tag in the <strong>Provisioning Scope</strong> category with the exact name of the user group and set this tag on the desired resources. See <a href="../general_configuration/index.html#tags">Tags</a> in <em>General Configuration</em> for information on creating tags.</p>
 
 <p>To set the scope for a datastore:</p>
 
@@ -3334,12 +3240,9 @@ the ManageIQ console.</p>
     <p>From the accordion menu, click menu:DOMAIN[System &gt; CommonMethods
 &gt; QuotaStateMachine &gt; quota].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-By default, quotas are applied to tenants and do not require any
-change in menu:Automate\[Explorer\].
-
-</div>
+    <p>By default, quotas are applied to tenants and do not require any change in menu:Automate[Explorer].</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>),
@@ -3350,22 +3253,12 @@ change in menu:Automate\[Explorer\].
       <li>
         <p>Set the value for <strong>Quota Source Type</strong> to <em>user</em> or <em>group</em>.</p>
 
-        <div class="important">
+        <p><strong>Important:</strong></p>
 
-A user creating a provisioning request must have an email
-address saved in their profile, or provisioning may fail. See
-[Creating a
-User](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#creating_a_user)
-in *General Configuration* for details on configuring users.
-
-</div>
+        <p>A user creating a provisioning request must have an email address saved in their profile, or provisioning may fail. See <a href="../general_configuration/index.html#creating-a-user">Creating a User</a> in <em>General Configuration</em> for details on configuring users.</p>
       </li>
       <li>
-        <p>Set the values for <strong>VM Warning Count</strong>, <strong>VM Maximum Count</strong>,
-<strong>Storage Warning Limit</strong>, <strong>Storage Maximum Limit</strong>, <strong>CPU
-Warning Count</strong>, <strong>CPU Maximum Count</strong>, <strong>Memory Warning
-Limit</strong>, or <strong>Memory Maximum Limit</strong> to be the maximums for a
-specific user or group.</p>
+        <p>Set the values for <strong>VM Warning Count</strong>, <strong>VM Maximum Count</strong>, <strong>Storage Warning Limit</strong>, <strong>Storage Maximum Limit</strong>, <strong>CPU Warning Count</strong>, <strong>CPU Maximum Count</strong>, <strong>Memory Warning Limit</strong>, or <strong>Memory Maximum Limit</strong> to be the maximums for a specific user or group.</p>
       </li>
     </ol>
   </li>
@@ -3377,16 +3270,10 @@ specific user or group.</p>
 <h5 id="using-tags-for-owner-and-group-quotas">
 <a class="anchor" href="#using-tags-for-owner-and-group-quotas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Tags for Owner and Group Quotas</h5>
 
-<p>ManageIQ provides tags for enforcing quotas for the owners of
-virtual machines or instances. Ownership of a virtual machine or
-instance can be set either during the provisioning process or by using
-the <strong>Configuration Set Ownership</strong> button. If a virtual machine or
-instance has an owner, the value is displayed in the <strong>Lifecycle</strong>
-section of the virtual machine or instance summary page.</p>
+<p>ManageIQ provides tags for enforcing quotas for the owners of virtual machines or instances. Ownership of a virtual machine or instance can be set either during the provisioning process or by using
+the <strong>Configuration Set Ownership</strong> button. If a virtual machine or instance has an owner, the value is displayed in the <strong>Lifecycle</strong> section of the virtual machine or instance summary page.</p>
 
-<p>Quota tags can be assigned directly to <strong>either</strong> a group or owner
-<strong>not</strong> to a configuration item. The table below shows the tags for use
-in quotas.</p>
+<p>Quota tags can be assigned directly to <strong>either</strong> a group or owner <strong>not</strong> to a configuration item. The table below shows the tags for use in quotas.</p>
 
 <table>
   <thead>
@@ -3434,26 +3321,17 @@ that you want to tag.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When quotas are applied by both automate instance and tagging, the
-tagged values will have higher precedence.
-
-</div>
+<p>When quotas are applied by both automate instance and tagging, the tagged values will have higher precedence.</p>
 
 <h5 id="state-machines">
 <a class="anchor" href="#state-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>State Machines</h5>
 
-<p>The automate state machine processes an ordered list of states. It can
-ensure the successful completion of a step before the next step is run,
-permit steps to be retried, allow setting a maximum time to retry the
-state before exiting, and number of retries before exiting the state.
-Before each state is executed, the <code class="language-plaintext highlighter-rouge">On_Entry</code> method is executed and
-after the state ends the <code class="language-plaintext highlighter-rouge">On_Exit</code> or <code class="language-plaintext highlighter-rouge">On_Error</code> method is executed
-based on how the state ends.</p>
+<p>The automate state machine processes an ordered list of states. It can ensure the successful completion of a step before the next step is run, permit steps to be retried, allow setting a maximum time to retry the state before exiting, and number of retries before exiting the state.
+Before each state is executed, the <code class="language-plaintext highlighter-rouge">On_Entry</code> method is executed and after the state ends the <code class="language-plaintext highlighter-rouge">On_Exit</code> or <code class="language-plaintext highlighter-rouge">On_Error</code> method is executed based on how the state ends.</p>
 
-<p>The following components make up a ManageIQ automate state
-machine:</p>
+<p>The following components make up a ManageIQ automate state machine:</p>
 
 <table>
   <thead>
@@ -3493,12 +3371,9 @@ machine:</p>
 <p>In the diagram below, you can see how these components combine to create
 a state machine workflow.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The retry logic, `On_Entry` and `On_Error` are distinct cases in the
-program flow.
-
-</div>
+<p>The retry logic, <code class="language-plaintext highlighter-rouge">On_Entry</code> and <code class="language-plaintext highlighter-rouge">On_Error</code> are distinct cases in the program flow.</p>
 
 <p><img src="../images/2353.png" alt="2353"></p>
 
@@ -3551,22 +3426,15 @@ the number of virtual machines requested is less than the
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Grayed out items reflect values that are set in the class schema. These
-values can be overwritten on a per instance basis.
-
-</div>
+<p>Grayed out items reflect values that are set in the class schema. These values can be overwritten on a per instance basis.</p>
 
 <h5 id="customizing-provisioning-states">
 <a class="anchor" href="#customizing-provisioning-states" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Provisioning States</h5>
 
-<p>The steps followed when provisioning a virtual machine or cloud instance
-are completed based on instances from the
-menu:DOMAIN[Cloud|Infrastructure &gt; VM &gt; Provisioning &gt; StateMachines
-&gt; VMProvision_VM] class. Depending on your environment you can
-remove, change, or add steps to the provisioning process. For example,
-if you are not integrating with IPAM or a CMDB, then you can remove
+<p>The steps followed when provisioning a virtual machine or cloud instance are completed based on instances from the
+menu:DOMAIN[Cloud|Infrastructure &gt; VM &gt; Provisioning &gt; StateMachines &gt; VMProvision_VM] class. Depending on your environment you can remove, change, or add steps to the provisioning process. For example, if you are not integrating with IPAM or a CMDB, then you can remove
 those execution steps. <img src="../images/6281.png" alt="6281"></p>
 
 <h5 id="editing-the-default-state-instance">
@@ -3577,28 +3445,20 @@ those execution steps. <img src="../images/6281.png" alt="6281"></p>
     <p>Navigate to menu:Automate[Explorer].</p>
   </li>
   <li>
-    <p>From the accordion menu, click menu:DOMAIN[Cloud &gt; VM &gt;
-Provisioning &gt; StateMachines &gt; VMProvision_VM].</p>
+    <p>From the accordion menu, click menu:DOMAIN[Cloud &gt; VM &gt; Provisioning &gt; StateMachines &gt; VMProvision_VM].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
 
-This example uses the **Cloud** Namespace, but can also use the
-**Infrastructure** namespace.
-
-</div>
+    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the <strong>Infrastructure</strong> namespace.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
-<img src="../images/1851.png" alt="1851">(<strong>Edit this instance</strong>).
+    <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then <img src="../images/1851.png" alt="1851">(<strong>Edit this instance</strong>).
 <img src="../images/6281.png" alt="6281"></p>
   </li>
   <li>
-    <p>For each step that you want to remove, clear the entries in the
-<strong>Value</strong>, <strong>On Entry</strong>, <strong>On Exit</strong>, and <strong>On Error</strong> columns.</p>
+    <p>For each step that you want to remove, clear the entries in the <strong>Value</strong>, <strong>On Entry</strong>, <strong>On Exit</strong>, and <strong>On Error</strong> columns.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -3608,34 +3468,24 @@ This example uses the **Cloud** Namespace, but can also use the
 <h5 id="viewing-the-status-of-a-provisioning-request">
 <a class="anchor" href="#viewing-the-status-of-a-provisioning-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the Status of a Provisioning Request</h5>
 
-<p>After a request has been approved, the various stages of fulfillment are
-executed. You can see the progress of the provisioning process by
-viewing its status.</p>
+<p>After a request has been approved, the various stages of fulfillment are executed. You can see the progress of the provisioning process by viewing its status.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Requests]. The list of requests is
-shown.</p>
+    <p>Navigate to menu:Services[Requests]. The list of requests is shown.</p>
   </li>
   <li>
-    <p>Click on a specific request for more information. Once the
-provisioning begins, if the request was supposed to create more than
-one virtual machine or instance, a field will appear called
-<strong>Provisioned VMs</strong>. Click on the number that appears next to it for
-information on each of the individual provisions.</p>
+    <p>Click on a specific request for more information. Once the provisioning begins, if the request was supposed to create more than one virtual machine or instance, a field will appear called <strong>Provisioned VMs</strong>. Click on the number that appears next to it for information on each of the individual provisions.</p>
   </li>
 </ol>
 
 <h5 id="viewing-a-provisioned-virtual-machine-or-instance">
 <a class="anchor" href="#viewing-a-provisioned-virtual-machine-or-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing a Provisioned Virtual Machine or Instance</h5>
 
-<p>When a virtual machine or instance is created as a result of a
-provisioning request, its summary screen will show when it was
-provisioned in the <strong>Lifecycle</strong> area of the respective summary.</p>
+<p>When a virtual machine or instance is created as a result of a provisioning request, its summary screen will show when it was provisioned in the <strong>Lifecycle</strong> area of the respective summary.</p>
 
 <ol>
-  <li>From menu:Services[Workloads], click the virtual machine or
-instance that you want to view. <img src="../images/2356.png" alt="2356">
+  <li>From menu:Services[Workloads], click the virtual machine or instance that you want to view. <img src="../images/2356.png" alt="2356">
 </li>
 </ol>
 

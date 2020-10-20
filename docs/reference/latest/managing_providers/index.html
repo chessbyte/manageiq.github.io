@@ -783,21 +783,12 @@
 </ul><h1 id="managing-providers">
 <a class="anchor" href="#managing-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Providers</h1>
 
-<p>ManageIQ can manage a variety of external environments, known as
-providers and managers. A provider or manager is any system that
-ManageIQ integrates with for the purpose of collecting
-data and performing operations.</p>
+<p>ManageIQ can manage a variety of external environments, known as providers and managers. A provider or manager is any system that ManageIQ integrates with for the purpose of collecting data and performing operations.</p>
 
-<p>In ManageIQ, a <em>provider</em> is an external virtualization,
-cloud, or containers environment that manages multiple virtual machines
-or instances residing on multiple hosts. One example is Red Hat
-Virtualization, a platform that manages multiple hosts and virtual
-machines.</p>
+<p>In ManageIQ, a <em>provider</em> is an external virtualization, cloud, or containers environment that manages multiple virtual machines
+or instances residing on multiple hosts. One example is Red Hat Virtualization, a platform that manages multiple hosts and virtual machines.</p>
 
-<p>In ManageIQ, a <em>manager</em> is an external management
-environment that manages more than one type of resource. One example of
-a manager is OpenStack, which manages infrastucture, cloud, network, and
-storage resources.</p>
+<p>In ManageIQ, a <em>manager</em> is an external management environment that manages more than one type of resource. One example of a manager is OpenStack, which manages infrastucture, cloud, network, and storage resources.</p>
 
 <p>This guide covers working with providers and managers in
 ManageIQ, which include:</p>
@@ -829,9 +820,7 @@ ManageIQ, which include:</p>
   </li>
 </ul>
 
-<p>For information on working with the resources contained by a provider or
-manager, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_infrastructure_and_inventory/">Managing Infrastructure and
-Inventory</a>.</p>
+<p>For information on working with the resources contained by a provider or manager, see <a href="../managing_infrastructure_and_inventory/index.html">Managing Infrastructure and Inventory</a>.</p>
 
 <h1 id="infrastructure-providers">
 <a class="anchor" href="#infrastructure-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infrastructure Providers</h1>
@@ -5478,13 +5467,9 @@ full or partial name.</p>
 <h1 id="containers-providers">
 <a class="anchor" href="#containers-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Containers Providers</h1>
 
-<p>A containers provider is a service that manages container resources,
-that can be added to the ManageIQ appliance.</p>
+<p>A containers provider is a service that manages container resources, that can be added to the ManageIQ appliance.</p>
 
-<p>ManageIQ can connect to OpenShift Container Platform
-containers providers and manage them similarly to infrastructure and
-cloud providers. This allows you to gain control over different aspects
-of your containers environment and answer questions such as:</p>
+<p>ManageIQ can connect to OpenShift Container Platform containers providers and manage them similarly to infrastructure and cloud providers. This allows you to gain control over different aspects of your containers environment and answer questions such as:</p>
 
 <ul>
   <li>
@@ -5501,42 +5486,30 @@ of your containers environment and answer questions such as:</p>
   </li>
 </ul>
 
-<p>When ManageIQ connects to a container’s environment, it
-collects information on different areas of the environment:</p>
+<p>When ManageIQ connects to a container’s environment, it collects information on different areas of the environment:</p>
 
 <ul>
   <li>
     <p>Entities such as pods, nodes, or services.</p>
   </li>
   <li>
-    <p>Basic relationships between the entities, for example: Which
-services are serving which pods?</p>
+    <p>Basic relationships between the entities, for example: Which services are serving which pods?</p>
   </li>
   <li>
-    <p>Advanced insight into relationships, for example: Which two
-different containers are using the same image?</p>
+    <p>Advanced insight into relationships, for example: Which two different containers are using the same image?</p>
   </li>
   <li>
-    <p>Additional information, such as events, projects, routes, and
-metrics.</p>
+    <p>Additional information, such as events, projects, routes, and metrics.</p>
   </li>
 </ul>
 
-<p>You can manage policies for containers entities by adding tags. All
-containers entities except volumes can be tagged.</p>
+<p>You can manage policies for containers entities by adding tags. All containers entities except volumes can be tagged.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This chapter provides details on managing containers providers. For
-details on working with the resources within a container environment,
-see [Container
-Entities](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_infrastructure_and_inventory/#container_entities)
-in *Managing Infrastructure and Inventory*.
+<p>This chapter provides details on managing containers providers. For details on working with the resources within a container environment, see <a href="../managing_infrastructure_and_inventory/index.html#container-entities">Container Entities</a> in <em>Managing Infrastructure and Inventory</em>.</p>
 
-</div>
-
-<p>The ManageIQ user interface uses virtual thumbnails to
-represent containers providers. Each thumbnail contains four quadrants
+<p>The ManageIQ user interface uses virtual thumbnails to represent containers providers. Each thumbnail contains four quadrants
 by default, which display basic information about each provider:</p>
 
 <p><img src="../images/cp-quad-icon.png" alt="cp quad icon"></p>
@@ -5588,16 +5561,13 @@ by default, which display basic information about each provider:</p>
 versions), the OpenShift Container Platform <a href="https://docs.openshift.com/container-platform/4.5/authentication/understanding-and-creating-service-accounts.html">service account</a>
 and <a href="https://docs.openshift.com/container-platform/4.5/authentication/understanding-and-creating-service-accounts.html#service-accounts-granting-roles_understanding-service-accounts">roles</a> required by ManageIQ are installed by default.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-See the [OpenShift Container Platform
-documentation](https://docs.openshift.com/container-platform/4.5/authentication/using-rbac.html#default-roles_using-rbac)
-for a list of the default roles.
+<p>See the <a href="https://docs.openshift.com/container-platform/4.5/authentication/using-rbac.html#default-roles_using-rbac">OpenShift Container Platform
+documentation</a>
+for a list of the default roles.</p>
 
-</div>
-
-<p>Run the following to obtain the token needed to add an OpenShift
-Container Platform provider:</p>
+<p>Run the following to obtain the token needed to add an OpenShift Container Platform provider:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># oc sa get-token -n management-infra management-admin
 eyJhbGciOiJSUzI1NiI...
@@ -5606,17 +5576,14 @@ eyJhbGciOiJSUzI1NiI...
 <h2 id="enabling-openshift-cluster-metrics">
 <a class="anchor" href="#enabling-openshift-cluster-metrics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling OpenShift Cluster Metrics</h2>
 
-<p>Use the OpenShift Cluster Metrics plug-in to collect node, pod, and
-container metrics into one location. This helps track usage and find
-common issues.</p>
+<p>Use the OpenShift Cluster Metrics plug-in to collect node, pod, and container metrics into one location. This helps track usage and find common issues.</p>
 
 <ul>
   <li>
     <p>Configure ManageIQ to allow for all three <a href="../deployment_planning_guide/index.html#assigning-the-capacity-and-utilization-server-roles">Capacity &amp; Utilization server roles</a>.</p>
   </li>
   <li>
-    <p>Enable cluster metrics using the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.5/html-single/installation_and_configuration/#install-config-cluster-metrics">OpenShift Container Platform
-documentation</a>.</p>
+    <p>Enable cluster metrics using the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.5/html-single/installation_and_configuration/#install-config-cluster-metrics">OpenShift Container Platform documentation</a>.</p>
   </li>
 </ul>
 
@@ -5942,11 +5909,7 @@ then <img src="../images/2098.png" alt="Remove Containers Providers from the VMD
 <h1 id="editing-a-containers-provider">
 <a class="anchor" href="#editing-a-containers-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Containers Provider</h1>
 
-<p>Edit information about a provider such as the name, hostname, IP address
-or port, and credentials as required. If you have just upgraded your
-ManageIQ environment from an older version, edit the
-provider to specify the authentication method the provider uses to
-connect to ManageIQ.</p>
+<p>Edit information about a provider such as the name, hostname, IP address or port, and credentials as required. If you have just upgraded your ManageIQ environment from an older version, edit the provider to specify the authentication method the provider uses to connect to ManageIQ.</p>
 
 <ol>
   <li>
@@ -5956,172 +5919,120 @@ connect to ManageIQ.</p>
     <p>Click the containers provider to edit.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), and
-then <img src="../images/1851.png" alt="Edit Selected Containers Provider"> (<strong>Edit
-Selected Containers Provider</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), and then <img src="../images/1851.png" alt="Edit Selected Containers Provider"> (<strong>Edit Selected Containers Provider</strong>).</p>
   </li>
   <li>
     <p>Edit the <strong>Name</strong> if required.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-The **Type** value is unchangeable.
-
-</div>
+    <p>The <strong>Type</strong> value is unchangeable.</p>
   </li>
   <li>
-    <p>Under <strong>Endpoints</strong> in the <strong>Default</strong> tab, edit the following as
-required:</p>
+    <p>Under <strong>Endpoints</strong> in the <strong>Default</strong> tab, edit the following as required:</p>
 
     <ol>
       <li>
-        <p>Select a <strong>Security Protocol</strong> method to specify how to
-authenticate the provider:</p>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to authenticate the provider:</p>
 
         <ul>
           <li>
-            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
-Certificate Authority. Select this option if the provider
-has a valid SSL certificate and it is signed by a trusted
-Certificate Authority. No further configuration is required
-for this option.</p>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted Certificate Authority. Select this option if the provider has a valid SSL certificate and it is signed by a trusted Certificate Authority. No further configuration is required for this option.</p>
           </li>
           <li>
-            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
-self-signed certificate. For this option, copy your
-provider’s CA certificate to the <strong>Trusted CA
-Certificates</strong> box in PEM format.</p>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a self-signed certificate. For this option, copy your provider’s CA certificate to the <strong>Trusted CA Certificates</strong> box in PEM format.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-You can obtain your OpenShift Container Platform provider’s
-CA certificate for all endpoints (default, metrics, alerts)
-from `/etc/origin/master/ca.crt`. Paste the output (a block
-of text starting with `-----BEGIN CERTIFICATE-----`) into
-the **Trusted CA Certificates** field.
-
-</div>
+            <p>You can obtain your OpenShift Container Platform provider’s CA certificate for all endpoints (default, metrics, alerts)
+from <code class="language-plaintext highlighter-rouge">/etc/origin/master/ca.crt</code>. Paste the output (a block of text starting with <code class="language-plaintext highlighter-rouge">-----BEGIN CERTIFICATE-----</code>) into
+the <strong>Trusted CA Certificates</strong> field.</p>
           </li>
           <li>
-            <p><strong>SSL without validation</strong>: Authenticate the provider
-insecurely (not recommended).</p>
+            <p><strong>SSL without validation</strong>: Authenticate the provider insecurely (not recommended).</p>
           </li>
         </ul>
       </li>
       <li>
-        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
-provider.</p>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the provider.</p>
 
-        <div class="important">
+        <p><strong>Important:</strong></p>
 
-The **Hostname** must use a unique fully qualified domain name.
-
-</div>
+        <p>The <strong>Hostname</strong> must use a unique fully qualified domain name.</p>
       </li>
       <li>
-        <p>Enter the <strong>API Port</strong> of the provider. The default port is
-<code class="language-plaintext highlighter-rouge">8443</code>.</p>
+        <p>Enter the <strong>API Port</strong> of the provider. The default port is <code class="language-plaintext highlighter-rouge">8443</code>.</p>
       </li>
       <li>
         <p>Enter a token for your provider in the <strong>Token</strong> box.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-To obtain a token for your provider, run the `oc get secret`
-command on your provider; see [Obtaining an OpenShift Container
-Platform Management
-Token](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#Obtaining_OpenShift_Container_Platform_Management_Token).
+        <p>To obtain a token for your provider, run the <code class="language-plaintext highlighter-rouge">oc get secret</code> command on your provider; see <a href="../managing_providers/index.html#obtaining-an-openshift-container-platform-management-token">Obtaining an OpenShift Container Platform Management Token</a>.</p>
 
-For example:
+        <p>For example:</p>
 
-\# oc get secret --namespace management-infra
-management-admin-token-8ixxs --template='' | base64 --decode
-
-</div>
+        <p># oc get secret –namespace management-infra
+management-admin-token-8ixxs –template=’’ | base64 –decode</p>
       </li>
       <li>
-        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
-to the OpenShift Container Platform provider.</p>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect to the OpenShift Container Platform provider.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Under <strong>Endpoints</strong> in the <strong>Metrics</strong> tab, configure the following
-for gathering capacity and utilization metrics for Hawkular or
-Prometheus based on the selection:</p>
+    <p>Under <strong>Endpoints</strong> in the <strong>Metrics</strong> tab, configure the following for gathering capacity and utilization metrics for Hawkular or Prometheus based on the selection:</p>
 
     <ol>
       <li>
-        <p>Select a <strong>Security Protocol</strong> method to specify how to
-authenticate the provider:</p>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to authenticate the provider:</p>
 
         <ul>
           <li>
-            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
-Certificate Authority. Select this option if the provider
-has a valid SSL certificate and it is signed by a trusted
-Certificate Authority. No further configuration is required
-for this option.</p>
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted Certificate Authority. Select this option if the provider has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required for this option.</p>
           </li>
           <li>
-            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
-self-signed certificate. For this option, copy your
-provider’s CA certificate to the <strong>Trusted CA
-Certificates</strong> box in PEM format.</p>
+            <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a self-signed certificate. For this option, copy your provider’s CA certificate to the <strong>Trusted CA Certificates</strong> box in PEM format.</p>
           </li>
           <li>
-            <p><strong>SSL without validation</strong>: Authenticate the provider
-insecurely using SSL. (Not recommended)</p>
+            <p><strong>SSL without validation</strong>: Authenticate the provider insecurely using SSL. (Not recommended)</p>
           </li>
         </ul>
       </li>
       <li>
-        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
-provider.</p>
+        <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the provider.</p>
       </li>
       <li>
-        <p>Enter the <strong>API Port</strong> if your provider uses a non-standard port
-for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
+        <p>Enter the <strong>API Port</strong> if your provider uses a non-standard port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
       </li>
       <li>
-        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect
-to the endpoint.</p>
+        <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect to the endpoint.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Under <strong>Endpoints</strong> in the <strong>Alerts</strong> tab, configure the following
-for Prometheus alerting from the cluster.</p>
+    <p>Under <strong>Endpoints</strong> in the <strong>Alerts</strong> tab, configure the following for Prometheus alerting from the cluster.</p>
 
     <ul>
       <li>
-        <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
-Certificate Authority. Select this option if the provider has a
-valid SSL certificate and it is signed by a trusted Certificate
-Authority. No further configuration is required for this option.</p>
+        <p><strong>SSL</strong>: Authenticate the provider securely using a trusted Certificate Authority. Select this option if the provider has a valid SSL certificate and it is signed by a trusted Certificate Authority. No further configuration is required for this option.</p>
       </li>
       <li>
-        <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a
-self-signed certificate. For this option, copy your provider’s
-CA certificate to the <strong>Trusted CA Certificates</strong> box in PEM
-format.</p>
+        <p><strong>SSL trusting custom CA</strong>: Authenticate the provider with a self-signed certificate. For this option, copy your provider’s CA certificate to the <strong>Trusted CA Certificates</strong> box in PEM format.</p>
       </li>
       <li>
-        <p><strong>SSL without validation</strong>: Authenticate the provider insecurely
-using SSL. (Not recommended)</p>
+        <p><strong>SSL without validation</strong>: Authenticate the provider insecurely using SSL. (Not recommended)</p>
 
         <ol>
           <li>
-            <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the
-provider.</p>
+            <p>Enter the <strong>Hostname</strong> (or IPv4 or IPv6 address) of the provider.</p>
           </li>
           <li>
-            <p>Enter the <strong>API Port</strong> if your provider uses a non-standard
-port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
+            <p>Enter the <strong>API Port</strong> if your provider uses a non-standard port for access. The default port is <code class="language-plaintext highlighter-rouge">443</code>.</p>
           </li>
           <li>
-            <p>Click <strong>Validate</strong> to confirm that ManageIQ can
-connect to the endpoint.</p>
+            <p>Click <strong>Validate</strong> to confirm that ManageIQ can connect to the endpoint.</p>
           </li>
         </ol>
       </li>
@@ -6142,18 +6053,12 @@ variables by configuring user roles.</p>
 information, such as passwords, that you may not want certain users to
 view.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The default user roles in ManageIQ are read-only. To
-customize a role’s settings, create a new role or a copy of an existing
-role.
+<p>The default user roles in ManageIQ are read-only. To customize a role’s settings, create a new role or a copy of an existing
+role.</p>
 
-</div>
-
-<p>You can view role information and the product features the role can
-access (marked by a checkmark) by clicking on any role in <strong>Access
-Control</strong>. Expand the categories under <strong>Product Features</strong> to see
-further detail.</p>
+<p>You can view role information and the product features the role can access (marked by a checkmark) by clicking on any role in <strong>Access Control</strong>. Expand the categories under <strong>Product Features</strong> to see further detail.</p>
 
 <p>To configure user access to container environment variables:</p>
 
@@ -6165,32 +6070,22 @@ further detail.</p>
     <p>Click the <strong>Access Control</strong> accordion, then click <strong>Roles</strong>.</p>
   </li>
   <li>
-    <p>Select a existing custom role from the <strong>Access Control Roles</strong>
-list, and click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then
-<img src="../images/1851.png" alt="1851"> (<strong>Edit the selected Role</strong>).</p>
+    <p>Select a existing custom role from the <strong>Access Control Roles</strong> list, and click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then <img src="../images/1851.png" alt="1851"> (<strong>Edit the selected Role</strong>).</p>
 
-    <p>Alternatively, to create a new custom role, select a role from the
-<strong>Access Control Roles</strong> list, and click <img src="../images/1847.png" alt="1847">
-(<strong>Configuration</strong>), then <img src="../images/1851.png" alt="1851"> (<strong>Copy this
-Role to a new Role</strong>).</p>
+    <p>Alternatively, to create a new custom role, select a role from the <strong>Access Control Roles</strong> list, and click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then <img src="../images/1851.png" alt="1851"> (<strong>Copy this Role to a new Role</strong>).</p>
   </li>
   <li>
     <p>Edit the name for the role if desired.</p>
   </li>
   <li>
-    <p>For <strong>Access Restriction for Services, VMs, and Templates</strong>, select
-if you want to limit users with this role to only see resources
-owned by the user or their group, owned by the user, or all
-resources (<strong>None</strong>).</p>
+    <p>For <strong>Access Restriction for Services, VMs, and Templates</strong>, select if you want to limit users with this role to only see resources owned by the user or their group, owned by the user, or all resources (<strong>None</strong>).</p>
   </li>
   <li>
-    <p>Expand the <strong>Product Features (Editing)</strong> tree options to show
-menu:Everything[Compute &gt; Containers &gt; Containers Explorer &gt; All
+    <p>Expand the <strong>Product Features (Editing)</strong> tree options to show menu:Everything[Compute &gt; Containers &gt; Containers Explorer &gt; All
 Containers &gt; View Containers].</p>
   </li>
   <li>
-    <p>Clear the <strong>Environment Variables</strong> checkbox to restrict the user
-role from viewing container environment variables.</p>
+    <p>Clear the <strong>Environment Variables</strong> checkbox to restrict the user role from viewing container environment variables.</p>
 
     <p><img src="../images/restrict_env_vars.png" alt="restrict env vars"></p>
   </li>
@@ -6199,9 +6094,7 @@ role from viewing container environment variables.</p>
   </li>
 </ol>
 
-<p>For more information about user roles, see
-<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/general_configuration/#roles">Roles</a>
-in <em>General Configuration</em>.</p>
+<p>For more information about user roles, see <a href="../general_configuration/index.html#roles">Roles</a> in <em>General Configuration</em>.</p>
 
 <h1 id="viewing-a-containers-providers-timeline">
 <a class="anchor" href="#viewing-a-containers-providers-timeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing a Containers Provider’s Timeline</h1>

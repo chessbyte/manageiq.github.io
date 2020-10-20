@@ -1459,33 +1459,28 @@ dialog_field["default_value"] = 2
 execute it as a method. Each playbook method can take additional input
 parameters specified by the user.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-  - You must first sync your playbook repositories before using them to
-    create a method. See [Adding a Playbook
-    Repository](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/managing_providers/automation_management_providers#adding-a-playbook-repository)
-    in *Managing Providers* for information on initial playbook
-    repository set-up.
-
-  - Using Ansible playbooks to populate dynamic dialog fields is not
-    recommended due to delay times caused by the overhead of interaction
-    between systems.
-
-  - Only users with administrator privileges can run a service dialog
-    based on a playbook automate method.
-
-</div>
+<ul>
+  <li>
+    <p>You must first sync your playbook repositories before using them to create a method. See <a href="../managing_providers/index.html#adding-a-playbook-repository">Adding a Playbook Repository</a> in <em>Managing Providers</em> for information on initial playbook repository set-up.</p>
+  </li>
+  <li>
+    <p>Using Ansible playbooks to populate dynamic dialog fields is not recommended due to delay times caused by the overhead of interaction between systems.</p>
+  </li>
+  <li>
+    <p>Only users with administrator privileges can run a service dialog based on a playbook automate method.</p>
+  </li>
+</ul>
 
 <p>To create a playbook automate method:</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Automate &gt; Explorer], then click on a
-domain under <strong>Datastore</strong>.</p>
+    <p>Navigate to menu:Automation[Automate &gt; Explorer], then click on a domain under <strong>Datastore</strong>.</p>
   </li>
   <li>
-    <p>Under a namespace, select the class for which you want to create a
-new method.</p>
+    <p>Under a namespace, select the class for which you want to create a new method.</p>
   </li>
   <li>
     <p>Click the <strong>Methods</strong> tab.</p>
@@ -1495,8 +1490,7 @@ new method.</p>
 <img src="../images/1862.png" alt="image"> (<strong>Add a New Method</strong>).</p>
   </li>
   <li>
-    <p>In the <strong>Main Info</strong> area, select <strong>Playbook</strong> from the <strong>Type</strong>
-dropdown menu.</p>
+    <p>In the <strong>Main Info</strong> area, select <strong>Playbook</strong> from the <strong>Type</strong> dropdown menu.</p>
   </li>
   <li>
     <p>Provide a <strong>Name</strong> and <strong>Display Name</strong>.</p>
@@ -1509,8 +1503,7 @@ dropdown menu.</p>
         <p>Choose a <strong>Playbook</strong> to use.</p>
       </li>
       <li>
-        <p>Select the <strong>Machine Credential</strong> the playbook will use when it
-runs.</p>
+        <p>Select the <strong>Machine Credential</strong> the playbook will use when it runs.</p>
       </li>
       <li>
         <p>Select the <strong>Vault Credential</strong> to use.</p>
@@ -1519,74 +1512,52 @@ runs.</p>
         <p>From the <strong>Cloud Type</strong> list, select a cloud provider.</p>
       </li>
       <li>
-        <p>Choose the <strong>Cloud Credential</strong> that corresponds to the selected
-cloud type.</p>
+        <p>Choose the <strong>Cloud Credential</strong> that corresponds to the selected cloud type.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Specify the <strong>Hosts</strong> on which the playbook will run. Choose
-<strong>Localhost</strong> or provide unique values in the <strong>Specify host
-values</strong> field.</p>
+    <p>Specify the <strong>Hosts</strong> on which the playbook will run. Choose <strong>Localhost</strong> or provide unique values in the <strong>Specify host values</strong> field.</p>
   </li>
   <li>
-    <p>Set the <strong>Max TTL</strong> in minutes. The Time To Live (TTL) field allows
-you to set the maximum execution time for the playbook to run.</p>
+    <p>Set the <strong>Max TTL</strong> in minutes. The Time To Live (TTL) field allows you to set the maximum execution time for the playbook to run.</p>
   </li>
   <li>
-    <p>Select when to receive <strong>Logging Output</strong> from the options in the
-drop-down menu.</p>
+    <p>Select when to receive <strong>Logging Output</strong> from the options in the drop-down menu.</p>
   </li>
   <li>
-    <p>Use the <strong>Escalate Privilege</strong> toggle switch to enable user
-privilege escalation if credentials are called for during the
-playbook run.</p>
+    <p>Use the <strong>Escalate Privilege</strong> toggle switch to enable user privilege escalation if credentials are called for during the playbook run.</p>
   </li>
   <li>
-    <p>Choose a <strong>Verbosity</strong> value to set the debug level for playbook
-execution.</p>
+    <p>Choose a <strong>Verbosity</strong> value to set the debug level for playbook execution.</p>
   </li>
   <li>
-    <p>Add required <strong>Input Parameters</strong> using the fields and values
-available. Click the <img src="../images/add_parameter.png" alt="add parameter"> to
-add additional input parameters.</p>
+    <p>Add required <strong>Input Parameters</strong> using the fields and values available. Click the <img src="../images/add_parameter.png" alt="add parameter"> to add additional input parameters.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Input parameters become extra vars, with substitution enabled. This
-overcomes the lack of a dialog which would normally allow for the
-input of additional information. For more information on extra vars,
-see the Ansible documentation.
-
-</div>
+    <p>Input parameters become extra vars, with substitution enabled. This overcomes the lack of a dialog which would normally allow for the input of additional information. For more information on extra vars,
+see the Ansible documentation.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong> when finished.</p>
   </li>
 </ol>
 
-<p>Once created, the domain including your playbook method can be exported
-to appliances in your testing or production environments or imported in
-appliances in multiple regions.</p>
+<p>Once created, the domain including your playbook method can be exported to appliances in your testing or production environments or imported in appliances in multiple regions.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-To import a domain with a playbook method, you must have an existing
-Ansible playbook on the destination environment with the same name or
-the import will fail.
+<p>To import a domain with a playbook method, you must have an existing Ansible playbook on the destination environment with the same name or the import will fail.</p>
 
-</div>
-
-<p>See <a href="#exporting-all-datastore-classes">???</a> for information.</p>
+<p>See <a href="#exporting-all-datastore-classes">Exporting All Datastore Classes</a> for information.</p>
 
 <h5 id="passing-variables-between-successive-playbook-methods">
 <a class="anchor" href="#passing-variables-between-successive-playbook-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Passing variables between successive playbook methods</h5>
 
-<p>Automate designers can pass variables between successive Ansible
-playbook methods in a state machine using ManageIQ.</p>
+<p>Automate designers can pass variables between successive Ansible playbook methods in a state machine using ManageIQ.</p>
 
-<p>To pass variables between Ansible playbook methods, use the <code class="language-plaintext highlighter-rouge">set_stats</code>
-module in your playbooks.</p>
+<p>To pass variables between Ansible playbook methods, use the <code class="language-plaintext highlighter-rouge">set_stats</code> module in your playbooks.</p>
 
 <p><strong>Example.</strong></p>
 

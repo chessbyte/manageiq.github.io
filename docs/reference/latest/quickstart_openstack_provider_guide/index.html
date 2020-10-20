@@ -1093,23 +1093,18 @@ servers are put into the default zone.</p>
 <h2 id="key-manageiq-features-for-openstack-cloud-providers">
 <a class="anchor" href="#key-manageiq-features-for-openstack-cloud-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key ManageIQ Features for OpenStack Cloud Providers</h2>
 
-<p>ManageIQ provides several interface features specific to
-OpenStack cloud providers:</p>
+<p>ManageIQ provides several interface features specific to OpenStack cloud providers:</p>
 
 <ul>
   <li>
-    <p>The ManageIQ <strong>Topology</strong> widget (<a href="#using-the-topology-widget">Using the Topology
-Widget</a>) provides an interactive
+    <p>The ManageIQ <strong>Topology</strong> widget (<a href="#using-the-topology-widget">Using the Topology Widget</a>) provides an interactive
 visualization of the OpenStack cloud.</p>
   </li>
   <li>
-    <p>ManageIQ provides a user interface for managing
-OpenStack storage resources (<a href="#storage_managers">Managing Storage</a>).</p>
+    <p>ManageIQ provides a user interface for managing OpenStack storage resources (<a href="#storage_managers">Managing Storage</a>).</p>
   </li>
   <li>
-    <p><em>Custom buttons</em>, which allows you to provide automation for
-specific actions to OpenStack tenants
-(<a href="#custom-button-tenants">appendix_title</a>).</p>
+    <p><em>Custom buttons</em>, which allows you to provide automation for specific actions to OpenStack tenants. See <a href="#creating-custom-buttons-for-cloud-tenants">Creating Custom Buttons for Cloud Tenants</a>.</p>
   </li>
 </ul>
 
@@ -1117,19 +1112,14 @@ specific actions to OpenStack tenants
 
 <ul>
   <li>
-    <p>Enable <em>tenant mapping</em>. This creates a one-to-one association
-between tenants in ManageIQ and OpenStack.</p>
+    <p>Enable <em>tenant mapping</em>. This creates a one-to-one association between tenants in ManageIQ and OpenStack.</p>
   </li>
   <li>
-    <p>Connect to OpenStack through the Keystone V3 API. This API enables
-multiple OpenStack identity domains. Domains are high-level
-containers for projects, users, and groups. Users of different
-domains can be represented in different authentication back ends.</p>
+    <p>Connect to OpenStack through the Keystone V3 API. This API enables multiple OpenStack identity domains. Domains are high-level containers for projects, users, and groups. Users of different domains can be represented in different authentication back ends.</p>
   </li>
 </ul>
 
-<p>For information about tenant mapping and the Keystone V3 API, see
-<a href="#add-openstack-oc">Adding an OpenStack Cloud Provider</a>.</p>
+<p>For information about tenant mapping and the Keystone V3 API, see <a href="#adding-an-openstack-cloud-provider">Adding an OpenStack Cloud Provider</a>.</p>
 
 <h2 id="installing-and-configuring-manageiq">
 <a class="anchor" href="#installing-and-configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing and Configuring ManageIQ</h2>
@@ -2150,10 +2140,7 @@ in the Red Hat OpenStack Platform documentation.
 <h2 id="performing-a-smartstate-analysis">
 <a class="anchor" href="#performing-a-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performing a SmartState Analysis</h2>
 
-<p>ManageIQ can analyze a cloud Instance or infrastructure host
-to collect metadata such as user accounts, applications, software
-patches, and other internal information. This key feature is
-called SmartState Analysis. SmartState analysis can be initiated
+<p>ManageIQ can analyze a cloud Instance or infrastructure host to collect metadata such as user accounts, applications, software patches, and other internal information. This key feature is called SmartState Analysis. SmartState analysis can be initiated
 manually or automatically using Control Policies.</p>
 
 <p>To manually initiate SmartState analysis on an instance:</p>
@@ -2199,13 +2186,10 @@ selected node.</p>
 <h2 id="using-the-topology-widget">
 <a class="anchor" href="#using-the-topology-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Topology Widget</h2>
 
-<p>The <strong>Topology</strong> widget is an interactive topology graph, showing the
-status and relationships between the different resources and entities of
-the OpenStack providers that ManageIQ has access to.</p>
+<p>The <strong>Topology</strong> widget is an interactive topology graph, showing the status and relationships between the different resources and entities of the OpenStack providers that ManageIQ has access to.</p>
 
 <ul>
-  <li>The topology graph includes instances, nodes, and other cloud
-resources within the overall OpenStack cloud provider environment.
+  <li>The topology graph includes instances, nodes, and other cloud resources within the overall OpenStack cloud provider environment.
     <ul>
       <li>Each entity in the graph displays a color indication of its status.</li>
     </ul>
@@ -2232,16 +2216,13 @@ or hide entity names.</li>
 
 <ol>
   <li>
-    <p>Navigate to <span class="menuchoice">Compute &gt; Cloud &gt;
-Providers</span>.</p>
+    <p>Navigate to <span class="menuchoice">Compute &gt; Cloud &gt; Providers</span>.</p>
   </li>
   <li>
-    <p>Click the desired OpenStack cloud provider for viewing the provider
-summary.</p>
+    <p>Click the desired OpenStack cloud provider for viewing the provider summary.</p>
   </li>
   <li>
-    <p>On the provider summary page, click <strong>Topology</strong> in the <strong>Overview</strong>
-box on the right-hand side of the page.</p>
+    <p>On the provider summary page, click <strong>Topology</strong> in the <strong>Overview</strong> box on the right-hand side of the page.</p>
   </li>
 </ol>
 
@@ -2570,30 +2551,18 @@ cloud providers.</p>
 
 <ol>
   <li>
-    <p>Request: This includes ownership information, tags, virtual hardware
-requirements, the operating system, and any customization required.
-See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/#provisioning-requests">Provisioning
-Requests</a>
-from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/">Provisioning Virtual Machines and
-Hosts</a>
+    <p>Request: This includes ownership information, tags, virtual hardware requirements, the operating system, and any customization required.
+See <a href="../provisioning_virtual_machines_and_hosts/index.html#provisioning-requests">Provisioning Requests</a>
+from the <a href="../provisioning_virtual_machines_and_hosts/index.html">Provisioning Virtual Machines and Hosts</a>
 guide for more details.</p>
   </li>
   <li>
-    <p>Approval: Provisioning requests are then approved or denied. This
-phase can happen automatically or manually. See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/#provisioning-request-approval-methods">Provisioning
-Request Approval
-Methods</a>
-from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/">Provisioning Virtual Machines and
-Hosts</a>
-guide for more details.</p>
+    <p>Approval: Provisioning requests are then approved or denied. This phase can happen automatically or manually. See <a href="../provisioning_virtual_machines_and_hosts/index.html#provisioning-request-approval-methods">Provisioning Request Approval Methods</a>
+from the <a href="../provisioning_virtual_machines_and_hosts/index.html">Provisioning Virtual Machines and Hosts</a> guide for more details.</p>
   </li>
   <li>
-    <p>Provision: Approved provisioning requests are executed. See <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/#working-with-provisioning-requests">Working
-with Provisioning
-Requests</a>
-from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/">Provisioning Virtual Machines and
-Hosts</a>
-guide for more details.</p>
+    <p>Provision: Approved provisioning requests are executed. See <a href="../provisioning_virtual_machines_and_hosts/index.html#working-with-provisioning-requests">Working with Provisioning Requests</a>
+from the <a href="../provisioning_virtual_machines_and_hosts/index.html">Provisioning Virtual Machines and Hosts</a> guide for more details.</p>
   </li>
 </ol>
 
@@ -2770,20 +2739,14 @@ manages object storage within the cloud. These storage managers are
 discovered automatically by ManageIQ after adding an OpenStack
 cloud provider.</p>
 
-<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#storage_managers">Storage
-Managers</a>
-from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/">Managing
-Providers</a>
+<p>For more information, see <a href="../managing_providers/index.html#storage-managers">Storage Managers</a> from the <a href="../managing_providers/index.html">Managing Providers</a>
 guide.</p>
 
 <h3 id="managing-block-storage">
 <a class="anchor" href="#managing-block-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Block Storage</h3>
 
-<p>The OpenStack Block Storage service (<code class="language-plaintext highlighter-rouge">openstack-cinder</code>) provides and
-manages persistent block storage resources that OpenStack infrastructure
-instances can consume. ManageIQ provides an interface for
-managing these resources (volumes, volume backups, and volume
-snapshots).</p>
+<p>The OpenStack Block Storage service (<code class="language-plaintext highlighter-rouge">openstack-cinder</code>) provides and manages persistent block storage resources that OpenStack infrastructure instances can consume. ManageIQ provides an interface for
+managing these resources (volumes, volume backups, and volume snapshots).</p>
 
 <p>To create a volume:</p>
 
@@ -2821,9 +2784,7 @@ Manager</strong> list.</p>
 
 <p>The volume appears in the list of volumes after it has been provisioned.</p>
 
-<p>To attach a volume to an instance (for example, one created through
-<a href="#provisioning-an-openstack-instance-from-an-image">Provisioning an OpenStack Instance from an
-Image</a>):</p>
+<p>To attach a volume to an instance (for example, one created through <a href="#provisioning-an-openstack-instance-from-an-image">Provisioning an OpenStack Instance from an Image</a>):</p>
 
 <ol>
   <li>
@@ -2997,19 +2958,13 @@ in the *Storage Guide* for more information about snapshots.
 
 </div>
 
-<p>For more information about available options for block storage resources
-in ManageIQ, see <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/#openstack_block_storage_managers">OpenStack Block Storage
-Managers</a>
-(from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/managing_providers/">Managing
-Providers</a>
-guide).</p>
+<p>For more information about available options for block storage resources in ManageIQ, see <a href="../managing_providers/index.html#openstack-block-storage-managers">OpenStack Block Storage Managers</a>
+in the <a href="../managing_providers/index.html">Managing Providers</a> guide.</p>
 
 <h3 id="managing-object-storage">
 <a class="anchor" href="#managing-object-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Object Storage</h3>
 
-<p>The OpenStack Object Storage (<code class="language-plaintext highlighter-rouge">openstack-swift</code>) service provides cloud
-object storage. The object store summary page shows details including
-the object store’s size, parent cloud, storage manager, cloud tenant,
+<p>The OpenStack Object Storage (<code class="language-plaintext highlighter-rouge">openstack-swift</code>) service provides cloud object storage. The object store summary page shows details including the object store’s size, parent cloud, storage manager, cloud tenant,
 and the number of cloud objects on the object store.</p>
 
 <p>To view the summary page of an object store:</p>
@@ -3062,15 +3017,9 @@ in the <strong>Automate</strong> model.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For more information about catalogs and services, see [Catalogs and
-Services](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/provisioning-virtual-machines-and-hosts/#catalogs-services)
-from the [Provisioning Virtual Machines and
-Hosts](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/provisioning_virtual_machines_and_hosts/)
-guide.
-
-</div>
+<p>For more information about catalogs and services, see <a href="../provisioning_virtual_machines_and_hosts/index.html#catalogs-and-services">Catalogs and Services</a> from the <a href="../provisioning_virtual_machines_and_hosts/index.html">Provisioning Virtual Machines and Hosts</a> guide.</p>
 
 <h3 id="creating-a-service-dialog">
 <a class="anchor" href="#creating-a-service-dialog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Service Dialog</h3>
@@ -3716,16 +3665,10 @@ used, unless you specify otherwise.</p>
 cloud tenants. This is useful for providing shortcuts to functionalities
 and features frequently used by specific tenants.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This capability is made possible through the *Automate* model. See
-[Understanding the Automate
-Model](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/#understanding-the-automate-model)
-from the [Scripting Actions in
-CloudForms](https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/)
-guide for more details.
-
-</div>
+<p>This capability is made possible through the <em>Automate</em> model. See
+<a href="../scripting_actions/index.html#understanding-the-automate-model">Understanding the Automate Model</a> from the <a href="../scripting_actions/index.html">Scripting Actions in </a> guide for more details.</p>
 
 <p>The following subsections summarize the two main steps for creating a
 custom button for cloud tenants.</p>
@@ -3869,11 +3812,8 @@ the task you want.</p>
 </ol>
 
 <p>The button will show in the object type you added the button to. See
-<a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/#invoking-automate">Invoking
-Automate</a>
-from the <a href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html-single/scripting_actions_in_cloudforms/">Scripting Actions in
-CloudForms</a>
-guide for more in-depth coverage.</p>
+<a href="../scripting_actions/index.html#invoking-automate">Invoking Automate</a>
+from the <a href="../scripting_actions/index.html">Scripting Actions in </a> guide for more in-depth coverage.</p>
 
 <h1 id="managing-keypairs">
 <a class="anchor" href="#managing-keypairs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Keypairs</h1>
