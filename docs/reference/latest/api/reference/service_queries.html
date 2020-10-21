@@ -1704,15 +1704,11 @@ GET /api/service_dialogs/:id?resource_action_id=:ra_id
                             &amp;target_type=:target_type
 </code></pre></div></div>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Above :target\_type would be a valid resource type containing the
-service dialog like *service\_template* or *service*.
+<p>Above :target_type would be a valid resource type containing the service dialog like <em>service_template</em> or <em>service</em>.</p>
 
-</div>
-
-<p>Or from the Service Template where they are defined and from the related
-ordered services as follows:</p>
+<p>Or from the Service Template where they are defined and from the related ordered services as follows:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/service_templates/:id/service_dialogs
 GET /api/service_templates/:id/service_dialogs/:service_dialog_id

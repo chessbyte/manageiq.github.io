@@ -1867,12 +1867,10 @@ the <strong>request_state</strong> reaches the <strong>finished</strong> state. 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/provision_requests/3068
 </code></pre></div></div>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The requests tasks of a provisioning request can also be queried by
-expanding the request\_tasks subcollection as follows:
-
-</div>
+<p>The requests tasks of a provisioning request can also be queried by
+expanding the request_tasks subcollection as follows:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/provision_requests/:id?expand=request_tasks
 </code></pre></div></div>

@@ -1611,7 +1611,7 @@ region as follows:</p>
 <pre><code class="language-data">GET /api/regions/:id/settings
 </code></pre>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
 <div class="title">
 
@@ -1619,16 +1619,17 @@ Authorization
 
 </div>
 
-  - For users with an *EvmGroup-super\_administrator* role, the complete
-    advanced settings are returned.
-
-  - For users with roles that include the *Configuration Settings*
-    feature, only a whitelisted set of settings are returned.
-
-  - Requests from all other users will be rejected with a Forbidden
-    error.
-
-</div>
+<ul>
+  <li>
+    <p>For users with an <em>EvmGroup-super_administrator</em> role, the complete advanced settings are returned.</p>
+  </li>
+  <li>
+    <p>For users with roles that include the <em>Configuration Settings</em> feature, only a whitelisted set of settings are returned.</p>
+  </li>
+  <li>
+    <p>Requests from all other users will be rejected with a Forbidden error.</p>
+  </li>
+</ul>
 
 <h3 id="updating-settings">
 <a class="anchor" href="#updating-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating Settings</h3>

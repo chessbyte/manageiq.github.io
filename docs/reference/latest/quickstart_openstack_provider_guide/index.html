@@ -753,17 +753,12 @@ for your database:</p>
 
 <p><img src="../images/5780.png" alt="5780"></p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When enabling capacity and utilization for metrics gathering over a
-period of time, it is recommended that the VMDB size scale accordingly.
-Evaluate the number of instances in your provider inventory and storage
-duration requirements to plan for increased VMDB sizing requirements.
+<p>When enabling capacity and utilization for metrics gathering over a period of time, it is recommended that the VMDB size scale accordingly.
+Evaluate the number of instances in your provider inventory and storage duration requirements to plan for increased VMDB sizing requirements.</p>
 
-</div>
-
-<p>Use the following information to plan for your increased VMDB needs when
-working with metrics gathering:</p>
+<p>Use the following information to plan for your increased VMDB needs when working with metrics gathering:</p>
 
 <ul>
   <li>
@@ -1339,12 +1334,10 @@ key</strong>.</p>
 first appliance. For worker and multi-region setups, use this
 option to copy key from another appliance.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-All ManageIQ appliances in a multi-region
-deployment must use the same key.
-
-</div>
+        <p>All ManageIQ appliances in a multi-region
+deployment must use the same key.</p>
       </li>
     </ul>
   </li>
@@ -1445,12 +1438,12 @@ use the following credentials:</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You can also change the password of the **admin** account from the login
-screen. To do so, click the **Update Password** link.
+<p>You can also change the password of the <strong>admin</strong> account from the login
+screen. To do so, click the <strong>Update Password</strong> link.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>You can access and configure most ManageIQ settings through the
 <strong>Configuration</strong> menu. You can access this menu through <strong>Administrator
@@ -1568,8 +1561,7 @@ from the <em>Deployment Planning Guide</em>.</p>
 <a class="anchor" href="#enabling-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling SmartState Analysis</h4>
 
 <p>After enabling the required server roles, enable SmartState analysis.
-See <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/support_matrix.html#smart-state-analysis-support">Smart State Analysis Support</a>
-from the Support Matrix.</p>
+See <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/support_matrix.html#smart-state-analysis-support">Smart State Analysis Support</a> from the Support Matrix.</p>
 
 <p>Enabling SmartState analysis is similar to <a href="../deployment_planning_guide/index.html#assigning-the-capacity-and-utilization-server-roles">Assigning the Capacity and Utilization Server Roles</a>, in that the procedure also involves enabling server roles on a specific server.
 To do so:</p>
@@ -1579,13 +1571,10 @@ To do so:</p>
     <p>Click <strong>Configuration</strong>.</p>
   </li>
   <li>
-    <p>Select the server to configure from menu: <strong>Settings</strong>[Zone] in the
-left pane of the appliance.</p>
+    <p>Select the server to configure from menu: <strong>Settings</strong>[Zone] in the left pane of the appliance.</p>
   </li>
   <li>
-    <p>Navigate to the <strong>Server Roles</strong> list in the menu:Server[Server
-Control] section. From there, set the appropriate SmartState roles
-to <strong>ON</strong>. Namely:</p>
+    <p>Navigate to the <strong>Server Roles</strong> list in the menu: <strong>Server &gt; Server Control</strong> section. From there, set the appropriate SmartState roles to <strong>ON</strong>. Namely:</p>
 
     <ol>
       <li>
@@ -1614,16 +1603,19 @@ the <code class="language-plaintext highlighter-rouge">admin</code> credentials,
 <code class="language-plaintext highlighter-rouge">admin</code> tenant, and sees images, networks, and instances that are
 associated with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the undercloud to store events. See [Configuring the Undercloud to Store Events](#configuring-the-undercloud-to-store-events) for instructions. For more information, see [OpenStack Telemetry (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry) in the Red Hat OpenStack Platform *Architecture Guide*.
-
-  - To authenticate the provider using a self-signed Certificate
-    Authority (CA), configure the ManageIQ appliance to
-    trust the certificate using the steps in [Using a Self-Signed CA Certificate](#app-self_signed_CA)
-    before adding the provider.
-
-</div>
+<ul>
+  <li>
+    <p>You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the <strong>ceilometer</strong> service on the undercloud to store events. See <a href="#configuring-the-undercloud-to-store-events">Configuring the Undercloud to Store Events</a> for instructions. For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry">OpenStack Telemetry (ceilometer)</a> in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
+  </li>
+  <li>
+    <p>To authenticate the provider using a self-signed Certificate
+Authority (CA), configure the ManageIQ appliance to
+trust the certificate using the steps in <a href="#app-self_signed_CA">Using a Self-Signed CA Certificate</a>
+before adding the provider.</p>
+  </li>
+</ul>
 
 <ol>
   <li>
@@ -1645,50 +1637,42 @@ device is labeled in the console.</p>
     <p>Select the <strong>API Version</strong> of your OpenStack provider’s Keystone
 service from the list. The default is <code class="language-plaintext highlighter-rouge">Keystone v2</code>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - With Keystone API v3, domains are used to determine administrative
+    <ul>
+      <li>With Keystone API v3, domains are used to determine administrative
 boundaries of service entities in OpenStack. Domains allow you to
 group users together for various purposes, such as setting
 domain-specific configuration or security options. For more
-information, see [OpenStack Identity
-(keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
-in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity
+(keystone)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</li>
+    </ul>
   </li>
 </ol>
+
 <ul>
-  <li>
-    <p>The provider you are creating will be able to see projects for the
+  <li>The provider you are creating will be able to see projects for the
 given domain only. To see projects for other domains, add it as
 another cloud provider. For more information on domain management in
 OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/users_and_identity_management_guide/#Domains">Domain
 Management</a>
 in the Red Hat OpenStack Platform <em>Users and Identity Management
-Guide</em>.</p>
-
-    <p>&lt;/div&gt;</p>
-  </li>
+Guide</em>.</li>
 </ul>
 
 <ol>
   <li>
-    <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the
-zone is set to <strong>default</strong>.</p>
+    <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the zone is set to <strong>default</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-For more information, see the definition of host aggregates and
-availability zones in [OpenStack Compute
-(nova)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute)
-in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+    <p>For more information, see the definition of host aggregates and
+availability zones in <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute">OpenStack Compute (nova)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
   </li>
   <li>
-    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and
-authentication details of your OpenStack provider:</p>
+    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and authentication details of your OpenStack provider:</p>
 
     <ol>
       <li>
@@ -1774,19 +1758,14 @@ field.</p>
     </ul>
   </li>
   <li>
-    <p>You can also configure SSH access to all hosts managed by the
-OpenStack infrastructure provider. To do so, click on the <strong>RSA key
-pair</strong> tab in the <strong>Endpoints</strong> section.</p>
+    <p>You can also configure SSH access to all hosts managed by the OpenStack infrastructure provider. To do so, click on the <strong>RSA key pair</strong> tab in the <strong>Endpoints</strong> section.</p>
 
     <ol>
       <li>
-        <p>From there, enter the <strong>Username</strong> of an account with privileged
-access.</p>
+        <p>From there, enter the <strong>Username</strong> of an account with privileged access.</p>
       </li>
       <li>
-        <p>If you selected <strong>SSL</strong> in <strong>Endpoints &gt; Default &gt; Security
-Protocol</strong> earlier, use the <strong>Browse</strong> button to find and set a
-private key.</p>
+        <p>If you selected <strong>SSL</strong> in <strong>Endpoints &gt; Default &gt; Security Protocol</strong> earlier, use the <strong>Browse</strong> button to find and set a private key.</p>
       </li>
     </ol>
   </li>
@@ -1795,17 +1774,9 @@ private key.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-ManageIQ requires that the `adminURL` endpoint for all OpenStack
-services be on a non-private network. Accordingly, assign the adminURL
-endpoint an IP address of something other than `192.168.x.x`. The
-`adminURL` endpoint must be accessible to the ManageIQ appliance
-that is responsible for collecting inventory and gathering metrics from
-the OpenStack environment. Additionally, all the Keystone endpoints must
-be accessible, otherwise refresh will fail.
-
-</div>
+<p>ManageIQ requires that the <code class="language-plaintext highlighter-rouge">adminURL</code> endpoint for all OpenStack services be on a non-private network. Accordingly, assign the adminURL endpoint an IP address of something other than <code class="language-plaintext highlighter-rouge">192.168.x.x</code>. The <code class="language-plaintext highlighter-rouge">adminURL</code> endpoint must be accessible to the ManageIQ appliance that is responsible for collecting inventory and gathering metrics from the OpenStack environment. Additionally, all the Keystone endpoints must be accessible, otherwise refresh will fail.</p>
 
 <h3 id="configuring-the-undercloud-to-store-events">
 <a class="anchor" href="#configuring-the-undercloud-to-store-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Undercloud to Store Events</h3>
@@ -1831,13 +1802,11 @@ credentials, a user in ManageIQ provisions into the <code class="language-plaint
 tenant, and sees images, networks, and instances that are associated
 with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-In OpenStack, you must add `admin` as a member of all tenants that users want to access and use in ManageIQ.
+<p>In OpenStack, you must add <code class="language-plaintext highlighter-rouge">admin</code> as a member of all tenants that users want to access and use in ManageIQ.</p>
 
-See [Cloud Tenants](../managing_infrastructure_and_inventory/index.html#cloud-tenants) in *Managing Infrastructure and Inventory* for information on working with OpenStack tenants (projects) in ManageIQ.
-
-</div>
+<p>See <a href="../managing_infrastructure_and_inventory/index.html#cloud-tenants">Cloud Tenants</a> in <em>Managing Infrastructure and Inventory</em> for information on working with OpenStack tenants (projects) in ManageIQ.</p>
 
 <p>When adding an OpenStack cloud or infrastructure provider, enable
 <em>tenant mapping</em> in ManageIQ to map any existing tenants
@@ -1862,20 +1831,16 @@ tenants to their corresponding cloud tenants.</p>
 <p>If you leave tenant mapping disabled, ManageIQ will not
 create cloud tenants or tenant object hierarchy from OpenStack.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the overcloud to store events. See [Configuring the Overcloud to Store Events](../managing_providers/index.html#configuring-the-overcloud-to-store-events) for instructions.
+<p>You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the <strong>ceilometer</strong> service on the overcloud to store events. See <a href="../managing_providers/index.html#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a> for instructions.</p>
 
-For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
-(ceilometer)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
+<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
+(ceilometer)</a> in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
 
-</div>
+<p><strong>Note:</strong></p>
 
-<div class="note">
-
-To authenticate the provider using a self-signed Certificate Authority (CA), configure the ManageIQ appliance to trust the certificate using the steps in [Using a Self-Signed CA Certificate](#app-self_signed_CA) before adding the provider.
-
-</div>
+<p>To authenticate the provider using a self-signed Certificate Authority (CA), configure the ManageIQ appliance to trust the certificate using the steps in <a href="#app-self_signed_CA">Using a Self-Signed CA Certificate</a> before adding the provider.</p>
 
 <ol>
   <li>
@@ -1900,38 +1865,33 @@ ManageIQ should use. This is the domain of the user account
 you will be specifying later in the <strong>Default</strong> tab. If domains are
 not configured in the provider, enter <strong>default</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Keystone API v3 is required to create cloud tenants on OpenStack
-cloud providers.
+    <p>Keystone API v3 is required to create cloud tenants on OpenStack
+cloud providers.</p>
 
-</div>
+    <p><strong>Note:</strong></p>
 
-    <div class="note">
-
-  - With Keystone API v3, domains are used to determine administrative
+    <ul>
+      <li>With Keystone API v3, domains are used to determine administrative
 boundaries of service entities in OpenStack. Domains allow you to
 group users together for various purposes, such as setting
 domain-specific configuration or security options. For more
-information, see [OpenStack Identity
-(keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
-in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity
+(keystone)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</li>
+    </ul>
   </li>
 </ol>
+
 <ul>
-  <li>
-    <p>The provider you are creating will be able to see projects for the
+  <li>The provider you are creating will be able to see projects for the
 given domain only. To see projects for other domains, add it as
 another cloud provider. For more information on domain management in
 OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/users_and_identity_management_guide/#Domains">Domain
 Management</a>
 in the Red Hat OpenStack Platform <em>Users and Identity Management
-Guide</em>.</p>
-
-    <p>&lt;/div&gt;</p>
-  </li>
+Guide</em>.</li>
 </ul>
 
 <ol>
@@ -1952,32 +1912,24 @@ default, tenant mapping is disabled.</p>
     <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the
 zone is set to <strong>default</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-For more information, see the definition of host aggregates and availability zones in <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute" target="_blank">OpenStack Compute (nova)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+    <p>For more information, see the definition of host aggregates and availability zones in <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute">OpenStack Compute (nova)</a> in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
   </li>
   <li>
-    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and
-authentication details of your OpenStack provider:</p>
+    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and authentication details of your OpenStack provider:</p>
 
     <ol>
       <li>
-        <p>Select a <strong>Security Protocol</strong> method to specify how to
-authenticate the provider:</p>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to authenticate the provider:</p>
 
         <ul>
           <li>
-            <p><strong>SSL without validation</strong>: Authenticate the provider
-insecurely using SSL.</p>
+            <p><strong>SSL without validation</strong>: Authenticate the provider insecurely using SSL.</p>
           </li>
           <li>
-            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
-Certificate Authority. Select this option if the provider
-has a valid SSL certificate and it is signed by a trusted
-Certificate Authority. No further configuration is required
-for this option. This is the recommended authentication
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted Certificate Authority. Select this option if the provider has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required for this option. This is the recommended authentication
 method.</p>
           </li>
           <li>
@@ -1991,18 +1943,9 @@ HTTP protocol, without SSL.</p>
 or fully qualified domain name of the OpenStack Keystone
 service.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-The hostname required here is also the **OS\_AUTH\_URL** value
-in the **\~/overcloudrc** file generated by the director (see
-[Accessing the
-Overcloud](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Accessing_the_Overcloud)
-in Red Hat OpenStack Platform *Director Installation and
-Usage*), or the **\~/keystonerc\_admin** file generated by
-Packstack (see [Evaluating OpenStack: Single-Node
-Deployment](https://access.redhat.com/articles/1127153)).
-
-</div>
+        <p>The hostname required here is also the <strong>OS_AUTH_URL</strong> value in the <strong>~/overcloudrc</strong> file generated by the director (see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Accessing_the_Overcloud">Accessing the Overcloud</a> in Red Hat OpenStack Platform <em>Director Installation and Usage</em>), or the <strong>~/keystonerc_admin</strong> file generated by Packstack (see <a href="https://access.redhat.com/articles/1127153">Evaluating OpenStack: Single-Node Deployment</a>).</p>
       </li>
       <li>
         <p>In <strong>API Port</strong>, set the public port used by the OpenStack
@@ -2136,16 +2079,11 @@ option:</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Passing the newly created environment file to the overcloud deployment
-is environment specific and requires executing commands in particular
-order depending on use of variables. For further information please see
-[*Director Installation and
-Usage*](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/director_installation_and_usage/)
-in the Red Hat OpenStack Platform documentation.
-
-</div>
+<p>Passing the newly created environment file to the overcloud deployment is environment specific and requires executing commands in particular order depending on use of variables. For further information please see
+<a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/director_installation_and_usage/"><em>Director Installation and Usage</em></a>
+in the Red Hat OpenStack Platform documentation.</p>
 
 <h2 id="performing-a-smartstate-analysis">
 <a class="anchor" href="#performing-a-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performing a SmartState Analysis</h2>
@@ -2270,15 +2208,15 @@ using virtual machine analysis profiles. These are the steps required to
 create a custom virtual machine analysis profile, and assigning it to a
 cloud instance for use with SmartState analysis, via a control policy.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For more detailed information about ManageIQ policies, see
-[Assigning a Custom Analysis Profile to a Virtual
-Machine](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/assigning-a-custom-analysis-profile-to-a-virtual-machine/)
-and [Policies and Profiles
-Guide](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/policies-and-profiles-guide/).
+<p>For more detailed information about ManageIQ policies, see
+<a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/assigning-a-custom-analysis-profile-to-a-virtual-machine/">Assigning a Custom Analysis Profile to a Virtual
+Machine</a>
+and <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/policies-and-profiles-guide/">Policies and Profiles
+Guide</a>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>The following subsections demonstrate how to create host compliance and
 instance control policies.</p>
@@ -2895,44 +2833,29 @@ Volume</strong>).</p>
     <p>(Optional) Select <strong>Incremental?</strong> to take an incremental backup of
 the volume instead of a full backup.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-You can take an incremental backup of a volume if you have at least
-one existing full backup of the volume. An incremental volume saves
-resources by capturing only changes made to the volume since its
-last backup. See [Create an Incremental Volume
-Backup](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-create-volume-backup-incremental)
-in the *Storage Guide* for more information.
-
-</div>
+    <p>You can take an incremental backup of a volume if you have at least one existing full backup of the volume. An incremental volume saves resources by capturing only changes made to the volume since its last backup. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-create-volume-backup-incremental">Create an Incremental Volume Backup</a>
+in the <em>Storage Guide</em> for more information.</p>
   </li>
   <li>
-    <p>(Optional) Select <strong>Force?</strong> to allow backup of a volume attached to
-an instance.</p>
+    <p>(Optional) Select <strong>Force?</strong> to allow backup of a volume attached to an instance.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Selecting the **Force** option will back up the volume whether its
-status is *available* or *in-use*. Backing up an *in-use* volume
-ensures data is crash-consistent.
-
-</div>
+    <p>Selecting the <strong>Force</strong> option will back up the volume whether its status is <em>available</em> or <em>in-use</em>. Backing up an <em>in-use</em> volume ensures data is crash-consistent.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
   </li>
 </ol>
 
-<p>View a volume’s backups by clicking <strong>Cloud Volume Backups</strong> on the
-volume’s summary page.</p>
+<p>View a volume’s backups by clicking <strong>Cloud Volume Backups</strong> on the volume’s summary page.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-See [Back Up and Restore a
-Volume](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-volumes-advanced-backup)
-in the *Storage Guide* for more information about backups.
-
-</div>
+<p>See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-volumes-advanced-backup">Back Up and Restore a Volume</a>
+in the <em>Storage Guide</em> for more information about backups.</p>
 
 <p>To take a volume snapshot:</p>
 
@@ -2960,13 +2883,10 @@ Volume</strong>).</p>
 <p>Click <strong>Cloud Volume Snapshots</strong> on the summary page of a volume to view
 the snapshots for that volume.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-See [Create, Use, or Delete Volume
-Snapshots](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/storage_guide/#section-create-clone-delete-vol-snapshots)
-in the *Storage Guide* for more information about snapshots.
-
-</div>
+<p>See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/storage_guide/#section-create-clone-delete-vol-snapshots">Create, Use, or Delete Volume Snapshots</a>
+in the <em>Storage Guide</em> for more information about snapshots.</p>
 
 <p>For more information about available options for block storage resources in ManageIQ, see <a href="../managing_providers/index.html#openstack-block-storage-managers">OpenStack Block Storage Managers</a>
 in the <a href="../managing_providers/index.html">Managing Providers</a> guide.</p>
@@ -3236,18 +3156,18 @@ Navigate to <strong>ManageIQ/Service/Provisioning/State‐
 Machines/ServiceProvision_Template/CatalogItemTermination</strong>
 and click <strong>Apply</strong>.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-The entry point must be a State Machine since the
-**Provisioning Entry Point** list is filtered to only show
+            <p>The entry point must be a State Machine since the
+<strong>Provisioning Entry Point</strong> list is filtered to only show
 State Machine class instances. No other entry points will be
-available from the **Provisioning Entry Point** field.
+available from the <strong>Provisioning Entry Point</strong> field.</p>
 
-You can only choose from the catalogs and dialogs you have
+            <p>You can only choose from the catalogs and dialogs you have
 already created. If you haven’t done so, leave the values
-blank and edit later.
+blank and edit later.</p>
 
-</div>
+            <p>&lt;/div&gt;</p>
           </li>
         </ol>
       </li>
@@ -3735,17 +3655,11 @@ to create the button for.</p>
     <p>Click <strong>Unassigned Buttons</strong>.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="image">(<strong>Configuration</strong>), then <img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>).</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If ![image](../images/1862.png) (**Add a new Button**) is not
-available, that means you have not created a button group for that
-object. To continue, create a button group first. See
-[Creating a Custom Button](#create-custom-button-group).
-
-</div>
+    <p>If <img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>) is not available, that means you have not created a button group for that object. To continue, create a button group first. See <a href="#create-custom-button-group">Creating a Custom Button</a>.</p>
   </li>
   <li>
     <p>Under the <strong>Options</strong> tab:</p>
@@ -3755,24 +3669,19 @@ object. To continue, create a button group first. See
         <p>Select the <strong>Button</strong> type from the list.</p>
       </li>
       <li>
-        <p>Enter button <strong>Text</strong> and <strong>Hover Text</strong>, and select the
-<strong>Icon</strong> and <strong>Icon Color</strong> to use.</p>
+        <p>Enter button <strong>Text</strong> and <strong>Hover Text</strong>, and select the <strong>Icon</strong> and <strong>Icon Color</strong> to use.</p>
       </li>
       <li>
         <p>Select a <strong>Dialog</strong> if applicable.</p>
       </li>
       <li>
-        <p>Check <strong>Open URL</strong> to open a browser window for the custom URL
-returned when the button is executed.</p>
+        <p>Check <strong>Open URL</strong> to open a browser window for the custom URL returned when the button is executed.</p>
       </li>
       <li>
         <p>Choose a <strong>Display For</strong> option for the button.</p>
       </li>
       <li>
-        <p>Select a <strong>Submit</strong> parameter to choose how to submit objects to
-automate. Selecting <em>Submit All</em> will pass all objects at once
-when the button is executed, while choosing <em>One by one</em> will
-run execute the button action each time per object.</p>
+        <p>Select a <strong>Submit</strong> parameter to choose how to submit objects to automate. Selecting <em>Submit All</em> will pass all objects at once when the button is executed, while choosing <em>One by one</em> will run execute the button action each time per object.</p>
       </li>
     </ol>
   </li>
@@ -3781,43 +3690,32 @@ run execute the button action each time per object.</p>
 
     <ol>
       <li>
-        <p>Set button <strong>Enablement</strong>. Click <strong>Define Expression</strong> to access
-the expression editor tool. Enter <strong>Disabled Button Text</strong> to
-display when the custom button is disabled.</p>
+        <p>Set button <strong>Enablement</strong>. Click <strong>Define Expression</strong> to access the expression editor tool. Enter <strong>Disabled Button Text</strong> to display when the custom button is disabled.</p>
       </li>
       <li>
-        <p>Use <strong>Visibility</strong> to determine button appearance based on a
-custom expression. Click <strong>Define Expression</strong> to access the
-expression editor tool.</p>
+        <p>Use <strong>Visibility</strong> to determine button appearance based on a custom expression. Click <strong>Define Expression</strong> to access the expression editor tool.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-For more about setting visibility and enablement for a custom
-button, see [Filtering](#setting-enablement-and-visibility-for-custom-buttons).
-
-</div>
+        <p>For more about setting visibility and enablement for a custom button, see <a href="#setting-enablement-and-visibility-for-custom-buttons">Filtering</a>.</p>
       </li>
       <li>
         <p>In <strong>Object Details</strong>, select <strong>Request</strong> from the
-<code class="language-plaintext highlighter-rouge">/System/Process/</code> dropdown. By default, the message is
-<code class="language-plaintext highlighter-rouge">create</code>. Do not change it.</p>
+<code class="language-plaintext highlighter-rouge">/System/Process/</code> dropdown. By default, the message is <code class="language-plaintext highlighter-rouge">create</code>. Do not change it.</p>
       </li>
       <li>
-        <p>Enter a <strong>Request</strong> name for the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code>
-instance.</p>
+        <p>Enter a <strong>Request</strong> name for the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code> instance.</p>
       </li>
       <li>
         <p>Enter the <strong>Attribute/Value Pairs</strong> fields if applicable.</p>
       </li>
       <li>
-        <p>Set <strong>Role Access</strong>. Selecting <em>&lt;By Role&gt;</em> will display
-available roles. Check applicable roles.</p>
+        <p>Set <strong>Role Access</strong>. Selecting <em>&lt;By Role&gt;</em> will display available roles. Check applicable roles.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Click <strong>Add</strong> when you have confirmed that the button accomplishes
-the task you want.</p>
+    <p>Click <strong>Add</strong> when you have confirmed that the button accomplishes the task you want.</p>
   </li>
 </ol>
 

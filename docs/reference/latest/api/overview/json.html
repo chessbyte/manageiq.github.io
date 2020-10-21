@@ -1741,7 +1741,7 @@ resources and collections defined in this API.</p>
   </tbody>
 </table>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
 <div class="title">
 
@@ -1749,24 +1749,14 @@ About permissions and security:
 
 </div>
 
-Advertising of the common actions depends purely on the role and
-permissions of that the current API user does have for the particular
-resource.
-
-</div>
+<p>Advertising of the common actions depends purely on the role and permissions of that the current API user does have for the particular resource.</p>
 
 <h3 id="collections">
 <a class="anchor" href="#collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collections</h3>
 
-<p>Resources can be grouped into collections. Each collection is
-homogeneous so that it contains only one type of resource, and
-unordered. Resources can also exist outside any collection. In this
-case, we refer to these resources as singleton resources. Collections
-are themselves resources as well.</p>
+<p>Resources can be grouped into collections. Each collection is homogeneous so that it contains only one type of resource, and unordered. Resources can also exist outside any collection. In this case, we refer to these resources as singleton resources. Collections are themselves resources as well.</p>
 
-<p>Collections can exist globally, at the top level of an API, but can also
-be contained inside a single resource. In the latter case, we refer to
-these collections as sub-collections. Sub-collections are usually used
+<p>Collections can exist globally, at the top level of an API, but can also be contained inside a single resource. In the latter case, we refer to these collections as sub-collections. Sub-collections are usually used
 to express some kind of “contained in” relationship</p>
 
 <p>Collections are serialized in JSON in the following way:</p>

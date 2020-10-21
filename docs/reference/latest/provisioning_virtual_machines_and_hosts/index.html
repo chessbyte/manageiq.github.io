@@ -1630,15 +1630,15 @@ settings that are internal to the operating system appear on the
       <li>
         <p>In <strong>Network Adapter Information</strong>, select the <strong>vLan</strong>.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-A VMware virtual machine can be provisioned to a DVPortgroup by
-selecting it from the **vLan** list. Prior to provisioning a
+        <p>A VMware virtual machine can be provisioned to a DVPortgroup by
+selecting it from the <strong>vLan</strong> list. Prior to provisioning a
 virtual machine, the DVPortgroup must be created on a vSphere
 Distributed Switch (VDS) in VMware vCenter in order for
-ManageIQ to list the DVPortgroup under **vLan**.
+ManageIQ to list the DVPortgroup under <strong>vLan</strong>.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -1812,13 +1812,13 @@ to provision a virtual machine that was created based on a template.</p>
 <p>The value of sysprep_enabled in the API request must be in the
 following format.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Sysprep\_enabled is written in the order: \[value\] - \[it’s meaning\] -
-\[how it appears in the ManageIQ user interface virtual
-machine provision dialog’s **Customize** tab\]
+<p>Sysprep_enabled is written in the order: [value] - [it’s meaning] -
+[how it appears in the ManageIQ user interface virtual
+machine provision dialog’s <strong>Customize</strong> tab]</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><strong>For Windows template</strong>:</p>
 
@@ -1984,14 +1984,14 @@ is optional. If the ManageIQ Server is configured to use
 LDAP, you can use the <strong>Look Up</strong> button to populate the other
 fields based on the email address.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Parameters with a \* next to the label are required to submit the
+    <p>Parameters with a * next to the label are required to submit the
 provisioning request. To change the required parameters, see
-[Customizing Provisioning
-Dialogs](#provisioning-dialogs-customizing).
+<a href="#provisioning-dialogs-customizing">Customizing Provisioning
+Dialogs</a>.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the
@@ -2310,12 +2310,10 @@ associated with the desired instance.</p>
       <li>Select the <strong>Processor</strong> type.</li>
     </ol>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-See [Power Systems Virtual Servers documentation](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#processor)
-for more information.
-
-</div>
+    <p>See <a href="https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#processor">Power Systems Virtual Servers documentation</a>
+for more information.</p>
 
     <ol>
       <li>
@@ -2326,37 +2324,29 @@ for more information.
       </li>
     </ol>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Note: A VM cannot have disks from different storage types. Only existing
-volumes matching the **Storage Type** will be available for selection.
-
-</div>
+    <p>Note: A VM cannot have disks from different storage types. Only existing volumes matching the <strong>Storage Type</strong> will be available for selection.</p>
 
     <ol>
       <li>Select a <strong>Storage Type</strong>.</li>
     </ol>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-See [Power Systems Virtual Servers documentation](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage)
-for more information on volume types.
-
-</div>
+    <p>See <a href="https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage">Power Systems Virtual Servers documentation</a>
+for more information on volume types.</p>
 
     <ol>
       <li>Enter number of <strong>Entitled Processors</strong>.</li>
     </ol>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If 'dedicated' **Processor** is selected, **Entitled Processors** must be
-allocated in whole numbers.
+    <p>If ‘dedicated’ <strong>Processor</strong> is selected, <strong>Entitled Processors</strong> must be allocated in whole numbers.</p>
 
-If 'shared' or 'uncapped' **Processor** is selected,
-**Entitled Processors** must be allocated in a multiple of '0.25'.
-
-</div>
+    <p>If ‘shared’ or ‘uncapped’ <strong>Processor</strong> is selected,
+<strong>Entitled Processors</strong> must be allocated in a multiple of ‘0.25’.</p>
 
     <ol>
       <li>
@@ -2368,11 +2358,9 @@ If 'shared' or 'uncapped' **Processor** is selected,
     </ol>
   </li>
   <li>
-    <p>Click the <strong>New Volumes</strong> tab to optionally create new volumes to be
-attached to the VM.</p>
+    <p>Click the <strong>New Volumes</strong> tab to optionally create new volumes to be attached to the VM.</p>
 
-    <p>All new volumes will be the <strong>Storage Type</strong> selected in the <strong>Profile</strong>
-tab. For each new volume:</p>
+    <p>All new volumes will be the <strong>Storage Type</strong> selected in the <strong>Profile</strong> tab. For each new volume:</p>
 
     <ol>
       <li>
@@ -2391,12 +2379,10 @@ tab. For each new volume:</p>
 
     <ol>
       <li>
-        <p>Select an existing network from <strong>Network Interface</strong>. If ‘None’
-is selected then <strong>Attach to New Public Network</strong> must be selected.</p>
+        <p>Select an existing network from <strong>Network Interface</strong>. If ‘None’ is selected then <strong>Attach to New Public Network</strong> must be selected.</p>
       </li>
       <li>
-        <p>Select <strong>Attach to New Public Network</strong> to create a new public network
-to attach to the VM.</p>
+        <p>Select <strong>Attach to New Public Network</strong> to create a new public network to attach to the VM.</p>
       </li>
     </ol>
   </li>
@@ -2412,17 +2398,13 @@ to attach to the VM.</p>
       </li>
     </ol>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-[Learn more](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#pinning)
-about VM pinning.
-
-</div>
+    <p><a href="https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#pinning">Learn more</a>
+about VM pinning.</p>
 
     <ol>
-      <li>In the <strong>IP Address Information</strong> section, optionally enter an IP
-address to request for the selected <strong>Network Interface</strong> in the
-<strong>Network</strong> tab.</li>
+      <li>In the <strong>IP Address Information</strong> section, optionally enter an IP address to request for the selected <strong>Network Interface</strong> in the <strong>Network</strong> tab.</li>
     </ol>
   </li>
   <li>
@@ -2430,18 +2412,9 @@ address to request for the selected <strong>Network Interface</strong> in the
   </li>
 </ol>
 
-<p>The provisioning request is sent for approval. For the provisioning to
-begin, a user with the admin, approver, or super admin account role must
-approve the request. The admin and super admin roles can also edit,
-delete, and deny the requests. You will be able to see all provisioning
-requests where you are either the requester or the approver.</p>
+<p>The provisioning request is sent for approval. For the provisioning to begin, a user with the admin, approver, or super admin account role must approve the request. The admin and super admin roles can also edit, delete, and deny the requests. You will be able to see all provisioning requests where you are either the requester or the approver.</p>
 
-<p>After submission, the appliance assigns each provision request a
-<strong>Request ID</strong>. If an error occurs during the approval or provisioning
-process, use this ID to locate the request in the appliance logs. The
-Request ID consists of the region associated with the request followed
-by the request number. As regions define a range of one trillion
-database IDs, this number can be several digits long.</p>
+<p>After submission, the appliance assigns each provision request a <strong>Request ID</strong>. If an error occurs during the approval or provisioning process, use this ID to locate the request in the appliance logs. The Request ID consists of the region associated with the request followed by the request number. As regions define a range of one trillion database IDs, this number can be several digits long.</p>
 
 <p><strong>Request ID Format</strong></p>
 
@@ -2527,12 +2500,12 @@ field, add <code class="language-plaintext highlighter-rouge">:default: defaultv
 for the field. Set the <code class="language-plaintext highlighter-rouge">:required:</code> parameter to either <code class="language-plaintext highlighter-rouge">true</code>
 or <code class="language-plaintext highlighter-rouge">false</code> based on your needs.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-If you set `:required:` to `true`, the field must have a value
-for the provision request to be submitted.
+        <p>If you set <code class="language-plaintext highlighter-rouge">:required:</code> to <code class="language-plaintext highlighter-rouge">true</code>, the field must have a value
+for the provision request to be submitted.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ul>
   </li>
@@ -2619,12 +2592,12 @@ defaultvalue</code> to the list of parameters for the field. Set the
 <code class="language-plaintext highlighter-rouge">:required:</code> parameter to either <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code> based on your
 needs.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-If you set `:required:` to `true`, the field must have a value
-for the provision request to be submitted.
+        <p>If you set <code class="language-plaintext highlighter-rouge">:required:</code> to <code class="language-plaintext highlighter-rouge">true</code>, the field must have a value
+for the provision request to be submitted.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ul>
   </li>
@@ -2674,16 +2647,16 @@ the entire provisioning process. <img src="../images/2344.png" alt="2344"></p>
     <p>Using the tree located in the accordion, click menu:DOMAIN[Cloud &gt;
 VM &gt; Provisioning &gt; Profile].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-This example uses the **Cloud** Namespace, but can also use the
-**Infrastructure** namespace.
+    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the
+<strong>Infrastructure</strong> namespace.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>),
@@ -2705,13 +2678,13 @@ copying this file to all ManageIQ appliances. For
 instructions on creating a custom dialog file, see <a href="#provisioning-dialogs-customizing">Customizing
 Provisioning Dialogs</a>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Be sure that the custom dialog file exists. If it does not, an error
-will appear when the user clicks on the **Provisioning** button in
-the ManageIQ console.
+    <p>Be sure that the custom dialog file exists. If it does not, an error
+will appear when the user clicks on the <strong>Provisioning</strong> button in
+the ManageIQ console.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -2974,28 +2947,28 @@ parameter for all others to be validated.</p>
 &gt; Provisioning &gt; StateMachines &gt; ProvisionRequestApproval
 Class].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-DOMAIN must be a user-defined Domain and not the locked ManageIQ
+    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-This example uses the **Cloud** Namespace but can also use the
-**Infrastructure** namespace.
+    <p>This example uses the <strong>Cloud</strong> Namespace but can also use the
+<strong>Infrastructure</strong> namespace.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
 <img src="../images/1851.png" alt="1851">(<strong>Edit this instance</strong>).
 <img src="../images/6280.png" alt="6280"></p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Do not change any values other than those listed below. Doing so may
-prevent the automatic approval process from running.
+    <p>Do not change any values other than those listed below. Doing so may
+prevent the automatic approval process from running.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
 
     <ul>
       <li>
@@ -3111,16 +3084,16 @@ are set to <strong>evmadmin@company.com</strong> as a default.</p>
     <p>Choose the following Namespace: menu:DOMAIN[Cloud &gt; VM &gt;
 Provisioning &gt; Email].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-This example uses the **Cloud** Namespace, but can also use the
-**Infrastructure** namespace.
+    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the
+<strong>Infrastructure</strong> namespace.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Select an instance within the chosen class.</p>
@@ -3840,8 +3813,7 @@ provisioning dialog.</p>
 
 <div class="important">
 
-The names of the elements must correspond to the options used in the
-provisioning dialog.
+The names of the elements must correspond to the options used in the provisioning dialog.
 
 </div>
 
@@ -3965,21 +3937,14 @@ element.</p>
 
         <div class="important">
 
-Element names must correspond to the options used in the
-provisioning dialog. **Name** must use only alphanumeric
-characters and underscores without spaces. It is also used to
-retrieve the value of this element in the method used with the
+Element names must correspond to the options used in the provisioning dialog. **Name** must use only alphanumeric characters and underscores without spaces. It is also used to retrieve the value of this element in the method used with the
 dialog and must start with **dialog\_service\_type**.
 
 </div>
       </li>
       <li>
-        <p>Optional: Add additional information in <strong>Help</strong> to assist the
-user to complete the fields in the service dialog. This field is
-useful for explaining unfamiliar terminology or providing
-configuration tips. This information is presented when you hover
-over the [!] exclamation mark in the Service Dialog while
-ordering a Service Catalog later.</p>
+        <p>Optional: Add additional information in <strong>Help</strong> to assist the user to complete the fields in the service dialog. This field is useful for explaining unfamiliar terminology or providing configuration tips. This information is presented when you hover
+over the [!] exclamation mark in the Service Dialog while ordering a Service Catalog later.</p>
       </li>
       <li>
         <p>Set other options as required.</p>
@@ -3990,20 +3955,17 @@ ordering a Service Catalog later.</p>
     </ol>
   </li>
   <li>
-    <p>Optional: Repeat the above step to add more elements to the existing
-section, or create and add elements to a new section as required.</p>
+    <p>Optional: Repeat the above step to add more elements to the existing section, or create and add elements to a new section as required.</p>
   </li>
   <li>
-    <p>Optional: Repeat the step to add a new tab to the dialog, and
-subsequent steps to add sections and elements to it as required.</p>
+    <p>Optional: Repeat the step to add a new tab to the dialog, and subsequent steps to add sections and elements to it as required.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong> to create the dialog.</p>
   </li>
 </ol>
 
-<p>The service dialog is now created, and added to the <strong>Service Dialogs</strong>
-accordion.</p>
+<p>The service dialog is now created, and added to the <strong>Service Dialogs</strong> accordion.</p>
 
 <h5 id="creating-a-service-dialog-from-a-container-template">
 <a class="anchor" href="#creating-a-service-dialog-from-a-container-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Service Dialog from a Container Template</h5>
@@ -4089,13 +4051,13 @@ with the provisioning request. The method should be created in the
 <code class="language-plaintext highlighter-rouge">DOMAIN/Service/Provisioning/StateMachines/ServiceProvision_Template</code>
 class of the <strong>Automate</strong> model.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
+<p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ domain
-into a custom domain.
+into a custom domain.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>A method is provided below that was created for the following scenario:</p>
 
@@ -4234,13 +4196,13 @@ exit MIQ_OK
 StateMachines &gt; Methods] and menu:Domain[Service &gt; Retirement &gt;
 StateMachines &gt; Methods].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click the <strong>Methods</strong> tab.</p>
@@ -4276,13 +4238,13 @@ validated.</p>
 StateMachines &gt; Methods] and menu:Domain[Service &gt; Retirement &gt;
 StateMachines &gt; Methods].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click the <strong>Instances</strong> tab.</p>
@@ -4307,14 +4269,14 @@ domain into a custom domain.
 
 <p><img src="../images/6298.png" alt="6298"></p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-After the method has been created, it must be mapped to an instance in
-the `DOMAIN/Service/Service/Provisioning/StateMachines` class. The name
-of the instance must be specified as the **Entry Point**. This method
-must be called before the provision job begins.
+<p>After the method has been created, it must be mapped to an instance in
+the <code class="language-plaintext highlighter-rouge">DOMAIN/Service/Service/Provisioning/StateMachines</code> class. The name
+of the instance must be specified as the <strong>Entry Point</strong>. This method
+must be called before the provision job begins.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h5 id="associating-a-method-with-an-automate-instance">
 <a class="anchor" href="#associating-a-method-with-an-automate-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Associating a Method with an Automate Instance</h5>
@@ -4333,13 +4295,13 @@ must be called before the provision job begins.
 StateMachines &gt; Methods] and menu:Domain[Service &gt; Retirement &gt;
 StateMachines &gt; Methods].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**DOMAIN** must be a user-defined Domain and not the locked ManageIQ
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Either create a new instance or select the <strong>clone_to_service</strong>
@@ -4386,13 +4348,13 @@ service provisioning instance in the Automate model.</p>
 <code class="language-plaintext highlighter-rouge">DOMAIN/Service/Provisioning/StateMachines/ServiceProvision_Template</code>
 class that calls the method.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-DOMAIN must be a user-defined Domain and not the locked ManageIQ
+    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Associate method with Automate instance.</p>
@@ -4457,17 +4419,17 @@ want to add to the bundle from the <strong>Add a Resource</strong> dropdown.</p>
 <p>A catalog bundle is created and visible in the <strong>Service Catalog</strong>
 accordion.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You should also create and specify an Entry Point in the
-`DOMAIN/Service/Provisioning/StateMachines/Methods/CatalogBundle` class
+<p>You should also create and specify an Entry Point in the
+<code class="language-plaintext highlighter-rouge">DOMAIN/Service/Provisioning/StateMachines/Methods/CatalogBundle</code> class
 for each catalog item that is part of a bundle. If you do not, then the
 pre and post provision processing will occur for each item in the bundle
-in addition to processing for the **Catalog Bundle**. To set the entry
-point, go into each **Catalog Item** and check **Display in Catalog**.
-Then, you will see the **Entry Point** field.
+in addition to processing for the <strong>Catalog Bundle</strong>. To set the entry
+point, go into each <strong>Catalog Item</strong> and check <strong>Display in Catalog</strong>.
+Then, you will see the <strong>Entry Point</strong> field.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h4 id="copying-a-catalog-bundle">
 <a class="anchor" href="#copying-a-catalog-bundle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Catalog Bundle</h4>
@@ -4535,13 +4497,11 @@ Catalog</strong>.</p>
   <li>
     <p>Select a <strong>Dialog</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-You can only choose from the catalogs and dialogs you have already
+    <p>You can only choose from the catalogs and dialogs you have already
 created. If you haven’t done so, leave the values blank and edit
-later.
-
-</div>
+later.</p>
   </li>
   <li>
     <p>Select a <strong>Zone</strong>.</p>
@@ -4559,14 +4519,12 @@ later.
     <p>Select the provisioning and retirement entry points, that is the
 Automate instance to run upon provisioning and retirement.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-The entry point must be a State Machine since the **Provisioning
-Entry Point** list is filtered to only show State Machine class
+    <p>The entry point must be a State Machine since the <strong>Provisioning
+Entry Point</strong> list is filtered to only show State Machine class
 instances. No other entry points will be available from the
-**Provisioning Entry Point** field.
-
-</div>
+<strong>Provisioning Entry Point</strong> field.</p>
   </li>
   <li>
     <p>Select <strong>Additional Tenants</strong>.</p>
@@ -4579,13 +4537,13 @@ instances. No other entry points will be available from the
 <h4 id="copying-a-catalog-item">
 <a class="anchor" href="#copying-a-catalog-item" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Catalog Item</h4>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When copying a catalog item for reuse, you must click **Display in
-Catalog** in the copied catalog item for the item to appear in the
-catalog.
+<p>When copying a catalog item for reuse, you must click <strong>Display in
+Catalog</strong> in the copied catalog item for the item to appear in the
+catalog.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -4670,22 +4628,17 @@ you to select an Automate instance to run upon provisioning.</p>
             <p><strong>Retirement Entry Point (Domain/NS/Cls/Inst)</strong> requires you
 to select an Automate instance to run upon retirement.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-The entry point must be a State Machine since the
-**Provisioning Entry Point** list is filtered to only show
-State Machine class instances. No other entry points will be
-available from the **Provisioning Entry Point** field.
-
-</div>
+            <p>The entry point must be a State Machine since the <strong>Provisioning Entry Point</strong> list is filtered to only show State Machine class instances. No other entry points will be
+available from the <strong>Provisioning Entry Point</strong> field.</p>
           </li>
         </ol>
       </li>
     </ol>
   </li>
   <li>
-    <p>In the <strong>Details</strong> subtab, write a <strong>Long Description</strong> for the
-catalog item.</p>
+    <p>In the <strong>Details</strong> subtab, write a <strong>Long Description</strong> for the catalog item.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -5086,21 +5039,17 @@ under <strong>Credentials</strong>, then select the appropriate script under
 <h4 id="creating-an-openshift-template-catalog-item">
 <a class="anchor" href="#creating-an-openshift-template-catalog-item" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an OpenShift Template Catalog Item</h4>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Before adding a new catalog item for container template provisioning,
+<p>Before adding a new catalog item for container template provisioning,
 create a service dialog from a container template. See
-[Creating a Service Dialog from Container Template](#creating-a-service-dialog-from-container-template) for details.
+<a href="#creating-a-service-dialog-from-container-template">Creating a Service Dialog from Container Template</a> for details.</p>
 
-</div>
-
-<p>Complete the following procedure to create an OpenShift Template catalog
-item.</p>
+<p>Complete the following procedure to create an OpenShift Template catalog item.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Catalogs], then click on the <strong>Catalog
-Items</strong> accordion.</p>
+    <p>Navigate to menu:Services[Catalogs], then click on the <strong>Catalog Items</strong> accordion.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
@@ -5228,13 +5177,13 @@ standard instance view.</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When importing a template into ManageIQ, the selected
+<p>When importing a template into ManageIQ, the selected
 elements are converted according to their type. For example, lists
-convert to list boxes, and single items convert to text boxes.
+convert to list boxes, and single items convert to text boxes.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h4 id="creating-an-orchestration-template">
 <a class="anchor" href="#creating-an-orchestration-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Orchestration Template</h4>
@@ -5292,12 +5241,12 @@ Template</strong>.</p>
   <li>
     <p>Edit the template as needed.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-You can only edit the name and description of a read-only template
-as there can be stacks associated with the template.
+    <p>You can only edit the name and description of a read-only template
+as there can be stacks associated with the template.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -5325,12 +5274,12 @@ Template</strong>.</p>
 required. ManageIQ automatically prefixes <em>Copy of</em> to
 the old template <strong>Name</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-To create a copy of an orchestration template into a new template,
-the old and new template content must differ.
+    <p>To create a copy of an orchestration template into a new template,
+the old and new template content must differ.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -5361,11 +5310,11 @@ Template from Inventory</strong>.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Read-only templates cannot be deleted.
+<p>Read-only templates cannot be deleted.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h2 id="retirement">
 <a class="anchor" href="#retirement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retirement</h2>
@@ -5609,16 +5558,16 @@ Do not change it.</p>
     <p>Click menu:DOMAIN[Cloud &gt; VM &gt; Retirement &gt; Email &gt;
 vm_retire_extend].</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-DOMAIN must be a user-defined Domain and not the locked ManageIQ
+    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ
 Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.
+domain into a custom domain.</p>
 
-This example uses the **Cloud** Namespace, but you can also use the
-**Infrastructure** namespace.
+    <p>This example uses the <strong>Cloud</strong> Namespace, but you can also use the
+<strong>Infrastructure</strong> namespace.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then

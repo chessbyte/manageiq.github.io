@@ -610,8 +610,37 @@
 </li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#enabling-manageiq-user-interface-access">Enabling ManageIQ User Interface Access</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-manageiq">Configuring ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#accessing-the-appliance-console">Accessing the Appliance Console</a></li>
+<li class="toc-entry toc-h3"><a href="#configuring-a-database">Configuring a Database</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#configuring-an-internal-database">Configuring an Internal Database</a></li>
+<li class="toc-entry toc-h4"><a href="#configuring-an-external-database">Configuring an External Database</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#configuring-a-worker-appliance">Configuring a Worker Appliance</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#logging-in-after-installing-manageiq">Logging In After Installing ManageIQ</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#changing-the-default-login-password">Changing the Default Login Password</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#appendix">Appendix</a></li>
+<li class="toc-entry toc-h1"><a href="#appliance-console-command-line-interface-cli">Appliance Console Command-Line Interface (CLI)</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#database-configuration-options">Database Configuration Options</a></li>
+<li class="toc-entry toc-h4"><a href="#v2_key-options">v2_key Options</a></li>
+<li class="toc-entry toc-h4"><a href="#ipa-server-options">IPA Server Options</a></li>
+<li class="toc-entry toc-h4"><a href="#certificate-options">Certificate Options</a></li>
+<li class="toc-entry toc-h4"><a href="#other-options">Other Options</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#storage-sku-types">Storage SKU Types</a></li>
 </ul><h1 id="installing-on-microsoft-azure">
 <a class="anchor" href="#installing-on-microsoft-azure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing on Microsoft Azure</h1>
 
@@ -677,14 +706,14 @@ GB RAM, and 4 VCPUs for the ManageIQ appliance.</p>
 <h4 id="using-the-azure-powershell-script">
 <a class="anchor" href="#using-the-azure-powershell-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Azure PowerShell Script</h4>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Make sure Azure Resource Manager cmdlets are available; see [Azure
+<p>Make sure Azure Resource Manager cmdlets are available; see <a href="https://msdn.microsoft.com/en-us/library/mt125356.aspx">Azure
 Resource Manager
-Cmdlets](https://msdn.microsoft.com/en-us/library/mt125356.aspx) for the
-latest installation information.
+Cmdlets</a> for the
+latest installation information.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -788,20 +817,24 @@ Add-AzureRmVMSshPublicKey -VM $VirtualMachine -Path “/home/$VMUserName/.ssh/au
 New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-These are the procedural steps as of the time of writing. For more
-information, see the following Azure documentation.
+    <p>These are the procedural steps as of the time of writing. For more
+information, see the following Azure documentation.</p>
 
-  - &lt;https://azure.microsoft.com/en-us/documentation/articles/powershell-azure-resource-manager&gt;
+    <ul>
+      <li><a href="https://azure.microsoft.com/en-us/documentation/articles/powershell-azure-resource-manager">https://azure.microsoft.com/en-us/documentation/articles/powershell-azure-resource-manager</a></li>
+    </ul>
 
-The steps covered in the following article are for a Windows
+    <p>The steps covered in the following article are for a Windows
 machine, however, most of the items are common between Windows and
-Linux.
+Linux.</p>
 
-  - &lt;https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-create-powershell&gt;
+    <ul>
+      <li><a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-create-powershell">https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-create-powershell</a></li>
+    </ul>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 
@@ -814,13 +847,13 @@ ManageIQ virtual appliance using the Azure CLI.</p>
 <h5 id="installing-the-azure-command-line-interface">
 <a class="anchor" href="#installing-the-azure-command-line-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Azure Command-Line Interface</h5>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For a complete Azure CLI 2.0 command reference, see [Azure CLI 2.0:
+<p>For a complete Azure CLI 2.0 command reference, see <a href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI 2.0:
 Command reference -
-az](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
+az</a>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -885,19 +918,24 @@ To sign in, use a web browser to open the page https://aka.ms/devicelogin and en
 <p>Complete the following steps to create resources in Microsoft Azure
 using the Azure CLI.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - If you already have resources you can use, you can skip this section
-    and go directly to [Uploading and Provisioning the
-    ManageIQ Virtual Appliance Using the Azure
-    Command-Line
-    Interface](#uploading-provisioning-appliance-using-azure-cli).
+<ul>
+  <li>
+    <p>If you already have resources you can use, you can skip this section
+and go directly to <a href="#uploading-provisioning-appliance-using-azure-cli">Uploading and Provisioning the
+ManageIQ Virtual Appliance Using the Azure
+Command-Line
+Interface</a>.</p>
+  </li>
+  <li>
+    <p>For a complete Azure CLI 2.0 command reference, see <a href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">Azure CLI 2.0:
+Command reference -
+az</a>.</p>
+  </li>
+</ul>
 
-  - For a complete Azure CLI 2.0 command reference, see [Azure CLI 2.0:
-    Command reference -
-    az](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -1153,108 +1191,147 @@ appears.</p>
 <p>You have successfully provisioned a ManageIQ virtual
 appliance in Microsoft Azure.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The exported storage connection string does not persist after a system
+<p>The exported storage connection string does not persist after a system
 reboot. If any of the commands in the above steps fail, export the
-storage connection string again using the following commands:
+storage connection string again using the following commands:</p>
 
-1.  Get the storage account connection string.
+<ol>
+  <li>
+    <p>Get the storage account connection string.</p>
 
-        $ az storage account show-connection-string -n <storage-account-name> -g <resource-group>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ az storage account show-connection-string -n &lt;storage-account-name&gt; -g &lt;resource-group&gt;
 
-        Example:
+Example:
 
-        $ az storage account show-connection-string -n azrhelclistact -g azrhelclirsgrp
-        {
-          "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
-        }
+$ az storage account show-connection-string -n azrhelclistact -g azrhelclirsgrp
+{
+  "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Export the connection string. Copy the connection string and paste
+it into the following command. This connects your system to the
+storage account.</p>
 
-2.  Export the connection string. Copy the connection string and paste
-    it into the following command. This connects your system to the
-    storage account.
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ export AZURE_STORAGE_CONNECTION_STRING="&lt;storage-connection-string&gt;"
 
-        $ export AZURE_STORAGE_CONNECTION_STRING="<storage-connection-string>"
+Example:
 
-        Example:
+$ export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-        $ export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=azrhelclistact;AccountKey=NreGk...=="
+<p>&lt;/div&gt;</p>
 
-&lt;/div&gt;
+<ul>
+  <li>
+    <p>You will need to create a data disk for the database; see
+<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/add-disk">https://docs.microsoft.com/en-us/azure/virtual-machines/linux/add-disk</a>
+for information about how to add a persistent disk to store your
+data.</p>
+  </li>
+  <li>
+    <p>See <a href="../deployment_planning_guide/index.html#database-requirements">Database Requirements</a> for some general guidelines for your database requirements.</p>
+  </li>
+  <li>
+    <p>For information about Azure ports used by ManageIQ,
+see <a href="../appliance_hardening_guide/index.html#configuring-firewall-ports">Configuring Firewall Ports</a>.</p>
+  </li>
+</ul>
 
-  - You will need to create a data disk for the database; see
-    &lt;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/add-disk&gt;
-    for information about how to add a persistent disk to store your
-    data.
+<h2 id="enabling-manageiq-user-interface-access">
+<a class="anchor" href="#enabling-manageiq-user-interface-access" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling ManageIQ User Interface Access</h2>
 
-  - See [Database Requirements](../deployment_planning_guide/index.html#database-requirements) for some general guidelines for your database requirements.
+<p>To access the ManageIQ virtual appliance user interface, you need
+to enable access over ports <code class="language-plaintext highlighter-rouge">80</code> and <code class="language-plaintext highlighter-rouge">443</code> to the virtual machine. You
+can do this using the CLI or from within the Azure portal.</p>
 
-  - For information about Azure ports used by ManageIQ,
-    see [Configuring Firewall Ports](../appliance_hardening_guide/index.html#configuring-firewall-ports).
-
-
-## Enabling ManageIQ User Interface Access
-
-To access the ManageIQ virtual appliance user interface, you need
-to enable access over ports `80` and `443` to the virtual machine. You
-can do this using the CLI or from within the Azure portal.
-
-  - To enable a port using the CLI, enter `az vm open-port --port
+<ul>
+  <li>To enable a port using the CLI, enter `az vm open-port –port
     <port-number> --resource-group <resource-group> --name <vm-name>`.
 
-  - To enable a port using the Microsoft Azure portal, open the
-    properties for the resource group where the appliance is located,
-    click on **Network Security Group**, and add HTTP and HTTPS access.
+</vm-name></resource-group></port-number>
+  </li>
+  <li>To enable a port using the Microsoft Azure portal, open the
+properties for the resource group where the appliance is located,
+click on <strong>Network Security Group</strong>, and add HTTP and HTTPS access.</li>
+</ul>
 
+<h2 id="configuring-manageiq">
+<a class="anchor" href="#configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ</h2>
 
-## Configuring ManageIQ
-
-After installing ManageIQ and running it for the first
+<p>After installing ManageIQ and running it for the first
 time, you must perform some basic configuration. To configure
-ManageIQ, you must at a minimum:
+ManageIQ, you must at a minimum:</p>
 
-1.  Add a disk to the infrastructure hosting your appliance.
+<ol>
+  <li>
+    <p>Add a disk to the infrastructure hosting your appliance.</p>
+  </li>
+  <li>
+    <p>Configure the database.</p>
+  </li>
+</ol>
 
-2.  Configure the database.
+<p>Configure the ManageIQ appliance using the internal
+appliance console.</p>
 
-Configure the ManageIQ appliance using the internal
-appliance console.
+<h3 id="accessing-the-appliance-console">
+<a class="anchor" href="#accessing-the-appliance-console" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessing the Appliance Console</h3>
 
-### Accessing the Appliance Console
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <code class="language-plaintext highlighter-rouge">Enter</code> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Press the number for the item you want to change, and press <code class="language-plaintext highlighter-rouge">Enter</code>.
+The options for your selection are displayed.</p>
+  </li>
+  <li>
+    <p>Follow the prompts to make the changes.</p>
+  </li>
+  <li>
+    <p>Press <code class="language-plaintext highlighter-rouge">Enter</code> to accept a setting where applicable.</p>
+  </li>
+</ol>
 
-1.  Start the appliance and open a terminal console.
+<p><strong>Note:</strong></p>
 
-2.  Enter the `appliance_console` command. The ManageIQ appliance
-    summary screen displays.
+<p>The ManageIQ appliance console automatically logs out
+after five minutes of inactivity.</p>
 
-3.  Press `Enter` to manually configure settings.
+<h3 id="configuring-a-database">
+<a class="anchor" href="#configuring-a-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring a Database</h3>
 
-4.  Press the number for the item you want to change, and press `Enter`.
-    The options for your selection are displayed.
-
-5.  Follow the prompts to make the changes.
-
-6.  Press `Enter` to accept a setting where applicable.
-
-<div class="note">
-
-The ManageIQ appliance console automatically logs out
-after five minutes of inactivity.
-
-</div>
-
-### Configuring a Database
-
-ManageIQ uses a database to store information about the
+<p>ManageIQ uses a database to store information about the
 environment. Before using ManageIQ, configure the database
 options for it; ManageIQ provides the following two
-options for database configuration:
+options for database configuration:</p>
 
-  - Install an internal PostgreSQL database to the appliance
+<ul>
+  <li>
+    <p>Install an internal PostgreSQL database to the appliance</p>
+  </li>
+  <li>
+    <p>Configure the appliance to use an external PostgreSQL database</p>
+  </li>
+</ul>
 
-  - Configure the appliance to use an external PostgreSQL database
-
-#### Configuring an Internal Database
+<h4 id="configuring-an-internal-database">
+<a class="anchor" href="#configuring-an-internal-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring an Internal Database</h4>
 
 <div class="important">
 
@@ -1268,378 +1345,625 @@ disks; installation will fail if the disks are not blank.
 
 </div>
 
-1.  Start the appliance and open a terminal console.
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch an encryption key.</p>
 
-2.  Enter the `appliance_console` command. The ManageIQ appliance
-    summary screen displays.
+    <ul>
+      <li>
+        <p>If this is the first ManageIQ appliance, choose <strong>Create
+key</strong>.</p>
+      </li>
+      <li>
+        <p>If this is not the first ManageIQ appliance, choose
+<strong>Fetch key from remote machine</strong> to fetch the key from the
+first appliance. For worker and multi-region setups, use this
+option to copy key from another appliance.</p>
 
-3.  Press **Enter** to manually configure settings.
+        <p><strong>Note:</strong></p>
 
-4.  Select **Configure Database** from the menu.
-
-5.  You are prompted to create or fetch an encryption key.
-
-      - If this is the first ManageIQ appliance, choose **Create
-        key**.
-
-      - If this is not the first ManageIQ appliance, choose
-        **Fetch key from remote machine** to fetch the key from the
-        first appliance. For worker and multi-region setups, use this
-        option to copy key from another appliance.
-
-        <div class="note">
-
-        All ManageIQ appliances in a multi-region
-        deployment must use the same key.
-
-        </div>
-
-6.  Choose **Create Internal Database** for the database location.
-
-7.  Choose a disk for the database. This can be either a disk you
-    attached previously, or a partition on the current disk.
-
-    <div class="important">
-
-    Red Hat recommends using a separate disk for the database.
-
-    </div>
-
-    If there is an unpartitioned disk attached to the virtual machine,
-    the dialog will show options similar to the following:
-
-        1) /dev/vdb: 20480
-        2) Don't partition the disk
-
-      - Enter **1** to choose `/dev/vdb` for the database location. This
-        option creates a logical volume using this device and mounts the
-        volume to the appliance in a location appropriate for storing
-        the database. The default location is `/var/lib/pgsql`, which
-        can be found in the environment variable
-        `$APPLIANCE_PG_MOUNT_POINT`.
-
-      - Enter **2** to continue without partitioning the disk. A second
-        prompt will confirm this choice. Selecting this option results
-        in using the root filesystem for the data directory (not advised
-        in most cases).
-
-8.  Enter **Y** or **N** for **Should this appliance run as a standalone
-    database server?**
-
-      - Select **Y** to configure the appliance as a database-only
-        appliance. As a result, the appliance is configured as a basic
-        PostgreSQL server, without a user interface.
-
-      - Select **N** to configure the appliance with the full
-        administrative user interface.
-
-9.  When prompted, enter a unique number to create a new region.
+        <p>All ManageIQ appliances in a multi-region
+deployment must use the same key.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Choose <strong>Create Internal Database</strong> for the database location.</p>
+  </li>
+  <li>
+    <p>Choose a disk for the database. This can be either a disk you
+attached previously, or a partition on the current disk.</p>
 
     <div class="important">
 
-    Creating a new region destroys any existing data on the chosen
-    database.
+Red Hat recommends using a separate disk for the database.
 
-    </div>
+</div>
 
-10. Create and confirm a password for the database.
+    <p>If there is an unpartitioned disk attached to the virtual machine,
+the dialog will show options similar to the following:</p>
 
-ManageIQ then configures the internal database. This takes a few
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>1) /dev/vdb: 20480
+2) Don't partition the disk
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Enter <strong>1</strong> to choose <code class="language-plaintext highlighter-rouge">/dev/vdb</code> for the database location. This
+option creates a logical volume using this device and mounts the
+volume to the appliance in a location appropriate for storing
+the database. The default location is <code class="language-plaintext highlighter-rouge">/var/lib/pgsql</code>, which
+can be found in the environment variable
+<code class="language-plaintext highlighter-rouge">$APPLIANCE_PG_MOUNT_POINT</code>.</p>
+      </li>
+      <li>
+        <p>Enter <strong>2</strong> to continue without partitioning the disk. A second
+prompt will confirm this choice. Selecting this option results
+in using the root filesystem for the data directory (not advised
+in most cases).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Enter <strong>Y</strong> or <strong>N</strong> for <strong>Should this appliance run as a standalone
+database server?</strong></p>
+
+    <ul>
+      <li>
+        <p>Select <strong>Y</strong> to configure the appliance as a database-only
+appliance. As a result, the appliance is configured as a basic
+PostgreSQL server, without a user interface.</p>
+      </li>
+      <li>
+        <p>Select <strong>N</strong> to configure the appliance with the full
+administrative user interface.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When prompted, enter a unique number to create a new region.</p>
+
+    <div class="important">
+
+Creating a new region destroys any existing data on the chosen
+database.
+
+</div>
+  </li>
+  <li>
+    <p>Create and confirm a password for the database.</p>
+  </li>
+</ol>
+
+<p>ManageIQ then configures the internal database. This takes a few
 minutes. After the database is created and initialized, you can log in
-to ManageIQ.
+to ManageIQ.</p>
 
+<h4 id="configuring-an-external-database">
+<a class="anchor" href="#configuring-an-external-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring an External Database</h4>
 
-#### Configuring an External Database
-
-Based on your setup, you will choose to configure the appliance to use
+<p>Based on your setup, you will choose to configure the appliance to use
 an external PostgreSQL database. For example, we can only have one
 database in a single region. However, a region can be segmented into
 multiple zones, such as database zone, user interface zone, and
 reporting zone, where each zone provides a specific function. The
 appliances in these zones must be configured to use an external
-database.
+database.</p>
 
-The `postgresql.conf` file used with ManageIQ databases requires
+<p>The <code class="language-plaintext highlighter-rouge">postgresql.conf</code> file used with ManageIQ databases requires
 specific settings for correct operation. For example, it must correctly
 reclaim table space, control session timeouts, and format the PostgreSQL
 server log for improved system support. Due to these requirements, Red
 Hat recommends that external ManageIQ databases use a
-`postgresql.conf` file based on the standard file used by the
-ManageIQ appliance.
+<code class="language-plaintext highlighter-rouge">postgresql.conf</code> file based on the standard file used by the
+ManageIQ appliance.</p>
 
-Ensure you configure the settings in the `postgresql.conf` to suit your
-system. For example, customize the `shared_buffers` setting according to
+<p>Ensure you configure the settings in the <code class="language-plaintext highlighter-rouge">postgresql.conf</code> to suit your
+system. For example, customize the <code class="language-plaintext highlighter-rouge">shared_buffers</code> setting according to
 the amount of real storage available in the external system hosting the
 PostgreSQL instance. In addition, depending on the aggregate number of
 appliances expected to connect to the PostgreSQL instance, it may be
-necessary to alter the `max_connections` setting.
+necessary to alter the <code class="language-plaintext highlighter-rouge">max_connections</code> setting.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - ManageIQ requires PostgreSQL version 9.5.
+<ul>
+  <li>
+    <p>ManageIQ requires PostgreSQL version 9.5.</p>
+  </li>
+  <li>
+    <p>Because the <code class="language-plaintext highlighter-rouge">postgresql.conf</code> file controls the operation of all
+databases managed by a single instance of PostgreSQL, do not mix
+ManageIQ databases with other types of databases in a single
+PostgreSQL instance.</p>
+  </li>
+</ul>
 
-  - Because the `postgresql.conf` file controls the operation of all
-    databases managed by a single instance of PostgreSQL, do not mix
-    ManageIQ databases with other types of databases in a single
-    PostgreSQL instance.
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch a security key.</p>
 
-</div>
+    <ul>
+      <li>
+        <p>If this is the first ManageIQ appliance, choose <strong>Create
+key</strong>.</p>
+      </li>
+      <li>
+        <p>If this is not the first ManageIQ appliance, choose
+<strong>Fetch key from remote machine</strong> to fetch the key from the
+first appliance.</p>
 
-1.  Start the appliance and open a terminal console.
+        <p><strong>Note:</strong></p>
 
-2.  Enter the `appliance_console` command. The ManageIQ appliance
-    summary screen displays.
+        <p>All ManageIQ appliances in a multi-region
+deployment must use the same key.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Choose <strong>Create Region in External Database</strong> for the database location.</p>
+  </li>
+  <li>
+    <p>Enter the database hostname or IP address when prompted.</p>
+  </li>
+  <li>
+    <p>Enter the database name or leave blank for the default
+(<code class="language-plaintext highlighter-rouge">vmdb_production</code>).</p>
+  </li>
+  <li>
+    <p>Enter the database username or leave blank for the default (<code class="language-plaintext highlighter-rouge">root</code>).</p>
+  </li>
+  <li>
+    <p>Enter the chosen database user’s password.</p>
+  </li>
+  <li>
+    <p>Confirm the configuration if prompted.</p>
+  </li>
+</ol>
 
-3.  Press **Enter** to manually configure settings.
+<p>ManageIQ will then configure the external database.</p>
 
-4.  Select **Configure Database** from the menu.
+<h3 id="configuring-a-worker-appliance">
+<a class="anchor" href="#configuring-a-worker-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring a Worker Appliance</h3>
 
-5.  You are prompted to create or fetch a security key.
-
-      - If this is the first ManageIQ appliance, choose **Create
-        key**.
-
-      - If this is not the first ManageIQ appliance, choose
-        **Fetch key from remote machine** to fetch the key from the
-        first appliance.
-
-        <div class="note">
-
-        All ManageIQ appliances in a multi-region
-        deployment must use the same key.
-
-        </div>
-
-6.  Choose **Create Region in External Database** for the database
-    location.
-
-7.  Enter the database hostname or IP address when prompted.
-
-8.  Enter the database name or leave blank for the default
-    (`vmdb_production`).
-
-9.  Enter the database username or leave blank for the default (`root`).
-
-10. Enter the chosen database user’s password.
-
-11. Confirm the configuration if prompted.
-
-ManageIQ will then configure the external database.
-
-### Configuring a Worker Appliance
-
-You can use multiple appliances to facilitate horizontal scaling, as
+<p>You can use multiple appliances to facilitate horizontal scaling, as
 well as for dividing up work by roles. Accordingly, configure an
 appliance to handle work for one or many roles, with workers within the
 appliance carrying out the duties for which they are configured. You can
 configure a worker appliance through the terminal. The following steps
 demonstrate how to join a worker appliance to an appliance that already
-has a region configured with a database.
+has a region configured with a database.</p>
+
+<ol>
+  <li>
+    <p>Start the appliance and open a terminal console.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console</code> command. The ManageIQ appliance
+summary screen displays.</p>
+  </li>
+  <li>
+    <p>Press <strong>Enter</strong> to manually configure settings.</p>
+  </li>
+  <li>
+    <p>Select <strong>Configure Database</strong> from the menu.</p>
+  </li>
+  <li>
+    <p>You are prompted to create or fetch a security key. Since this is
+not the first ManageIQ appliance, choose <strong>2) Fetch key from
+remote machine</strong>. For worker and multi-region setups, use this
+option to copy the security key from another appliance.</p>
+
+    <p><strong>Note:</strong></p>
+
+    <p>All ManageIQ appliances in a multi-region deployment
+must use the same key.</p>
+  </li>
+  <li>
+    <p>Choose <strong>Join Region in External Database</strong> for the database location.</p>
+  </li>
+  <li>
+    <p>Enter the database hostname or IP address when prompted.</p>
+  </li>
+  <li>
+    <p>Enter the port number or leave blank for the default (<code class="language-plaintext highlighter-rouge">5432</code>).</p>
+  </li>
+  <li>
+    <p>Enter the database name or leave blank for the default
+(<code class="language-plaintext highlighter-rouge">vmdb_production</code>).</p>
+  </li>
+  <li>
+    <p>Enter the database username or leave blank for the default (<code class="language-plaintext highlighter-rouge">root</code>).</p>
+  </li>
+  <li>
+    <p>Enter the chosen database user’s password.</p>
+  </li>
+  <li>
+    <p>Confirm the configuration if prompted.</p>
+  </li>
+</ol>
+
+<h2 id="logging-in-after-installing-manageiq">
+<a class="anchor" href="#logging-in-after-installing-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging In After Installing ManageIQ</h2>
+
+<p>Once ManageIQ is installed, you can log in and perform
+administration tasks.</p>
+
+<p>Log in to ManageIQ for the first time after installing by:</p>
+
+<ol>
+  <li>
+    <p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx">https://xx.xx.xx.xx</a> on
+the virtual machine instance)</p>
+  </li>
+  <li>
+    <p>Enter the default credentials (Username: <strong>admin</strong> | Password:
+<strong>smartvm</strong>) for the initial login.</p>
+  </li>
+  <li>
+    <p>Click <strong>Login</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="changing-the-default-login-password">
+<a class="anchor" href="#changing-the-default-login-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing the Default Login Password</h3>
+
+<p>Change your password to ensure more private and secure access to
+ManageIQ.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx">https://xx.xx.xx.xx</a> on
+the virtual machine instance)</p>
+  </li>
+  <li>
+    <p>Click <strong>Update Password</strong> beneath the <strong>Username</strong> and <strong>Password</strong>
+text fields.</p>
+  </li>
+  <li>
+    <p>Enter your current <strong>Username</strong> and <strong>Password</strong> in the text fields.</p>
+  </li>
+  <li>
+    <p>Input a new password in the <strong>New Password</strong> field.</p>
+  </li>
+  <li>
+    <p>Repeat your new password in the <strong>Verify Password</strong> field.</p>
+  </li>
+  <li>
+    <p>Click <strong>Login</strong>.</p>
+  </li>
+</ol>
+
+<h1 id="appendix">
+<a class="anchor" href="#appendix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix</h1>
+
+<h1 id="appliance-console-command-line-interface-cli">
+<a class="anchor" href="#appliance-console-command-line-interface-cli" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appliance Console Command-Line Interface (CLI)</h1>
+
+<p>Currently, the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> feature is a subset of the full functionality of the <code class="language-plaintext highlighter-rouge">appliance_console</code> itself, and covers functions most likely to be scripted by using the command-line interface (CLI).</p>
+
+<ol>
+  <li>
+    <p>After starting the ManageIQ appliance, log in with a user name of <code class="language-plaintext highlighter-rouge">root</code> and the default password of <code class="language-plaintext highlighter-rouge">smartvm</code>. This displays the Bash prompt for the root user.</p>
+  </li>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> or <code class="language-plaintext highlighter-rouge">appliance_console_cli --help</code> command to see a list of options available with the command, or simply enter <code class="language-plaintext highlighter-rouge">appliance_console_cli --option &lt;argument&gt;</code> directly to use a specific option.</p>
+  </li>
+</ol>
+
+<h4 id="database-configuration-options">
+<a class="anchor" href="#database-configuration-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database Configuration Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–region (-r)</td>
+      <td>region number (create a new region in the database - requires database credentials passed)</td>
+    </tr>
+    <tr>
+      <td>–internal (-i)</td>
+      <td>internal database (create a database on the current appliance)</td>
+    </tr>
+    <tr>
+      <td>–dbdisk</td>
+      <td>database disk device path (for configuring an internal database)</td>
+    </tr>
+    <tr>
+      <td>–hostname (-h)</td>
+      <td>database hostname</td>
+    </tr>
+    <tr>
+      <td>–port</td>
+      <td>database port (defaults to <code class="language-plaintext highlighter-rouge">5432</code>)</td>
+    </tr>
+    <tr>
+      <td>–username (-U)</td>
+      <td>database username (defaults to <code class="language-plaintext highlighter-rouge">root</code>)</td>
+    </tr>
+    <tr>
+      <td>–password (-p)</td>
+      <td>database password</td>
+    </tr>
+    <tr>
+      <td>–dbname (-d)</td>
+      <td>database name (defaults to <code class="language-plaintext highlighter-rouge">vmdb_production</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 caption="Table 1. Database Configuration Options" caption-side="top" id="v2_key-options">
+<a class="anchor" href="#v2_key-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>v2_key Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–key (-k)</td>
+      <td>create a new v2_key</td>
+    </tr>
+    <tr>
+      <td>–fetch-key (-K)</td>
+      <td>fetch the v2_key from the given host</td>
+    </tr>
+    <tr>
+      <td>–force-key (-f)</td>
+      <td>create or fetch the key even if one exists</td>
+    </tr>
+    <tr>
+      <td>–sshlogin</td>
+      <td>ssh username for fetching the v2_key (defaults to <code class="language-plaintext highlighter-rouge">root</code>)</td>
+    </tr>
+    <tr>
+      <td>–sshpassword</td>
+      <td>ssh password for fetching the v2_key</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 caption="Table 2. v2_key Options" caption-side="top" id="ipa-server-options">
+<a class="anchor" href="#ipa-server-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPA Server Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–host (-H)</td>
+      <td>set the appliance hostname to the given name</td>
+    </tr>
+    <tr>
+      <td>–ipaserver (-e)</td>
+      <td>IPA server FQDN</td>
+    </tr>
+    <tr>
+      <td>–ipaprincipal (-n)</td>
+      <td>IPA server principal (default: <code class="language-plaintext highlighter-rouge">admin</code>)</td>
+    </tr>
+    <tr>
+      <td>–ipapassword (-w)</td>
+      <td>IPA server password</td>
+    </tr>
+    <tr>
+      <td>–ipadomain (-o)</td>
+      <td>IPA server domain (optional). Will be based on the appliance domain name if not specified.</td>
+    </tr>
+    <tr>
+      <td>–iparealm (-l)</td>
+      <td>IPA server realm (optional). Will be based on the domain name of the ipaserver if not specified.</td>
+    </tr>
+    <tr>
+      <td>–uninstall-ipa (-u)</td>
+      <td>uninstall IPA client</td>
+    </tr>
+  </tbody>
+</table>
+
+<p caption="Table 3. IPA Server Options" caption-side="top"><strong>Note</strong>:</p>
+
+<ul>
+  <li>
+    <p>In order to configure authentication through an IPA server, in addition to using <strong>Configure External Authentication (httpd)</strong> in the <code class="language-plaintext highlighter-rouge">appliance_console</code>, external authentication can be optionally configured via the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> (command-line interface).</p>
+  </li>
+  <li>
+    <p>Specifying <strong>–host</strong> will update the hostname of the appliance. If this step was already performed via the <code class="language-plaintext highlighter-rouge">appliance_console</code> and the necessary updates that are made to <code class="language-plaintext highlighter-rouge">/etc/hosts</code> if DNS is not properly configured, the <strong>–host</strong> option can be omitted.</p>
+  </li>
+</ul>
+
+<h4 id="certificate-options">
+<a class="anchor" href="#certificate-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certificate Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–ca (-c)</td>
+      <td>CA name used for certmonger (default: <code class="language-plaintext highlighter-rouge">ipa</code>)</td>
+    </tr>
+    <tr>
+      <td>–postgres-client-cert (-g)</td>
+      <td>install certs for postgres client</td>
+    </tr>
+    <tr>
+      <td>–postgres-server-cert</td>
+      <td>install certs for postgres server</td>
+    </tr>
+    <tr>
+      <td>–http-cert</td>
+      <td>install certs for http server (to create certs/httpd* values for a unique key)</td>
+    </tr>
+    <tr>
+      <td>–extauth-opts (-x)</td>
+      <td>external authentication options</td>
+    </tr>
+  </tbody>
+</table>
+
+<p caption="Table 4. Certificate Options" caption-side="top"><strong>Note</strong>: The certificate options augment the functionality of the <code class="language-plaintext highlighter-rouge">certmonger</code> tool and enable creating a certificate signing request (CSR), and specifying <code class="language-plaintext highlighter-rouge">certmonger</code> the directories to store the keys.</p>
+
+<h4 id="other-options">
+<a class="anchor" href="#other-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Option</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>–logdisk (-l)</td>
+      <td>log disk path</td>
+    </tr>
+    <tr>
+      <td>–tmpdisk</td>
+      <td>initialize the given device for temp storage (volume mounted at <code class="language-plaintext highlighter-rouge">/var/www/miq_tmp</code>)</td>
+    </tr>
+    <tr>
+      <td>–verbose (-v)</td>
+      <td>print more debugging info</td>
+    </tr>
+  </tbody>
+</table>
+
+<p caption="Table 5. Other Options" caption-side="top"><strong>Example Usage.</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh root@appliance.test.company.com
+</code></pre></div></div>
+
+<p>To create a new database locally on the server by using <code class="language-plaintext highlighter-rouge">/dev/sdb</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --internal --dbdisk /dev/sdb --region 0 --password smartvm
+</code></pre></div></div>
+
+<p>To copy the v2_key from a host <em>some.example.com</em> to local machine:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --fetch-key some.example.com --sshlogin root --sshpassword smartvm
+</code></pre></div></div>
+
+<p>You could combine the two to join a region where <em>db.example.com</em> is the appliance hosting the database:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --fetch-key db.example.com --sshlogin root --sshpassword smartvm --hostname db.example.com --password mydatabasepassword
+</code></pre></div></div>
+
+<p>To configure external authentication:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli --host appliance.test.company.com
+                        --ipaserver ipaserver.test.company.com
+                        --ipadomain test.company.com
+                        --iparealm TEST.COMPANY.COM
+                        --ipaprincipal admin
+                        --ipapassword smartvm1
+</code></pre></div></div>
+
+<p>To uninstall external authentication:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># appliance_console_cli  --uninstall-ipa
+</code></pre></div></div>
+
+<h1 id="storage-sku-types">
+<a class="anchor" href="#storage-sku-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Storage SKU Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>SKU Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Standard_LRS</td>
+      <td>Locally Redundant Storage: Synchronous copies of data are created within a single data center.</td>
+    </tr>
+    <tr>
+      <td>Standard_GRS</td>
+      <td>Geographically Redundant Storage: Same as Standard_LRS with additional asynchronous copies stored in a secondary data center in a separate geographical location.</td>
+    </tr>
+    <tr>
+      <td>Standard_RAGRS</td>
+      <td>Read-Access Geographically Redundant Storage: Same as Standard_GRS with additional read access to the secondary data center.</td>
+    </tr>
+    <tr>
+      <td>Standard_ZRS</td>
+      <td>Zone Redundant Storage: For block blobs only. Stores three copies of data across multiple data centers within the region or across regions.</td>
+    </tr>
+    <tr>
+      <td>Premium_LRS</td>
+      <td>Premium Locally Redundant Storage: Same as Standard_LRS, but uses Premium Storage disks.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Storage SKU types</p>
 
-1.  Start the appliance and open a terminal console.
-
-2.  Enter the `appliance_console` command. The ManageIQ appliance
-    summary screen displays.
-
-3.  Press **Enter** to manually configure settings.
-
-4.  Select **Configure Database** from the menu.
-
-5.  You are prompted to create or fetch a security key. Since this is
-    not the first ManageIQ appliance, choose **2) Fetch key from
-    remote machine**. For worker and multi-region setups, use this
-    option to copy the security key from another appliance.
-
-    <div class="note">
-
-    All ManageIQ appliances in a multi-region deployment
-    must use the same key.
-
-    </div>
-
-6.  Choose **Join Region in External Database** for the database
-    location.
-
-7.  Enter the database hostname or IP address when prompted.
-
-8.  Enter the port number or leave blank for the default (`5432`).
-
-9.  Enter the database name or leave blank for the default
-    (`vmdb_production`).
-
-10. Enter the database username or leave blank for the default (`root`).
-
-11. Enter the chosen database user’s password.
-
-12. Confirm the configuration if prompted.
-
-
-## Logging In After Installing ManageIQ
-
-Once ManageIQ is installed, you can log in and perform
-administration tasks.
-
-Log in to ManageIQ for the first time after installing by:
-
-1.  Navigate to the URL for the login screen. (&lt;https://xx.xx.xx.xx&gt; on
-    the virtual machine instance)
-
-2.  Enter the default credentials (Username: **admin** | Password:
-    **smartvm**) for the initial login.
-
-3.  Click **Login**.
-
-
-### Changing the Default Login Password
-
-Change your password to ensure more private and secure access to
-ManageIQ.
-
-1.  Navigate to the URL for the login screen. (&lt;https://xx.xx.xx.xx&gt; on
-    the virtual machine instance)
-
-2.  Click **Update Password** beneath the **Username** and **Password**
-    text fields.
-
-3.  Enter your current **Username** and **Password** in the text fields.
-
-4.  Input a new password in the **New Password** field.
-
-5.  Repeat your new password in the **Verify Password** field.
-
-6.  Click **Login**.
-
-
-# Appendix
-
-# Appliance Console Command-Line Interface (CLI)
-
-Currently, the `appliance_console_cli` feature is a subset of the full functionality of the `appliance_console` itself, and covers functions most likely to be scripted by using the command-line interface (CLI).
-
-1.  After starting the ManageIQ appliance, log in with a user name of `root` and the default password of `smartvm`. This displays the Bash prompt for the root user.
-
-2.  Enter the `appliance_console_cli` or `appliance_console_cli --help` command to see a list of options available with the command, or simply enter `appliance_console_cli --option <argument>` directly to use a specific option.
-
-#### Database Configuration Options
-
-|                  |                                                                                            | 
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| Option           | Description                                                                                |
-| --region (-r)    | region number (create a new region in the database - requires database credentials passed) |
-| --internal (-i)  | internal database (create a database on the current appliance)                             |
-| --dbdisk         | database disk device path (for configuring an internal database)                           |
-| --hostname (-h)  | database hostname                                                                          |
-| --port           | database port (defaults to `5432`)                                                         |
-| --username (-U)  | database username (defaults to `root`)                                                     |
-| --password (-p)  | database password                                                                          |
-| --dbname (-d)    | database name (defaults to `vmdb_production`)                                              |
-
-{: caption="Table 1. Database Configuration Options" caption-side="top"}
-
-#### v2_key Options
-
-|                   |                                                            |
-| ----------------- | ---------------------------------------------------------- |
-| Option            | Description                                                |
-| --key (-k)        | create a new v2_key                                        |
-| --fetch-key (-K)  | fetch the v2_key from the given host                       |
-| --force-key (-f)  | create or fetch the key even if one exists                 |
-| --sshlogin        | ssh username for fetching the v2_key (defaults to `root`)  |
-| --sshpassword     | ssh password for fetching the v2_key                       |
-
-{: caption="Table 2. v2_key Options" caption-side="top"}
-
-#### IPA Server Options
-
-|                       |                                                                                                  |
-| --------------------- | ------------------------------------------------------------------------------------------------ |
-| Option                | Description                                                                                      |
-| --host (-H)           | set the appliance hostname to the given name                                                     |
-| --ipaserver (-e)      | IPA server FQDN                                                                                  |
-| --ipaprincipal (-n)   | IPA server principal (default: `admin`)                                                          |
-| --ipapassword (-w)    | IPA server password                                                                              |
-| --ipadomain (-o)      | IPA server domain (optional). Will be based on the appliance domain name if not specified.       |
-| --iparealm (-l)       | IPA server realm (optional). Will be based on the domain name of the ipaserver if not specified. |
-| --uninstall-ipa (-u)  | uninstall IPA client                                                                             |
-
-{: caption="Table 3. IPA Server Options" caption-side="top"}
-
-**Note**:
-
-  - In order to configure authentication through an IPA server, in addition to using **Configure External Authentication (httpd)** in the `appliance_console`, external authentication can be optionally configured via the `appliance_console_cli` (command-line interface).
-
-  - Specifying **--host** will update the hostname of the appliance. If this step was already performed via the `appliance_console` and the necessary updates that are made to `/etc/hosts` if DNS is not properly configured, the **--host** option can be omitted.
-
-#### Certificate Options
-
-|                              |                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Option                       | Description                                                                     |
-| --ca (-c)                    | CA name used for certmonger (default: `ipa`)                                    |
-| --postgres-client-cert (-g)  | install certs for postgres client                                               |
-| --postgres-server-cert       | install certs for postgres server                                               |
-| --http-cert                  | install certs for http server (to create certs/httpd* values for a unique key)  |
-| --extauth-opts (-x)          | external authentication options                                                 |
-
-{: caption="Table 4. Certificate Options" caption-side="top"}
-
-**Note**: The certificate options augment the functionality of the `certmonger` tool and enable creating a certificate signing request (CSR), and specifying `certmonger` the directories to store the keys.
-
-#### Other Options
-
-|                 |                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------- |
-| Option          | Description                                                                         |
-| --logdisk (-l)  | log disk path                                                                       |
-| --tmpdisk       | initialize the given device for temp storage (volume mounted at `/var/www/miq_tmp`) |
-| --verbose (-v)  | print more debugging info                                                           |
-
-{: caption="Table 5. Other Options" caption-side="top"}
-
-**Example Usage.**
-
-    $ ssh root@appliance.test.company.com
-
-To create a new database locally on the server by using `/dev/sdb`:
-
-    # appliance_console_cli --internal --dbdisk /dev/sdb --region 0 --password smartvm
-
-To copy the v2_key from a host *some.example.com* to local machine:
-
-    # appliance_console_cli --fetch-key some.example.com --sshlogin root --sshpassword smartvm
-
-You could combine the two to join a region where *db.example.com* is the appliance hosting the database:
-
-    # appliance_console_cli --fetch-key db.example.com --sshlogin root --sshpassword smartvm --hostname db.example.com --password mydatabasepassword
-
-To configure external authentication:
-
-    # appliance_console_cli --host appliance.test.company.com
-                            --ipaserver ipaserver.test.company.com
-                            --ipadomain test.company.com
-                            --iparealm TEST.COMPANY.COM
-                            --ipaprincipal admin
-                            --ipapassword smartvm1
-
-To uninstall external authentication:
-
-    # appliance_console_cli  --uninstall-ipa
-
-
-# Storage SKU Types
-
-| SKU Type        | Description                                                                                                                                                        |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Standard\_LRS   | Locally Redundant Storage: Synchronous copies of data are created within a single data center.                                                                     |
-| Standard\_GRS   | Geographically Redundant Storage: Same as Standard\_LRS with additional asynchronous copies stored in a secondary data center in a separate geographical location. |
-| Standard\_RAGRS | Read-Access Geographically Redundant Storage: Same as Standard\_GRS with additional read access to the secondary data center.                                      |
-| Standard\_ZRS   | Zone Redundant Storage: For block blobs only. Stores three copies of data across multiple data centers within the region or across regions.                        |
-| Premium\_LRS    | Premium Locally Redundant Storage: Same as Standard\_LRS, but uses Premium Storage disks.                                                                          |
-
-Storage SKU types
-
-</argument></vm-name></resource-group></port-number></storage-connection-string></resource-group></storage-account-name>
-</div>
 
 
       </div>

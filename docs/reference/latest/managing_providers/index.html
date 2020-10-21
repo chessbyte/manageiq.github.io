@@ -1000,7 +1000,7 @@ environment, add a Red Hat Virtualization provider to the appliance.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Compute[Infrastructure &gt; Providers].</p>
+    <p>Navigate to menu: <strong>Compute &gt; Infrastructure &gt; Providers</strong>.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
@@ -1025,11 +1025,9 @@ specify a zone, it is set to <strong>default</strong>.</p>
         <p>Enter the <strong>Hostname</strong> or IPv4 or IPv6 address of the Red Hat
 Virtualization Manager.</p>
 
-        <div class="important">
+        <p><strong>Important:</strong></p>
 
-The **Hostname** must be a unique fully qualified domain name.
-
-</div>
+        <p>The <strong>Hostname</strong> must be a unique fully qualified domain name.</p>
       </li>
       <li>
         <p>Enter the <strong>API Port</strong> if your provider uses a non-standard port
@@ -1072,24 +1070,12 @@ connect to the Red Hat Virtualization Manager.</p>
     </ul>
   </li>
   <li>
-    <p>Under <strong>Endpoints</strong> in the <strong>C &amp; U Database</strong> tab, you can configure
-capacity and utilization metrics collection by providing login
-credentials for the ManageIQ user of the Red Hat
-Virtualization Data Warehouse database. You can also configure this
-later by editing the provider. Configure the following in the <strong>C &amp;
-U Database</strong> tab:</p>
+    <p>Under <strong>Endpoints</strong> in the <strong>C &amp; U Database</strong> tab, you can configure capacity and utilization metrics collection by providing login credentials for the ManageIQ user of the Red Hat Virtualization Data Warehouse database. You can also configure this later by editing the provider. Configure the following in the <strong>C &amp; U Database</strong> tab:</p>
 
-    <div class="important">
+    <p><strong>Important</strong></p>
 
-To collect capacity and utilization data from a Red Hat
-Virtualization provider, the capacity and utilization server roles
-must be enabled in ManageIQ. The Red Hat
-Virtualization environment must also contain the Data Warehouse and
-Reports components and a ManageIQ user. Specific
-clusters, hosts, and datastores can also be configured for
-collection. See [???](#enabling_CU_RHV) for configuration details.
-
-</div>
+    <p>To collect capacity and utilization data from a Red Hat Virtualization provider, the capacity and utilization server roles must be enabled in ManageIQ. The Red Hat Virtualization environment must also contain the Data Warehouse and Reports components and a ManageIQ user. Specific clusters, hosts, and datastores can also be configured for
+collection. See <a href="#enabling-red-hat-virtualization-capacity-and-utilization-data-collection">Enabling Red Hat Virtualization Capacity and Utilization Data Collection</a> for configuration details.</p>
 
     <ul>
       <li>
@@ -1217,16 +1203,19 @@ the <code class="language-plaintext highlighter-rouge">admin</code> credentials,
 <code class="language-plaintext highlighter-rouge">admin</code> tenant, and sees images, networks, and instances that are
 associated with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the undercloud to store events. See [Configuring the Undercloud to Store Events](#configuring-the-undercloud-to-store-events) for instructions. For more information, see [OpenStack Telemetry (ceilometer)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry) in the Red Hat OpenStack Platform *Architecture Guide*.
-
-  - To authenticate the provider using a self-signed Certificate
-    Authority (CA), configure the ManageIQ appliance to
-    trust the certificate using the steps in [Using a Self-Signed CA Certificate](#app-self_signed_CA)
-    before adding the provider.
-
-</div>
+<ul>
+  <li>
+    <p>You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the <strong>ceilometer</strong> service on the undercloud to store events. See <a href="#configuring-the-undercloud-to-store-events">Configuring the Undercloud to Store Events</a> for instructions. For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-telemetry">OpenStack Telemetry (ceilometer)</a> in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
+  </li>
+  <li>
+    <p>To authenticate the provider using a self-signed Certificate
+Authority (CA), configure the ManageIQ appliance to
+trust the certificate using the steps in <a href="#app-self_signed_CA">Using a Self-Signed CA Certificate</a>
+before adding the provider.</p>
+  </li>
+</ul>
 
 <ol>
   <li>
@@ -1248,50 +1237,42 @@ device is labeled in the console.</p>
     <p>Select the <strong>API Version</strong> of your OpenStack provider’s Keystone
 service from the list. The default is <code class="language-plaintext highlighter-rouge">Keystone v2</code>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - With Keystone API v3, domains are used to determine administrative
+    <ul>
+      <li>With Keystone API v3, domains are used to determine administrative
 boundaries of service entities in OpenStack. Domains allow you to
 group users together for various purposes, such as setting
 domain-specific configuration or security options. For more
-information, see [OpenStack Identity
-(keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
-in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity
+(keystone)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</li>
+    </ul>
   </li>
 </ol>
+
 <ul>
-  <li>
-    <p>The provider you are creating will be able to see projects for the
+  <li>The provider you are creating will be able to see projects for the
 given domain only. To see projects for other domains, add it as
 another cloud provider. For more information on domain management in
 OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/users_and_identity_management_guide/#Domains">Domain
 Management</a>
 in the Red Hat OpenStack Platform <em>Users and Identity Management
-Guide</em>.</p>
-
-    <p>&lt;/div&gt;</p>
-  </li>
+Guide</em>.</li>
 </ul>
 
 <ol>
   <li>
-    <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the
-zone is set to <strong>default</strong>.</p>
+    <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the zone is set to <strong>default</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-For more information, see the definition of host aggregates and
-availability zones in [OpenStack Compute
-(nova)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute)
-in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+    <p>For more information, see the definition of host aggregates and
+availability zones in <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute">OpenStack Compute (nova)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
   </li>
   <li>
-    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and
-authentication details of your OpenStack provider:</p>
+    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and authentication details of your OpenStack provider:</p>
 
     <ol>
       <li>
@@ -1377,19 +1358,14 @@ field.</p>
     </ul>
   </li>
   <li>
-    <p>You can also configure SSH access to all hosts managed by the
-OpenStack infrastructure provider. To do so, click on the <strong>RSA key
-pair</strong> tab in the <strong>Endpoints</strong> section.</p>
+    <p>You can also configure SSH access to all hosts managed by the OpenStack infrastructure provider. To do so, click on the <strong>RSA key pair</strong> tab in the <strong>Endpoints</strong> section.</p>
 
     <ol>
       <li>
-        <p>From there, enter the <strong>Username</strong> of an account with privileged
-access.</p>
+        <p>From there, enter the <strong>Username</strong> of an account with privileged access.</p>
       </li>
       <li>
-        <p>If you selected <strong>SSL</strong> in <strong>Endpoints &gt; Default &gt; Security
-Protocol</strong> earlier, use the <strong>Browse</strong> button to find and set a
-private key.</p>
+        <p>If you selected <strong>SSL</strong> in <strong>Endpoints &gt; Default &gt; Security Protocol</strong> earlier, use the <strong>Browse</strong> button to find and set a private key.</p>
       </li>
     </ol>
   </li>
@@ -1398,17 +1374,9 @@ private key.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-ManageIQ requires that the `adminURL` endpoint for all OpenStack
-services be on a non-private network. Accordingly, assign the adminURL
-endpoint an IP address of something other than `192.168.x.x`. The
-`adminURL` endpoint must be accessible to the ManageIQ appliance
-that is responsible for collecting inventory and gathering metrics from
-the OpenStack environment. Additionally, all the Keystone endpoints must
-be accessible, otherwise refresh will fail.
-
-</div>
+<p>ManageIQ requires that the <code class="language-plaintext highlighter-rouge">adminURL</code> endpoint for all OpenStack services be on a non-private network. Accordingly, assign the adminURL endpoint an IP address of something other than <code class="language-plaintext highlighter-rouge">192.168.x.x</code>. The <code class="language-plaintext highlighter-rouge">adminURL</code> endpoint must be accessible to the ManageIQ appliance that is responsible for collecting inventory and gathering metrics from the OpenStack environment. Additionally, all the Keystone endpoints must be accessible, otherwise refresh will fail.</p>
 
 <h2 id="configuring-the-undercloud-to-store-events">
 <a class="anchor" href="#configuring-the-undercloud-to-store-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Undercloud to Store Events</h2>
@@ -1683,14 +1651,14 @@ and click <strong>Validate</strong>.</p>
 provider, add it to the appliance and set up the SCVMM server for
 authentication.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To use a SCVMM provider, you must have at least one network adapter
+<p>To use a SCVMM provider, you must have at least one network adapter
 available for communication between the host and the SCVMM management
-server. Make sure that **Used by Management** is checked for this
-network adapter in the SCVMM host properties.
+server. Make sure that <strong>Used by Management</strong> is checked for this
+network adapter in the SCVMM host properties.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="authenticating-to-microsoft-scvmm">
 <a class="anchor" href="#authenticating-to-microsoft-scvmm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authenticating to Microsoft SCVMM</h1>
@@ -1755,14 +1723,14 @@ the <code class="language-plaintext highlighter-rouge">evm.log</code> and <code 
 environment, add a Microsoft System Center Virtual Machine Manager
 (SCVMM) provider to the appliance.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To authenticate the provider using a self-signed Certificate Authority
+<p>To authenticate the provider using a self-signed Certificate Authority
 (CA), configure the ManageIQ appliance to trust the
-certificate using the steps in [Using a Self-Signed CA Certificate](#app-self_signed_CA) before adding
-the provider.
+certificate using the steps in <a href="#app-self_signed_CA">Using a Self-Signed CA Certificate</a> before adding
+the provider.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -2392,13 +2360,13 @@ this provisioning request might require approval from an administrator.
 If not, the provisioning request launches depending on your choice for
 the schedule.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Previously provisioned hosts might require manual selection of PXE boot
+<p>Previously provisioned hosts might require manual selection of PXE boot
 from the boot menu, otherwise they might boot to hard disk and not
-reprovision.
+reprovision.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="tagging-a-bare-metal-host">
 <a class="anchor" href="#tagging-a-bare-metal-host" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging a Bare Metal Host</h1>
@@ -2519,15 +2487,15 @@ follows:</p>
 <p>In ManageIQ, the <strong>Embedded Ansible</strong> role is disabled by
 default. Enable this server role to utilize Ansible Automation Inside.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Configure your ManageIQ appliance network identity
+<p>Configure your ManageIQ appliance network identity
 (hostname/IP address) before enabling the Embedded Ansible server role.
-Restart the `evmserverd` service on the appliance with the enabled
+Restart the <code class="language-plaintext highlighter-rouge">evmserverd</code> service on the appliance with the enabled
 Embedded Ansible server role after making any changes to the hostname or
-IP address.
+IP address.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -2729,12 +2697,12 @@ Password</strong> attribute that may be configured.</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For more information on Ansible Vault, see [Using Vault in
-playbooks](http://docs.ansible.com/ansible/latest/playbooks_vault.html).
+<p>For more information on Ansible Vault, see <a href="http://docs.ansible.com/ansible/latest/playbooks_vault.html">Using Vault in
+playbooks</a>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="network">
 <a class="anchor" href="#network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Network</h3>
@@ -3008,12 +2976,12 @@ provider in the **vCenter Host** field when adding credentials.
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-If the VMware guest tools are not running on the instance, VMware
-inventory sync may not return an IP address for that instance.
+<p>If the VMware guest tools are not running on the instance, VMware
+inventory sync may not return an IP address for that instance.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="tagging-ansible-playbooks-repositories-and-credentials">
 <a class="anchor" href="#tagging-ansible-playbooks-repositories-and-credentials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging Ansible Playbooks, Repositories, and Credentials</h1>
@@ -3171,21 +3139,27 @@ to Amazon EC2 and linked back to the service. Examples are provided for
 linking the resource to its service by both an <em>href slug</em> and as an
 object.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - This example utilizes the \`syncrou.manageiq-vmdb\`role. This role
-    allows ManageIQ users to modify and/or change VMDB
-    objects using an Ansible playbook. For information on implementing
-    and utilizing roles when writing Ansible playbooks for
-    ManageIQ, see [???](#installing-ansible-roles).
+<ul>
+  <li>
+    <p>This example utilizes the `syncrou.manageiq-vmdb`role. This role
+allows ManageIQ users to modify and/or change VMDB
+objects using an Ansible playbook. For information on implementing
+and utilizing roles when writing Ansible playbooks for
+ManageIQ, see <a href="#installing-ansible-roles">???</a>.</p>
+  </li>
+  <li>
+    <p>For more information on Ansible Galaxy and roles, see the <a href="http://docs.ansible.com/ansible/latest/galaxy.html">Ansible
+Galaxy
+documentation</a>.</p>
+  </li>
+  <li>
+    <p>Note the provider ID in order to successfully link to the service.</p>
+  </li>
+</ul>
 
-  - For more information on Ansible Galaxy and roles, see the [Ansible
-    Galaxy
-    documentation](http://docs.ansible.com/ansible/latest/galaxy.html).
-
-  - Note the provider ID in order to successfully link to the service.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -3241,20 +3215,21 @@ service via an <em>href slug</em> or an object.</p>
 <p>The <code class="language-plaintext highlighter-rouge">manageiq-automate</code> role allows users of ManageIQ Automate to
 modify and add to the automate workspace via an Ansible playbook.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When using this role in a playbook on a ManageIQ appliance with
-Embedded Ansible activated, add an empty `roles` directory at the root
-of the playbook. In the `roles` directory, include a `requirements.yml`
-file with the following contents:
+<p>When using this role in a playbook on a ManageIQ appliance with
+Embedded Ansible activated, add an empty <code class="language-plaintext highlighter-rouge">roles</code> directory at the root
+of the playbook. In the <code class="language-plaintext highlighter-rouge">roles</code> directory, include a <code class="language-plaintext highlighter-rouge">requirements.yml</code>
+file with the following contents:</p>
 
-    ---
-    - src: syncrou.manageiq-automate
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+- src: syncrou.manageiq-automate
+</code></pre></div></div>
 
-ManageIQ will automatically install the role once it sees
-the `requirements.yml` file in the playbook.
+<p>ManageIQ will automatically install the role once it sees
+the <code class="language-plaintext highlighter-rouge">requirements.yml</code> file in the playbook.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h4 id="role-variables">
 <a class="anchor" href="#role-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Role Variables</h4>
@@ -3376,16 +3351,21 @@ limiting the task to run on a specific set of virtual machines).</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - For more information on Ansible playbooks, see the [Ansible playbook
-    documentation](https://docs.ansible.com/ansible/playbooks.html).
+<ul>
+  <li>
+    <p>For more information on Ansible playbooks, see the <a href="https://docs.ansible.com/ansible/playbooks.html">Ansible playbook
+documentation</a>.</p>
+  </li>
+  <li>
+    <p>For more information on worklows, see
+<a href="https://docs.ansible.com/ansible-tower/latest/html/userguide/workflows.html">Workflows</a>
+in the Ansible Tower <em>User Guide</em>.</p>
+  </li>
+</ul>
 
-  - For more information on worklows, see
-    [Workflows](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflows.html)
-    in the Ansible Tower *User Guide*.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <h4 id="adding-an-ansible-tower-provider">
 <a class="anchor" href="#adding-an-ansible-tower-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an Ansible Tower Provider</h4>
@@ -3393,23 +3373,27 @@ limiting the task to run on a specific set of virtual machines).</p>
 <p>To access your Ansible Tower inventory from ManageIQ, you must
 add Ansible Tower as a provider.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - Ensure **ENABLE HTTP BASIC AUTH** is set to **On** in the Ansible
-    Tower configuration settings before adding the provider. See [Tower
-    Configuration](https://docs.ansible.com/ansible-tower/latest/html/administration/configure_tower_in_tower.html)
-    in the Ansible Tower *Administration Guide*.
+<ul>
+  <li>
+    <p>Ensure <strong>ENABLE HTTP BASIC AUTH</strong> is set to <strong>On</strong> in the Ansible
+Tower configuration settings before adding the provider. See <a href="https://docs.ansible.com/ansible-tower/latest/html/administration/configure_tower_in_tower.html">Tower
+Configuration</a>
+in the Ansible Tower <em>Administration Guide</em>.</p>
+  </li>
+  <li>
+    <p>A trailing slash is <strong>not</strong> required at the end of the Ansible Tower
+provider URL. Adding the trailing slash to the provider URL may
+result in a validation error.</p>
+  </li>
+</ul>
 
-  - A trailing slash is **not** required at the end of the Ansible Tower
-    provider URL. Adding the trailing slash to the provider URL may
-    result in a validation error.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Ansible Tower &gt; Explorer] and click
-on the <strong>Providers</strong> accordion tab.</p>
+    <p>Navigate to menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong> and click on the <strong>Providers</strong> accordion tab.</p>
   </li>
   <li>
     <p>Under <img src="../images/1847.png" alt="Configuration"> <strong>Configuration</strong>, click
@@ -3463,9 +3447,7 @@ machines, and clusters.</p>
 <strong>Update on Launch</strong> option for inventory groups in Ansible Tower. The
 <strong>Update on Launch</strong> option allows Ansible Tower to automatically update
 inventory using a dynamic inventory script before launching an Ansible
-Tower job from a playbook. See the <a href="http://docs.ansible.com/ansible-tower/index.html">Ansible Tower
-documentation</a> for
-more information.</p>
+Tower job from a playbook. See the <a href="http://docs.ansible.com/ansible-tower/index.html">Ansible Tower documentation</a> for more information.</p>
 
 <div class="important">
 
@@ -3480,12 +3462,10 @@ reduce refresh time.
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Ansible Tower &gt; Explorer] and click
-the <strong>Providers</strong> accordion tab.</p>
+    <p>Navigate to menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong> and click the <strong>Providers</strong> accordion tab.</p>
   </li>
   <li>
-    <p>Select the checkboxes for the Ansible Tower providers to refresh
-under <strong>All Ansible Tower Providers</strong>.</p>
+    <p>Select the checkboxes for the Ansible Tower providers to refresh under <strong>All Ansible Tower Providers</strong>.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), and
@@ -3509,35 +3489,27 @@ basic information about individual systems, and available Ansible Tower
 job or workflow templates to be executed from the service catalog or
 Automate.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To view and access Ansible Tower inventories and job or workflow
+<p>To view and access Ansible Tower inventories and job or workflow
 templates in ManageIQ, you must first create them in Ansible
-Tower.
-
-</div>
+Tower.</p>
 
 <p>To view a list of Ansible Tower providers and inventory:</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Ansible Tower &gt; Explorer].</p>
+    <p>Navigate to menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong>.</p>
   </li>
   <li>
-    <p>select the <strong>Providers</strong> accordion menu to display a list of <strong>All
-Ansible Tower Providers</strong>.</p>
+    <p>select the <strong>Providers</strong> accordion menu to display a list of <strong>All Ansible Tower Providers</strong>.</p>
   </li>
   <li>
-    <p>Select your Ansible Tower provider to expand and list the inventory
-groups on that Ansible Tower system. The inventory groups can be
-expanded to view the systems contained within each group, as well as
-configuration details for these systems.</p>
+    <p>Select your Ansible Tower provider to expand and list the inventory groups on that Ansible Tower system. The inventory groups can be expanded to view the systems contained within each group, as well as configuration details for these systems.</p>
   </li>
 </ol>
 
-<p>Similarly, all discovered job and workflow templates are accessed under
-the provider by expanding the menu:Automation[Ansible Tower &gt; Explorer
-&gt; Templates] accordion menu.</p>
+<p>Similarly, all discovered job and workflow templates are accessed under the provider by expanding the menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong> and click the <strong>Templates</strong> accordion menu.</p>
 
 <h4 id="viewing-ansible-tower-configured-systems">
 <a class="anchor" href="#viewing-ansible-tower-configured-systems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing Ansible Tower Configured Systems</h4>
@@ -3546,21 +3518,17 @@ the provider by expanding the menu:Automation[Ansible Tower &gt; Explorer
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Ansible Tower &gt; Explorer &gt; Configured
-Systems].</p>
+    <p>Navigate to menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong> and click <strong>Configured Systems</strong>.</p>
   </li>
   <li>
-    <p>Under <strong>All Ansible Tower Configured Systems</strong>, select <strong>Ansible
-Tower Configured Systems</strong> to display a list.</p>
+    <p>Under <strong>All Ansible Tower Configured Systems</strong>, select <strong>Ansible Tower Configured Systems</strong> to display a list.</p>
   </li>
 </ol>
 
 <h4 id="executing-an-ansible-tower-job-or-workflow-template-from-a-service-catalog">
 <a class="anchor" href="#executing-an-ansible-tower-job-or-workflow-template-from-a-service-catalog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing an Ansible Tower Job or Workflow Template from a Service Catalog</h4>
 
-<p>You can execute an Ansible Tower playbook from ManageIQ by
-creating a service catalog item from an Ansible Tower job or workflow
-template.</p>
+<p>You can execute an Ansible Tower playbook from ManageIQ by creating a service catalog item from an Ansible Tower job or workflow template.</p>
 
 <div class="important">
 
@@ -3574,7 +3542,7 @@ ManageIQ when refreshing your Ansible Tower provider’s inventory.
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Catalogs].</p>
+    <p>Navigate to menu: <strong>Services &gt; Catalogs</strong> and click <strong>Catalog Items</strong>.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
@@ -3592,30 +3560,25 @@ ManageIQ when refreshing your Ansible Tower provider’s inventory.
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Ansible Tower &gt; Explorer], then click
-on the <strong>Templates</strong> according menu.</p>
+    <p>Navigate to menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong>, then click the <strong>Templates</strong> according menu.</p>
   </li>
   <li>
-    <p>Click <strong>Ansible Tower Templates</strong> and select an Ansible Tower job or
-workflow template.</p>
+    <p>Click <strong>Ansible Tower Templates</strong> and select an Ansible Tower job or workflow template.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="Create Service Dialog from Template"> (<strong>Create
-Service Dialog from this Template</strong>).</p>
+<img src="../images/1862.png" alt="Create Service Dialog from Template"> (<strong>Create Service Dialog from this Template</strong>).</p>
   </li>
   <li>
     <p>Enter a <strong>Service Dialog Name</strong> (for example,
 <em>ansible_tower_job</em>)and click <strong>Save</strong>.</p>
   </li>
   <li>
-    <p>Navigate to menu:Services[Catalogs]. Click <strong>Catalog Items</strong>.</p>
+    <p>Navigate to menu: <strong>Services &gt; Catalogs</strong> and click <strong>Catalog Items</strong>.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="Add a New Catalog Item"> (<strong>Add a New Catalog
-Item</strong>) to create a new catalog item with the following details, at
-minimum:</p>
+<img src="../images/1862.png" alt="Add a New Catalog Item"> (<strong>Add a New Catalog Item</strong>) to create a new catalog item with the following details, at minimum:</p>
 
     <ul>
       <li>
@@ -3632,30 +3595,23 @@ minimum:</p>
       </li>
       <li>
         <p>In <strong>Dialog</strong>, select the service dialog you created previously
-(in this example, <em>ansible_tower_job</em>). To ask the user to
-enter extra information when running the task, <strong>Service
-Dialog</strong> must be selected. A dialog is required if <strong>Display in
-Catalog</strong> is chosen.</p>
+(in this example, <em>ansible_tower_job</em>). To ask the user to enter extra information when running the task, <strong>Service Dialog</strong> must be selected. A dialog is required if <strong>Display in Catalog</strong> is chosen.</p>
       </li>
       <li>
-        <p>In <strong>Provider</strong>, select your Ansible Tower provider. This brings
-up the <strong>Ansible Tower Template</strong> option and configures the
+        <p>In <strong>Provider</strong>, select your Ansible Tower provider. This brings up the <strong>Ansible Tower Template</strong> option and configures the
 <strong>Provisioning Entry Point State Machine</strong> automatically.</p>
       </li>
       <li>
-        <p>Add configuration information for <strong>Reconfigure Entry Point</strong>
-and <strong>Retirement Entry Point</strong> as applicable.</p>
+        <p>Add configuration information for <strong>Reconfigure Entry Point</strong> and <strong>Retirement Entry Point</strong> as applicable.</p>
       </li>
       <li>
         <p>Select your desired <strong>Ansible Tower Template</strong> from the list.
-Generally, this is the Ansible Tower job or workflow template
-previously used to create the service dialog.</p>
+Generally, this is the Ansible Tower job or workflow template previously used to create the service dialog.</p>
       </li>
     </ul>
   </li>
   <li>
-    <p>Click <strong>Add</strong>. The catalog item you created will appear in the <strong>All
-Service Catalog Items</strong> list.</p>
+    <p>Click <strong>Add</strong>. The catalog item you created will appear in the <strong>All Service Catalog Items</strong> list.</p>
   </li>
 </ol>
 
@@ -3663,7 +3619,7 @@ Service Catalog Items</strong> list.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Service Catalogs[Ansible Tower catalog].</p>
+    <p>Navigate to menu: <strong>Service &gt; Catalogs</strong> and click on <strong>Service Catalogs</strong> then click <strong>Ansible Tower catalog</strong>.</p>
 
     <p><img src="../images/order_at_catalog_item.png" alt="order at catalog item"></p>
   </li>
@@ -3678,18 +3634,11 @@ Service Catalog Items</strong> list.</p>
 <p>ManageIQ takes you to the <strong>Requests</strong> queue page and show the
 status of the job.</p>
 
-<p>The service item’s details can be viewed in menu:Services[My Services]
-in ManageIQ.</p>
+<p>The service item’s details can be viewed in menu: <strong>Services &gt; My Services</strong> in ManageIQ.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Instead of running a single job at a time, multiple service catalog
-items can also be grouped together as a catalog bundle to create one
-deployment with multiple job templates. See [Catalogs and
-Services](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/provisioning-virtual-machines-and-hosts/chapter-5-catalogs-and-services#catalogs-services)
-in *Provisioning Virtual Machines and Hosts* for more information.
-
-</div>
+<p>Instead of running a single job at a time, multiple service catalog items can also be grouped together as a catalog bundle to create one deployment with multiple job templates. See <a href="../provisioning_virtual_machines_and_hosts/index.html#catalogs-and-services">Catalogs and Services</a> in <em>Provisioning Virtual Machines and Hosts</em> for more information.</p>
 
 <h4 id="executing-an-ansible-tower-job-using-a-custom-automate-button">
 <a class="anchor" href="#executing-an-ansible-tower-job-using-a-custom-automate-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing an Ansible Tower Job Using a Custom Automate Button</h4>
@@ -3697,55 +3646,40 @@ in *Provisioning Virtual Machines and Hosts* for more information.
 <p>ManageIQ can execute Ansible Tower jobs on virtual machines or
 instances using custom buttons in Automate.</p>
 
-<p>Ansible Tower jobs can either be non-customizable, which do not require
-any extra configuration from the user, or alternatively, they can allow
-the user to specify a parameter (for example, a package name to
-install). In Ansible Tower jobs containing a dialog, ManageIQ
-accepts additional information from the user and adds it to the
-appropriate API call in Automate, and then sends it into Ansible Tower.</p>
+<p>Ansible Tower jobs can either be non-customizable, which do not require any extra configuration from the user, or alternatively, they can allow the user to specify a parameter (for example, a package name to install). In Ansible Tower jobs containing a dialog, ManageIQ accepts additional information from the user and adds it to the appropriate API call in Automate, and then sends it into Ansible Tower.</p>
 
 <p><strong>Prerequisites.</strong></p>
 
-<p>Before creating an Automate button to execute an Ansible Tower job, the
-following must be configured:</p>
+<p>Before creating an Automate button to execute an Ansible Tower job, the following must be configured:</p>
 
 <ul>
   <li>
-    <p>An Ansible playbook in Ansible Tower. See the <a href="https://docs.ansible.com/">Ansible Tower
-documentation</a> for instructions.</p>
+    <p>An Ansible playbook in Ansible Tower. See the <a href="https://docs.ansible.com/">Ansible Tower documentation</a> for instructions.</p>
   </li>
   <li>
-    <p>Ansible Tower must be able to reach virtual machines or instances
-deployed by ManageIQ at the IP level.</p>
+    <p>Ansible Tower must be able to reach virtual machines or instances deployed by ManageIQ at the IP level.</p>
   </li>
   <li>
-    <p>The virtual machine template must have the Ansible Tower
-environment’s public SSH key injected. For cloud instances,
-<code class="language-plaintext highlighter-rouge">cloud-init</code> can be used and the public SSH key can be passed
-without rebuilding the image.</p>
+    <p>The virtual machine template must have the Ansible Tower environment’s public SSH key injected. For cloud instances, <code class="language-plaintext highlighter-rouge">cloud-init</code> can be used and the public SSH key can be passed without rebuilding the image.</p>
   </li>
   <li>
-    <p>Any dynamic inventory scripts used must be configured to return the
-virtual machine names exactly as they are stored in ManageIQ,
-without the UUID appended.</p>
+    <p>Any dynamic inventory scripts used must be configured to return the virtual machine names exactly as they are stored in ManageIQ, without the UUID appended.</p>
   </li>
 </ul>
 
 <p><strong>Executing an Ansible Tower Job using a Custom Automate Button.</strong></p>
 
-<p>To configure a custom button to execute an Ansible Tower job on a
-virtual machine or instance, first create the button:</p>
+<p>To configure a custom button to execute an Ansible Tower job on a virtual machine or instance, first create the button:</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
+    <p>Navigate to menu: <strong>Automation &gt; Automate &gt; Customization</strong>.</p>
   </li>
   <li>
     <p>Click the <strong>Buttons</strong> accordion menu.</p>
   </li>
   <li>
-    <p>Click menu:VM and Instance[Unassigned Buttons]. This configures
-the button to run on virtual machines or instances.</p>
+    <p>Click menu: <strong>VM and Instance</strong> &gt; <strong>Unassigned Buttons</strong>. This configures the button to run on virtual machines or instances.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
@@ -3753,15 +3687,10 @@ the button to run on virtual machines or instances.</p>
 
     <ul>
       <li>
-        <p>In the <strong>Adding a new Button</strong> screen, configure the <strong>Action</strong>
-parameters as desired. <strong>Dialog</strong> can be left blank if the
-playbook does not require extra variables. To ask the user to
-enter extra information when running the task, <strong>Service
-Dialog</strong> must be selected.</p>
+        <p>In the <strong>Adding a new Button</strong> screen, configure the <strong>Action</strong> parameters as desired. <strong>Dialog</strong> can be left blank if the playbook does not require extra variables. To ask the user to enter extra information when running the task, <strong>Service Dialog</strong> must be selected.</p>
       </li>
       <li>
-        <p>Configure <strong>Object Details</strong> fields with the following request
-details:</p>
+        <p>Configure <strong>Object Details</strong> fields with the following request details:</p>
 
         <ul>
           <li>
@@ -3800,19 +3729,15 @@ role as desired.</p>
   </li>
 </ol>
 
-<p>If you do not have an existing button group to assign the new button to,
-create a new button group:</p>
+<p>If you do not have an existing button group to assign the new button to, create a new button group:</p>
 
 <ol>
   <li>
-    <p>From menu:Automation[Automate &gt; Customization], navigate to
-menu:Buttons[VM and Instance &gt; Add a new Button Group], and
-configure the following:</p>
+    <p>From menu: <strong>Automation &gt; Automate &gt; Customization</strong>, navigate to menu: <strong>Buttons</strong> and click <strong>VM and Instance &gt; Add a new Button Group</strong>, and configure the following:</p>
 
     <ul>
       <li>
-        <p>Configure <strong>Basic Info</strong> as desired. For example, name the
-button group <code class="language-plaintext highlighter-rouge">VM Actions</code>.</p>
+        <p>Configure <strong>Basic Info</strong> as desired. For example, name the button group <code class="language-plaintext highlighter-rouge">VM Actions</code>.</p>
       </li>
       <li>
         <p>In <strong>Assign Buttons</strong>, select the button you just created from
@@ -3832,13 +3757,10 @@ assign it to <strong>Selected</strong>.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Buttons[VM and Instance &gt; VM Actions &gt; Edit this
-Button Group].</p>
+    <p>Navigate to menu: <strong>Buttons &gt; VM and Instance &gt; VM Actions &gt; Edit this Button Group</strong>.</p>
   </li>
   <li>
-    <p>In <strong>Assign Buttons</strong>, select the button you just created from the
-<strong>Unassigned</strong> list and click <img src="../images/1876.png" alt="1876"> to assign it
-to <strong>Selected</strong>.</p>
+    <p>In <strong>Assign Buttons</strong>, select the button you just created from the <strong>Unassigned</strong> list and click <img src="../images/1876.png" alt="1876"> to assign it to <strong>Selected</strong>.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -3849,7 +3771,7 @@ to <strong>Selected</strong>.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Compute[Infrastructure &gt; Virtual Machines].</p>
+    <p>Navigate to menu: <strong>Compute &gt; Infrastructure &gt; Virtual Machines</strong>.</p>
   </li>
   <li>
     <p>Select the virtual machine to run the Ansible Tower job template on.</p>
@@ -3873,8 +3795,7 @@ ManageIQ will then prompt you to enter variables to complete the
 task. After entering your desired parameters, ManageIQ takes you
 to the <strong>Requests</strong> page.</p>
 
-<p>The service item’s details can be viewed in menu:Services[My Services]
-in ManageIQ.</p>
+<p>The service item’s details can be viewed in menu: <strong>Services &gt; My Services</strong> in ManageIQ.</p>
 
 <h1 id="cloud-providers">
 <a class="anchor" href="#cloud-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cloud Providers</h1>
@@ -3948,13 +3869,11 @@ credentials, a user in ManageIQ provisions into the <code class="language-plaint
 tenant, and sees images, networks, and instances that are associated
 with the <code class="language-plaintext highlighter-rouge">admin</code> tenant.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-In OpenStack, you must add `admin` as a member of all tenants that users want to access and use in ManageIQ.
+<p>In OpenStack, you must add <code class="language-plaintext highlighter-rouge">admin</code> as a member of all tenants that users want to access and use in ManageIQ.</p>
 
-See [Cloud Tenants](../managing_infrastructure_and_inventory/index.html#cloud-tenants) in *Managing Infrastructure and Inventory* for information on working with OpenStack tenants (projects) in ManageIQ.
-
-</div>
+<p>See <a href="../managing_infrastructure_and_inventory/index.html#cloud-tenants">Cloud Tenants</a> in <em>Managing Infrastructure and Inventory</em> for information on working with OpenStack tenants (projects) in ManageIQ.</p>
 
 <p>When adding an OpenStack cloud or infrastructure provider, enable
 <em>tenant mapping</em> in ManageIQ to map any existing tenants
@@ -3979,20 +3898,16 @@ tenants to their corresponding cloud tenants.</p>
 <p>If you leave tenant mapping disabled, ManageIQ will not
 create cloud tenants or tenant object hierarchy from OpenStack.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the **ceilometer** service on the overcloud to store events. See [Configuring the Overcloud to Store Events](../managing_providers/index.html#configuring-the-overcloud-to-store-events) for instructions.
+<p>You can set whether ManageIQ should use the Telemetry service or Advanced Message Queueing Protocol (AMQP) for event monitoring. If you choose Telemetry, you should first configure the <strong>ceilometer</strong> service on the overcloud to store events. See <a href="../managing_providers/index.html#configuring-the-overcloud-to-store-events">Configuring the Overcloud to Store Events</a> for instructions.</p>
 
-For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
-(ceilometer)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
+<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-telemetry" target="_blank">OpenStack Telemetry
+(ceilometer)</a> in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
 
-</div>
+<p><strong>Note:</strong></p>
 
-<div class="note">
-
-To authenticate the provider using a self-signed Certificate Authority (CA), configure the ManageIQ appliance to trust the certificate using the steps in [Using a Self-Signed CA Certificate](#app-self_signed_CA) before adding the provider.
-
-</div>
+<p>To authenticate the provider using a self-signed Certificate Authority (CA), configure the ManageIQ appliance to trust the certificate using the steps in <a href="#app-self_signed_CA">Using a Self-Signed CA Certificate</a> before adding the provider.</p>
 
 <ol>
   <li>
@@ -4017,38 +3932,33 @@ ManageIQ should use. This is the domain of the user account
 you will be specifying later in the <strong>Default</strong> tab. If domains are
 not configured in the provider, enter <strong>default</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Keystone API v3 is required to create cloud tenants on OpenStack
-cloud providers.
+    <p>Keystone API v3 is required to create cloud tenants on OpenStack
+cloud providers.</p>
 
-</div>
+    <p><strong>Note:</strong></p>
 
-    <div class="note">
-
-  - With Keystone API v3, domains are used to determine administrative
+    <ul>
+      <li>With Keystone API v3, domains are used to determine administrative
 boundaries of service entities in OpenStack. Domains allow you to
 group users together for various purposes, such as setting
 domain-specific configuration or security options. For more
-information, see [OpenStack Identity
-(keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
-in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity
+(keystone)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</li>
+    </ul>
   </li>
 </ol>
+
 <ul>
-  <li>
-    <p>The provider you are creating will be able to see projects for the
+  <li>The provider you are creating will be able to see projects for the
 given domain only. To see projects for other domains, add it as
 another cloud provider. For more information on domain management in
 OpenStack, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/users_and_identity_management_guide/#Domains">Domain
 Management</a>
 in the Red Hat OpenStack Platform <em>Users and Identity Management
-Guide</em>.</p>
-
-    <p>&lt;/div&gt;</p>
-  </li>
+Guide</em>.</li>
 </ul>
 
 <ol>
@@ -4069,32 +3979,24 @@ default, tenant mapping is disabled.</p>
     <p>Select the appropriate <strong>Zone</strong> for the provider. By default, the
 zone is set to <strong>default</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-For more information, see the definition of host aggregates and availability zones in <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute" target="_blank">OpenStack Compute (nova)</a> in the Red Hat OpenStack Platform *Architecture Guide*.
-
-</div>
+    <p>For more information, see the definition of host aggregates and availability zones in <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/architecture_guide/components#comp-compute">OpenStack Compute (nova)</a> in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
   </li>
   <li>
-    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and
-authentication details of your OpenStack provider:</p>
+    <p>In the <strong>Default</strong> tab, under <strong>Endpoints</strong>, configure the host and authentication details of your OpenStack provider:</p>
 
     <ol>
       <li>
-        <p>Select a <strong>Security Protocol</strong> method to specify how to
-authenticate the provider:</p>
+        <p>Select a <strong>Security Protocol</strong> method to specify how to authenticate the provider:</p>
 
         <ul>
           <li>
-            <p><strong>SSL without validation</strong>: Authenticate the provider
-insecurely using SSL.</p>
+            <p><strong>SSL without validation</strong>: Authenticate the provider insecurely using SSL.</p>
           </li>
           <li>
-            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted
-Certificate Authority. Select this option if the provider
-has a valid SSL certificate and it is signed by a trusted
-Certificate Authority. No further configuration is required
-for this option. This is the recommended authentication
+            <p><strong>SSL</strong>: Authenticate the provider securely using a trusted Certificate Authority. Select this option if the provider has a valid SSL certificate and it is signed by a trusted
+Certificate Authority. No further configuration is required for this option. This is the recommended authentication
 method.</p>
           </li>
           <li>
@@ -4108,18 +4010,9 @@ HTTP protocol, without SSL.</p>
 or fully qualified domain name of the OpenStack Keystone
 service.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-The hostname required here is also the **OS\_AUTH\_URL** value
-in the **\~/overcloudrc** file generated by the director (see
-[Accessing the
-Overcloud](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Accessing_the_Overcloud)
-in Red Hat OpenStack Platform *Director Installation and
-Usage*), or the **\~/keystonerc\_admin** file generated by
-Packstack (see [Evaluating OpenStack: Single-Node
-Deployment](https://access.redhat.com/articles/1127153)).
-
-</div>
+        <p>The hostname required here is also the <strong>OS_AUTH_URL</strong> value in the <strong>~/overcloudrc</strong> file generated by the director (see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/director_installation_and_usage/#sect-Accessing_the_Overcloud">Accessing the Overcloud</a> in Red Hat OpenStack Platform <em>Director Installation and Usage</em>), or the <strong>~/keystonerc_admin</strong> file generated by Packstack (see <a href="https://access.redhat.com/articles/1127153">Evaluating OpenStack: Single-Node Deployment</a>).</p>
       </li>
       <li>
         <p>In <strong>API Port</strong>, set the public port used by the OpenStack
@@ -4253,16 +4146,11 @@ option:</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Passing the newly created environment file to the overcloud deployment
-is environment specific and requires executing commands in particular
-order depending on use of variables. For further information please see
-[*Director Installation and
-Usage*](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/director_installation_and_usage/)
-in the Red Hat OpenStack Platform documentation.
-
-</div>
+<p>Passing the newly created environment file to the overcloud deployment is environment specific and requires executing commands in particular order depending on use of variables. For further information please see
+<a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/director_installation_and_usage/"><em>Director Installation and Usage</em></a>
+in the Red Hat OpenStack Platform documentation.</p>
 
 <h2 id="azure-providers">
 <a class="anchor" href="#azure-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Azure Providers</h2>
@@ -4285,44 +4173,51 @@ as a provider in ManageIQ. Currently, all of these steps
 can be performed using either the Azure Resource Manager or Service
 Manager (Classic) mode.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-In the steps described in [Create Active Directory application and
+<p>In the steps described in <a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/">Create Active Directory application and
 service principal account using the Azure
-portal](https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/):
+portal</a>:</p>
 
-  - The **Application ID** obtained during *Get Application ID and
-    Authentication Key* is your **Client ID**. In the same section,
-    after providing a description and a duration for the key, the
-    **VALUE** displayed after clicking **Save** is your **Client Key**.
-    If you choose an expiring key, make sure to note the expiration
-    date, as you will need to generate a new key before that day in
-    order to avoid an interruption.
+<ul>
+  <li>
+    <p>The <strong>Application ID</strong> obtained during <em>Get Application ID and
+Authentication Key</em> is your <strong>Client ID</strong>. In the same section,
+after providing a description and a duration for the key, the
+<strong>VALUE</strong> displayed after clicking <strong>Save</strong> is your <strong>Client Key</strong>.
+If you choose an expiring key, make sure to note the expiration
+date, as you will need to generate a new key before that day in
+order to avoid an interruption.</p>
+  </li>
+  <li>
+    <p>The <strong>Directory ID</strong> obtained during <em>Get Tenant ID</em> is your
+<strong>Tenant ID</strong>. In Azure Active Directory (Azure AD), a tenant is a
+dedicated instance of the Azure AD service and is representative of
+an organization. It houses the users in a company and the
+information about them - their user profile data, permissions,
+groups, applications, and other information related to an
+organization and its security. To allow Azure AD users to sign in to
+your application, you must register your application in a tenant of
+your own which is assigned a Tenant ID (Directory ID).</p>
+  </li>
+  <li>
+    <p>During <em>Assign Application to Role</em>, select the <strong>Contributor</strong> role
+and not the <strong>Reader</strong> role.</p>
+  </li>
+  <li>
+    <p>To obtain your <strong>Subscription ID</strong>, log in to the Azure portal and
+click <strong>Subscriptions</strong> on the slide-out menu on the left. Find the
+appropriate subscription and see your Azure <strong>Subscription ID</strong>
+associated with it. Note that if the <strong>Subscriptions</strong> tab is not
+visible, then click on <strong>More services &gt;</strong> to find it. The Azure
+<strong>Subscription ID</strong> is like a billing unit for all of the services
+consumed in your Azure account, including virtual machines and
+storage. The <strong>Subscription ID</strong> is in the form of a Globally Unique
+Identifier (GUID).</p>
+  </li>
+</ul>
 
-  - The **Directory ID** obtained during *Get Tenant ID* is your
-    **Tenant ID**. In Azure Active Directory (Azure AD), a tenant is a
-    dedicated instance of the Azure AD service and is representative of
-    an organization. It houses the users in a company and the
-    information about them - their user profile data, permissions,
-    groups, applications, and other information related to an
-    organization and its security. To allow Azure AD users to sign in to
-    your application, you must register your application in a tenant of
-    your own which is assigned a Tenant ID (Directory ID).
-
-  - During *Assign Application to Role*, select the **Contributor** role
-    and not the **Reader** role.
-
-  - To obtain your **Subscription ID**, log in to the Azure portal and
-    click **Subscriptions** on the slide-out menu on the left. Find the
-    appropriate subscription and see your Azure **Subscription ID**
-    associated with it. Note that if the **Subscriptions** tab is not
-    visible, then click on **More services \&gt;** to find it. The Azure
-    **Subscription ID** is like a billing unit for all of the services
-    consumed in your Azure account, including virtual machines and
-    storage. The **Subscription ID** is in the form of a Globally Unique
-    Identifier (GUID).
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>So, after a service principal account (instance of an application in a
 directory) has been created using the Azure portal, the following four
@@ -4529,16 +4424,16 @@ ManageIQ.</p>
       <li>
         <p>Enter the <strong>Endpoint URL</strong>.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-AWS allows users to set a custom endpoint URL when connecting to
+        <p>AWS allows users to set a custom endpoint URL when connecting to
 certain services, which you can add in the
 ManageIQ user interface per Amazon EC2 provider.
-See [Interface VPC Endpoints (AWS
-PrivateLink)](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html)
-for more information.
+See <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html">Interface VPC Endpoints (AWS
+PrivateLink)</a>
+for more information.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Generate an <strong>Access Key</strong> in the <strong>Security Credentials</strong> of
@@ -4571,13 +4466,13 @@ Docker Password</strong>.</li>
 ManageIQ. To make these images viewable, you must edit the main
 configuration file for the appliance.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Syncing all public images may require additional memory resources. Also,
+<p>Syncing all public images may require additional memory resources. Also,
 bear in mind that syncing happens in each configured Amazon EC2
-provider, which will require a similar amount of total memory resources.
+provider, which will require a similar amount of total memory resources.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -4702,14 +4597,14 @@ except for <code class="language-plaintext highlighter-rouge">AWS_EC2_Instance_U
 then configure CloudWatch rules on your EC2 provider to automatically
 get events in ManageIQ for monitoring the provider.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The following procedures are accurate at time of publishing. See the
-[Amazon AWS
-documentation](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)
-for further details on these steps.
+<p>The following procedures are accurate at time of publishing. See the
+<a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">Amazon AWS
+documentation</a>
+for further details on these steps.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h2 id="creating-a-cloudtrail">
 <a class="anchor" href="#creating-a-cloudtrail" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a CloudTrail</h2>
@@ -4955,13 +4850,13 @@ under <code class="language-plaintext highlighter-rouge">:disabled_regions:</cod
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-In AWS, Government regions are disabled by default. To enable a disabled
-region, be sure to do so in the `production.yml` configuration file
-manually.
+<p>In AWS, Government regions are disabled by default. To enable a disabled
+region, be sure to do so in the <code class="language-plaintext highlighter-rouge">production.yml</code> configuration file
+manually.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="refreshing-cloud-providers">
 <a class="anchor" href="#refreshing-cloud-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing Cloud Providers</h1>
@@ -5046,11 +4941,11 @@ then <img src="../images/2098.png" alt="Remove Cloud Providers from the VMDB">
 <p>Edit information about a provider such as the name, IP address, and
 login credentials.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The **Type** value is unchangeable.
+<p>The <strong>Type</strong> value is unchangeable.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To use a different cloud provider, create a new one.</p>
 
@@ -5243,13 +5138,13 @@ providers.</p>
 <h1 id="adding-or-viewing-network-providers">
 <a class="anchor" href="#adding-or-viewing-network-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding or Viewing Network Providers</h1>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-All supported network providers — OpenStack Network, Azure Network, and
+<p>All supported network providers — OpenStack Network, Azure Network, and
 Amazon EC2 Network, are added or removed automatically upon adding or
-removing the respective cloud provider.
+removing the respective cloud provider.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>Viewing network providers:</p>
 
@@ -5277,15 +5172,15 @@ to see detailed information for individual entities.</p>
 <p>Click on <strong>Reload</strong>, <strong>Configuration</strong>, <strong>Policy</strong>, and <strong>Monitoring</strong>
 actions in the taskbar to manage the selected provider.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Alternatively, click on a cloud provider to see the cloud provider
+<p>Alternatively, click on a cloud provider to see the cloud provider
 details and its relationships such as Network Manager, Tenants,
 Instances among others. In Relationships, click Network Manager to see
 information about the network provider, and its relationship with the
-cloud provider, on the summary page.
+cloud provider, on the summary page.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="refreshing-network-providers">
 <a class="anchor" href="#refreshing-network-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing Network Providers</h1>
@@ -5660,15 +5555,13 @@ self-signed certificate. For this option, copy your
 provider’s CA certificate to the <strong>Trusted CA
 Certificates</strong> box in PEM format.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-You can obtain your OpenShift Container Platform provider’s
+            <p>You can obtain your OpenShift Container Platform provider’s
 CA certificate for all endpoints (default, metrics, alerts)
-from `/etc/origin/master/ca.crt`. Paste the output (a block
-of text starting with `-----BEGIN CERTIFICATE-----`) into
-the **Trusted CA Certificates** field.
-
-</div>
+from <code class="language-plaintext highlighter-rouge">/etc/origin/master/ca.crt</code>. Paste the output (a block
+of text starting with <code class="language-plaintext highlighter-rouge">-----BEGIN CERTIFICATE-----</code>) into
+the <strong>Trusted CA Certificates</strong> field.</p>
           </li>
           <li>
             <p><strong>SSL without validation</strong>: Authenticate the provider
@@ -5771,17 +5664,15 @@ self-signed certificate. For this option, copy your
 provider’s CA certificate to the <strong>Trusted CA
 Certificates</strong> box in PEM format.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-In OpenShift, the default deployment of the router generates
+            <p>In OpenShift, the default deployment of the router generates
 certificates during installation, which can be used with the
-**SSL trusting custom CA** option. Connecting a Hawkular
+<strong>SSL trusting custom CA</strong> option. Connecting a Hawkular
 endpoint with this option requires the CA certificate that
 the cluster uses for service certificates, which is stored
-in `/etc/origin/master/service-signer.crt` on the first
-master in a cluster.
-
-</div>
+in <code class="language-plaintext highlighter-rouge">/etc/origin/master/service-signer.crt</code> on the first
+master in a cluster.</p>
           </li>
           <li>
             <p><strong>SSL without validation</strong>: Authenticate the provider
@@ -5807,19 +5698,22 @@ to the metrics endpoint.</p>
     <p>Click the <strong>Advanced</strong> tab to add image inspector settings for
 scanning container images on your provider using OpenSCAP.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - These settings control downloading the image inspector container
-    image from the registry and obtaining the Common Vulnerabilities
-    and Exposures (CVE) information (for effective scanning) via a
-    proxy.
-
-  - CVE URL that ManageIQ requires to be open for
-    OpenSCAP scanning:
-    &lt;https://www.redhat.com/security/data/metrics/ds/&gt;. This
-    information is based on the source code of OpenSCAP.
-
-</div>
+    <ul>
+      <li>
+        <p>These settings control downloading the image inspector container
+image from the registry and obtaining the Common Vulnerabilities
+and Exposures (CVE) information (for effective scanning) via a
+proxy.</p>
+      </li>
+      <li>
+        <p>CVE URL that ManageIQ requires to be open for
+OpenSCAP scanning:
+<a href="https://www.redhat.com/security/data/metrics/ds/">https://www.redhat.com/security/data/metrics/ds/</a>. This
+information is based on the source code of OpenSCAP.</p>
+      </li>
+    </ul>
 
     <ol>
       <li>
@@ -5850,18 +5744,17 @@ application version stored in the image.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You can also set global default image-inspector settings for all
+<p>You can also set global default image-inspector settings for all
 OpenShift providers in the advanced settings menu by editing the values
-under `ems_kubernetes`, instead of setting this for each provider.
+under <code class="language-plaintext highlighter-rouge">ems_kubernetes</code>, instead of setting this for each provider.</p>
 
-For example:
+<p>For example:</p>
 
-    :image_inspector_registry: registry.access.redhat.com
-    :image_inspector_repository: openshift3/image-inspector
-
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:image_inspector_registry: registry.access.redhat.com
+:image_inspector_repository: openshift3/image-inspector
+</code></pre></div></div>
 
 <h1 id="tagging-containers-providers">
 <a class="anchor" href="#tagging-containers-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging Containers Providers</h1>

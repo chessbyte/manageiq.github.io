@@ -695,23 +695,23 @@ Infrastructure. This document describes the methods available for use in
 ManageIQ. This document is organized by the object hierarchy in
 the Automate Model.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Users of ManageIQ can construct custom automation methods in Ruby
+<p>Users of ManageIQ can construct custom automation methods in Ruby
 to extend the product. ManageIQ ships with a core set of Ruby
 gems used by the ManageIQ Rails Application. The Ruby gems in
 this set are subject to change, and have changed since the previous
 version. If you are calling gems using Automate that are no longer in
-the ManageIQ appliance, you can install them by using the `gem
-install` command.
+the ManageIQ appliance, you can install them by using the <code class="language-plaintext highlighter-rouge">gem
+install</code> command.</p>
 
-While gems can be imported into automation methods using `require`, it
+<p>While gems can be imported into automation methods using <code class="language-plaintext highlighter-rouge">require</code>, it
 is recommended that the authors of the automation methods clearly
 document the use of gems either in the core set or a custom set. It is
 the responsibility of the author of such custom automation to own the
-life cycle of any gem being referenced in those methods.
+life cycle of any gem being referenced in those methods.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h2 id="evmroot">
 <a class="anchor" href="#evmroot" aria-hidden="true"><span class="octicon octicon-link"></span></a>$evm.root</h2>

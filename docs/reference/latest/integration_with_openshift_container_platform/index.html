@@ -578,14 +578,11 @@
 
 <p>This guide walks you through adding a Red Hat OpenShift Container Platform cluster to a ManageIQ container provider catalog. This deployment focuses on enabling the OpenShift Container Platform cluster metrics plug-in, so that ManageIQ can collect information from an OpenShift Container Platform cluster upon integration.</p>
 
-<p>Each procedure in this guide is covered in greater detail in the
-<a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/infra_mgmt_intro.html">ManageIQ</a>
+<p>Each procedure in this guide is covered in greater detail in the <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/infra_mgmt_intro.html">ManageIQ</a>
 and <a href="https://access.redhat.com/documentation/en/openshift-container-platform/">OpenShift Container Platform</a>
-product documentation. However, links to the corresponding sections are
-provided for more detail.</p>
+product documentation. However, links to the corresponding sections are provided for more detail.</p>
 
-<p>The following sections will describe the required configuration for both
-products prior to integration.</p>
+<p>The following sections will describe the required configuration for both products prior to integration.</p>
 
 <h2 id="prerequisites">
 <a class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
@@ -594,17 +591,14 @@ products prior to integration.</p>
 
 <ul>
   <li>
-    <p><a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/infra_mgmt_intro.html">Already deployed ManageIQ on your chosen
-platform</a></p>
+    <p><a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/infra_mgmt_intro.html">Already deployed ManageIQ on your chosen platform</a></p>
   </li>
   <li>
-    <p><a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/">Already deployed OpenShift Container
-Platform</a></p>
+    <p><a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/">Already deployed OpenShift Container Platform</a></p>
   </li>
 </ul>
 
-<p>When enabling metrics on OpenShift Container Platform, you can store your metrics data on <em>persistent</em> or <em>non-persistent</em> storage. To use persistent storage, you need to provision a persistent volume specifically for this purpose before <a href="#ocp-metrics-storage">configuring the metrics components</a>. See <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#architecture-additional-concepts-storage">Persistent Volumes</a>
-in the OpenShift Container Platform <em>Architecture</em> documentation for more information.</p>
+<p>When enabling metrics on OpenShift Container Platform, you can store your metrics data on <em>persistent</em> or <em>non-persistent</em> storage. To use persistent storage, you need to provision a persistent volume specifically for this purpose before <a href="#ocp-metrics-storage">configuring the metrics components</a>. See <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/architecture/additional-concepts#architecture-additional-concepts-storage">Persistent Volumes</a> in the OpenShift Container Platform <em>Architecture</em> documentation for more information.</p>
 
 <h2 id="enabling-openshift-container-platform-metrics">
 <a class="anchor" href="#enabling-openshift-container-platform-metrics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling OpenShift Container Platform Metrics</h2>
@@ -708,15 +702,15 @@ information on alternative secure communication configurations, see
 from the OpenShift Container Platform <em>Installation and Configuration</em>
 documentation.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This section is an abridged version of a more detailed chapter, namely
-[Metrics Data Storage](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-data-storage)
-in the OpenShift Container Platform *Installation and Configuration*
+<p>This section is an abridged version of a more detailed chapter, namely
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/installation_and_configuration/install-config-cluster-metrics#metrics-data-storage">Metrics Data Storage</a>
+in the OpenShift Container Platform <em>Installation and Configuration</em>
 documentation. Refer to that chapter for more information on how to
-deploy the metrics plug-in using persistent and non-persistent storage.
+deploy the metrics plug-in using persistent and non-persistent storage.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="deploying-the-metrics-components">
 <a class="anchor" href="#deploying-the-metrics-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying the Metrics Components</h3>
@@ -936,16 +930,13 @@ Capacity &amp; Utilization Collector role is 10 minutes. The first
 collection from a particular provider may take a few minutes since
 ManageIQ is gathering data points going one month back in time.</p>
 
-<p>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/deployment_planning_guide/index.html#capacity-and-utilization-collection">Capacity and Utilization
-Collection</a>
-in the <em>Deployment Planning Guide</em>.</p>
+<p>For more information, see <a href="../deployment_planning_guide/index.html#capacity-and-utilization-collection">Capacity and Utilization Collection</a> in the <em>Deployment Planning Guide</em>.</p>
 
 <h3 id="enabling-smartstate-analysis">
 <a class="anchor" href="#enabling-smartstate-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling SmartState Analysis</h3>
 
 <p>After enabling the required server roles, enable SmartState analysis.
-See <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/support_matrix.html#smart-state-analysis-support">Smart State Analysis Support</a>
-from the Support Matrix.</p>
+See <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/mcm/infrastructure/support_matrix.html#smart-state-analysis-support">Smart State Analysis Support</a> from the Support Matrix.</p>
 
 <p>Enabling SmartState analysis is similar to <a href="../deployment_planning_guide/index.html#assigning-the-capacity-and-utilization-server-roles">Assigning the Capacity and Utilization Server Roles</a>, in that the procedure also involves enabling server roles on a specific server.
 To do so:</p>
@@ -955,13 +946,10 @@ To do so:</p>
     <p>Click <strong>Configuration</strong>.</p>
   </li>
   <li>
-    <p>Select the server to configure from menu: <strong>Settings</strong>[Zone] in the
-left pane of the appliance.</p>
+    <p>Select the server to configure from menu: <strong>Settings</strong>[Zone] in the left pane of the appliance.</p>
   </li>
   <li>
-    <p>Navigate to the <strong>Server Roles</strong> list in the menu:Server[Server
-Control] section. From there, set the appropriate SmartState roles
-to <strong>ON</strong>. Namely:</p>
+    <p>Navigate to the <strong>Server Roles</strong> list in the menu: <strong>Server &gt; Server Control</strong> section. From there, set the appropriate SmartState roles to <strong>ON</strong>. Namely:</p>
 
     <ol>
       <li>
@@ -1037,15 +1025,13 @@ self-signed certificate. For this option, copy your
 provider’s CA certificate to the <strong>Trusted CA
 Certificates</strong> box in PEM format.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-You can obtain your OpenShift Container Platform provider’s
+            <p>You can obtain your OpenShift Container Platform provider’s
 CA certificate for all endpoints (default, metrics, alerts)
-from `/etc/origin/master/ca.crt`. Paste the output (a block
-of text starting with `-----BEGIN CERTIFICATE-----`) into
-the **Trusted CA Certificates** field.
-
-</div>
+from <code class="language-plaintext highlighter-rouge">/etc/origin/master/ca.crt</code>. Paste the output (a block
+of text starting with <code class="language-plaintext highlighter-rouge">-----BEGIN CERTIFICATE-----</code>) into
+the <strong>Trusted CA Certificates</strong> field.</p>
           </li>
           <li>
             <p><strong>SSL without validation</strong>: Authenticate the provider
@@ -1148,17 +1134,15 @@ self-signed certificate. For this option, copy your
 provider’s CA certificate to the <strong>Trusted CA
 Certificates</strong> box in PEM format.</p>
 
-            <div class="note">
+            <p><strong>Note:</strong></p>
 
-In OpenShift, the default deployment of the router generates
+            <p>In OpenShift, the default deployment of the router generates
 certificates during installation, which can be used with the
-**SSL trusting custom CA** option. Connecting a Hawkular
+<strong>SSL trusting custom CA</strong> option. Connecting a Hawkular
 endpoint with this option requires the CA certificate that
 the cluster uses for service certificates, which is stored
-in `/etc/origin/master/service-signer.crt` on the first
-master in a cluster.
-
-</div>
+in <code class="language-plaintext highlighter-rouge">/etc/origin/master/service-signer.crt</code> on the first
+master in a cluster.</p>
           </li>
           <li>
             <p><strong>SSL without validation</strong>: Authenticate the provider
@@ -1184,19 +1168,22 @@ to the metrics endpoint.</p>
     <p>Click the <strong>Advanced</strong> tab to add image inspector settings for
 scanning container images on your provider using OpenSCAP.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - These settings control downloading the image inspector container
-    image from the registry and obtaining the Common Vulnerabilities
-    and Exposures (CVE) information (for effective scanning) via a
-    proxy.
-
-  - CVE URL that ManageIQ requires to be open for
-    OpenSCAP scanning:
-    &lt;https://www.redhat.com/security/data/metrics/ds/&gt;. This
-    information is based on the source code of OpenSCAP.
-
-</div>
+    <ul>
+      <li>
+        <p>These settings control downloading the image inspector container
+image from the registry and obtaining the Common Vulnerabilities
+and Exposures (CVE) information (for effective scanning) via a
+proxy.</p>
+      </li>
+      <li>
+        <p>CVE URL that ManageIQ requires to be open for
+OpenSCAP scanning:
+<a href="https://www.redhat.com/security/data/metrics/ds/">https://www.redhat.com/security/data/metrics/ds/</a>. This
+information is based on the source code of OpenSCAP.</p>
+      </li>
+    </ul>
 
     <ol>
       <li>
@@ -1227,18 +1214,17 @@ application version stored in the image.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You can also set global default image-inspector settings for all
+<p>You can also set global default image-inspector settings for all
 OpenShift providers in the advanced settings menu by editing the values
-under `ems_kubernetes`, instead of setting this for each provider.
+under <code class="language-plaintext highlighter-rouge">ems_kubernetes</code>, instead of setting this for each provider.</p>
 
-For example:
+<p>For example:</p>
 
-    :image_inspector_registry: registry.access.redhat.com
-    :image_inspector_repository: openshift3/image-inspector
-
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:image_inspector_registry: registry.access.redhat.com
+:image_inspector_repository: openshift3/image-inspector
+</code></pre></div></div>
 
 <h2 id="container-image-scanning">
 <a class="anchor" href="#container-image-scanning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Container Image Scanning</h2>
@@ -1374,8 +1360,7 @@ Refreshing the image page will reflect the latest compliance history.</p>
 
 <p>You can output the results of an OpenSCAP scan of images to a report for an overview of the security risk level of images. The **Images by Failed OpenSCAP Rule Results are included with ManageIQ and shows whether the image passed or failed OpenSCAP policy criteria, and the security risk.</p>
 
-<p><strong>Note</strong>: You can also create a copy of this report and edit it to contain additional information, such as the project name where the image is used to produce more useful results. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/monitoring_alerts_and_reporting/index.html#editing-a-report">Editing a Report</a> and <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/monitoring_alerts_and_reporting/index.html#reportable-fields-in-ibm-cloud-pak-for-multicloud-management---infrastructure-management">Reportable Fields in ManageIQ</a>
-in <em>Monitoring, Alerts, and Reporting</em> for instructions on customizing reports.</p>
+<p><strong>Note</strong>: You can also create a copy of this report and edit it to contain additional information, such as the project name where the image is used to produce more useful results. For more information, see <a href="../monitoring_alerts_and_reporting/index.html#editing-a-report">Editing a Report</a> and <a href="../monitoring_alerts_and_reporting/index.html#reportable-fields-in-manageiq">Reportable Fields in ManageIQ</a> in <em>Monitoring, Alerts, and Reporting</em> for instructions on customizing reports.</p>
 
 <p>Steps to create a report to show image compliance:</p>
 
@@ -1455,7 +1440,7 @@ when new images are added to OpenShift.</p>
 
 <p><img src="../images/1860-cppolicy.png" alt="image"></p>
 
-<p>You can now edit the copied policy. After editing copied policies, you can add them to a new policy profile. For instructions on how to edit policies, create a new policy profile, and add policies to it, see the <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.0.0/Infra_mgmt/policies_and_profiles_guide/index.html">Policies and Profiles</a> guide. Once you have a customized policy profile, you can assign it to a containers provider.</p>
+<p>You can now edit the copied policy. After editing copied policies, you can add them to a new policy profile. For instructions on how to edit policies, create a new policy profile, and add policies to it, see the <a href="../policies_and_profiles_guide/index.html">Policies and Profiles</a> guide. Once you have a customized policy profile, you can assign it to a containers provider.</p>
 
 <h2 id="controlling-openshift-pod-execution">
 <a class="anchor" href="#controlling-openshift-pod-execution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controlling OpenShift Pod Execution</h2>

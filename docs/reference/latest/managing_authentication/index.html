@@ -1320,13 +1320,13 @@ authentication mode, required parameters are exposed under <strong>Amazon
 Primary AWS Account Settings for IAM</strong> (Identity and Access Management).
 Be sure to validate your settings before saving them.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For further information on AWS Identity and Access Management settings,
-see the [AWS
-documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
+<p>For further information on AWS Identity and Access Management settings,
+see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">AWS
+documentation</a>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To configure ManageIQ to use AWS IAM authentication:</p>
 
@@ -1475,20 +1475,27 @@ Authentication</strong> option in the web user interface.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-If any of the following conditions are true, configuration fails:
+<p>If any of the following conditions are true, configuration fails:</p>
 
-  - The IPA server is not reachable by its FQDN
+<ul>
+  <li>
+    <p>The IPA server is not reachable by its FQDN</p>
+  </li>
+  <li>
+    <p>The IPA server cannot reach the appliance by its FQDN</p>
+  </li>
+  <li>
+    <p>The time is not synchronized between the appliance and the IPA
+server</p>
+  </li>
+  <li>
+    <p>The IPA server admin password is entered incorrectly</p>
+  </li>
+</ul>
 
-  - The IPA server cannot reach the appliance by its FQDN
-
-  - The time is not synchronized between the appliance and the IPA
-    server
-
-  - The IPA server admin password is entered incorrectly
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>Alternatively, you can configure external authentication using the
 <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> command instead of using the appliance console
@@ -1930,13 +1937,13 @@ SAML for federation authentication.</p>
 steps to configure your HTTP server, then your ManageIQ
 appliance.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The current SAML implementation only secures the ManageIQ
+<p>The current SAML implementation only secures the ManageIQ
 appliance’s web user interface with SAML. The REST API and self service
-user interface do not currently support SAML.
+user interface do not currently support SAML.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><strong>SAML Requirements.</strong></p>
 
@@ -1960,13 +1967,13 @@ ManageIQ, this example procedure covers using Red Hat
 Single Sign-On (RH-SSO) 7.0, which is implemented using the Apache HTTP
 server’s <code class="language-plaintext highlighter-rouge">mod_auth_mellon</code> module.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For more information about Red Hat Single Sign-On (RH-SSO), see the [Red
+<p>For more information about Red Hat Single Sign-On (RH-SSO), see the <a href="https://access.redhat.com/products/red-hat-single-sign-on">Red
 Hat Single Sign-On
-documentation](https://access.redhat.com/products/red-hat-single-sign-on).
+documentation</a>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="configuring-the-http-server-for-saml-authentication-with-red-hat-single-sign-on-rh-sso">
 <a class="anchor" href="#configuring-the-http-server-for-saml-authentication-with-red-hat-single-sign-on-rh-sso" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the HTTP Server for SAML Authentication with Red Hat Single Sign-On (RH-SSO)</h3>

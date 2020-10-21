@@ -923,11 +923,11 @@
 hosts. The <strong>Clusters</strong> page under menu:Compute[Infrastructure]
 displays the clusters discovered in your enterprise environment.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Any filter applied will be in effect here.
+<p>Any filter applied will be in effect here.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><img src="../images/2202.png" alt="2202"></p>
 
@@ -1164,12 +1164,12 @@ data.</p>
 
 <p>The <strong>Capacity &amp; Utilization</strong> charts display</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Daily charts only include full days of data. If a day does not include
-all the 24 data points for a day, the data does not show for that day.
+<p>Daily charts only include full days of data. If a day does not include
+all the 24 data points for a day, the data does not show for that day.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>For information about data optimization including utilization trend
 reports, see <a href="#data-optimization">???</a>.</p>
@@ -1398,11 +1398,11 @@ these clusters remain, but are no longer associated with them.</p>
 <p>The <strong>Hosts</strong> page under menu:Compute[Infrastructure] displays the
 hosts discovered in your enterprise environment.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Any applied filters will be in effect here.
+<p>Any applied filters will be in effect here.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><img src="../images/2212.png" alt="2212"></p>
 
@@ -1497,11 +1497,11 @@ criteria.</p>
   <li>
     <p>Type in a name for the search expression in <strong>Save this search as</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-This title depends on the type of resource you are searching.
+    <p>This title depends on the type of resource you are searching.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -1517,21 +1517,27 @@ This title depends on the type of resource you are searching.
 <p>Perform a SmartState analysis on a host to collect additional
 information about it, such as patches, CPU, and memory.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - SmartState analysis on hosts is processed by the **Provider
-    Operations** role. It is enabled by default.
+<ul>
+  <li>
+    <p>SmartState analysis on hosts is processed by the <strong>Provider
+Operations</strong> role. It is enabled by default.</p>
+  </li>
+  <li>
+    <p>For ESX or ESXi hypervisors, consider the following: ESX hosts
+utilize a service console for host management and can be accessed
+using SSH. ESXi hosts lack a service console and therefore SSH
+cannot be used to obtain information sets for patches, services,
+Linux packages, user groups, SSH Config, and FS Files.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">root</code> or administrator credentials are required to get patch
+information.</p>
+  </li>
+</ul>
 
-  - For ESX or ESXi hypervisors, consider the following: ESX hosts
-    utilize a service console for host management and can be accessed
-    using SSH. ESXi hosts lack a service console and therefore SSH
-    cannot be used to obtain information sets for patches, services,
-    Linux packages, user groups, SSH Config, and FS Files.
-
-  - `root` or administrator credentials are required to get patch
-    information.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -1879,12 +1885,12 @@ be used.</p>
 calls made directly to the host system. If this is not supplied,
 <strong>Default</strong> credentials are used.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Login credentials are required for performing SmartState
-Analysis on the host’s virtual machines and templates.
+        <p>Login credentials are required for performing SmartState
+Analysis on the host’s virtual machines and templates.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
 
         <p>For each type of credential used, the following information is
 required:</p>
@@ -2026,12 +2032,12 @@ maintenance mode. To do so:</p>
     <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), and then
 <img src="../images/1851.png" alt="1851"> (<strong>Toggle Maintenance Mode</strong>).</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-This option can only be used with OpenStack providers with at least
-two Compute nodes.
+    <p>This option can only be used with OpenStack providers with at least
+two Compute nodes.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 
@@ -2068,12 +2074,12 @@ nodes where <strong>Maintenance</strong> is set to <strong>true</strong>.</p>
 <p>Refresh the relationships and power states of the items associated with
 your hosts from the Host Taskbar.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-`root` or administrator credentials are required to get patch
-information.
+<p><code class="language-plaintext highlighter-rouge">root</code> or administrator credentials are required to get patch
+information.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -2097,13 +2103,13 @@ all virtual machines registered to the host.</p>
 
 <p>View Capacity &amp; Utilization data for hosts that are part of a cluster.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Your ManageIQ server requires network visibility to the provider
-assigned the **Server Role** of **Capacity &amp; Utilization Collector** to
-enable this feature.
+<p>Your ManageIQ server requires network visibility to the provider
+assigned the <strong>Server Role</strong> of <strong>Capacity &amp; Utilization Collector</strong> to
+enable this feature.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -2132,12 +2138,12 @@ data.</p>
 <p>The charts are displayed for CPU, memory, disk, network, and running
 virtual machines.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Daily charts only include full days of data. If a day does not include
-all the 24 data points for a day, the data does not show for that day.
+<p>Daily charts only include full days of data. If a day does not include
+all the 24 data points for a day, the data does not show for that day.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>For information about data optimization including utilization trend
 reports, see <a href="#data-optimization">???</a>.</p>
@@ -2234,11 +2240,11 @@ datastores, resource pools, and installed virtual machines.</p>
 and firewall rules on the host. Click on any of these items to see
 further details.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Run a SmartState Analysis on the host to retrieve this information.
+    <p>Run a SmartState Analysis on the host to retrieve this information.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p><strong>Storage Relationships</strong> shows the relationship the host has to
@@ -2249,11 +2255,11 @@ be enabled in the zone for these items to be populated.</p>
     <p><strong>Configuration</strong> shows the number of packages and services
 installed. Click on any of these items to see more details.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Run a SmartState Analysis on the host to retrieve this information.
+    <p>Run a SmartState Analysis on the host to retrieve this information.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
 
     <p><img src="../images/2230.png" alt="2230"></p>
   </li>
@@ -2750,12 +2756,12 @@ expression editor.</p>
     <p>Select either a saved virtual machine search or a virtual machine
 report filter.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-The set of items to select will depend on the type of resource you
-are searching.
+    <p>The set of items to select will depend on the type of resource you
+are searching.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
 
     <p><img src="../images/2131.png" alt="2131"></p>
   </li>
@@ -2973,13 +2979,13 @@ with a host or provider, ensure the virtual machine is registered with
 that system to be properly analyzed; the server requires this
 information since a snapshot might be created.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-SmartState Analysis of a virtual machine requires access to its host. To
+<p>SmartState Analysis of a virtual machine requires access to its host. To
 perform a successful analysis, edit the virtual machine’s host and enter
-the host’s authentication credentials.
+the host’s authentication credentials.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -3117,15 +3123,15 @@ similar to:</p>
 <div class="highlight"><pre class="highlight"><code>directlun=&lt;LUN ID 1&gt;:readonly,&lt;LUN ID 2&gt;:readonly,&lt;LUN ID N&gt;:readonly
 </code></pre></div>        </div>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-The ManageIQ appliance must reside in the same data
+        <p>The ManageIQ appliance must reside in the same data
 center as the storage you are trying to connect. If you have
-multiple data centers with `iSCSI` or `FCP` storage, you need a
+multiple data centers with <code class="language-plaintext highlighter-rouge">iSCSI</code> or <code class="language-plaintext highlighter-rouge">FCP</code> storage, you need a
 ManageIQ appliance in each data center to support virtual
-machine scanning.
+machine scanning.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ul>
   </li>
@@ -3178,21 +3184,24 @@ version of ManageIQ supports VDDK versions 6.0, 6.5, and
 (<code class="language-plaintext highlighter-rouge">VMware-vix-disklib-[version].x86_64.tar.gz</code>) from the VMware
 website.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - If you do not already have a login ID to VMware, then you will
-    need to create one. At the time of this writing, the file can be
-    found by navigating to menu:Downloads\[vSphere\]. Select the
-    version from the drop-down list, then click the **Drivers &amp;
-    Tools** tab. Expand **Automation Tools and SDKs**, and click
-    **Go to Downloads** next to the **VMware vSphere Virtual Disk
-    Development Kit** version. Alternatively, find the file by
-    searching for it using the **Search** on the VMware site.
-
-  - See VMware documentation for information about their policy
-    concerning backward and forward compatibility for VDDK.
-
-</div>
+    <ul>
+      <li>
+        <p>If you do not already have a login ID to VMware, then you will
+need to create one. At the time of this writing, the file can be
+found by navigating to menu:Downloads[vSphere]. Select the
+version from the drop-down list, then click the <strong>Drivers &amp;
+Tools</strong> tab. Expand <strong>Automation Tools and SDKs</strong>, and click
+<strong>Go to Downloads</strong> next to the <strong>VMware vSphere Virtual Disk
+Development Kit</strong> version. Alternatively, find the file by
+searching for it using the <strong>Search</strong> on the VMware site.</p>
+      </li>
+      <li>
+        <p>See VMware documentation for information about their policy
+concerning backward and forward compatibility for VDDK.</p>
+      </li>
+    </ul>
   </li>
   <li>
     <p>Download and copy the <code class="language-plaintext highlighter-rouge">VMware-vix-disklib-[version].x86_64.tar.gz</code>
@@ -3218,14 +3227,14 @@ file using the following commands:</p>
     <p>Run <code class="language-plaintext highlighter-rouge">ldconfig</code> to instruct ManageIQ to find the newly
 installed VDDK library.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Use the following command to verify the VDDK files are listed and
-accessible to the appliance:
+    <p>Use the following command to verify the VDDK files are listed and
+accessible to the appliance:</p>
 
-    # ldconfig -p | grep vix
-
-</div>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># ldconfig -p | grep vix
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart the ManageIQ appliance.</p>
@@ -3786,15 +3795,15 @@ created using linear regression. The calculation uses the capacity and
 utilization data collected by ManageIQ during the interval you
 specify.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You must have a server with network visibility to your provider assigned
-the server role of **Capacity &amp; Utilization Collector** to use this
-feature.
+<p>You must have a server with network visibility to your provider assigned
+the server role of <strong>Capacity &amp; Utilization Collector</strong> to use this
+feature.</p>
 
-The virtual machine must be powered on to collect the data.
+<p>The virtual machine must be powered on to collect the data.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -3827,13 +3836,13 @@ simultaneously.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Daily charts only include full days of data. This means ManageIQ
+<p>Daily charts only include full days of data. This means ManageIQ
 does not show daily data for a day without a complete 24 data point
-range for a day.
+range for a day.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>For information about data optimization including utilization trend
 reports, see <a href="#data-optimization">???</a>.</p>
@@ -3901,12 +3910,12 @@ the <strong>Virtual Thumbnail</strong>, and an operating system-specific screen 
 the item, called the <strong>Summary</strong>. Where applicable, click on a
 subcategory of the <strong>Summary</strong> to see more detail on that section.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When you perform a SmartState Analysis on a virtual machine or template,
-you get more detailed information in these categories.
+<p>When you perform a SmartState Analysis on a virtual machine or template,
+you get more detailed information in these categories.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ul>
   <li>
@@ -4021,12 +4030,12 @@ Policies</strong> displays. This varies based on the operating system.</p>
 ManageIQ provides the description, size, and creation time of the
 snapshot as well as a view of the genealogy of the snapshots.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Snapshot size is only available after the successful completion of a
-**SmartState Analysis**.
+<p>Snapshot size is only available after the successful completion of a
+<strong>SmartState Analysis</strong>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -4479,11 +4488,11 @@ machine with the following steps:</p>
 <h1 id="resizing-a-virtual-machine-disk">
 <a class="anchor" href="#resizing-a-virtual-machine-disk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resizing a Virtual Machine Disk</h1>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This functionality is available on VMware virtual machines only.
+<p>This functionality is available on VMware virtual machines only.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>You can extend a VMware virtual machine’s disk with the following steps:</p>
 
@@ -4583,11 +4592,11 @@ The reconfiguration screen will calculate the <strong>Total Processors</strong>.
 <h1 id="adding-or-removing-virtual-machine-network-adapters">
 <a class="anchor" href="#adding-or-removing-virtual-machine-network-adapters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding or Removing Virtual Machine Network Adapters</h1>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This functionality is available on VMware virtual machines only.
+<p>This functionality is available on VMware virtual machines only.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>You can add or remove network adapters on a VMware virtual machine from
 the <strong>Reconfigure this VM</strong> button.</p>
@@ -4715,11 +4724,11 @@ Connect</strong>.</p>
 <p>Using an <strong>Analysis Profile</strong>, collect event log information from your
 virtual machines.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This feature is only available for Windows.
+<p>This feature is only available for Windows.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -4763,23 +4772,29 @@ websocket proxy.</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - VMware no longer supports the MKS console type. Also, VMRC is no
-    longer a browser plugin but a native desktop application. As a
-    result, the VMware MKS and the VMRC plugin options have been
-    disabled in ManageIQ.
+<ul>
+  <li>
+    <p>VMware no longer supports the MKS console type. Also, VMRC is no
+longer a browser plugin but a native desktop application. As a
+result, the VMware MKS and the VMRC plugin options have been
+disabled in ManageIQ.</p>
+  </li>
+  <li>
+    <p>Currently, attempting to connect to the VMware WebMKS console for a
+virtual machine fails when the server security type is set to <code class="language-plaintext highlighter-rouge">2</code>
+for that virtual machine.</p>
+  </li>
+  <li>
+    <p>Due to VMware licensing restrictions, Red Hat cannot ship the WebMKS
+SDK in ManageIQ. For information on how to configure
+WebMKS support in ManageIQ, see <a href="#configuring-the-webmks-support">Configuring WebMKS
+Support in ManageIQ</a>.</p>
+  </li>
+</ul>
 
-  - Currently, attempting to connect to the VMware WebMKS console for a
-    virtual machine fails when the server security type is set to `2`
-    for that virtual machine.
-
-  - Due to VMware licensing restrictions, Red Hat cannot ship the WebMKS
-    SDK in ManageIQ. For information on how to configure
-    WebMKS support in ManageIQ, see [Configuring WebMKS
-    Support in ManageIQ](#configuring-the-webmks-support).
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>All of the above make use of the websocket protocol supported by all
 recent versions of browsers, and can use SSL to encrypt the websocket
@@ -5090,8 +5105,7 @@ Snapshot</strong>.</p>
 
 <div class="important">
 
-The virtual machine state must be powered `off` for the **Revert to
-selected snapshot** option to be available.
+The virtual machine state must be powered `off` for the **Revert to selected snapshot** option to be available.
 
 </div>
 
@@ -5102,21 +5116,19 @@ selected snapshot** option to be available.
     <p>Power the virtual machine off.</p>
   </li>
   <li>
-    <p>Navigate to menu:Compute[Infrastructure &gt; Virtual Machines].</p>
+    <p>Navigate to menu: <strong>Compute &gt; Infrastructure &gt; Virtual Machines</strong>.</p>
   </li>
   <li>
     <p>Select the target virtual machine, and open it to view its details.</p>
   </li>
   <li>
-    <p>Under <strong>Properties</strong>, click <strong>Snapshots</strong> to show information about
-the virtual machine’s snapshots.</p>
+    <p>Under <strong>Properties</strong>, click <strong>Snapshots</strong> to show information about the virtual machine’s snapshots.</p>
   </li>
   <li>
     <p>Select the snapshot to revert to under <strong>Available Snapshots</strong>.</p>
   </li>
   <li>
-    <p>Click <img src="../images/revert_icon.png" alt="revert icon">(<strong>Revert to selected
-snapshot</strong>).</p>
+    <p>Click <img src="../images/revert_icon.png" alt="revert icon">(<strong>Revert to selected snapshot</strong>).</p>
   </li>
   <li>
     <p>Click <strong>OK</strong>.</p>
@@ -5131,25 +5143,33 @@ simplify the subsequent, repeated creation of similar VMs. Templates
 capture the configuration of software, configuration of hardware, and
 the software installed on the VM on which the template is based.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Virtual machines must meet the following criteria to publish as
-templates:
+<p>Virtual machines must meet the following criteria to publish as
+templates:</p>
 
-  - The VM must not be blank, archived or orphaned.
+<ul>
+  <li>
+    <p>The VM must not be blank, archived or orphaned.</p>
+  </li>
+  <li>
+    <p>The VM must be associated with a oVirt / RHV provider.</p>
+  </li>
+  <li>
+    <p>oVirt / RHV provider 4.0 or higher, with
+<code class="language-plaintext highlighter-rouge">use_ovirt_engine_sdk</code> set to <code class="language-plaintext highlighter-rouge">true</code> in
+<code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/config/settings.yml</code> on your
+ManageIQ appliance.</p>
+  </li>
+  <li>
+    <p>The VM power state is <code class="language-plaintext highlighter-rouge">OFF</code>.</p>
+  </li>
+  <li>
+    <p>Sealing a template is not supported for Windows OS VMs.</p>
+  </li>
+</ul>
 
-  - The VM must be associated with a oVirt / RHV provider.
-
-  - oVirt / RHV provider 4.0 or higher, with
-    `use_ovirt_engine_sdk` set to `true` in
-    `/var/www/miq/vmdb/config/settings.yml` on your
-    ManageIQ appliance.
-
-  - The VM power state is `OFF`.
-
-  - Sealing a template is not supported for Windows OS VMs.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To create a template based on an existing VM:</p>
 
@@ -5202,16 +5222,16 @@ provide details for the template:</p>
       <li>
         <p>(Optional) Check <strong>Seal Template</strong>.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Sealing, which uses the `virt-sysprep` command, removes
+        <p>Sealing, which uses the <code class="language-plaintext highlighter-rouge">virt-sysprep</code> command, removes
 system-specific details from a virtual machine before creating a
 template based on that VM. This prevents the original VM’s
 details from appearing in subsequent VMs that are created using
 the same template. It also ensures the functionality of other
-features, such as predictable vNIC order.
+features, such as predictable vNIC order.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>The <strong>Number of VMs</strong> indicates the output will be a single
@@ -5500,18 +5520,23 @@ managed/unregistered, and unmanaged virtual machines. To perform a
 SmartState analysis, the datastore is accessible from a running host and
 valid security credentials are supplied for that host.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - SmartState analysis on datastores is processed by the **Provider
-    Operations** role. It is enabled by default.
+<ul>
+  <li>
+    <p>SmartState analysis on datastores is processed by the <strong>Provider
+Operations</strong> role. It is enabled by default.</p>
+  </li>
+  <li>
+    <p>Be aware that executing a SmartState analysis on a datastore from
+the console takes a while to return data on the content. If capacity
+and utilization roles are enabled, ManageIQ performs the
+analysis automatically on a scheduled basis approximately every 24
+hours.</p>
+  </li>
+</ul>
 
-  - Be aware that executing a SmartState analysis on a datastore from
-    the console takes a while to return data on the content. If capacity
-    and utilization roles are enabled, ManageIQ performs the
-    analysis automatically on a scheduled basis approximately every 24
-    hours.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -5560,14 +5585,14 @@ chosen datastore.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To view **Content** section details, run a SmartState Analysis on the
+<p>To view <strong>Content</strong> section details, run a SmartState Analysis on the
 datastore. For information on how to perform SmartState Analysis, see
-[Performing SmartState Analysis on
-Datastores](#smartstate_analysis_datastore).
+<a href="#smartstate_analysis_datastore">Performing SmartState Analysis on
+Datastores</a>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="tagging-a-datastore">
 <a class="anchor" href="#tagging-a-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging a Datastore</h1>
@@ -5604,13 +5629,13 @@ tag from the second list.</p>
 
 <p>You can view capacity and utilization data for a datastore.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-ManageIQ requires network visibility to your provider assigned
-the server role of *Capacity &amp; Utilization Collector* to enable this
-feature.
+<p>ManageIQ requires network visibility to your provider assigned
+the server role of <em>Capacity &amp; Utilization Collector</em> to enable this
+feature.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -5635,11 +5660,11 @@ managed/unregistered, or unmanaged virtual machines.</p>
 host and exists in the VMDB. Also, a template connected to a
 management system and exists in the VMDB.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Templates cannot be connected to a host.
+        <p>Templates cannot be connected to a host.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p><strong>Managed/Unregistered VM</strong> - A virtual machine or template that
@@ -5665,12 +5690,12 @@ security credentials are provided.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Daily charts only include full days of data. If a day does not include
-all the 24 data points for a day, the data does not show for that day.
+<p>Daily charts only include full days of data. If a day does not include
+all the 24 data points for a day, the data does not show for that day.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>For information about data optimization including utilization trend
 reports, see <a href="#data-optimization">???</a>.</p>
@@ -6014,13 +6039,13 @@ Manager</strong> list.</p>
   <li>
     <p>Select the type of the volume from the <strong>Cloud Volume Type</strong> list.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-See [Amazon EBS Volume
-Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html)
-for more information on volume types.
+    <p>See <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+Types</a>
+for more information on volume types.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Enter the size of the volume in gigabytes (GB).</p>
@@ -6149,13 +6174,13 @@ this Cloud Volume</strong>).</p>
   <li>
     <p>Select a new volume type from the <strong>Cloud Volume Type</strong> list.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-See [Amazon EBS Volume
-Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html)
-for more information on each of the volume types.
+    <p>See <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+Types</a>
+for more information on each of the volume types.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Enter a new size in gigabytes.</p>
@@ -6267,44 +6292,29 @@ Volume</strong>).</p>
     <p>(Optional) Select <strong>Incremental?</strong> to take an incremental backup of
 the volume instead of a full backup.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-You can take an incremental backup of a volume if you have at least
-one existing full backup of the volume. An incremental volume saves
-resources by capturing only changes made to the volume since its
-last backup. See [Create an Incremental Volume
-Backup](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-create-volume-backup-incremental)
-in the *Storage Guide* for more information.
-
-</div>
+    <p>You can take an incremental backup of a volume if you have at least one existing full backup of the volume. An incremental volume saves resources by capturing only changes made to the volume since its last backup. See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-create-volume-backup-incremental">Create an Incremental Volume Backup</a>
+in the <em>Storage Guide</em> for more information.</p>
   </li>
   <li>
-    <p>(Optional) Select <strong>Force?</strong> to allow backup of a volume attached to
-an instance.</p>
+    <p>(Optional) Select <strong>Force?</strong> to allow backup of a volume attached to an instance.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Selecting the **Force** option will back up the volume whether its
-status is *available* or *in-use*. Backing up an *in-use* volume
-ensures data is crash-consistent.
-
-</div>
+    <p>Selecting the <strong>Force</strong> option will back up the volume whether its status is <em>available</em> or <em>in-use</em>. Backing up an <em>in-use</em> volume ensures data is crash-consistent.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
   </li>
 </ol>
 
-<p>View a volume’s backups by clicking <strong>Cloud Volume Backups</strong> on the
-volume’s summary page.</p>
+<p>View a volume’s backups by clicking <strong>Cloud Volume Backups</strong> on the volume’s summary page.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-See [Back Up and Restore a
-Volume](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-volumes-advanced-backup)
-in the *Storage Guide* for more information about backups.
-
-</div>
+<p>See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html/storage_guide/ch-cinder#section-volumes-advanced-backup">Back Up and Restore a Volume</a>
+in the <em>Storage Guide</em> for more information about backups.</p>
 
 <h1 id="restoring-a-volume-from-a-backup">
 <a class="anchor" href="#restoring-a-volume-from-a-backup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restoring a Volume from a Backup</h1>
@@ -6416,13 +6426,10 @@ Volume</strong>).</p>
 <p>Click <strong>Cloud Volume Snapshots</strong> on the summary page of a volume to view
 the snapshots for that volume.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-See [Create, Use, or Delete Volume
-Snapshots](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/storage_guide/#section-create-clone-delete-vol-snapshots)
-in the *Storage Guide* for more information about snapshots.
-
-</div>
+<p>See <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/storage_guide/#section-create-clone-delete-vol-snapshots">Create, Use, or Delete Volume Snapshots</a>
+in the <em>Storage Guide</em> for more information about snapshots.</p>
 
 <h1 id="attaching-a-volume-to-an-instance-1">
 <a class="anchor" href="#attaching-a-volume-to-an-instance-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attaching a Volume to an Instance</h1>
@@ -6555,12 +6562,12 @@ click <img src="../images/1862.png" alt="1862"> (<strong>Add a new Cloud Volume<
   <li>
     <p>Select the type of the volume from the <strong>Cloud Volume Type</strong> list.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-See [Power Systems Virtual Servers documentation](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage)
-for more information on volume types.
+    <p>See <a href="https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage">Power Systems Virtual Servers documentation</a>
+for more information on volume types.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Enter the size of the volume in gigabytes (GB).</p>
@@ -6593,12 +6600,12 @@ to an Instance</strong>) to open the <strong>Attach Cloud Volume</strong> screen
   <li>
     <p>Select an instance from the list.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Note: A VM cannot have disks from different storage types. Only VMs
-matching storage type will be available for selection.
+    <p>Note: A VM cannot have disks from different storage types. Only VMs
+matching storage type will be available for selection.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>The <strong>Device Mountpoint</strong> field is not used.</p>
@@ -6796,20 +6803,25 @@ and receive IP addresses using Dynamic Host Configuration Protocol
 Red Hat OpenStack Platform deployment or elsewhere, such as the physical
 network.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - Keystone API v3 is required to create cloud tenants on Red Hat
-    OpenStack Platform cloud providers. For more information, see
-    [OpenStack Identity
-    (keystone)](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity)
-    in the Red Hat OpenStack Platform *Architecture Guide*.
+<ul>
+  <li>
+    <p>Keystone API v3 is required to create cloud tenants on Red Hat
+OpenStack Platform cloud providers. For more information, see
+<a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity
+(keystone)</a>
+in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
+  </li>
+  <li>
+    <p>For further details on cloud network objects and administration, see
+the <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html-single/networking_guide/#add_an_interface"><em>Networking
+Guide</em></a>
+in the Red Hat OpenStack Platform documentation..</p>
+  </li>
+</ul>
 
-  - For further details on cloud network objects and administration, see
-    the [*Networking
-    Guide*](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html-single/networking_guide/#add_an_interface)
-    in the Red Hat OpenStack Platform documentation..
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="adding-a-cloud-network">
 <a class="anchor" href="#adding-a-cloud-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a Cloud Network</h3>
@@ -6989,15 +7001,15 @@ Address field must match whichever version you select.</p>
         <p>Input the <strong>Subnet CIDR</strong> address in CIDR format, which contains
 the IP address range and subnet mask in one value.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Determine the address by calculating the number of bits masked
+        <p>Determine the address by calculating the number of bits masked
 in the subnet mask and append that value to the IP address
 range. For example, the subnet mask 255.255.255.0 has 24 masked
 bits. To use this mask with the IPv4 address range
-192.168.122.0, specify the address 192.168.122.0/24.
+192.168.122.0, specify the address 192.168.122.0/24.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -7213,14 +7225,14 @@ IP addresses, which can then be dynamically assigned to an instance. All
 incoming traffic destined for that floating IP is routed to the instance
 to which it has been assigned.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Red Hat OpenStack Networking allocates floating IP addresses to all
+<p>Red Hat OpenStack Networking allocates floating IP addresses to all
 projects (tenants) from the same IP ranges/CIDRs. As a result, every
 subnet of floating IPs is consumable by any and all projects. Manage
-this behavior using quotas for specific projects.
+this behavior using quotas for specific projects.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="adding-floating-ips">
 <a class="anchor" href="#adding-floating-ips" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding Floating IPs.</h3>
@@ -7380,12 +7392,12 @@ instances associated with the security group.</p>
         <p>In <strong>Firewall Rules</strong>, you can view a list of ports and IP
 ranges that are accessible.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-This box is not available if you have not set any rules for your
-security group.
+        <p>This box is not available if you have not set any rules for your
+security group.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ul>
   </li>
@@ -7715,12 +7727,12 @@ expression editor.</p>
   <li>
     <p>Select either a saved instance search or an instance report filter.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-The set of items to select will depend on the type of resource you
-are searching.
+    <p>The set of items to select will depend on the type of resource you
+are searching.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Load</strong> to load the search expression.</p>
@@ -7955,7 +7967,7 @@ taskbar.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
 <div class="title">
 
@@ -7963,23 +7975,36 @@ Restrictions on Displaying Files Collected
 
 </div>
 
-  - File size bigger than 20k characters
-
-  - File with missing name
-
-  - Non MIME .conf file, with non ascii characters
-
-  - Non MIME .conf file, without content
-
-  - MIME .exe binary file
+<ul>
+  <li>
+    <p>File size bigger than 20k characters</p>
+  </li>
+  <li>
+    <p>File with missing name</p>
+  </li>
+  <li>
+    <p>Non MIME .conf file, with non ascii characters</p>
+  </li>
+  <li>
+    <p>Non MIME .conf file, without content</p>
+  </li>
+  <li>
+    <p>MIME .exe binary file</p>
+  </li>
+</ul>
 
 <!-- end list -->
 
-  - MIME .txt non binary file
+<ul>
+  <li>
+    <p>MIME .txt non binary file</p>
+  </li>
+  <li>
+    <p>Non MIME .conf ascii file</p>
+  </li>
+</ul>
 
-  - Non MIME .conf ascii file
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <div class="important">
 
@@ -8455,17 +8480,17 @@ enabled</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Keep in mind that the instance will undergo a controlled shutdown when
-you change its flavor.
+<p>Keep in mind that the instance will undergo a controlled shutdown when
+you change its flavor.</p>
 
-For more information about the requirements and underlying OpenStack
-process involved, see [Resize an
-Instance](https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#section-resize-instance)
-in the Red Hat OpenStack Platform *Instances and Images Guide*.
+<p>For more information about the requirements and underlying OpenStack
+process involved, see <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#section-resize-instance">Resize an
+Instance</a>
+in the Red Hat OpenStack Platform <em>Instances and Images Guide</em>.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To resize an instance through ManageIQ:</p>
 
@@ -8617,13 +8642,13 @@ will be displayed as <img src="../images/2143.png" alt="2143"> (<strong>On</stro
 <p>View capacity and utilization data for instances that are part of a
 cluster.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-You must have a server with network visibility to your provider assigned
-the server role of **Capacity &amp; Utilization Collector** to use this
-feature.
+<p>You must have a server with network visibility to your provider assigned
+the server role of <strong>Capacity &amp; Utilization Collector</strong> to use this
+feature.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -8652,13 +8677,13 @@ the dates to view data.</p>
 
 <p><img src="../images/5063.png" alt="5063"></p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Daily charts only include full days of data. This means ManageIQ
+<p>Daily charts only include full days of data. This means ManageIQ
 does not show daily data for a day without a complete 24 data point
-range for a day.
+range for a day.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>For information about data optimization including utilization trend
 reports, see <a href="#data-optimization">???</a>.</p>
@@ -9057,11 +9082,11 @@ History</strong>. A history of up to the last 10 analyses is displayed.</p>
 <p>Using an <strong>Analysis Profile</strong>, collect event log information from your
 instances.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This feature is only available for Windows.
+<p>This feature is only available for Windows.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -9134,11 +9159,11 @@ and Time</strong>.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Saving a blank date will remove all retirement dates.
+<p>Saving a blank date will remove all retirement dates.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To retire selected stacks immediately:</p>
 
@@ -9190,11 +9215,11 @@ this screen, click on instances to see details of all instances the key
 pair relates to. You can use the key pairs added during provisioning
 instances.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Adding a new key pair is currently only supported for OpenStack.
+<p>Adding a new key pair is currently only supported for OpenStack.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h1 id="adding-a-new-key-pair">
 <a class="anchor" href="#adding-a-new-key-pair" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a New Key Pair</h1>

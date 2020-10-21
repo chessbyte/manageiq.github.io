@@ -1083,11 +1083,11 @@ checking that it is enabled. Use the following check commands:</p>
 
     <p><img src="../images/1882.png" alt="image"></p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
- Each selected action can be executed synchronously or asynchronously; synchronous actions will not start until the previous synchronous action is completed, and asynchronous action allows the next action to start whether the first action has completed or not. Also, at least one ManageIQ server in the ManageIQ zone must have the notifier server role that is enabled for the trap to be sent.
+    <p>Each selected action can be executed synchronously or asynchronously; synchronous actions will not start until the previous synchronous action is completed, and asynchronous action allows the next action to start whether the first action has completed or not. Also, at least one ManageIQ server in the ManageIQ zone must have the notifier server role that is enabled for the trap to be sent.</p>
 
- </div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click the add button <img src="../images/1876.png" alt="image">, then:</p>
@@ -1247,11 +1247,11 @@ make sure that permit root login is set to no, type <code class="language-plaint
 
 <p>The compliance check runs all compliance policies that are assigned to the host or virtual machine. If the item fails any of the checks, it is marked as non-compliant in the item’s summary screen.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To schedule, you must have `EvmRole-administrator` access to the ManageIQ server.
+<p>To schedule, you must have <code class="language-plaintext highlighter-rouge">EvmRole-administrator</code> access to the ManageIQ server.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h5 id="scheduling-a-compliance-check">
 <a class="anchor" href="#scheduling-a-compliance-check" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scheduling a Compliance Check</h5>
@@ -3144,11 +3144,11 @@ turns blue to show its assignment state has changed.</p>
 <div class="highlight"><pre class="highlight"><code> bundle exec rake evm:import:scan_profiles -- --source exports/host_default.yaml
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
- If the default profile exists in ManageIQ, the new profile does not overwrite the old profile. Instead, it duplicates the file items in the default profile.
+    <p>If the default profile exists in ManageIQ, the new profile does not overwrite the old profile. Instead, it duplicates the file items in the default profile.</p>
 
- </div>
+    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 

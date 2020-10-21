@@ -641,12 +641,12 @@ has the following requirements:</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-These are the procedural steps as of the time of writing. For more
-information, consult the VMware documentation.
+<p>These are the procedural steps as of the time of writing. For more
+information, consult the VMware documentation.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>Use the following procedure to upload the ManageIQ appliance OVF
 template from your local file system using the vSphere Client.</p>
@@ -781,12 +781,10 @@ The options for your selection are displayed.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The ManageIQ appliance console automatically logs out
-after five minutes of inactivity.
-
-</div>
+<p>The ManageIQ appliance console automatically logs out
+after five minutes of inactivity.</p>
 
 <h3 id="configuring-a-database">
 <a class="anchor" href="#configuring-a-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring a Database</h3>
@@ -848,12 +846,10 @@ key</strong>.</p>
 first appliance. For worker and multi-region setups, use this
 option to copy key from another appliance.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-All ManageIQ appliances in a multi-region
-deployment must use the same key.
-
-</div>
+        <p>All ManageIQ appliances in a multi-region
+deployment must use the same key.</p>
       </li>
     </ul>
   </li>
@@ -956,16 +952,19 @@ PostgreSQL instance. In addition, depending on the aggregate number of
 appliances expected to connect to the PostgreSQL instance, it may be
 necessary to alter the <code class="language-plaintext highlighter-rouge">max_connections</code> setting.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - ManageIQ requires PostgreSQL version 9.5.
-
-  - Because the `postgresql.conf` file controls the operation of all
-    databases managed by a single instance of PostgreSQL, do not mix
-    ManageIQ databases with other types of databases in a single
-    PostgreSQL instance.
-
-</div>
+<ul>
+  <li>
+    <p>ManageIQ requires PostgreSQL version 9.5.</p>
+  </li>
+  <li>
+    <p>Because the <code class="language-plaintext highlighter-rouge">postgresql.conf</code> file controls the operation of all
+databases managed by a single instance of PostgreSQL, do not mix
+ManageIQ databases with other types of databases in a single
+PostgreSQL instance.</p>
+  </li>
+</ul>
 
 <ol>
   <li>
@@ -994,18 +993,15 @@ key</strong>.</p>
 <strong>Fetch key from remote machine</strong> to fetch the key from the
 first appliance.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-All ManageIQ appliances in a multi-region
-deployment must use the same key.
-
-</div>
+        <p>All ManageIQ appliances in a multi-region
+deployment must use the same key.</p>
       </li>
     </ul>
   </li>
   <li>
-    <p>Choose <strong>Create Region in External Database</strong> for the database
-location.</p>
+    <p>Choose <strong>Create Region in External Database</strong> for the database location.</p>
   </li>
   <li>
     <p>Enter the database hostname or IP address when prompted.</p>
@@ -1058,16 +1054,13 @@ not the first ManageIQ appliance, choose <strong>2) Fetch key from
 remote machine</strong>. For worker and multi-region setups, use this
 option to copy the security key from another appliance.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-All ManageIQ appliances in a multi-region deployment
-must use the same key.
-
-</div>
+    <p>All ManageIQ appliances in a multi-region deployment
+must use the same key.</p>
   </li>
   <li>
-    <p>Choose <strong>Join Region in External Database</strong> for the database
-location.</p>
+    <p>Choose <strong>Join Region in External Database</strong> for the database location.</p>
   </li>
   <li>
     <p>Enter the database hostname or IP address when prompted.</p>
@@ -1113,21 +1106,24 @@ version of ManageIQ supports VDDK versions 6.0, 6.5, and
 (<code class="language-plaintext highlighter-rouge">VMware-vix-disklib-[version].x86_64.tar.gz</code>) from the VMware
 website.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - If you do not already have a login ID to VMware, then you will
-    need to create one. At the time of this writing, the file can be
-    found by navigating to menu:Downloads\[vSphere\]. Select the
-    version from the drop-down list, then click the **Drivers &amp;
-    Tools** tab. Expand **Automation Tools and SDKs**, and click
-    **Go to Downloads** next to the **VMware vSphere Virtual Disk
-    Development Kit** version. Alternatively, find the file by
-    searching for it using the **Search** on the VMware site.
-
-  - See VMware documentation for information about their policy
-    concerning backward and forward compatibility for VDDK.
-
-</div>
+    <ul>
+      <li>
+        <p>If you do not already have a login ID to VMware, then you will
+need to create one. At the time of this writing, the file can be
+found by navigating to menu:Downloads[vSphere]. Select the
+version from the drop-down list, then click the <strong>Drivers &amp;
+Tools</strong> tab. Expand <strong>Automation Tools and SDKs</strong>, and click
+<strong>Go to Downloads</strong> next to the <strong>VMware vSphere Virtual Disk
+Development Kit</strong> version. Alternatively, find the file by
+searching for it using the <strong>Search</strong> on the VMware site.</p>
+      </li>
+      <li>
+        <p>See VMware documentation for information about their policy
+concerning backward and forward compatibility for VDDK.</p>
+      </li>
+    </ul>
   </li>
   <li>
     <p>Download and copy the <code class="language-plaintext highlighter-rouge">VMware-vix-disklib-[version].x86_64.tar.gz</code>
@@ -1153,14 +1149,14 @@ file using the following commands:</p>
     <p>Run <code class="language-plaintext highlighter-rouge">ldconfig</code> to instruct ManageIQ to find the newly
 installed VDDK library.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Use the following command to verify the VDDK files are listed and
-accessible to the appliance:
+    <p>Use the following command to verify the VDDK files are listed and
+accessible to the appliance:</p>
 
-    # ldconfig -p | grep vix
-
-</div>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># ldconfig -p | grep vix
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart the ManageIQ appliance.</p>

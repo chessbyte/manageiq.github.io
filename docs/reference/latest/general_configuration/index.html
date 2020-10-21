@@ -1076,14 +1076,14 @@ specifically for charts.</p>
         <p>Use <strong>Time Zone</strong> to select the time zone in which to display
 the console.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-In time zones where clocks are set forward for daylight savings
+        <p>In time zones where clocks are set forward for daylight savings
 time, the time zone correctly displays as EDT (Eastern Daylight
 Time) in the console. When the clocks are set back, it correctly
-displays as EST (Eastern Standard Time).
+displays as EST (Eastern Standard Time).</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Use <strong>Locale</strong> to select the language in which to display the
@@ -1462,26 +1462,32 @@ daily capacity and utilization charts.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The following relationships exist between time zones and performance
-reports:
+<p>The following relationships exist between time zones and performance
+reports:</p>
 
-  - The configured time zone in a performance report is used to select
-    rolled up performance data, regardless of the user’s selected time
-    zone.
+<ul>
+  <li>
+    <p>The configured time zone in a performance report is used to select
+rolled up performance data, regardless of the user’s selected time
+zone.</p>
+  </li>
+  <li>
+    <p>If the configured time zone is null, it defaults to UTC time for
+performance reports.</p>
+  </li>
+  <li>
+    <p>If there is no time profile with the report’s configured time zone
+that is also set to roll up capacity and utilization data, the
+report does not find any records.</p>
+  </li>
+</ul>
 
-  - If the configured time zone is null, it defaults to UTC time for
-    performance reports.
+<p>For non-performance reports, the user’s time zone is used when
+displaying dates and times in report rows.</p>
 
-  - If there is no time profile with the report’s configured time zone
-    that is also set to roll up capacity and utilization data, the
-    report does not find any records.
-
-For non-performance reports, the user’s time zone is used when
-displaying dates and times in report rows.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <h4 id="editing-a-time-profile">
 <a class="anchor" href="#editing-a-time-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Time Profile</h4>
@@ -2009,14 +2015,19 @@ technology center contains a single subregion that manages two zones.
 Likewise the San Diego technology center contains a single subregion
 managing a single zone.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - Replicating a parent region to a higher-level parent is not
-    supported.
+<ul>
+  <li>
+    <p>Replicating a parent region to a higher-level parent is not
+supported.</p>
+  </li>
+  <li>
+    <p>Parent regions can be configured after the child regions are online.</p>
+  </li>
+</ul>
 
-  - Parent regions can be configured after the child regions are online.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>The following diagram provides a closer look at a region:
 <img src="../images/7150.png" alt="7150"></p>
@@ -2040,14 +2051,14 @@ database that includes all information across multiple subordinate
 regions. The subordinate regions replicate their information to the
 master.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The subordinate regions are not aware of each other from a database
+<p>The subordinate regions are not aware of each other from a database
 perspective. You cannot see information from one subordinate region in
 another. The only VMDB with data visibility to all subordinate regions
-is the top level.
+is the top level.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><strong>Master Regions Scope</strong></p>
 
@@ -2139,18 +2150,23 @@ collect data for.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-1.  As new clusters, hosts, and datastores are discovered, you will need
-    to come back to this configuration to enable collection of capacity
-    and utilization data unless you have used the **Collect for All**
-    check boxes.
+<ol>
+  <li>
+    <p>As new clusters, hosts, and datastores are discovered, you will need
+to come back to this configuration to enable collection of capacity
+and utilization data unless you have used the <strong>Collect for All</strong>
+check boxes.</p>
+  </li>
+  <li>
+    <p><strong>Collect for All Clusters</strong> must be checked to be able to collect
+capacity and utilization data from cloud providers such as Red Hat
+OpenStack Platform or Amazon EC2.</p>
+  </li>
+</ol>
 
-2.  **Collect for All Clusters** must be checked to be able to collect
-    capacity and utilization data from cloud providers such as Red Hat
-    OpenStack Platform or Amazon EC2.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <h5 id="tags">
 <a class="anchor" href="#tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tags</h5>
@@ -2203,12 +2219,12 @@ the <strong>My Company Categories</strong> tab.</p>
         <p>Use <strong>Name</strong> to create a short name that refers to category in
 the VMDB.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-The **Name** and **Single Value** fields cannot be changed after
-the category has been added.
+        <p>The <strong>Name</strong> and <strong>Single Value</strong> fields cannot be changed after
+the category has been added.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Use <strong>Description</strong> to type a brief explanation of how the
@@ -2276,12 +2292,12 @@ want to delete.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When you delete a tag category, the category values are removed, and any
-tags from the category are unassigned from all resources.
+<p>When you delete a tag category, the category values are removed, and any
+tags from the category are unassigned from all resources.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="creating-a-company-tag">
 <a class="anchor" href="#creating-a-company-tag" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Company Tag</h6>
@@ -2300,16 +2316,21 @@ the <strong>My Company Tags</strong> tab.</p>
     <p>In the <strong>Choose a Category</strong> area, select a category from the
 <strong>Category</strong> list.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-  - Some categories only allow one value to be assigned to a
-    resource.
+    <ul>
+      <li>
+        <p>Some categories only allow one value to be assigned to a
+resource.</p>
+      </li>
+      <li>
+        <p>For some databases such as <strong>PostgreSQL</strong>, tags are case
+sensitive. For example, filtering by ‘Linux’ in title case give
+you different results from filtering by ‘linux’ in lower case.</p>
+      </li>
+    </ul>
 
-  - For some databases such as **PostgreSQL**, tags are case
-    sensitive. For example, filtering by 'Linux' in title case give
-    you different results from filtering by 'linux' in lower case.
-
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Add</strong> under the <strong>Actions</strong> column, and type a <strong>Name</strong> and
@@ -2337,12 +2358,12 @@ the <strong>My Company Tags</strong> tab.</p>
     <p>Click <strong>Delete</strong> under the <strong>Actions</strong> column next to the tag to
 delete it.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-When you delete a tag, the tag is also deleted from any resource to
-which it was assigned.
+    <p>When you delete a tag, the tag is also deleted from any resource to
+which it was assigned.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>OK</strong> to confirm.</p>
@@ -2399,14 +2420,14 @@ located.</p>
   <li>
     <p>Click <strong>Upload</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If there are any problems with the file, such as an incorrect column
+    <p>If there are any problems with the file, such as an incorrect column
 name, unknown virtual machine, unknown tag, or multiple values for a
 tag that should have only one, an error message will appear in the
-console for those records.
+console for those records.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Apply</strong>.</p>
@@ -2490,12 +2511,12 @@ variable file is located.</p>
   <li>
     <p>Click <strong>Upload</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If there are any problems with the file, such as an incorrect column
-name, unknown virtual machine or host, a message appears.
+    <p>If there are any problems with the file, such as an incorrect column
+name, unknown virtual machine or host, a message appears.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Apply</strong>.</p>
@@ -2509,11 +2530,11 @@ name, unknown virtual machine or host, a message appears.
 this feature to define menu labels, URLs and how each window opens for
 users.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Any change to the help menu will take effect upon a full page reload.
+<p>Any change to the help menu will take effect upon a full page reload.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>Customize the help menu using the following steps:</p>
 
@@ -2786,13 +2807,13 @@ ManageIQ Eastern zone. If Appliance A dispatches a job of
 analyzing twenty virtual machines, this job can be processed by either
 Appliance A or B, but not C or D.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Only users assigned the super administrator role can create zones. There
-must always be at least one zone. The **Default Zone** is provided and
-cannot be deleted.
+<p>Only users assigned the super administrator role can create zones. There
+must always be at least one zone. The <strong>Default Zone</strong> is provided and
+cannot be deleted.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h5 id="creating-a-zone">
 <a class="anchor" href="#creating-a-zone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Zone</h5>
@@ -2857,11 +2878,11 @@ Scans</strong>. The default is <code class="language-plaintext highlighter-rouge
   <li>
     <p>Click the zone you want to remove.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-You cannot delete a zone if there are servers assigned to it.
+    <p>You cannot delete a zone if there are servers assigned to it.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
@@ -2935,12 +2956,12 @@ multiple servers in your environment that are reporting to one central
 VMDB, then you can edit some of these settings from the console by
 specifying which server you want to change.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The server selection options are only available if you have multiple
-servers sharing one VMDB.
+<p>The server selection options are only available if you have multiple
+servers sharing one VMDB.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h5 id="changing-server-settings">
 <a class="anchor" href="#changing-server-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Server Settings</h5>
@@ -2996,15 +3017,15 @@ appliance to be a member of. At startup, the zone is set to default.</p>
   <li>
     <p>Use <strong>Appliance Time Zone</strong> to set the time zone for this server.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-This is the time zone used when created scheduled analyses. This is
-not the same as the **Time Zone** parameter, which is found by
-navigating to the settings menu, then **My Settings**, then
-exploring the **Display Settings** area, and is the time zone
-displayed in the console.
+    <p>This is the time zone used when created scheduled analyses. This is
+not the same as the <strong>Time Zone</strong> parameter, which is found by
+navigating to the settings menu, then <strong>My Settings</strong>, then
+exploring the <strong>Display Settings</strong> area, and is the time zone
+displayed in the console.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Use <strong>Default Locale</strong> to specify the default language for this
@@ -3027,34 +3048,44 @@ which you refresh your virtual machine repositories. This host must
 have access to your repositories to analyze its virtual machines.</li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - Only super administrators can change server roles.
+<ul>
+  <li>
+    <p>Only super administrators can change server roles.</p>
+  </li>
+  <li>
+    <p>If you are using more than one ManageIQ appliance, be sure to
+set this on all of the appliances.</p>
+  </li>
+</ul>
 
-  - If you are using more than one ManageIQ appliance, be sure to
-    set this on all of the appliances.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="server-roles">
 <a class="anchor" href="#server-roles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Roles</h6>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - Server roles that are in an active/active high availability
-    configuration *(load balancing and failover protection)* are active
-    in more than one location; whereas, roles that are in an
-    active/passive *(primary/secondary in the case of
-    ManageIQ)* high availability configuration *(failover
-    protection)*, if more than one ManageIQ server in a
-    specific zone or region has this role, only one will be active
-    *(primary)* at a time and a failover has to occur to the passive
-    *(secondary)* appliance with that role.
+<ul>
+  <li>
+    <p>Server roles that are in an active/active high availability
+configuration <em>(load balancing and failover protection)</em> are active
+in more than one location; whereas, roles that are in an
+active/passive <em>(primary/secondary in the case of
+ManageIQ)</em> high availability configuration <em>(failover
+protection)</em>, if more than one ManageIQ server in a
+specific zone or region has this role, only one will be active
+<em>(primary)</em> at a time and a failover has to occur to the passive
+<em>(secondary)</em> appliance with that role.</p>
+  </li>
+  <li>
+    <p>For information on region and zone diagnostics and server role
+priorities, see <a href="#diagnostics">Diagnostics</a>.</p>
+  </li>
+</ul>
 
-  - For information on region and zone diagnostics and server role
-    priorities, see [Diagnostics](#diagnostics).
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <table>
   <thead>
@@ -3192,14 +3223,14 @@ registered to a host. To use this feature, you must have VNC installed,
 <a href="../managing_infrastructure_and_inventory/index.html#configuring-webmks-support-in-manageiq">VMware’s WebMKS SDK enabled in ManageIQ</a>,
 or the VMRC native desktop application installed for your environment.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-See vendor documentation to ensure you are installing appropriate
+<p>See vendor documentation to ensure you are installing appropriate
 applications for your virtual infrastructure. Once you have installed
 the required software, you must specify its version in the
-ManageIQ configuration settings.
+ManageIQ configuration settings.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><img src="../images/2061.png" alt="2061"></p>
 
@@ -3336,13 +3367,13 @@ primary server for this role.</p>
 <p>To use the email action in ManageIQ, set an email address to send
 emails from.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To be able to send any emails from the server, you must have the
+<p>To be able to send any emails from the server, you must have the
 Notifier server role enabled. You can test the settings without the role
-enabled.
+enabled.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><img src="../images/outgoingsmtp.png" alt="outgoingsmtp"></p>
 
@@ -3480,11 +3511,11 @@ user is logged out of the console.</p>
 <p>Use the Workers page to specify the number of workers and amount of
 memory allowed to be used for each type.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Only make these changes when directed to by Red Hat Support.
+<p>Only make these changes when directed to by Red Hat Support.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="changing-settings-for-a-worker">
 <a class="anchor" href="#changing-settings-for-a-worker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Settings for a Worker</h6>
@@ -3526,12 +3557,12 @@ boxes.</p>
 Database (VMDB) and its login credentials. By default, the type is
 PostgreSQL on the Server.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The server may not start if the database settings are changed. Be sure
-to validate your new settings before restarting the server.
+<p>The server may not start if the database settings are changed. Be sure
+to validate your new settings before restarting the server.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="changing-a-database-setting">
 <a class="anchor" href="#changing-a-database-setting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing a Database Setting</h6>
@@ -3604,36 +3635,41 @@ procedures below to upload a custom logo to the user interface, and to
 customize the login background and login panel text on the user
 interface.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - If you have upgraded from an earlier ManageIQ version and
-    your custom logo was already in use before migration, although your
-    logo image file is still in place in `vmdb/public/upload` you may
-    have to uncheck and recheck the option to **Use Custom Logo Image**
-    to re-enable displaying your custom logo. See
-    [simpara\_title](#uploading-a-custom-logo-to-the-console) for the
-    procedure on how to access the **Use Custom Logo Image** option, or
-    if you want to upload another custom logo to the user interface and
-    customize the login background image and login panel text.
+<ul>
+  <li>
+    <p>If you have upgraded from an earlier ManageIQ version and
+your custom logo was already in use before migration, although your
+logo image file is still in place in <code class="language-plaintext highlighter-rouge">vmdb/public/upload</code> you may
+have to uncheck and recheck the option to <strong>Use Custom Logo Image</strong>
+to re-enable displaying your custom logo. See
+<a href="#uploading-a-custom-logo-to-the-console">simpara_title</a> for the
+procedure on how to access the <strong>Use Custom Logo Image</strong> option, or
+if you want to upload another custom logo to the user interface and
+customize the login background image and login panel text.</p>
+  </li>
+  <li>
+    <p>Additionally, ensure the option to use configuration settings for
+the tenant under <strong>Access Control</strong> is set to <code class="language-plaintext highlighter-rouge">Yes</code>; see
+<a href="#display-custom-settings">simpara_title</a> for the procedure on how
+to set the configuration settings.</p>
+  </li>
+</ul>
 
-  - Additionally, ensure the option to use configuration settings for
-    the tenant under **Access Control** is set to `Yes`; see
-    [simpara\_title](#display-custom-settings) for the procedure on how
-    to set the configuration settings.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="uploading-a-custom-logo-to-the-user-interface">
 <a class="anchor" href="#uploading-a-custom-logo-to-the-user-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uploading a Custom Logo to the User Interface</h6>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Make sure the desired logo is accessible from the computer where you are
+<p>Make sure the desired logo is accessible from the computer where you are
 running the ManageIQ user interface. The file must be in
 portable network graphics (png) format with dimensions of 350 px x 70
-px.
+px.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To upload a custom logo to the user interface:</p>
 
@@ -3671,25 +3707,25 @@ interface.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-To enable displaying your custom logo, ensure the option to use
-configuration settings for the tenant under **Access Control** is set to
-`Yes`. See [simpara\_title](#display-custom-settings) for the procedure
-on how to set the configuration settings.
+<p>To enable displaying your custom logo, ensure the option to use
+configuration settings for the tenant under <strong>Access Control</strong> is set to
+<code class="language-plaintext highlighter-rouge">Yes</code>. See <a href="#display-custom-settings">simpara_title</a> for the procedure
+on how to set the configuration settings.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="customizing-the-login-background">
 <a class="anchor" href="#customizing-the-login-background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing the Login Background</h6>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Make sure the background image that you want to use is accessible from
+<p>Make sure the background image that you want to use is accessible from
 the computer where you are running the user interface. The file must be
-in PNG format with dimensions of 1280 px x 1000 px.
+in PNG format with dimensions of 1280 px x 1000 px.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To customize the login background:</p>
 
@@ -5120,17 +5156,17 @@ Host</strong>, <strong>A single Template</strong>, or <strong>Global Filters</st
 choose to analyze <strong>All Hosts</strong>, <strong>All Hosts for Provider</strong>, <strong>A
 single Host</strong>, or <strong>Global Filters</strong>.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-You can only schedule host analyses for connected virtual
+        <p>You can only schedule host analyses for connected virtual
 machines, not repository virtual machines that were discovered
 through that host. Since repository virtual machines do not
 retain a relationship with the host that discovered them, there
 is no current way to scan them through the scheduling feature.
 The host is shown because it may have connected virtual machines
-in the future when the schedule is set to run.
+in the future when the schedule is set to run.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p><strong>Cluster / Deployment Role Analysis</strong>: Displays <strong>Cluster
@@ -5188,12 +5224,12 @@ prompted to select the number of hours between each analysis.</p>
   <li>
     <p>Select a <strong>Time Zone</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If you change the **Time Zone**, you will need to reset the stating
-date and time.
+    <p>If you change the <strong>Time Zone</strong>, you will need to reset the stating
+date and time.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Type or select a date to begin the schedule in <strong>Starting Date</strong>.</p>
@@ -5210,21 +5246,21 @@ Time Zone.</p>
 <h5 id="scheduling-a-database-backup">
 <a class="anchor" href="#scheduling-a-database-backup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scheduling a Database Backup</h5>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Set `wal_keep_segments` parameter to a value that ensures
+<p>Set <code class="language-plaintext highlighter-rouge">wal_keep_segments</code> parameter to a value that ensures
 ManageIQ scheduled backups finish. Create a test backup
-using a value based on the calculation:
+using a value based on the calculation:</p>
 
-**(\&lt;pg-volume-free-space\&gt;MB/4)/16MB**.
+<p><strong>(&lt;pg-volume-free-space&gt;MB/4)/16MB</strong>.</p>
 
-Measure free space in MB and ensure the denominator matches in units.
+<p>Measure free space in MB and ensure the denominator matches in units.</p>
 
-Setting `wal_keep_segments` to this value will cause the transaction log
+<p>Setting <code class="language-plaintext highlighter-rouge">wal_keep_segments</code> to this value will cause the transaction log
 to occupy, at a minimum, one quarter of the current free space. Adjust
-your calculation accordingly upon successful testing.
+your calculation accordingly upon successful testing.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To set the <code class="language-plaintext highlighter-rouge">wal_keep_segments</code> value:</p>
 
@@ -5319,12 +5355,12 @@ to select the number of hours between each backup.</p>
   <li>
     <p>Select a <strong>Time Zone</strong>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-If you change the **Time Zone**, you will need to reset the stating
-date and time.
+    <p>If you change the <strong>Time Zone</strong>, you will need to reset the stating
+date and time.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Type or select a date to begin the schedule in <strong>Starting Date</strong>.</p>
@@ -5527,14 +5563,14 @@ create a project.</p>
 <p>Use the following procedure to allocate or edit quotas for tenants and
 projects.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Quota is allocated based on the user’s current group. If the user
+<p>Quota is allocated based on the user’s current group. If the user
 belongs to multiple groups, you must change to the desired group before
-allocating or editing group quota. See [Groups](#groups) for more
-details.
+allocating or editing group quota. See <a href="#groups">Groups</a> for more
+details.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -5776,13 +5812,13 @@ jcs"></p>
 <p>ManageIQ provides a default group of roles, but you can also
 create your own, or copy and edit the default groups.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-If you have enabled **Get Role from LDAP** under **LDAP Settings**, then
+<p>If you have enabled <strong>Get Role from LDAP</strong> under <strong>LDAP Settings</strong>, then
 the role is determined by the LDAP user’s group membership in the
-directory service.
+directory service.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To view details of a role and its level of access:</p>
 
@@ -6361,12 +6397,12 @@ you want to view.</p>
       <li>
         <p>Select the appropriate <strong>Timezone</strong>.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Do not select more than one week unless instructed to do so by
-Red Hat Support.
+        <p>Do not select more than one week unless instructed to do so by
+Red Hat Support.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Select a <strong>Start Date</strong>.</p>
@@ -6733,12 +6769,12 @@ File</strong>).</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Use the **Audit Log** to see changes to the user interface and
-authentication.
+<p>Use the <strong>Audit Log</strong> to see changes to the user interface and
+authentication.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h6 id="viewing-the-audit-log">
 <a class="anchor" href="#viewing-the-audit-log" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the Audit Log</h6>
@@ -7135,16 +7171,16 @@ order to <strong>Validate</strong> or <strong>Discard</strong>.</p>
   </li>
 </ol>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Once you configure a ManageIQ instance to act as a global copy,
-and one or more other instances to act as remote copies: \* centralized
+<p>Once you configure a ManageIQ instance to act as a global copy,
+and one or more other instances to act as remote copies: * centralized
 administration is automatically enabled after the initial data sync is
-complete. \* you will see the type of region you are logging into
+complete. * you will see the type of region you are logging into
 (global or remote) on the ManageIQ user interface login
-screen.
+screen.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>Database replication and centralized administration are now enabled on
 your instances. To open virtual machines of a remote region from the
@@ -7242,12 +7278,12 @@ field.</p>
 (NFS)</strong>, <strong>Samba</strong>, <strong>Amazon Web Service(AWS) S3</strong> and <strong>OpenStack
 Swift</strong> storage.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Database backups to **AWS S3** require valid AWS credentials to perform
-this operation.
+<p>Database backups to <strong>AWS S3</strong> require valid AWS credentials to perform
+this operation.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To run a single database backup:</p>
 
@@ -7356,13 +7392,13 @@ from a <code class="language-plaintext highlighter-rouge">Network File System (n
       <li>
         <p>Specify the location of the backup file.</p>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-The appliance console menu may respond slowly if connections are
+        <p>The appliance console menu may respond slowly if connections are
 open and the server is still shutting down. If this occurs, wait
-a minute and try again.
+a minute and try again.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -7404,15 +7440,15 @@ ManageIQ configurations.</p>
 <p>Preserve data at the file system level by performing a binary backup.
 This includes all databases, users and roles, and other objects.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-This procedure uses the `pg_basebackup` utility to perform a remote
+<p>This procedure uses the <code class="language-plaintext highlighter-rouge">pg_basebackup</code> utility to perform a remote
 database backup and create a full replacement of the PostgreSQL data
 directory, capturing the exact state of the database when the backup
-finishes. For more information on the `pg_basebackup` utility, see the
-PostgreSQL documentation.
+finishes. For more information on the <code class="language-plaintext highlighter-rouge">pg_basebackup</code> utility, see the
+PostgreSQL documentation.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h5 id="performing-a-binary-backup">
 <a class="anchor" href="#performing-a-binary-backup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performing a Binary Backup</h5>
@@ -7439,14 +7475,14 @@ PostgreSQL superuser credentials.</p>
 <div class="highlight"><pre class="highlight"><code># pg_basebackup -X fetch -h hostname -U root -Ft -z -D filename
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-**-h** *hostname* specifies the IP address of the database server.
+    <p><strong>-h</strong> <em>hostname</em> specifies the IP address of the database server.</p>
 
-**-D** *filename* specifies the name of the directory created to
-contain the backup.
+    <p><strong>-D</strong> <em>filename</em> specifies the name of the directory created to
+contain the backup.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 
@@ -7753,13 +7789,13 @@ empty metrics tables and reorganize the database. Periodic maintenance
 can be configured to run hourly, daily, weekly, or monthly, at a
 specified hour and on a specified day.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Periodic maintenance can impact appliance performance while it is
+<p>Periodic maintenance can impact appliance performance while it is
 running. Red Hat recommends scheduling periodic maintenance
-infrequently, and at off hours.
+infrequently, and at off hours.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>To configure hourly and periodic database maintenance:</p>
 

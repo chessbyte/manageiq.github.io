@@ -809,12 +809,12 @@ $ oc describe scc privileged | grep Users
 Users:                  system:admin,system:serviceaccount:openshift-infra:build-controller,system:serviceaccount:management-infra:management-admin,system:serviceaccount:management-infra:inspector-admin,system:serviceaccount:logging:aggregated-logging-fluentd,system:serviceaccount:&lt;your-project&gt;:cfme-privileged
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-For more information on SCCs, see the [OpenShift
-documentation](https://docs.openshift.com/container-platform/3.7/admin_guide/manage_scc.html).
+    <p>For more information on SCCs, see the <a href="https://docs.openshift.com/container-platform/3.7/admin_guide/manage_scc.html">OpenShift
+documentation</a>.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>As the admin user, add the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service
@@ -849,20 +849,20 @@ application data.</p>
 available from the image stream or repository configured in
 <a href="#templates-images">Templates and Images</a>.</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-For NFS-backed volumes, ensure your NFS server firewall is
+    <p>For NFS-backed volumes, ensure your NFS server firewall is
 configured to allow traffic on port 2049 (TCP) from the OpenShift
-cluster.
+cluster.</p>
 
-Red Hat recommends setting permissions for the pv-app (privileged
+    <p>Red Hat recommends setting permissions for the pv-app (privileged
 pod volume) as 777, uid/gid 0 (owned by root). For more information
 on configuring persistent storage in OpenShift Container Platform,
-see the [OpenShift Container Platform Installation and
-Configuration](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/installation_and_configuration/#configuring-persistent-storage)
-guide.
+see the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/installation_and_configuration/#configuring-persistent-storage">OpenShift Container Platform Installation and
+Configuration</a>
+guide.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
 
     <ol>
       <li>
@@ -892,21 +892,27 @@ process the templates in a single command:</p>
 <div class="highlight"><pre class="highlight"><code>$ oc process cfme-pv-server-example.yaml -p NFS_HOST=nfs.example.com | oc create -f -
 </code></pre></div>        </div>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-There are three parameters required to process the template.
-Only NFS\_HOST is required, PV\_SIZE and BASE\_PATH contain
-defaults that do not need editing unless desired:
+        <p>There are three parameters required to process the template.
+Only NFS_HOST is required, PV_SIZE and BASE_PATH contain
+defaults that do not need editing unless desired:</p>
 
-  - PV\_SIZE - Defaults to the recommended PV size for the
-    App/DB template (5Gi/15Gi respectively)
+        <ul>
+          <li>
+            <p>PV_SIZE - Defaults to the recommended PV size for the
+App/DB template (5Gi/15Gi respectively)</p>
+          </li>
+          <li>
+            <p>BASE_PATH - Defaults to /exports</p>
+          </li>
+          <li>
+            <p>NFS_HOST - No Default - Hostname or IP address of the NFS
+server</p>
+          </li>
+        </ul>
 
-  - BASE\_PATH - Defaults to /exports
-
-  - NFS\_HOST - No Default - Hostname or IP address of the NFS
-    server
-
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Verify the persistent volumes were created successfully:</p>
@@ -919,12 +925,12 @@ cfme-app            5Gi        RWO           Retain          Available          
 cfme-db             15Gi       RWO           Retain          Available                                          49s
 </code></pre></div>        </div>
 
-        <div class="note">
+        <p><strong>Note:</strong></p>
 
-Red Hat recommends validating NFS share connectivity from an
-OpenShift node before attempting a deployment.
+        <p>Red Hat recommends validating NFS share connectivity from an
+OpenShift node before attempting a deployment.</p>
 
-</div>
+        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -1025,19 +1031,16 @@ parameters to the command. For example:</p>
 <div class="highlight"><pre class="highlight"><code>$ oc new-app --template=cloudforms -p DATABASE_VOLUME_CAPACITY=2Gi,POSTGRESQL_MEM_LIMIT=4Gi,APPLICATION_DOMAIN=hostname
 </code></pre></div>    </div>
 
-    <div class="important">
+    <p><strong>Important:</strong></p>
 
-The `APPLICATION_DOMAIN` parameter specifies the hostname used to
+    <p>The <code class="language-plaintext highlighter-rouge">APPLICATION_DOMAIN</code> parameter specifies the hostname used to
 reach the ManageIQ application, which eventually
 constructs the route to the ManageIQ pod. If you do
-not specify the `APPLICATION_DOMAIN` parameter, the
+not specify the <code class="language-plaintext highlighter-rouge">APPLICATION_DOMAIN</code> parameter, the
 ManageIQ application will not be accessible after the
 deployment; however, this can be fixed by changing the route. For
 more information on OpenShift template parameters, see the
-[OpenShift Container Platform Developer
-Guide](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-templates).
-
-</div>
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-templates">OpenShift Container Platform Developer Guide</a>.</p>
   </li>
 </ol>
 
@@ -1088,12 +1091,12 @@ your remote PostgreSQL server.</p>
 <p>Verify the deployment was successful by running the following commands
 as a regular user under the ManageIQ project:</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The first deployment can take several minutes to complete while
-OpenShift downloads the necessary images.
+<p>The first deployment can take several minutes to complete while
+OpenShift downloads the necessary images.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -1155,12 +1158,12 @@ pods/cfme-1-s3bnp
   <li>
     <p>Check the readiness of the ManageIQ pod:</p>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-Allow approximately five minutes once pods are in running state for
-ManageIQ to start responding on HTTPS.
+    <p>Allow approximately five minutes once pods are in running state for
+ManageIQ to start responding on HTTPS.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc describe pods &lt;cfme_pod_name&gt;
@@ -1196,15 +1199,15 @@ deploymentconfig "memcached" updated
 deploymentconfig "postgresql" updated
 </code></pre></div>    </div>
 
-    <div class="note">
+    <p><strong>Note:</strong></p>
 
-The configuration change trigger is kept enabled; to have full
+    <p>The configuration change trigger is kept enabled; to have full
 control of your deployments, you can alternatively turn it off. See
-the [OpenShift Container Platform Developer
-Guide](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-triggering-builds)
-for more information on deployment triggers.
+the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-triggering-builds">OpenShift Container Platform Developer
+Guide</a>
+for more information on deployment triggers.</p>
 
-</div>
+    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 

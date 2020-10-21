@@ -740,17 +740,12 @@ for your database:</p>
 
 <p><img src="../images/5780.png" alt="5780"></p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-When enabling capacity and utilization for metrics gathering over a
-period of time, it is recommended that the VMDB size scale accordingly.
-Evaluate the number of instances in your provider inventory and storage
-duration requirements to plan for increased VMDB sizing requirements.
+<p>When enabling capacity and utilization for metrics gathering over a period of time, it is recommended that the VMDB size scale accordingly.
+Evaluate the number of instances in your provider inventory and storage duration requirements to plan for increased VMDB sizing requirements.</p>
 
-</div>
-
-<p>Use the following information to plan for your increased VMDB needs when
-working with metrics gathering:</p>
+<p>Use the following information to plan for your increased VMDB needs when working with metrics gathering:</p>
 
 <ul>
   <li>
@@ -1134,14 +1129,19 @@ technology center contains a single subregion that manages two zones.
 Likewise, the San Diego technology center contains a single subregion
 managing a single zone.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-  - Replicating a parent region to a higher-level parent is not
-    supported.
+<ul>
+  <li>
+    <p>Replicating a parent region to a higher-level parent is not
+supported.</p>
+  </li>
+  <li>
+    <p>Parent regions can be configured after the child regions are online.</p>
+  </li>
+</ul>
 
-  - Parent regions can be configured after the child regions are online.
-
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>The following diagram provides a closer look at a region:</p>
 
@@ -1155,14 +1155,14 @@ All appliances can connect to the authentication services (Active
 Directory, LDAP, Identity Management), outgoing mail (SMTP), and network
 services (SNMP).</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-ManageIQ can be configured in a highly available setup. In
+<p>ManageIQ can be configured in a highly available setup. In
 this case, all PostgreSQL instances must be running on a server that is
 deployed from the ManageIQ appliance. High availability is
-achieved by database replication between two or more database servers.
+achieved by database replication between two or more database servers.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="roles">
 <a class="anchor" href="#roles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roles</h3>
@@ -1265,13 +1265,13 @@ global region using centralized administration:</p>
   </li>
 </ul>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-ManageIQ life cycle operations other than those listed
+<p>ManageIQ life cycle operations other than those listed
 above are not supported. Centralized administration capabilities are not
-supported from the Self Service user interface.
+supported from the Self Service user interface.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p>With centralized administration, the remote_queue_put leverages a new
 system-to-system REST API request to forward the original request to the
@@ -1283,15 +1283,15 @@ remote region.</p>
 
 <p><img src="../images/centralized_admin.png" alt="Centralized Administration Diagram"></p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-The operations initiated from the global region are subject to the
+<p>The operations initiated from the global region are subject to the
 role-based access control (RBAC) rules on the remote region. The user in
-the remote region which matches the logged-in user’s **user ID** will be
+the remote region which matches the logged-in user’s <strong>user ID</strong> will be
 used to enforce RBAC in the target region. The operation will fail on
-the remote system if the user does not have the required permissions.
+the remote system if the user does not have the required permissions.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="tenancy">
 <a class="anchor" href="#tenancy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tenancy</h3>
@@ -1310,14 +1310,14 @@ be set on specific tenants.</p>
 allocating resources to a small group or team within a larger
 organization.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-If you do not add any additional tenants, all resources and user
+<p>If you do not add any additional tenants, all resources and user
 accounts are contained in a single base tenant which is your
 ManageIQ appliance itself. In ManageIQ, is
-sometimes referred as 'tenant zero'.
+sometimes referred as ‘tenant zero’.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><strong>Tenancy Account Roles.</strong></p>
 
@@ -1420,12 +1420,12 @@ that are nested at the tenant level.</p>
 <p>You can generate or schedule a report for <strong>Tenant Quotas</strong> similar to
 other reports.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-Currently, in tenant quota reports you will see all of the tenants but
-there is no nesting information available by parent and child tenants.
+<p>Currently, in tenant quota reports you will see all of the tenants but
+there is no nesting information available by parent and child tenants.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <p><strong>Example:.</strong></p>
 
@@ -1699,12 +1699,12 @@ Capacity &amp; Utilization Collector role is 10 minutes. The first
 collection from a particular provider may take a few minutes since
 ManageIQ is gathering data points going one month back in time.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-In addition to setting the server role, you must also select which
-clusters and data stores to collect data for. For more information, see the **General Configuration** guide. You must have super administrator privileges to edit these settings.
+<p>In addition to setting the server role, you must also select which
+clusters and data stores to collect data for. For more information, see the <strong>General Configuration</strong> guide. You must have super administrator privileges to edit these settings.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h3 id="adding-database-credentials-for-data-collection">
 <a class="anchor" href="#adding-database-credentials-for-data-collection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding Database Credentials for Data Collection</h3>
@@ -2026,11 +2026,11 @@ installation of RHEL-OSP and registration to a satellite that has access to both
 
 <p>ManageIQ generates charts from the collected data that can be used to plan your hardware and virtual machine needs. Depending on the type of data, these charts can include lines for averages, maximums, minimums, and trends.</p>
 
-<div class="note">
+<p><strong>Note:</strong></p>
 
-For reporting of daily capacity and utilization data, incomplete days (days with less than 24 hourly data points from midnight to midnight) that are at the beginning or end of the requested interval are excluded. Days with less than 24 hourly data points would be inaccurate and including them would skew trend lines. Therefore, at least one full day of hourly data from midnight to midnight is necessary for displaying the capacity and utilization charts under the menu: **Compute &gt; Infrastructure** tab.
+<p>For reporting of daily capacity and utilization data, incomplete days (days with less than 24 hourly data points from midnight to midnight) that are at the beginning or end of the requested interval are excluded. Days with less than 24 hourly data points would be inaccurate and including them would skew trend lines. Therefore, at least one full day of hourly data from midnight to midnight is necessary for displaying the capacity and utilization charts under the menu: <strong>Compute &gt; Infrastructure</strong> tab.</p>
 
-</div>
+<p>&lt;/div&gt;</p>
 
 <h4 id="capacity-and-utilization-charts-for-hosts-clusters-and-virtual-machines">
 <a class="anchor" href="#capacity-and-utilization-charts-for-hosts-clusters-and-virtual-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Capacity and Utilization Charts for Hosts, Clusters, and Virtual Machines</h4>
