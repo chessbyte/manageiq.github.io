@@ -609,8 +609,7 @@ with their credentials.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>For further information on managing users, groups, and account roles,
-see <a href="../general_configuration/index.html#access-control">Access Control</a>
+<p>For further information on managing users, groups, and account roles, see <a href="../general_configuration/index.html#access-control">Access Control</a>
 in <em>General Configuration</em>.</p>
 
 <h2 id="configuring-authentication-settings-in-manageiq">
@@ -1322,11 +1321,7 @@ Be sure to validate your settings before saving them.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>For further information on AWS Identity and Access Management settings,
-see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">AWS
-documentation</a>.</p>
-
-<p>&lt;/div&gt;</p>
+<p>For further information on AWS Identity and Access Management settings, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">AWS documentation</a>.</p>
 
 <p>To configure ManageIQ to use AWS IAM authentication:</p>
 
@@ -1487,19 +1482,14 @@ Authentication</strong> option in the web user interface.</p>
     <p>The IPA server cannot reach the appliance by its FQDN</p>
   </li>
   <li>
-    <p>The time is not synchronized between the appliance and the IPA
-server</p>
+    <p>The time is not synchronized between the appliance and the IPA server</p>
   </li>
   <li>
     <p>The IPA server admin password is entered incorrectly</p>
   </li>
 </ul>
 
-<p>&lt;/div&gt;</p>
-
-<p>Alternatively, you can configure external authentication using the
-<code class="language-plaintext highlighter-rouge">appliance_console_cli</code> command instead of using the appliance console
-menu:</p>
+<p>Alternatively, you can configure external authentication using the <code class="language-plaintext highlighter-rouge">appliance_console_cli</code> command instead of using the appliance console menu:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh root@appliance.test.company.com
 [appliance]# /bin/appliance_console_cli --host appliance.test.company.com \
@@ -1943,8 +1933,6 @@ appliance.</p>
 appliance’s web user interface with SAML. The REST API and self service
 user interface do not currently support SAML.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p><strong>SAML Requirements.</strong></p>
 
 <p>The following is required in order to enable SAML authentication to the
@@ -1969,11 +1957,7 @@ server’s <code class="language-plaintext highlighter-rouge">mod_auth_mellon</c
 
 <p><strong>Note:</strong></p>
 
-<p>For more information about Red Hat Single Sign-On (RH-SSO), see the <a href="https://access.redhat.com/products/red-hat-single-sign-on">Red
-Hat Single Sign-On
-documentation</a>.</p>
-
-<p>&lt;/div&gt;</p>
+<p>For more information about Red Hat Single Sign-On (RH-SSO), see the <a href="https://access.redhat.com/products/red-hat-single-sign-on">Red Hat Single Sign-On documentation</a>.</p>
 
 <h3 id="configuring-the-http-server-for-saml-authentication-with-red-hat-single-sign-on-rh-sso">
 <a class="anchor" href="#configuring-the-http-server-for-saml-authentication-with-red-hat-single-sign-on-rh-sso" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the HTTP Server for SAML Authentication with Red Hat Single Sign-On (RH-SSO)</h3>
@@ -2051,9 +2035,9 @@ the appliance URL.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>If your appliance is behind a load balancer or uses a virtual IP
-address, use the hostname associated with the VIP. For example: <code class="language-plaintext highlighter-rouge">#
-/usr/libexec/mod_auth_mellon/mellon_create_metadata.sh
+    <p>If your appliance is behind a load balancer or uses a virtual IP address, use the hostname associated with the VIP. 
+For example:
+<code class="language-plaintext highlighter-rouge">#/usr/libexec/mod_auth_mellon/mellon_create_metadata.sh
 https://my-haproxy-ka https://my-haproxy-ka/saml2</code></p>
   </li>
   <li>

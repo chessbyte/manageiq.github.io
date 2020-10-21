@@ -811,10 +811,7 @@ Users:                  system:admin,system:serviceaccount:openshift-infra:build
 
     <p><strong>Note:</strong></p>
 
-    <p>For more information on SCCs, see the <a href="https://docs.openshift.com/container-platform/3.7/admin_guide/manage_scc.html">OpenShift
-documentation</a>.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>For more information on SCCs, see the <a href="https://docs.openshift.com/container-platform/3.7/admin_guide/manage_scc.html">OpenShift documentation</a>.</p>
   </li>
   <li>
     <p>As the admin user, add the <code class="language-plaintext highlighter-rouge">httpd-configmap-generator</code> service
@@ -851,23 +848,14 @@ available from the image stream or repository configured in
 
     <p><strong>Note:</strong></p>
 
-    <p>For NFS-backed volumes, ensure your NFS server firewall is
-configured to allow traffic on port 2049 (TCP) from the OpenShift
-cluster.</p>
+    <p>For NFS-backed volumes, ensure your NFS server firewall is configured to allow traffic on port 2049 (TCP) from the OpenShift cluster.</p>
 
-    <p>Red Hat recommends setting permissions for the pv-app (privileged
-pod volume) as 777, uid/gid 0 (owned by root). For more information
-on configuring persistent storage in OpenShift Container Platform,
-see the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/installation_and_configuration/#configuring-persistent-storage">OpenShift Container Platform Installation and
-Configuration</a>
+    <p>Red Hat recommends setting permissions for the pv-app (privileged pod volume) as 777, uid/gid 0 (owned by root). For more information on configuring persistent storage in OpenShift Container Platform, see the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/installation_and_configuration/#configuring-persistent-storage">OpenShift Container Platform Installation and Configuration</a>
 guide.</p>
-
-    <p>&lt;/div&gt;</p>
 
     <ol>
       <li>
-        <p>Configure your NFS server host details within these files, and
-edit any other settings needed to match your environment.</p>
+        <p>Configure your NFS server host details within these files, and edit any other settings needed to match your environment.</p>
       </li>
       <li>
         <p>Create the two persistent volumes:</p>
@@ -911,8 +899,6 @@ App/DB template (5Gi/15Gi respectively)</p>
 server</p>
           </li>
         </ul>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Verify the persistent volumes were created successfully:</p>
@@ -929,8 +915,6 @@ cfme-db             15Gi       RWO           Retain          Available          
 
         <p>Red Hat recommends validating NFS share connectivity from an
 OpenShift node before attempting a deployment.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -1096,12 +1080,9 @@ as a regular user under the ManageIQ project:</p>
 <p>The first deployment can take several minutes to complete while
 OpenShift downloads the necessary images.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
-    <p>Confirm the ManageIQ pod is bound to the correct
-security context constraints:</p>
+    <p>Confirm the ManageIQ pod is bound to the correct security context constraints:</p>
 
     <ol>
       <li>
@@ -1163,8 +1144,6 @@ pods/cfme-1-s3bnp
     <p>Allow approximately five minutes once pods are in running state for
 ManageIQ to start responding on HTTPS.</p>
 
-    <p>&lt;/div&gt;</p>
-
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc describe pods &lt;cfme_pod_name&gt;
 ...
@@ -1206,8 +1185,6 @@ control of your deployments, you can alternatively turn it off. See
 the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-triggering-builds">OpenShift Container Platform Developer
 Guide</a>
 for more information on deployment triggers.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 

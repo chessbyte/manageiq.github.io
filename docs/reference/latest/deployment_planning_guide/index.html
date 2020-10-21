@@ -1141,8 +1141,6 @@ supported.</p>
   </li>
 </ul>
 
-<p>&lt;/div&gt;</p>
-
 <p>The following diagram provides a closer look at a region:</p>
 
 <p><img src="../images/7150.png" alt="7150"></p>
@@ -1161,8 +1159,6 @@ services (SNMP).</p>
 this case, all PostgreSQL instances must be running on a server that is
 deployed from the ManageIQ appliance. High availability is
 achieved by database replication between two or more database servers.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h3 id="roles">
 <a class="anchor" href="#roles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roles</h3>
@@ -1271,8 +1267,6 @@ global region using centralized administration:</p>
 above are not supported. Centralized administration capabilities are not
 supported from the Self Service user interface.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>With centralized administration, the remote_queue_put leverages a new
 system-to-system REST API request to forward the original request to the
 remote region. This request is put in the local queue in the remote
@@ -1290,8 +1284,6 @@ role-based access control (RBAC) rules on the remote region. The user in
 the remote region which matches the logged-in user’s <strong>user ID</strong> will be
 used to enforce RBAC in the target region. The operation will fail on
 the remote system if the user does not have the required permissions.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h3 id="tenancy">
 <a class="anchor" href="#tenancy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tenancy</h3>
@@ -1316,8 +1308,6 @@ organization.</p>
 accounts are contained in a single base tenant which is your
 ManageIQ appliance itself. In ManageIQ, is
 sometimes referred as ‘tenant zero’.</p>
-
-<p>&lt;/div&gt;</p>
 
 <p><strong>Tenancy Account Roles.</strong></p>
 
@@ -1425,9 +1415,7 @@ other reports.</p>
 <p>Currently, in tenant quota reports you will see all of the tenants but
 there is no nesting information available by parent and child tenants.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p><strong>Example:.</strong></p>
+<p><strong>Example:</strong></p>
 
 <p>In the following example of a tenant quota report, <em>DevOps Teams</em> is a
 parent tenant and <em>Team Alpha</em> and <em>Team Bravo</em> are child tenants.</p>
@@ -1617,7 +1605,7 @@ configurations are not overwritten on ManageIQ upgrades.</p>
 <p>The following file name example follows <code class="language-plaintext highlighter-rouge">01_miq_overrides.conf</code>
 alphabetically in the <code class="language-plaintext highlighter-rouge">/etc/manageiq/postgresql.conf.d</code> directory:</p>
 
-<p><strong>Example.</strong></p>
+<p><strong>Example:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test_miq_overrides.conf
 </code></pre></div></div>
@@ -1633,7 +1621,7 @@ information.</p>
 <p>The following example queries the ManageIQ for current
 value set for <code class="language-plaintext highlighter-rouge">max_wal_senders</code>:</p>
 
-<p><strong>Example.</strong></p>
+<p><strong>Example:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`psql -d vmdb_production -c 'show max_wal_senders'
 </code></pre></div></div>
@@ -1704,8 +1692,6 @@ ManageIQ is gathering data points going one month back in time.</p>
 <p>In addition to setting the server role, you must also select which
 clusters and data stores to collect data for. For more information, see the <strong>General Configuration</strong> guide. You must have super administrator privileges to edit these settings.</p>
 
-<p>&lt;/div&gt;</p>
-
 <h3 id="adding-database-credentials-for-data-collection">
 <a class="anchor" href="#adding-database-credentials-for-data-collection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding Database Credentials for Data Collection</h3>
 
@@ -1759,10 +1745,7 @@ database (ovirt_engine_history) is located. Usually, this is the RHV-M server.</
 
     <div class="important">
 
- For RHV 4.2, the PostgreSQL database is delivered as a software
- collection in version 9.5 and must be enabled first. Therefore, to
- run the following psql commands, you need to enable the
- *rh-postgresql95* collection and load into the current shell prompt by using the source command:
+ For RHV 4.2, the PostgreSQL database is delivered as a software collection in version 9.5 and must be enabled first. Therefore, to run the following psql commands, you need to enable the *rh-postgresql95* collection and load into the current shell prompt by using the source command:
 
  $ source /opt/rh/rh-postgresql95/enable
 
@@ -2029,8 +2012,6 @@ installation of RHEL-OSP and registration to a satellite that has access to both
 <p><strong>Note:</strong></p>
 
 <p>For reporting of daily capacity and utilization data, incomplete days (days with less than 24 hourly data points from midnight to midnight) that are at the beginning or end of the requested interval are excluded. Days with less than 24 hourly data points would be inaccurate and including them would skew trend lines. Therefore, at least one full day of hourly data from midnight to midnight is necessary for displaying the capacity and utilization charts under the menu: <strong>Compute &gt; Infrastructure</strong> tab.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h4 id="capacity-and-utilization-charts-for-hosts-clusters-and-virtual-machines">
 <a class="anchor" href="#capacity-and-utilization-charts-for-hosts-clusters-and-virtual-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Capacity and Utilization Charts for Hosts, Clusters, and Virtual Machines</h4>

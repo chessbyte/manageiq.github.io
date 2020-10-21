@@ -855,6 +855,7 @@
 <li class="toc-entry toc-h1"><a href="#searching-for-instances-or-images">Searching for Instances or Images</a></li>
 <li class="toc-entry toc-h1"><a href="#analyzing-instances-and-images-with-smartstate-analysis">Analyzing Instances and Images with SmartState Analysis</a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#restrictions-on-displaying-files-collected">Restrictions on Displaying Files Collected</a></li>
 <li class="toc-entry toc-h2"><a href="#comparing-instances-and-images">Comparing Instances and Images</a></li>
 </ul>
 </li>
@@ -926,8 +927,6 @@ displays the clusters discovered in your enterprise environment.</p>
 <p><strong>Note:</strong></p>
 
 <p>Any filter applied will be in effect here.</p>
-
-<p>&lt;/div&gt;</p>
 
 <p><img src="../images/2202.png" alt="2202"></p>
 
@@ -1166,13 +1165,9 @@ data.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Daily charts only include full days of data. If a day does not include
-all the 24 data points for a day, the data does not show for that day.</p>
+<p>Daily charts only include full days of data. If a day does not include all the 24 data points for a day, the data does not show for that day.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>For information about data optimization including utilization trend
-reports, see <a href="#data-optimization">???</a>.</p>
+<p>For information about data optimization including utilization trend reports, see <a href="../managing_infrastructure_and_inventory/index.html#data-optimization">Data Optimization</a>.</p>
 
 <h1 id="viewing-cluster-timeline">
 <a class="anchor" href="#viewing-cluster-timeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing Cluster Timeline</h1>
@@ -1402,13 +1397,9 @@ hosts discovered in your enterprise environment.</p>
 
 <p>Any applied filters will be in effect here.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p><img src="../images/2212.png" alt="2212"></p>
 
-<p>After adding or sorting your hosts, click on one to examine it more
-closely and see its virtual machines, SmartProxy settings, and
-properties.</p>
+<p>After adding or sorting your hosts, click on one to examine it more closely and see its virtual machines, SmartProxy settings, and properties.</p>
 
 <p><img src="../images/2222.png" alt="2222"></p>
 
@@ -1488,8 +1479,7 @@ use.</p>
 expression editor.</p>
   </li>
   <li>
-    <p>Use the expression editor to choose the appropriate options for your
-criteria.</p>
+    <p>Use the expression editor to choose the appropriate options for your criteria.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -1500,16 +1490,13 @@ criteria.</p>
     <p><strong>Note:</strong></p>
 
     <p>This title depends on the type of resource you are searching.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
   </li>
 </ol>
 
-<p>The filter is saved and displays in the <strong>My Filters</strong> area of the
-<strong>Filter</strong> accordion.</p>
+<p>The filter is saved and displays in the <strong>My Filters</strong> area of the <strong>Filter</strong> accordion.</p>
 
 <h1 id="performing-smartstate-analysis-on-hosts">
 <a class="anchor" href="#performing-smartstate-analysis-on-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performing SmartState Analysis on Hosts</h1>
@@ -1521,23 +1508,15 @@ information about it, such as patches, CPU, and memory.</p>
 
 <ul>
   <li>
-    <p>SmartState analysis on hosts is processed by the <strong>Provider
-Operations</strong> role. It is enabled by default.</p>
+    <p>SmartState analysis on hosts is processed by the <strong>Provider Operations</strong> role. It is enabled by default.</p>
   </li>
   <li>
-    <p>For ESX or ESXi hypervisors, consider the following: ESX hosts
-utilize a service console for host management and can be accessed
-using SSH. ESXi hosts lack a service console and therefore SSH
-cannot be used to obtain information sets for patches, services,
-Linux packages, user groups, SSH Config, and FS Files.</p>
+    <p>For ESX or ESXi hypervisors, consider the following: ESX hosts utilize a service console for host management and can be accessed using SSH. ESXi hosts lack a service console and therefore SSH cannot be used to obtain information sets for patches, services, Linux packages, user groups, SSH Config, and FS Files.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">root</code> or administrator credentials are required to get patch
-information.</p>
+    <p><code class="language-plaintext highlighter-rouge">root</code> or administrator credentials are required to get patch information.</p>
   </li>
 </ul>
-
-<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -1547,8 +1526,7 @@ information.</p>
     <p>Check the hosts to analyze.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), and then
-<img src="../images/1942.png" alt="1942">(<strong>Perform SmartState Analysis</strong>).</p>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), and then <img src="../images/1942.png" alt="1942">(<strong>Perform SmartState Analysis</strong>).</p>
   </li>
   <li>
     <p>Click <strong>OK</strong>.</p>
@@ -1887,13 +1865,9 @@ calls made directly to the host system. If this is not supplied,
 
         <p><strong>Note:</strong></p>
 
-        <p>Login credentials are required for performing SmartState
-Analysis on the host’s virtual machines and templates.</p>
+        <p>Login credentials are required for performing SmartState Analysis on the host’s virtual machines and templates.</p>
 
-        <p>&lt;/div&gt;</p>
-
-        <p>For each type of credential used, the following information is
-required:</p>
+        <p>For each type of credential used, the following information is required:</p>
       </li>
       <li>
         <p>Use <strong>User ID</strong> to specify a login ID.</p>
@@ -2013,13 +1987,10 @@ from the provider afterwards. Once a node is in maintenance mode, it can
 be repurposed (for examle, re-provision it as a Controller node),
 repaired, or decommissioned altogether.</p>
 
-<p>Before scaling down, evacuate or migrate any instances hosted on the
-node you are removing. For instructions on either procedure, see
-<a href="#_to_live_migrate_an_instance">Migrating a Live Instance</a> or
+<p>Before scaling down, evacuate or migrate any instances hosted on the node you are removing. For instructions on either procedure, see <a href="#_to_live_migrate_an_instance">Migrating a Live Instance</a> or
 <a href="#_to_evacuate_an_instance">Evacuating an Instance</a>.</p>
 
-<p>After migrating or evacuating instances from the node, set the node to
-maintenance mode. To do so:</p>
+<p>After migrating or evacuating instances from the node, set the node to maintenance mode. To do so:</p>
 
 <ol>
   <li>
@@ -2036,16 +2007,12 @@ maintenance mode. To do so:</p>
 
     <p>This option can only be used with OpenStack providers with at least
 two Compute nodes.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
 </ol>
 
-<p>Repeat this procedure for every node you want to remove from the cloud
-provider.</p>
+<p>Repeat this procedure for every node you want to remove from the cloud provider.</p>
 
-<p>After setting a Compute node to maintenance mode, you can scale down its
-provider:</p>
+<p>After setting a Compute node to maintenance mode, you can scale down its provider:</p>
 
 <ol>
   <li>
@@ -2079,8 +2046,6 @@ your hosts from the Host Taskbar.</p>
 <p><code class="language-plaintext highlighter-rouge">root</code> or administrator credentials are required to get patch
 information.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to menu:Compute[Infrastructure &gt; Hosts].</p>
@@ -2106,10 +2071,7 @@ all virtual machines registered to the host.</p>
 <p><strong>Note:</strong></p>
 
 <p>Your ManageIQ server requires network visibility to the provider
-assigned the <strong>Server Role</strong> of <strong>Capacity &amp; Utilization Collector</strong> to
-enable this feature.</p>
-
-<p>&lt;/div&gt;</p>
+assigned the <strong>Server Role</strong> of <strong>Capacity &amp; Utilization Collector</strong> to enable this feature.</p>
 
 <ol>
   <li>
@@ -2124,29 +2086,21 @@ enable this feature.</p>
 accordion, click menu:Properties[Capacity &amp; Utilization].</p>
   </li>
   <li>
-    <p>From <strong>Interval</strong>, select to view hourly or daily data points and
-the dates to view data. Use <strong>Group by</strong> to group the lines by
-SmartTags. Use <strong>Time Profiles</strong> to select a time range for the
-data.</p>
-
-    <p><img src="../images/2220.png" alt="2220"></p>
+    <p>From <strong>Interval</strong>, select to view hourly or daily data points and the dates to view data. Use <strong>Group by</strong> to group the lines by SmartTags. Use <strong>Time Profiles</strong> to select a time range for the data.</p>
   </li>
 </ol>
 
+<p><img src="../images/2220.png" alt="2220"></p>
+
 <p><img src="../images/2221.png" alt="2221"></p>
 
-<p>The charts are displayed for CPU, memory, disk, network, and running
-virtual machines.</p>
+<p>The charts are displayed for CPU, memory, disk, network, and running virtual machines.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Daily charts only include full days of data. If a day does not include
-all the 24 data points for a day, the data does not show for that day.</p>
+<p>Daily charts only include full days of data. If a day does not include all the 24 data points for a day, the data does not show for that day.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>For information about data optimization including utilization trend
-reports, see <a href="#data-optimization">???</a>.</p>
+<p>For information about data optimization including utilization trend reports, see <a href="../managing_infrastructure_and_inventory/index.html#data-optimization">Data Optimization</a>.</p>
 
 <h1 id="viewing-the-host-timeline">
 <a class="anchor" href="#viewing-the-host-timeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the Host Timeline</h1>
@@ -2243,8 +2197,6 @@ further details.</p>
     <p><strong>Note:</strong></p>
 
     <p>Run a SmartState Analysis on the host to retrieve this information.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p><strong>Storage Relationships</strong> shows the relationship the host has to
@@ -2258,8 +2210,6 @@ installed. Click on any of these items to see more details.</p>
     <p><strong>Note:</strong></p>
 
     <p>Run a SmartState Analysis on the host to retrieve this information.</p>
-
-    <p>&lt;/div&gt;</p>
 
     <p><img src="../images/2230.png" alt="2230"></p>
   </li>
@@ -2753,15 +2703,11 @@ expression editor.</p>
     <p>Click <strong>Load</strong>.</p>
   </li>
   <li>
-    <p>Select either a saved virtual machine search or a virtual machine
-report filter.</p>
+    <p>Select either a saved virtual machine search or a virtual machine report filter.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>The set of items to select will depend on the type of resource you
-are searching.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>The set of items to select will depend on the type of resource you are searching.</p>
 
     <p><img src="../images/2131.png" alt="2131"></p>
   </li>
@@ -2981,11 +2927,7 @@ information since a snapshot might be created.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>SmartState Analysis of a virtual machine requires access to its host. To
-perform a successful analysis, edit the virtual machine’s host and enter
-the host’s authentication credentials.</p>
-
-<p>&lt;/div&gt;</p>
+<p>SmartState Analysis of a virtual machine requires access to its host. To perform a successful analysis, edit the virtual machine’s host and enter the host’s authentication credentials.</p>
 
 <ol>
   <li>
@@ -3125,13 +3067,8 @@ similar to:</p>
 
         <p><strong>Note:</strong></p>
 
-        <p>The ManageIQ appliance must reside in the same data
-center as the storage you are trying to connect. If you have
-multiple data centers with <code class="language-plaintext highlighter-rouge">iSCSI</code> or <code class="language-plaintext highlighter-rouge">FCP</code> storage, you need a
-ManageIQ appliance in each data center to support virtual
-machine scanning.</p>
-
-        <p>&lt;/div&gt;</p>
+        <p>The ManageIQ appliance must reside in the same data center as the storage you are trying to connect. If you have multiple data centers with <code class="language-plaintext highlighter-rouge">iSCSI</code> or <code class="language-plaintext highlighter-rouge">FCP</code> storage, you need a
+ManageIQ appliance in each data center to support virtual machine scanning.</p>
       </li>
     </ul>
   </li>
@@ -3797,13 +3734,9 @@ specify.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>You must have a server with network visibility to your provider assigned
-the server role of <strong>Capacity &amp; Utilization Collector</strong> to use this
-feature.</p>
+<p>You must have a server with network visibility to your provider assigned the server role of <strong>Capacity &amp; Utilization Collector</strong> to use this feature.</p>
 
 <p>The virtual machine must be powered on to collect the data.</p>
-
-<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -3838,14 +3771,9 @@ simultaneously.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Daily charts only include full days of data. This means ManageIQ
-does not show daily data for a day without a complete 24 data point
-range for a day.</p>
+<p>Daily charts only include full days of data. This means ManageIQ does not show daily data for a day without a complete 24 data point range for a day.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>For information about data optimization including utilization trend
-reports, see <a href="#data-optimization">???</a>.</p>
+<p>For information about data optimization including utilization trend reports, see <a href="../managing_infrastructure_and_inventory/index.html#data-optimization">Data Optimization</a>.</p>
 
 <h1 id="viewing-the-virtual-machine-or-template-timeline">
 <a class="anchor" href="#viewing-the-virtual-machine-or-template-timeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the Virtual Machine or Template Timeline</h1>
@@ -3914,8 +3842,6 @@ subcategory of the <strong>Summary</strong> to see more detail on that section.<
 
 <p>When you perform a SmartState Analysis on a virtual machine or template,
 you get more detailed information in these categories.</p>
-
-<p>&lt;/div&gt;</p>
 
 <ul>
   <li>
@@ -4032,18 +3958,14 @@ snapshot as well as a view of the genealogy of the snapshots.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Snapshot size is only available after the successful completion of a
-<strong>SmartState Analysis</strong>.</p>
-
-<p>&lt;/div&gt;</p>
+<p>Snapshot size is only available after the successful completion of a <strong>SmartState Analysis</strong>.</p>
 
 <ol>
   <li>
     <p>Navigate to menu:Compute[Infrastructure &gt; Virtual Machines].</p>
   </li>
   <li>
-    <p>Click the appropriate accordion containing the item you wish to view
-the snapshots of.</p>
+    <p>Click the appropriate accordion containing the item you wish to view the snapshots of.</p>
   </li>
   <li>
     <p>Click on the item to view its <strong>Summary</strong>.</p>
@@ -4052,8 +3974,7 @@ the snapshots of.</p>
     <p>From the <strong>Summary</strong>, click <em>Snapshots</em> in the <strong>Properties</strong> area.</p>
   </li>
   <li>
-    <p>The list of snapshots show in a tree format and captures their
-genealogy.</p>
+    <p>The list of snapshots show in a tree format and captures their genealogy.</p>
   </li>
 </ol>
 
@@ -4492,8 +4413,6 @@ machine with the following steps:</p>
 
 <p>This functionality is available on VMware virtual machines only.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>You can extend a VMware virtual machine’s disk with the following steps:</p>
 
 <ol>
@@ -4595,8 +4514,6 @@ The reconfiguration screen will calculate the <strong>Total Processors</strong>.
 <p><strong>Note:</strong></p>
 
 <p>This functionality is available on VMware virtual machines only.</p>
-
-<p>&lt;/div&gt;</p>
 
 <p>You can add or remove network adapters on a VMware virtual machine from
 the <strong>Reconfigure this VM</strong> button.</p>
@@ -4728,8 +4645,6 @@ virtual machines.</p>
 
 <p>This feature is only available for Windows.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to menu:Compute[Infrastructure &gt; Virtual Machines].</p>
@@ -4745,8 +4660,7 @@ virtual machines.</p>
   </li>
 </ol>
 
-<p>The collected event log entries are displayed. Sort this list by
-clicking on the column headers.</p>
+<p>The collected event log entries are displayed. Sort this list by clicking on the column headers.</p>
 
 <h1 id="remote-consoles">
 <a class="anchor" href="#remote-consoles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remote Consoles</h1>
@@ -4794,34 +4708,20 @@ Support in ManageIQ</a>.</p>
   </li>
 </ul>
 
-<p>&lt;/div&gt;</p>
-
-<p>All of the above make use of the websocket protocol supported by all
-recent versions of browsers, and can use SSL to encrypt the websocket
-connection.</p>
+<p>All of the above make use of the websocket protocol supported by all recent versions of browsers, and can use SSL to encrypt the websocket connection.</p>
 
 <ul>
   <li>
     <p>OpenStack
-ManageIQ only makes an API call to get the URL for the
-console and open that console in a web browser; see <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#connect_to_an_instance">Directly
-Connect to a VNC
-Console</a>
-in the Red Hat OpenStack Platform <em>Instances and Images Guide</em> for
-more details.</p>
+ManageIQ only makes an API call to get the URL for the console and open that console in a web browser; see <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#connect_to_an_instance">Directly Connect to a VNC Console</a>
+in the Red Hat OpenStack Platform <em>Instances and Images Guide</em> for more details.</p>
   </li>
   <li>
     <p>Red Hat Enterprise Virtualization Manager and VMware
-By default, the websocket connection runs over HTTPS or HTTP based
-on how the application was accessed. Under an appliance, you will
-most likely use HTTPS, and, therefore, the websocket connection will
+By default, the websocket connection runs over HTTPS or HTTP based on how the application was accessed. Under an appliance, you will most likely use HTTPS, and, therefore, the websocket connection will
 be wss:// (websocket with SSL).</p>
 
-    <p>When configuring Red Hat Virtualization Manager for virtual machine
-console access, set the display type for each virtual machine to
-<code class="language-plaintext highlighter-rouge">noVNC</code> or <code class="language-plaintext highlighter-rouge">SPICE HTML5</code>. For more information on configuring
-console options, see <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.2/html-single/virtual_machine_management_guide/index#sect-Configuring_Console_Options">Configuring Console
-Options</a>
+    <p>When configuring Red Hat Virtualization Manager for virtual machine console access, set the display type for each virtual machine to <code class="language-plaintext highlighter-rouge">noVNC</code> or <code class="language-plaintext highlighter-rouge">SPICE HTML5</code>. For more information on configuring console options, see <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.2/html-single/virtual_machine_management_guide/index#sect-Configuring_Console_Options">Configuring Console Options</a>
 in the Red Hat Virtualization <em>Virtual Machine Management Guide</em>.</p>
   </li>
 </ul>
@@ -5169,8 +5069,6 @@ ManageIQ appliance.</p>
   </li>
 </ul>
 
-<p>&lt;/div&gt;</p>
-
 <p>To create a template based on an existing VM:</p>
 
 <ol>
@@ -5230,8 +5128,6 @@ template based on that VM. This prevents the original VM’s
 details from appearing in subsequent VMs that are created using
 the same template. It also ensures the functionality of other
 features, such as predictable vNIC order.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>The <strong>Number of VMs</strong> indicates the output will be a single
@@ -5524,19 +5420,12 @@ valid security credentials are supplied for that host.</p>
 
 <ul>
   <li>
-    <p>SmartState analysis on datastores is processed by the <strong>Provider
-Operations</strong> role. It is enabled by default.</p>
+    <p>SmartState analysis on datastores is processed by the <strong>Provider Operations</strong> role. It is enabled by default.</p>
   </li>
   <li>
-    <p>Be aware that executing a SmartState analysis on a datastore from
-the console takes a while to return data on the content. If capacity
-and utilization roles are enabled, ManageIQ performs the
-analysis automatically on a scheduled basis approximately every 24
-hours.</p>
+    <p>Be aware that executing a SmartState analysis on a datastore from the console takes a while to return data on the content. If capacity and utilization roles are enabled, ManageIQ performs the analysis automatically on a scheduled basis approximately every 24 hours.</p>
   </li>
 </ul>
-
-<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -5547,8 +5436,7 @@ hours.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), and
-then <img src="../images/1942.png" alt="Perform SmartState Analysis"> (<strong>Perform
-SmartState Analysis</strong>).</p>
+then <img src="../images/1942.png" alt="Perform SmartState Analysis"> (<strong>Perform SmartState Analysis</strong>).</p>
   </li>
   <li>
     <p>Click <strong>OK</strong>.</p>
@@ -5587,12 +5475,7 @@ chosen datastore.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>To view <strong>Content</strong> section details, run a SmartState Analysis on the
-datastore. For information on how to perform SmartState Analysis, see
-<a href="#smartstate_analysis_datastore">Performing SmartState Analysis on
-Datastores</a>.</p>
-
-<p>&lt;/div&gt;</p>
+<p>To view <strong>Content</strong> section details, run a SmartState Analysis on the datastore. For information on how to perform SmartState Analysis, see <a href="#smartstate_analysis_datastore">Performing SmartState Analysis on Datastores</a>.</p>
 
 <h1 id="tagging-a-datastore">
 <a class="anchor" href="#tagging-a-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging a Datastore</h1>
@@ -5631,11 +5514,7 @@ tag from the second list.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>ManageIQ requires network visibility to your provider assigned
-the server role of <em>Capacity &amp; Utilization Collector</em> to enable this
-feature.</p>
-
-<p>&lt;/div&gt;</p>
+<p>ManageIQ requires network visibility to your provider assigned the server role of <em>Capacity &amp; Utilization Collector</em> to enable this feature.</p>
 
 <ol>
   <li>
@@ -5647,12 +5526,10 @@ the Datastore for which to view Capacity and Utilization data.</p>
 <img src="../images/1994.png" alt="Utilization"> (<strong>Utilization</strong>).</p>
   </li>
   <li>
-    <p>From <strong>Interval</strong>, select to view hourly or daily data points and
-the dates to view data.</p>
+    <p>From <strong>Interval</strong>, select to view hourly or daily data points and the dates to view data.</p>
   </li>
   <li>
-    <p>Use <strong>Show VM Types</strong> to include only managed/registered,
-managed/unregistered, or unmanaged virtual machines.</p>
+    <p>Use <strong>Show VM Types</strong> to include only managed/registered, managed/unregistered, or unmanaged virtual machines.</p>
 
     <ul>
       <li>
@@ -5663,8 +5540,6 @@ management system and exists in the VMDB.</p>
         <p><strong>Note:</strong></p>
 
         <p>Templates cannot be connected to a host.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p><strong>Managed/Unregistered VM</strong> - A virtual machine or template that
@@ -5692,13 +5567,9 @@ security credentials are provided.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Daily charts only include full days of data. If a day does not include
-all the 24 data points for a day, the data does not show for that day.</p>
+<p>Daily charts only include full days of data. If a day does not include all the 24 data points for a day, the data does not show for that day.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>For information about data optimization including utilization trend
-reports, see <a href="#data-optimization">???</a>.</p>
+<p>For information about data optimization including utilization trend reports, see <a href="../managing_infrastructure_and_inventory/index.html#data-optimization">Data Optimization</a>.</p>
 
 <h1 id="removing-a-datastore">
 <a class="anchor" href="#removing-a-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Removing a Datastore</h1>
@@ -6041,11 +5912,8 @@ Manager</strong> list.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>See <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-Types</a>
+    <p>See <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
 for more information on volume types.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Enter the size of the volume in gigabytes (GB).</p>
@@ -6176,11 +6044,8 @@ this Cloud Volume</strong>).</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>See <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-Types</a>
+    <p>See <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
 for more information on each of the volume types.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Enter a new size in gigabytes.</p>
@@ -6264,8 +6129,7 @@ restore it in the future.</p>
 <div class="important">
 
 For OpenStack Block Storage managers, the `openstack-cinder-backup`
-service must be enabled on the OpenStack Block Storage manager to create
-a volume backup.
+service must be enabled on the OpenStack Block Storage manager to create a volume backup.
 
 </div>
 
@@ -6566,8 +6430,6 @@ click <img src="../images/1862.png" alt="1862"> (<strong>Add a new Cloud Volume<
 
     <p>See <a href="https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-power-iaas-faqs#storage">Power Systems Virtual Servers documentation</a>
 for more information on volume types.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Enter the size of the volume in gigabytes (GB).</p>
@@ -6593,19 +6455,14 @@ for more information on volume types.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"> (<strong>Configuration</strong>), then
-click <img src="../images/volume-icon.png" alt="Attach selected Cloud Volume to an
-Instance"> (<strong>Attach selected Cloud Volume
-to an Instance</strong>) to open the <strong>Attach Cloud Volume</strong> screen.</p>
+click <img src="../images/volume-icon.png" alt="Attach selected Cloud Volume to an Instance"> (<strong>Attach selected Cloud Volume to an Instance</strong>) to open the <strong>Attach Cloud Volume</strong> screen.</p>
   </li>
   <li>
     <p>Select an instance from the list.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>Note: A VM cannot have disks from different storage types. Only VMs
-matching storage type will be available for selection.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>Note: A VM cannot have disks from different storage types. Only VMs matching storage type will be available for selection.</p>
   </li>
   <li>
     <p>The <strong>Device Mountpoint</strong> field is not used.</p>
@@ -6807,21 +6664,14 @@ network.</p>
 
 <ul>
   <li>
-    <p>Keystone API v3 is required to create cloud tenants on Red Hat
-OpenStack Platform cloud providers. For more information, see
-<a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity
-(keystone)</a>
+    <p>Keystone API v3 is required to create cloud tenants on Red Hat OpenStack Platform cloud providers. For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/11/html-single/architecture_guide/#comp-identity">OpenStack Identity (keystone)</a>
 in the Red Hat OpenStack Platform <em>Architecture Guide</em>.</p>
   </li>
   <li>
-    <p>For further details on cloud network objects and administration, see
-the <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html-single/networking_guide/#add_an_interface"><em>Networking
-Guide</em></a>
+    <p>For further details on cloud network objects and administration, see the <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html-single/networking_guide/#add_an_interface"><em>Networking Guide</em></a>
 in the Red Hat OpenStack Platform documentation..</p>
   </li>
 </ul>
-
-<p>&lt;/div&gt;</p>
 
 <h3 id="adding-a-cloud-network">
 <a class="anchor" href="#adding-a-cloud-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a Cloud Network</h3>
@@ -7008,8 +6858,6 @@ in the subnet mask and append that value to the IP address
 range. For example, the subnet mask 255.255.255.0 has 24 masked
 bits. To use this mask with the IPv4 address range
 192.168.122.0, specify the address 192.168.122.0/24.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -7227,12 +7075,7 @@ to which it has been assigned.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Red Hat OpenStack Networking allocates floating IP addresses to all
-projects (tenants) from the same IP ranges/CIDRs. As a result, every
-subnet of floating IPs is consumable by any and all projects. Manage
-this behavior using quotas for specific projects.</p>
-
-<p>&lt;/div&gt;</p>
+<p>Red Hat OpenStack Networking allocates floating IP addresses to all projects (tenants) from the same IP ranges/CIDRs. As a result, every subnet of floating IPs is consumable by any and all projects. Manage this behavior using quotas for specific projects.</p>
 
 <h3 id="adding-floating-ips">
 <a class="anchor" href="#adding-floating-ips" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding Floating IPs.</h3>
@@ -7381,23 +7224,17 @@ clicking <strong>Add a Firewall Rule</strong>.</p>
 
     <ul>
       <li>
-        <p>In <strong>Properties</strong>, you can view the basic information of the
-security group.</p>
+        <p>In <strong>Properties</strong>, you can view the basic information of the security group.</p>
       </li>
       <li>
-        <p>In <strong>Relationships</strong>, you can view the cloud provider and the
-instances associated with the security group.</p>
+        <p>In <strong>Relationships</strong>, you can view the cloud provider and the instances associated with the security group.</p>
       </li>
       <li>
-        <p>In <strong>Firewall Rules</strong>, you can view a list of ports and IP
-ranges that are accessible.</p>
+        <p>In <strong>Firewall Rules</strong>, you can view a list of ports and IP ranges that are accessible.</p>
 
         <p><strong>Note:</strong></p>
 
-        <p>This box is not available if you have not set any rules for your
-security group.</p>
-
-        <p>&lt;/div&gt;</p>
+        <p>This box is not available if you have not set any rules for your security group.</p>
       </li>
     </ul>
   </li>
@@ -7729,17 +7566,13 @@ expression editor.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>The set of items to select will depend on the type of resource you
-are searching.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>The set of items to select will depend on the type of resource you are searching.</p>
   </li>
   <li>
     <p>Click <strong>Load</strong> to load the search expression.</p>
   </li>
   <li>
-    <p>If you want to edit the expression, click on it and make any edits
-for the current expression.</p>
+    <p>If you want to edit the expression, click on it and make any edits for the current expression.</p>
 
     <ul>
       <li>
@@ -7969,11 +7802,8 @@ taskbar.</p>
 
 <p><strong>Note:</strong></p>
 
-<div class="title">
-
-Restrictions on Displaying Files Collected
-
-</div>
+<h2 id="restrictions-on-displaying-files-collected">
+<a class="anchor" href="#restrictions-on-displaying-files-collected" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restrictions on Displaying Files Collected</h2>
 
 <ul>
   <li>
@@ -8003,8 +7833,6 @@ Restrictions on Displaying Files Collected
     <p>Non MIME .conf ascii file</p>
   </li>
 </ul>
-
-<p>&lt;/div&gt;</p>
 
 <div class="important">
 
@@ -8482,15 +8310,10 @@ enabled</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Keep in mind that the instance will undergo a controlled shutdown when
-you change its flavor.</p>
+<p>Keep in mind that the instance will undergo a controlled shutdown when you change its flavor.</p>
 
-<p>For more information about the requirements and underlying OpenStack
-process involved, see <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#section-resize-instance">Resize an
-Instance</a>
+<p>For more information about the requirements and underlying OpenStack process involved, see <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#section-resize-instance">Resize an Instance</a>
 in the Red Hat OpenStack Platform <em>Instances and Images Guide</em>.</p>
-
-<p>&lt;/div&gt;</p>
 
 <p>To resize an instance through ManageIQ:</p>
 
@@ -8516,9 +8339,7 @@ the change was successful.</p>
   </li>
 </ol>
 
-<p>See <a href="#flavors">???</a> and <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#section-flavors">Manage
-Flavors</a>
-in the Red Hat OpenStack Platform <em>Instances and Images Guide</em> for more
+<p>See <a href="#flavors">Flavors</a> and <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/instances-and-images-guide/#section-flavors">Manage Flavors</a> in the Red Hat OpenStack Platform <em>Instances and Images Guide</em> for more
 information.</p>
 
 <h2 id="migrating-a-live-instance">
@@ -8648,8 +8469,6 @@ cluster.</p>
 the server role of <strong>Capacity &amp; Utilization Collector</strong> to use this
 feature.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to menu:Compute[Clouds &gt; Instances].</p>
@@ -8661,12 +8480,10 @@ feature.</p>
     <p>Click the item to view.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1994.png" alt="1994"> (<strong>Monitoring</strong>), and then
-<img src="../images/1994.png" alt="1994"> (<strong>Utilization</strong>) on the taskbar.</p>
+    <p>Click <img src="../images/1994.png" alt="1994"> (<strong>Monitoring</strong>), and then <img src="../images/1994.png" alt="1994"> (<strong>Utilization</strong>) on the taskbar.</p>
   </li>
   <li>
-    <p>Select to view hourly, most recent hour, or daily data points for
-the dates to view data.</p>
+    <p>Select to view hourly, most recent hour, or daily data points for the dates to view data.</p>
 
     <p><img src="../images/2309.png" alt="2309"></p>
   </li>
@@ -8679,14 +8496,9 @@ the dates to view data.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Daily charts only include full days of data. This means ManageIQ
-does not show daily data for a day without a complete 24 data point
-range for a day.</p>
+<p>Daily charts only include full days of data. This means ManageIQ does not show daily data for a day without a complete 24 data point range for a day.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>For information about data optimization including utilization trend
-reports, see <a href="#data-optimization">???</a>.</p>
+<p>For information about data optimization including utilization trend reports, see <a href="../managing_infrastructure_and_inventory/index.html#data-optimization">Data Optimization</a>.</p>
 
 <h1 id="viewing-the-instance-or-image-timeline">
 <a class="anchor" href="#viewing-the-instance-or-image-timeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the Instance or Image Timeline</h1>
@@ -9086,8 +8898,6 @@ instances.</p>
 
 <p>This feature is only available for Windows.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to menu:Compute[Clouds &gt; Instances].</p>
@@ -9103,8 +8913,7 @@ instances.</p>
   </li>
 </ol>
 
-<p>The collected event log entries are displayed. Sort this list by
-clicking on the column headers.</p>
+<p>The collected event log entries are displayed. Sort this list by clicking on the column headers.</p>
 
 <h1 id="orchestration-stacks">
 <a class="anchor" href="#orchestration-stacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Orchestration Stacks</h1>
@@ -9163,8 +8972,6 @@ and Time</strong>.</p>
 
 <p>Saving a blank date will remove all retirement dates.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>To retire selected stacks immediately:</p>
 
 <ol>
@@ -9175,10 +8982,7 @@ and Time</strong>.</p>
     <p>Select the orchestration stacks to retire now.</p>
   </li>
   <li>
-    <p>Click <img src="../images/2007.png" alt="2007">(<strong>Lifecycle</strong>), and then <img src="../images/retirement.png" alt="Retire
-selected Stacks"> (<strong>Retire selected
-Orchestration Stacks</strong>). A pop-up window appears to confirm the
-action.</p>
+    <p>Click <img src="../images/2007.png" alt="2007">(<strong>Lifecycle</strong>), and then <img src="../images/retirement.png" alt="Retire selected Stacks"> (<strong>Retire selected Orchestration Stacks</strong>). A pop-up window appears to confirm the action.</p>
   </li>
   <li>
     <p>Click <strong>OK</strong>.</p>
@@ -9218,8 +9022,6 @@ instances.</p>
 <p><strong>Note:</strong></p>
 
 <p>Adding a new key pair is currently only supported for OpenStack.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h1 id="adding-a-new-key-pair">
 <a class="anchor" href="#adding-a-new-key-pair" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a New Key Pair</h1>
@@ -9911,8 +9713,7 @@ ManageIQ, it will be created automatically.</p>
         <p><img src="../images/add_label_mapping.png" alt="add label mapping"></p>
       </li>
       <li>
-        <p>Click <strong>Add</strong>. The mapping will show in the table on the <strong>Map
-Tags</strong> tab.</p>
+        <p>Click <strong>Add</strong>. The mapping will show in the table on the <strong>Map Tags</strong> tab.</p>
       </li>
     </ol>
   </li>

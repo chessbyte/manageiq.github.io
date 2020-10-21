@@ -1725,12 +1725,9 @@ environment, add a Microsoft System Center Virtual Machine Manager
 
 <p><strong>Note:</strong></p>
 
-<p>To authenticate the provider using a self-signed Certificate Authority
-(CA), configure the ManageIQ appliance to trust the
+<p>To authenticate the provider using a self-signed Certificate Authority (CA), configure the ManageIQ appliance to trust the
 certificate using the steps in <a href="#app-self_signed_CA">Using a Self-Signed CA Certificate</a> before adding
 the provider.</p>
-
-<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -2489,13 +2486,8 @@ default. Enable this server role to utilize Ansible Automation Inside.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Configure your ManageIQ appliance network identity
-(hostname/IP address) before enabling the Embedded Ansible server role.
-Restart the <code class="language-plaintext highlighter-rouge">evmserverd</code> service on the appliance with the enabled
-Embedded Ansible server role after making any changes to the hostname or
-IP address.</p>
-
-<p>&lt;/div&gt;</p>
+<p>Configure your ManageIQ appliance network identity (hostname/IP address) before enabling the Embedded Ansible server role.
+Restart the <code class="language-plaintext highlighter-rouge">evmserverd</code> service on the appliance with the enabled Embedded Ansible server role after making any changes to the hostname or IP address.</p>
 
 <ol>
   <li>
@@ -2699,10 +2691,7 @@ Password</strong> attribute that may be configured.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>For more information on Ansible Vault, see <a href="http://docs.ansible.com/ansible/latest/playbooks_vault.html">Using Vault in
-playbooks</a>.</p>
-
-<p>&lt;/div&gt;</p>
+<p>For more information on Ansible Vault, see <a href="http://docs.ansible.com/ansible/latest/playbooks_vault.html">Using Vault in playbooks</a>.</p>
 
 <h3 id="network">
 <a class="anchor" href="#network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Network</h3>
@@ -2954,13 +2943,9 @@ to.</p>
 <p>Selecting this credential type enables synchronization of inventory with
 VMware vCenter.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-If both ManageIQ and a VMware provider are located in the
-same IPv6-only network, use a DNS-resolvable hostname for the VMware
-provider in the **vCenter Host** field when adding credentials.
-
-</div>
+<p>If both ManageIQ and a VMware provider are located in the same IPv6-only network, use a DNS-resolvable hostname for the VMware provider in the <strong>vCenter Host</strong> field when adding credentials.</p>
 
 <p>VMware credentials have several attributes that may be configured:</p>
 
@@ -2978,10 +2963,7 @@ provider in the **vCenter Host** field when adding credentials.
 
 <p><strong>Note:</strong></p>
 
-<p>If the VMware guest tools are not running on the instance, VMware
-inventory sync may not return an IP address for that instance.</p>
-
-<p>&lt;/div&gt;</p>
+<p>If the VMware guest tools are not running on the instance, VMware inventory sync may not return an IP address for that instance.</p>
 
 <h1 id="tagging-ansible-playbooks-repositories-and-credentials">
 <a class="anchor" href="#tagging-ansible-playbooks-repositories-and-credentials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging Ansible Playbooks, Repositories, and Credentials</h1>
@@ -3143,23 +3125,15 @@ object.</p>
 
 <ul>
   <li>
-    <p>This example utilizes the `syncrou.manageiq-vmdb`role. This role
-allows ManageIQ users to modify and/or change VMDB
-objects using an Ansible playbook. For information on implementing
-and utilizing roles when writing Ansible playbooks for
-ManageIQ, see <a href="#installing-ansible-roles">???</a>.</p>
+    <p>This example utilizes the `syncrou.manageiq-vmdb` role. This role allows ManageIQ users to modify and/or change VMDB objects using an Ansible playbook. For information on implementing and utilizing roles when writing Ansible playbooks for ManageIQ, see <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1/html/administration_guide/chap-Automating_RHV_Configuration_using_Ansible#Installing_Ansible_Roles">Installing Ansible Roles</a>.</p>
   </li>
   <li>
-    <p>For more information on Ansible Galaxy and roles, see the <a href="http://docs.ansible.com/ansible/latest/galaxy.html">Ansible
-Galaxy
-documentation</a>.</p>
+    <p>For more information on Ansible Galaxy and roles, see the <a href="http://docs.ansible.com/ansible/latest/galaxy.html">Ansible Galaxy documentation</a>.</p>
   </li>
   <li>
     <p>Note the provider ID in order to successfully link to the service.</p>
   </li>
 </ul>
-
-<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -3355,8 +3329,7 @@ limiting the task to run on a specific set of virtual machines).</p>
 
 <ul>
   <li>
-    <p>For more information on Ansible playbooks, see the <a href="https://docs.ansible.com/ansible/playbooks.html">Ansible playbook
-documentation</a>.</p>
+    <p>For more information on Ansible playbooks, see the <a href="https://docs.ansible.com/ansible/playbooks.html">Ansible playbook documentation</a>.</p>
   </li>
   <li>
     <p>For more information on worklows, see
@@ -3364,8 +3337,6 @@ documentation</a>.</p>
 in the Ansible Tower <em>User Guide</em>.</p>
   </li>
 </ul>
-
-<p>&lt;/div&gt;</p>
 
 <h4 id="adding-an-ansible-tower-provider">
 <a class="anchor" href="#adding-an-ansible-tower-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an Ansible Tower Provider</h4>
@@ -3389,8 +3360,6 @@ result in a validation error.</p>
   </li>
 </ul>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to menu: <strong>Automation &gt; Ansible Tower &gt; Explorer</strong> and click on the <strong>Providers</strong> accordion tab.</p>
@@ -3412,9 +3381,7 @@ result in a validation error.</p>
         <p>Add a <strong>Zone</strong> for the provider.</p>
       </li>
       <li>
-        <p>Enter the <strong>URL</strong> location or IP address to the Ansible Tower
-server. Add a trailing slash to the end of the Ansible Tower
-provider URL.</p>
+        <p>Enter the <strong>URL</strong> location or IP address to the Ansible Tower server. Add a trailing slash to the end of the Ansible Tower provider URL.</p>
       </li>
     </ol>
   </li>
@@ -3433,30 +3400,21 @@ provider URL.</p>
   </li>
 </ol>
 
-<p>After adding the Ansible Tower provider, refresh its relationships and
-power states in order to view the current inventory.</p>
+<p>After adding the Ansible Tower provider, refresh its relationships and power states in order to view the current inventory.</p>
 
 <h4 id="refreshing-an-ansible-tower-provider">
 <a class="anchor" href="#refreshing-an-ansible-tower-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing an Ansible Tower Provider</h4>
 
-<p>Refresh relationships of all items related to an existing Ansible Tower
-configuration management provider including inventory, hosts, virtual
-machines, and clusters.</p>
+<p>Refresh relationships of all items related to an existing Ansible Tower configuration management provider including inventory, hosts, virtual machines, and clusters.</p>
 
 <p>You can refresh inventory from ManageIQ, or by enabling the
 <strong>Update on Launch</strong> option for inventory groups in Ansible Tower. The
-<strong>Update on Launch</strong> option allows Ansible Tower to automatically update
-inventory using a dynamic inventory script before launching an Ansible
-Tower job from a playbook. See the <a href="http://docs.ansible.com/ansible-tower/index.html">Ansible Tower documentation</a> for more information.</p>
+<strong>Update on Launch</strong> option allows Ansible Tower to automatically update inventory using a dynamic inventory script before launching an Ansible Tower job from a playbook. See the <a href="http://docs.ansible.com/ansible-tower/index.html">Ansible Tower documentation</a> for more information.</p>
 
-<div class="important">
+<p><strong>Important</strong></p>
 
-It can take a long time to retrieve information from providers
-containing many virtual machines or instances. The Ansible Tower dynamic
-inventory script can be modified to limit updates to specific items and
-reduce refresh time.
-
-</div>
+<p>It can take a long time to retrieve information from providers containing many virtual machines or instances. The Ansible Tower dynamic inventory script can be modified to limit updates to specific items and
+reduce refresh time.</p>
 
 <p>To refresh an Ansible Tower provider’s inventory in ManageIQ:</p>
 
@@ -3491,9 +3449,7 @@ Automate.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>To view and access Ansible Tower inventories and job or workflow
-templates in ManageIQ, you must first create them in Ansible
-Tower.</p>
+<p>To view and access Ansible Tower inventories and job or workflow templates in ManageIQ, you must first create them in Ansible Tower.</p>
 
 <p>To view a list of Ansible Tower providers and inventory:</p>
 
@@ -3530,13 +3486,9 @@ Tower.</p>
 
 <p>You can execute an Ansible Tower playbook from ManageIQ by creating a service catalog item from an Ansible Tower job or workflow template.</p>
 
-<div class="important">
+<p><strong>Important:</strong></p>
 
-You must first create the job or workflow template in Ansible Tower. The
-job or workflow templates are automatically discovered by
-ManageIQ when refreshing your Ansible Tower provider’s inventory.
-
-</div>
+<p>You must first create the job or workflow template in Ansible Tower. The job or workflow templates are automatically discovered by ManageIQ when refreshing your Ansible Tower provider’s inventory.</p>
 
 <p>First, create a catalog:</p>
 
@@ -4175,9 +4127,7 @@ Manager (Classic) mode.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>In the steps described in <a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/">Create Active Directory application and
-service principal account using the Azure
-portal</a>:</p>
+<p>In the steps described in <a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/">Create Active Directory application and service principal account using the Azure portal</a>:</p>
 
 <ul>
   <li>
@@ -4217,11 +4167,7 @@ Identifier (GUID).</p>
   </li>
 </ul>
 
-<p>&lt;/div&gt;</p>
-
-<p>So, after a service principal account (instance of an application in a
-directory) has been created using the Azure portal, the following four
-pieces of information will be available within the Azure AD module.</p>
+<p>So, after a service principal account (instance of an application in a directory) has been created using the Azure portal, the following four pieces of information will be available within the Azure AD module.</p>
 
 <ul>
   <li>
@@ -4238,8 +4184,7 @@ pieces of information will be available within the Azure AD module.</p>
   </li>
 </ul>
 
-<p>You can now use these values in the procedure below to add an Azure
-cloud instance as a provider to ManageIQ.</p>
+<p>You can now use these values in the procedure below to add an Azure cloud instance as a provider to ManageIQ.</p>
 
 <p><strong>To Add an Azure Cloud Provider</strong>:</p>
 
@@ -4426,14 +4371,9 @@ ManageIQ.</p>
 
         <p><strong>Note:</strong></p>
 
-        <p>AWS allows users to set a custom endpoint URL when connecting to
-certain services, which you can add in the
-ManageIQ user interface per Amazon EC2 provider.
-See <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html">Interface VPC Endpoints (AWS
-PrivateLink)</a>
+        <p>AWS allows users to set a custom endpoint URL when connecting to certain services, which you can add in the ManageIQ user interface per Amazon EC2 provider.
+See <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html">Interface VPC Endpoints (AWS PrivateLink)</a>
 for more information.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
         <p>Generate an <strong>Access Key</strong> in the <strong>Security Credentials</strong> of
@@ -4856,8 +4796,6 @@ under <code class="language-plaintext highlighter-rouge">:disabled_regions:</cod
 region, be sure to do so in the <code class="language-plaintext highlighter-rouge">production.yml</code> configuration file
 manually.</p>
 
-<p>&lt;/div&gt;</p>
-
 <h1 id="refreshing-cloud-providers">
 <a class="anchor" href="#refreshing-cloud-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing Cloud Providers</h1>
 
@@ -4944,8 +4882,6 @@ login credentials.</p>
 <p><strong>Note:</strong></p>
 
 <p>The <strong>Type</strong> value is unchangeable.</p>
-
-<p>&lt;/div&gt;</p>
 
 <p>To use a different cloud provider, create a new one.</p>
 
@@ -5144,8 +5080,6 @@ providers.</p>
 Amazon EC2 Network, are added or removed automatically upon adding or
 removing the respective cloud provider.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>Viewing network providers:</p>
 
 <ol>
@@ -5174,13 +5108,8 @@ actions in the taskbar to manage the selected provider.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>Alternatively, click on a cloud provider to see the cloud provider
-details and its relationships such as Network Manager, Tenants,
-Instances among others. In Relationships, click Network Manager to see
-information about the network provider, and its relationship with the
-cloud provider, on the summary page.</p>
-
-<p>&lt;/div&gt;</p>
+<p>Alternatively, click on a cloud provider to see the cloud provider details and its relationships such as Network Manager, Tenants, Instances among others. In Relationships, click Network Manager to see
+information about the network provider, and its relationship with the cloud provider, on the summary page.</p>
 
 <h1 id="refreshing-network-providers">
 <a class="anchor" href="#refreshing-network-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refreshing Network Providers</h1>
@@ -5468,8 +5397,7 @@ and <a href="https://docs.openshift.com/container-platform/4.5/authentication/un
 
 <p><strong>Note:</strong></p>
 
-<p>See the <a href="https://docs.openshift.com/container-platform/4.5/authentication/using-rbac.html#default-roles_using-rbac">OpenShift Container Platform
-documentation</a>
+<p>See the <a href="https://docs.openshift.com/container-platform/4.5/authentication/using-rbac.html#default-roles_using-rbac">OpenShift Container Platform documentation</a>
 for a list of the default roles.</p>
 
 <p>Run the following to obtain the token needed to add an OpenShift Container Platform provider:</p>

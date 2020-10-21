@@ -742,8 +742,6 @@ This configuration is not reversible.
 
 <p>Do not create a region at this stage in the procedure.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>You have now created the empty database.</p>
 
 <p>You can check the configuration on the appliance console details screen.
@@ -951,12 +949,9 @@ address.</p>
 with this database, including the non-database
 ManageIQ appliances and any global region
 databases.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
-        <p>Confirm that the replication server configuration details are
-correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+        <p>Confirm that the replication server configuration details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
       </li>
     </ol>
   </li>
@@ -1069,12 +1064,9 @@ address.</p>
         <p>The hostname must be visible to all appliances that communicate
 with this database, including the engine appliances and any
 global region databases.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
-        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic
-failover.</p>
+        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic failover.</p>
       </li>
       <li>
         <p>Confirm that the replication standby server configuration
@@ -1262,8 +1254,6 @@ limit for the cluster to elect a new primary. To produce quicker
 failovers, reduce the value for <code class="language-plaintext highlighter-rouge">failover_check_frequency</code> and increase
 the value for <code class="language-plaintext highlighter-rouge">failover_attempts</code>.</p>
 
-<p>&lt;/div&gt;</p>
-
 <h3 id="configuring-the-failover-monitor">
 <a class="anchor" href="#configuring-the-failover-monitor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Failover Monitor</h3>
 
@@ -1305,8 +1295,6 @@ following steps:</p>
 
     <p>You can check the status of the simulated failure by viewing the
 most recent <code class="language-plaintext highlighter-rouge">evm.log</code> log on the engine appliances.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Check the appliance console summary screen for the primary database.
@@ -1381,12 +1369,9 @@ address.</p>
         <p>The hostname must be visible to all appliances that communicate
 with this database, including the engine appliances and any
 global region databases.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
-        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic
-failover.</p>
+        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic failover.</p>
 
         <p><strong>Note:</strong></p>
 
@@ -1394,12 +1379,9 @@ failover.</p>
 overwrite the existing node ID (this cannot be undone).
 Additionally, select <code class="language-plaintext highlighter-rouge">y</code> to overwrite and reconfigure the
 replication settings in <code class="language-plaintext highlighter-rouge">/etc/repmgr.conf</code> when prompted.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
-        <p>Confirm that the replication standby server configuration
-details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+        <p>Confirm that the replication standby server configuration details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
       </li>
     </ol>
   </li>
@@ -1450,11 +1432,7 @@ Platform. See the <a href="https://access.redhat.com/documentation/en/red-hat-op
 Guide</a>
 for more information.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>This configuration uses two HAProxy servers and a virtual IP (configured
-by <code class="language-plaintext highlighter-rouge">keepalived</code>). The following example procedure uses the following IP
-addresses and names; substitute values for your environment as needed:</p>
+<p>This configuration uses two HAProxy servers and a virtual IP (configured by <code class="language-plaintext highlighter-rouge">keepalived</code>). The following example procedure uses the following IP addresses and names; substitute values for your environment as needed:</p>
 
 <ul>
   <li>
@@ -1530,8 +1508,6 @@ monitor the servers and determine which node is the master and
 which node is the backup. VRRP communication between routers
 uses multicast IPv4 address 224.0.0.18 and IP protocol number
 112.</p>
-
-        <p>&lt;/div&gt;</p>
 
         <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>[root@cf-hap1 ~]# firewall-cmd --permanent  --add-port=80/tcp --add-port=443/tcp --add-port=8443/tcp &amp;&amp; firewall-cmd --reload
@@ -1740,12 +1716,9 @@ listen apache-8443
 (cfme2.example.com).</p>
       </li>
     </ul>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
-    <p>Configure the appropriate IPs for load balancing on the <code class="language-plaintext highlighter-rouge">cf-hap2</code>
-server as well:</p>
+    <p>Configure the appropriate IPs for load balancing on the <code class="language-plaintext highlighter-rouge">cf-hap2</code> server as well:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>[root@cf-hap2 ~]# cat /etc/haproxy/haproxy.cfg
@@ -2220,12 +2193,9 @@ address.</p>
 that communicate with this database, including the non-database
 ManageIQ appliances and any global region
 databases.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
-        <p>Confirm that the replication server configuration details are
-correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
+        <p>Confirm that the replication server configuration details are correct, and select <code class="language-plaintext highlighter-rouge">y</code> to apply the configuration.</p>
       </li>
     </ol>
   </li>
@@ -2234,8 +2204,7 @@ correct, and select <code class="language-plaintext highlighter-rouge">y</code> 
 <h4 id="configuring-the-standby-database-only-appliance-1">
 <a class="anchor" href="#configuring-the-standby-database-only-appliance-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Standby Database-Only Appliance</h4>
 
-<p>The steps to re-configure the standby database-only appliances are
-similar to that of the primary database-only appliance, in that they
+<p>The steps to re-configure the standby database-only appliances are similar to that of the primary database-only appliance, in that they
 prepare the appliance to be database-only, but as the standby.</p>
 
 <p>On the standby database-only appliances, configure the following:</p>
@@ -2283,12 +2252,9 @@ address.</p>
         <p>The hostname or IP address must be visible to all appliances
 that communicate with this database, including the engine
 appliances and any global region databases.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
       <li>
-        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic
-failover.</p>
+        <p>Select <code class="language-plaintext highlighter-rouge">y</code> to configure the replication manager for automatic failover.</p>
       </li>
       <li>
         <p>Confirm that the replication standby server configuration
@@ -2348,10 +2314,7 @@ Database Failover Monitor</strong>.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>You can view a summary of the updated appliances by running <code class="language-plaintext highlighter-rouge">repmgr
-cluster show</code> on one of the database appliances.</p>
-
-<p>&lt;/div&gt;</p>
+<p>You can view a summary of the updated appliances by running <code class="language-plaintext highlighter-rouge">repmgr cluster show</code> on one of the database appliances.</p>
 
 <p>Your ManageIQ environment is now re-configured for high
 availability.</p>
