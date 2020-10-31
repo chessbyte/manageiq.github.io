@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 30 Oct 2020 14:16:17 +0000</pubDate>
-    <lastBuildDate>Fri, 30 Oct 2020 14:16:17 +0000</lastBuildDate>
+    <pubDate>Sat, 31 Oct 2020 00:30:07 +0000</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2020 00:30:07 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Announcing Jansa-2</title>
+        <description>&lt;p&gt;ManageIQ Jansa-2 is now available. This release is primarily a stabilization release and contains a number of bug fixes and performance fixes.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/10/Announcing-Jansa-2/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/10/Announcing-Jansa-2/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>ManageIQ Jansa GA announcement</title>
@@ -60,8 +76,8 @@ configured for OpenID-Connect authentication when deploying ManageIQ on containe
 
 </description>
         <pubDate>Mon, 17 Aug 2020 13:01:13 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/08/Announcing-Ivanchuk-2-And-Jansa-1-RC2/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/08/Announcing-Ivanchuk-2-And-Jansa-1-RC2/</guid>
+        <link>http://manageiq.org/blog/2020/08/Announcing-Ivanchuk-7-And-Jansa-1-RC2/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/08/Announcing-Ivanchuk-7-And-Jansa-1-RC2/</guid>
         
         <category>releases</category>
         
@@ -144,23 +160,6 @@ Here are just some of the things added since the Ivanchuk-4 release:&lt;/p&gt;
         <pubDate>Tue, 31 Mar 2020 19:12:13 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Announcing Ivanchuk-4</title>
-        <description>&lt;p&gt;We’ve just built Ivanchuk-4. This release contains bug fixes, UI tweaks, and stabilization.
-Here are just a few of the things added since the Ivanchuk-4 release:&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 26 Mar 2020 19:12:13 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-4/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Announcing-Ivanchuk-4/</guid>
         
         <category>releases</category>
         
