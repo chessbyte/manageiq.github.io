@@ -486,6 +486,7 @@
       <li><a href="#manageiq-self-service-ui">ManageIQ Self Service UI</a></li>
     </ul>
   </li>
+  <li><a href="#fast-forwarding-translations-from-release-branch-to-master-branch">Fast Forward of translations</a></li>
 </ul>
 
 <h2 id="i18n-implementation">i18n implementation</h2>
@@ -520,7 +521,7 @@ In particular, the project uses the following gems to make internationalization 
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#N_-instance_method">rubydoc</a></li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">n(msgid, msgid_plural, n)</code> – returns either translated <code class="language-plaintext highlighter-rouge">msgid</code> or its translated plural form (<code class="language-plaintext highlighter-rouge">msgid_plural</code>) depending on <code class="language-plaintext highlighter-rouge">n</code>, a number determining the count (i.e. number above 1 means plural form)
+  <li><code class="language-plaintext highlighter-rouge">n_(msgid, msgid_plural, n)</code> – returns either translated <code class="language-plaintext highlighter-rouge">msgid</code> or its translated plural form (<code class="language-plaintext highlighter-rouge">msgid_plural</code>) depending on <code class="language-plaintext highlighter-rouge">n</code>, a number determining the count (i.e. number above 1 means plural form)
     <ul>
       <li><a href="http://www.rubydoc.info/gems/gettext/GetText#ngettext-instance_method">rubydoc</a></li>
     </ul>
@@ -555,7 +556,7 @@ In particular, the project uses the following gems to make internationalization 
 
 <h3 id="angular-applications">Angular applications</h3>
 
-<p>Purely Angular applications, such as Self-Service UI, use <a href="https://angular-gettext.rocketeer.be/">angular-gettext</a> for internationalization.
+<p>Purely Angular applications, such as Self-Service UI and ui-components, use <a href="https://angular-gettext.rocketeer.be/">angular-gettext</a> for internationalization.
 The <code class="language-plaintext highlighter-rouge">angular-gettext</code> module allows for annotating parts of the Angular application (HTML of JavaScript), which need to be translated.</p>
 
 <p>Guides for annotating content:</p>
@@ -798,6 +799,7 @@ To update the message catalog including the plugin repos, run the following rake
   <li>extract strings from <code class="language-plaintext highlighter-rouge">en.yml</code></li>
   <li>extract strings from other yaml files</li>
   <li>extract strings from ruby, javascript and haml sources</li>
+  <li>extract strings from all ManageIQ plugins, including node plugins (react-ui-components and ui-components)</li>
 </ul>
 
 <p>Now, commit and push changed files into git (branch, pull request, etc.). Although all the <code class="language-plaintext highlighter-rouge">locale/*/*.po</code> files will be updated by this step, make sure that only the following file is committed:</p>
@@ -823,7 +825,7 @@ To update the message catalog including the plugin repos, run the following rake
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>locale
 <span class="nv">$ </span>tx pull <span class="nt">--all</span>    <span class="c"># use --language option, if you wish to download only specific locales</span>
-<span class="nv">$ </span>bundle <span class="nb">exec </span>rake gettext:po_to_json
+<span class="nv">$ </span>bundle <span class="nb">exec </span>rake locale:po_to_json
 </code></pre></div></div>
 
 <p>If you are adding new locales / languages to ManageIQ, don’t forget to create yaml file containing localized names of each included
@@ -834,11 +836,15 @@ language. From the root of ManageIQ checkout, run the following:</p>
 
 <p>This will update <code class="language-plaintext highlighter-rouge">config/human_locale_names.yaml</code> file.</p>
 
-<p>Now commit and push the changes (branch, pull request, etc.). Make sure no other files than the following list is commited:</p>
+<p>Now commit and push the changes (branch, pull request, etc.). Make sure that in core ManageIQ you commit the following files:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locale/*/*.po
-app/assets/javascripts/locale/*/*.js
 config/human_locale_names.yaml        # optionally, if you added locales
+</code></pre></div></div>
+
+<p>and in ManageIQ UI Classic repository, commit the following files:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app/assets/javascripts/locale/*/*.js
+app/javascript/packs/bootstrap-datepicker-languages.js # optionally, if the file changed
 </code></pre></div></div>
 
 <h3 id="manageiq-self-service-ui">ManageIQ Self Service UI</h3>
@@ -886,6 +892,19 @@ config/human_locale_names.yaml        # optionally, if you added locales
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit client/gettext/po client/gettext/json
 <span class="nv">$ </span>git push
 </code></pre></div></div>
+
+<h2 id="fast-forwarding-translations-from-release-branch-to-master-branch">Fast-forwarding translations from release branch to master branch</h2>
+
+<p>Ordinarily, translations for ManageIQ are done for particular release and the strings for translations are therefore taken from a release branch. When the translation work for the release branch is done, it is a good practice to fast-forward the translations from the release branch to the master branch. One way to do the fast-forward is to utilize Transifex. The following example assumes fast forward from jansa branch to master:</p>
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec rake locale:update_all</code> in ManageIQ core on master branch</li>
+  <li>Take <code class="language-plaintext highlighter-rouge">locale/manageiq.pot</code> generated in the previous step and upload it to Transifex to master resource</li>
+  <li>In ManageIQ core git checkout, switch to the jansa branch</li>
+  <li>Upload the language catalogs <code class="language-plaintext highlighter-rouge">locale/${lang}/manageiq.po</code> from the jansa branch to Transifex, master resource</li>
+  <li>Once you upload the language catalogs from previous step, Transifex will do all the matching &amp; merging of strings</li>
+  <li>In ManageIQ core git checkout, switch to the master branch</li>
+  <li>Download the newly merged language catalogs from Transifex master resource and commit them to the git master branch</li>
+</ol>
 
       </div>
     </article>
