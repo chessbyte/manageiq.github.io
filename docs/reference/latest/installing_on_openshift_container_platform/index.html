@@ -602,48 +602,30 @@
 <h2 id="installing-manageiq">
 <a class="anchor" href="#installing-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing ManageIQ</h2>
 
-<p>ManageIQ can be installed on OpenShift Container Platform in a
-few steps.</p>
+<p>ManageIQ can be installed on OpenShift Container Platform in a few steps.</p>
 
 <p>This procedure uses a template to deploy a multi-pod
-ManageIQ appliance with the database stored in a
-persistent volume on OpenShift Container Platform. It provides a
-step-by-step setup, including cluster administrative tasks as well as
-information and commands for the application developer using the
-deployment.</p>
+ManageIQ appliance with the database stored in a persistent volume on OpenShift Container Platform. It provides a step-by-step setup, including cluster administrative tasks as well as
+information and commands for the application developer using the deployment.</p>
 
-<p>The ultimate goal of the deployment is to be able to deconstruct the
-ManageIQ appliance into several containers running on a
+<p>The ultimate goal of the deployment is to be able to deconstruct the ManageIQ appliance into several containers running on a
 pod or a series of pods.</p>
 
-<p>Running the ManageIQ appliance in a series of pods has
-several advantages. For example, running each worker in a separate pod
-allows OpenShift Container Platform to manage worker processes and
-reduce worker memory consumption. OpenShift can also easily scale
-workers by adding or removing pods, and perform upgrades by using
-images.</p>
+<p>Running the ManageIQ appliance in a series of pods has several advantages. For example, running each worker in a separate pod allows OpenShift Container Platform to manage worker processes and
+reduce worker memory consumption. OpenShift can also easily scale workers by adding or removing pods, and perform upgrades by using images.</p>
 
-<p>There are two options for installing ManageIQ on
-OpenShift:</p>
+<p>There are two options for installing ManageIQ on OpenShift:</p>
 
 <ul>
   <li>
     <p>During OpenShift Container Platform 3.7 installation:</p>
 
     <ul>
-      <li>When you install OpenShift Container Platform 3.7, you have the
-option to install ManageIQ inside OpenShift at the
-time. This method leverages the Ansible installer to run and
-deploy the ManageIQ template, instead of building
-the environment manually. See the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/release_notes/index#ocp-37-installation">OpenShift Container
-Platform 3.7 Release
-Notes</a>
-for details.</li>
+      <li>When you install OpenShift Container Platform 3.7, you have the option to install ManageIQ inside OpenShift at the time. This method leverages the Ansible installer to run and deploy the ManageIQ template, instead of building the environment manually. See the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/release_notes/index#ocp-37-installation">OpenShift Container Platform 3.7 Release Notes</a> for details.</li>
     </ul>
   </li>
   <li>
-    <p>Manual install on an existing OpenShift Container Platform
-environment:</p>
+    <p>Manual install on an existing OpenShift Container Platform environment:</p>
 
     <ul>
       <li>Deploy ManageIQ pods using the
@@ -653,16 +635,12 @@ method described in this guide.</li>
   </li>
 </ul>
 
-<p>After deployment, you can configure the ManageIQ
-environment to use any external authentication configurations supported
-by ManageIQ.</p>
+<p>After deployment, you can configure the ManageIQ environment to use any external authentication configurations supported by ManageIQ.</p>
 
 <h3 id="prerequisites">
 <a class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h3>
 
-<p>To successfully deploy a ManageIQ appliance on OpenShift
-Container Platform, you need a functioning <strong>OpenShift Container
-Platform 3.7</strong> install with the following configured:</p>
+<p>To successfully deploy a ManageIQ appliance on OpenShift Container Platform, you need a functioning <strong>OpenShift Container Platform 3.7</strong> install with the following configured:</p>
 
 <ul>
   <li>
@@ -678,17 +656,14 @@ Platform 3.7</strong> install with the following configured:</p>
 
 <div class="important">
 
-OpenShift Container Platform 3.7 is required for this installation. Red
-Hat has not tested this procedure with earlier versions of OpenShift
-Container Platform.
+OpenShift Container Platform 3.7 is required for this installation. Red Hat has not tested this procedure with earlier versions of OpenShift Container Platform.
 
 </div>
 
 <h4 id="cluster-sizing">
 <a class="anchor" href="#cluster-sizing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cluster Sizing</h4>
 
-<p>To avoid deployment failures due to resource starvation, Red Hat
-recommends the following minimum cluster size for a test environment:</p>
+<p>To avoid deployment failures due to resource starvation, Red Hat recommends the following minimum cluster size for a test environment:</p>
 
 <ul>
   <li>
@@ -926,8 +901,7 @@ image stream, but the ManageIQ repositories contain
 more than five images for deployments.</p>
 
     <p>You can modify this setting on the master node at
-<code class="language-plaintext highlighter-rouge">/etc/origin/master/master-config.yaml</code> so OpenShift can import
-additional images.</p>
+<code class="language-plaintext highlighter-rouge">/etc/origin/master/master-config.yaml</code> so OpenShift can import additional images.</p>
 
     <ol>
       <li>
@@ -951,8 +925,7 @@ imagePolicyConfig:
   </li>
   <li>
     <p>On each OpenShift node, persistently enable the
-<code class="language-plaintext highlighter-rouge">container_manage_cgroup</code> SELinux boolean to allow container
-processes to make changes to the <em>cgroup</em> configuration:</p>
+<code class="language-plaintext highlighter-rouge">container_manage_cgroup</code> SELinux boolean to allow container processes to make changes to the <em>cgroup</em> configuration:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code># setsebool -P container_manage_cgroup on
@@ -963,9 +936,7 @@ processes to make changes to the <em>cgroup</em> configuration:</p>
 <h3 id="deploying-the-manageiq-appliance">
 <a class="anchor" href="#deploying-the-manageiq-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying the ManageIQ Appliance</h3>
 
-<p>To deploy the appliance on OpenShift Container Platform, create the
-ManageIQ template and verify it is available in your
-project.</p>
+<p>To deploy the appliance on OpenShift Container Platform, create the ManageIQ template and verify it is available in your project.</p>
 
 <ol>
   <li>
@@ -986,8 +957,7 @@ cloudforms   CloudForms appliance with persistent storage   18 (1 blank)      12
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>(Optional) Customize the template’s deployment parameters. Use the
-following command to see the available parameters and descriptions:</p>
+    <p>(Optional) Customize the template’s deployment parameters. Use the following command to see the available parameters and descriptions:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc process --parameters -n &lt;your-project&gt; cloudforms
@@ -1000,15 +970,13 @@ following command to see the available parameters and descriptions:</p>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To deploy ManageIQ from template using default
-settings, run:</p>
+    <p>To deploy ManageIQ from template using default settings, run:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc new-app --template=cloudforms
 </code></pre></div>    </div>
 
-    <p>Alternatively, to deploy ManageIQ from a template
-using customized settings, add the <code class="language-plaintext highlighter-rouge">-p</code> option and the desired
+    <p>Alternatively, to deploy ManageIQ from a template using customized settings, add the <code class="language-plaintext highlighter-rouge">-p</code> option and the desired
 parameters to the command. For example:</p>
 
     <div class="language-plaintext highlighter-rouge">
@@ -1017,13 +985,8 @@ parameters to the command. For example:</p>
 
     <p><strong>Important:</strong></p>
 
-    <p>The <code class="language-plaintext highlighter-rouge">APPLICATION_DOMAIN</code> parameter specifies the hostname used to
-reach the ManageIQ application, which eventually
-constructs the route to the ManageIQ pod. If you do
-not specify the <code class="language-plaintext highlighter-rouge">APPLICATION_DOMAIN</code> parameter, the
-ManageIQ application will not be accessible after the
-deployment; however, this can be fixed by changing the route. For
-more information on OpenShift template parameters, see the
+    <p>The <code class="language-plaintext highlighter-rouge">APPLICATION_DOMAIN</code> parameter specifies the hostname used to reach the ManageIQ application, which eventually
+constructs the route to the ManageIQ pod. If you do not specify the <code class="language-plaintext highlighter-rouge">APPLICATION_DOMAIN</code> parameter, the ManageIQ application will not be accessible after the deployment; however, this can be fixed by changing the route. For more information on OpenShift template parameters, see the
 <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-templates">OpenShift Container Platform Developer Guide</a>.</p>
   </li>
 </ol>
@@ -1031,20 +994,17 @@ more information on OpenShift template parameters, see the
 <h4 id="deploying-the-manageiq-appliance-using-an-external-database">
 <a class="anchor" href="#deploying-the-manageiq-appliance-using-an-external-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying the ManageIQ Appliance Using an External Database</h4>
 
-<p>Before attempting to deploy ManageIQ using an external
-database deployment, ensure the following conditions are satisfied:</p>
+<p>Before attempting to deploy ManageIQ using an external database deployment, ensure the following conditions are satisfied:</p>
 
 <ul>
   <li>
-    <p>Your OpenShift cluster can access the external PostgreSQL server</p>
+    <p>Your OpenShift cluster can access the external PostgreSQL server.</p>
   </li>
   <li>
-    <p>The ManageIQ user, password, and role have been
-created on the external PostgreSQL server</p>
+    <p>The ManageIQ user, password, and role have been created on the external PostgreSQL server.</p>
   </li>
   <li>
-    <p>The intended ManageIQ database is created, and
-ownership has been assigned to the ManageIQ user</p>
+    <p>The intended ManageIQ database is created, and ownership has been assigned to the ManageIQ user.</p>
   </li>
 </ul>
 
@@ -1059,9 +1019,7 @@ ownership has been assigned to the ManageIQ user</p>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Launch the deployment with the following command. The database
-server IP address is required, and the other settings must match
-your remote PostgreSQL server.</p>
+    <p>Launch the deployment with the following command. The database server IP address is required, and the other settings must match your remote PostgreSQL server.</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc new-app --template=cloudforms-ext-db -p DATABASE_IP=&lt;server_ip&gt; -p DATABASE_USER=&lt;user&gt; -p DATABASE_PASSWORD=&lt;password&gt; -p DATABASE_NAME=&lt;database_name&gt;
@@ -1072,13 +1030,11 @@ your remote PostgreSQL server.</p>
 <h3 id="verifying-the-configuration">
 <a class="anchor" href="#verifying-the-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verifying the Configuration</h3>
 
-<p>Verify the deployment was successful by running the following commands
-as a regular user under the ManageIQ project:</p>
+<p>Verify the deployment was successful by running the following commands as a regular user under the ManageIQ project:</p>
 
 <p><strong>Note:</strong></p>
 
-<p>The first deployment can take several minutes to complete while
-OpenShift downloads the necessary images.</p>
+<p>The first deployment can take several minutes to complete while OpenShift downloads the necessary images.</p>
 
 <ol>
   <li>
@@ -1105,8 +1061,7 @@ postgresql-1-n5tm6   1/1       Running   0          4m
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>Examine the output to verify that <code class="language-plaintext highlighter-rouge">openshift.io/scc</code> has the
-value <code class="language-plaintext highlighter-rouge">anyuid</code>:</p>
+        <p>Examine the output to verify that <code class="language-plaintext highlighter-rouge">openshift.io/scc</code> has the value <code class="language-plaintext highlighter-rouge">anyuid</code>:</p>
 
         <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>...
@@ -1119,8 +1074,7 @@ metadata:
     </ol>
   </li>
   <li>
-    <p>Verify the persistent volumes are attached to the <code class="language-plaintext highlighter-rouge">postgresql</code> and
-<code class="language-plaintext highlighter-rouge">cfme-app</code> pods:</p>
+    <p>Verify the persistent volumes are attached to the <code class="language-plaintext highlighter-rouge">postgresql</code> and <code class="language-plaintext highlighter-rouge">cfme-app</code> pods:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc volume pods --all
@@ -1141,8 +1095,7 @@ pods/cfme-1-s3bnp
 
     <p><strong>Note:</strong></p>
 
-    <p>Allow approximately five minutes once pods are in running state for
-ManageIQ to start responding on HTTPS.</p>
+    <p>Allow approximately five minutes once pods are in running state for ManageIQ to start responding on HTTPS.</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>$ oc describe pods &lt;cfme_pod_name&gt;
@@ -1155,13 +1108,9 @@ Volumes:
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>After you have successfully validated your ManageIQ
-deployment, disable automatic image change triggers to prevent
-unintended upgrades.</p>
+    <p>After you have successfully validated your ManageIQ deployment, disable automatic image change triggers to prevent unintended upgrades.</p>
 
-    <p>By default, on initial deployments the automatic image change
-trigger is enabled. This could potentially start an unintended
-upgrade on a deployment if a newer image is found in the
+    <p>By default, on initial deployments the automatic image change trigger is enabled. This could potentially start an unintended upgrade on a deployment if a newer image is found in the
 ImageStream.</p>
 
     <p>Disable the automatic image change triggers for
@@ -1180,10 +1129,7 @@ deploymentconfig "postgresql" updated
 
     <p><strong>Note:</strong></p>
 
-    <p>The configuration change trigger is kept enabled; to have full
-control of your deployments, you can alternatively turn it off. See
-the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-triggering-builds">OpenShift Container Platform Developer
-Guide</a>
+    <p>The configuration change trigger is kept enabled; to have full control of your deployments, you can alternatively turn it off. See the <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.7/html-single/developer_guide/#dev-guide-triggering-builds">OpenShift Container Platform Developer Guide</a>
 for more information on deployment triggers.</p>
   </li>
 </ol>
@@ -1191,12 +1137,9 @@ for more information on deployment triggers.</p>
 <h3 id="logging-into-manageiq">
 <a class="anchor" href="#logging-into-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging into ManageIQ</h3>
 
-<p>As part of the deployment, a route to the ManageIQ
-appliance is created for HTTPS access. Once the pods have been
-successfully deployed, you can log into ManageIQ.</p>
+<p>As part of the deployment, a route to the ManageIQ appliance is created for HTTPS access. Once the pods have been successfully deployed, you can log into ManageIQ.</p>
 
-<p>You can obtain the ManageIQ host address from the project
-in the OpenShift user interface, or by opening a shell on the pod and
+<p>You can obtain the ManageIQ host address from the project in the OpenShift user interface, or by opening a shell on the pod and
 getting the route information.</p>
 
 <ol>

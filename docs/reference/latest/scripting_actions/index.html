@@ -864,8 +864,6 @@ custom domains.</p>
 not recommended because this may hinder the operation of
 ManageIQ. You can link to these methods using relationships.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>To reset the Automate model to default settings, navigate to
 menu:Automate[Import/Export] and click the <strong>Reset</strong> option.</p>
 
@@ -1067,8 +1065,6 @@ methods.</p>
 existing class. The schema can include attributes, methods, assertions,
 and relationships.</p>
 
-<p>&lt;/div&gt;</p>
-
 <h3 id="creating-a-schema-for-a-class">
 <a class="anchor" href="#creating-a-schema-for-a-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Schema for a Class</h3>
 
@@ -1137,11 +1133,7 @@ fields values.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>You may need to edit a class schema to reorder, add, edit, or remove a
-field. Classes define the order in which fields are processed and you
-may need to process some items before others.</p>
-
-<p>&lt;/div&gt;</p>
+<p>You may need to edit a class schema to reorder, add, edit, or remove a field. Classes define the order in which fields are processed and you may need to process some items before others.</p>
 
 <h3 id="editing-a-field-in-a-schema">
 <a class="anchor" href="#editing-a-field-in-a-schema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editing a Field in a Schema</h3>
@@ -1400,8 +1392,6 @@ Operations &gt; Methods].</p>
 Domain. If necessary, you can copy the class from the ManageIQ
 domain into a custom domain.</p>
 
-    <p>&lt;/div&gt;</p>
-
     <p>This example uses the <strong>Cloud</strong> Namespace but can also use the
 <strong>Infrastructure</strong> namespace.</p>
   </li>
@@ -1626,11 +1616,7 @@ parameters,</p>
 
 <p><strong>Note:</strong></p>
 
-<p>If attributes and distinct are not specified we try to store the result
-in a variable called values with a hash consisting of id and name. This
-makes it compatible with our existing dynamic dialog result set.</p>
-
-<p>&lt;/div&gt;</p>
+<p>If attributes and distinct are not specified we try to store the result in a variable called values with a hash consisting of id and name. This makes it compatible with our existing dynamic dialog result set.</p>
 
 <table>
   <thead>
@@ -1745,16 +1731,10 @@ for each parameter.</p>
 
         <p><strong>Note:</strong></p>
 
-        <p>If <strong>User will input the value</strong> is checked, arguments for each
-input parameter names using the prefix “arg”.</p>
+        <p>If <strong>User will input the value</strong> is checked, arguments for each input parameter names using the prefix “arg”.</p>
 
-        <p>For example, if there are 3 fields then the input parameter
-names should be arg1, arg2, and arg3. If there are two runtime
-parameters arg1 and arg2 must be defined in the input
-parameters. In the default value for these fields values can be
+        <p>For example, if there are 3 fields then the input parameter names should be arg1, arg2, and arg3. If there are two runtime parameters arg1 and arg2 must be defined in the input parameters. In the default value for these fields values can be
 substituted from other objects in the Automate Workspace.</p>
-
-        <p>&lt;/div&gt;</p>
       </li>
     </ol>
   </li>
@@ -1812,18 +1792,13 @@ just simulate it.</p>
 <a class="anchor" href="#importing-exporting-and-resetting-the-datastore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing, Exporting, and Resetting the Datastore</h3>
 
 <p>The <strong>Automate Model</strong> can be exported and imported as a YAML file.
-ManageIQ allows you to back up your model by export. Red Hat may
-provide you with new or updated classes, and provides an import function
-for either a class or the entire model. Finally, you can reset the
-datastore to its default. Always be sure to export the current datastore
-before importing or resetting.</p>
+ManageIQ allows you to back up your model by export. Red Hat may provide you with new or updated classes, and provides an import function
+for either a class or the entire model. Finally, you can reset the datastore to its default. Always be sure to export the current datastore before importing or resetting.</p>
 
 <p><strong>Note:</strong></p>
 
 <p>The datastores you are exporting or importing between must use the same
 ManageIQ version.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h4 id="exporting-all-datastore-classes">
 <a class="anchor" href="#exporting-all-datastore-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exporting All Datastore Classes</h4>
@@ -1990,10 +1965,7 @@ can have up to 15 buttons.</p>
 <p><strong>Note:</strong></p>
 
 <p>Custom buttons can be migrated to other ManageIQ appliances. See
-<a href="#export-import-custom-button">Migrating Custom Buttons</a> for guidance on
-migrating custom buttons to a new ManageIQ appliance.</p>
-
-<p>&lt;/div&gt;</p>
+<a href="#export-import-custom-button">Migrating Custom Buttons</a> for guidance on migrating custom buttons to a new ManageIQ appliance.</p>
 
 <ol>
   <li>
@@ -2088,8 +2060,6 @@ can be defined for any object type available.</p>
 
 <p>An Ansible Playbook catalog item must exist in order to create an Ansible Playbook custom button. For more information, see <a href="../provisioning_virtual_machines_and_hosts/index.html#creating-an-ansible-playbook-service-catalog-item">Creating an Ansible Playbook Service Catalog Item</a> in the Provisioning Virtual Machines and Hosts guide.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to menu:Automation[Automate &gt; Customization].</p>
@@ -2113,8 +2083,6 @@ to create the button for.</p>
     <p>If <img src="../images/1862.png" alt="image"> (<strong>Add a new Button</strong>) is not
 available, that means you have not created a button group for that
 object. To continue, see <a href="#create-custom-button-group">Creating a Custom Button Group</a>.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Select <strong>Ansible Playbook</strong> from the <strong>Button Type</strong> drop-down menu.</p>
@@ -2144,8 +2112,6 @@ input:</p>
 configuration, the field will not appear to users. See <a href="../provisioning_virtual_machines_and_hosts/index.html#service-dialogs">Service Dialogs</a> for information on generating a service dialog.</p>
       </li>
     </ul>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
     <p>Type in a <strong>Text</strong> and <strong>Hover Text</strong>, and select the <strong>Icon</strong> you
@@ -2230,16 +2196,12 @@ of object you want to remove the button from.</p>
 <h3 id="setting-enablement-and-visibility-for-custom-buttons">
 <a class="anchor" href="#setting-enablement-and-visibility-for-custom-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Enablement and Visibility for Custom Buttons</h3>
 
-<p>ManageIQ adds methods for evaluating an expression to determine
-whether a custom button is visible and enabled. Each method has a target
-object, for example, a virtual machine or host, and expressions can set
-a custom button to visible, hidden, or disabled.</p>
+<p>ManageIQ adds methods for evaluating an expression to determine whether a custom button is visible and enabled. Each method has a target
+object, for example, a virtual machine or host, and expressions can set a custom button to visible, hidden, or disabled.</p>
 
 <p><strong>Note:</strong></p>
 
 <p>Filtering works on single objects and is not applicable to lists.</p>
-
-<p>&lt;/div&gt;</p>
 
 <p>To apply filtering actions to a custom button:</p>
 
@@ -2399,18 +2361,11 @@ Event</strong>).</p>
   </li>
 </ol>
 
-<p>You can now assign this policy to a <strong>Policy Profile</strong>. Then, assign the
-policy profile to the virtual machines. Every time this event happens on
-the virtual machine the appropriate Automate Model will be initiated.</p>
+<p>You can now assign this policy to a <strong>Policy Profile</strong>. Then, assign the policy profile to the virtual machines. Every time this event happens on the virtual machine the appropriate Automate Model will be initiated.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>If you want the policy to initiate an Automate Model from the
-<code class="language-plaintext highlighter-rouge">/System/Process/Request</code> class, then you can create your own custom
-action. Be sure to have an instance in the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code>
-class for it to map to.</p>
-
-<p>&lt;/div&gt;</p>
+<p>If you want the policy to initiate an Automate Model from the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code> class, then you can create your own custom action. Be sure to have an instance in the <code class="language-plaintext highlighter-rouge">/System/Process/Request</code> class for it to map to.</p>
 
 <h3 id="creating-a-custom-automate-action">
 <a class="anchor" href="#creating-a-custom-automate-action" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Automate Action</h3>

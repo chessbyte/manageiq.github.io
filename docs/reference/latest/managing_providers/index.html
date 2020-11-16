@@ -1653,12 +1653,7 @@ authentication.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>To use a SCVMM provider, you must have at least one network adapter
-available for communication between the host and the SCVMM management
-server. Make sure that <strong>Used by Management</strong> is checked for this
-network adapter in the SCVMM host properties.</p>
-
-<p>&lt;/div&gt;</p>
+<p>To use a SCVMM provider, you must have at least one network adapter available for communication between the host and the SCVMM management server. Make sure that <strong>Used by Management</strong> is checked for this network adapter in the SCVMM host properties.</p>
 
 <h1 id="authenticating-to-microsoft-scvmm">
 <a class="anchor" href="#authenticating-to-microsoft-scvmm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authenticating to Microsoft SCVMM</h1>
@@ -2363,8 +2358,6 @@ the schedule.</p>
 from the boot menu, otherwise they might boot to hard disk and not
 reprovision.</p>
 
-<p>&lt;/div&gt;</p>
-
 <h1 id="tagging-a-bare-metal-host">
 <a class="anchor" href="#tagging-a-bare-metal-host" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging a Bare Metal Host</h1>
 
@@ -2907,8 +2900,7 @@ authentication.</p>
     followed by the path `/ovirt_engine/api`. Example:
     `https://your.rhv.com/ovirt_engine/api`
 
-  - See [Ansible
-    Roles](https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1/html/administration_guide/chap-automating_rhv_configuration_using_ansible#Ansible_Roles)
+  - See [Ansible Roles](https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1/html/administration_guide/chap-automating_rhv_configuration_using_ansible#Ansible_Roles)
     for more information on Ansible Roles available for Red Hat
     Virtualization.
 
@@ -3202,8 +3194,6 @@ file with the following contents:</p>
 
 <p>ManageIQ will automatically install the role once it sees
 the <code class="language-plaintext highlighter-rouge">requirements.yml</code> file in the playbook.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h4 id="role-variables">
 <a class="anchor" href="#role-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Role Variables</h4>
@@ -4412,8 +4402,6 @@ configuration file for the appliance.</p>
 bear in mind that syncing happens in each configured Amazon EC2
 provider, which will require a similar amount of total memory resources.</p>
 
-<p>&lt;/div&gt;</p>
-
 <ol>
   <li>
     <p>Navigate to the settings menu, then menu:Configuration[Zone &gt;
@@ -4532,19 +4520,13 @@ except for <code class="language-plaintext highlighter-rouge">AWS_EC2_Instance_U
 <h1 id="enabling-amazon-ec2-events">
 <a class="anchor" href="#enabling-amazon-ec2-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enabling Amazon EC2 Events</h1>
 
-<p>After adding an Amazon EC2 provider and configuring an SNS topic in
-<a href="#amazon-provider-aws-config-notifications">???</a>, create a CloudTrail,
-then configure CloudWatch rules on your EC2 provider to automatically
-get events in ManageIQ for monitoring the provider.</p>
+<p>After adding an Amazon EC2 provider and configuring an SNS topic in <a href="#enabling-aws-config-notifications">Enabling AWS Config Notifications</a>, create a CloudTrail,
+then configure CloudWatch rules on your EC2 provider to automatically get events in ManageIQ for monitoring the provider.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>The following procedures are accurate at time of publishing. See the
-<a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">Amazon AWS
-documentation</a>
+<p>The following procedures are accurate at time of publishing. See the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">Amazon AWS documentation</a>
 for further details on these steps.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h2 id="creating-a-cloudtrail">
 <a class="anchor" href="#creating-a-cloudtrail" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a CloudTrail</h2>
@@ -4592,12 +4574,10 @@ this recreated topic until it is recreated too.
     <p>Navigate to menu:Events[Rules] and click <strong>Create rule</strong>.</p>
   </li>
   <li>
-    <p>Select the <strong>Event Pattern</strong> radio button to specify the event
-source.</p>
+    <p>Select the <strong>Event Pattern</strong> radio button to specify the event source.</p>
   </li>
   <li>
-    <p>Edit the <strong>Event Pattern Preview</strong> box, and paste and save the
-following code to create a rule based on a custom event pattern:</p>
+    <p>Edit the <strong>Event Pattern Preview</strong> box, and paste and save the following code to create a rule based on a custom event pattern:</p>
 
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>{

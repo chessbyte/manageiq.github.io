@@ -1632,55 +1632,31 @@ settings that are internal to the operating system appear on the
 
         <p><strong>Note:</strong></p>
 
-        <p>A VMware virtual machine can be provisioned to a DVPortgroup by
-selecting it from the <strong>vLan</strong> list. Prior to provisioning a
-virtual machine, the DVPortgroup must be created on a vSphere
-Distributed Switch (VDS) in VMware vCenter in order for
-ManageIQ to list the DVPortgroup under <strong>vLan</strong>.</p>
-
-        <p>&lt;/div&gt;</p>
+        <p>A VMware virtual machine can be provisioned to a DVPortgroup by selecting it from the <strong>vLan</strong> list. Prior to provisioning a virtual machine, the DVPortgroup must be created on a vSphere
+Distributed Switch (VDS) in VMware vCenter in order for ManageIQ to list the DVPortgroup under <strong>vLan</strong>.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Click <strong>Customize</strong> to customize the operating system of the new
-virtual machine. These options vary based on the operating system of
-the template. <img src="../images/2336.png" alt="2336"></p>
+    <p>Click <strong>Customize</strong> to customize the operating system of the new virtual machine. These options vary based on the operating system of the template. <img src="../images/2336.png" alt="2336"></p>
   </li>
   <li>
     <p>For Windows provisioning:</p>
 
     <ol>
       <li>
-        <p>To use a custom specification from the provider, click
-<strong>Specification</strong>. To select an appropriate template, choose
-from the list in the custom specification area. The values that
-are honored by ManageIQ display.</p>
+        <p>To use a custom specification from the provider, click <strong>Specification</strong>. To select an appropriate template, choose from the list in the custom specification area. The values that are honored by ManageIQ display.</p>
 
         <p><strong>Note:</strong></p>
 
-        <p>Any values in the specification that do not show in the
-ManageIQ console’s request dialogs are not used by
-ManageIQ. For example, for Windows operating systems, if
-you have any run once values in the specification, they are not
-used in creating the new virtual machines. Currently, for a
-Windows operating system, ManageIQ honors the unattended
-GUI, identification, workgroup information, user data, windows
-options, and server license. If more than one network card is
-specified, only the first is used.</p>
+        <p>Any values in the specification that do not show in the ManageIQ console’s request dialogs are not used by ManageIQ. For example, for Windows operating systems, if you have any run once values in the specification, they are not used in creating the new virtual machines. Currently, for a Windows operating system, ManageIQ honors the unattended GUI, identification, workgroup information, user data, windows options, and server license. If more than one network card is specified, only the first is used.</p>
 
         <p><img src="../images/2337.png" alt="2337"></p>
 
         <p>To modify the specification, select <strong>Override Specification Values</strong>.</p>
       </li>
       <li>
-        <p>Select <strong>Sysprep Answer File</strong>, to upload a Sysprep file or use
-one that exists for a custom specification on the Provider where
-the template resides. To upload a file, click <strong>Browse</strong> to find
-the file, and then upload. To use an answer file in
-<strong>Customization Specification</strong>, click on the item. The answer
-file will automatically upload for viewing. You cannot make
-modifications to it.</p>
+        <p>Select <strong>Sysprep Answer File</strong>, to upload a Sysprep file or use one that exists for a custom specification on the Provider where the template resides. To upload a file, click <strong>Browse</strong> to find the file, and then upload. To use an answer file in <strong>Customization Specification</strong>, click on the item. The answer file will automatically upload for viewing. You cannot make modifications to it.</p>
       </li>
     </ol>
   </li>
@@ -1689,20 +1665,16 @@ modifications to it.</p>
 
     <ol>
       <li>
-        <p>Under <strong>Credentials</strong>, enter a <strong>Root Password</strong> for the
-<strong>root</strong> user to access the instance.</p>
+        <p>Under <strong>Credentials</strong>, enter a <strong>Root Password</strong> for the <strong>root</strong> user to access the instance.</p>
       </li>
       <li>
-        <p>Enter a <strong>IP Address Information</strong> for the instance. Leave as
-<strong>DHCP</strong> for automatic IP assignment from the provider.</p>
+        <p>Enter a <strong>IP Address Information</strong> for the instance. Leave as <strong>DHCP</strong> for automatic IP assignment from the provider.</p>
       </li>
       <li>
         <p>Enter any <strong>DNS</strong> information for the instance if necessary.</p>
       </li>
       <li>
-        <p>Select <strong>Customize Template</strong> for additional instance
-configuration. Select from the Kickstart or Cloud-Init
-customization templates stored on your appliance.</p>
+        <p>Select <strong>Customize Template</strong> for additional instance configuration. Select from the Kickstart or Cloud-Init customization templates stored on your appliance.</p>
       </li>
     </ol>
   </li>
@@ -1818,26 +1790,17 @@ following format.</p>
 [how it appears in the ManageIQ user interface virtual
 machine provision dialog’s <strong>Customize</strong> tab]</p>
 
-<p>&lt;/div&gt;</p>
-
 <p><strong>For Windows template</strong>:</p>
 
 <ul>
   <li>
     <p><strong>“fields”</strong> - Sysprep Specification
-In the ManageIQ user interface, when you navigate to
-the virtual machine provision dialog (menu:Compute[Infrastructure
-&gt; Virtual Machine]), this option located under the <strong>Customize</strong>
-tab’s <strong>Customize</strong> drop-down list is called <strong>Sysprep
-Specification</strong>.</p>
+In the ManageIQ user interface, when you navigate to the virtual machine provision dialog (menu:Compute[Infrastructure
+&gt; Virtual Machine]), this option located under the <strong>Customize</strong> tab’s <strong>Customize</strong> drop-down list is called <strong>Sysprep Specification</strong>.</p>
   </li>
   <li>
-    <p><strong>“file”</strong> - Sysprep answer file
-In the ManageIQ user interface, when you navigate to
-the virtual machine provision dialog (menu:Compute[Infrastructure
-&gt; Virtual Machine]), this option located under the <strong>Customize</strong>
-tab’s <strong>Customize</strong> drop-down list is called <strong>Sysprep answer
-file</strong>.</p>
+    <p><strong>“file”</strong> - Sysprep answer file in the ManageIQ user interface, when you navigate to the virtual machine provision dialog (menu:Compute[Infrastructure &gt; Virtual Machine]), this option located under the <strong>Customize</strong>
+tab’s <strong>Customize</strong> drop-down list is called <strong>Sysprep answer file</strong>.</p>
   </li>
 </ul>
 
@@ -1990,20 +1953,16 @@ fields based on the email address.</p>
 provisioning request. To change the required parameters, see
 <a href="#provisioning-dialogs-customizing">Customizing Provisioning
 Dialogs</a>.</p>
-
-    <p>&lt;/div&gt;</p>
   </li>
   <li>
-    <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the
-provisioned instance.</p>
+    <p>Click the <strong>Purpose</strong> tab to select the appropriate tags for the provisioned instance.</p>
   </li>
   <li>
     <p>Click the <strong>Catalog</strong> tab for basic instance options.</p>
 
     <ol>
       <li>
-        <p>To change the image to use as a basis for the instance, select
-it from the list of images.</p>
+        <p>To change the image to use as a basis for the instance, select it from the list of images.</p>
       </li>
       <li>
         <p>Select the <strong>Number of VMs</strong> to provision.</p>
@@ -2502,10 +2461,7 @@ or <code class="language-plaintext highlighter-rouge">false</code> based on your
 
         <p><strong>Note:</strong></p>
 
-        <p>If you set <code class="language-plaintext highlighter-rouge">:required:</code> to <code class="language-plaintext highlighter-rouge">true</code>, the field must have a value
-for the provision request to be submitted.</p>
-
-        <p>&lt;/div&gt;</p>
+        <p>If you set <code class="language-plaintext highlighter-rouge">:required:</code> to <code class="language-plaintext highlighter-rouge">true</code>, the field must have a value for the provision request to be submitted.</p>
       </li>
     </ul>
   </li>
@@ -2514,13 +2470,8 @@ for the provision request to be submitted.</p>
   </li>
 </ol>
 
-<p>If you are using <strong>Provisioning Profiles</strong>, you can specify a specific
-file that holds the customizations. To do this, you must create an
-instance mapping to this file in the ManageIQ
-<strong>Applications/provisioning/profile/VM provisioning by group</strong> class. By
-default, if you are using provisioning profiles and the group does not
-have a defined instance, the appropriate default dialog file will be
-used based on the type of provisioning selected.</p>
+<p>If you are using <strong>Provisioning Profiles</strong>, you can specify a specific file that holds the customizations. To do this, you must create an instance mapping to this file in the ManageIQ
+<strong>Applications/provisioning/profile/VM provisioning by group</strong> class. By default, if you are using provisioning profiles and the group does not have a defined instance, the appropriate default dialog file will be used based on the type of provisioning selected.</p>
 
 <h5 id="creating-a-custom-provision-dialog">
 <a class="anchor" href="#creating-a-custom-provision-dialog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Custom Provision Dialog</h5>
@@ -2594,10 +2545,7 @@ needs.</p>
 
         <p><strong>Note:</strong></p>
 
-        <p>If you set <code class="language-plaintext highlighter-rouge">:required:</code> to <code class="language-plaintext highlighter-rouge">true</code>, the field must have a value
-for the provision request to be submitted.</p>
-
-        <p>&lt;/div&gt;</p>
+        <p>If you set <code class="language-plaintext highlighter-rouge">:required:</code> to <code class="language-plaintext highlighter-rouge">true</code>, the field must have a value for the provision request to be submitted.</p>
       </li>
     </ul>
   </li>
@@ -2606,35 +2554,24 @@ for the provision request to be submitted.</p>
   </li>
 </ol>
 
-<p>Enter the name of the new dialog into the dialog name field in the
-appropriate ManageIQ <strong>Applications/provisioning/profile
-instance</strong>. This dialog can now be referred to in an instance in the
+<p>Enter the name of the new dialog into the dialog name field in the appropriate ManageIQ <strong>Applications/provisioning/profile instance</strong>. This dialog can now be referred to in an instance in the
 Provisioning Profiles class so that it can be used for groups of users.</p>
 
 <h4 id="provisioning-profiles">
 <a class="anchor" href="#provisioning-profiles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provisioning Profiles</h4>
 
-<p>Provisioning profiles can be used to customize the dialogs and the state
-machine (steps used to provision the machine). Profiles can be created
-for LDAP or ManageIQ groups. To use provisioning profiles:</p>
+<p>Provisioning profiles can be used to customize the dialogs and the state machine (steps used to provision the machine). Profiles can be created for LDAP or ManageIQ groups. To use provisioning profiles:</p>
 
 <ul>
   <li>
-    <p>Create a <strong>Provisioning Profile</strong> instance for the LDAP or
-ManageIQ group. If no instance exists, then default settings
-will be used.</p>
+    <p>Create a <strong>Provisioning Profile</strong> instance for the LDAP or ManageIQ group. If no instance exists, then default settings will be used.</p>
   </li>
   <li>
-    <p>If customizing dialogs, create a custom dialog file, and specify the
-name of that file in the provisioning profile instance. If
-customizing the states for provisioning, create a state instance and
-set the name of the state instance in the provisioning profile
-instance.</p>
+    <p>If customizing dialogs, create a custom dialog file, and specify the name of that file in the provisioning profile instance. If customizing the states for provisioning, create a state instance and set the name of the state instance in the provisioning profile instance.</p>
   </li>
 </ul>
 
-<p>The diagram below shows where provisioning profiles are called during
-the entire provisioning process. <img src="../images/2344.png" alt="2344"></p>
+<p>The diagram below shows where provisioning profiles are called during the entire provisioning process. <img src="../images/2344.png" alt="2344"></p>
 
 <h5 id="creating-a-provisioning-profile-instance">
 <a class="anchor" href="#creating-a-provisioning-profile-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Provisioning Profile Instance</h5>
@@ -2644,47 +2581,30 @@ the entire provisioning process. <img src="../images/2344.png" alt="2344"></p>
     <p>Navigate to menu:Automate[Explorer].</p>
   </li>
   <li>
-    <p>Using the tree located in the accordion, click menu:DOMAIN[Cloud &gt;
-VM &gt; Provisioning &gt; Profile].</p>
+    <p>Using the tree located in the accordion, click menu:DOMAIN[Cloud &gt; VM &gt; Provisioning &gt; Profile].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
 
-    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the
-<strong>Infrastructure</strong> namespace.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the <strong>Infrastructure</strong> namespace.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>),
 <img src="../images/2345.png" alt="2345">(<strong>Add a New Instance</strong>).</p>
   </li>
   <li>
-    <p>Make the name of the tag identical to the name of the LDAP or
-ManageIQ group you are creating the instance for, replacing
-spaces in the group name with underscores. For example, change
+    <p>Make the name of the tag identical to the name of the LDAP or ManageIQ group you are creating the instance for, replacing spaces in the group name with underscores. For example, change
 <strong>ManageIQ-test group</strong> to <strong>ManageIQ-test_group</strong>.
 <img src="../images/6278.png" alt="6278"></p>
   </li>
   <li>
-    <p>In the dialog name field, enter the name of the customized dialog
-file. This file must reside on the ManageIQ appliance in the
-<code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/db/fixtures</code> directory. Red Hat recommends naming
-the file in the format <code class="language-plaintext highlighter-rouge">miq_provision_dialogs-groupname.rb</code> and
-copying this file to all ManageIQ appliances. For
-instructions on creating a custom dialog file, see <a href="#provisioning-dialogs-customizing">Customizing
-Provisioning Dialogs</a>.</p>
+    <p>In the dialog name field, enter the name of the customized dialog file. This file must reside on the ManageIQ appliance in the <code class="language-plaintext highlighter-rouge">/var/www/miq/vmdb/db/fixtures</code> directory. Red Hat recommends naming
+the file in the format <code class="language-plaintext highlighter-rouge">miq_provision_dialogs-groupname.rb</code> and copying this file to all ManageIQ appliances. For instructions on creating a custom dialog file, see <a href="#provisioning-dialogs-customizing">Customizing Provisioning Dialogs</a>.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>Be sure that the custom dialog file exists. If it does not, an error
-will appear when the user clicks on the <strong>Provisioning</strong> button in
-the ManageIQ console.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>Be sure that the custom dialog file exists. If it does not, an error will appear when the user clicks on the <strong>Provisioning</strong> button in the ManageIQ console.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -2872,8 +2792,7 @@ request</strong>).</p>
 
 <div class="informalexample">
 
-If the logged in user is not same as the requester or the request has
-been already approved or denied, you cannot edit or delete the request.
+If the logged in user is not same as the requester or the request has been already approved or denied, you cannot edit or delete the request.
 
 </div>
 
@@ -2949,14 +2868,9 @@ Class].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
+    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
 
-    <p>This example uses the <strong>Cloud</strong> Namespace but can also use the
-<strong>Infrastructure</strong> namespace.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>This example uses the <strong>Cloud</strong> Namespace but can also use the <strong>Infrastructure</strong> namespace.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then
@@ -2965,30 +2879,20 @@ domain into a custom domain.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>Do not change any values other than those listed below. Doing so may
-prevent the automatic approval process from running.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>Do not change any values other than those listed below. Doing so may prevent the automatic approval process from running.</p>
 
     <ul>
       <li>
-        <p>Use <strong>max_cpus</strong> to set the number of CPUs allowed to approve
-automatically the provisioning request.</p>
+        <p>Use <strong>max_cpus</strong> to set the number of CPUs allowed to approve automatically the provisioning request.</p>
       </li>
       <li>
-        <p>Use <strong>max_vms</strong> to set the maximum number of virtual machines
-or instances that are allowed to be provisioned automatically
-approve the request. If this is set to blank, no requests will
-be automatically approved.</p>
+        <p>Use <strong>max_vms</strong> to set the maximum number of virtual machines or instances that are allowed to be provisioned automatically approve the request. If this is set to blank, no requests will be automatically approved.</p>
       </li>
       <li>
-        <p>Use <strong>max_memory</strong> to set the maximum memory allowed to approve
-automatically the provisioning request.</p>
+        <p>Use <strong>max_memory</strong> to set the maximum memory allowed to approve automatically the provisioning request.</p>
       </li>
       <li>
-        <p>Use <strong>max_retirement_days</strong> to set the maximum number of days
-until the virtual machine or instance is retired to
-automatically approve this request.</p>
+        <p>Use <strong>max_retirement_days</strong> to set the maximum number of days until the virtual machine or instance is retired to automatically approve this request.</p>
       </li>
       <li>
         <p>If a value is blank or <strong>0</strong>, the parameter is ignored.</p>
@@ -3000,20 +2904,12 @@ automatically approve this request.</p>
   </li>
 </ol>
 
-<p>The thresholds for automatic approval are set. The next time a provision
-request is created these thresholds will be checked. If the requirements
-are met, the provisioning request will be approved with no user
-intervention.</p>
+<p>The thresholds for automatic approval are set. The next time a provision request is created these thresholds will be checked. If the requirements are met, the provisioning request will be approved with no user intervention.</p>
 
 <h5 id="template-specific-approval-defaults">
 <a class="anchor" href="#template-specific-approval-defaults" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template Specific Approval Defaults</h5>
 
-<p>ManageIQ provides tags that can be used to set default automatic
-approval values on a per template or image basis. These values
-<strong>supersede</strong> those in the <strong>Automate</strong> model. Use these tags to
-eliminate the need for manual approval for all provisioning requests. To
-enable automatic approval, assign the tags directly to templates or
-images.</p>
+<p>ManageIQ provides tags that can be used to set default automatic approval values on a per template or image basis. These values <strong>supersede</strong> those in the <strong>Automate</strong> model. Use these tags to eliminate the need for manual approval for all provisioning requests. To enable automatic approval, assign the tags directly to templates or images.</p>
 
 <table>
   <thead>
@@ -3063,17 +2959,12 @@ the tag.</p>
   </li>
 </ol>
 
-<p>The thresholds for automatic approval for a specific template are set.
-The next time a provision request is created for this template these
-thresholds will be checked. If the requirements are met, the
-provisioning request will be approved with no user intervention.</p>
+<p>The thresholds for automatic approval for a specific template are set. The next time a provision request is created for this template these thresholds will be checked. If the requirements are met, the provisioning request will be approved with no user intervention.</p>
 
 <h5 id="setting-provisioning-notification-email-addresses">
 <a class="anchor" href="#setting-provisioning-notification-email-addresses" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Provisioning Notification Email Addresses</h5>
 
-<p>ManageIQ contains a set of Automate instances for provisioning.
-These Automate instances also include email fields to set the sender and
-recipient of provisioning notifications, such as requests. These fields
+<p>ManageIQ contains a set of Automate instances for provisioning. These Automate instances also include email fields to set the sender and recipient of provisioning notifications, such as requests. These fields
 are set to <strong>evmadmin@company.com</strong> as a default.</p>
 
 <ol>
@@ -3086,14 +2977,9 @@ Provisioning &gt; Email].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
 
-    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the
-<strong>Infrastructure</strong> namespace.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>This example uses the <strong>Cloud</strong> Namespace, but can also use the <strong>Infrastructure</strong> namespace.</p>
   </li>
   <li>
     <p>Select an instance within the chosen class.</p>
@@ -4053,11 +3939,7 @@ class of the <strong>Automate</strong> model.</p>
 
 <p><strong>Note:</strong></p>
 
-<p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ domain
-into a custom domain.</p>
-
-<p>&lt;/div&gt;</p>
+<p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
 
 <p>A method is provided below that was created for the following scenario:</p>
 
@@ -4198,11 +4080,7 @@ StateMachines &gt; Methods].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
   </li>
   <li>
     <p>Click the <strong>Methods</strong> tab.</p>
@@ -4240,11 +4118,7 @@ StateMachines &gt; Methods].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
   </li>
   <li>
     <p>Click the <strong>Instances</strong> tab.</p>
@@ -4271,12 +4145,8 @@ domain into a custom domain.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>After the method has been created, it must be mapped to an instance in
-the <code class="language-plaintext highlighter-rouge">DOMAIN/Service/Service/Provisioning/StateMachines</code> class. The name
-of the instance must be specified as the <strong>Entry Point</strong>. This method
+<p>After the method has been created, it must be mapped to an instance in the <code class="language-plaintext highlighter-rouge">DOMAIN/Service/Service/Provisioning/StateMachines</code> class. The name of the instance must be specified as the <strong>Entry Point</strong>. This method
 must be called before the provision job begins.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h5 id="associating-a-method-with-an-automate-instance">
 <a class="anchor" href="#associating-a-method-with-an-automate-instance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Associating a Method with an Automate Instance</h5>
@@ -4297,11 +4167,7 @@ StateMachines &gt; Methods].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p><strong>DOMAIN</strong> must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
   </li>
   <li>
     <p>Either create a new instance or select the <strong>clone_to_service</strong>
@@ -4350,11 +4216,7 @@ class that calls the method.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
   </li>
   <li>
     <p>Associate method with Automate instance.</p>
@@ -4422,14 +4284,8 @@ accordion.</p>
 <p><strong>Note:</strong></p>
 
 <p>You should also create and specify an Entry Point in the
-<code class="language-plaintext highlighter-rouge">DOMAIN/Service/Provisioning/StateMachines/Methods/CatalogBundle</code> class
-for each catalog item that is part of a bundle. If you do not, then the
-pre and post provision processing will occur for each item in the bundle
-in addition to processing for the <strong>Catalog Bundle</strong>. To set the entry
-point, go into each <strong>Catalog Item</strong> and check <strong>Display in Catalog</strong>.
+<code class="language-plaintext highlighter-rouge">DOMAIN/Service/Provisioning/StateMachines/Methods/CatalogBundle</code> class for each catalog item that is part of a bundle. If you do not, then the pre and post provision processing will occur for each item in the bundle in addition to processing for the <strong>Catalog Bundle</strong>. To set the entry point, go into each <strong>Catalog Item</strong> and check <strong>Display in Catalog</strong>.
 Then, you will see the <strong>Entry Point</strong> field.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h4 id="copying-a-catalog-bundle">
 <a class="anchor" href="#copying-a-catalog-bundle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying a Catalog Bundle</h4>
@@ -4442,32 +4298,27 @@ Then, you will see the <strong>Entry Point</strong> field.</p>
     <p>Click the <strong>Catalog Items</strong> accordion.</p>
   </li>
   <li>
-    <p>Select the catalog bundle you want to copy from <strong>All Catalog
-Items</strong>.</p>
+    <p>Select the catalog bundle you want to copy from <strong>All Catalog Items</strong>.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), and then
 <img src="../images/1851.png" alt="Edit_Sign">(<strong>Copy Selected Item</strong>).</p>
   </li>
   <li>
-    <p>Enter a name for the copy of catalog bundle you are creating. Note
-that this name must not already be in use.</p>
+    <p>Enter a name for the copy of catalog bundle you are creating. Note that this name must not already be in use.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
   </li>
 </ol>
 
-<p>A copy of the catalog bundle is saved. You can now select this new copy
-of the catalog bundle and edit as required by navigating to
-<img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then clicking
+<p>A copy of the catalog bundle is saved. You can now select this new copy of the catalog bundle and edit as required by navigating to <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then clicking
 <img src="../images/1851.png" alt="Edit_Sign">(<strong>Edit this Item</strong>).</p>
 
 <h4 id="creating-a-catalog-item">
 <a class="anchor" href="#creating-a-catalog-item" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Catalog Item</h4>
 
-<p>Create a catalog item for each virtual machine or cloud instance that
-will be part of the service.</p>
+<p>Create a catalog item for each virtual machine or cloud instance that will be part of the service.</p>
 
 <ol>
   <li>
@@ -4539,11 +4390,7 @@ instances. No other entry points will be available from the
 
 <p><strong>Note:</strong></p>
 
-<p>When copying a catalog item for reuse, you must click <strong>Display in
-Catalog</strong> in the copied catalog item for the item to appear in the
-catalog.</p>
-
-<p>&lt;/div&gt;</p>
+<p>When copying a catalog item for reuse, you must click <strong>Display in Catalog</strong> in the copied catalog item for the item to appear in the catalog.</p>
 
 <ol>
   <li>
@@ -4560,17 +4407,14 @@ catalog.</p>
 <img src="../images/1851.png" alt="Edit_Sign">(<strong>Copy Selected Item</strong>).</p>
   </li>
   <li>
-    <p>Enter a name for the copy of catalog item you are creating. Note
-that this name must not already be in use.</p>
+    <p>Enter a name for the copy of catalog item you are creating. Note that this name must not already be in use.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
   </li>
 </ol>
 
-<p>A copy of the catalog item is saved. You can now select this new copy of
-the catalog item and edit as required by navigating to
-<img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then clicking
+<p>A copy of the catalog item is saved. You can now select this new copy of the catalog item and edit as required by navigating to <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then clicking
 <img src="../images/1851.png" alt="Edit_Sign">(<strong>Edit this Item</strong>).</p>
 
 <h4 id="creating-a-generic-catalog-item">
@@ -5148,18 +4992,10 @@ the choices made in the dialog.</p>
 <h3 id="orchestration-stacks">
 <a class="anchor" href="#orchestration-stacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Orchestration Stacks</h3>
 
-<p>Cloud orchestration is a service that allows you to create, update, and
-manage cloud resources and their software components as a single unit
-and then deploy them in an automated, repeatable way through a template.
-Templates use a human-readable syntax and can be defined in text files,
-thereby allowing users to check them into version control. Templates
-allow you to easily deploy and reconfigure infrastructure for
-applications within your cloud. A user can author the stack templates,
-or can upload them from other sources.</p>
+<p>Cloud orchestration is a service that allows you to create, update, and manage cloud resources and their software components as a single unit and then deploy them in an automated, repeatable way through a template.
+Templates use a human-readable syntax and can be defined in text files, thereby allowing users to check them into version control. Templates allow you to easily deploy and reconfigure infrastructure for applications within your cloud. A user can author the stack templates, or can upload them from other sources.</p>
 
-<p>ManageIQ supports adding Amazon CloudFormation, OpenStack Heat,
-Microsoft Azure, VNF, and VMware vApp template type, and provides the
-ability to:</p>
+<p>ManageIQ supports adding Amazon CloudFormation, OpenStack Heat, Microsoft Azure, VNF, and VMware vApp template type, and provides the ability to:</p>
 
 <ul>
   <li>
@@ -5167,10 +5003,7 @@ ability to:</p>
 ManageIQ VMDB.</p>
   </li>
   <li>
-    <p>Model the relationships of instances to their stacks, inclusive of
-the user interface. For example, selecting an instance within a
-region that is within a stack, the user interface shows this on the
-standard instance view.</p>
+    <p>Model the relationships of instances to their stacks, inclusive of the user interface. For example, selecting an instance within a region that is within a stack, the user interface shows this on the standard instance view.</p>
   </li>
   <li>
     <p>Model the stack and its elements in the user interface.</p>
@@ -5179,11 +5012,7 @@ standard instance view.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>When importing a template into ManageIQ, the selected
-elements are converted according to their type. For example, lists
-convert to list boxes, and single items convert to text boxes.</p>
-
-<p>&lt;/div&gt;</p>
+<p>When importing a template into ManageIQ, the selected elements are converted according to their type. For example, lists convert to list boxes, and single items convert to text boxes.</p>
 
 <h4 id="creating-an-orchestration-template">
 <a class="anchor" href="#creating-an-orchestration-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating an Orchestration Template</h4>
@@ -5192,27 +5021,23 @@ convert to list boxes, and single items convert to text boxes.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration
-Templates</strong> in the accordion menu.</p>
+    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration Templates</strong> in the accordion menu.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"><strong>Configuration</strong>, then
-click <img src="../images/1848.png" alt="Green_Plus_Sign"><strong>Create a new
-Orchestration Template</strong>.</p>
+click <img src="../images/1848.png" alt="Green_Plus_Sign"><strong>Create a new Orchestration Template</strong>.</p>
   </li>
   <li>
     <p>Enter a <strong>Name</strong> and <strong>Description</strong> for your template.</p>
   </li>
   <li>
-    <p>Select the template type from the <strong>Template Type</strong> list. The
-default is Amazon CloudFormation.</p>
+    <p>Select the template type from the <strong>Template Type</strong> list. The default is Amazon CloudFormation.</p>
   </li>
   <li>
     <p>Select <strong>Draft</strong> to create a draft template.</p>
   </li>
   <li>
-    <p>Add your template in the area below for the selected <strong>Template
-Type</strong>.</p>
+    <p>Add your template in the area below for the selected <strong>Template Type</strong>.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -5226,27 +5051,21 @@ Type</strong>.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration
-Templates</strong> in the accordion menu.</p>
+    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration Templates</strong> in the accordion menu.</p>
   </li>
   <li>
-    <p>Select the orchestration template you want to edit from the <strong>All
-Orchestration Templates</strong> list.</p>
+    <p>Select the orchestration template you want to edit from the <strong>All Orchestration Templates</strong> list.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"><strong>Configuration</strong>, then
-click <img src="../images/1851.png" alt="Edit_Sign"><strong>Edit this Orchestration
-Template</strong>.</p>
+click <img src="../images/1851.png" alt="Edit_Sign"><strong>Edit this Orchestration Template</strong>.</p>
   </li>
   <li>
     <p>Edit the template as needed.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>You can only edit the name and description of a read-only template
-as there can be stacks associated with the template.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>You can only edit the name and description of a read-only template as there can be stacks associated with the template.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -5256,30 +5075,22 @@ as there can be stacks associated with the template.</p>
 <h4 id="copying-orchestration-templates">
 <a class="anchor" href="#copying-orchestration-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copying Orchestration Templates</h4>
 
-<p>Complete the following procedure to copy an orchestration template to
-create a new template.</p>
+<p>Complete the following procedure to copy an orchestration template to create a new template.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration
-Templates</strong> in the accordion menu.</p>
+    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration Templates</strong> in the accordion menu.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="Configuration"><strong>Configuration</strong>, then
-click <img src="../images/1859.png" alt="Copy"> <strong>Copy this Orchestration
-Template</strong>.</p>
+click <img src="../images/1859.png" alt="Copy"> <strong>Copy this Orchestration Template</strong>.</p>
   </li>
   <li>
-    <p>Change the <strong>Description</strong> and the actual content of the template as
-required. ManageIQ automatically prefixes <em>Copy of</em> to
-the old template <strong>Name</strong>.</p>
+    <p>Change the <strong>Description</strong> and the actual content of the template as required. ManageIQ automatically prefixes <em>Copy of</em> to the old template <strong>Name</strong>.</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>To create a copy of an orchestration template into a new template,
-the old and new template content must differ.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>To create a copy of an orchestration template into a new template, the old and new template content must differ.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
@@ -5293,17 +5104,13 @@ the old and new template content must differ.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration
-Templates</strong> in the accordion menu.</p>
+    <p>Navigate to menu:Services[Catalogs] and select <strong>Orchestration Templates</strong> in the accordion menu.</p>
   </li>
   <li>
-    <p>Select the orchestration template you want to delete from the <strong>All
-Orchestration Templates</strong> list.</p>
+    <p>Select the orchestration template you want to delete from the <strong>All Orchestration Templates</strong> list.</p>
   </li>
   <li>
-    <p>Click <img src="../images/1848.png" alt="Configuration"><strong>Configuration</strong>, then
-click <img src="../images/1861.png" alt="Delete"><strong>Remove this Orchestration
-Template from Inventory</strong>.</p>
+    <p>Click <img src="../images/1848.png" alt="Configuration"><strong>Configuration</strong>, then click <img src="../images/1861.png" alt="Delete"><strong>Remove this Orchestration Template from Inventory</strong>.</p>
   </li>
   <li>
     <p>Click <strong>OK</strong>.</p>
@@ -5313,8 +5120,6 @@ Template from Inventory</strong>.</p>
 <p><strong>Note:</strong></p>
 
 <p>Read-only templates cannot be deleted.</p>
-
-<p>&lt;/div&gt;</p>
 
 <h2 id="retirement">
 <a class="anchor" href="#retirement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retirement</h2>
@@ -5560,14 +5365,9 @@ vm_retire_extend].</p>
 
     <p><strong>Note:</strong></p>
 
-    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ
-Domain. If necessary, you can copy the class from the ManageIQ
-domain into a custom domain.</p>
+    <p>DOMAIN must be a user-defined Domain and not the locked ManageIQ Domain. If necessary, you can copy the class from the ManageIQ domain into a custom domain.</p>
 
-    <p>This example uses the <strong>Cloud</strong> Namespace, but you can also use the
-<strong>Infrastructure</strong> namespace.</p>
-
-    <p>&lt;/div&gt;</p>
+    <p>This example uses the <strong>Cloud</strong> Namespace, but you can also use the <strong>Infrastructure</strong> namespace.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="1847">(<strong>Configuration</strong>), then

@@ -725,11 +725,9 @@ MIQ application and <code class="language-plaintext highlighter-rouge">evmserver
 will not run. This is required in highly available database
 deployments.</p>
 
-        <div class="warning">
+        <p><strong>Warning:</strong></p>
 
-This configuration is not reversible.
-
-</div>
+        <p>This configuration is not reversible.</p>
       </li>
       <li>
         <p>Create the database password.</p>
@@ -1428,8 +1426,7 @@ HAProxy policy.</p>
 <p><strong>Note:</strong></p>
 
 <p>Additional configuration is required to run HAProxy on Red Hat OpenStack
-Platform. See the <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/10/single/networking-guide/">OpenStack Networking
-Guide</a>
+Platform. See the <a href="https://access.redhat.com/documentation/en/red-hat-openstack-platform/10/single/networking-guide/">OpenStack Networking Guide</a>
 for more information.</p>
 
 <p>This configuration uses two HAProxy servers and a virtual IP (configured by <code class="language-plaintext highlighter-rouge">keepalived</code>). The following example procedure uses the following IP addresses and names; substitute values for your environment as needed:</p>
@@ -1456,8 +1453,7 @@ for more information.</p>
 </ul>
 
 <p>The following diagram shows the HAProxy configuration in this procedure:
-<img src="../images/cloudforms_ha_architecture_431939_0917_ece-01.png" alt="cloudforms ha architecture 431939 0917 ece
-01"></p>
+<img src="../images/ha_architecture_431939_0917_ece-01.png" alt="ha architecture 431939 0917 ece 01"></p>
 
 <p>To configure HAProxy load balancing:</p>
 
@@ -1877,28 +1873,18 @@ improved performance in worker appliances:
 <h2 id="scaling-a-highly-available-manageiq-environment">
 <a class="anchor" href="#scaling-a-highly-available-manageiq-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scaling a Highly Available ManageIQ Environment</h2>
 
-<p>After creating high availability for the database tier and the user
-interface tier, the rest of the infrastructure should be sized
-appropriately for the roles and the environments that they manage. These
-roles and tiers use built-in high availability mechanisms like primary,
-secondary, and tertiary failover.</p>
+<p>After creating high availability for the database tier and the user interface tier, the rest of the infrastructure should be sized appropriately for the roles and the environments that they manage. These
+roles and tiers use built-in high availability mechanisms like primary, secondary, and tertiary failover.</p>
 
-<p>You can configure additional worker appliances as needed using the steps
-in <a href="#installing-additional-manageiq-appliances">Installing Additional Appliances</a>, and then assign zones and
-server roles. The non-database ManageIQ appliances and
+<p>You can configure additional worker appliances as needed using the steps in <a href="#installing-additional-manageiq-appliances">Installing Additional Appliances</a>, and then assign zones and server roles. The non-database ManageIQ appliances and
 roles can be configured in any order.</p>
 
-<p>The following diagram shows an example of a highly available database
-configuration that contains worker appliances, providers, and the
-HAProxy load balancer configured in <a href="#configuring-the-haproxy-load-balancer">Configuring the HAProxy Load Balancer</a>.</p>
+<p>The following diagram shows an example of a highly available database configuration that contains worker appliances, providers, and the HAProxy load balancer configured in <a href="#configuring-the-haproxy-load-balancer">Configuring the HAProxy Load Balancer</a>.</p>
 
-<p>The worker appliances in the diagram are labeled by server role (<strong>User
-Interface</strong>, <strong>Management</strong>, and <strong>Database Ops</strong>) and corresponding
-zone to show how a highly available environment might be scaled with
+<p>The worker appliances in the diagram are labeled by server role (<strong>User Interface</strong>, <strong>Management</strong>, and <strong>Database Ops</strong>) and corresponding zone to show how a highly available environment might be scaled with
 server roles and zones.</p>
 
-<p><img src="../images/cloudforms_ha_architecture_431939_0917_ece-02.png" alt="cloudforms ha architecture 431939 0917 ece
-02"></p>
+<p><img src="../images/ha_architecture_431939_0917_ece-02.png" alt="ha architecture 431939 0917 ece 02"></p>
 
 <p>See <a href="../general_configuration/index.html#regions">Regions</a>
 and <a href="../general_configuration/index.html#servers">Servers</a>

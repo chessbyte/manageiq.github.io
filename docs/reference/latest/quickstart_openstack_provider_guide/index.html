@@ -1130,10 +1130,8 @@ visualization of the OpenStack cloud.</p>
 <a class="anchor" href="#installing-and-configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing and Configuring ManageIQ</h2>
 
 <p>ManageIQ can be installed on a number of virtualization
-platforms, such as <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.0/installing-cloudforms-on-vmware-vsphere/installing-cloudforms-on-vmware-vsphere">VMware
-vSphere</a>,
-and <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.0/installing-cloudforms-on-red-hat-enterprise-virtualization/installing-cloudforms-on-red-hat-enterprise-virtualization">Red Hat Enterprise
-Virtualization</a>.
+platforms, such as <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.0/installing-cloudforms-on-vmware-vsphere/installing-cloudforms-on-vmware-vsphere">VMware vSphere</a>,
+and <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.0/installing-cloudforms-on-red-hat-enterprise-virtualization/installing-cloudforms-on-red-hat-enterprise-virtualization">Red Hat Enterprise Virtualization</a>.
 This chapter describes how to install and configure ManageIQ on
 <em>Red Hat OpenStack Platform</em>.</p>
 
@@ -1144,22 +1142,17 @@ This chapter describes how to install and configure ManageIQ on
 
 <p>Afterwards, upload or install the appliance image as a virtual machine
 or instance on a supported virtualization environment or cloud provider.
-See the <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/?category=installation%2520and%2520upgrade&amp;version=4.7">Installation and
-Upgrade</a>
+See the <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/?category=installation%2520and%2520upgrade&amp;version=4.7">Installation and Upgrade</a>
 section for information on different supported <em>ManageIQ</em>
 deployment methods.</p>
 
 <p>Whichever deployment method you choose, ensure that <em>ManageIQ</em> is
 configured with connectivity to the OpenStack management network.</p>
 
-<div class="tip">
+<p><strong>Tip:</strong></p>
 
-See [Uploading the Appliance on
-OpenStack](https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/installing-red-hat-cloudforms-on-red-hat-enterprise-linux-openstack-platform/#uploading-the-appliance-on-openstack)
-for instructions on deploying *ManageIQ* as an instance on the
-overcloud.
-
-</div>
+<p>See <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/installing-red-hat-cloudforms-on-red-hat-enterprise-linux-openstack-platform/#uploading-the-appliance-on-openstack">Uploading the Appliance on OpenStack</a>
+for instructions on deploying <em>ManageIQ</em> as an instance on the overcloud.</p>
 
 <h3 id="configuring-manageiq">
 <a class="anchor" href="#configuring-manageiq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring ManageIQ</h3>
@@ -1443,11 +1436,8 @@ use the following credentials:</p>
 <p>You can also change the password of the <strong>admin</strong> account from the login
 screen. To do so, click the <strong>Update Password</strong> link.</p>
 
-<p>&lt;/div&gt;</p>
-
 <p>You can access and configure most ManageIQ settings through the
-<strong>Configuration</strong> menu. You can access this menu through <strong>Administrator
-| EVM</strong> &gt; <strong>Configuration</strong>.</p>
+<strong>Configuration</strong> menu. You can access this menu through <strong>Administrator | EVM</strong> &gt; <strong>Configuration</strong>.</p>
 
 <p>The options under the <img src="../images/config-gear.png" alt="Configuration">
 <strong>Configuration</strong> menu allow you to configure global options for your
@@ -1496,8 +1486,7 @@ two steps:</p>
 
 <ol>
   <li>
-    <p><a href="#cf-caputils">Configuring ManageIQ Capacity and
-Utilization</a>, and</p>
+    <p><a href="#cf-caputils">Configuring ManageIQ Capacity and Utilization</a>, and</p>
   </li>
   <li>
     <p><a href="#cf-smartproxy">Enabling SmartState Analysis</a></p>
@@ -1553,8 +1542,7 @@ Capacity &amp; Utilization Collector role is 10 minutes. The first
 collection from a particular provider may take a few minutes since
 ManageIQ is gathering data points going one month back in time.</p>
 
-<p>For more information, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.1/deployment-planning-guide/#capacity_and_utilization_collection">Capacity and Utilization
-Collection</a>
+<p>For more information, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.1/deployment-planning-guide/#capacity_and_utilization_collection">Capacity and Utilization Collection</a>
 from the <em>Deployment Planning Guide</em>.</p>
 
 <h4 id="enabling-smartstate-analysis">
@@ -2210,22 +2198,15 @@ cloud instance for use with SmartState analysis, via a control policy.</p>
 
 <p><strong>Note:</strong></p>
 
-<p>For more detailed information about ManageIQ policies, see
-<a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/assigning-a-custom-analysis-profile-to-a-virtual-machine/">Assigning a Custom Analysis Profile to a Virtual
-Machine</a>
-and <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/policies-and-profiles-guide/">Policies and Profiles
-Guide</a>.</p>
+<p>For more detailed information about ManageIQ policies, see <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/assigning-a-custom-analysis-profile-to-a-virtual-machine/">Assigning a Custom Analysis Profile to a Virtual Machine</a>
+and <a href="https://access.redhat.com/documentation/en/red-hat-cloudforms/4.7/single/policies-and-profiles-guide/">Policies and Profiles Guide</a>.</p>
 
-<p>&lt;/div&gt;</p>
-
-<p>The following subsections demonstrate how to create host compliance and
-instance control policies.</p>
+<p>The following subsections demonstrate how to create host compliance and instance control policies.</p>
 
 <h3 id="creating-a-host-compliance-policy">
 <a class="anchor" href="#creating-a-host-compliance-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Host Compliance Policy</h3>
 
-<p>The following procedure describes how to create a compliance policy that
-checks whether firewalls are enabled on infrastructure provider nodes.
+<p>The following procedure describes how to create a compliance policy that checks whether firewalls are enabled on infrastructure provider nodes.
 Nodes with disabled firewalls are marked <em>non-compliant</em>.</p>
 
 <ol>
@@ -2233,16 +2214,14 @@ Nodes with disabled firewalls are marked <em>non-compliant</em>.</p>
     <p>Navigate to menu:Control[Explorer].</p>
   </li>
   <li>
-    <p>Expand the <strong>Policies</strong> accordion, and click <strong>Compliance
-Policies</strong>.</p>
+    <p>Expand the <strong>Policies</strong> accordion, and click <strong>Compliance Policies</strong>.</p>
   </li>
   <li>
     <p>Select <strong>Host Compliance Policies</strong>.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>),
-<img src="../images/1862.png" alt="image"> (<strong>Add a New Host/Node Compliance
-Policy</strong>).</p>
+<img src="../images/1862.png" alt="image"> (<strong>Add a New Host/Node Compliance Policy</strong>).</p>
   </li>
   <li>
     <p>Type in a <strong>Description</strong> for the policy.</p>
@@ -2250,25 +2229,21 @@ Policy</strong>).</p>
     <p><img src="../images/1935.png" alt="image"></p>
   </li>
   <li>
-    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even
-when assigned to a resource.</p>
+    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even when assigned to a resource.</p>
   </li>
   <li>
-    <p>Add <strong>Host / Node.Firewall Rules : Active CONTAINS “true”</strong> to the
-<em>scope</em> of the policy . To do so:</p>
+    <p>Add <strong>Host / Node.Firewall Rules : Active CONTAINS “true”</strong> to the <em>scope</em> of the policy . To do so:</p>
 
     <ol>
       <li>
-        <p>In drop-down below the <strong>Scope</strong> section, choose <strong>Field</strong>. When
-you do, a new drop-down will appear below it; from there, select
+        <p>In drop-down below the <strong>Scope</strong> section, choose <strong>Field</strong>. When you do, a new drop-down will appear below it; from there, select
 <strong>Host/Node.Firewall.Rules: Active</strong>.</p>
       </li>
       <li>
         <p>A new drop-down will appear; from there, select <strong>true</strong>.</p>
       </li>
       <li>
-        <p>Click <img src="../images/1863.png" alt="image"> (<strong>Commit expression element
-changes</strong>) to add the scope.</p>
+        <p>Click <img src="../images/1863.png" alt="image"> (<strong>Commit expression element changes</strong>) to add the scope.</p>
       </li>
     </ol>
   </li>
@@ -2276,13 +2251,11 @@ changes</strong>) to add the scope.</p>
     <p>In the <strong>Notes</strong> area, add a detailed explanation of the policy.</p>
   </li>
   <li>
-    <p>Click <strong>Add</strong>. The policy will be added and listed under <strong>Host
-Compliance Policies</strong> in the <strong>Policies</strong> accordion.</p>
+    <p>Click <strong>Add</strong>. The policy will be added and listed under <strong>Host Compliance Policies</strong> in the <strong>Policies</strong> accordion.</p>
   </li>
 </ol>
 
-<p>Next, create a <em>policy profile</em> and assign this new compliance policy to
-it:</p>
+<p>Next, create a <em>policy profile</em> and assign this new compliance policy to it:</p>
 
 <ol>
   <li>
@@ -2319,8 +2292,7 @@ all the policies you need to apply to this policy profile. Use the
   </li>
 </ol>
 
-<p>At this point, you can now add the new policy profile to the
-infrastructure provider hosts:</p>
+<p>At this point, you can now add the new policy profile to the infrastructure provider hosts:</p>
 
 <ol>
   <li>
@@ -2348,10 +2320,7 @@ turns blue to show its assignment state has changed.</p>
 <h3 id="creating-a-virtual-machine-control-policy">
 <a class="anchor" href="#creating-a-virtual-machine-control-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Virtual Machine Control Policy</h3>
 
-<p>The process of creating a <em>control policy</em> is similar to that of a
-compliance policy. A control policy is driven by events after certain
-conditions are met. The following control policy will start a SmartState
-analysis on an instance every 24 hours:</p>
+<p>The process of creating a <em>control policy</em> is similar to that of a compliance policy. A control policy is driven by events after certain conditions are met. The following control policy will start a SmartState analysis on an instance every 24 hours:</p>
 
 <ol>
   <li>
@@ -2365,64 +2334,53 @@ analysis on an instance every 24 hours:</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>), then
-<img src="../images/1862.png" alt="image"> (<strong>Add a New VM and Instance Control
-Policy</strong>).</p>
+<img src="../images/1862.png" alt="image"> (<strong>Add a New VM and Instance Control Policy</strong>).</p>
   </li>
   <li>
-    <p>Enter a <strong>Description</strong>. This will be the name given to your VM
-control policy.</p>
+    <p>Enter a <strong>Description</strong>. This will be the name given to your VM control policy.</p>
   </li>
   <li>
-    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even
-when assigned to a resource.</p>
+    <p>Uncheck <strong>Active</strong> if you do not want this policy processed even when assigned to a resource.</p>
   </li>
   <li>
-    <p>Add <strong>VM and Instance : Last Analysis Time IS “Yesterday”</strong> to the
-scope of the policy. To do so:</p>
+    <p>Add <strong>VM and Instance : Last Analysis Time IS “Yesterday”</strong> to the scope of the policy. To do so:</p>
 
     <ol>
       <li>
-        <p>In drop-down below the <strong>Scope</strong> section, choose <strong>Field</strong>. When
-you do, a new drop-down will appear below it; from there, select
+        <p>In drop-down below the <strong>Scope</strong> section, choose <strong>Field</strong>. When you do, a new drop-down will appear below it; from there, select
 <strong>VM and Instance : Last Analysis Time</strong>.</p>
       </li>
       <li>
         <p>A new drop-down will appear; from there, select <strong>true</strong>.</p>
       </li>
       <li>
-        <p>Click <img src="../images/1863.png" alt="image"> (<strong>Commit expression element
-changes</strong>) to add the scope.</p>
+        <p>Click <img src="../images/1863.png" alt="image"> (<strong>Commit expression element changes</strong>) to add the scope.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Click <strong>Add</strong>. The policy is added and listed under <strong>Vm Control
-Policies</strong> in the <strong>Policies</strong> accordion.</p>
+    <p>Click <strong>Add</strong>. The policy is added and listed under <strong>Vm Control Policies</strong> in the <strong>Policies</strong> accordion.</p>
   </li>
 </ol>
 
-<p>You can now associate events, conditions, and actions to this control
-policy. To do so:</p>
+<p>You can now associate events, conditions, and actions to this control policy. To do so:</p>
 
 <ol>
   <li>
     <p>Navigate to menu:Control[Explorer].</p>
   </li>
   <li>
-    <p>Click the <strong>Policies</strong> accordion, and select the control policy you
-just created.</p>
+    <p>Click the <strong>Policies</strong> accordion, and select the control policy you just created.</p>
   </li>
   <li>
     <p>Click <img src="../images/1847.png" alt="image"> (<strong>Configuration</strong>),
-<img src="../images/1851.png" alt="image"> (<strong>Edit this Policy’s Condition
-assignments</strong>).</p>
+<img src="../images/1851.png" alt="image"> (<strong>Edit this Policy’s Condition assignments</strong>).</p>
   </li>
   <li>
     <p>In the <strong>VM Operation</strong> section, select <strong>VM Power On</strong>.</p>
   </li>
   <li>
-    <p>Click <strong>Save</strong>. The <strong>VM Power On</strong> event should appear under your
-policy.</p>
+    <p>Click <strong>Save</strong>. The <strong>VM Power On</strong> event should appear under your policy.</p>
   </li>
 </ol>
 
@@ -2438,8 +2396,7 @@ policy.</p>
   </li>
   <li>
     <p>In the <strong>Order of Actions if ALL Conditions are True</strong> section,
-select <strong>Generate Log Message</strong> and <strong>Initiate SmartState Analysis
-for VM</strong>.</p>
+select <strong>Generate Log Message</strong> and <strong>Initiate SmartState Analysis for VM</strong>.</p>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -2470,8 +2427,7 @@ name. Add this policy to the <strong>Profile Policies</strong> box.</p>
   </li>
 </ol>
 
-<p>At this point, you should now be able to add the policy profile to the
-cloud providers.</p>
+<p>At this point, you should now be able to add the policy profile to the cloud providers.</p>
 
 <ol>
   <li>
@@ -3143,43 +3099,31 @@ and <strong>Entry Point(NS/Cls/Inst)</strong> options.</p>
 
         <ol>
           <li>
-            <p><strong>Provisioning Entry Point (Domain/NS/Cls/Inst)</strong> requires
-you to select an Automate instance to run upon provisioning.
-Navigate to <strong>ManageIQ/Service/Provisioning/State‐
-Machines/ServiceProvision_Template/CatalogItemInitialization</strong>
+            <p><strong>Provisioning Entry Point (Domain/NS/Cls/Inst)</strong> requires you to select an Automate instance to run upon provisioning.
+Navigate to <strong>ManageIQ/Service/Provisioning/State‐Machines/ServiceProvision_Template/CatalogItemInitialization</strong>
 and click <strong>Apply</strong>.</p>
           </li>
           <li>
-            <p><strong>Retirement Entry Point (Domain/NS/Cls/Inst)</strong> requires you
-to select an Automate instance to run upon retirement.
-Navigate to <strong>ManageIQ/Service/Provisioning/State‐
-Machines/ServiceProvision_Template/CatalogItemTermination</strong>
+            <p><strong>Retirement Entry Point (Domain/NS/Cls/Inst)</strong> requires you to select an Automate instance to run upon retirement. Navigate to <strong>ManageIQ/Service/Provisioning/State‐Machines/ServiceProvision_Template/CatalogItemTermination</strong>
 and click <strong>Apply</strong>.</p>
 
             <p><strong>Note:</strong></p>
 
-            <p>The entry point must be a State Machine since the
-<strong>Provisioning Entry Point</strong> list is filtered to only show
-State Machine class instances. No other entry points will be
+            <p>The entry point must be a State Machine since the <strong>Provisioning Entry Point</strong> list is filtered to only show State Machine class instances. No other entry points will be
 available from the <strong>Provisioning Entry Point</strong> field.</p>
 
-            <p>You can only choose from the catalogs and dialogs you have
-already created. If you haven’t done so, leave the values
+            <p>You can only choose from the catalogs and dialogs you have already created. If you haven’t done so, leave the values
 blank and edit later.</p>
-
-            <p>&lt;/div&gt;</p>
           </li>
         </ol>
       </li>
     </ol>
   </li>
   <li>
-    <p>In the <strong>Details</strong> subtab, write a <strong>Long Description</strong> for the
-catalog item.</p>
+    <p>In the <strong>Details</strong> subtab, write a <strong>Long Description</strong> for the catalog item.</p>
   </li>
   <li>
-    <p>In the <strong>Request Info</strong> subtab, select provisioning options that
-apply to the provider chosen.</p>
+    <p>In the <strong>Request Info</strong> subtab, select provisioning options that apply to the provider chosen.</p>
   </li>
   <li>
     <p>Click <strong>Add</strong>.</p>
