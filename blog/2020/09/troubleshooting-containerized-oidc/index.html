@@ -119,6 +119,7 @@ configured for OpenID-Connect authentication when deploying ManageIQ on containe
       <li><a href="#manageiq-httpd-pod-log"><strong>ManageIQ HTTPD Pod Log</strong></a></li>
       <li><a href="#openid-connect-provider-accessible"><strong>OpenID-Connect Provider Accessible</strong></a></li>
       <li><a href="#capturing-user-request-headers"><strong>Capturing User Request Headers</strong></a></li>
+      <li><a href="#adjusting-log-level"><strong>Adjusting Log Level</strong></a></li>
     </ul>
   </li>
   <li><a href="#reporting-issues"><strong>Reporting Issues</strong></a></li>
@@ -348,6 +349,63 @@ the user claims returned from Apache’s mod-auth-openidc module will be written
   ... <span class="s2">"message"</span>:<span class="s2">"MIQ(Authenticator::Httpd#log_auth_debug)   X-REMOTE-USER-EMAIL      = </span><span class="se">\"</span><span class="s2">byouruncle@byouruncle.example.com</span><span class="se">\"</span><span class="s2">"</span><span class="o">}</span>
   ... <span class="s2">"message"</span>:<span class="s2">"MIQ(Authenticator::Httpd#log_auth_debug)   X-REMOTE-USER-DOMAIN     = </span><span class="se">\"</span><span class="s2">byouruncle.example.com</span><span class="se">\"</span><span class="s2">"</span><span class="o">}</span>
   ... <span class="s2">"message"</span>:<span class="s2">"MIQ(Authenticator::Httpd#log_auth_debug)   X-REMOTE-USER-GROUPS     = </span><span class="se">\"</span><span class="s2">EvmGroup-super_administrator</span><span class="se">\"</span><span class="s2">"</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="adjusting-log-level">Adjusting Log Level</h2>
+<hr />
+
+<p>To gain additional insight to authentication issues adjust the log level to <strong>debug</strong> on the httpd pod,
+which can be done with the following commands:</p>
+
+<ul>
+  <li>Login</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>oc login <span class="nt">-u</span> admin <span class="nt">-p</span> &lt;pw&gt; https://&lt;my-container-host&gt;/
+</code></pre></div></div>
+
+<ul>
+  <li>Edit the httpd configmap:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>oc edit configmaps/httpd-configs <span class="nt">-n</span> my-miq-project
+</code></pre></div></div>
+
+<ul>
+  <li>This command will open an editor where you can adjust the log level:</li>
+</ul>
+
+<p>Search for <strong>LogLevel</strong> and change it from: <strong>LogLevel warn</strong> To: <strong>LogLevel debug</strong>, 
+  and save the changes.</p>
+
+<ul>
+  <li>Get the name of the httpd pod</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>oc get pods <span class="nt">-n</span> my-miq-project | <span class="nb">grep </span>httpd
+    httpd-abcdef1234-12345               1/1     Running   0          22d
+</code></pre></div></div>
+
+<ul>
+  <li>Delete this httpd pod, which will result in a new one being created.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>oc delete pod httpd-abcdef1234-12345 <span class="nt">-n</span> my-miq-project
+</code></pre></div></div>
+
+<ul>
+  <li>Within a short time a new httpd pod will be created with the new LogLevel</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>oc get pods <span class="nt">-n</span> my-miq-project | <span class="nb">grep </span>httpd
+    httpd-abcdef7892-65432               1/1     Running   0          22d
+</code></pre></div></div>
+
+<ul>
+  <li>Now the httpd logs will have additinal debug information</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>oc logs <span class="nt">-f</span> httpd-abcdef7892-65432 <span class="nt">-n</span> my-miq-project
 </code></pre></div></div>
 
 <h1 id="reporting-issues">Reporting Issues</h1>
