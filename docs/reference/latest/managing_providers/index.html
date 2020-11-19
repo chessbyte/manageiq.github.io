@@ -634,6 +634,16 @@
 <li class="toc-entry toc-h1"><a href="#viewing-virtual-machines-and-templates">Viewing Virtual Machines and Templates</a></li>
 <li class="toc-entry toc-h1"><a href="#configuration-management-providers">Configuration Management Providers</a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#ibm-terraform-provider">IBM Terraform provider</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#adding-an-ibm-terraform-provider">Adding an IBM Terraform Provider</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#in-the-endpoint-section">In the Endpoint section:</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#triggering-a-refresh-of-an-ibm-terraform-provider">Triggering a Refresh of an IBM Terraform Provider</a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#red-hat-satellite-6">Red Hat Satellite 6</a></li>
 </ul>
 </li>
@@ -2066,6 +2076,89 @@ brought about by the existence of different providers.</p>
 providers available to ManageIQ, and how to manage them.
 Configuration management providers must be added individually to
 ManageIQ.</p>
+
+<h2 id="ibm-terraform-provider">
+<a class="anchor" href="#ibm-terraform-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Terraform provider</h2>
+
+<p>Terraform is an Open Source software that is developed by HashiCorp that enables predictable and consistent provisioning of many cloud platforms, classic infrastructure, and virtual private cloud (VPC) infrastructure resources by using a high-level scripting language. You can use Terraform to automate your cloud resource provisioning, rapidly build complex, multi-tier cloud environments, and enable Infrastructure as Code (IaC). ManageIQ provides functionality to integrate with Terraform and take advantage of features. This includes:</p>
+
+<ul>
+  <li>
+    <p>Discovering the inventory of your Terraform content, including templates, stacks, and virtual machines provisioned using Terraform.</p>
+  </li>
+  <li>
+    <p>Providing traceability between VM resources provisioned by Terraform and discovered by ManageIQ.</p>
+  </li>
+  <li>
+    <p>Applying ManageIQ policy tags to hosts.</p>
+  </li>
+</ul>
+
+<h1 id="adding-an-ibm-terraform-provider">
+<a class="anchor" href="#adding-an-ibm-terraform-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an IBM Terraform Provider</h1>
+
+<p>To start provisioning bare metal machines, you need at least one IBM Terraform provider added to ManageIQ.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu: <strong>Configuration &gt; Providers</strong>.</p>
+  </li>
+  <li>
+    <p>Select menu: <strong>Configuration &gt; Add a new Provider</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Type</strong> as <strong>IBM Terraform Configuration</strong></p>
+  </li>
+  <li>
+    <p>Enter a <strong>Name</strong> for the provider.</p>
+  </li>
+  <li>Select a <strong>Zone</strong>, choose <strong>default</strong>.
+    <h3 id="in-the-endpoint-section">
+<a class="anchor" href="#in-the-endpoint-section" aria-hidden="true"><span class="octicon octicon-link"></span></a>In the Endpoint section:</h3>
+  </li>
+  <li>
+    <p>Enter the <strong>Managed Services URL</strong> for the provider. This is the URL for the IBM Terraform server (Cloud Automation Management API) and can be either an IP address or a hostname.</p>
+
+    <p>For example, <code class="language-plaintext highlighter-rouge">https://cam.apps.test.example.com</code>.</p>
+  </li>
+  <li>
+    <p>In the <code class="language-plaintext highlighter-rouge">Endpoint</code> section, enter the <strong>CloudPak for MCM URL</strong>. This is the console URL for the IBM CloudPak for Multicloud Management system. This is used for authentication and access token.</p>
+
+    <p>For example, <code class="language-plaintext highlighter-rouge">https://cp-console.apps.test.example.com</code>.</p>
+  </li>
+  <li>
+    <p>Select <strong>SSL verification</strong> as <strong>Verify</strong> or <strong>Do not verify</strong>.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Username</strong> for a user on the provider. This must be a user in IBM CloudPak for Multicloud Management.</p>
+  </li>
+  <li>
+    <p>Enter a <strong>Password</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Validate</strong> to test your connection.</p>
+  </li>
+  <li>Click <strong>Add</strong> to confirm your settings and save the provider.</li>
+</ol>
+
+<p>ManageIQ saves the IBM Terraform provider in its database and triggers a refresh of resources detected in the provider.</p>
+
+<h1 id="triggering-a-refresh-of-an-ibm-terraform-provider">
+<a class="anchor" href="#triggering-a-refresh-of-an-ibm-terraform-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Triggering a Refresh of an IBM Terraform Provider</h1>
+
+<p>Your IBM Terraform provider can still create new hosts independently of ManageIQ. Your ManageIQ detects these changes after an automatic refresh period. However, you can trigger a manual refresh to avoid waiting for the automatic refresh.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu: <strong>Configuration &gt; Providers</strong>.</p>
+  </li>
+  <li>
+    <p>Select your Terraform provider using the checkbox, and click menu: <strong>Configuration &gt; Refresh Relationships and Power States</strong>. This triggers the refresh.</p>
+  </li>
+  <li>
+    <p>When the refresh is complete, select the Terraform provider to check the updated list of hosts groups in the provider.</p>
+  </li>
+</ol>
 
 <h2 id="red-hat-satellite-6">
 <a class="anchor" href="#red-hat-satellite-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Red Hat Satellite 6</h2>
