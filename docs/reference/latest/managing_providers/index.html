@@ -762,6 +762,12 @@
 <li class="toc-entry toc-h1"><a href="#editing-a-cloud-provider">Editing a Cloud Provider</a></li>
 <li class="toc-entry toc-h1"><a href="#viewing-a-cloud-providers-timeline">Viewing a Cloud Provider’s Timeline</a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#ibm-cloud-vpc-provider">IBM Cloud VPC Provider</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#ibm-cloud-virtual-server-for-vpc">IBM Cloud Virtual Server for VPC</a></li>
+<li class="toc-entry toc-h1"><a href="#adding-ibm-cloud-vpc-providers">Adding IBM Cloud VPC Providers</a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#ibm-power-systems-virtual-servers-providers">IBM Power Systems Virtual Servers Providers</a></li>
 </ul>
 </li>
@@ -5052,6 +5058,48 @@ groups of events to display. Each has its own color.</p>
       </li>
     </ul>
   </li>
+</ol>
+
+<h2 id="ibm-cloud-vpc-provider">
+<a class="anchor" href="#ibm-cloud-vpc-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Cloud VPC Provider</h2>
+
+<h1 id="ibm-cloud-virtual-server-for-vpc">
+<a class="anchor" href="#ibm-cloud-virtual-server-for-vpc" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Cloud Virtual Server for VPC</h1>
+
+<p><a href="https://www.ibm.com/cloud/vpc">IBM Cloud Virtual Server for VPC</a> (virtual private cloud) consists of virtual server instances within IBM’s VPC infrastructure, a public cloud construct. Virtual server instances for VPC enable the deployment of a secured private space in a publicly accessible environment by way of a single-tenant infrastructure in a multi-tenant public cloud. VPCs are logically isolated networks where cloud compute, storage and networking resources are deployed and used to host business workloads, applications and websites. Like networks in traditional on-premises data centers, VPCs utilize cloud security functions and models that match the functionality of those found in offline data centers.</p>
+
+<h1 id="adding-ibm-cloud-vpc-providers">
+<a class="anchor" href="#adding-ibm-cloud-vpc-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding IBM Cloud VPC Providers</h1>
+
+<p>Complete the following procedure to add an IBM Cloud VPC provider in ManageIQ.</p>
+
+<ol>
+  <li>
+    <p>Navigate to menu:Compute[Clouds &gt; Providers].</p>
+  </li>
+  <li>
+    <p>Click <img src="../images/1847.png" alt="1847"> (<strong>Configuration</strong>), then click
+ <img src="../images/1862.png" alt="1862"> (<strong>Add a New Cloud Provider</strong>).</p>
+  </li>
+  <li>
+    <p>From the <strong>Type</strong> list, select <strong>IBM Cloud VPC</strong>.</p>
+  </li>
+  <li>Enter a <strong>Name</strong> for the provider.</li>
+  <li>Select the appropriate <strong>Zone</strong>.</li>
+  <li>
+    <p>Select the appropriate <strong>Region</strong>.</p>
+  </li>
+  <li>
+    <p>Under <strong>Endpoints</strong>, enter your <strong>IBM Cloud API Key</strong>.</p>
+
+    <p>For more information on managing IBM Cloud API keys, including how to create one, see <a href="https://cloud.ibm.com/docs/account?topic=account-userapikey">Managing user API keys</a>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Validate</strong> to validate the credentials.</p>
+
+    <p><strong>Note:</strong> The connection uses port 443. Make sure the port 443 is opened on any firewalls.</p>
+  </li>
+  <li>Click <strong>Add</strong>.</li>
 </ol>
 
 <h2 id="ibm-power-systems-virtual-servers-providers">
