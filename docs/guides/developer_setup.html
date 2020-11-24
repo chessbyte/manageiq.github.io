@@ -593,6 +593,7 @@ sudo yum install epel-release
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pg_dropcluster <span class="nt">--stop</span> 10 main
 <span class="nb">sudo </span>pg_createcluster <span class="nt">-e</span> UTF-8 <span class="nt">-l</span> C 10 main <span class="nt">--</span> <span class="nt">--auth</span> trust <span class="nt">--username</span> root
+<span class="nb">sudo </span>pg_ctlcluster 10 main start
 </code></pre></div></div>
 
 <p>On macOS, configure a cluster using <code class="language-plaintext highlighter-rouge">initdb</code> directly.</p>
