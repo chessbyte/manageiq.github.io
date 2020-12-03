@@ -542,6 +542,7 @@
 <li class="toc-entry toc-h2"><a href="#preparing-the-kubernetes-namespace">Preparing the Kubernetes namespace</a></li>
 <li class="toc-entry toc-h2"><a href="#migrating-from-appliances">Migrating from Appliances</a>
 <ul>
+<li class="toc-entry toc-h3"><a href="#notes">Notes</a></li>
 <li class="toc-entry toc-h3"><a href="#collect-data-from-the-appliance">Collect data from the appliance</a></li>
 <li class="toc-entry toc-h3"><a href="#restore-the-backup-into-the-kubernetes-environment">Restore the backup into the kubernetes environment</a></li>
 </ul>
@@ -584,6 +585,15 @@
 
 <h2 id="migrating-from-appliances">
 <a class="anchor" href="#migrating-from-appliances" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migrating from Appliances</h2>
+
+<h3 id="notes">
+<a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h3>
+<ul>
+  <li>Current architecture in podified limits us to running a single server and zone in a Kubernetes namespace.
+Therefore, when migrating from a multi-appliance and/or multi-zone appliance architecture, you will need to choose a single server to assume the identity of.
+This server should have the UI and web service roles enabled before taking the database backup to ensure that those workers will start when deployed in the podified environment.
+All desired roles and settings will need to be configured on this server.</li>
+</ul>
 
 <h3 id="collect-data-from-the-appliance">
 <a class="anchor" href="#collect-data-from-the-appliance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collect data from the appliance</h3>
