@@ -5,9 +5,25 @@
     <description></description>
     <link>http://manageiq.org/</link>
     <atom:link href="http://manageiq.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Dec 2020 14:32:18 +0000</pubDate>
-    <lastBuildDate>Fri, 04 Dec 2020 14:32:18 +0000</lastBuildDate>
+    <pubDate>Fri, 04 Dec 2020 15:03:18 +0000</pubDate>
+    <lastBuildDate>Fri, 04 Dec 2020 15:03:18 +0000</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Announcing Kasparov Alpha Release</title>
+        <description>&lt;p&gt;The first alpha release of ManageIQ Kasparov is here!  It has a bunch of interesting new stuff that you can see in the &lt;a href=&quot;https://github.com/orgs/ManageIQ/projects/13#column-8431168&quot;&gt;roadmap&lt;/a&gt;. Here are the major highlights for this new release:&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 04 Dec 2020 09:19:13 +0000</pubDate>
+        <link>http://manageiq.org/blog/2020/12/Announcing-Kasparov-Alpha/</link>
+        <guid isPermaLink="true">http://manageiq.org/blog/2020/12/Announcing-Kasparov-Alpha/</guid>
+        
+        <category>releases</category>
+        
+        <category>announcements</category>
+        
+        
+      </item>
     
       <item>
         <title>Announcing Jansa-2</title>
@@ -144,22 +160,6 @@ Here are just some of the things added since the Ivanchuk-4 release:&lt;/p&gt;
         <pubDate>Tue, 02 Jun 2020 19:12:13 +0000</pubDate>
         <link>http://manageiq.org/blog/2020/06/Announcing-Jansa-Beta/</link>
         <guid isPermaLink="true">http://manageiq.org/blog/2020/06/Announcing-Jansa-Beta/</guid>
-        
-        <category>releases</category>
-        
-        <category>announcements</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Announcing Jansa Alpha Release</title>
-        <description>&lt;p&gt;The first alpha release of ManageIQ Jansa is here!  It has a bunch of interesting new stuff that you can see in the &lt;a href=&quot;https://github.com/orgs/ManageIQ/projects/13#column-7337345&quot;&gt;roadmap&lt;/a&gt;. There are 2 major changes that I want to draw your attention to.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 31 Mar 2020 19:12:13 +0000</pubDate>
-        <link>http://manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/</link>
-        <guid isPermaLink="true">http://manageiq.org/blog/2020/03/Announcing-Jansa-Alpha/</guid>
         
         <category>releases</category>
         
