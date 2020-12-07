@@ -1755,7 +1755,7 @@ resources and collections defined in this API.</p>
 <h3 id="collections">
 <a class="anchor" href="#collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collections</h3>
 
-<p>Resources can be grouped into collections. Each collection is homogeneous so that it contains only one type of resource, and unordered. Resources can also exist outside any collection. In this case, we refer to these resources as singleton resources. Collections are themselves resources as well.</p>
+<p>Resources can be grouped into collections. Each collection is homogeneous so that it contains only one type of resource, and is unordered. Resources can also exist outside any collection. In this case, we refer to these resources as singleton resources. Collections are themselves resources as well.</p>
 
 <p>Collections can exist globally, at the top level of an API, but can also be contained inside a single resource. In the latter case, we refer to these collections as sub-collections. Sub-collections are usually used
 to express some kind of “contained in” relationship</p>
@@ -1815,7 +1815,7 @@ optional.</p>
 <h3 id="collection-actions">
 <a class="anchor" href="#collection-actions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collection actions</h3>
 
-<p>The actions performed against a collection of resources, are in most
+<p>The actions performed against a collection of resources are in most
 cases batch operations against multiple resources. The action request
 must include an HTTP body with the action name and the list of resource
 representations that the action will be performed against.</p>
