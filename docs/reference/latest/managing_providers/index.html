@@ -2086,11 +2086,12 @@ ManageIQ.</p>
 <h2 id="ibm-terraform-provider">
 <a class="anchor" href="#ibm-terraform-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM Terraform provider</h2>
 
-<p>Terraform is an Open Source software that is developed by HashiCorp that enables predictable and consistent provisioning of many cloud platforms, classic infrastructure, and virtual private cloud (VPC) infrastructure resources by using a high-level scripting language. You can use Terraform to automate your cloud resource provisioning, rapidly build complex, multi-tier cloud environments, and enable Infrastructure as Code (IaC). ManageIQ provides functionality to integrate with Terraform and take advantage of features. This includes:</p>
+<p>ManageIQ includes an IBM Terraform provider that provides functionality to integrate with the <a href="https://www.ibm.com/support/knowledgecenter/SSFC4F_2.2.0/cam/cam_intro.html">Managed Services component</a>. Managed services uses open source Terraform to manage and deliver cloud infrastructure as code. Terraform is an Open Source software that is developed by HashiCorp that enables predictable and consistent provisioning of many cloud platforms, classic infrastructure, and virtual private cloud (VPC) infrastructure resources by using a high-level scripting language. You can use Terraform to automate your cloud resource provisioning, rapidly build complex, multi-tier cloud environments, and enable Infrastructure as Code (IaC).
+ManageIQ provides functionality to integrate with Terraform and take advantage of features. This includes:</p>
 
 <ul>
   <li>
-    <p>Discovering the inventory of your Terraform content, including templates, stacks, and virtual machines provisioned using Terraform.</p>
+    <p>Discovering the inventory from Managed Services, including templates, stacks, and virtual machines provisioned using Terraform.</p>
   </li>
   <li>
     <p>Providing traceability between VM resources provisioned by Terraform and discovered by ManageIQ.</p>
@@ -2103,11 +2104,11 @@ ManageIQ.</p>
 <h1 id="adding-an-ibm-terraform-provider">
 <a class="anchor" href="#adding-an-ibm-terraform-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding an IBM Terraform Provider</h1>
 
-<p>To start provisioning bare metal machines, you need at least one IBM Terraform provider added to ManageIQ.</p>
+<p>To start discovering the Terraform templates and virtual machines, you need at least one IBM Terraform provider added to ManageIQ.</p>
 
 <ol>
   <li>
-    <p>Navigate to menu: <strong>Configuration &gt; Providers</strong>.</p>
+    <p>Browse to menu: <strong>Configuration &gt; Providers</strong>.</p>
   </li>
   <li>
     <p>Select menu: <strong>Configuration &gt; Add a new Provider</strong>.</p>
@@ -2123,7 +2124,9 @@ ManageIQ.</p>
 <a class="anchor" href="#in-the-endpoint-section" aria-hidden="true"><span class="octicon octicon-link"></span></a>In the Endpoint section:</h3>
   </li>
   <li>
-    <p>Enter the <strong>Managed Services URL</strong> for the provider. This is the URL for the IBM Terraform server (Cloud Automation Management API) and can be either an IP address or a hostname.</p>
+    <p>Enter the <strong>Managed Services URL</strong> for the provider.</p>
+
+    <p>This is the URL for Managed Services and can be either an IP address or a hostname.</p>
 
     <p>For example, <code class="language-plaintext highlighter-rouge">https://cam.apps.test.example.com</code>.</p>
   </li>
@@ -2162,7 +2165,7 @@ ManageIQ.</p>
     <p>Select your Terraform provider using the checkbox, and click menu: <strong>Configuration &gt; Refresh Relationships and Power States</strong>. This triggers the refresh.</p>
   </li>
   <li>
-    <p>When the refresh is complete, select the Terraform provider to check the updated list of hosts groups in the provider.</p>
+    <p>When the refresh is complete, select the Terraform provider to check the updated list of Configuration profiles and Configured systems in the provider.</p>
   </li>
 </ol>
 
